@@ -1,0 +1,129 @@
+# Listening lesson (day 3). Original dialogue, en-US voices A/B.
+# A = the customer (learner-like character). B = a worker at a noodle restaurant.
+kind: listening
+level: A2
+topic: food
+title: Ordering Food by Phone
+order: 3
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Hello, Golden Bowl. How can I help you?
+    text_vi: Xin chào, quán Golden Bowl xin nghe. Tôi có thể giúp gì cho bạn?
+  - id: l2
+    speaker: A
+    text_en: Hi, I’d like to order some food for delivery, please.
+    text_vi: Chào anh, tôi muốn đặt đồ ăn giao tận nơi.
+  - id: l3
+    speaker: B
+    text_en: Sure. What would you like?
+    text_vi: Vâng. Bạn muốn gọi món gì?
+  - id: l4
+    speaker: A
+    text_en: Can I get two bowls of chicken noodle soup and one order of spring rolls?
+    text_vi: Cho tôi hai tô mì gà nước và một phần chả giò nhé.
+  - id: l5
+    speaker: B
+    text_en: OK. Would you like anything to drink? We have coffee and iced tea.
+    text_vi: Vâng. Bạn có muốn uống gì không? Quán có cà phê và trà đá.
+  - id: l6
+    speaker: A
+    text_en: Yes, a large iced tea, please. How much is that?
+    text_vi: Có, cho tôi một ly trà đá cỡ lớn. Tất cả bao nhiêu tiền vậy?
+  - id: l7
+    speaker: B
+    text_en: That’s $28.50. Delivery is free for orders over $20.
+    text_vi: Tổng cộng 28 đô 50. Đơn trên 20 đô được miễn phí giao hàng.
+  - id: l8
+    speaker: A
+    text_en: Great. Can I pay by card when the food arrives?
+    text_vi: Tốt quá. Khi đồ ăn tới, tôi trả bằng thẻ được không?
+  - id: l9
+    speaker: B
+    text_en: Yes, the driver has a card machine. What’s your address?
+    text_vi: Được, tài xế có máy quẹt thẻ. Địa chỉ của bạn là gì?
+  - id: l10
+    speaker: A
+    text_en: It’s 45 Maple Street, apartment 12. It’s next to the park.
+    text_vi: Số 45 đường Maple, căn hộ số 12. Ngay cạnh công viên.
+  - id: l11
+    speaker: B
+    text_en: Got it. And your phone number, please?
+    text_vi: Tôi ghi lại rồi. Còn số điện thoại của bạn?
+  - id: l12
+    speaker: A
+    text_en: It’s 555-0142. How long will it take?
+    text_vi: Số 555-0142. Khoảng bao lâu thì đồ ăn tới?
+  - id: l13
+    speaker: B
+    text_en: About 35 minutes. We’ll call you when the driver is outside.
+    text_vi: Khoảng 35 phút. Khi tài xế đến trước cửa, chúng tôi sẽ gọi cho bạn.
+  - id: l14
+    speaker: A
+    text_en: Perfect. Thank you so much!
+    text_vi: Tuyệt quá. Cảm ơn anh nhiều!
+
+focus_words: [I'd like, anything, large, how much, pay by card, driver, address, phone number]
+
+senses:
+  to: infinitive
+  order: order
+  order#2: noun # "one order of spring rolls"
+  order#3: noun # "orders over $20"
+  for: purpose
+  like: would_like
+  get: obtain
+  one: number
+  be: linking
+  be#3: location # "when the driver is outside"
+  have: own
+  take: time
+  about: approximately
+  call: phone
+  much: amount
+
+ignore: [Golden Bowl, Maple]
+
+dictation:
+  - segment: l6
+    before: Yes, a
+    answer: large
+    after: iced tea, please.
+  - segment: l9
+    before: Yes, the driver has a card machine. What’s your
+    answer: address
+    after: '?'
+  - segment: l13
+    before: About 35 minutes. We’ll call you when the
+    answer: driver
+    after: is outside.
+
+questions:
+  - prompt: How much is the order?
+    options:
+      - $20.00
+      - $28.50
+      - $35.00
+    correct: 1
+    feedback_ok: 'Đúng: “That’s $28.50.” (twenty-eight fifty)'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B nói giá sau khi khách gọi trà đá.
+    evidence: l7
+  - prompt: How will the customer pay?
+    options:
+      - In cash
+      - By card
+      - Online, before the delivery
+    correct: 1
+    feedback_ok: 'Đúng: “Can I pay by card when the food arrives?” – “Yes, the driver has a card machine.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn khách hỏi về cách trả tiền.
+    evidence: l8
+  - prompt: How long will the delivery take?
+    options:
+      - About 15 minutes
+      - About 35 minutes
+      - About 45 minutes
+    correct: 1
+    feedback_ok: 'Đúng: “About 35 minutes.” (thirty-five)'
+    feedback_wrong: Chưa đúng. Nghe lại câu trả lời cho “How long will it take?”, chú ý đừng nhầm với số nhà 45.
+    evidence: l13

@@ -1,0 +1,13 @@
+lemma: refund
+ipa_us: /ˈriːfʌnd/
+cefr: B1
+oxford3000: false
+forms: [refunds]
+senses:
+  - key: money_back
+    pos: noun
+    vi: tiền hoàn lại; hoàn tiền
+    en: 'money that is given back to you, for example when you return something to a store'
+    collocations: [get a refund, ask for a refund, a full refund]
+    example: 'The concert was canceled, so we got a refund.'
+status: draft

@@ -1,0 +1,12 @@
+lemma: 'off'
+ipa_us: /ɔːf/
+cefr: A2
+oxford3000: true
+senses:
+  - key: not_on
+    pos: adjective
+    vi: tắt (không hoạt động)
+    en: not working or not turned on
+    collocations: [the lights are off, the TV is off]
+    example: Make sure the TV is off before you go to bed.
+status: draft

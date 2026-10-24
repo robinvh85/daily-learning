@@ -1,0 +1,13 @@
+lemma: receipt
+ipa_us: /rɪˈsiːt/
+cefr: A2
+oxford3000: true
+forms: [receipts]
+senses:
+  - key: receipt
+    pos: noun
+    vi: 'hóa đơn, biên lai'
+    en: a piece of paper that shows you have paid for something
+    collocations: [keep the receipt, ask for a receipt]
+    example: Do you want the receipt in the bag?
+status: draft

@@ -1,0 +1,12 @@
+lemma: internet
+ipa_us: /ˈɪntərnet/
+cefr: A1
+oxford3000: true
+senses:
+  - key: internet
+    pos: noun
+    vi: mạng internet
+    en: the large computer network that connects computers around the world
+    collocations: [on the internet, internet support]
+    example: I read the news on the internet.
+status: draft

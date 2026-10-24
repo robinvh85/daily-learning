@@ -1,0 +1,13 @@
+lemma: hear
+ipa_us: /hɪr/
+cefr: A1
+oxford3000: true
+forms: [hears, heard, hearing]
+senses:
+  - key: hear
+    pos: verb
+    vi: 'nghe, nghe thấy; nghe tin'
+    en: to get sounds with your ears; to get some news
+    collocations: [hear a noise, sorry to hear that]
+    example: 'I heard about your new job. Congratulations!'
+status: draft

@@ -1,0 +1,12 @@
+lemma: third
+ipa_us: /θɜːrd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: third
+    pos: number
+    vi: thứ ba
+    en: coming after the second
+    collocations: [the third floor, the third time]
+    example: This is my third trip to Japan.
+status: draft

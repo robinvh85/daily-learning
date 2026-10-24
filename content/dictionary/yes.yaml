@@ -1,0 +1,12 @@
+lemma: 'yes'
+ipa_us: /jes/
+cefr: A1
+oxford3000: true
+senses:
+  - key: yes
+    pos: exclamation
+    vi: 'vâng, có, đúng'
+    en: used to answer that something is true or to agree
+    collocations: ['yes, please', say yes]
+    example: '“Are you hungry?” “Yes, very.”'
+status: draft

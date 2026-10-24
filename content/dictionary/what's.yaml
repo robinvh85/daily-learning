@@ -1,0 +1,11 @@
+lemma: "what's"
+ipa_us: /wʌts/
+cefr: A1
+oxford3000: false
+senses:
+  - key: what_is
+    pos: contraction
+    vi: 'cái gì…, … là gì (viết tắt của what is)'
+    en: short form of “what is”
+    example: What’s the name of this street?
+status: draft

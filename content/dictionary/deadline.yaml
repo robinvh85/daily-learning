@@ -1,0 +1,13 @@
+lemma: deadline
+ipa_us: /ˈdedlaɪn/
+cefr: B1
+oxford3000: false
+forms: [deadlines]
+senses:
+  - key: deadline
+    pos: noun
+    vi: hạn chót
+    en: a time or day when something must be finished
+    collocations: [meet a deadline, the deadline is…]
+    example: The deadline for the report is next Monday.
+status: draft

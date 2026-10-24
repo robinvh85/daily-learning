@@ -1,0 +1,13 @@
+lemma: restart
+ipa_us: /ˌriːˈstɑːrt/
+cefr: B1
+oxford3000: false
+forms: [restarts, restarted, restarting]
+senses:
+  - key: reboot
+    pos: verb
+    vi: khởi động lại (máy)
+    en: to turn a computer or machine off and then on again
+    collocations: [restart the computer, restart your phone]
+    example: 'If your phone is slow, try to restart it.'
+status: draft

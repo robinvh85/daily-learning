@@ -1,0 +1,12 @@
+lemma: tonight
+ipa_us: /təˈnaɪt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: tonight
+    pos: adverb
+    vi: 'tối nay, đêm nay'
+    en: on the evening or night of today
+    collocations: [tonight at eight, from tonight]
+    example: What do you want to eat tonight?
+status: draft

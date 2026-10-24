@@ -1,0 +1,13 @@
+lemma: address
+ipa_us: /ˈædres/
+cefr: A1
+oxford3000: true
+forms: [addresses]
+senses:
+  - key: address
+    pos: noun
+    vi: địa chỉ
+    en: the number of the house and the name of the street and town where someone lives
+    collocations: [home address, email address, "what's your address?"]
+    example: Please write your address on the package.
+status: draft

@@ -1,0 +1,12 @@
+lemma: support
+ipa_us: /səˈpɔːrt/
+cefr: B1
+oxford3000: true
+senses:
+  - key: help_service
+    pos: noun
+    vi: 'bộ phận hỗ trợ (khách hàng, kỹ thuật)'
+    en: 'help and advice for customers, often by phone or online'
+    collocations: [customer support, tech support]
+    example: Call support if the app doesn’t work.
+status: draft

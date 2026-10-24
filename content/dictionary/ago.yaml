@@ -1,0 +1,12 @@
+lemma: ago
+ipa_us: /əˈɡoʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: ago
+    pos: adverb
+    vi: 'cách đây, trước (bao lâu)'
+    en: before now; used after a period of time
+    collocations: [a week ago, two years ago, a long time ago]
+    example: I moved to this city three years ago.
+status: draft

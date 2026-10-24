@@ -27,4 +27,10 @@ senses:
     en: used after “spend” to say what money or time is used for
     collocations: [spend money on food, spend time on your phone]
     example: We spend a lot of money on food every month.
+  - key: task
+    pos: preposition
+    vi: '(làm) về, (làm) phần việc gì (work on something)'
+    en: used to say what work or project someone is doing
+    collocations: [work on a project, work on a report]
+    example: She is working on a new book.
 status: draft

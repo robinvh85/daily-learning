@@ -1,0 +1,143 @@
+# Listening lesson (day 8). Original dialogue, en-US voices A/B.
+# A = Minh, a visitor (learner-like character). B = a person on the street.
+kind: listening
+level: A2
+topic: travel
+title: Asking for Directions
+order: 8
+
+segments:
+  - id: l1
+    speaker: A
+    text_en: Excuse me. Could you tell me how to get to the City Museum?
+    text_vi: Xin lỗi. Anh chỉ giúp tôi đường đến Bảo tàng Thành phố được không?
+  - id: l2
+    speaker: B
+    text_en: Sure. Go straight down this street for two blocks.
+    text_vi: Được chứ. Bạn đi thẳng con đường này qua hai dãy nhà.
+  - id: l3
+    speaker: A
+    text_en: Two blocks. OK.
+    text_vi: Hai dãy nhà. Vâng.
+  - id: l4
+    speaker: B
+    text_en: Then turn left at the traffic light. You’ll see a big supermarket on the corner.
+    text_vi: Sau đó rẽ trái ở chỗ đèn giao thông. Bạn sẽ thấy một siêu thị lớn ở góc đường.
+  - id: l5
+    speaker: A
+    text_en: So I turn left at the traffic light, and then I see the supermarket.
+    text_vi: Vậy là tôi rẽ trái ở đèn giao thông, rồi sẽ thấy siêu thị.
+  - id: l6
+    speaker: B
+    text_en: Right. Walk past the supermarket, and the museum is on your right, across from the park.
+    text_vi: Đúng rồi. Đi qua siêu thị, bảo tàng nằm bên tay phải bạn, đối diện công viên.
+  - id: l7
+    speaker: A
+    text_en: Is it far from here?
+    text_vi: Từ đây đến đó có xa không?
+  - id: l8
+    speaker: B
+    text_en: Not really. It’s about ten minutes on foot.
+    text_vi: Không xa lắm đâu. Đi bộ khoảng mười phút.
+  - id: l9
+    speaker: A
+    text_en: Is there a bus, too? My feet are a little tired.
+    text_vi: Có xe buýt đi không anh? Chân tôi hơi mỏi rồi.
+  - id: l10
+    speaker: B
+    text_en: Yes, the number 8 bus goes there, but it only comes every twenty minutes.
+    text_vi: Có, xe buýt số 8 đi đến đó, nhưng hai mươi phút mới có một chuyến.
+  - id: l11
+    speaker: A
+    text_en: Then I’ll walk. Do you know what time the museum closes?
+    text_vi: Vậy tôi đi bộ thôi. Anh có biết mấy giờ bảo tàng đóng cửa không?
+  - id: l12
+    speaker: B
+    text_en: I think it closes at 5:30 today.
+    text_vi: Tôi nghĩ hôm nay bảo tàng đóng cửa lúc 5 giờ 30.
+  - id: l13
+    speaker: A
+    text_en: OK, so I have time. Thank you so much!
+    text_vi: Vậy là tôi vẫn còn kịp. Cảm ơn anh nhiều lắm!
+  - id: l14
+    speaker: B
+    text_en: You’re welcome. Have a nice day!
+    text_vi: Không có gì. Chúc bạn một ngày vui vẻ!
+
+focus_words: [straight, block, turn left, traffic light, corner, past, far, on foot]
+
+senses:
+  to: direction
+  to#1: infinitive # "how to get to"
+  get: arrive
+  go: go
+  for: duration # "for two blocks"
+  at: place
+  at#3: time # "at 5:30"
+  on: place
+  right: correct
+  right#2: direction # "on your right"
+  walk: verb
+  be: linking
+  be#1: location # "the museum is on your right"
+  about: approximately
+  too: also
+  a little: slightly
+  do: auxiliary
+  time: time
+  have: own
+  much: amount
+
+ignore: []
+
+dictation:
+  - segment: l2
+    before: Sure. Go
+    answer: straight
+    after: down this street for two blocks.
+  - segment: l4
+    before: Then turn left at the traffic light. You’ll see a big supermarket on the
+    answer: corner
+    after: .
+  - segment: l7
+    before: Is it
+    answer: far
+    after: from here?
+
+questions:
+  - prompt: Where should Minh turn left?
+    options:
+      - At the supermarket
+      - At the traffic light
+      - At the park
+    correct: 1
+    feedback_ok: 'Đúng: “Then turn left at the traffic light.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B nói “turn left”.
+    evidence: l4
+  - prompt: Where is the museum?
+    options:
+      - On the left, next to the supermarket
+      - On the right, across from the park
+      - On the corner, next to the bus stop
+    correct: 1
+    feedback_ok: 'Đúng: “the museum is on your right, across from the park.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B nói “Walk past the supermarket…”.
+    evidence: l6
+  - prompt: How long does it take to walk to the museum?
+    options:
+      - About five minutes
+      - About ten minutes
+      - About twenty minutes
+    correct: 1
+    feedback_ok: 'Đúng: “It’s about ten minutes on foot.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “Is it far from here?”. “Twenty minutes” là nói về xe buýt.
+    evidence: l8
+  - prompt: What time does the museum close today?
+    options:
+      - At 5:00
+      - At 5:30
+      - At 6:30
+    correct: 1
+    feedback_ok: 'Đúng: “I think it closes at 5:30 today.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn gần cuối, khi Minh hỏi giờ đóng cửa.
+    evidence: l12

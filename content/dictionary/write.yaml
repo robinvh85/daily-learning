@@ -1,0 +1,13 @@
+lemma: write
+ipa_us: /raɪt/
+cefr: A1
+oxford3000: true
+forms: [writes, wrote, written, writing]
+senses:
+  - key: write
+    pos: verb
+    vi: viết
+    en: to make words on paper or on a screen
+    collocations: [write an email, write a summary]
+    example: Please write your name at the top of the page.
+status: draft

@@ -1,0 +1,13 @@
+lemma: router
+ipa_us: /ˈraʊtər/
+cefr: B1
+oxford3000: false
+forms: [routers]
+senses:
+  - key: router
+    pos: noun
+    vi: 'bộ phát Wi-Fi, router'
+    en: a device that connects computers and phones to the internet
+    collocations: [restart the router, a Wi-Fi router]
+    example: The router is on the shelf in the living room.
+status: draft

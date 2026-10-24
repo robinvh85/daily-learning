@@ -1,0 +1,13 @@
+lemma: light
+ipa_us: /laɪt/
+cefr: A1
+oxford3000: true
+forms: [lights]
+senses:
+  - key: lamp
+    pos: noun
+    vi: đèn
+    en: 'something that gives light, like a lamp or a small light on a machine'
+    collocations: [a red light, turn on the light]
+    example: There’s a small green light on the printer.
+status: draft

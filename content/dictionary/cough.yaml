@@ -1,0 +1,13 @@
+lemma: cough
+ipa_us: /kɔːf/
+cefr: A2
+oxford3000: true
+forms: [coughs]
+senses:
+  - key: cough
+    pos: noun
+    vi: 'ho, cơn ho'
+    en: an illness that makes you push air out of your throat with a short loud sound
+    collocations: [a bad cough, have a cough]
+    example: This medicine is good for a cough.
+status: draft

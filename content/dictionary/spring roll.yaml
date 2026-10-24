@@ -1,0 +1,14 @@
+lemma: spring roll
+ipa_us: /ˌsprɪŋ ˈroʊl/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [spring rolls]
+senses:
+  - key: spring_roll
+    pos: noun
+    vi: 'chả giò, nem rán'
+    en: 'a small roll of thin rice or flour pastry filled with vegetables or meat, usually fried'
+    collocations: [fried spring rolls, an order of spring rolls]
+    example: My mom makes the best spring rolls.
+status: draft

@@ -1,0 +1,11 @@
+lemma: "he's"
+ipa_us: /hiːz/
+cefr: A1
+oxford3000: false
+senses:
+  - key: he_is
+    pos: contraction
+    vi: 'anh ấy là, anh ấy đang… (viết tắt của he is; đôi khi là he has)'
+    en: short form of “he is” or “he has”
+    example: He’s my brother.
+status: draft

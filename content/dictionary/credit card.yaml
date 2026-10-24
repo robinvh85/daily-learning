@@ -1,0 +1,14 @@
+lemma: credit card
+ipa_us: /ˈkredɪt ˌkɑːrd/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [credit cards]
+senses:
+  - key: credit_card
+    pos: noun
+    vi: thẻ tín dụng
+    en: a plastic card you use to buy things now and pay for them later
+    collocations: [pay with a credit card, my credit card]
+    example: I lost my credit card at the mall.
+status: draft

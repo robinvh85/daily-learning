@@ -1,0 +1,13 @@
+lemma: problem
+ipa_us: /ˈprɑːbləm/
+cefr: A1
+oxford3000: true
+forms: [problems]
+senses:
+  - key: problem
+    pos: noun
+    vi: 'vấn đề, sự cố'
+    en: something that is wrong or difficult
+    collocations: [have a problem, the same problem, "what's the problem?"]
+    example: There’s a problem with my phone. The screen is black.
+status: draft

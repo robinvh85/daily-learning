@@ -1,0 +1,146 @@
+# Listening lesson (day 7). Original dialogue, en-US voices A/B.
+# The schema allows only speakers A and B, so the meeting is between two people.
+# A = Minh, a team member (learner-like character). B = Mark, the team leader.
+kind: listening
+level: A2
+topic: work
+title: A Short Team Meeting
+order: 7
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: OK, let’s start. This is a quick update, so we only have fifteen minutes.
+    text_vi: Được rồi, mình bắt đầu nhé. Đây chỉ là buổi cập nhật nhanh, nên mình chỉ có mười lăm phút thôi.
+  - id: l2
+    speaker: A
+    text_en: Sure. Should I go first?
+    text_vi: Vâng. Em nói trước nhé?
+  - id: l3
+    speaker: B
+    text_en: Yes, please. How is the new website going?
+    text_vi: Ừ, em nói đi. Trang web mới đến đâu rồi?
+  - id: l4
+    speaker: A
+    text_en: It’s almost finished. I just need to add the photos and check the prices.
+    text_vi: Gần xong rồi ạ. Em chỉ cần thêm ảnh và kiểm tra lại giá.
+  - id: l5
+    speaker: B
+    text_en: Great. When can you finish it?
+    text_vi: Tốt. Khi nào em làm xong?
+  - id: l6
+    speaker: A
+    text_en: By Thursday afternoon, I think.
+    text_vi: Em nghĩ là trước chiều thứ Năm ạ.
+  - id: l7
+    speaker: B
+    text_en: Good. The deadline is Friday, so that’s fine.
+    text_vi: Tốt. Hạn chót là thứ Sáu, vậy là ổn.
+  - id: l8
+    speaker: A
+    text_en: What about the customer survey? Who’s working on that?
+    text_vi: Còn khảo sát khách hàng thì sao ạ? Ai đang làm phần đó?
+  - id: l9
+    speaker: B
+    text_en: Ben is. He’s going to send me the results on Wednesday.
+    text_vi: Ben đang làm. Cậu ấy sẽ gửi kết quả cho anh vào thứ Tư.
+  - id: l10
+    speaker: A
+    text_en: OK. Do you need any help with the report for the manager?
+    text_vi: Vâng. Anh có cần giúp gì với bản báo cáo gửi quản lý không?
+  - id: l11
+    speaker: B
+    text_en: Yes, actually. Could you write the summary? It doesn’t need to be long. One page is enough.
+    text_vi: Có đấy. Em viết phần tóm tắt được không? Không cần dài đâu. Một trang là đủ.
+  - id: l12
+    speaker: A
+    text_en: No problem. When do you need it?
+    text_vi: Không vấn đề gì ạ. Khi nào anh cần?
+  - id: l13
+    speaker: B
+    text_en: Before our next meeting, next Monday at ten.
+    text_vi: Trước buổi họp tới, tức là mười giờ sáng thứ Hai tuần sau.
+  - id: l14
+    speaker: A
+    text_en: Got it. I’ll send it to you on Friday.
+    text_vi: Em hiểu rồi. Thứ Sáu em sẽ gửi anh.
+  - id: l15
+    speaker: B
+    text_en: Perfect. Thanks, everyone. See you next week.
+    text_vi: Tuyệt. Cảm ơn mọi người. Hẹn gặp lại tuần sau.
+
+focus_words: [quick, update, deadline, survey, report, summary, actually, no problem]
+
+senses:
+  be: linking
+  have: own
+  go: go
+  go#2: progress # "How is the new website going?"
+  go#3: future # "He’s going to send"
+  first: adverb
+  to: infinitive
+  to#4: recipient # "send it to you"
+  by: deadline
+  about: topic
+  work: work
+  on: day
+  on#1: task # "working on that"
+  do: auxiliary
+  for: purpose
+  one: number
+  next: following
+  at: time
+
+ignore: [Ben]
+
+dictation:
+  - segment: l1
+    before: OK, let’s start. This is a quick
+    answer: update
+    after: ', so we only have fifteen minutes.'
+  - segment: l7
+    before: Good. The
+    answer: deadline
+    after: is Friday, so that’s fine.
+  - segment: l11
+    before: Yes, actually. Could you write the
+    answer: summary
+    after: '?'
+
+questions:
+  - prompt: When will Minh finish the website?
+    options:
+      - By Wednesday
+      - By Thursday afternoon
+      - On Friday morning
+    correct: 1
+    feedback_ok: 'Đúng: “By Thursday afternoon, I think.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn trưởng nhóm hỏi “When can you finish it?”.
+    evidence: l6
+  - prompt: Who is working on the customer survey?
+    options:
+      - Minh
+      - The manager
+      - Ben
+    correct: 2
+    feedback_ok: 'Đúng: “Ben is. He’s going to send me the results on Wednesday.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi về “the customer survey”.
+    evidence: l9
+  - prompt: What will Minh write for the report?
+    options:
+      - The summary
+      - The survey results
+      - Ten pages about the website
+    correct: 0
+    feedback_ok: 'Đúng: “Could you write the summary? … One page is enough.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn trưởng nhóm nhờ Minh giúp với bản báo cáo.
+    evidence: l11
+  - prompt: When is the next meeting?
+    options:
+      - Next Monday at ten
+      - On Friday at ten
+      - On Wednesday afternoon
+    correct: 0
+    feedback_ok: 'Đúng: “Before our next meeting, next Monday at ten.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “When do you need it?”.
+    evidence: l13

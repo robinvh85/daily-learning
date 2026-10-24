@@ -67,6 +67,9 @@ segments:
 focus_words: [crowded, compare, review, delivery, package, fit, convenient, try on]
 
 senses:
+  right: correct
+  order: order
+  too: too
   at: place
   be: linking
   on: day # "on weekends"

@@ -1,0 +1,143 @@
+# Listening lesson (day 2). Original dialogue, en-US voices A/B.
+# A = Minh, the new employee (learner-like character). B = David, a teammate.
+kind: listening
+level: A2
+topic: work
+title: Introducing Yourself at Work
+order: 2
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Hi, are you new here? I’m David.
+    text_vi: Chào bạn, bạn mới đến à? Mình là David.
+  - id: l2
+    speaker: A
+    text_en: Yes, I am. I’m Minh. Nice to meet you, David.
+    text_vi: Vâng, đúng rồi. Mình là Minh. Rất vui được gặp anh, David.
+  - id: l3
+    speaker: B
+    text_en: Nice to meet you too. Which team are you on?
+    text_vi: Mình cũng rất vui được gặp bạn. Bạn ở nhóm nào?
+  - id: l4
+    speaker: A
+    text_en: I’m on the marketing team. Today is my first day.
+    text_vi: Mình ở nhóm marketing. Hôm nay là ngày đầu tiên của mình.
+  - id: l5
+    speaker: B
+    text_en: Oh, great! I’m in marketing too. My desk is over there, by the window.
+    text_vi: Ồ, hay quá! Mình cũng làm marketing. Bàn của mình ở đằng kia, cạnh cửa sổ.
+  - id: l6
+    speaker: A
+    text_en: Really? So we’re on the same team. How long have you worked here?
+    text_vi: Thật à? Vậy là mình cùng nhóm rồi. Anh làm ở đây bao lâu rồi?
+  - id: l7
+    speaker: B
+    text_en: About three years. Before that, I worked at a bank.
+    text_vi: Khoảng ba năm. Trước đó mình làm ở một ngân hàng.
+  - id: l8
+    speaker: A
+    text_en: I’m a little nervous. Everything is new for me.
+    text_vi: Mình hơi hồi hộp. Mọi thứ đều mới với mình.
+  - id: l9
+    speaker: B
+    text_en: Don’t worry. Everyone here is friendly. If you have any questions, just ask me.
+    text_vi: Đừng lo. Mọi người ở đây đều thân thiện. Nếu có gì thắc mắc, bạn cứ hỏi mình nhé.
+  - id: l10
+    speaker: A
+    text_en: Thanks, that’s very kind of you. What time do people usually have lunch?
+    text_vi: Cảm ơn anh, anh tốt quá. Mọi người thường ăn trưa lúc mấy giờ?
+  - id: l11
+    speaker: B
+    text_en: Around 12:30. There’s a nice cafeteria on the third floor.
+    text_vi: Khoảng 12 giờ 30. Trên tầng ba có một căng-tin khá ổn.
+  - id: l12
+    speaker: A
+    text_en: Sounds good. Could I join you today?
+    text_vi: Nghe hay đấy. Hôm nay mình đi ăn cùng anh được không?
+  - id: l13
+    speaker: B
+    text_en: Of course! I’ll come to your desk at 12:30.
+    text_vi: Tất nhiên rồi! 12 giờ 30 mình sẽ qua bàn bạn.
+  - id: l14
+    speaker: A
+    text_en: Perfect. See you later!
+    text_vi: Tuyệt quá. Lát nữa gặp lại anh nhé!
+
+focus_words: [nice to meet you, team, how long, worry, cafeteria, floor, sound good, of course]
+
+senses:
+  be: linking
+  be#5: location # "My desk is over there"
+  too: also
+  on: group # "on the marketing team"
+  on#4: place # "on the third floor"
+  first: first
+  in: in
+  by: near
+  have: own
+  have#1: auxiliary # "How long have you worked here?"
+  have#3: eat_drink # "have lunch"
+  work: work
+  about: approximately
+  at: place
+  at#2: time # "at 12:30"
+  a little: slightly
+  for: opinion # "new for me"
+  time: time
+  do: auxiliary
+  to: direction
+
+ignore: [David, Minh]
+
+dictation:
+  - segment: l3
+    before: Nice to meet you too. Which
+    answer: team
+    after: are you on?
+  - segment: l9
+    before: Don’t
+    answer: worry
+    after: .
+  - segment: l11
+    before: There’s a nice cafeteria on the third
+    answer: floor
+    after: .
+
+questions:
+  - prompt: Which team is Minh on?
+    options:
+      - Sales
+      - Marketing
+      - Design
+    correct: 1
+    feedback_ok: 'Đúng: “I’m on the marketing team.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh nói về ngày đầu tiên đi làm.
+    evidence: l4
+  - prompt: How long has David worked at the company?
+    options:
+      - About one year
+      - About three years
+      - About ten years
+    correct: 1
+    feedback_ok: 'Đúng: “About three years. Before that, I worked at a bank.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn David trả lời câu hỏi “How long have you worked here?”.
+    evidence: l7
+  - prompt: Where is the cafeteria?
+    options:
+      - On the first floor
+      - On the third floor
+      - Next to David’s desk
+    correct: 1
+    feedback_ok: 'Đúng: “There’s a nice cafeteria on the third floor.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn David nói về giờ ăn trưa.
+    evidence: l11
+  - prompt: What time will David and Minh go to lunch?
+    options:
+      - At 12:00
+      - At 12:30
+      - At 1:30
+    correct: 1
+    feedback_ok: 'Đúng: “I’ll come to your desk at 12:30.”'
+    feedback_wrong: Chưa đúng. Nghe lại câu cuối của David, chú ý giờ hẹn.
+    evidence: l13

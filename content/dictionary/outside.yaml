@@ -1,0 +1,12 @@
+lemma: outside
+ipa_us: /ˌaʊtˈsaɪd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: outside
+    pos: adverb
+    vi: 'ở bên ngoài, trước cửa'
+    en: not inside a building
+    collocations: [wait outside, go outside]
+    example: It’s sunny. Let’s eat outside.
+status: draft

@@ -1,0 +1,13 @@
+lemma: summary
+ipa_us: /ˈsʌməri/
+cefr: B1
+oxford3000: true
+forms: [summaries]
+senses:
+  - key: summary
+    pos: noun
+    vi: 'bản tóm tắt, phần tóm tắt'
+    en: a short text that gives the main ideas of something longer
+    collocations: [write a summary, a short summary]
+    example: Can you give me a short summary of the meeting?
+status: draft

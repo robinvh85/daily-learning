@@ -1,0 +1,13 @@
+lemma: happen
+ipa_us: /ˈhæpən/
+cefr: A2
+oxford3000: true
+forms: [happens, happened, happening]
+senses:
+  - key: happen
+    pos: verb
+    vi: xảy ra
+    en: 'to take place, often without being planned'
+    collocations: [happen again, what happened?]
+    example: What happened to your phone? The screen is broken.
+status: draft

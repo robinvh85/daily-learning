@@ -1,0 +1,12 @@
+lemma: fifteen
+ipa_us: /ˌfɪfˈtiːn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: fifteen
+    pos: number
+    vi: mười lăm
+    en: the number 15
+    collocations: [fifteen minutes, fifteen years old]
+    example: The bus comes every fifteen minutes.
+status: draft

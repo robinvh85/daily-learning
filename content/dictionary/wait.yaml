@@ -1,0 +1,13 @@
+lemma: wait
+ipa_us: /weɪt/
+cefr: A1
+oxford3000: true
+forms: [waits, waited, waiting]
+senses:
+  - key: wait
+    pos: verb
+    vi: 'chờ, đợi'
+    en: to stay somewhere or not do anything until something happens
+    collocations: [wait a minute, please wait]
+    example: Please wait here. The doctor will see you soon.
+status: draft

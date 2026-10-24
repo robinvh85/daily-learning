@@ -1,0 +1,14 @@
+lemma: iced tea
+ipa_us: /ˌaɪst ˈtiː/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [iced teas]
+senses:
+  - key: iced_tea
+    pos: noun
+    vi: 'trà đá, trà lạnh'
+    en: cold tea served with ice
+    collocations: [a glass of iced tea, a large iced tea]
+    example: On hot days I always drink iced tea.
+status: draft

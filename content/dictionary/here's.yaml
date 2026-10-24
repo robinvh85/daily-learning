@@ -1,0 +1,11 @@
+lemma: "here's"
+ipa_us: /hɪrz/
+cefr: A1
+oxford3000: false
+senses:
+  - key: here_is
+    pos: contraction
+    vi: 'đây là, … đây (viết tắt của here is, dùng khi đưa cái gì cho ai)'
+    en: 'short form of “here is”, often used when you give something to someone'
+    example: Here’s the menu.
+status: draft

@@ -1,0 +1,13 @@
+lemma: floor
+ipa_us: /flɔːr/
+cefr: A1
+oxford3000: true
+forms: [floors]
+senses:
+  - key: level
+    pos: noun
+    vi: tầng (của tòa nhà)
+    en: all the rooms on one level of a building
+    collocations: [the first floor, on the third floor]
+    example: The bathroom is on the second floor.
+status: draft

@@ -1,0 +1,12 @@
+lemma: bottom
+ipa_us: /ˈbɑːtəm/
+cefr: A2
+oxford3000: true
+senses:
+  - key: lowest_part
+    pos: noun
+    vi: 'phía dưới cùng, cuối (trang)'
+    en: the lowest part of something
+    collocations: [at the bottom of the page, at the bottom]
+    example: Write the date at the bottom of the letter.
+status: draft

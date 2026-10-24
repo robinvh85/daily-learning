@@ -1,0 +1,13 @@
+lemma: shirt
+ipa_us: /ʃɜːrt/
+cefr: A1
+oxford3000: true
+forms: [shirts]
+senses:
+  - key: shirt
+    pos: noun
+    vi: áo sơ mi
+    en: 'a piece of clothing for the top part of the body, with sleeves and buttons'
+    collocations: [a white shirt, a work shirt]
+    example: He always wears a blue shirt to work.
+status: draft

@@ -1,0 +1,13 @@
+lemma: report
+ipa_us: /rɪˈpɔːrt/
+cefr: A2
+oxford3000: true
+forms: [reports]
+senses:
+  - key: document
+    pos: noun
+    vi: bản báo cáo
+    en: a document that gives information about something
+    collocations: [write a report, a monthly report]
+    example: I need to finish this report before lunch.
+status: draft

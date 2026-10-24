@@ -1,0 +1,13 @@
+lemma: page
+ipa_us: /peɪdʒ/
+cefr: A1
+oxford3000: true
+forms: [pages]
+senses:
+  - key: page
+    pos: noun
+    vi: 'trang (giấy, sách)'
+    en: one side of a piece of paper in a book or document
+    collocations: [one page, the first page]
+    example: Open your books to page ten.
+status: draft

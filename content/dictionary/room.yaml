@@ -1,0 +1,13 @@
+lemma: room
+ipa_us: /ruːm/
+cefr: A1
+oxford3000: true
+forms: [rooms]
+senses:
+  - key: room
+    pos: noun
+    vi: phòng
+    en: 'a part of a building with walls, a floor and a ceiling'
+    collocations: [a hotel room, room number]
+    example: 'My room is small, but it’s very bright.'
+status: draft

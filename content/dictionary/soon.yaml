@@ -1,0 +1,13 @@
+lemma: soon
+ipa_us: /suːn/
+cefr: A1
+oxford3000: true
+forms: [sooner, soonest]
+senses:
+  - key: soon
+    pos: adverb
+    vi: 'sớm, chẳng bao lâu nữa'
+    en: in a short time from now
+    collocations: [see you soon, get well soon]
+    example: Dinner will be ready soon.
+status: draft

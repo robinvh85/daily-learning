@@ -1,0 +1,12 @@
+lemma: again
+ipa_us: /əˈɡen/
+cefr: A1
+oxford3000: true
+senses:
+  - key: again
+    pos: adverb
+    vi: 'lại, lần nữa'
+    en: one more time
+    collocations: [try again, see you again]
+    example: I didn’t understand. Can you say that again?
+status: draft

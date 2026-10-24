@@ -1,0 +1,14 @@
+lemma: sore throat
+ipa_us: /ˌsɔːr ˈθroʊt/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [sore throats]
+senses:
+  - key: sore_throat
+    pos: noun
+    vi: 'đau họng, viêm họng'
+    en: 'a pain in your throat, often when you have a cold'
+    collocations: [have a sore throat, a bad sore throat]
+    example: Drink warm water with honey for a sore throat.
+status: draft

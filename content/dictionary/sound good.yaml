@@ -1,0 +1,14 @@
+lemma: sound good
+ipa_us: /ˈsaʊnd ˈɡʊd/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [sounds good, sounded good]
+senses:
+  - key: agree
+    pos: phrase
+    vi: 'nghe hay đấy, được đấy (đồng ý với một đề nghị)'
+    en: used to say that you like an idea or plan
+    collocations: [that sounds good, sounds good to me]
+    example: '“Let’s have pizza tonight.” “Sounds good!”'
+status: draft

@@ -10,4 +10,10 @@ senses:
     en: to arrive at a place
     collocations: [get to work, get home, get there]
     example: What time did you get home last night?
+  - key: obtain
+    pos: verb
+    vi: 'lấy, nhận, có được; (Can I get…? = cho tôi…)'
+    en: to receive or obtain something; also used to ask for something politely
+    collocations: [get a refund, can I get…?, get a letter]
+    example: 'Can I get a glass of water, please?'
 status: draft

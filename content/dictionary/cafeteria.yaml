@@ -1,0 +1,13 @@
+lemma: cafeteria
+ipa_us: /ˌkæfəˈtɪriə/
+cefr: A2
+oxford3000: false
+forms: [cafeterias]
+senses:
+  - key: cafeteria
+    pos: noun
+    vi: 'căng-tin, nhà ăn (ở công ty, trường học)'
+    en: 'a restaurant in a school, office or factory where you choose and carry your own food'
+    collocations: [the school cafeteria, eat in the cafeteria]
+    example: The food in our cafeteria is cheap and good.
+status: draft

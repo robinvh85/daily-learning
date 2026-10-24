@@ -1,0 +1,14 @@
+lemma: date of birth
+ipa_us: /ˌdeɪt əv ˈbɜːrθ/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [dates of birth]
+senses:
+  - key: date_of_birth
+    pos: noun
+    vi: ngày sinh
+    en: 'the day, month and year when someone was born'
+    collocations: [your date of birth, write your date of birth]
+    example: Please write your name and date of birth on the form.
+status: draft

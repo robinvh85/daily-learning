@@ -1,0 +1,13 @@
+lemma: quick
+ipa_us: /kwɪk/
+cefr: A1
+oxford3000: true
+forms: [quicker, quickest]
+senses:
+  - key: short
+    pos: adjective
+    vi: 'nhanh, ngắn (trong thời gian ngắn)'
+    en: done in a short time
+    collocations: [a quick question, a quick lunch]
+    example: Can I ask you a quick question?
+status: draft

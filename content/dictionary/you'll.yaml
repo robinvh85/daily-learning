@@ -1,0 +1,11 @@
+lemma: "you'll"
+ipa_us: /juːl/
+cefr: A1
+oxford3000: false
+senses:
+  - key: you_will
+    pos: contraction
+    vi: bạn sẽ (viết tắt của you will)
+    en: short form of “you will”
+    example: Take this bus and you’ll get there in ten minutes.
+status: draft

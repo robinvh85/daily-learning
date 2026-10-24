@@ -1,0 +1,12 @@
+lemma: red
+ipa_us: /red/
+cefr: A1
+oxford3000: true
+senses:
+  - key: red
+    pos: adjective
+    vi: đỏ
+    en: having the color of blood
+    collocations: [a red light, a red car]
+    example: She bought a red dress for the party.
+status: draft

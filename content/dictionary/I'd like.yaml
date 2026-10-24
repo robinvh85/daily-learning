@@ -1,0 +1,13 @@
+lemma: "I'd like"
+ipa_us: /aɪd ˈlaɪk/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: want_politely
+    pos: phrase
+    vi: tôi muốn… (cách nói lịch sự)
+    en: a polite way to say what you want
+    collocations: ["I'd like to…", "I'd like a coffee"]
+    example: 'I’d like a table for two, please.'
+status: draft

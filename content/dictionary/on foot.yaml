@@ -1,0 +1,13 @@
+lemma: on foot
+ipa_us: /ɑːn ˈfʊt/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: walking
+    pos: phrase
+    vi: đi bộ
+    en: 'walking, not using a car, bus, etc.'
+    collocations: [go on foot, ten minutes on foot]
+    example: 'The school is near, so the children go there on foot.'
+status: draft

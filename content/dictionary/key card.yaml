@@ -1,0 +1,14 @@
+lemma: key card
+ipa_us: /ˈkiː ˌkɑːrd/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [key cards]
+senses:
+  - key: key_card
+    pos: noun
+    vi: 'thẻ phòng, thẻ từ (dùng thay chìa khóa)'
+    en: 'a plastic card that you use instead of a key to open a door, for example in a hotel'
+    collocations: [a room key card, lose your key card]
+    example: My key card doesn’t open the door. Can you help me?
+status: draft

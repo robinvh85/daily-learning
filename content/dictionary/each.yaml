@@ -1,0 +1,12 @@
+lemma: each
+ipa_us: /iːtʃ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: every_one
+    pos: determiner
+    vi: mỗi
+    en: 'every one of two or more things, seen separately'
+    collocations: [each payment, each day]
+    example: Each room has a small balcony.
+status: draft

@@ -16,4 +16,10 @@ senses:
     en: similar to; for example
     collocations: [look like, like this, things like…]
     example: She sings like a professional singer.
+  - key: would_like
+    pos: verb
+    vi: 'muốn (dùng với would: would like = muốn, lịch sự)'
+    en: used with “would” to say politely what you want
+    collocations: [would you like…?, I would like…]
+    example: Would you like some cake?
 status: draft

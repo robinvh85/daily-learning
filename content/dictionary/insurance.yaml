@@ -1,0 +1,12 @@
+lemma: insurance
+ipa_us: /ɪnˈʃʊrəns/
+cefr: B1
+oxford3000: true
+senses:
+  - key: insurance
+    pos: noun
+    vi: bảo hiểm
+    en: an agreement where you pay a company and it pays for problems such as illness
+    collocations: [health insurance, an insurance card]
+    example: Does your job give you health insurance?
+status: draft

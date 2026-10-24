@@ -1,0 +1,11 @@
+lemma: "I've"
+ipa_us: /aɪv/
+cefr: A1
+oxford3000: false
+senses:
+  - key: i_have
+    pos: contraction
+    vi: tôi đã… (viết tắt của I have)
+    en: short form of “I have”
+    example: I’ve lived in this city for two years.
+status: draft

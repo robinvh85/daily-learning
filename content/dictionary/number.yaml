@@ -1,0 +1,13 @@
+lemma: number
+ipa_us: /ˈnʌmbər/
+cefr: A1
+oxford3000: true
+forms: [numbers]
+senses:
+  - key: number
+    pos: noun
+    vi: số
+    en: 'a word or sign like 1, 2 or 3; a number used to name something'
+    collocations: [the number 8 bus, room number]
+    example: What’s your room number?
+status: draft

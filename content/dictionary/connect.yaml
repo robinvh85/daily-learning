@@ -1,0 +1,13 @@
+lemma: connect
+ipa_us: /kəˈnekt/
+cefr: A2
+oxford3000: true
+forms: [connects, connected, connecting]
+senses:
+  - key: join
+    pos: verb
+    vi: kết nối (mạng)
+    en: to join a computer or phone to a network or the internet
+    collocations: [connect to the internet, connect to Wi-Fi]
+    example: My phone can’t connect to the hotel Wi-Fi.
+status: draft

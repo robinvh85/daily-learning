@@ -1,0 +1,12 @@
+lemma: fine
+ipa_us: /faɪn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: ok
+    pos: adjective
+    vi: 'ổn, được'
+    en: OK; good enough
+    collocations: ["that's fine", "I'm fine"]
+    example: '“Is three o’clock OK?” “Yes, that’s fine.”'
+status: draft

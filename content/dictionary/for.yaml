@@ -27,4 +27,10 @@ senses:
     en: used to show the price of something
     collocations: [for five dollars, buy something for…]
     example: I bought this bag for ten dollars.
+  - key: reason
+    pos: preposition
+    vi: 'vì, về (lý do: thanks for…, sorry for…)'
+    en: because of; used to say why you thank someone
+    collocations: [thanks for your help, thank you for coming]
+    example: Thank you for the nice dinner.
 status: draft

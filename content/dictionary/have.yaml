@@ -22,4 +22,16 @@ senses:
     en: to organize or hold an event
     collocations: [have a party, have a meeting]
     example: We’re having a small party on Friday.
+  - key: auxiliary
+    pos: verb
+    vi: 'đã (trợ động từ, dùng trong thì hiện tại hoàn thành: have + V3)'
+    en: used with a past participle to form perfect tenses
+    collocations: [have worked, have you ever…?]
+    example: I have lived here for two years.
+  - key: illness
+    pos: verb
+    vi: 'bị (bệnh, đau, sốt…)'
+    en: to be sick with an illness or pain
+    collocations: [have a cough, have a fever, have a headache]
+    example: She has a bad headache today.
 status: draft

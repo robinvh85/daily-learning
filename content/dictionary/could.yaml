@@ -1,0 +1,12 @@
+lemma: could
+ipa_us: /kʊd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: request
+    pos: modal verb
+    vi: có thể… được không (lịch sự hơn can)
+    en: 'used to ask for something or to ask if you can do something, politely'
+    collocations: [could you…?, could I…?]
+    example: 'Could you close the door, please?'
+status: draft

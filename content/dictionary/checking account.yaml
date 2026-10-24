@@ -1,0 +1,14 @@
+lemma: checking account
+ipa_us: /ˈtʃekɪŋ əˌkaʊnt/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [checking accounts]
+senses:
+  - key: checking_account
+    pos: noun
+    vi: 'tài khoản thanh toán (dùng hằng ngày, rút tiền, quẹt thẻ)'
+    en: a bank account that you use for everyday payments
+    collocations: [open a checking account]
+    example: My salary goes into my checking account.
+status: draft

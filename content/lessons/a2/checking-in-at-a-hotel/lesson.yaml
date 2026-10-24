@@ -1,0 +1,141 @@
+# Listening lesson (day 6). Original dialogue, en-US voices A/B.
+# A = Minh, the guest (learner-like character). B = a receptionist at the hotel.
+kind: listening
+level: A2
+topic: travel
+title: Checking In at a Hotel
+order: 6
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Good evening. Welcome to the Harbor Hotel.
+    text_vi: Chào buổi tối. Chào mừng chị đến với khách sạn Harbor.
+  - id: l2
+    speaker: A
+    text_en: Hi. I have a reservation for three nights. My name is Minh Tran.
+    text_vi: Chào anh. Tôi đã đặt phòng ba đêm. Tôi tên là Trần Minh.
+  - id: l3
+    speaker: B
+    text_en: Let me see. Yes, a double room from tonight until Sunday. Can I see your passport, please?
+    text_vi: Để tôi xem. Vâng, một phòng đôi từ tối nay đến Chủ nhật. Cho tôi xem hộ chiếu của chị được không?
+  - id: l4
+    speaker: A
+    text_en: Sure, here you go.
+    text_vi: Vâng, của anh đây.
+  - id: l5
+    speaker: B
+    text_en: Thank you. You’re in room 512, on the fifth floor. Here’s your key card.
+    text_vi: Cảm ơn chị. Chị ở phòng 512, trên tầng năm. Thẻ phòng của chị đây.
+  - id: l6
+    speaker: A
+    text_en: Thanks. What time is breakfast?
+    text_vi: Cảm ơn anh. Bữa sáng lúc mấy giờ?
+  - id: l7
+    speaker: B
+    text_en: Breakfast is from 6:30 to 10:00 in the restaurant next to the lobby.
+    text_vi: Bữa sáng phục vụ từ 6 giờ 30 đến 10 giờ, ở nhà hàng cạnh sảnh.
+  - id: l8
+    speaker: A
+    text_en: Great. Is there free Wi-Fi in the room?
+    text_vi: Tốt quá. Trong phòng có Wi-Fi miễn phí không?
+  - id: l9
+    speaker: B
+    text_en: Yes. The password is on the back of your key card.
+    text_vi: Có ạ. Mật khẩu in ở mặt sau thẻ phòng của chị.
+  - id: l10
+    speaker: A
+    text_en: Perfect. And what time is checkout?
+    text_vi: Tuyệt. Còn giờ trả phòng là mấy giờ?
+  - id: l11
+    speaker: B
+    text_en: Checkout is at 11 in the morning. If you need more time, just call the front desk.
+    text_vi: Trả phòng lúc 11 giờ sáng. Nếu cần thêm thời gian, chị cứ gọi xuống quầy lễ tân.
+  - id: l12
+    speaker: A
+    text_en: OK. Can I leave my bag here after checkout? My flight is in the evening.
+    text_vi: Vâng. Sau khi trả phòng tôi có thể gửi túi ở đây không? Chuyến bay của tôi vào buổi tối.
+  - id: l13
+    speaker: B
+    text_en: Of course. We can keep it for you at the front desk.
+    text_vi: Tất nhiên rồi. Chúng tôi có thể giữ túi giúp chị ở quầy lễ tân.
+  - id: l14
+    speaker: A
+    text_en: That’s great. Thank you very much!
+    text_vi: Tốt quá. Cảm ơn anh nhiều!
+
+focus_words: [reservation, passport, key card, lobby, password, checkout, front desk, flight]
+
+senses:
+  to: direction
+  to#2: range # "from 6:30 to 10:00"
+  have: own
+  for: purpose
+  for#1: duration # "for three nights"
+  be: linking
+  be#4: location # "The password is on the back"
+  in: in
+  in#4: time # "in the morning"
+  in#5: time # "in the evening"
+  on: place
+  time: time
+  at: place
+  at#1: time # "at 11"
+  call: phone
+  leave: put
+  keep: store
+  much: amount
+
+ignore: [Harbor, Minh, Tran]
+
+dictation:
+  - segment: l2
+    before: Hi. I have a
+    answer: reservation
+    after: for three nights.
+  - segment: l3
+    before: Let me see. Yes, a double room from tonight until Sunday. Can I see your
+    answer: passport
+    after: ', please?'
+  - segment: l9
+    before: Yes. The
+    answer: password
+    after: is on the back of your key card.
+
+questions:
+  - prompt: What is Minh’s room number?
+    options:
+      - '215'
+      - '512'
+      - '521'
+    correct: 1
+    feedback_ok: 'Đúng: “You’re in room 512, on the fifth floor.” (five twelve)'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B đưa thẻ phòng, chú ý số phòng và số tầng.
+    evidence: l5
+  - prompt: What time does breakfast end?
+    options:
+      - At 6:30
+      - At 10:00
+      - At 11:00
+    correct: 1
+    feedback_ok: 'Đúng: “Breakfast is from 6:30 to 10:00.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B nói về bữa sáng. 11 giờ là giờ trả phòng.
+    evidence: l7
+  - prompt: Where can Minh find the Wi-Fi password?
+    options:
+      - On the key card
+      - In the lobby
+      - On the room door
+    correct: 0
+    feedback_ok: 'Đúng: “The password is on the back of your key card.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi về Wi-Fi.
+    evidence: l9
+  - prompt: Why does Minh want to leave a bag at the hotel?
+    options:
+      - The bag is too heavy.
+      - The flight is in the evening.
+      - The room is too small.
+    correct: 1
+    feedback_ok: 'Đúng: “My flight is in the evening.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi về việc gửi túi sau khi trả phòng.
+    evidence: l12

@@ -1,0 +1,12 @@
+lemma: just
+ipa_us: /dʒʌst/
+cefr: A1
+oxford3000: true
+senses:
+  - key: only
+    pos: adverb
+    vi: 'chỉ, cứ (làm việc gì); vừa mới'
+    en: 'only or simply; also: a very short time ago'
+    collocations: [just ask, just a minute, I just arrived]
+    example: 'If you need anything, just call me.'
+status: draft

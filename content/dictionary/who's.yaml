@@ -1,0 +1,11 @@
+lemma: "who's"
+ipa_us: /huːz/
+cefr: A1
+oxford3000: false
+senses:
+  - key: who_is
+    pos: contraction
+    vi: 'ai là, ai đang… (viết tắt của who is)'
+    en: short form of “who is”
+    example: Who’s that man next to your sister?
+status: draft

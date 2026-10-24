@@ -9,4 +9,10 @@ senses:
     en: more than is good or necessary
     collocations: [too much, too long, too busy]
     example: This coffee is too hot to drink.
+  - key: also
+    pos: adverb
+    vi: cũng (đứng cuối câu)
+    en: also; in addition
+    collocations: [me too, you too]
+    example: 'I like tea, and my sister likes it too.'
 status: draft

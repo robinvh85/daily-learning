@@ -1,0 +1,13 @@
+lemma: right now
+ipa_us: /ˌraɪt ˈnaʊ/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: at_the_moment
+    pos: phrase
+    vi: 'ngay bây giờ, hiện giờ'
+    en: at this moment
+    collocations: [busy right now, not right now]
+    example: 'Sorry, I can’t talk right now. I’m driving.'
+status: draft

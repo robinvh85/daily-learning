@@ -1,0 +1,13 @@
+lemma: how much
+ipa_us: /ˌhaʊ ˈmʌtʃ/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: price
+    pos: phrase
+    vi: bao nhiêu (tiền); bao nhiêu (lượng)
+    en: used to ask about the price or amount of something
+    collocations: [how much is it?, how much does it cost?]
+    example: How much are these bananas?
+status: draft

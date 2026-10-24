@@ -1,0 +1,13 @@
+lemma: got it
+ipa_us: /ˈɡɑːt ɪt/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: understand
+    pos: phrase
+    vi: 'hiểu rồi, ghi nhận rồi (văn nói)'
+    en: 'informal: used to say that you understand or have the information'
+    collocations: ['OK, got it']
+    example: '“The meeting is at three, not two.” “Got it.”'
+status: draft

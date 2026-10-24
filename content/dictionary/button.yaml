@@ -1,0 +1,13 @@
+lemma: button
+ipa_us: /ˈbʌtən/
+cefr: A2
+oxford3000: true
+forms: [buttons]
+senses:
+  - key: button
+    pos: noun
+    vi: 'nút, nút bấm'
+    en: a small part of a machine that you press to make it work
+    collocations: [press a button, the start button]
+    example: Press the green button to start the machine.
+status: draft

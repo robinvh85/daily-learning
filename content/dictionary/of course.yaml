@@ -1,0 +1,13 @@
+lemma: of course
+ipa_us: /əv ˈkɔːrs/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: certainly
+    pos: phrase
+    vi: 'tất nhiên, dĩ nhiên rồi'
+    en: used to say yes politely and strongly
+    collocations: ['yes, of course', of course you can]
+    example: “Can I use your pen?” “Of course.”
+status: draft

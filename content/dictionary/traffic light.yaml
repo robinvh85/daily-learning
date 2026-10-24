@@ -1,0 +1,14 @@
+lemma: traffic light
+ipa_us: /ˈtræfɪk ˌlaɪt/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [traffic lights]
+senses:
+  - key: traffic_light
+    pos: noun
+    vi: 'đèn giao thông, đèn xanh đèn đỏ'
+    en: 'a set of red, yellow and green lights that tell cars when to stop and go'
+    collocations: [at the traffic light, stop at the traffic lights]
+    example: 'Stop! The traffic light is red.'
+status: draft

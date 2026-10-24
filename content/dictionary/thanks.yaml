@@ -1,0 +1,12 @@
+lemma: thanks
+ipa_us: /θæŋks/
+cefr: A1
+oxford3000: true
+senses:
+  - key: thanks
+    pos: exclamation
+    vi: cảm ơn (thân mật hơn thank you)
+    en: an informal way of saying thank you
+    collocations: [thanks a lot, thanks for…]
+    example: 'Thanks for the coffee!'
+status: draft

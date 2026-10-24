@@ -21,4 +21,10 @@ senses:
     en: used to show who receives something or who an action is directed at
     collocations: [introduce someone to someone, give something to someone, talk to someone]
     example: Please give this letter to your teacher.
+  - key: range
+    pos: preposition
+    vi: 'đến (dùng trong "từ… đến…": from 6 to 10, three to five days)'
+    en: used to show the end of a range of numbers or times
+    collocations: [from Monday to Friday, three to five days]
+    example: The shop is open from nine to six.
 status: draft

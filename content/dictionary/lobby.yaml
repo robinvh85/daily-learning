@@ -1,0 +1,13 @@
+lemma: lobby
+ipa_us: /ˈlɑːbi/
+cefr: B1
+oxford3000: false
+forms: [lobbies]
+senses:
+  - key: lobby
+    pos: noun
+    vi: 'sảnh (khách sạn, tòa nhà)'
+    en: the large area just inside the front door of a hotel or building
+    collocations: [the hotel lobby, wait in the lobby]
+    example: Let’s meet in the lobby at nine.
+status: draft

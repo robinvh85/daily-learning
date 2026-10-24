@@ -1,0 +1,13 @@
+lemma: update
+ipa_us: /ˈʌpdeɪt/
+cefr: B1
+oxford3000: true
+forms: [updates]
+senses:
+  - key: news
+    pos: noun
+    vi: 'thông tin cập nhật, buổi cập nhật tình hình'
+    en: new information about a situation
+    collocations: [a quick update, give someone an update]
+    example: The manager sent us an update about the project.
+status: draft

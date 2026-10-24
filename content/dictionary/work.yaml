@@ -22,4 +22,10 @@ senses:
     en: the job or the tasks that you do to earn money
     collocations: [finish work, after work, a lot of work]
     example: I have a lot of work this week.
+  - key: function
+    pos: verb
+    vi: 'hoạt động, chạy (máy móc)'
+    en: to do what it should do; not be broken
+    collocations: ["it doesn't work", work well]
+    example: The elevator isn’t working today.
 status: draft

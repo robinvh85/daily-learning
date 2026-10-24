@@ -1,0 +1,127 @@
+# Listening lesson (day 9). Original dialogue, en-US voices A/B.
+# A = Minh, a customer (learner-like character). B = Kevin, from internet support.
+kind: listening
+level: A2
+topic: technology
+title: Fixing the Wi-Fi
+order: 9
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Hello, internet support. This is Kevin. How can I help?
+    text_vi: Xin chào, bộ phận hỗ trợ internet. Tôi là Kevin. Tôi có thể giúp gì cho bạn?
+  - id: l2
+    speaker: A
+    text_en: Hi. My Wi-Fi isn’t working. My laptop can’t connect to the internet.
+    text_vi: Chào anh. Wi-Fi nhà tôi không hoạt động. Máy tính xách tay của tôi không kết nối được internet.
+  - id: l3
+    speaker: B
+    text_en: I’m sorry about that. When did the problem start?
+    text_vi: Rất tiếc về chuyện đó. Sự cố bắt đầu từ khi nào?
+  - id: l4
+    speaker: A
+    text_en: About an hour ago. My phone has the same problem.
+    text_vi: Khoảng một tiếng trước. Điện thoại của tôi cũng bị y như vậy.
+  - id: l5
+    speaker: B
+    text_en: OK. Can you see the router? What color are the lights on it?
+    text_vi: Vâng. Bạn có nhìn thấy bộ phát Wi-Fi không? Đèn trên đó màu gì?
+  - id: l6
+    speaker: A
+    text_en: Let me look. One light is red. The other lights are green.
+    text_vi: Để tôi xem. Có một đèn màu đỏ. Các đèn còn lại màu xanh lá.
+  - id: l7
+    speaker: B
+    text_en: Let’s restart the router. There’s a small button on the back. Please press it and hold it for five seconds.
+    text_vi: Mình khởi động lại bộ phát nhé. Ở mặt sau có một cái nút nhỏ. Bạn nhấn và giữ nút đó trong năm giây.
+  - id: l8
+    speaker: A
+    text_en: OK, I’m pressing it now. All the lights are off.
+    text_vi: Được, tôi đang nhấn đây. Tất cả đèn đều tắt rồi.
+  - id: l9
+    speaker: B
+    text_en: Good. Now wait about two minutes.
+    text_vi: Tốt. Giờ bạn đợi khoảng hai phút.
+  - id: l10
+    speaker: A
+    text_en: OK. Now they’re all green!
+    text_vi: Vâng. Giờ tất cả đều xanh rồi!
+  - id: l11
+    speaker: B
+    text_en: Great. Can you try the internet on your laptop again?
+    text_vi: Tốt quá. Bạn thử vào mạng trên máy tính xách tay lại xem?
+  - id: l12
+    speaker: A
+    text_en: Yes, it works now. I can see the website.
+    text_vi: Được rồi, giờ thì chạy rồi. Tôi vào được trang web rồi.
+  - id: l13
+    speaker: B
+    text_en: Wonderful. If it happens again, please call us.
+    text_vi: Tuyệt vời. Nếu lại bị như vậy, bạn cứ gọi cho chúng tôi nhé.
+  - id: l14
+    speaker: A
+    text_en: I will. Thanks for your help!
+    text_vi: Tôi sẽ gọi. Cảm ơn anh đã giúp!
+
+focus_words: [connect, router, light, restart, button, press, hold, happen]
+
+senses:
+  be: linking
+  work: function
+  to: direction
+  about: approximately
+  about#1: topic # "sorry about that"
+  do: auxiliary
+  have: own
+  on: place
+  one: number
+  for: duration # "for five seconds"
+  for#2: reason # "Thanks for your help"
+  second: unit
+  call: phone
+
+ignore: [Kevin]
+
+dictation:
+  - segment: l2
+    before: Hi. My Wi-Fi isn’t working. My laptop can’t
+    answer: connect
+    after: to the internet.
+  - segment: l7
+    before: Let’s
+    answer: restart
+    after: the router.
+  - segment: l7
+    before: Let’s restart the router. There’s a small
+    answer: button
+    after: on the back.
+
+questions:
+  - prompt: When did the problem start?
+    options:
+      - About ten minutes ago
+      - About an hour ago
+      - Yesterday evening
+    correct: 1
+    feedback_ok: 'Đúng: “About an hour ago.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Kevin hỏi “When did the problem start?”.
+    evidence: l4
+  - prompt: How long should Minh hold the button?
+    options:
+      - For two seconds
+      - For five seconds
+      - For two minutes
+    correct: 1
+    feedback_ok: 'Đúng: “Please press it and hold it for five seconds.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Kevin nói về cái nút ở mặt sau. “Two minutes” là thời gian chờ sau đó.
+    evidence: l7
+  - prompt: How does Minh know the router is OK again?
+    options:
+      - All the lights are green.
+      - One light is red.
+      - All the lights are off.
+    correct: 0
+    feedback_ok: 'Đúng: “Now they’re all green!”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn sau khi Minh chờ hai phút.
+    evidence: l10

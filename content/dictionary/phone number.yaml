@@ -1,0 +1,14 @@
+lemma: phone number
+ipa_us: /ˈfoʊn ˌnʌmbər/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [phone numbers]
+senses:
+  - key: phone_number
+    pos: noun
+    vi: số điện thoại
+    en: the numbers you use to call someone’s phone
+    collocations: [my phone number, give someone your phone number]
+    example: Can you write your phone number on this paper?
+status: draft

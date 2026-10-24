@@ -1,0 +1,12 @@
+lemma: should
+ipa_us: /ʃʊd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: advice
+    pos: modal verb
+    vi: nên; (should I…? = tôi có nên…?)
+    en: used to give or ask for advice or a suggestion
+    collocations: [should I…?, you should…]
+    example: You should go to bed early tonight.
+status: draft

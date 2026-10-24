@@ -1,0 +1,12 @@
+lemma: ten
+ipa_us: /ten/
+cefr: A1
+oxford3000: true
+senses:
+  - key: ten
+    pos: number
+    vi: mười
+    en: the number 10
+    collocations: [ten minutes, at ten]
+    example: The shop opens at ten.
+status: draft

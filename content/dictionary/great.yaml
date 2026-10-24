@@ -1,0 +1,13 @@
+lemma: great
+ipa_us: /ɡreɪt/
+cefr: A1
+oxford3000: true
+forms: [greater, greatest]
+senses:
+  - key: very_good
+    pos: adjective
+    vi: 'tuyệt, rất tốt'
+    en: very good; used to say you are pleased
+    collocations: [a great idea, great news, "that's great"]
+    example: We had a great time at the beach.
+status: draft

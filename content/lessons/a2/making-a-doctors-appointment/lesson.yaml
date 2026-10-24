@@ -1,0 +1,132 @@
+# Listening lesson (day 5). Original dialogue, en-US voices A/B.
+# A = Minh, the patient (learner-like character). B = a receptionist at a clinic.
+kind: listening
+level: A2
+topic: health
+title: Making a Doctor’s Appointment
+order: 5
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Good morning, Riverside Clinic. How can I help you?
+    text_vi: Chào buổi sáng, phòng khám Riverside xin nghe. Tôi có thể giúp gì cho bạn?
+  - id: l2
+    speaker: A
+    text_en: Hi. I’d like to make an appointment with a doctor, please.
+    text_vi: Chào anh. Tôi muốn đặt lịch hẹn khám bác sĩ.
+  - id: l3
+    speaker: B
+    text_en: Sure. What’s the problem?
+    text_vi: Vâng. Bạn bị làm sao vậy?
+  - id: l4
+    speaker: A
+    text_en: I’ve had a bad cough and a sore throat since Monday.
+    text_vi: Tôi bị ho nặng và đau họng từ thứ Hai đến giờ.
+  - id: l5
+    speaker: B
+    text_en: Do you have a fever?
+    text_vi: Bạn có bị sốt không?
+  - id: l6
+    speaker: A
+    text_en: Yes, a little. And I feel very tired.
+    text_vi: Có, hơi sốt một chút. Và tôi thấy rất mệt.
+  - id: l7
+    speaker: B
+    text_en: OK. The doctor can see you tomorrow at 9:15 in the morning or at 2:40 in the afternoon.
+    text_vi: Vâng. Bác sĩ có thể khám cho bạn vào ngày mai, lúc 9 giờ 15 sáng hoặc 2 giờ 40 chiều.
+  - id: l8
+    speaker: A
+    text_en: I have to work in the morning, so 2:40 is better for me.
+    text_vi: Buổi sáng tôi phải đi làm, nên 2 giờ 40 thì tiện hơn cho tôi.
+  - id: l9
+    speaker: B
+    text_en: No problem. Can I get your name and date of birth?
+    text_vi: Không vấn đề gì. Cho tôi xin tên và ngày sinh của bạn?
+  - id: l10
+    speaker: A
+    text_en: Minh Tran. My date of birth is May 3rd, 1995.
+    text_vi: Trần Minh. Ngày sinh của tôi là 3 tháng 5 năm 1995.
+  - id: l11
+    speaker: B
+    text_en: Thank you. Is this your first visit to our clinic?
+    text_vi: Cảm ơn bạn. Đây có phải lần đầu bạn đến phòng khám của chúng tôi không?
+  - id: l12
+    speaker: A
+    text_en: Yes, it is.
+    text_vi: Vâng, đúng vậy.
+  - id: l13
+    speaker: B
+    text_en: Then please come fifteen minutes early, and bring your insurance card and a photo ID.
+    text_vi: Vậy bạn vui lòng đến sớm mười lăm phút, và mang theo thẻ bảo hiểm cùng một giấy tờ tùy thân có ảnh.
+  - id: l14
+    speaker: A
+    text_en: OK. Fifteen minutes early, with my insurance card and ID. Thank you!
+    text_vi: Vâng. Đến sớm mười lăm phút, mang thẻ bảo hiểm và giấy tờ tùy thân. Cảm ơn anh!
+  - id: l15
+    speaker: B
+    text_en: You’re welcome. Feel better soon!
+    text_vi: Không có gì. Chúc bạn mau khỏe!
+
+focus_words: [appointment, cough, sore throat, since, fever, date of birth, insurance, ID]
+
+senses:
+  to: infinitive
+  to#2: direction # "your first visit to our clinic"
+  make: create
+  have: illness # "I’ve had a bad cough", "Do you have a fever?"
+  do: auxiliary
+  a little: slightly
+  at: time
+  in: time
+  work: work
+  be: linking
+  for: opinion # "better for me"
+  get: obtain
+  first: first
+  visit: noun
+
+ignore: [Riverside, Minh, Tran, May]
+
+dictation:
+  - segment: l2
+    before: Hi. I’d like to make an
+    answer: appointment
+    after: with a doctor, please.
+  - segment: l5
+    before: Do you have a
+    answer: fever
+    after: '?'
+  - segment: l13
+    before: Then please come fifteen minutes early, and bring your
+    answer: insurance
+    after: card and a photo ID.
+
+questions:
+  - prompt: What is Minh’s problem?
+    options:
+      - A headache and a stomachache
+      - A cough and a sore throat
+      - A pain in the back
+    correct: 1
+    feedback_ok: 'Đúng: “I’ve had a bad cough and a sore throat since Monday.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh trả lời câu hỏi “What’s the problem?”.
+    evidence: l4
+  - prompt: When is Minh’s appointment?
+    options:
+      - Tomorrow at 9:15 a.m.
+      - Tomorrow at 2:40 p.m.
+      - Today at 2:40 p.m.
+    correct: 1
+    feedback_ok: 'Đúng: “I have to work in the morning, so 2:40 is better for me.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B đưa ra hai giờ khám và Minh chọn một giờ.
+    evidence: l8
+  - prompt: How early should Minh arrive?
+    options:
+      - 5 minutes early
+      - 15 minutes early
+      - 50 minutes early
+    correct: 1
+    feedback_ok: 'Đúng: “please come fifteen minutes early”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B dặn Minh mang theo giấy tờ, chú ý “fifteen”, không phải “fifty”.
+    evidence: l13

@@ -1,0 +1,13 @@
+lemma: exchange
+ipa_us: /ɪksˈtʃeɪndʒ/
+cefr: A2
+oxford3000: true
+forms: [exchanges, exchanged, exchanging]
+senses:
+  - key: swap
+    pos: verb
+    vi: đổi (món hàng này lấy món khác)
+    en: to give something back to a store and get a different thing
+    collocations: [exchange it for…, exchange a gift]
+    example: Can I exchange these shoes for a smaller size?
+status: draft

@@ -1,0 +1,13 @@
+lemma: move
+ipa_us: /muːv/
+cefr: A1
+oxford3000: true
+forms: [moves, moved, moving]
+senses:
+  - key: change_home
+    pos: verb
+    vi: 'chuyển (nhà, nơi ở)'
+    en: to go to live in a different place
+    collocations: [move to a new city, move here from…]
+    example: We moved to Da Nang last year.
+status: draft

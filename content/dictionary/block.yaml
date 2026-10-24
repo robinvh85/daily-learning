@@ -1,0 +1,13 @@
+lemma: block
+ipa_us: /blɑːk/
+cefr: A2
+oxford3000: true
+forms: [blocks]
+senses:
+  - key: street_block
+    pos: noun
+    vi: 'dãy nhà, khu nhà (khoảng giữa hai ngã tư)'
+    en: the distance along a street from one corner to the next
+    collocations: [two blocks, walk around the block]
+    example: The post office is three blocks from here.
+status: draft

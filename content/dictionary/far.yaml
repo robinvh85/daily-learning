@@ -1,0 +1,13 @@
+lemma: far
+ipa_us: /fɑːr/
+cefr: A1
+oxford3000: true
+forms: [farther, farthest]
+senses:
+  - key: distant
+    pos: adjective
+    vi: xa
+    en: a long distance away
+    collocations: [far from here, not far]
+    example: Is the airport far from the city?
+status: draft

@@ -2,6 +2,7 @@ lemma: second
 ipa_us: /ˈsekənd/
 cefr: A1
 oxford3000: true
+forms: [seconds]
 senses:
   - key: second
     pos: adjective
@@ -9,4 +10,10 @@ senses:
     en: coming after the first; another
     collocations: [a second bowl, the second day]
     example: This is my second visit to this city.
+  - key: unit
+    pos: noun
+    vi: giây (đơn vị thời gian)
+    en: a unit of time; there are 60 seconds in a minute
+    collocations: [five seconds, wait a second]
+    example: The light turns green in ten seconds.
 status: draft

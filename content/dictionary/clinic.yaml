@@ -1,0 +1,13 @@
+lemma: clinic
+ipa_us: /ˈklɪnɪk/
+cefr: B1
+oxford3000: false
+forms: [clinics]
+senses:
+  - key: clinic
+    pos: noun
+    vi: phòng khám
+    en: a place where people go to see a doctor
+    collocations: [a health clinic, go to the clinic]
+    example: There is a small clinic near my office.
+status: draft

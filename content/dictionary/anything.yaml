@@ -1,0 +1,12 @@
+lemma: anything
+ipa_us: /ˈeniθɪŋ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: anything
+    pos: pronoun
+    vi: bất cứ thứ gì; gì (trong câu hỏi)
+    en: used in questions and negative sentences for any thing
+    collocations: [anything else, anything to drink]
+    example: Do you need anything from the store?
+status: draft

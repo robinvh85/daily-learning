@@ -1,0 +1,14 @@
+lemma: go back
+ipa_us: /ˌɡoʊ ˈbæk/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [goes back, went back, going back, gone back]
+senses:
+  - key: return
+    pos: phrasal verb
+    vi: 'quay lại, trở về (nơi cũ)'
+    en: to return to a place or person
+    collocations: [go back home, go back to work]
+    example: 'After the holiday, we went back to Hanoi.'
+status: draft

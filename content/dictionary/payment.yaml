@@ -1,0 +1,13 @@
+lemma: payment
+ipa_us: /ˈpeɪmənt/
+cefr: A2
+oxford3000: true
+forms: [payments]
+senses:
+  - key: payment
+    pos: noun
+    vi: 'khoản thanh toán, lần thanh toán'
+    en: an amount of money that you pay
+    collocations: [make a payment, each payment]
+    example: You can make the payment online.
+status: draft

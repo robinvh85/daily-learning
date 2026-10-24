@@ -16,4 +16,10 @@ senses:
     en: '(of a shop or business) to start doing business for the first time'
     collocations: [open a shop, open a business]
     example: 'Last week, a small coffee shop opened on my street.'
+  - key: account
+    pos: verb
+    vi: mở (tài khoản)
+    en: 'to start an account, for example at a bank'
+    collocations: [open a bank account, open an account online]
+    example: You can open an account online in ten minutes.
 status: draft

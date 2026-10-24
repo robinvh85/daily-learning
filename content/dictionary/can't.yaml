@@ -1,0 +1,11 @@
+lemma: "can't"
+ipa_us: /kænt/
+cefr: A1
+oxford3000: false
+senses:
+  - key: cannot
+    pos: contraction
+    vi: không thể (viết tắt của cannot)
+    en: short form of “cannot”
+    example: I can’t find my keys.
+status: draft

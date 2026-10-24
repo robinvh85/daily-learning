@@ -1,0 +1,12 @@
+lemma: fifth
+ipa_us: /fɪfθ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: fifth
+    pos: number
+    vi: thứ năm (thứ tự)
+    en: coming after the fourth
+    collocations: [the fifth floor, the fifth day]
+    example: Our apartment is on the fifth floor.
+status: draft

@@ -1,0 +1,13 @@
+lemma: let
+ipa_us: /let/
+cefr: A1
+oxford3000: true
+forms: [lets, letting]
+senses:
+  - key: allow
+    pos: verb
+    vi: 'để, cho phép; (let me… = để tôi…)'
+    en: to allow someone to do something; “let me” = I will do something now
+    collocations: [let me check, let me see]
+    example: Let me help you with that box.
+status: draft

@@ -1,0 +1,12 @@
+lemma: over
+ipa_us: /ˈoʊvər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: more_than
+    pos: preposition
+    vi: 'trên, hơn (một số lượng)'
+    en: more than a number or amount
+    collocations: [over $20, over an hour]
+    example: There were over fifty people at the meeting.
+status: draft

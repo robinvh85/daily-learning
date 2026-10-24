@@ -1,0 +1,12 @@
+lemma: within
+ipa_us: /wɪˈðɪn/
+cefr: B1
+oxford3000: true
+senses:
+  - key: before_end
+    pos: preposition
+    vi: trong vòng (một khoảng thời gian)
+    en: before a period of time has finished
+    collocations: [within 30 days, within an hour]
+    example: We will answer your email within two days.
+status: draft

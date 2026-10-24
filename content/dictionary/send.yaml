@@ -1,0 +1,13 @@
+lemma: send
+ipa_us: /send/
+cefr: A1
+oxford3000: true
+forms: [sends, sent, sending]
+senses:
+  - key: send
+    pos: verb
+    vi: gửi
+    en: 'to make something go to someone, by mail, email, etc.'
+    collocations: [send an email, send someone something]
+    example: I’ll send you the photos tonight.
+status: draft

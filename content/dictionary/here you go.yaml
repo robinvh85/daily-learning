@@ -1,0 +1,14 @@
+lemma: here you go
+ipa_us: /ˈhɪr juː ˌɡoʊ/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [here you are]
+senses:
+  - key: here_you_go
+    pos: phrase
+    vi: 'của bạn đây, đây ạ (khi đưa cái gì cho ai)'
+    en: used when you give something to someone
+    collocations: ['sure, here you go']
+    example: '“Can I have the salt?” “Sure, here you go.”'
+status: draft

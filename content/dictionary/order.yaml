@@ -10,4 +10,10 @@ senses:
     en: to ask for food or drinks in a restaurant or café; to ask for goods to be sent to you
     collocations: [order a coffee, order food, order online]
     example: I order a hot coffee with milk.
+  - key: noun
+    pos: noun
+    vi: 'đơn hàng, phần (món ăn đã gọi)'
+    en: a request for food or goods; the food or goods that you ask for
+    collocations: [an order of fries, place an order, a big order]
+    example: Your order will be ready in ten minutes.
 status: draft

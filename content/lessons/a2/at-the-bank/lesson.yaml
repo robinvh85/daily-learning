@@ -1,0 +1,133 @@
+# Listening lesson (day 10). Original dialogue, en-US voices A/B.
+# A = Minh, a new customer (learner-like character). B = a bank worker.
+kind: listening
+level: A2
+topic: money
+title: At the Bank
+order: 10
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Good morning. How can I help you today?
+    text_vi: Chào buổi sáng. Hôm nay tôi có thể giúp gì cho bạn?
+  - id: l2
+    speaker: A
+    text_en: Hi. I’d like to open a bank account. I just moved here from Vietnam.
+    text_vi: Chào anh. Tôi muốn mở một tài khoản ngân hàng. Tôi vừa từ Việt Nam chuyển sang đây.
+  - id: l3
+    speaker: B
+    text_en: Welcome! Do you want a checking account or a savings account?
+    text_vi: Chào mừng bạn! Bạn muốn mở tài khoản thanh toán hay tài khoản tiết kiệm?
+  - id: l4
+    speaker: A
+    text_en: A checking account, please. I need it for my salary.
+    text_vi: Tài khoản thanh toán ạ. Tôi cần nó để nhận lương.
+  - id: l5
+    speaker: B
+    text_en: Sure. I need to see your passport and something with your address on it, like a bill.
+    text_vi: Vâng. Tôi cần xem hộ chiếu của bạn và một giấy tờ có ghi địa chỉ của bạn, chẳng hạn như một hóa đơn.
+  - id: l6
+    speaker: A
+    text_en: Here’s my passport, and this is my phone bill.
+    text_vi: Hộ chiếu của tôi đây, còn đây là hóa đơn điện thoại.
+  - id: l7
+    speaker: B
+    text_en: Great. Please fill out this form and sign at the bottom.
+    text_vi: Tốt. Bạn vui lòng điền vào mẫu đơn này và ký ở phía dưới.
+  - id: l8
+    speaker: A
+    text_en: OK. Is there a monthly fee for this account?
+    text_vi: Vâng. Tài khoản này có mất phí hằng tháng không?
+  - id: l9
+    speaker: B
+    text_en: It’s $10 a month, but it’s free if you keep at least $500 in the account.
+    text_vi: Phí là 10 đô mỗi tháng, nhưng sẽ miễn phí nếu bạn để ít nhất 500 đô trong tài khoản.
+  - id: l10
+    speaker: A
+    text_en: That’s good to know. When will I get my debit card?
+    text_vi: Biết vậy thì tốt quá. Khi nào tôi nhận được thẻ ghi nợ?
+  - id: l11
+    speaker: B
+    text_en: It usually arrives by mail in five to seven days.
+    text_vi: Thẻ thường được gửi qua đường bưu điện, mất khoảng năm đến bảy ngày.
+  - id: l12
+    speaker: A
+    text_en: Can I use it in other countries too?
+    text_vi: Tôi có dùng thẻ ở nước khác được không?
+  - id: l13
+    speaker: B
+    text_en: Yes, but there’s a 3% fee for each payment.
+    text_vi: Được, nhưng mỗi lần thanh toán sẽ mất phí 3%.
+  - id: l14
+    speaker: A
+    text_en: OK, thanks. Here’s the form. I signed it.
+    text_vi: Vâng, cảm ơn anh. Mẫu đơn đây ạ. Tôi ký rồi.
+  - id: l15
+    speaker: B
+    text_en: Thank you. Your account is ready now.
+    text_vi: Cảm ơn bạn. Tài khoản của bạn đã sẵn sàng rồi.
+
+focus_words: [checking account, fill out, form, sign, monthly, fee, at least, debit card]
+
+senses:
+  to: infinitive
+  to#4: range # "five to seven days"
+  open: account
+  do: auxiliary
+  for: purpose
+  on: place
+  like: similar
+  be: linking
+  at: place
+  keep: store
+  in: in
+  in#2: time # "in five to seven days"
+  get: obtain
+  by: means
+  too: also
+
+ignore: [Vietnam]
+
+dictation:
+  - segment: l7
+    before: Great. Please fill out this
+    answer: form
+    after: and sign at the bottom.
+  - segment: l8
+    before: OK. Is there a monthly
+    answer: fee
+    after: for this account?
+  - segment: l11
+    before: It usually arrives by
+    answer: mail
+    after: in five to seven days.
+
+questions:
+  - prompt: What kind of account does Minh open?
+    options:
+      - A savings account
+      - A checking account
+      - A business account
+    correct: 1
+    feedback_ok: 'Đúng: “A checking account, please. I need it for my salary.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B hỏi “checking account or a savings account?”.
+    evidence: l4
+  - prompt: How can Minh get the account for free?
+    options:
+      - By paying $10 every month
+      - By keeping at least $500 in the account
+      - By using the card in other countries
+    correct: 1
+    feedback_ok: 'Đúng: “it’s free if you keep at least $500 in the account.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi về “a monthly fee”.
+    evidence: l9
+  - prompt: When will the debit card arrive?
+    options:
+      - In one or two days
+      - In five to seven days
+      - In ten days
+    correct: 1
+    feedback_ok: 'Đúng: “It usually arrives by mail in five to seven days.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “When will I get my debit card?”.
+    evidence: l11

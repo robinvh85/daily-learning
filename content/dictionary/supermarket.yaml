@@ -1,0 +1,13 @@
+lemma: supermarket
+ipa_us: /ˈsuːpərˌmɑːrkɪt/
+cefr: A1
+oxford3000: true
+forms: [supermarkets]
+senses:
+  - key: supermarket
+    pos: noun
+    vi: siêu thị
+    en: a large store that sells food and things for the home
+    collocations: [go to the supermarket, a big supermarket]
+    example: I buy fruit at the supermarket every week.
+status: draft

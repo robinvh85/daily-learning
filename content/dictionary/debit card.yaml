@@ -1,0 +1,14 @@
+lemma: debit card
+ipa_us: /ˈdebɪt ˌkɑːrd/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [debit cards]
+senses:
+  - key: debit_card
+    pos: noun
+    vi: thẻ ghi nợ (trừ tiền thẳng từ tài khoản)
+    en: a bank card that takes money directly from your bank account when you pay
+    collocations: [pay with a debit card, a new debit card]
+    example: I paid for the groceries with my debit card.
+status: draft

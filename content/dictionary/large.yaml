@@ -1,0 +1,13 @@
+lemma: large
+ipa_us: /lɑːrdʒ/
+cefr: A1
+oxford3000: true
+forms: [larger, largest]
+senses:
+  - key: big
+    pos: adjective
+    vi: 'lớn, to; cỡ lớn (cỡ L)'
+    en: big in size; also used for a size of drinks or clothes
+    collocations: [a large coffee, in a large]
+    example: 'Can I have a large pizza, please?'
+status: draft

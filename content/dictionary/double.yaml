@@ -1,0 +1,12 @@
+lemma: double
+ipa_us: /ˈdʌbəl/
+cefr: A2
+oxford3000: true
+senses:
+  - key: for_two
+    pos: adjective
+    vi: đôi (dành cho hai người)
+    en: for two people
+    collocations: [a double room, a double bed]
+    example: We booked a double room with a sea view.
+status: draft

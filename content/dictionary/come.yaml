@@ -1,0 +1,13 @@
+lemma: come
+ipa_us: /kʌm/
+cefr: A1
+oxford3000: true
+forms: [comes, came, coming]
+senses:
+  - key: come
+    pos: verb
+    vi: 'đến, tới (chỗ người nói hoặc người nghe)'
+    en: to move to or toward the place where the speaker or listener is
+    collocations: [come here, come to my house, come early]
+    example: Can you come to my party on Saturday?
+status: draft

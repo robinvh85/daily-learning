@@ -1,0 +1,13 @@
+lemma: bank
+ipa_us: /bæŋk/
+cefr: A1
+oxford3000: true
+forms: [banks]
+senses:
+  - key: bank
+    pos: noun
+    vi: ngân hàng
+    en: a business that keeps money for people and lends money
+    collocations: [a bank account, go to the bank]
+    example: The bank closes at four on Fridays.
+status: draft

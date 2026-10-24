@@ -1,0 +1,12 @@
+lemma: today
+ipa_us: /təˈdeɪ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: today
+    pos: adverb
+    vi: hôm nay
+    en: on this day
+    collocations: [today is…, later today]
+    example: It’s very hot today.
+status: draft

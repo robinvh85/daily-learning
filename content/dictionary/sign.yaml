@@ -1,0 +1,13 @@
+lemma: sign
+ipa_us: /saɪn/
+cefr: A2
+oxford3000: true
+forms: [signs, signed, signing]
+senses:
+  - key: write_name
+    pos: verb
+    vi: ký (tên)
+    en: to write your name on a document in your own special way
+    collocations: [sign a form, sign here]
+    example: Please sign your name here.
+status: draft

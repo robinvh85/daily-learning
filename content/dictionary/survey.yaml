@@ -1,0 +1,13 @@
+lemma: survey
+ipa_us: /ˈsɜːrveɪ/
+cefr: B1
+oxford3000: true
+forms: [surveys]
+senses:
+  - key: survey
+    pos: noun
+    vi: cuộc khảo sát
+    en: a set of questions that you ask many people to learn what they think
+    collocations: [a customer survey, do a survey]
+    example: Please answer our short survey about the hotel.
+status: draft

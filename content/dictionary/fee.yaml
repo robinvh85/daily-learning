@@ -1,0 +1,13 @@
+lemma: fee
+ipa_us: /fiː/
+cefr: B1
+oxford3000: true
+forms: [fees]
+senses:
+  - key: charge
+    pos: noun
+    vi: 'phí, lệ phí'
+    en: an amount of money that you pay for a service
+    collocations: [a monthly fee, a small fee, pay a fee]
+    example: There’s a small fee for using the ATM.
+status: draft

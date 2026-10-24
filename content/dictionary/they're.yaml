@@ -1,0 +1,11 @@
+lemma: "they're"
+ipa_us: /ðer/
+cefr: A1
+oxford3000: false
+senses:
+  - key: they_are
+    pos: contraction
+    vi: 'họ là, họ đang…; chúng (viết tắt của they are)'
+    en: short form of “they are”
+    example: My parents are at home. They’re watching TV.
+status: draft

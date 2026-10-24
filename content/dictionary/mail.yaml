@@ -1,0 +1,12 @@
+lemma: mail
+ipa_us: /meɪl/
+cefr: A2
+oxford3000: true
+senses:
+  - key: post
+    pos: noun
+    vi: 'thư từ, đường bưu điện'
+    en: the system of sending letters and packages
+    collocations: [by mail, send something by mail]
+    example: I got a birthday card in the mail.
+status: draft

@@ -1,0 +1,13 @@
+lemma: tell
+ipa_us: /tel/
+cefr: A1
+oxford3000: true
+forms: [tells, told, telling]
+senses:
+  - key: tell
+    pos: verb
+    vi: 'nói cho biết, chỉ cho'
+    en: to give someone information by speaking
+    collocations: [tell me how to…, tell someone the way]
+    example: 'Can you tell me the time, please?'
+status: draft

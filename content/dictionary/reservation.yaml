@@ -1,0 +1,13 @@
+lemma: reservation
+ipa_us: /ˌrezərˈveɪʃən/
+cefr: A2
+oxford3000: true
+forms: [reservations]
+senses:
+  - key: booking
+    pos: noun
+    vi: 'sự đặt chỗ, đặt phòng, đặt bàn'
+    en: 'an arrangement to keep a room, table or seat for you'
+    collocations: [make a reservation, have a reservation]
+    example: I made a reservation for dinner at seven.
+status: draft

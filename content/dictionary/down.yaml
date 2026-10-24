@@ -1,0 +1,12 @@
+lemma: down
+ipa_us: /daʊn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: along
+    pos: preposition
+    vi: dọc theo (con đường)
+    en: along a road or street
+    collocations: [down the street, down the road]
+    example: There’s a good café down the road.
+status: draft

@@ -1,8 +1,5 @@
 # Learning path template: day N → title, reading and listening lesson (by slug).
 # Synced into the daily_plans_template table by `npm run content:sync`.
-# Days 2–10: the listening lessons are not written yet, and `content:sync` reports an unknown slug
-# as an error. Each day lists only its reading lesson for now; the planned listening slug is in the
-# comment. Add `listening: <slug>` once that lesson exists.
 days:
   - day: 1
     title: Cuộc sống quanh khu phố
@@ -11,36 +8,36 @@ days:
   - day: 2
     title: Công việc mới
     reading: my-first-week-at-a-new-job
-    # listening: introducing-yourself-at-work
+    listening: introducing-yourself-at-work
   - day: 3
     title: Ăn uống
     reading: cooking-dinner-at-home
-    # listening: ordering-food-by-phone
+    listening: ordering-food-by-phone
   - day: 4
     title: Mua sắm
     reading: shopping-for-clothes-online
-    # listening: returning-a-shirt
+    listening: returning-a-shirt
   - day: 5
     title: Sức khỏe
     reading: small-habits-for-better-sleep
-    # listening: making-a-doctors-appointment
+    listening: making-a-doctors-appointment
   - day: 6
     title: Du lịch
     reading: a-weekend-in-da-lat
-    # listening: checking-in-at-a-hotel
+    listening: checking-in-at-a-hotel
   - day: 7
     title: Giao tiếp ở công ty
     reading: an-email-to-a-new-colleague
-    # listening: a-short-team-meeting
+    listening: a-short-team-meeting
   - day: 8
     title: Cuối tuần
     reading: weekend-plans
-    # listening: asking-for-directions
+    listening: asking-for-directions
   - day: 9
     title: Công nghệ
     reading: my-phone-and-me
-    # listening: fixing-the-wi-fi
+    listening: fixing-the-wi-fi
   - day: 10
     title: Tiền bạc
     reading: saving-money-each-month
-    # listening: at-the-bank
+    listening: at-the-bank

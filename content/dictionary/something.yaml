@@ -1,0 +1,12 @@
+lemma: something
+ipa_us: /ˈsʌmθɪŋ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: something
+    pos: pronoun
+    vi: 'cái gì đó, thứ gì đó'
+    en: a thing that you do not name exactly
+    collocations: [something to eat, something with your address]
+    example: I want to buy something for my mom’s birthday.
+status: draft

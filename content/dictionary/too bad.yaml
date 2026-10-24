@@ -1,0 +1,13 @@
+lemma: too bad
+ipa_us: /ˌtuː ˈbæd/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: shame
+    pos: phrase
+    vi: 'tiếc quá, tiếc thật'
+    en: used to say you are sorry about a situation
+    collocations: ["that's too bad", 'too bad!']
+    example: '“The concert is canceled.” “Oh, that’s too bad.”'
+status: draft

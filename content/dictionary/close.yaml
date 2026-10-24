@@ -1,0 +1,13 @@
+lemma: close
+ipa_us: /kloʊz/
+cefr: A1
+oxford3000: true
+forms: [closes, closed, closing]
+senses:
+  - key: stop_open
+    pos: verb
+    vi: 'đóng cửa (cửa hàng, bảo tàng…); đóng'
+    en: to stop being open for people to use
+    collocations: [close at…, close early]
+    example: The bank closes at five today.
+status: draft

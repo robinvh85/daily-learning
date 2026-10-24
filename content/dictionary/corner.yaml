@@ -1,0 +1,13 @@
+lemma: corner
+ipa_us: /ˈkɔːrnər/
+cefr: A2
+oxford3000: true
+forms: [corners]
+senses:
+  - key: street_corner
+    pos: noun
+    vi: 'góc đường, góc phố'
+    en: the place where two streets meet
+    collocations: [on the corner, at the corner of…]
+    example: There’s a bakery on the corner of my street.
+status: draft

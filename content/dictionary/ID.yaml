@@ -1,0 +1,13 @@
+lemma: ID
+ipa_us: /ˌaɪˈdiː/
+cefr: A2
+oxford3000: false
+forms: [IDs]
+senses:
+  - key: identity_card
+    pos: noun
+    vi: 'giấy tờ tùy thân (CCCD, hộ chiếu, bằng lái…)'
+    en: 'an official document that shows who you are, often with your photo'
+    collocations: [a photo ID, show your ID]
+    example: You need an ID to get on the plane.
+status: draft

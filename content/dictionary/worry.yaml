@@ -1,0 +1,13 @@
+lemma: worry
+ipa_us: /ˈwɜːri/
+cefr: A2
+oxford3000: true
+forms: [worries, worried, worrying]
+senses:
+  - key: worry
+    pos: verb
+    vi: 'lo, lo lắng'
+    en: to keep thinking about problems or bad things that might happen
+    collocations: ["don't worry", worry about something]
+    example: Don’t worry about the test. You studied a lot.
+status: draft

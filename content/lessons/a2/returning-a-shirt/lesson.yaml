@@ -1,0 +1,138 @@
+# Listening lesson (day 4). Original dialogue, en-US voices A/B.
+# A = the customer (learner-like character). B = a sales assistant in a clothing store.
+kind: listening
+level: A2
+topic: shopping
+title: Returning a Shirt
+order: 4
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Hi there. How can I help you today?
+    text_vi: Chào bạn. Hôm nay tôi có thể giúp gì cho bạn?
+  - id: l2
+    speaker: A
+    text_en: Hi. I bought this shirt here a week ago, but it’s too small.
+    text_vi: Chào anh. Tôi mua chiếc áo sơ mi này ở đây cách đây một tuần, nhưng nó chật quá.
+  - id: l3
+    speaker: B
+    text_en: I’m sorry to hear that. Do you have the receipt?
+    text_vi: Tiếc quá. Bạn có mang hóa đơn không?
+  - id: l4
+    speaker: A
+    text_en: Yes, here it is. I paid $35 for it.
+    text_vi: Có, đây ạ. Tôi mua nó giá 35 đô.
+  - id: l5
+    speaker: B
+    text_en: Thank you. Would you like to exchange it for a bigger size?
+    text_vi: Cảm ơn bạn. Bạn có muốn đổi sang cỡ lớn hơn không?
+  - id: l6
+    speaker: A
+    text_en: Maybe. Do you have it in a large?
+    text_vi: Có lẽ vậy. Mẫu này còn cỡ L không anh?
+  - id: l7
+    speaker: B
+    text_en: Let me check. Sorry, we only have it in small and medium right now.
+    text_vi: Để tôi kiểm tra. Xin lỗi, hiện giờ chúng tôi chỉ còn cỡ S và M thôi.
+  - id: l8
+    speaker: A
+    text_en: Oh, that’s too bad. Can I get a refund, then?
+    text_vi: Ôi, tiếc thật. Vậy tôi có thể lấy lại tiền không?
+  - id: l9
+    speaker: B
+    text_en: Sure. You can return things within 30 days, so that’s no problem.
+    text_vi: Được chứ. Bạn có thể trả hàng trong vòng 30 ngày, nên không có vấn đề gì.
+  - id: l10
+    speaker: A
+    text_en: Great. Will the money go back to my credit card?
+    text_vi: Tốt quá. Tiền sẽ được trả lại vào thẻ tín dụng của tôi phải không?
+  - id: l11
+    speaker: B
+    text_en: Yes. It usually takes three to five days.
+    text_vi: Vâng. Thường mất từ ba đến năm ngày.
+  - id: l12
+    speaker: A
+    text_en: OK. Can I look for a different shirt in a large?
+    text_vi: Được. Tôi có thể tìm một chiếc áo khác cỡ L không?
+  - id: l13
+    speaker: B
+    text_en: Of course. The new shirts are near the door, next to the jackets.
+    text_vi: Tất nhiên rồi. Áo sơ mi mới ở gần cửa, cạnh chỗ áo khoác.
+  - id: l14
+    speaker: A
+    text_en: Thanks for your help!
+    text_vi: Cảm ơn anh đã giúp!
+
+focus_words: [ago, receipt, exchange, medium, refund, return, within, credit card]
+
+senses:
+  too: too
+  to: infinitive
+  to#3: direction # "go back to my credit card"
+  to#4: range # "three to five days"
+  do: auxiliary
+  have: own
+  be: linking
+  be#2: location # "The new shirts are near the door"
+  for: purpose
+  for#1: price # "I paid $35 for it"
+  for#3: reason # "Thanks for your help"
+  like: would_like
+  in: in
+  get: obtain
+  take: time
+
+ignore: []
+
+dictation:
+  - segment: l3
+    before: I’m sorry to hear that. Do you have the
+    answer: receipt
+    after: '?'
+  - segment: l5
+    before: Thank you. Would you like to
+    answer: exchange
+    after: it for a bigger size?
+  - segment: l8
+    before: Oh, that’s too bad. Can I get a
+    answer: refund
+    after: ', then?'
+
+questions:
+  - prompt: What is the problem with the shirt?
+    options:
+      - It’s too small.
+      - It’s the wrong color.
+      - It’s too expensive.
+    correct: 0
+    feedback_ok: 'Đúng: “I bought this shirt here a week ago, but it’s too small.”'
+    feedback_wrong: Chưa đúng. Nghe lại câu đầu tiên của khách hàng.
+    evidence: l2
+  - prompt: How much did the customer pay for the shirt?
+    options:
+      - $25
+      - $35
+      - $53
+    correct: 1
+    feedback_ok: 'Đúng: “I paid $35 for it.” (thirty-five)'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn khách đưa hóa đơn, chú ý con số.
+    evidence: l4
+  - prompt: Why does the customer ask for a refund?
+    options:
+      - The store doesn’t have the shirt in a large.
+      - The customer lost the receipt.
+      - The shirt is broken.
+    correct: 0
+    feedback_ok: 'Đúng: “we only have it in small and medium right now.” Cửa hàng không còn cỡ L.'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn B kiểm tra xem còn cỡ L không.
+    evidence: l7
+  - prompt: When will the money be back on the credit card?
+    options:
+      - The same day
+      - In three to five days
+      - In 30 days
+    correct: 1
+    feedback_ok: 'Đúng: “It usually takes three to five days.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn khách hỏi về thẻ tín dụng. “30 days” là thời hạn trả hàng.
+    evidence: l11

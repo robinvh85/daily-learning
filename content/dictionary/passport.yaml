@@ -1,0 +1,13 @@
+lemma: passport
+ipa_us: /ˈpæspɔːrt/
+cefr: A1
+oxford3000: true
+forms: [passports]
+senses:
+  - key: passport
+    pos: noun
+    vi: hộ chiếu
+    en: an official book that shows who you are and lets you travel to other countries
+    collocations: [show your passport, a passport photo]
+    example: Don’t forget your passport when you go to the airport.
+status: draft

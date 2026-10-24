@@ -1,0 +1,13 @@
+lemma: look
+ipa_us: /lʊk/
+cefr: A1
+oxford3000: true
+forms: [looks, looked, looking]
+senses:
+  - key: look
+    pos: verb
+    vi: 'nhìn, xem'
+    en: to turn your eyes toward something to see it
+    collocations: [let me look, look here]
+    example: 'Look! It’s snowing.'
+status: draft

@@ -1,0 +1,14 @@
+lemma: front desk
+ipa_us: /ˌfrʌnt ˈdesk/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [front desks]
+senses:
+  - key: front_desk
+    pos: noun
+    vi: quầy lễ tân
+    en: the place in a hotel or office where people go when they arrive
+    collocations: [call the front desk, at the front desk]
+    example: Please leave the keys at the front desk.
+status: draft

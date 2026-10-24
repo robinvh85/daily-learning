@@ -1,0 +1,13 @@
+lemma: thank you
+ipa_us: /ˈθæŋk juː/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: thanks
+    pos: exclamation
+    vi: cảm ơn (bạn)
+    en: used to tell someone that you are grateful for something
+    collocations: [thank you so much, thank you very much, thank you for…]
+    example: 'Thank you for the flowers!'
+status: draft

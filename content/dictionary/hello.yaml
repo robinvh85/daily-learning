@@ -1,0 +1,12 @@
+lemma: hello
+ipa_us: /həˈloʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: hello
+    pos: exclamation
+    vi: xin chào; a lô (khi nghe điện thoại)
+    en: used to greet someone or when you answer the phone
+    collocations: [say hello]
+    example: 'Hello, this is Nam. Can I speak to Lan?'
+status: draft

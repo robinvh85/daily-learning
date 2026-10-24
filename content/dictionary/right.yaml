@@ -9,4 +9,10 @@ senses:
     en: correct, or the most suitable
     collocations: [the right size, the right answer, the right time]
     example: Is this the right bus for the airport?
+  - key: direction
+    pos: noun
+    vi: bên phải
+    en: the side of your body that is toward the east when you face north; the right side
+    collocations: [on your right, turn right]
+    example: 'The bank is on your right, next to the hotel.'
 status: draft

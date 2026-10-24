@@ -1,0 +1,14 @@
+lemma: turn left
+ipa_us: /ˌtɜːrn ˈleft/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [turns left, turned left, turning left]
+senses:
+  - key: turn_left
+    pos: phrase
+    vi: rẽ trái
+    en: to change direction and go to the left
+    collocations: [turn left at the corner, turn left here]
+    example: 'Turn left after the bank, and you’ll see the school.'
+status: draft

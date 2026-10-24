@@ -1,0 +1,12 @@
+lemma: straight
+ipa_us: /streɪt/
+cefr: A2
+oxford3000: true
+senses:
+  - key: direct
+    pos: adverb
+    vi: thẳng (đi thẳng)
+    en: 'in a line, without turning'
+    collocations: [go straight, go straight ahead]
+    example: Go straight and the bank is on your left.
+status: draft

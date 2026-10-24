@@ -16,4 +16,10 @@ senses:
     en: used in “be going to” to talk about plans or things that will happen
     collocations: [be going to do something]
     example: It’s going to be hot tomorrow.
+  - key: progress
+    pos: verb
+    vi: 'diễn ra, tiến triển (how is… going? = … thế nào rồi?)'
+    en: to happen or develop in a particular way
+    collocations: [how is it going?, go well]
+    example: How is your new job going?
 status: draft

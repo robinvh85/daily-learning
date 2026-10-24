@@ -1,0 +1,12 @@
+lemma: medium
+ipa_us: /ˈmiːdiəm/
+cefr: A2
+oxford3000: true
+senses:
+  - key: size
+    pos: adjective
+    vi: 'cỡ vừa, cỡ trung bình (cỡ M)'
+    en: not big and not small; a middle size of clothes or drinks
+    collocations: [medium size, a medium coffee]
+    example: I usually wear a medium.
+status: draft

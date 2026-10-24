@@ -1,0 +1,13 @@
+lemma: form
+ipa_us: /fɔːrm/
+cefr: A2
+oxford3000: true
+forms: [forms]
+senses:
+  - key: document
+    pos: noun
+    vi: 'mẫu đơn, tờ khai'
+    en: a paper with questions and spaces where you write information
+    collocations: [fill out a form, sign a form]
+    example: You need to fill out a form to join the gym.
+status: draft

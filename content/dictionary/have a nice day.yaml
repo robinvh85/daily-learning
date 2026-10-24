@@ -1,0 +1,13 @@
+lemma: have a nice day
+ipa_us: /ˌhæv ə ˌnaɪs ˈdeɪ/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: goodbye
+    pos: phrase
+    vi: chúc một ngày tốt lành
+    en: a friendly thing to say when you say goodbye
+    collocations: ['you too, have a nice day']
+    example: 'Thanks for shopping with us. Have a nice day!'
+status: draft

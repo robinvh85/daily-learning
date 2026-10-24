@@ -114,6 +114,9 @@ describe('syncContent', () => {
   it('keeps ids stable and removes deleted rows when content changes', () => {
     syncContent({ contentDir: join(tmp, 'content'), db });
     const runId = db.$client.prepare(`select id from words where lemma = 'run'`).get();
+    const dictation = db.$client.prepare('select count(*) n from dictation_items').get() as {
+      n: number;
+    };
     rmSync(join(tmp, 'content/lessons/a2/at-the-train-station'), { recursive: true });
     writeFileSync(
       join(tmp, 'content/daily-plan.yaml'),
@@ -127,24 +130,27 @@ describe('syncContent', () => {
     );
     expect(slugs).toContain('a-new-coffee-shop');
     expect(slugs).not.toContain('at-the-train-station');
-    expect(db.$client.prepare('select count(*) n from dictation_items').get()).toEqual({ n: 0 });
+    // at-the-train-station had 3 dictation items; the other listening lessons keep theirs.
+    expect(db.$client.prepare('select count(*) n from dictation_items').get()).toEqual({
+      n: dictation.n - 3,
+    });
   });
 
   it('refuses to delete a dictionary entry that a user saved', () => {
     syncContent({ contentDir: join(tmp, 'content'), db });
     const lessonCount = db.$client.prepare('select count(*) n from lessons').get();
     db.$client.exec(`insert into users (id) values (1);
-      insert into user_words (user_id, word_id) select 1, id from words where lemma = 'oh'`);
+      insert into user_words (user_id, word_id) select 1, id from words where lemma = 'platform'`);
     rmSync(join(tmp, 'content/lessons/a2/at-the-train-station'), { recursive: true });
     writeFileSync(
       join(tmp, 'content/daily-plan.yaml'),
       'days:\n  - day: 1\n    reading: a-new-coffee-shop\n',
     );
-    rmSync(join(tmp, 'content/dictionary/oh.yaml'));
+    rmSync(join(tmp, 'content/dictionary/platform.yaml'));
     const r = syncContent({ contentDir: join(tmp, 'content'), db });
     expect(r.ok).toBe(false);
     expect(r.issues.at(-1)?.message).toMatch(
-      /cannot remove dictionary entries that a user has saved: oh/,
+      /cannot remove dictionary entries that a user has saved: platform/,
     );
     // The transaction was rolled back.
     expect(db.$client.prepare('select count(*) n from lessons').get()).toEqual(lessonCount);

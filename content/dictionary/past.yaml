@@ -1,0 +1,12 @@
+lemma: past
+ipa_us: /pæst/
+cefr: A2
+oxford3000: true
+senses:
+  - key: by
+    pos: preposition
+    vi: 'đi qua, đi ngang qua'
+    en: from one side of something to the other side; going by it
+    collocations: [walk past, go past the bank]
+    example: Walk past the school and turn right.
+status: draft

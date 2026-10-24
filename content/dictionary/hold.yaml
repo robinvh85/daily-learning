@@ -1,0 +1,13 @@
+lemma: hold
+ipa_us: /hoʊld/
+cefr: A1
+oxford3000: true
+forms: [holds, held, holding]
+senses:
+  - key: keep_pressing
+    pos: verb
+    vi: giữ (không buông ra)
+    en: 'to keep something in a position, for example keep a button pressed'
+    collocations: [hold it for five seconds, press and hold]
+    example: Hold the button until the light turns blue.
+status: draft

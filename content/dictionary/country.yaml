@@ -1,0 +1,13 @@
+lemma: country
+ipa_us: /ˈkʌntri/
+cefr: A1
+oxford3000: true
+forms: [countries]
+senses:
+  - key: nation
+    pos: noun
+    vi: 'đất nước, quốc gia'
+    en: an area of land with its own government
+    collocations: [other countries, a foreign country]
+    example: How many countries have you visited?
+status: draft

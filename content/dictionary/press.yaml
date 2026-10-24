@@ -1,0 +1,13 @@
+lemma: press
+ipa_us: /pres/
+cefr: A2
+oxford3000: true
+forms: [presses, pressed, pressing]
+senses:
+  - key: push
+    pos: verb
+    vi: 'nhấn, ấn'
+    en: to push something with your finger
+    collocations: [press a button, press and hold]
+    example: Press this key to turn off the screen.
+status: draft

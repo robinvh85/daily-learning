@@ -1,0 +1,12 @@
+lemma: checkout
+ipa_us: /ˈtʃekaʊt/
+cefr: B1
+oxford3000: false
+senses:
+  - key: leave_hotel
+    pos: noun
+    vi: 'việc trả phòng, giờ trả phòng (khách sạn)'
+    en: the time when you must leave your hotel room
+    collocations: [checkout time, late checkout]
+    example: 'Checkout is at noon, so we have time for breakfast.'
+status: draft

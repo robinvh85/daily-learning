@@ -1,0 +1,11 @@
+lemma: "that's"
+ipa_us: /ðæts/
+cefr: A1
+oxford3000: false
+senses:
+  - key: that_is
+    pos: contraction
+    vi: 'đó là, vậy là (viết tắt của that is)'
+    en: short form of “that is”
+    example: That’s a good idea.
+status: draft

@@ -72,6 +72,8 @@ focus_words:
   [on the way home, healthy, decide, shopping list, fresh, recipe, dish, taste, leftovers]
 
 senses:
+  too: too
+  second: second
   first: adverb
   work: job # "finish work"
   be: linking

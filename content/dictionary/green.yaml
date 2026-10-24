@@ -1,0 +1,12 @@
+lemma: green
+ipa_us: /ɡriːn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: green
+    pos: adjective
+    vi: xanh lá cây
+    en: having the color of grass
+    collocations: [a green light, green tea]
+    example: The trees are very green after the rain.
+status: draft

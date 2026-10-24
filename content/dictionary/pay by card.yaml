@@ -1,0 +1,14 @@
+lemma: pay by card
+ipa_us: /ˈpeɪ baɪ ˈkɑːrd/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [pays by card, paid by card, paying by card]
+senses:
+  - key: pay_by_card
+    pos: phrase
+    vi: 'trả bằng thẻ, quẹt thẻ'
+    en: 'to pay with a bank card, not with cash'
+    collocations: [can I pay by card?]
+    example: Most shops in the city let you pay by card.
+status: draft

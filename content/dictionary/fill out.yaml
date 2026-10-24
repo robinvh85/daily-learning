@@ -1,0 +1,14 @@
+lemma: fill out
+ipa_us: /ˌfɪl ˈaʊt/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [fills out, filled out, filling out]
+senses:
+  - key: complete
+    pos: phrasal verb
+    vi: 'điền vào (mẫu đơn, phiếu)'
+    en: to write the information that is needed on a form
+    collocations: [fill out a form, fill out this card]
+    example: Please fill out this card before you see the doctor.
+status: draft

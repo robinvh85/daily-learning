@@ -1,0 +1,12 @@
+lemma: actually
+ipa_us: /ˈæktʃuəli/
+cefr: A2
+oxford3000: true
+senses:
+  - key: in_fact
+    pos: adverb
+    vi: 'thật ra, thực ra'
+    en: 'used to say what is true, often something a little surprising'
+    collocations: ['yes, actually']
+    example: 'I thought he was American, but actually he’s from Canada.'
+status: draft

@@ -1,0 +1,13 @@
+lemma: foot
+ipa_us: /fʊt/
+cefr: A1
+oxford3000: true
+forms: [feet]
+senses:
+  - key: body_part
+    pos: noun
+    vi: 'bàn chân (số nhiều: feet)'
+    en: the part of your body at the end of your leg that you stand on
+    collocations: [my feet hurt, tired feet]
+    example: My feet hurt after the long walk.
+status: draft

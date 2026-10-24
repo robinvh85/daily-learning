@@ -1,0 +1,13 @@
+lemma: flight
+ipa_us: /flaɪt/
+cefr: A1
+oxford3000: true
+forms: [flights]
+senses:
+  - key: flight
+    pos: noun
+    vi: chuyến bay
+    en: a trip in a plane
+    collocations: [a morning flight, an early flight]
+    example: Our flight to Hanoi takes two hours.
+status: draft

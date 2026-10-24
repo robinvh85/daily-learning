@@ -1,0 +1,11 @@
+lemma: "we'll"
+ipa_us: /wiːl/
+cefr: A1
+oxford3000: false
+senses:
+  - key: we_will
+    pos: contraction
+    vi: 'chúng tôi sẽ, chúng ta sẽ (viết tắt của we will)'
+    en: short form of “we will”
+    example: We’ll send you an email tomorrow.
+status: draft

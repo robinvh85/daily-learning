@@ -1,0 +1,12 @@
+lemma: people
+ipa_us: /ˈpiːpəl/
+cefr: A1
+oxford3000: true
+senses:
+  - key: people
+    pos: noun
+    vi: 'người ta, mọi người'
+    en: more than one person
+    collocations: [many people, young people]
+    example: A lot of people came to the party.
+status: draft

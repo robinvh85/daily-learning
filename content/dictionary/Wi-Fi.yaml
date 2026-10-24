@@ -1,0 +1,12 @@
+lemma: Wi-Fi
+ipa_us: /ˈwaɪ faɪ/
+cefr: A2
+oxford3000: false
+senses:
+  - key: wifi
+    pos: noun
+    vi: 'Wi-Fi, mạng không dây'
+    en: a way of connecting to the internet without wires
+    collocations: [free Wi-Fi, the Wi-Fi password]
+    example: The café has fast Wi-Fi.
+status: draft

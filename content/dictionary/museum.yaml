@@ -1,0 +1,13 @@
+lemma: museum
+ipa_us: /mjuˈziːəm/
+cefr: A1
+oxford3000: true
+forms: [museums]
+senses:
+  - key: museum
+    pos: noun
+    vi: bảo tàng
+    en: 'a building where people can see old, interesting or beautiful things'
+    collocations: [an art museum, visit a museum]
+    example: The history museum is free on Sundays.
+status: draft

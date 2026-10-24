@@ -1,0 +1,12 @@
+lemma: would
+ipa_us: /wʊd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: polite
+    pos: modal verb
+    vi: sẽ; (would you like…? = bạn có muốn…?)
+    en: used to ask or offer something politely
+    collocations: [would you like…?, what would you like?]
+    example: Would you like some more tea?
+status: draft

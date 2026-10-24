@@ -1,0 +1,13 @@
+lemma: nice to meet you
+ipa_us: /ˈnaɪs tə ˈmiːt juː/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: greeting
+    pos: phrase
+    vi: rất vui được gặp bạn
+    en: a polite thing to say when you meet someone for the first time
+    collocations: [nice to meet you too]
+    example: '“This is my sister, Hoa.” “Nice to meet you, Hoa.”'
+status: draft

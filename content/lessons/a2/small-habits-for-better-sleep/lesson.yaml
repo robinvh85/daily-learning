@@ -71,6 +71,7 @@ segments:
 focus_words: [habit, wake up, focus, advice, difference, instead, at first, fall asleep, energy]
 
 senses:
+  second: second
   for: duration # "For a long time"
   for#2: purpose # "go for a short walk"
   time: time

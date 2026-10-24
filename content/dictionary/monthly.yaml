@@ -1,0 +1,12 @@
+lemma: monthly
+ipa_us: /ˈmʌnθli/
+cefr: B1
+oxford3000: false
+senses:
+  - key: every_month
+    pos: adjective
+    vi: hằng tháng
+    en: happening or paid once a month
+    collocations: [a monthly fee, a monthly report]
+    example: Our monthly rent is $800.
+status: draft

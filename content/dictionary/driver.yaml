@@ -1,0 +1,13 @@
+lemma: driver
+ipa_us: /ˈdraɪvər/
+cefr: A1
+oxford3000: true
+forms: [drivers]
+senses:
+  - key: driver
+    pos: noun
+    vi: 'tài xế, người lái xe'
+    en: 'a person who drives a car, bus, etc., often as a job'
+    collocations: [a bus driver, a delivery driver, the taxi driver]
+    example: The taxi driver helped me with my bags.
+status: draft

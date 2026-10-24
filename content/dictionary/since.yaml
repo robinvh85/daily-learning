@@ -1,0 +1,12 @@
+lemma: since
+ipa_us: /sɪns/
+cefr: A2
+oxford3000: true
+senses:
+  - key: from_time
+    pos: preposition
+    vi: từ (một thời điểm trong quá khứ) đến nay
+    en: from a time in the past until now
+    collocations: [since Monday, since last year]
+    example: I’ve lived here since 2020.
+status: draft
