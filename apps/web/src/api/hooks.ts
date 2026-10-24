@@ -2,6 +2,7 @@
 import type {
   AnswerBody,
   AnswerResponse,
+  DashboardResponse,
   DueReviewsResponse,
   LessonDetailResponse,
   LessonListQuery,
@@ -15,6 +16,7 @@ import type {
   SavedWordResponse,
   SavedWordsResponse,
   SaveWordBody,
+  TodayResponse,
   VocabListQuery,
   VocabListResponse,
   VocabStatsResponse,
@@ -31,12 +33,15 @@ export const queryKeys = {
     ['vocab', 'list', q.source ?? 'all', q.status ?? 'all'] as const,
   vocabStats: ['vocab', 'stats'] as const,
   dueReviews: ['reviews', 'due'] as const,
+  today: ['home', 'today'] as const,
+  dashboard: ['home', 'dashboard'] as const,
 };
 
 /** After saving, removing or reviewing a word: word book, stats (Sidebar badge) and queue. */
 function invalidateVocab(qc: ReturnType<typeof useQueryClient>) {
   void qc.invalidateQueries({ queryKey: ['vocab'] });
   void qc.invalidateQueries({ queryKey: ['reviews'] });
+  void qc.invalidateQueries({ queryKey: ['home'] });
 }
 
 export function useMe() {
@@ -72,6 +77,7 @@ export function useLessons(q: LessonListQuery = {}) {
   const search = new URLSearchParams();
   if (q.kind) search.set('kind', q.kind);
   if (q.level) search.set('level', q.level);
+  if (q.topic) search.set('topic', q.topic);
   const params = search.toString();
   return useQuery({
     queryKey: queryKeys.lessons(q),
@@ -106,6 +112,7 @@ export function useUpdateProgress(slug: string) {
       }),
     onSuccess: () => {
       void qc.invalidateQueries({ queryKey: ['lessons'] });
+      void qc.invalidateQueries({ queryKey: ['home'] });
     },
   });
 }
@@ -203,5 +210,21 @@ export function useSubmitReview() {
       );
     },
     onSettled: () => invalidateVocab(qc),
+  });
+}
+
+/** Today's lesson: plan day, 3 steps and where to continue. */
+export function useToday() {
+  return useQuery({
+    queryKey: queryKeys.today,
+    queryFn: ({ signal }) => api<TodayResponse>('/today', { signal }),
+  });
+}
+
+/** Streak, path progress, words and this week's study time. */
+export function useDashboard() {
+  return useQuery({
+    queryKey: queryKeys.dashboard,
+    queryFn: ({ signal }) => api<DashboardResponse>('/dashboard', { signal }),
   });
 }

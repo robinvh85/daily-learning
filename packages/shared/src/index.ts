@@ -1,5 +1,6 @@
 export * from './constants.js';
 export * from './srs.js';
+export * from './lesson-time.js';
 
 /** Prefix for every REST endpoint (plan section 5). */
 export const API_PREFIX = '/api';

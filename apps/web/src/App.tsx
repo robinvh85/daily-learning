@@ -1,7 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useLogout, useMe, useVocabStats } from './api/hooks';
 import { Layout } from './components/Layout/Layout';
-import { HomePage, LessonListPage } from './pages/Home/HomePage';
+import { useStudyTimer } from './hooks/useStudyTimer';
+import { HomePage } from './pages/Home/HomePage';
+import { LibraryPage } from './pages/Library/LibraryPage';
 import { ListeningPage } from './pages/Listening/ListeningPage';
 import { LoginPage } from './pages/Login/LoginPage';
 import { PlaceholderPage } from './pages/Placeholder/PlaceholderPage';
@@ -11,7 +13,10 @@ import { VocabPage } from './pages/Vocab/VocabPage';
 export function App() {
   const me = useMe();
   const logout = useLogout();
-  const stats = useVocabStats(Boolean(me.data?.user));
+  const loggedIn = Boolean(me.data?.user);
+  const stats = useVocabStats(loggedIn);
+  // Study time for the streak and the week chart (only while logged in).
+  useStudyTimer(loggedIn);
 
   if (me.isPending) {
     return (
@@ -36,9 +41,9 @@ export function App() {
     >
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/read" element={<LessonListPage kind="reading" />} />
+        <Route path="/read" element={<LibraryPage kind="reading" />} />
         <Route path="/read/:slug" element={<ReadingPage />} />
-        <Route path="/listen" element={<LessonListPage kind="listening" />} />
+        <Route path="/listen" element={<LibraryPage kind="listening" />} />
         <Route path="/listen/:slug" element={<ListeningPage />} />
         <Route path="/vocab" element={<VocabPage />} />
         <Route path="/login" element={<Navigate to="/" replace />} />

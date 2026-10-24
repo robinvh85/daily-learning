@@ -71,6 +71,7 @@ export interface MeResponse {
 export const lessonListQuerySchema = z.strictObject({
   kind: z.enum(LESSON_KINDS).optional(),
   level: z.enum(LESSON_LEVELS).optional(),
+  topic: slugParam.optional(),
 });
 export type LessonListQuery = z.input<typeof lessonListQuerySchema>;
 
@@ -360,4 +361,114 @@ export interface ReviewResponse {
   rating: ReviewRating;
   card: CardStateDto;
   counts: ReviewCountsDto;
+}
+
+// ---------------------------------------------------------------------------
+// Today's lesson: /api/today (Phase 5)
+// ---------------------------------------------------------------------------
+
+export const TODAY_STEP_STATUSES = ['not_started', 'in_progress', 'done'] as const;
+export type TodayStepStatus = (typeof TODAY_STEP_STATUSES)[number];
+
+/**
+ * `plan`: a day of `daily-plan.yaml`. `fallback`: the plan ran out, next uncompleted lessons by
+ * level/order. `finished`: every lesson is completed ("Đã học hết bài hiện có").
+ */
+export type TodaySource = 'plan' | 'fallback' | 'finished';
+
+export interface TodayStepDto {
+  kind: 'reading' | 'listening' | 'reviews';
+  status: TodayStepStatus;
+  /** 0..100 */
+  progressPct: number;
+  /** Estimated minutes for the whole step. */
+  minutes: number;
+  /** Page that continues this step. */
+  url: string;
+  /** Reading/listening steps only. */
+  lesson: LessonSummary | null;
+  /** Reviews step only. */
+  reviews: ReviewCountsDto | null;
+}
+
+/** `GET /api/today` */
+export interface TodayResponse {
+  /** Local date (Asia/Ho_Chi_Minh), `YYYY-MM-DD`. */
+  date: string;
+  source: TodaySource;
+  /** Day N of the learning path (null when `finished`). */
+  day: number | null;
+  title: string;
+  /** Reading, listening (when the day has them) and reviews, in this order. */
+  steps: TodayStepDto[];
+  /** Minutes left for the steps that are not done. */
+  estimatedMinutes: number;
+  /** First unfinished step, or null when everything is done. */
+  continueUrl: string | null;
+  /** Every step is done. */
+  allDone: boolean;
+}
+
+// ---------------------------------------------------------------------------
+// Activity: /api/activity (Phase 5)
+// ---------------------------------------------------------------------------
+
+/** Longest study time one heartbeat can add. */
+export const HEARTBEAT_MAX_SECONDS = 60;
+
+/** `POST /api/activity/heartbeat`. `seconds` is clamped to 0..60 by the server. */
+export const heartbeatBodySchema = z.strictObject({
+  seconds: z.number().finite(),
+});
+export type HeartbeatBody = z.input<typeof heartbeatBodySchema>;
+
+export interface HeartbeatResponse {
+  /** Seconds added by this heartbeat (after clamping). */
+  added: number;
+  /** Total for today (Asia/Ho_Chi_Minh day). */
+  secondsToday: number;
+}
+
+// ---------------------------------------------------------------------------
+// Dashboard: /api/dashboard (Phase 5)
+// ---------------------------------------------------------------------------
+
+export interface WeekDayDto {
+  /** `YYYY-MM-DD` (Asia/Ho_Chi_Minh). */
+  date: string;
+  minutes: number;
+}
+
+/** `GET /api/dashboard` */
+export interface DashboardResponse {
+  displayName: string;
+  level: LessonLevel;
+  /** Local date (Asia/Ho_Chi_Minh), `YYYY-MM-DD`. */
+  date: string;
+  streak: {
+    /** Consecutive active days ending today or yesterday. */
+    days: number;
+    activeToday: boolean;
+  };
+  path: {
+    level: LessonLevel;
+    completed: number;
+    total: number;
+    /** 0..100 */
+    percent: number;
+  };
+  words: {
+    /** known + learning */
+    remembered: number;
+    known: number;
+    learning: number;
+    /** Remembered words flagged `oxford3000`. */
+    oxford3000: number;
+  };
+  week: {
+    totalMinutes: number;
+    dailyGoalMin: number;
+    /** Monday → Sunday. */
+    days: WeekDayDto[];
+  };
 }

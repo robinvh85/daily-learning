@@ -9,13 +9,13 @@ import {
   type DueReviewsResponse,
   type ReviewResponse,
 } from '@daily-learning/shared/api';
-import { and, asc, eq, gt, lte, min, sql } from 'drizzle-orm';
+import { and, asc, eq, gt, lte, min } from 'drizzle-orm';
 import type { FastifyInstance } from 'fastify';
 import type { AppDatabase } from '../../db/client.js';
-import { dailyActivity, reviewLogs, userWords } from '../../db/schema.js';
+import { reviewLogs, userWords } from '../../db/schema.js';
 import { notFound, parseInput } from '../../http.js';
+import { recordActivity } from '../../services/activity.js';
 import {
-  localDate,
   previewRatings,
   review,
   systemClock,
@@ -98,13 +98,7 @@ export function reviewRoutes(
       tx.insert(reviewLogs)
         .values({ userId: user.id, wordId, ...result.log })
         .run();
-      tx.insert(dailyActivity)
-        .values({ userId: user.id, date: localDate(t), reviewsDone: 1 })
-        .onConflictDoUpdate({
-          target: [dailyActivity.userId, dailyActivity.date],
-          set: { reviewsDone: sql`${dailyActivity.reviewsDone} + 1` },
-        })
-        .run();
+      recordActivity(tx, user.id, t, { reviews: 1 });
       return result.card;
     });
 

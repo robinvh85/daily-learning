@@ -30,6 +30,8 @@ import {
   wordSenses,
 } from '../../db/schema.js';
 import { HttpError, notFound, parseInput } from '../../http.js';
+import { recordActivity } from '../../services/activity.js';
+import { systemClock, type Clock } from '../../services/srs.js';
 import { requireUser } from '../auth/routes.js';
 import { CONTENT_PREFIX } from '../static/routes.js';
 
@@ -46,7 +48,7 @@ function toProgress(p: ProgressRow | undefined | null): LessonProgressDto | null
   };
 }
 
-function toSummary(l: LessonRow, p: ProgressRow | undefined | null): LessonSummary {
+export function toSummary(l: LessonRow, p: ProgressRow | undefined | null): LessonSummary {
   return {
     id: l.id,
     slug: l.slug,
@@ -60,6 +62,11 @@ function toSummary(l: LessonRow, p: ProgressRow | undefined | null): LessonSumma
     orderIndex: l.orderIndex,
     progress: toProgress(p),
   };
+}
+
+/** Web route of a lesson page. */
+export function lessonHref(l: { kind: 'reading' | 'listening'; slug: string }): string {
+  return `${l.kind === 'reading' ? '/read' : '/listen'}/${l.slug}`;
 }
 
 /** Public URL of a file under `content/` (served by `@fastify/static`, see app.ts). */
@@ -79,7 +86,11 @@ export function normalizeDictation(s: string): string {
     .trim();
 }
 
-export function lessonRoutes(app: FastifyInstance, db: AppDatabase): void {
+export function lessonRoutes(
+  app: FastifyInstance,
+  db: AppDatabase,
+  now: Clock = systemClock,
+): void {
   function findLesson(slug: string): LessonRow {
     const l = db.select().from(lessons).where(eq(lessons.slug, slug)).get();
     if (!l) throw notFound(`Lesson "${slug}"`);
@@ -100,6 +111,7 @@ export function lessonRoutes(app: FastifyInstance, db: AppDatabase): void {
     const conds = [];
     if (q.kind) conds.push(eq(lessons.kind, q.kind));
     if (q.level) conds.push(eq(lessons.level, q.level));
+    if (q.topic) conds.push(eq(lessons.topic, q.topic));
     const rows = db
       .select({ lesson: lessons, progress: lessonProgress })
       .from(lessons)
@@ -283,23 +295,39 @@ export function lessonRoutes(app: FastifyInstance, db: AppDatabase): void {
     const { slug } = parseInput(lessonSlugParamsSchema, request.params);
     const body = parseInput(progressBodySchema, request.body);
     const lesson = findLesson(slug);
-    const prev = findProgress(user.id, lesson.id);
+    const t = now();
 
-    // A completed lesson stays completed; the step never goes backwards.
-    const status = prev?.status === 'completed' ? 'completed' : (body.status ?? 'in_progress');
-    const values = {
-      status,
-      step: Math.max(prev?.step ?? 0, body.step),
-      score: body.score === undefined ? (prev?.score ?? null) : body.score,
-      completedAt: status === 'completed' ? (prev?.completedAt ?? new Date()) : null,
-      updatedAt: new Date(),
-    };
-    const row = db
-      .insert(lessonProgress)
-      .values({ userId: user.id, lessonId: lesson.id, ...values })
-      .onConflictDoUpdate({ target: [lessonProgress.userId, lessonProgress.lessonId], set: values })
-      .returning()
-      .get();
+    const row = db.transaction((tx) => {
+      const prev = tx
+        .select()
+        .from(lessonProgress)
+        .where(and(eq(lessonProgress.userId, user.id), eq(lessonProgress.lessonId, lesson.id)))
+        .get();
+      // A completed lesson stays completed; the step never goes backwards.
+      const wasCompleted = prev?.status === 'completed';
+      const status = wasCompleted ? 'completed' : (body.status ?? 'in_progress');
+      const values = {
+        status,
+        step: Math.max(prev?.step ?? 0, body.step),
+        score: body.score === undefined ? (prev?.score ?? null) : body.score,
+        completedAt: status === 'completed' ? (prev?.completedAt ?? t) : null,
+        updatedAt: t,
+      };
+      const saved = tx
+        .insert(lessonProgress)
+        .values({ userId: user.id, lessonId: lesson.id, ...values })
+        .onConflictDoUpdate({
+          target: [lessonProgress.userId, lessonProgress.lessonId],
+          set: values,
+        })
+        .returning()
+        .get();
+      // Counted once: only the transition to completed adds to today's lessons_done.
+      if (status === 'completed' && !wasCompleted) {
+        recordActivity(tx, user.id, t, { lessons: 1 });
+      }
+      return saved;
+    });
     return { progress: toProgress(row)! };
   });
 }

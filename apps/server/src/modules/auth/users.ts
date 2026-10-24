@@ -11,17 +11,25 @@ export const MIN_PASSWORD_LENGTH = 8;
 
 /**
  * The single local user for `AUTH_MODE=none`: the oldest user without an email.
- * Created on first start.
+ * Created on first start. `displayName` (from `USER_DISPLAY_NAME`) is applied when given.
  */
-export function ensureDefaultUser(db: AppDatabase): AuthUser {
+export function ensureDefaultUser(db: AppDatabase, displayName?: string): AuthUser {
+  const name = displayName?.trim();
   const existing = db
     .select({ id: users.id, email: users.email })
     .from(users)
     .where(isNull(users.email))
     .orderBy(asc(users.id))
     .get();
-  if (existing) return existing;
-  return db.insert(users).values({}).returning({ id: users.id, email: users.email }).get();
+  if (existing) {
+    if (name) db.update(users).set({ displayName: name }).where(eq(users.id, existing.id)).run();
+    return existing;
+  }
+  return db
+    .insert(users)
+    .values(name ? { displayName: name } : {})
+    .returning({ id: users.id, email: users.email })
+    .get();
 }
 
 export function normalizeEmail(email: string): string {

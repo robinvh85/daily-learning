@@ -49,7 +49,7 @@ describe('database', () => {
     openAndMigrate(path).$client.close();
     const db = openAndMigrate(path);
     expect(db.$client.prepare('select count(*) n from __drizzle_migrations').get()).toEqual({
-      n: 4,
+      n: 5,
     });
     db.$client.close();
   });

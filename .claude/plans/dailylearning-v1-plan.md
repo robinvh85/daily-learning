@@ -284,9 +284,9 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - **Xong khi:** từ lưu ở bài đọc xuất hiện trong hàng ôn, rating cập nhật ngày đến hạn đúng
 
 ### Phase 5 — Trang chủ, tiến độ, bài học hôm nay (≈ 1.5 ngày)
-- [ ] Service tạo "bài học hôm nay" (bài đọc + bài nghe tiếp theo trong lộ trình + số thẻ đến hạn)
-- [ ] Streak (theo múi giờ Asia/Ho_Chi_Minh), thời gian học tuần, % lộ trình A2→B1, số từ đã thuộc
-- [ ] Thư viện bài đọc/nghe có lọc cấp độ và chủ đề
+- [x] Service tạo "bài học hôm nay" (bài đọc + bài nghe tiếp theo trong lộ trình + số thẻ đến hạn)
+- [x] Streak (theo múi giờ Asia/Ho_Chi_Minh), thời gian học tuần, % lộ trình A2→B1, số từ đã thuộc
+- [x] Thư viện bài đọc/nghe có lọc cấp độ và chủ đề
 - **Xong khi:** mở app mỗi ngày thấy đúng bài tiếp theo, số liệu khớp với DB
 
 ### Phase 6 — Nội dung thật (song song với Phase 2–5, liên tục)
@@ -350,3 +350,4 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - 2026-10-24: xong Phase 2 (tokens.css + Sidebar responsive, React Router + TanStack Query, auth `none`/`password` với argon2 + session cookie + bảng `sessions` + `npm run user:create`, chặn khởi động khi HOST không phải localhost mà `AUTH_MODE=none`, API bài học/trả lời/tiến độ/lưu từ có Zod, trang Bài đọc với `TokenizedText`, WordCard, song ngữ, cỡ chữ, câu hỏi chấm trên server); nút phát âm và "Nghe bài đọc" để tắt chờ Phase 3; lời thoại Bài nghe sẽ dùng `TokenizedText` ở Phase 3.
 - 2026-10-24: xong phần code Phase 3: Google TTS qua REST + API key (`GOOGLE_TTS_API_KEY`), provider `fake` (ffmpeg) để test; `content:tts:voices`/`content:tts`/`content:tts-words` có cache (gitignore), `TTS_MAX_CHARS`, `--dry-run`; `timings.json` (offset đo bằng ffprobe + 80 peaks), sync vào DB (migration `0002_audio`), serve `/content` tĩnh có cache 1 năm + `?v=`; trang Bài nghe (player, waveform, lời thoại token hóa, nghe chép, nghe hiểu), "Nghe bài đọc" và nút phát âm WordCard; chọn giọng và chạy TTS thật do người dùng làm trên Mac.
 - 2026-10-24: xong Phase 4: `services/srs.ts` dùng `ts-fsrs` (tham số mặc định, "now" truyền vào được để test), lưu từ = thẻ FSRS mới đến hạn ngay; API `/reviews/due` (xem trước khoảng thời gian 4 mức bằng `repeat()`), `POST /reviews/:wordId`, `/vocab?source=&status=`, `/vocab/stats`; migration `0003_review_logs_fsrs` thêm cột FSRS vào `review_logs`, mỗi lần ôn cộng `daily_activity.reviews_done` (ngày theo Asia/Ho_Chi_Minh); trang Ôn từ (thẻ lật, phím Space/Enter và 1–4, trạng thái trống), sổ từ có lọc và xóa có xác nhận, badge Sidebar lấy số thẻ đến hạn thật.
+- 2026-10-24: xong Phase 5: `services/daily-plan.ts` (ngày N = ngày đầu tiên trong lộ trình còn bài chưa xong, không theo lịch; xong cả 2 bài thì giữ ngày N đến hết ngày theo giờ VN, hết lộ trình thì lấy bài chưa học theo cấp/thứ tự, rồi "Đã học hết bài hiện có"), `GET /api/today`, `GET /api/dashboard` (streak, % lộ trình theo cấp hiện tại, từ đã nhớ + Oxford 3000, phút học tuần T2–CN), `POST /api/activity/heartbeat` (0–60 s, hook `useStudyTimer` gửi 30 s/lần khi tab hiện và có tương tác, `sendBeacon` khi ẩn tab), `lessons_done` chỉ cộng một lần khi bài chuyển sang hoàn thành; migration `0004_home_progress` thêm `daily_plans_template.title` và `users.display_name` (đặt bằng `USER_DISPLAY_NAME`); Trang chủ theo mockup và thư viện `/read`, `/listen` có lọc cấp độ/chủ đề.

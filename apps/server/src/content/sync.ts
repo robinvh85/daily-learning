@@ -277,6 +277,7 @@ export function writeBundle(db: AppDatabase, bundle: ContentBundle): SyncCounts 
     for (const d of days) {
       const dv = {
         day: d.day,
+        title: d.title ?? null,
         readingLessonId: d.reading ? lessonIds.get(d.reading)! : null,
         listeningLessonId: d.listening ? lessonIds.get(d.listening)! : null,
       };

@@ -17,6 +17,7 @@ const db = openAndMigrate(config.dbPath);
 const app = await buildApp({
   db,
   authMode: config.authMode,
+  displayName: config.displayName,
   contentDir: join(ROOT_DIR, 'content'),
   fastify: { logger: true },
 });

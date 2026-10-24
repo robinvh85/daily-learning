@@ -4,10 +4,12 @@ import Fastify, { type FastifyInstance, type FastifyServerOptions } from 'fastif
 import type { AppDatabase } from './db/client.js';
 import { registerErrorHandler } from './http.js';
 import { systemClock, type Clock } from './services/srs.js';
+import { activityRoutes } from './modules/activity/routes.js';
 import { registerAuth } from './modules/auth/routes.js';
 import { lessonRoutes } from './modules/lessons/routes.js';
 import { reviewRoutes } from './modules/reviews/routes.js';
 import { registerContentStatic } from './modules/static/routes.js';
+import { todayRoutes } from './modules/today/routes.js';
 import { vocabRoutes } from './modules/vocab/routes.js';
 
 export interface AppOptions {
@@ -18,6 +20,8 @@ export interface AppOptions {
   contentDir?: string;
   /** Source of "now" for scheduling (tests inject a fake clock). */
   now?: Clock;
+  /** Name of the default local user (`USER_DISPLAY_NAME`, AUTH_MODE=none). */
+  displayName?: string;
   fastify?: FastifyServerOptions;
 }
 
@@ -33,11 +37,17 @@ export async function buildApp(opts: AppOptions): Promise<FastifyInstance> {
     };
   });
 
-  await registerAuth(app, { db: opts.db, authMode: opts.authMode ?? 'none' });
-  lessonRoutes(app, opts.db);
+  await registerAuth(app, {
+    db: opts.db,
+    authMode: opts.authMode ?? 'none',
+    displayName: opts.displayName,
+  });
   const now = opts.now ?? systemClock;
+  lessonRoutes(app, opts.db, now);
   vocabRoutes(app, opts.db, now);
   reviewRoutes(app, opts.db, now);
+  todayRoutes(app, opts.db, now);
+  activityRoutes(app, opts.db, now);
   if (opts.contentDir) await registerContentStatic(app, opts.contentDir);
 
   return app;

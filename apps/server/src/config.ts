@@ -11,6 +11,8 @@ export interface ServerConfig {
   /** Absolute path of the SQLite file, or `:memory:`. */
   dbPath: string;
   authMode: AuthMode;
+  /** `USER_DISPLAY_NAME`: name of the default local user (Home greeting). */
+  displayName?: string;
 }
 
 /** Hosts that only accept connections from this machine. */
@@ -63,6 +65,7 @@ export function readConfig(env: NodeJS.ProcessEnv = process.env): ServerConfig {
     port,
     dbPath: resolveDbPath(env),
     authMode,
+    displayName: env.USER_DISPLAY_NAME?.trim() || undefined,
   };
   assertSafeBinding(config);
   return config;

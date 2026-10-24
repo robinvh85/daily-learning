@@ -203,6 +203,8 @@ export const dictationItems = sqliteTable(
 /** Day N of the learning path → its reading and listening lesson. */
 export const dailyPlansTemplate = sqliteTable('daily_plans_template', {
   day: integer('day').primaryKey(),
+  /** Vietnamese title shown on Home ("Cuộc sống quanh khu phố"). */
+  title: text('title'),
   readingLessonId: integer('reading_lesson_id').references(() => lessons.id, {
     onDelete: 'set null',
   }),
@@ -220,6 +222,8 @@ export const users = sqliteTable('users', {
   /** Null for the default local user (`AUTH_MODE=none`). */
   email: text('email').unique(),
   passwordHash: text('password_hash'),
+  /** Name used in the Home greeting. The local user's name comes from `USER_DISPLAY_NAME`. */
+  displayName: text('display_name').notNull().default('bạn'),
   level: text('level', { enum: LESSON_LEVELS }).notNull().default('A2'),
   dailyGoalMin: integer('daily_goal_min').notNull().default(15),
   createdAt: integer('created_at', { mode: 'timestamp_ms' }).notNull().default(nowMs),

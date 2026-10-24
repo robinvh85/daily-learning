@@ -315,6 +315,8 @@ export const dailyPlanSchema = z
       .array(
         z.strictObject({
           day: z.int().min(1),
+          /** Vietnamese title of the day, shown on Home ("Cuộc sống quanh khu phố"). */
+          title: text.optional(),
           /** Slug of the reading lesson for this day. */
           reading: slug.optional(),
           /** Slug of the listening lesson for this day. */

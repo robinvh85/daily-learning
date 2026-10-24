@@ -67,13 +67,13 @@ function setSessionCookie(request: FastifyRequest, reply: FastifyReply, token: s
 
 export async function registerAuth(
   app: FastifyInstance,
-  opts: { db: AppDatabase; authMode: AuthMode },
+  opts: { db: AppDatabase; authMode: AuthMode; displayName?: string },
 ): Promise<void> {
   const { db, authMode } = opts;
   app.decorateRequest('user', null);
 
   if (authMode === 'none') {
-    const defaultUser = ensureDefaultUser(db);
+    const defaultUser = ensureDefaultUser(db, opts.displayName);
     app.addHook('onRequest', async (request) => {
       request.user = defaultUser;
     });

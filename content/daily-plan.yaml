@@ -1,6 +1,7 @@
-# Learning path template: day N → reading and listening lesson (by slug).
+# Learning path template: day N → title, reading and listening lesson (by slug).
 # Synced into the daily_plans_template table by `npm run content:sync`.
 days:
   - day: 1
+    title: Cuộc sống quanh khu phố
     reading: a-new-coffee-shop
     listening: at-the-train-station

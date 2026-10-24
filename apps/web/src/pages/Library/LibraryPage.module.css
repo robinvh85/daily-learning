@@ -1,0 +1,148 @@
+.breadcrumb {
+  font-size: var(--fs-md);
+  color: var(--color-muted);
+}
+
+.breadcrumb a {
+  text-decoration: none;
+}
+
+.h1 {
+  margin: 6px 0 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.muted {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--fs-md);
+}
+
+.error {
+  margin: 0;
+  color: var(--color-red);
+  font-weight: 600;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.groupLabel {
+  min-width: 64px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.chip {
+  min-height: var(--touch);
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink-soft);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--color-blue-light);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--color-blue-tint);
+  border-color: var(--color-blue);
+  color: var(--color-blue-strong);
+}
+
+.count {
+  margin: 0;
+  font-size: var(--fs-md);
+  color: var(--color-muted);
+}
+
+.empty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.card:hover {
+  border-color: var(--color-blue-light);
+  color: var(--color-ink);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.level {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-blue-tint);
+  color: var(--color-blue-strong);
+}
+
+.status {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.status[data-status='in_progress'] {
+  color: var(--color-blue-strong);
+}
+
+.status[data-status='completed'] {
+  color: var(--color-green);
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.meta {
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
