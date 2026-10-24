@@ -1,5 +1,5 @@
 lemma: survey
-ipa_us: /ˈsɜːrveɪ/
+ipa_us: /ˈsɝːveɪ/
 cefr: B1
 oxford3000: true
 forms: [surveys]
@@ -10,4 +10,4 @@ senses:
     en: a set of questions that you ask many people to learn what they think
     collocations: [a customer survey, do a survey]
     example: Please answer our short survey about the hotel.
-status: draft
+status: reviewed

@@ -71,9 +71,11 @@ segments:
 focus_words: [checking account, fill out, form, sign, monthly, fee, at least, debit card]
 
 senses:
+  see: see
   to: infinitive
   to#4: range # "five to seven days"
   open: account
+  account: bank
   do: auxiliary
   for: purpose
   on: place

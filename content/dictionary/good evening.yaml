@@ -1,0 +1,13 @@
+lemma: good evening
+ipa_us: /ˌɡʊd ˈiːvnɪŋ/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: greeting
+    pos: exclamation
+    vi: chào buổi tối, xin chào (dùng vào buổi tối)
+    en: used to say hello to someone in the evening
+    collocations: [good evening, everyone]
+    example: Good evening, and welcome to our restaurant.
+status: reviewed

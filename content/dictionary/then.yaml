@@ -9,4 +9,10 @@ senses:
     en: after that; next
     collocations: [and then, first… then…]
     example: We had dinner, and then we watched a movie.
-status: draft
+  - key: in_that_case
+    pos: adverb
+    vi: vậy thì, thế thì
+    en: used to show that something follows from what was just said
+    collocations: [then I’ll…, OK then]
+    example: “The bus is late.” “Then let’s take a taxi.”
+status: reviewed

@@ -1,5 +1,5 @@
 lemma: return
-ipa_us: /rɪˈtɜːrn/
+ipa_us: /rɪˈtɝːn/
 cefr: A2
 oxford3000: true
 forms: [returns, returned, returning]
@@ -10,4 +10,4 @@ senses:
     en: to take or give something back
     collocations: [return a book, return something to the store]
     example: Please return the book to the library by Friday.
-status: draft
+status: reviewed

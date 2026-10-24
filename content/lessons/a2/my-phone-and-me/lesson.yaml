@@ -71,6 +71,8 @@ segments:
 focus_words: [app, surprised, spend, social media, turn off, notification, delete, limit, anymore]
 
 senses:
+  see: see
+  so: so
   be: linking
   first: first
   in: time # "in the morning"

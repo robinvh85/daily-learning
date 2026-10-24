@@ -2,7 +2,7 @@ lemma: fit
 ipa_us: /fɪt/
 cefr: A2
 oxford3000: true
-forms: [fits, fitted, fitting]
+forms: [fits, fitting] # US past tense and past participle: fit
 senses:
   - key: fit
     pos: verb
@@ -10,4 +10,4 @@ senses:
     en: to be the right size and shape for someone
     collocations: [fit well, fit perfectly, doesn’t fit]
     example: These shoes don’t fit me. They’re too small.
-status: draft
+status: reviewed

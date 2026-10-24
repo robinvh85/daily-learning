@@ -67,6 +67,8 @@ segments:
 focus_words: [trip, weather, stay, view, rent, explore, countryside, local, already]
 
 senses:
+  card: card
+  so: so
   last: previous
   travel: verb
   to: direction
@@ -96,7 +98,7 @@ senses:
 ignore: [Da Lat, Ho Chi Minh City]
 
 questions:
-  - prompt: How did the writer and her sister travel to Da Lat?
+  - prompt: How did the writer and the writer’s sister travel to Da Lat?
     options: [By plane, By motorbike, By bus]
     correct: 2
     feedback_ok: 'Đúng: “We went by bus, and the trip took about seven hours.”'

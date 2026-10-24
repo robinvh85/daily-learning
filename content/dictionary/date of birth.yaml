@@ -1,5 +1,5 @@
 lemma: date of birth
-ipa_us: /ˌdeɪt əv ˈbɜːrθ/
+ipa_us: /ˌdeɪt əv ˈbɝːθ/
 cefr: A2
 oxford3000: false
 is_phrase: true
@@ -11,4 +11,4 @@ senses:
     en: 'the day, month and year when someone was born'
     collocations: [your date of birth, write your date of birth]
     example: Please write your name and date of birth on the form.
-status: draft
+status: reviewed

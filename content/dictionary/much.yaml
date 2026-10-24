@@ -15,4 +15,10 @@ senses:
     en: a lot; used before comparatives
     collocations: [much better, much bigger, much more]
     example: I feel much better today.
-status: draft
+  - key: thanks
+    pos: adverb
+    vi: rất nhiều (thank you so much / very much = cảm ơn rất nhiều)
+    en: used with “so” or “very” to make “thank you” stronger
+    collocations: [thank you so much, thank you very much]
+    example: Thank you so much for your help!
+status: reviewed

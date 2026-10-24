@@ -15,4 +15,10 @@ senses:
     en: during a period of time; after a particular length of time
     collocations: [in winter, in three days, in the morning]
     example: The train leaves in ten minutes.
-status: draft
+  - key: size
+    pos: preposition
+    vi: (có) cỡ…, màu… (in a large = cỡ L)
+    en: used to talk about the size or color of something you can buy
+    collocations: [in a large, in small and medium, in blue]
+    example: Do you have this shirt in a medium?
+status: reviewed

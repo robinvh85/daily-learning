@@ -81,7 +81,9 @@ senses:
   take: time
   about: approximately
   call: phone
-  much: amount
+  so: very # "Thank you so much"
+  much: thanks # "Thank you so/very much"
+  card: plastic # "a card machine"
 
 ignore: [Golden Bowl, Maple]
 

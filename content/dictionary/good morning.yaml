@@ -1,0 +1,13 @@
+lemma: good morning
+ipa_us: /ˌɡʊd ˈmɔːrnɪŋ/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: greeting
+    pos: exclamation
+    vi: chào buổi sáng, xin chào (dùng vào buổi sáng)
+    en: used to say hello to someone in the morning
+    collocations: [good morning, everyone]
+    example: Good morning! Did you sleep well?
+status: reviewed

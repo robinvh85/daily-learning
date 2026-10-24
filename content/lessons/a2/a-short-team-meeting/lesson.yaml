@@ -31,7 +31,7 @@ segments:
   - id: l6
     speaker: A
     text_en: By Thursday afternoon, I think.
-    text_vi: Em nghĩ là trước chiều thứ Năm ạ.
+    text_vi: Em nghĩ là chậm nhất chiều thứ Năm ạ.
   - id: l7
     speaker: B
     text_en: Good. The deadline is Friday, so that’s fine.
@@ -72,6 +72,8 @@ segments:
 focus_words: [quick, update, deadline, survey, report, summary, actually, no problem]
 
 senses:
+  see: goodbye # "See you next week"
+  so: so
   be: linking
   have: own
   go: go

@@ -1,0 +1,13 @@
+lemma: "you're welcome"
+ipa_us: /jʊr ˈwelkəm/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: reply_to_thanks
+    pos: phrase
+    vi: không có gì (đáp lại lời cảm ơn)
+    en: a polite answer when someone thanks you
+    collocations: [you’re very welcome]
+    example: '“Thanks for your help!” “You’re welcome.”'
+status: reviewed

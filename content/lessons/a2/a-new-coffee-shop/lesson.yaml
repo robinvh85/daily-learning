@@ -22,7 +22,7 @@ segments:
   - id: p1s4
     paragraph: 1
     text_en: She worked in a hotel for five years, and now she wants to run her own business.
-    text_vi: Cô làm ở khách sạn năm năm, và giờ cô muốn tự kinh doanh.
+    text_vi: Cô từng làm ở một khách sạn năm năm, và giờ cô muốn tự kinh doanh.
   - id: p2s1
     paragraph: 2
     text_en: The shop is not very big, but it is bright and comfortable.
@@ -64,6 +64,8 @@ focus_words: [open, owner, run, comfortable, borrow, reasonable, regular, atmosp
 
 # Sense per word in this lesson. "word#n" = n-th occurrence of that word in the lesson.
 senses:
+  back: back
+  her: her
   order: order
   in: in
   last: previous

@@ -9,4 +9,10 @@ senses:
     en: used to show the result of something
     collocations: [so I decided…, so we stayed home]
     example: It was raining, so we took a taxi.
-status: draft
+  - key: very
+    pos: adverb
+    vi: rất, quá (thank you so much = cảm ơn rất nhiều)
+    en: very; very much
+    collocations: [so much, so happy, thank you so much]
+    example: I’m so happy to see you again!
+status: reviewed

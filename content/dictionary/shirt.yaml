@@ -1,5 +1,5 @@
 lemma: shirt
-ipa_us: /ʃɜːrt/
+ipa_us: /ʃɝːt/
 cefr: A1
 oxford3000: true
 forms: [shirts]
@@ -10,4 +10,4 @@ senses:
     en: 'a piece of clothing for the top part of the body, with sleeves and buttons'
     collocations: [a white shirt, a work shirt]
     example: He always wears a blue shirt to work.
-status: draft
+status: reviewed

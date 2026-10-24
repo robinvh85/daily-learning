@@ -67,11 +67,12 @@ segments:
 focus_words: [straight, block, turn left, traffic light, corner, past, far, on foot]
 
 senses:
+  see: see
   to: direction
   to#1: infinitive # "how to get to"
   get: arrive
   go: go
-  for: duration # "for two blocks"
+  for: distance # "for two blocks"
   at: place
   at#3: time # "at 5:30"
   on: place
@@ -86,7 +87,9 @@ senses:
   do: auxiliary
   time: time
   have: own
-  much: amount
+  then#3: in_that_case # "Then I’ll walk"
+  so#3: very # "Thank you so much"
+  much: thanks # "Thank you so/very much"
 
 ignore: []
 

@@ -9,4 +9,10 @@ senses:
     en: to the place or person where something was before
     collocations: [bring back, come back, give back]
     example: Customers can borrow a book and bring it back later.
-status: draft
+  - key: rear
+    pos: noun
+    vi: mặt sau, phía sau (của vật gì)
+    en: the part of something that is furthest from the front
+    collocations: [on the back, the back of the card, at the back]
+    example: Write your name on the back of the photo.
+status: reviewed

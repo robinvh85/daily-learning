@@ -10,4 +10,10 @@ senses:
     en: an arrangement that lets you use a website, an app or an email service
     collocations: [an email account, create an account, log in to your account]
     example: I forgot the password for my old account.
-status: draft
+  - key: bank
+    pos: noun
+    vi: tài khoản (ngân hàng)
+    en: an arrangement with a bank to keep your money there and take it out when you need it
+    collocations: [a bank account, open an account, a savings account]
+    example: I’d like to open an account at this bank.
+status: reviewed

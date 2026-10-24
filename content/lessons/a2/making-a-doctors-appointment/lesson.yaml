@@ -71,6 +71,8 @@ segments:
 focus_words: [appointment, cough, sore throat, since, fever, date of birth, insurance, ID]
 
 senses:
+  see: examine # "The doctor can see you tomorrow"
+  so: so
   to: infinitive
   to#2: direction # "your first visit to our clinic"
   make: create
@@ -85,6 +87,8 @@ senses:
   get: obtain
   first: first
   visit: noun
+  then: in_that_case # "Then please come fifteen minutes early"
+  card: plastic # "insurance card"
 
 ignore: [Riverside, Minh, Tran, May]
 

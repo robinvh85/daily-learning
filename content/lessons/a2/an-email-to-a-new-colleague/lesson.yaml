@@ -42,7 +42,7 @@ segments:
   - id: p2s4
     paragraph: 2
     text_en: Your email account will be ready by Wednesday.
-    text_vi: Tài khoản email của bạn sẽ sẵn sàng trước thứ Tư.
+    text_vi: Chậm nhất là thứ Tư, tài khoản email của bạn sẽ sẵn sàng.
   - id: p3s1
     paragraph: 3
     text_en: If you have any questions, feel free to ask me or anyone on the team.
@@ -86,6 +86,9 @@ focus_words:
   ]
 
 senses:
+  so: so
+  back: back
+  account: user
   to: direction # "Welcome to the team"
   to#2: infinitive # "feel free to ask"
   to#3: infinitive # "how to use"

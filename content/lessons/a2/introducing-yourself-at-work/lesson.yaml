@@ -67,6 +67,8 @@ segments:
 focus_words: [nice to meet you, team, how long, worry, cafeteria, floor, sound good, of course]
 
 senses:
+  see: goodbye # "See you later"
+  so: so
   be: linking
   be#5: location # "My desk is over there"
   too: also

@@ -67,6 +67,7 @@ segments:
 focus_words: [connect, router, light, restart, button, press, hold, happen]
 
 senses:
+  see: see
   be: linking
   work: function
   to: direction
@@ -75,6 +76,7 @@ senses:
   do: auxiliary
   have: own
   on: place
+  back: rear # "on the back"
   one: number
   for: duration # "for five seconds"
   for#2: reason # "Thanks for your help"

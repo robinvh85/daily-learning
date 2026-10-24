@@ -9,4 +9,10 @@ senses:
     en: belonging to a woman or girl who has already been mentioned
     collocations: [her own, her name]
     example: Lan remembers the names of her regular customers.
-status: draft
+  - key: object
+    pos: pronoun
+    vi: cô ấy, chị ấy, em ấy (làm tân ngữ, sau động từ hoặc giới từ)
+    en: used as the object of a verb or preposition to mean a woman or girl already mentioned
+    collocations: [for her, buy her something, tell her]
+    example: My sister’s birthday is next week, so I’m buying her a book.
+status: reviewed

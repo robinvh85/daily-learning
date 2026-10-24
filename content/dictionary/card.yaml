@@ -10,4 +10,10 @@ senses:
     en: one of a set of small pieces of stiff paper used for playing games
     collocations: [play cards, a game of cards]
     example: My grandparents play cards every evening.
-status: draft
+  - key: plastic
+    pos: noun
+    vi: thẻ (thẻ ngân hàng, thẻ bảo hiểm, thẻ nhân viên…)
+    en: a small piece of plastic with information on it, used for paying or to show who you are
+    collocations: [an insurance card, a card machine, pay by card]
+    example: Can I pay with this card?
+status: reviewed

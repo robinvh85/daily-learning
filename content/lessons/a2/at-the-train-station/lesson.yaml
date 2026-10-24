@@ -74,11 +74,11 @@ questions:
     options: [The 10:05 train is slower, She has no ticket, Platform 4 is closed]
     correct: 0
     feedback_ok: 'Đúng: chuyến 10:05 là “a slow train”, mất khoảng một tiếng rưỡi.'
-    feedback_wrong: Chưa đúng. Nghe lại câu thoại lúc 0:14 và 0:23.
+    feedback_wrong: Chưa đúng. Nghe lại hai câu trả lời của người nhân viên về chuyến 10:05 và chuyến 10:15.
     evidence: l4
   - prompt: How long does the 10:15 train take?
     options: [About 20 minutes, About 50 minutes, About 90 minutes]
     correct: 1
     feedback_ok: 'Đúng: “The 10:15 only takes fifty minutes.”'
-    feedback_wrong: Chưa đúng. Nghe lại câu thoại lúc 0:23, chú ý “fifty”, không phải “fifteen”.
+    feedback_wrong: Chưa đúng. Nghe lại câu người nhân viên nói về chuyến 10:15, chú ý “fifty”, không phải “fifteen”.
     evidence: l6

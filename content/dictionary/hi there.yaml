@@ -1,0 +1,13 @@
+lemma: hi there
+ipa_us: /ˌhaɪ ˈðer/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: greeting
+    pos: exclamation
+    vi: xin chào (thân mật, thường dùng khi chào khách hoặc người chưa quen)
+    en: a friendly way of saying hello to someone
+    collocations: [hi there, how are you?]
+    example: Hi there. Can I help you find something?
+status: reviewed

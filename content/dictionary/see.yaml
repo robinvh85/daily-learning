@@ -10,4 +10,16 @@ senses:
     en: to notice or become aware of something using your eyes or your mind
     collocations: [see the result, see a movie, I see]
     example: Can you see the mountains from your window?
-status: draft
+  - key: goodbye
+    pos: verb
+    vi: (see you…) hẹn gặp lại (lời chào tạm biệt)
+    en: used in “see you (later/soon/next week)” to say goodbye
+    collocations: [see you later, see you tomorrow, see you next week]
+    example: I have to go now. See you tomorrow!
+  - key: examine
+    pos: verb
+    vi: khám (bác sĩ khám cho ai); gặp, đi khám (bác sĩ)
+    en: (of a doctor) to meet and examine someone; to visit a doctor
+    collocations: [the doctor can see you, see a doctor]
+    example: The doctor can see you at three o’clock.
+status: reviewed

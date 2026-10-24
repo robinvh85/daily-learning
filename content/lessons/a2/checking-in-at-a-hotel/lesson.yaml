@@ -67,6 +67,7 @@ segments:
 focus_words: [reservation, passport, key card, lobby, password, checkout, front desk, flight]
 
 senses:
+  see: see
   to: direction
   to#2: range # "from 6:30 to 10:00"
   have: own
@@ -78,13 +79,14 @@ senses:
   in#4: time # "in the morning"
   in#5: time # "in the evening"
   on: place
+  back: rear # "on the back of your key card"
   time: time
   at: place
   at#1: time # "at 11"
   call: phone
   leave: put
   keep: store
-  much: amount
+  much: thanks # "Thank you so/very much"
 
 ignore: [Harbor, Minh, Tran]
 

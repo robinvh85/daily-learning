@@ -67,6 +67,7 @@ segments:
 focus_words: [ago, receipt, exchange, medium, refund, return, within, credit card]
 
 senses:
+  so: so
   too: too
   to: infinitive
   to#3: direction # "go back to my credit card"
@@ -79,9 +80,10 @@ senses:
   for#1: price # "I paid $35 for it"
   for#3: reason # "Thanks for your help"
   like: would_like
-  in: in
+  in: size # "in a large", "in small and medium"
   get: obtain
   take: time
+  then: in_that_case # "Can I get a refund, then?"
 
 ignore: []
 

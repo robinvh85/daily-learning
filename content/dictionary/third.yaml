@@ -1,5 +1,5 @@
 lemma: third
-ipa_us: /θɜːrd/
+ipa_us: /θɝːd/
 cefr: A1
 oxford3000: true
 senses:
@@ -9,4 +9,4 @@ senses:
     en: coming after the second
     collocations: [the third floor, the third time]
     example: This is my third trip to Japan.
-status: draft
+status: reviewed
