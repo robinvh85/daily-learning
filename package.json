@@ -26,6 +26,7 @@
     "content:sync": "tsx --conditions=source scripts/content-sync.ts",
     "content:check-dict": "tsx --conditions=source scripts/content-check-dict.ts",
     "content:stats": "tsx --conditions=source scripts/content-stats.ts",
+    "user:create": "tsx --conditions=source scripts/user-create.ts",
     "prepare": "husky"
   },
   "lint-staged": {

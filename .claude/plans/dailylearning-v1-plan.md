@@ -255,9 +255,9 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - **Xong khi:** sync 2 bài vào DB, mọi token của 2 bài có nghĩa, test validate bắt được file lỗi và từ thiếu
 
 ### Phase 2 — Khung UI + Bài đọc (≈ 2 ngày)
-- [ ] Token màu/typography từ mockup (`tokens.css`), Sidebar, layout responsive (menu xếp lên trên ở mobile)
-- [ ] Auth theo `AUTH_MODE` (mặc định `none` + user mặc định; chế độ `password` có test nhưng chưa dùng)
-- [ ] Trang Bài đọc: render đoạn văn từ `lesson_tokens` (mọi từ bấm được, focus words gạch chân), WordCard (nghĩa theo ngữ cảnh, IPA Mỹ, phát âm, collocation, nhãn "bản nháp", link Cambridge US), lưu từ, song ngữ, cỡ chữ (nhớ lựa chọn trong localStorage), câu hỏi chấm ngay
+- [x] Token màu/typography từ mockup (`tokens.css`), Sidebar, layout responsive (menu xếp lên trên ở mobile)
+- [x] Auth theo `AUTH_MODE` (mặc định `none` + user mặc định; chế độ `password` có test nhưng chưa dùng)
+- [x] Trang Bài đọc: render đoạn văn từ `lesson_tokens` (mọi từ bấm được, focus words gạch chân), WordCard (nghĩa theo ngữ cảnh, IPA Mỹ, phát âm, collocation, nhãn "bản nháp", link Cambridge US), lưu từ, song ngữ, cỡ chữ (nhớ lựa chọn trong localStorage), câu hỏi chấm ngay
 - [ ] Lời thoại ở trang Bài nghe dùng chung component render token → bấm từ cũng mở WordCard
 - **Xong khi:** đọc hết 1 bài, trả lời câu hỏi, lưu từ → dữ liệu nằm trong DB
 
@@ -342,3 +342,4 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - 2026-10-24: chốt tra mọi từ ở v1 bằng từ điển riêng `content/dictionary/` soạn bằng Claude trong Cowork; thêm bảng `word_forms`, `word_senses`, `lesson_tokens`; dữ liệu mở và Gemini đưa vào Backlog.
 - 2026-10-24: xong Phase 0 (monorepo, Fastify `/api/health`, Vite React, Vitest, CI, pre-commit); khi dev API chạy ở `PORT` (mặc định 3000), web ở 5173 proxy `/api` sang; chưa push GitHub.
 - 2026-10-24: xong Phase 1 (Drizzle + SQLite WAL, migration tự chạy khi khởi động, Zod schema cho `lesson.yaml`/từ điển/`daily-plan.yaml`, tokenizer, `content:sync`/`check-dict`/`stats`, 2 bài mẫu + 130 entry từ điển `draft`); từ viết tắt (`it's`, `I'll`) là entry riêng, `there's` là dạng của `there is`; câu thoại bài nghe chưa có bản dịch tiếng Việt.
+- 2026-10-24: xong Phase 2 (tokens.css + Sidebar responsive, React Router + TanStack Query, auth `none`/`password` với argon2 + session cookie + bảng `sessions` + `npm run user:create`, chặn khởi động khi HOST không phải localhost mà `AUTH_MODE=none`, API bài học/trả lời/tiến độ/lưu từ có Zod, trang Bài đọc với `TokenizedText`, WordCard, song ngữ, cỡ chữ, câu hỏi chấm trên server); nút phát âm và "Nghe bài đọc" để tắt chờ Phase 3; lời thoại Bài nghe sẽ dùng `TokenizedText` ở Phase 3.

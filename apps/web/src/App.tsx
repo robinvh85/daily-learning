@@ -1,43 +1,58 @@
-import type { HealthResponse } from '@daily-learning/shared';
-import { useEffect, useState } from 'react';
-import { fetchHealth } from './api/health';
-
-type HealthState =
-  { kind: 'loading' } | { kind: 'ok'; data: HealthResponse } | { kind: 'error'; message: string };
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { useLogout, useMe } from './api/hooks';
+import { Layout } from './components/Layout/Layout';
+import { HomePage, LessonListPage } from './pages/Home/HomePage';
+import { LoginPage } from './pages/Login/LoginPage';
+import { PlaceholderPage } from './pages/Placeholder/PlaceholderPage';
+import { ReadingPage } from './pages/Reading/ReadingPage';
 
 export function App() {
-  const [health, setHealth] = useState<HealthState>({ kind: 'loading' });
+  const me = useMe();
+  const logout = useLogout();
 
-  useEffect(() => {
-    const controller = new AbortController();
-    fetchHealth(controller.signal)
-      .then((data) => setHealth({ kind: 'ok', data }))
-      .catch((err: unknown) => {
-        if (controller.signal.aborted) return;
-        setHealth({ kind: 'error', message: err instanceof Error ? err.message : String(err) });
-      });
-    return () => controller.abort();
-  }, []);
+  if (me.isPending) {
+    return (
+      <p role="status" style={{ padding: 24 }}>
+        Đang tải…
+      </p>
+    );
+  }
+  if (me.isError) {
+    return (
+      <p role="alert" style={{ padding: 24, color: 'var(--color-red)' }}>
+        Không kết nối được máy chủ: {me.error.message}
+      </p>
+    );
+  }
+  if (me.data.authMode === 'password' && !me.data.user) return <LoginPage />;
 
   return (
-    <main className="app">
-      <h1>DailyLearning</h1>
-      <p className="subtitle">Học tiếng Anh mỗi ngày: Đọc và Nghe (A2 → B1)</p>
-      <section className="card" aria-live="polite">
-        <h2>Trạng thái máy chủ</h2>
-        {health.kind === 'loading' && <p>Đang kiểm tra kết nối…</p>}
-        {health.kind === 'ok' && (
-          <p className="ok">
-            Máy chủ hoạt động bình thường (status: {health.data.status}, uptime:{' '}
-            {health.data.uptime}s)
-          </p>
-        )}
-        {health.kind === 'error' && (
-          <p className="error" role="alert">
-            Không kết nối được máy chủ: {health.message}
-          </p>
-        )}
-      </section>
-    </main>
+    <Layout onLogout={me.data.authMode === 'password' ? () => logout.mutate() : undefined}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/read" element={<LessonListPage kind="reading" />} />
+        <Route path="/read/:slug" element={<ReadingPage />} />
+        <Route path="/listen" element={<LessonListPage kind="listening" />} />
+        <Route
+          path="/listen/:slug"
+          element={
+            <PlaceholderPage title="Bài nghe">Trang bài nghe sẽ có ở Phase 3.</PlaceholderPage>
+          }
+        />
+        <Route
+          path="/vocab"
+          element={
+            <PlaceholderPage title="Từ vựng">Ôn từ và sổ từ sẽ có ở Phase 4.</PlaceholderPage>
+          }
+        />
+        <Route path="/login" element={<Navigate to="/" replace />} />
+        <Route
+          path="*"
+          element={
+            <PlaceholderPage title="Không tìm thấy trang">Trang này không tồn tại.</PlaceholderPage>
+          }
+        />
+      </Routes>
+    </Layout>
   );
 }

@@ -219,6 +219,24 @@ export const users = sqliteTable('users', {
   createdAt: integer('created_at', { mode: 'timestamp_ms' }).notNull().default(nowMs),
 });
 
+/**
+ * Login sessions (`AUTH_MODE=password`, plan 2.6). The cookie holds a random token; only its
+ * SHA-256 hash is stored, so a leaked database does not leak usable sessions.
+ */
+export const sessions = sqliteTable(
+  'sessions',
+  {
+    /** SHA-256 (hex) of the session token. */
+    id: text('id').primaryKey(),
+    userId: integer('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    createdAt: integer('created_at', { mode: 'timestamp_ms' }).notNull().default(nowMs),
+    expiresAt: integer('expires_at', { mode: 'timestamp_ms' }).notNull(),
+  },
+  (t) => [index('sessions_user_idx').on(t.userId)],
+);
+
 export const lessonProgress = sqliteTable(
   'lesson_progress',
   {

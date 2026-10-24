@@ -1,0 +1,22 @@
+/* Mockup pattern: sidebar `flex: 1 1 220px`, main `flex: 999 1 560px`; wraps on narrow screens. */
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--color-ground);
+}
+
+.main {
+  flex: 999 1 560px;
+  min-width: 0;
+  padding: 28px 40px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (width < 780px) {
+  .main {
+    padding: 20px 16px 40px;
+  }
+}

@@ -34,6 +34,7 @@ describe('database', () => {
       'questions',
       'review_logs',
       'segments',
+      'sessions',
       'user_words',
       'users',
       'word_forms',
@@ -48,7 +49,7 @@ describe('database', () => {
     openAndMigrate(path).$client.close();
     const db = openAndMigrate(path);
     expect(db.$client.prepare('select count(*) n from __drizzle_migrations').get()).toEqual({
-      n: 1,
+      n: 2,
     });
     db.$client.close();
   });

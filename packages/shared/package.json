@@ -14,6 +14,11 @@
       "source": "./src/content.ts",
       "types": "./dist/content.d.ts",
       "default": "./dist/content.js"
+    },
+    "./api": {
+      "source": "./src/api.ts",
+      "types": "./dist/api.d.ts",
+      "default": "./dist/api.js"
     }
   },
   "scripts": {
