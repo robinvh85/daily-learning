@@ -1,0 +1,13 @@
+lemma: work
+ipa_us: /wɝːk/
+cefr: A1
+oxford3000: true
+forms: [works, worked, working]
+senses:
+  - key: work
+    pos: verb
+    vi: làm việc
+    en: 'to do a job, usually for money'
+    collocations: [work in a hotel, work hard, work for a company]
+    example: She worked in a hotel for five years.
+status: draft

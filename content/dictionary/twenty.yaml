@@ -1,0 +1,11 @@
+lemma: twenty
+ipa_us: /ˈtwenti/
+cefr: A1
+oxford3000: true
+senses:
+  - key: twenty
+    pos: number
+    vi: hai mươi (số 20)
+    en: the number 20
+    example: I’m afraid it’s running about twenty minutes late.
+status: draft

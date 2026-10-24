@@ -1,0 +1,12 @@
+lemma: over there
+ipa_us: /ˌoʊvər ˈðer/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: over_there
+    pos: phrase
+    vi: 'ở đằng kia, ở bên kia'
+    en: 'in that place, a short distance away'
+    example: 'You can use the machine over there, or buy one online.'
+status: draft

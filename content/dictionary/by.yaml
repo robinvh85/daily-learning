@@ -1,0 +1,18 @@
+lemma: by
+ipa_us: /baɪ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: near
+    pos: preposition
+    vi: 'cạnh, bên cạnh'
+    en: next to; near
+    collocations: [by the window, by the door]
+    example: There are six tables by the window.
+  - key: means
+    pos: preposition
+    vi: bằng (phương tiện)
+    en: used to say how you travel or how something is done
+    collocations: [by bus, by train, by car]
+    example: I go to work by bus.
+status: draft

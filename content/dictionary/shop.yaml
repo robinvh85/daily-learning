@@ -1,0 +1,13 @@
+lemma: shop
+ipa_us: /ʃɑːp/
+cefr: A1
+oxford3000: true
+forms: [shops]
+senses:
+  - key: shop
+    pos: noun
+    vi: 'cửa hàng, quán'
+    en: a building or room where you can buy things or services
+    collocations: [coffee shop, shop owner]
+    example: 'The shop is not very big, but it is bright and comfortable.'
+status: draft

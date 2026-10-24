@@ -1,0 +1,18 @@
+lemma: to
+ipa_us: /tuː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: direction
+    pos: preposition
+    vi: 'đến, tới (một nơi)'
+    en: in the direction of a place
+    collocations: [go to school, the train to Oxford]
+    example: Which platform does the train to Oxford leave from?
+  - key: infinitive
+    pos: infinitive marker
+    vi: '(đứng trước động từ nguyên mẫu, thường không dịch)'
+    en: used before the base form of a verb
+    collocations: [want to, need to, try to]
+    example: Now she wants to run her own business.
+status: draft

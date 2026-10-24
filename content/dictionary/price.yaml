@@ -1,0 +1,13 @@
+lemma: price
+ipa_us: /praɪs/
+cefr: A1
+oxford3000: true
+forms: [prices]
+senses:
+  - key: price
+    pos: noun
+    vi: 'giá, giá cả'
+    en: the amount of money you pay for something
+    collocations: [reasonable price, high prices]
+    example: 'The prices are reasonable, and the staff are always friendly.'
+status: draft

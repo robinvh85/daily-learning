@@ -1,0 +1,13 @@
+lemma: year
+ipa_us: /jɪr/
+cefr: A1
+oxford3000: true
+forms: [years]
+senses:
+  - key: year
+    pos: noun
+    vi: năm
+    en: a period of twelve months
+    collocations: [five years, last year, every year]
+    example: She worked in a hotel for five years.
+status: draft

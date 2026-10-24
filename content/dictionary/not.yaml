@@ -1,0 +1,12 @@
+lemma: not
+ipa_us: /nɑːt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: not
+    pos: adverb
+    vi: không
+    en: used to make a sentence negative
+    collocations: [not very, not at all]
+    example: The shop is not very big.
+status: draft

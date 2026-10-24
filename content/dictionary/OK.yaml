@@ -1,0 +1,12 @@
+lemma: OK
+ipa_us: /ˌoʊˈkeɪ/
+cefr: A1
+oxford3000: true
+forms: [okay]
+senses:
+  - key: ok
+    pos: exclamation
+    vi: 'được rồi, vâng, ừ (đồng ý)'
+    en: used to say that you agree
+    example: 'OK, I’ll wait for the 10:15.'
+status: draft

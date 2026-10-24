@@ -1,0 +1,11 @@
+lemma: usually
+ipa_us: /ˈjuːʒuəli/
+cefr: A1
+oxford3000: true
+senses:
+  - key: usually
+    pos: adverb
+    vi: 'thường, thường thường'
+    en: in most cases; most of the time
+    example: I usually go there on Saturday mornings.
+status: draft

@@ -1,0 +1,11 @@
+lemma: sometimes
+ipa_us: /ˈsʌmtaɪmz/
+cefr: A1
+oxford3000: true
+senses:
+  - key: sometimes
+    pos: adverb
+    vi: 'đôi khi, thỉnh thoảng'
+    en: on some occasions but not always
+    example: I order a hot coffee with milk and sometimes a piece of banana cake.
+status: draft

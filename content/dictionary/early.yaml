@@ -1,0 +1,13 @@
+lemma: early
+ipa_us: /ˈɝːli/
+cefr: A1
+oxford3000: true
+forms: [earlier, earliest]
+senses:
+  - key: early
+    pos: adjective
+    vi: sớm; (earlier) sớm hơn
+    en: near the beginning of a period of time; before the usual or expected time
+    collocations: [an earlier train, early morning]
+    example: Is there an earlier train?
+status: draft

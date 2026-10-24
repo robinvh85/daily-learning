@@ -1,0 +1,12 @@
+lemma: friendly
+ipa_us: /ˈfrendli/
+cefr: A1
+oxford3000: true
+senses:
+  - key: friendly
+    pos: adjective
+    vi: thân thiện
+    en: behaving in a kind and pleasant way
+    collocations: [friendly staff, a friendly smile]
+    example: 'The prices are reasonable, and the staff are always friendly.'
+status: draft

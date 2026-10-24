@@ -1,0 +1,12 @@
+lemma: now
+ipa_us: /naʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: now
+    pos: adverb
+    vi: 'bây giờ, giờ đây'
+    en: at the present time
+    collocations: [right now, from now on]
+    example: Now she wants to run her own business.
+status: draft

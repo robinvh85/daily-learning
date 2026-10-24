@@ -1,0 +1,13 @@
+lemma: name
+ipa_us: /neɪm/
+cefr: A1
+oxford3000: true
+forms: [names]
+senses:
+  - key: name
+    pos: noun
+    vi: tên
+    en: the word or words that someone or something is called
+    collocations: [first name, remember names]
+    example: Lan remembers the names of her regular customers.
+status: draft

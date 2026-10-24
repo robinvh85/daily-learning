@@ -1,0 +1,13 @@
+lemma: sit
+ipa_us: /sɪt/
+cefr: A1
+oxford3000: true
+forms: [sits, sat, sitting]
+senses:
+  - key: sit
+    pos: verb
+    vi: ngồi
+    en: to be in a position with your weight on your bottom
+    collocations: [sit down, sit by the window]
+    example: 'I can sit for an hour, read the news, and plan my week.'
+status: draft

@@ -1,0 +1,14 @@
+lemma: I'm afraid
+ipa_us: /aɪm əˈfreɪd/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [I am afraid]
+senses:
+  - key: bad_news
+    pos: phrase
+    vi: 'tôi e là, tôi e rằng (cách nói lịch sự khi báo tin không vui)'
+    en: used to say politely that something is bad or that you cannot help
+    collocations: [I’m afraid so, I’m afraid not]
+    example: But I’m afraid it’s running about twenty minutes late.
+status: draft

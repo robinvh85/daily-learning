@@ -1,0 +1,19 @@
+lemma: call
+ipa_us: /kɔːl/
+cefr: A1
+oxford3000: true
+forms: [calls, called, calling]
+senses:
+  - key: phone
+    pos: verb
+    vi: gọi điện (cho ai)
+    en: to telephone someone
+    collocations: [call someone, call back]
+    example: I will call you tonight.
+  - key: name
+    pos: verb
+    vi: gọi là; (called + tên) tên là
+    en: to give someone or something a name; (called) having the name
+    collocations: [a woman called Lan, be called]
+    example: The owner is a young woman called Lan.
+status: draft

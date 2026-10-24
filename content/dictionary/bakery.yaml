@@ -1,0 +1,13 @@
+lemma: bakery
+ipa_us: /ˈbeɪkəri/
+cefr: A2
+oxford3000: false
+forms: [bakeries]
+senses:
+  - key: bakery
+    pos: noun
+    vi: 'tiệm bánh, lò bánh mì'
+    en: a shop that makes and sells bread and cakes
+    collocations: [a local bakery]
+    example: It is next to the bakery and across from the bus stop.
+status: draft

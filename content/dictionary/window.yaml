@@ -1,0 +1,13 @@
+lemma: window
+ipa_us: /ˈwɪndoʊ/
+cefr: A1
+oxford3000: true
+forms: [windows]
+senses:
+  - key: window
+    pos: noun
+    vi: cửa sổ
+    en: 'an opening in a wall, with glass, that lets in light'
+    collocations: [by the window, open the window]
+    example: There are six tables by the window.
+status: draft

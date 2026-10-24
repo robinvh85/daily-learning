@@ -1,0 +1,11 @@
+lemma: or
+ipa_us: /ɔːr/
+cefr: A1
+oxford3000: true
+senses:
+  - key: or
+    pos: conjunction
+    vi: 'hoặc, hay'
+    en: used to give another possibility
+    example: 'You can use the machine over there, or buy one online.'
+status: draft

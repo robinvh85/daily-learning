@@ -22,5 +22,5 @@ jobs:
       - run: npm test
       - run: npm run build
 
-      # Phase 1: validate lessons and dictionary (fails on tokens missing from the dictionary).
-      # - run: npm run content:sync -- --dry-run
+      # Validate lessons and dictionary (fails on tokens missing from the dictionary).
+      - run: npm run content:sync -- --dry-run

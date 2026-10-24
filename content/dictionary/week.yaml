@@ -1,0 +1,13 @@
+lemma: week
+ipa_us: /wiːk/
+cefr: A1
+oxford3000: true
+forms: [weeks]
+senses:
+  - key: week
+    pos: noun
+    vi: 'tuần, tuần lễ'
+    en: a period of seven days
+    collocations: [last week, next week, every week]
+    example: 'I can sit for an hour, read the news, and plan my week.'
+status: draft

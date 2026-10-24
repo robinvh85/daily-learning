@@ -1,0 +1,13 @@
+lemma: slow
+ipa_us: /sloʊ/
+cefr: A1
+oxford3000: true
+forms: [slower, slowest]
+senses:
+  - key: slow
+    pos: adjective
+    vi: chậm
+    en: not moving or happening quickly
+    collocations: [a slow train]
+    example: 'There’s one at 10:05, but it’s a slow train.'
+status: draft

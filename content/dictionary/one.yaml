@@ -1,0 +1,17 @@
+lemma: one
+ipa_us: /wʌn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: number
+    pos: number
+    vi: một (số 1)
+    en: the number 1
+    example: I have one brother and two sisters.
+  - key: pronoun
+    pos: pronoun
+    vi: 'cái, chiếc, người (thay cho danh từ đã nói đến)'
+    en: used instead of a noun that has already been mentioned
+    collocations: [that one, this one, buy one]
+    example: 'You can use the machine over there, or buy one online.'
+status: draft

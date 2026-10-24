@@ -1,0 +1,13 @@
+lemma: business
+ipa_us: /ˈbɪznəs/
+cefr: A1
+oxford3000: true
+forms: [businesses]
+senses:
+  - key: business
+    pos: noun
+    vi: 'việc kinh doanh; cơ sở kinh doanh (cửa hàng, công ty)'
+    en: the activity of buying and selling; a company or shop
+    collocations: [run a business, a small business, her own business]
+    example: Now she wants to run her own business.
+status: draft

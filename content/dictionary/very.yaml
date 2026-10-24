@@ -1,0 +1,12 @@
+lemma: very
+ipa_us: /ˈveri/
+cefr: A1
+oxford3000: true
+senses:
+  - key: very
+    pos: adverb
+    vi: rất; (not very) không … lắm
+    en: to a great degree
+    collocations: [very big, not very big]
+    example: The shop is not very big.
+status: draft

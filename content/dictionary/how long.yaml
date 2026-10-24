@@ -1,0 +1,13 @@
+lemma: how long
+ipa_us: /haʊ ˈlɔːŋ/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: how_long
+    pos: phrase
+    vi: bao lâu
+    en: used to ask about a length of time
+    collocations: [how long does it take]
+    example: How long does that one take?
+status: draft

@@ -1,0 +1,19 @@
+lemma: open
+ipa_us: /ˈoʊpən/
+cefr: A1
+oxford3000: true
+forms: [opens, opened, opening]
+senses:
+  - key: thing
+    pos: verb
+    vi: 'mở (cửa, hộp, sách…)'
+    en: to move something so that it is no longer closed
+    collocations: [open the door, open a window, open a book]
+    example: 'Can you open the window, please?'
+  - key: business
+    pos: verb
+    vi: 'khai trương, mở cửa (cửa hàng, quán)'
+    en: '(of a shop or business) to start doing business for the first time'
+    collocations: [open a shop, open a business]
+    example: 'Last week, a small coffee shop opened on my street.'
+status: draft

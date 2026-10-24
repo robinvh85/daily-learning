@@ -1,0 +1,12 @@
+lemma: from
+ipa_us: /frʌm/
+cefr: A1
+oxford3000: true
+senses:
+  - key: from
+    pos: preposition
+    vi: từ
+    en: used to show where someone or something starts
+    collocations: [leave from, from Oxford]
+    example: Which platform does the train leave from?
+status: draft

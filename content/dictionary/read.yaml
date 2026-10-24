@@ -1,0 +1,13 @@
+lemma: read
+ipa_us: /riːd/
+cefr: A1
+oxford3000: true
+forms: [reads, reading]
+senses:
+  - key: read
+    pos: verb
+    vi: đọc
+    en: to look at written words and understand them
+    collocations: [read a book, read the news]
+    example: 'I can sit for an hour, read the news, and plan my week.'
+status: draft

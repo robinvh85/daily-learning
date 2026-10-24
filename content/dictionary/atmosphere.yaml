@@ -1,0 +1,12 @@
+lemma: atmosphere
+ipa_us: /ˈætməsfɪr/
+cefr: B1
+oxford3000: true
+senses:
+  - key: atmosphere
+    pos: noun
+    vi: bầu không khí (của một nơi)
+    en: the feeling or mood that a place has
+    collocations: [quiet atmosphere, friendly atmosphere]
+    example: The best thing about the shop is the quiet atmosphere.
+status: draft

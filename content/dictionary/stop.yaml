@@ -1,0 +1,13 @@
+lemma: stop
+ipa_us: /stɑːp/
+cefr: A1
+oxford3000: true
+forms: [stops, stopped, stopping]
+senses:
+  - key: stop
+    pos: verb
+    vi: 'dừng lại, đỗ (ở một nơi)'
+    en: '(of a bus or train) to stay at a place for a short time so that people can get on and off'
+    collocations: [stop at every station, stop here]
+    example: It stops at every station.
+status: draft

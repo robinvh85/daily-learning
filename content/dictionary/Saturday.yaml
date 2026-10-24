@@ -1,0 +1,13 @@
+lemma: Saturday
+ipa_us: /ˈsætərdeɪ/
+cefr: A1
+oxford3000: true
+forms: [Saturdays]
+senses:
+  - key: saturday
+    pos: noun
+    vi: thứ Bảy
+    en: the day of the week after Friday and before Sunday
+    collocations: [on Saturday, on Saturday mornings]
+    example: I usually go there on Saturday mornings.
+status: draft

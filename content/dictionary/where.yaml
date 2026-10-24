@@ -1,0 +1,11 @@
+lemma: where
+ipa_us: /wer/
+cefr: A1
+oxford3000: true
+senses:
+  - key: where
+    pos: adverb
+    vi: 'ở đâu, đâu'
+    en: in or to what place
+    example: Where can I buy a ticket?
+status: draft

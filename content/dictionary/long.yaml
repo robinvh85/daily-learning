@@ -1,0 +1,13 @@
+lemma: long
+ipa_us: /lɔːŋ/
+cefr: A1
+oxford3000: true
+forms: [longer, longest]
+senses:
+  - key: long
+    pos: adjective
+    vi: dài
+    en: measuring a great distance from one end to the other
+    collocations: [a long shelf, long hair]
+    example: There are six tables by the window and a long shelf with books.
+status: draft

@@ -1,0 +1,13 @@
+lemma: thing
+ipa_us: /θɪŋ/
+cefr: A1
+oxford3000: true
+forms: [things]
+senses:
+  - key: thing
+    pos: noun
+    vi: 'điều, thứ, việc'
+    en: 'an object, idea or fact that you do not need to name exactly'
+    collocations: [the best thing, the first thing]
+    example: 'For me, the best thing about the shop is the quiet atmosphere.'
+status: draft

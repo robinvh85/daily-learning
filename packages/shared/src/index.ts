@@ -1,3 +1,5 @@
+export * from './constants.js';
+
 /** Prefix for every REST endpoint (plan section 5). */
 export const API_PREFIX = '/api';
 

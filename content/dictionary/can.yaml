@@ -1,0 +1,12 @@
+lemma: can
+ipa_us: /kæn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: can
+    pos: modal verb
+    vi: có thể
+    en: to be able to; to be allowed to
+    collocations: [can do something]
+    example: Customers can borrow a book and bring it back later.
+status: draft

@@ -26,7 +26,7 @@ describe('GET /api/health', () => {
 
 describe('readConfig', () => {
   it('defaults to 127.0.0.1:3000', () => {
-    expect(readConfig({})).toEqual({ host: '127.0.0.1', port: 3000 });
+    expect(readConfig({})).toMatchObject({ host: '127.0.0.1', port: 3000 });
   });
 
   it('rejects an invalid port', () => {

@@ -1,0 +1,13 @@
+lemma: hour
+ipa_us: /ˈaʊər/
+cefr: A1
+oxford3000: true
+forms: [hours]
+senses:
+  - key: hour
+    pos: noun
+    vi: 'giờ, tiếng (đồng hồ)'
+    en: a period of 60 minutes
+    collocations: [an hour, half an hour, an hour and a half]
+    example: 'I can sit for an hour, read the news, and plan my week.'
+status: draft

@@ -1,0 +1,12 @@
+lemma: news
+ipa_us: /nuːz/
+cefr: A1
+oxford3000: true
+senses:
+  - key: news
+    pos: noun
+    vi: tin tức
+    en: new information about recent events
+    collocations: [read the news, good news]
+    example: 'I can sit for an hour, read the news, and plan my week.'
+status: draft

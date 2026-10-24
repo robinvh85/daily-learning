@@ -1,0 +1,13 @@
+lemma: station
+ipa_us: /ˈsteɪʃən/
+cefr: A1
+oxford3000: true
+forms: [stations]
+senses:
+  - key: station
+    pos: noun
+    vi: 'nhà ga, ga (tàu)'
+    en: a place where trains stop so that people can get on and off
+    collocations: [train station, bus station]
+    example: It stops at every station.
+status: draft

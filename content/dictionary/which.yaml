@@ -1,0 +1,12 @@
+lemma: which
+ipa_us: /wɪtʃ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: which
+    pos: determiner
+    vi: nào (hỏi để chọn trong một số cái)
+    en: used in questions to ask about one thing from a limited group
+    collocations: [which platform, which one]
+    example: 'Excuse me, which platform does the 10:15 train to Oxford leave from?'
+status: draft

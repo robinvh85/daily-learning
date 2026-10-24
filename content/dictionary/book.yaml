@@ -1,0 +1,13 @@
+lemma: book
+ipa_us: /bʊk/
+cefr: A1
+oxford3000: true
+forms: [books]
+senses:
+  - key: book
+    pos: noun
+    vi: quyển sách
+    en: a set of printed pages fixed inside a cover
+    collocations: [read a book, borrow a book]
+    example: Customers can borrow a book and bring it back later.
+status: draft

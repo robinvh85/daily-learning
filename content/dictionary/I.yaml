@@ -1,0 +1,11 @@
+lemma: I
+ipa_us: /aɪ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: i
+    pos: pronoun
+    vi: 'tôi, mình'
+    en: the person who is speaking or writing
+    example: I usually go there on Saturday mornings.
+status: draft

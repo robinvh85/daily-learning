@@ -1,0 +1,12 @@
+lemma: in
+ipa_us: /ɪn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: in
+    pos: preposition
+    vi: 'trong, ở (một nơi)'
+    en: 'inside a place, or at a place'
+    collocations: [in a hotel, in the city]
+    example: She worked in a hotel for five years.
+status: draft

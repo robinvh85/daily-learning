@@ -1,0 +1,19 @@
+lemma: take
+ipa_us: /teɪk/
+cefr: A1
+oxford3000: true
+forms: [takes, took, taken, taking]
+senses:
+  - key: hold
+    pos: verb
+    vi: 'cầm, lấy, mang theo'
+    en: to get something into your hands; to carry something with you
+    collocations: [take an umbrella, take a book]
+    example: Take an umbrella with you.
+  - key: time
+    pos: verb
+    vi: mất (bao nhiêu thời gian)
+    en: to need a particular amount of time
+    collocations: [take fifty minutes, how long does it take]
+    example: The 10:15 only takes fifty minutes.
+status: draft

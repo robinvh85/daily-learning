@@ -1,0 +1,12 @@
+lemma: 'no'
+ipa_us: /noʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: no
+    pos: exclamation
+    vi: không; (oh no) ôi không
+    en: 'used to give a negative answer, or to show you are upset'
+    collocations: [oh no]
+    example: Oh no. Is there an earlier train?
+status: draft

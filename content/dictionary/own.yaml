@@ -1,0 +1,12 @@
+lemma: own
+ipa_us: /oʊn/
+cefr: A2
+oxford3000: true
+senses:
+  - key: own
+    pos: adjective
+    vi: 'riêng, của chính mình'
+    en: belonging to a particular person and not to anyone else
+    collocations: [her own business, my own room]
+    example: Now she wants to run her own business.
+status: draft

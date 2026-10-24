@@ -245,13 +245,13 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - **Xong khi:** `npm run dev` mở được web gọi được `/api/health`
 
 ### Phase 1 — Database và pipeline nội dung (≈ 1–1.5 ngày)
-- [ ] Drizzle schema + migration (mục 4), bật WAL
-- [ ] Định dạng `lesson.yaml` + Zod schema trong `packages/shared`
-- [ ] Định dạng `content/dictionary/<lemma>.yaml` + Zod schema
-- [ ] Tokenizer: tách từ theo segment, khớp cụm nhiều chữ dài nhất trước, map qua `word_forms`, áp `senses` và `ignore` → `lesson_tokens`
-- [ ] `content:sync` (validate → upsert, báo lỗi rõ ràng, lỗi nếu có token thiếu từ điển)
-- [ ] `content:check-dict <slug>` và `content:stats`
-- [ ] 2 bài mẫu từ mockup: "A New Coffee Shop" (đọc), "At the Train Station" (nghe, tạm thời chưa có audio), kèm đầy đủ entry từ điển cho mọi từ trong 2 bài
+- [x] Drizzle schema + migration (mục 4), bật WAL
+- [x] Định dạng `lesson.yaml` + Zod schema trong `packages/shared`
+- [x] Định dạng `content/dictionary/<lemma>.yaml` + Zod schema
+- [x] Tokenizer: tách từ theo segment, khớp cụm nhiều chữ dài nhất trước, map qua `word_forms`, áp `senses` và `ignore` → `lesson_tokens`
+- [x] `content:sync` (validate → upsert, báo lỗi rõ ràng, lỗi nếu có token thiếu từ điển)
+- [x] `content:check-dict <slug>` và `content:stats`
+- [x] 2 bài mẫu từ mockup: "A New Coffee Shop" (đọc), "At the Train Station" (nghe, tạm thời chưa có audio), kèm đầy đủ entry từ điển cho mọi từ trong 2 bài
 - **Xong khi:** sync 2 bài vào DB, mọi token của 2 bài có nghĩa, test validate bắt được file lỗi và từ thiếu
 
 ### Phase 2 — Khung UI + Bài đọc (≈ 2 ngày)
@@ -341,3 +341,4 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - 2026-10-24: chốt giọng Anh-Mỹ (IPA kiểu Mỹ) và GitHub (repo private, GitHub Actions CI, pre-commit hook).
 - 2026-10-24: chốt tra mọi từ ở v1 bằng từ điển riêng `content/dictionary/` soạn bằng Claude trong Cowork; thêm bảng `word_forms`, `word_senses`, `lesson_tokens`; dữ liệu mở và Gemini đưa vào Backlog.
 - 2026-10-24: xong Phase 0 (monorepo, Fastify `/api/health`, Vite React, Vitest, CI, pre-commit); khi dev API chạy ở `PORT` (mặc định 3000), web ở 5173 proxy `/api` sang; chưa push GitHub.
+- 2026-10-24: xong Phase 1 (Drizzle + SQLite WAL, migration tự chạy khi khởi động, Zod schema cho `lesson.yaml`/từ điển/`daily-plan.yaml`, tokenizer, `content:sync`/`check-dict`/`stats`, 2 bài mẫu + 130 entry từ điển `draft`); từ viết tắt (`it's`, `I'll`) là entry riêng, `there's` là dạng của `there is`; câu thoại bài nghe chưa có bản dịch tiếng Việt.

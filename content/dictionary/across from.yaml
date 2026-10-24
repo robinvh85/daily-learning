@@ -1,0 +1,13 @@
+lemma: across from
+ipa_us: /əˈkrɔːs frʌm/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: across_from
+    pos: preposition
+    vi: 'đối diện, ở phía bên kia (đường)'
+    en: on the opposite side of a street or room from (American English)
+    collocations: [across from the bus stop, across from the park]
+    example: It is next to the bakery and across from the bus stop.
+status: draft

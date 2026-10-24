@@ -1,0 +1,12 @@
+lemma: there
+ipa_us: /ðer/
+cefr: A1
+oxford3000: true
+senses:
+  - key: there
+    pos: adverb
+    vi: 'ở đó, đến đó'
+    en: 'in, at or to that place'
+    collocations: [go there, over there]
+    example: I usually go there on Saturday mornings.
+status: draft

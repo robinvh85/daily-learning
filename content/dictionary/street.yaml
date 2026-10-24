@@ -1,0 +1,13 @@
+lemma: street
+ipa_us: /striːt/
+cefr: A1
+oxford3000: true
+forms: [streets]
+senses:
+  - key: street
+    pos: noun
+    vi: 'đường phố, con phố'
+    en: 'a public road in a city or town, with houses or shops on one or both sides'
+    collocations: [on my street, a busy street]
+    example: 'Last week, a small coffee shop opened on my street.'
+status: draft

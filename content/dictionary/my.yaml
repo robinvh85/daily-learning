@@ -1,0 +1,12 @@
+lemma: my
+ipa_us: /maɪ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: my
+    pos: determiner
+    vi: của tôi
+    en: belonging to the person who is speaking
+    collocations: [my street, my name]
+    example: 'Last week, a small coffee shop opened on my street.'
+status: draft

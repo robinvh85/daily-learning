@@ -1,0 +1,12 @@
+lemma: reasonable
+ipa_us: /ˈriːznəbl/
+cefr: B1
+oxford3000: true
+senses:
+  - key: reasonable
+    pos: adjective
+    vi: '(giá) hợp lý, phải chăng'
+    en: '(of a price) not too high'
+    collocations: [reasonable price, reasonable cost]
+    example: The prices are reasonable.
+status: draft

@@ -1,0 +1,13 @@
+lemma: morning
+ipa_us: /ˈmɔːrnɪŋ/
+cefr: A1
+oxford3000: true
+forms: [mornings]
+senses:
+  - key: morning
+    pos: noun
+    vi: buổi sáng
+    en: 'the early part of the day, from when the sun rises until midday'
+    collocations: [in the morning, every morning, Saturday mornings]
+    example: I usually go there on Saturday mornings.
+status: draft

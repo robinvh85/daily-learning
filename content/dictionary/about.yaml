@@ -1,0 +1,18 @@
+lemma: about
+ipa_us: /əˈbaʊt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: topic
+    pos: preposition
+    vi: về
+    en: on the subject of; connected with
+    collocations: [talk about, the best thing about]
+    example: 'For me, the best thing about the shop is the quiet atmosphere.'
+  - key: approximately
+    pos: adverb
+    vi: 'khoảng, chừng'
+    en: a little more or less than
+    collocations: [about twenty minutes, about an hour]
+    example: I’m afraid it’s running about twenty minutes late.
+status: draft

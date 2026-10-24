@@ -1,0 +1,19 @@
+lemma: be
+ipa_us: /biː/
+cefr: A1
+oxford3000: true
+forms: [am, is, are, was, were, been, being]
+senses:
+  - key: linking
+    pos: verb
+    vi: là; thì (đi với tính từ thường không cần dịch)
+    en: 'used to say who or what someone or something is, or to describe them'
+    collocations: [be happy, be a teacher]
+    example: The owner is a young woman called Lan.
+  - key: location
+    pos: verb
+    vi: 'ở, nằm ở (một vị trí)'
+    en: used to say where someone or something is
+    collocations: [be at home, be next to something]
+    example: It is next to the bakery and across from the bus stop.
+status: draft

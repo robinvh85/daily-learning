@@ -1,0 +1,13 @@
+lemma: owner
+ipa_us: /ˈoʊnər/
+cefr: A2
+oxford3000: true
+forms: [owners]
+senses:
+  - key: owner
+    pos: noun
+    vi: 'chủ, người sở hữu'
+    en: a person who owns something
+    collocations: [shop owner, car owner]
+    example: The owner is a young woman called Lan.
+status: draft

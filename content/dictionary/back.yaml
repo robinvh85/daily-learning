@@ -1,0 +1,12 @@
+lemma: back
+ipa_us: /bæk/
+cefr: A1
+oxford3000: true
+senses:
+  - key: back
+    pos: adverb
+    vi: 'lại, trở lại (chỗ cũ, người cũ)'
+    en: to the place or person where something was before
+    collocations: [bring back, come back, give back]
+    example: Customers can borrow a book and bring it back later.
+status: draft

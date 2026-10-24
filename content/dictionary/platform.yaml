@@ -1,0 +1,13 @@
+lemma: platform
+ipa_us: /ˈplætfɔːrm/
+cefr: B1
+oxford3000: true
+forms: [platforms]
+senses:
+  - key: platform
+    pos: noun
+    vi: 'sân ga, chỗ lên tàu'
+    en: the area next to the track at a train station where you get on and off trains
+    collocations: [platform 4, which platform]
+    example: Which platform does the train leave from?
+status: draft

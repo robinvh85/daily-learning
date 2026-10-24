@@ -1,0 +1,12 @@
+lemma: regular
+ipa_us: /ˈreɡjələr/
+cefr: A2
+oxford3000: true
+senses:
+  - key: regular
+    pos: adjective
+    vi: 'thường xuyên, quen'
+    en: doing the same thing or going to the same place often
+    collocations: [regular customer, regular exercise]
+    example: Lan remembers the names of her regular customers.
+status: draft

@@ -1,0 +1,13 @@
+lemma: woman
+ipa_us: /ˈwʊmən/
+cefr: A1
+oxford3000: true
+forms: [women]
+senses:
+  - key: woman
+    pos: noun
+    vi: 'người phụ nữ; cô, chị (người nữ đã trưởng thành)'
+    en: an adult female person
+    collocations: [a young woman]
+    example: The owner is a young woman called Lan.
+status: draft

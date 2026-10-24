@@ -1,0 +1,13 @@
+lemma: hot
+ipa_us: /hɑːt/
+cefr: A1
+oxford3000: true
+forms: [hotter, hottest]
+senses:
+  - key: hot
+    pos: adjective
+    vi: nóng
+    en: having a high temperature
+    collocations: [hot coffee, hot weather]
+    example: I order a hot coffee with milk.
+status: draft

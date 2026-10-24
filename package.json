@@ -21,6 +21,11 @@
     "test": "npm run test --workspaces --if-present",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "db:generate": "npm run build -w @daily-learning/shared && npm run db:generate -w @daily-learning/server",
+    "db:migrate": "tsx --conditions=source scripts/db-migrate.ts",
+    "content:sync": "tsx --conditions=source scripts/content-sync.ts",
+    "content:check-dict": "tsx --conditions=source scripts/content-check-dict.ts",
+    "content:stats": "tsx --conditions=source scripts/content-stats.ts",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -34,6 +39,7 @@
     "@eslint/js": "^10.0.1",
     "@types/node": "^22.20.5",
     "concurrently": "^10.0.6",
+    "drizzle-orm": "^0.45.4",
     "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^7.1.1",

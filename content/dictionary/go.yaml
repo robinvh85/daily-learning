@@ -1,0 +1,13 @@
+lemma: go
+ipa_us: /ɡoʊ/
+cefr: A1
+oxford3000: true
+forms: [goes, went, gone, going]
+senses:
+  - key: go
+    pos: verb
+    vi: 'đi, đến (một nơi)'
+    en: to move or travel to a place
+    collocations: [go there, go to work, go home]
+    example: I usually go there on Saturday mornings.
+status: draft

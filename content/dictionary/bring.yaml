@@ -1,0 +1,13 @@
+lemma: bring
+ipa_us: /brɪŋ/
+cefr: A1
+oxford3000: true
+forms: [brings, brought, bringing]
+senses:
+  - key: bring
+    pos: verb
+    vi: 'mang, đem (đến); bring something back = mang trả lại'
+    en: to take someone or something with you to a place
+    collocations: [bring something back, bring a friend]
+    example: Customers can borrow a book and bring it back later.
+status: draft

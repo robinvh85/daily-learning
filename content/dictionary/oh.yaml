@@ -1,0 +1,12 @@
+lemma: oh
+ipa_us: /oʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: oh
+    pos: exclamation
+    vi: 'ồ, ôi (thể hiện ngạc nhiên, thất vọng…)'
+    en: 'used to show surprise, disappointment or another strong feeling'
+    collocations: [oh no]
+    example: Oh no. Is there an earlier train?
+status: draft

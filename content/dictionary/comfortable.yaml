@@ -1,0 +1,12 @@
+lemma: comfortable
+ipa_us: /ˈkʌmftərbəl/
+cefr: A2
+oxford3000: true
+senses:
+  - key: comfortable
+    pos: adjective
+    vi: 'thoải mái, dễ chịu'
+    en: making you feel relaxed and pleasant
+    collocations: [feel comfortable, comfortable chair]
+    example: The shop is bright and comfortable.
+status: draft

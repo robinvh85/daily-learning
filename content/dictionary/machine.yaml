@@ -1,0 +1,13 @@
+lemma: machine
+ipa_us: /məˈʃiːn/
+cefr: A1
+oxford3000: true
+forms: [machines]
+senses:
+  - key: machine
+    pos: noun
+    vi: 'máy, máy móc'
+    en: a piece of equipment that uses power to do a particular job
+    collocations: [ticket machine, washing machine]
+    example: 'You can use the machine over there, or buy one online.'
+status: draft

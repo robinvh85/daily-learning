@@ -1,0 +1,12 @@
+lemma: that
+ipa_us: /ðæt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: that
+    pos: determiner
+    vi: 'đó, kia, ấy'
+    en: 'used for a person or thing that is not near, or that was already mentioned'
+    collocations: [that one, that day]
+    example: How long does that one take?
+status: draft

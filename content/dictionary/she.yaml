@@ -1,0 +1,11 @@
+lemma: she
+ipa_us: /ʃiː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: she
+    pos: pronoun
+    vi: 'cô ấy, chị ấy, bà ấy'
+    en: used for a woman or girl who has already been mentioned
+    example: She worked in a hotel for five years.
+status: draft

@@ -1,0 +1,13 @@
+lemma: a
+ipa_us: /ə/
+cefr: A1
+oxford3000: true
+forms: [an]
+senses:
+  - key: a
+    pos: determiner
+    vi: một (đứng trước danh từ số ít; dùng “an” trước nguyên âm)
+    en: used before a singular noun when you do not mean a particular one
+    collocations: [a book, an hour]
+    example: She worked in a hotel for five years.
+status: draft

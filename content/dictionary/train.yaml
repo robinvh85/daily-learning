@@ -1,0 +1,13 @@
+lemma: train
+ipa_us: /treɪn/
+cefr: A1
+oxford3000: true
+forms: [trains]
+senses:
+  - key: train
+    pos: noun
+    vi: 'tàu hỏa, chuyến tàu'
+    en: a line of carriages pulled by an engine on a railway
+    collocations: [take the train, a slow train, the 10:15 train]
+    example: 'Excuse me, which platform does the 10:15 train to Oxford leave from?'
+status: draft

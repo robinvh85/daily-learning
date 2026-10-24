@@ -1,0 +1,12 @@
+lemma: her
+ipa_us: /hɝː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: her
+    pos: determiner
+    vi: 'của cô ấy, của chị ấy'
+    en: belonging to a woman or girl who has already been mentioned
+    collocations: [her own, her name]
+    example: Lan remembers the names of her regular customers.
+status: draft

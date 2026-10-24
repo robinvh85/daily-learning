@@ -1,0 +1,18 @@
+lemma: at
+ipa_us: /æt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: place
+    pos: preposition
+    vi: 'ở, tại'
+    en: used to say where something happens
+    collocations: [at the station, at home]
+    example: It stops at every station.
+  - key: time
+    pos: preposition
+    vi: 'lúc, vào lúc (giờ)'
+    en: used to say what time something happens
+    collocations: [at 10:05, at night]
+    example: 'There’s one at 10:05, but it’s a slow train.'
+status: draft

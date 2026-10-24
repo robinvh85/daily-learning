@@ -1,0 +1,13 @@
+lemma: bright
+ipa_us: /braɪt/
+cefr: A2
+oxford3000: true
+forms: [brighter, brightest]
+senses:
+  - key: bright
+    pos: adjective
+    vi: 'sáng sủa, nhiều ánh sáng'
+    en: full of light
+    collocations: [a bright room, bright sunshine]
+    example: 'The shop is not very big, but it is bright and comfortable.'
+status: draft

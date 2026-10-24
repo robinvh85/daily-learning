@@ -1,0 +1,70 @@
+# Listening lesson (dialogue, en-US voices A/B). Lines, dictation gaps and questions come from
+# the UI mockup. No audio yet: audio.mp3 and timings.json are added in Phase 3 (content:tts).
+kind: listening
+level: A2
+topic: travel
+title: At the Train Station
+order: 1
+
+segments:
+  - id: l1
+    speaker: A
+    text_en: Excuse me, which platform does the 10:15 train to Oxford leave from?
+  - id: l2
+    speaker: B
+    text_en: Platform 4. But I’m afraid it’s running about twenty minutes late.
+  - id: l3
+    speaker: A
+    text_en: Oh no. Is there an earlier train?
+  - id: l4
+    speaker: B
+    text_en: There’s one at 10:05, but it’s a slow train. It stops at every station.
+  - id: l5
+    speaker: A
+    text_en: How long does that one take?
+  - id: l6
+    speaker: B
+    text_en: About an hour and a half. The 10:15 only takes fifty minutes.
+  - id: l7
+    speaker: A
+    text_en: OK, I’ll wait for the 10:15. Where can I buy a ticket?
+  - id: l8
+    speaker: B
+    text_en: You can use the machine over there, or buy one online.
+
+focus_words: [platform, I'm afraid, run, late, station, wait for, ticket, machine]
+
+senses:
+  do: auxiliary
+  to: direction
+  run: operate # "it’s running about twenty minutes late"
+  about: approximately
+  one: pronoun
+  at#1: time # "at 10:05" (#2 "at every station" keeps the first sense)
+  take: time
+
+ignore: [Oxford]
+
+dictation:
+  - segment: l2
+    before: But I’m afraid it’s running about twenty minutes
+    answer: late
+    after: .
+  - segment: l4
+    before: It stops at every
+    answer: station
+    after: .
+  - segment: l8
+    before: You can use the
+    answer: machine
+    after: over there.
+
+questions:
+  - prompt: Why does the woman decide to wait?
+    options: [The 10:05 train is slower, She has no ticket, Platform 4 is closed]
+    correct: 0
+    evidence: l4
+  - prompt: How long does the 10:15 train take?
+    options: [About 20 minutes, About 50 minutes, About 90 minutes]
+    correct: 1
+    evidence: l6

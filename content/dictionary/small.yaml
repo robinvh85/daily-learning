@@ -1,0 +1,13 @@
+lemma: small
+ipa_us: /smɔːl/
+cefr: A1
+oxford3000: true
+forms: [smaller, smallest]
+senses:
+  - key: small
+    pos: adjective
+    vi: 'nhỏ, bé'
+    en: not large in size or amount
+    collocations: [a small shop, a small town]
+    example: 'Last week, a small coffee shop opened on my street.'
+status: draft

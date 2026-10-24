@@ -1,0 +1,12 @@
+lemma: milk
+ipa_us: /mɪlk/
+cefr: A1
+oxford3000: true
+senses:
+  - key: milk
+    pos: noun
+    vi: sữa
+    en: 'the white liquid from cows and some other animals, used as a drink'
+    collocations: [coffee with milk, a glass of milk]
+    example: I order a hot coffee with milk.
+status: draft

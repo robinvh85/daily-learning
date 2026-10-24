@@ -1,0 +1,12 @@
+lemma: online
+ipa_us: /ˌɑːnˈlaɪn/
+cefr: A2
+oxford3000: true
+senses:
+  - key: online
+    pos: adverb
+    vi: 'trên mạng, trực tuyến'
+    en: using the internet
+    collocations: [buy online, book online]
+    example: 'You can use the machine over there, or buy one online.'
+status: draft

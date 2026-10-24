@@ -1,0 +1,12 @@
+lemma: late
+ipa_us: /leɪt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: late
+    pos: adjective
+    vi: 'trễ, muộn'
+    en: arriving or happening after the expected time
+    collocations: [be late, running late, twenty minutes late]
+    example: It’s running about twenty minutes late.
+status: draft

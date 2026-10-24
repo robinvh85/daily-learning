@@ -1,0 +1,13 @@
+lemma: table
+ipa_us: /ˈteɪbəl/
+cefr: A1
+oxford3000: true
+forms: [tables]
+senses:
+  - key: table
+    pos: noun
+    vi: cái bàn
+    en: a piece of furniture with a flat top on legs
+    collocations: [by the window, book a table]
+    example: There are six tables by the window.
+status: draft

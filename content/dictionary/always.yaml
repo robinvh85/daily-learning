@@ -1,0 +1,11 @@
+lemma: always
+ipa_us: /ˈɔːlweɪz/
+cefr: A1
+oxford3000: true
+senses:
+  - key: always
+    pos: adverb
+    vi: 'luôn luôn, lúc nào cũng'
+    en: at all times; every time
+    example: The staff are always friendly.
+status: draft

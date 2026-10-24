@@ -1,0 +1,12 @@
+lemma: excuse me
+ipa_us: /ɪkˈskjuːz miː/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: excuse_me
+    pos: exclamation
+    vi: xin lỗi (dùng để gọi ai đó một cách lịch sự trước khi hỏi)
+    en: 'used politely to get someone’s attention, for example before asking a question'
+    example: 'Excuse me, which platform does the 10:15 train to Oxford leave from?'
+status: draft

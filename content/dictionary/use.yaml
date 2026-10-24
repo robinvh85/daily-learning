@@ -1,0 +1,13 @@
+lemma: use
+ipa_us: /juːz/
+cefr: A1
+oxford3000: true
+forms: [uses, used, using]
+senses:
+  - key: use
+    pos: verb
+    vi: 'dùng, sử dụng'
+    en: to do something with a thing for a purpose
+    collocations: [use a machine, use a computer]
+    example: 'You can use the machine over there, or buy one online.'
+status: draft

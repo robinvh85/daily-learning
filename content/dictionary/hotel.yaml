@@ -1,0 +1,13 @@
+lemma: hotel
+ipa_us: /hoʊˈtel/
+cefr: A1
+oxford3000: true
+forms: [hotels]
+senses:
+  - key: hotel
+    pos: noun
+    vi: khách sạn
+    en: a building where people pay to stay for a short time
+    collocations: [stay at a hotel, work in a hotel]
+    example: She worked in a hotel for five years.
+status: draft

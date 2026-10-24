@@ -1,0 +1,14 @@
+lemma: there is
+ipa_us: /ðer ˈɪz/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [there are, there was, there were, there's, is there, are there, was there, were there]
+senses:
+  - key: exist
+    pos: phrase
+    vi: có (cái gì đó ở đâu); is there…? = có … không?
+    en: used to say that something exists or is in a place
+    collocations: [there is a…, there are many…]
+    example: There are six tables by the window and a long shelf with books.
+status: draft

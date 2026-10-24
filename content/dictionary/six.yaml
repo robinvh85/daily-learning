@@ -1,0 +1,11 @@
+lemma: six
+ipa_us: /sɪks/
+cefr: A1
+oxford3000: true
+senses:
+  - key: six
+    pos: number
+    vi: sáu (số 6)
+    en: the number 6
+    example: There are six tables by the window.
+status: draft

@@ -1,0 +1,14 @@
+lemma: wait for
+ipa_us: /ˈweɪt fɔːr/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [waits for, waited for, waiting for]
+senses:
+  - key: wait_for
+    pos: phrasal verb
+    vi: 'chờ, đợi (ai, cái gì)'
+    en: to stay where you are until someone or something comes
+    collocations: [wait for the train, wait for a bus]
+    example: 'OK, I’ll wait for the 10:15.'
+status: draft

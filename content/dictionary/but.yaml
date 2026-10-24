@@ -1,0 +1,11 @@
+lemma: but
+ipa_us: /bʌt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: but
+    pos: conjunction
+    vi: nhưng
+    en: used to introduce something that is different from what you said before
+    example: 'The shop is not very big, but it is bright and comfortable.'
+status: draft

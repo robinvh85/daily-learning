@@ -1,0 +1,14 @@
+lemma: coffee shop
+ipa_us: /ˈkɔːfi ʃɑːp/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [coffee shops]
+senses:
+  - key: coffee_shop
+    pos: noun
+    vi: quán cà phê
+    en: 'a small restaurant that sells coffee, tea and light meals'
+    collocations: [go to a coffee shop, a small coffee shop]
+    example: 'Last week, a small coffee shop opened on my street.'
+status: draft

@@ -1,0 +1,13 @@
+lemma: ticket
+ipa_us: /ˈtɪkɪt/
+cefr: A1
+oxford3000: true
+forms: [tickets]
+senses:
+  - key: ticket
+    pos: noun
+    vi: vé
+    en: a piece of paper or a card that shows you have paid to travel or to go in somewhere
+    collocations: [buy a ticket, train ticket]
+    example: Where can I buy a ticket?
+status: draft

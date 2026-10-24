@@ -1,0 +1,13 @@
+lemma: shelf
+ipa_us: /ʃelf/
+cefr: B1
+oxford3000: true
+forms: [shelves]
+senses:
+  - key: shelf
+    pos: noun
+    vi: 'kệ, giá (để sách, để đồ)'
+    en: 'a flat board fixed to a wall or in a cupboard, for putting things on'
+    collocations: [on the shelf, a long shelf]
+    example: There are six tables by the window and a long shelf with books.
+status: draft

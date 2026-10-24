@@ -1,0 +1,12 @@
+lemma: every
+ipa_us: /ˈevri/
+cefr: A1
+oxford3000: true
+senses:
+  - key: every
+    pos: determiner
+    vi: 'mỗi, mọi'
+    en: used to talk about all the people or things in a group
+    collocations: [every station, every day]
+    example: It stops at every station.
+status: draft

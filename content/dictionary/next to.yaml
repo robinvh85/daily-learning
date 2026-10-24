@@ -1,0 +1,13 @@
+lemma: next to
+ipa_us: /ˈnekst tuː/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: next_to
+    pos: preposition
+    vi: 'bên cạnh, kế bên'
+    en: 'very close to someone or something, at their side'
+    collocations: [next to the window, sit next to someone]
+    example: It is next to the bakery and across from the bus stop.
+status: draft

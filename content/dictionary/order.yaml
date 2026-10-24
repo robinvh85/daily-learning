@@ -1,0 +1,13 @@
+lemma: order
+ipa_us: /ˈɔːrdər/
+cefr: A2
+oxford3000: true
+forms: [orders, ordered, ordering]
+senses:
+  - key: order
+    pos: verb
+    vi: 'gọi (món ăn, đồ uống); đặt (hàng)'
+    en: to ask for food or drinks in a restaurant or café; to ask for goods to be sent to you
+    collocations: [order a coffee, order food, order online]
+    example: I order a hot coffee with milk.
+status: draft

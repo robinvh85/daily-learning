@@ -1,0 +1,13 @@
+lemma: cake
+ipa_us: /keɪk/
+cefr: A1
+oxford3000: true
+forms: [cakes]
+senses:
+  - key: cake
+    pos: noun
+    vi: bánh ngọt
+    en: 'a sweet food made from flour, eggs, fat and sugar, baked in an oven'
+    collocations: [banana cake, a piece of cake]
+    example: I order a hot coffee with milk and sometimes a piece of banana cake.
+status: draft

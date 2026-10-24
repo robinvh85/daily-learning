@@ -1,0 +1,13 @@
+lemma: coffee
+ipa_us: /ˈkɔːfi/
+cefr: A1
+oxford3000: true
+forms: [coffees]
+senses:
+  - key: coffee
+    pos: noun
+    vi: cà phê; một ly cà phê
+    en: a hot drink made from roasted coffee beans; a cup of this drink
+    collocations: [hot coffee, a cup of coffee, coffee with milk]
+    example: I order a hot coffee with milk.
+status: draft

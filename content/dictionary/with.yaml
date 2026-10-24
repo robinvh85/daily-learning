@@ -1,0 +1,12 @@
+lemma: with
+ipa_us: /wɪð/
+cefr: A1
+oxford3000: true
+senses:
+  - key: with
+    pos: preposition
+    vi: với; có (kèm theo)
+    en: together with; having or containing
+    collocations: [coffee with milk, a shelf with books]
+    example: I order a hot coffee with milk.
+status: draft

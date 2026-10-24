@@ -1,0 +1,13 @@
+lemma: want
+ipa_us: /wɑːnt/
+cefr: A1
+oxford3000: true
+forms: [wants, wanted, wanting]
+senses:
+  - key: want
+    pos: verb
+    vi: muốn
+    en: to wish to have or to do something
+    collocations: [want to do something, want something]
+    example: Now she wants to run her own business.
+status: draft

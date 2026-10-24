@@ -1,0 +1,11 @@
+lemma: you
+ipa_us: /juː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: you
+    pos: pronoun
+    vi: 'bạn, anh, chị… (người đang nghe)'
+    en: the person or people being spoken to
+    example: 'You can use the machine over there, or buy one online.'
+status: draft

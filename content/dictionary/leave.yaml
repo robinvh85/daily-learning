@@ -1,0 +1,13 @@
+lemma: leave
+ipa_us: /liːv/
+cefr: A1
+oxford3000: true
+forms: [leaves, left, leaving]
+senses:
+  - key: leave
+    pos: verb
+    vi: 'rời đi, khởi hành (từ đâu)'
+    en: to go away from a place
+    collocations: [leave from platform 4, leave home]
+    example: Which platform does the train leave from?
+status: draft

@@ -1,0 +1,13 @@
+lemma: buy
+ipa_us: /baɪ/
+cefr: A1
+oxford3000: true
+forms: [buys, bought, buying]
+senses:
+  - key: buy
+    pos: verb
+    vi: mua
+    en: to get something by paying money for it
+    collocations: [buy a ticket, buy online]
+    example: Where can I buy a ticket?
+status: draft

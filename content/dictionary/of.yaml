@@ -1,0 +1,12 @@
+lemma: of
+ipa_us: /ʌv/
+cefr: A1
+oxford3000: true
+senses:
+  - key: of
+    pos: preposition
+    vi: của; (sau từ chỉ lượng) a piece of cake = một miếng bánh
+    en: belonging to; used after words for amounts and parts
+    collocations: [the names of, a piece of]
+    example: Lan remembers the names of her regular customers.
+status: draft

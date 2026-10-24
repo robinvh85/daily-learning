@@ -1,0 +1,11 @@
+lemma: I'll
+ipa_us: /aɪl/
+cefr: A1
+oxford3000: false
+senses:
+  - key: i_will
+    pos: contraction
+    vi: tôi sẽ (viết tắt của I will)
+    en: short form of “I will”
+    example: 'OK, I’ll wait for the 10:15.'
+status: draft

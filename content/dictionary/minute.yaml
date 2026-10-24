@@ -1,0 +1,13 @@
+lemma: minute
+ipa_us: /ˈmɪnɪt/
+cefr: A1
+oxford3000: true
+forms: [minutes]
+senses:
+  - key: minute
+    pos: noun
+    vi: phút
+    en: a period of 60 seconds
+    collocations: [twenty minutes, wait a minute]
+    example: The 10:15 only takes fifty minutes.
+status: draft

@@ -1,0 +1,12 @@
+lemma: staff
+ipa_us: /stæf/
+cefr: A2
+oxford3000: true
+senses:
+  - key: staff
+    pos: noun
+    vi: nhân viên (tất cả những người làm việc ở một nơi)
+    en: all the people who work for a company or organization
+    collocations: [hotel staff, the staff are friendly]
+    example: 'The prices are reasonable, and the staff are always friendly.'
+status: draft

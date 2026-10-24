@@ -1,0 +1,13 @@
+lemma: banana
+ipa_us: /bəˈnænə/
+cefr: A1
+oxford3000: true
+forms: [bananas]
+senses:
+  - key: banana
+    pos: noun
+    vi: quả chuối
+    en: a long curved fruit with a yellow skin
+    collocations: [banana cake]
+    example: I order a hot coffee with milk and sometimes a piece of banana cake.
+status: draft

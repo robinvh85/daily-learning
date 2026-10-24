@@ -1,0 +1,11 @@
+lemma: five
+ipa_us: /faɪv/
+cefr: A1
+oxford3000: true
+senses:
+  - key: five
+    pos: number
+    vi: năm (số 5)
+    en: the number 5
+    example: She worked in a hotel for five years.
+status: draft

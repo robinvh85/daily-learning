@@ -1,0 +1,13 @@
+lemma: big
+ipa_us: /bɪɡ/
+cefr: A1
+oxford3000: true
+forms: [bigger, biggest]
+senses:
+  - key: big
+    pos: adjective
+    vi: 'to, lớn'
+    en: large in size
+    collocations: [a big city]
+    example: The shop is not very big.
+status: draft

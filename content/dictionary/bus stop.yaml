@@ -1,0 +1,14 @@
+lemma: bus stop
+ipa_us: /ˈbʌs stɑːp/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [bus stops]
+senses:
+  - key: bus_stop
+    pos: noun
+    vi: 'trạm xe buýt, điểm dừng xe buýt'
+    en: a place where a bus stops for people to get on and off
+    collocations: [wait at the bus stop]
+    example: It is next to the bakery and across from the bus stop.
+status: draft

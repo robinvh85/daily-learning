@@ -1,0 +1,11 @@
+lemma: and
+ipa_us: /ænd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: and
+    pos: conjunction
+    vi: và
+    en: used to join words or parts of a sentence
+    example: The shop is bright and comfortable.
+status: draft

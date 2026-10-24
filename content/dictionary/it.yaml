@@ -1,0 +1,11 @@
+lemma: it
+ipa_us: /ɪt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: it
+    pos: pronoun
+    vi: 'nó (chỉ đồ vật, con vật, sự việc đã nói đến)'
+    en: 'used for a thing, an animal or a situation that has already been mentioned'
+    example: Customers can borrow a book and bring it back later.
+status: draft

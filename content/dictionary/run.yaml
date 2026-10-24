@@ -1,0 +1,25 @@
+lemma: run
+ipa_us: /rʌn/
+cefr: A1
+oxford3000: true
+forms: [runs, ran, running]
+senses:
+  - key: manage
+    pos: verb
+    vi: 'điều hành, quản lý (cửa hàng, công ty)'
+    en: to be in charge of a business or organization
+    collocations: [run a business, run a shop, run a company]
+    example: Now she wants to run her own business.
+  - key: move
+    pos: verb
+    vi: chạy
+    en: to move quickly on foot
+    collocations: [run fast, run for the bus]
+    example: I ran to catch the bus.
+  - key: operate
+    pos: verb
+    vi: '(tàu, xe buýt) chạy theo lịch; be running late: đang bị trễ'
+    en: '(of buses or trains) to travel on a route at planned times'
+    collocations: [run late, run on time, run every hour]
+    example: I’m afraid it’s running about twenty minutes late.
+status: draft

@@ -1,0 +1,13 @@
+lemma: young
+ipa_us: /jʌŋ/
+cefr: A1
+oxford3000: true
+forms: [younger, youngest]
+senses:
+  - key: young
+    pos: adjective
+    vi: trẻ
+    en: having lived for only a short time; not old
+    collocations: [a young woman, young people]
+    example: The owner is a young woman called Lan.
+status: draft

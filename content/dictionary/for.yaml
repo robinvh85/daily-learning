@@ -1,0 +1,24 @@
+lemma: for
+ipa_us: /fɔːr/
+cefr: A1
+oxford3000: true
+senses:
+  - key: purpose
+    pos: preposition
+    vi: 'cho, dành cho'
+    en: intended to be given to or used by someone
+    collocations: [a gift for you, for sale]
+    example: This coffee is for you.
+  - key: duration
+    pos: preposition
+    vi: trong (một khoảng thời gian)
+    en: used to show how long something lasts
+    collocations: [for five years, for an hour]
+    example: She worked in a hotel for five years.
+  - key: opinion
+    pos: preposition
+    vi: 'đối với, với (ai)'
+    en: used to say whose opinion or situation you mean
+    collocations: [for me, for most people]
+    example: 'For me, the best thing about the shop is the quiet atmosphere.'
+status: draft

@@ -1,0 +1,18 @@
+lemma: 'on'
+ipa_us: /ɑːn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: place
+    pos: preposition
+    vi: 'trên, ở trên; ở (trên một con phố)'
+    en: touching the surface of something; located in a street
+    collocations: [on the table, on my street]
+    example: 'Last week, a small coffee shop opened on my street.'
+  - key: day
+    pos: preposition
+    vi: 'vào (ngày, thứ trong tuần)'
+    en: used to say which day something happens
+    collocations: [on Monday, on Saturday mornings, on my birthday]
+    example: I usually go there on Saturday mornings.
+status: draft

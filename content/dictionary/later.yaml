@@ -1,0 +1,12 @@
+lemma: later
+ipa_us: /ˈleɪtər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: later
+    pos: adverb
+    vi: 'sau, sau đó, lát nữa'
+    en: 'at a time in the future, or after the time you are talking about'
+    collocations: [see you later, later today]
+    example: Customers can borrow a book and bring it back later.
+status: draft

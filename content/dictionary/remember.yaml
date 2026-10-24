@@ -1,0 +1,13 @@
+lemma: remember
+ipa_us: /rɪˈmembər/
+cefr: A1
+oxford3000: true
+forms: [remembers, remembered, remembering]
+senses:
+  - key: remember
+    pos: verb
+    vi: nhớ (không quên)
+    en: to keep something in your mind; not to forget
+    collocations: [remember someone’s name, remember to do something]
+    example: Lan remembers the names of her regular customers.
+status: draft

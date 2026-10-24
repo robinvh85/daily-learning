@@ -1,0 +1,13 @@
+lemma: quiet
+ipa_us: /ˈkwaɪət/
+cefr: A1
+oxford3000: true
+forms: [quieter, quietest]
+senses:
+  - key: quiet
+    pos: adjective
+    vi: yên tĩnh
+    en: without much noise
+    collocations: [quiet atmosphere, a quiet street]
+    example: 'For me, the best thing about the shop is the quiet atmosphere.'
+status: draft

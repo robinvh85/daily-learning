@@ -1,0 +1,19 @@
+lemma: do
+ipa_us: /duː/
+cefr: A1
+oxford3000: true
+forms: [does, did, done, doing]
+senses:
+  - key: action
+    pos: verb
+    vi: làm
+    en: to perform an action or an activity
+    collocations: [do homework, do the shopping]
+    example: What do you do on Saturday mornings?
+  - key: auxiliary
+    pos: verb
+    vi: '(trợ động từ dùng trong câu hỏi và câu phủ định, không dịch)'
+    en: used to make questions and negative sentences
+    collocations: [does it…?, do you…?]
+    example: How long does that one take?
+status: draft

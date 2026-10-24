@@ -1,0 +1,18 @@
+lemma: last
+ipa_us: /læst/
+cefr: A1
+oxford3000: true
+senses:
+  - key: previous
+    pos: adjective
+    vi: 'trước, vừa qua (tuần trước, năm ngoái…)'
+    en: just before the present one
+    collocations: [last week, last year, last night]
+    example: 'Last week, a small coffee shop opened on my street.'
+  - key: final
+    pos: adjective
+    vi: cuối cùng
+    en: coming after all the others
+    collocations: [the last train, the last day]
+    example: December is the last month of the year.
+status: draft

@@ -31,15 +31,20 @@ npm run dev
 
 ## Scripts
 
-| Command             | What it does                                    |
-| ------------------- | ----------------------------------------------- |
-| `npm run dev`       | Server (tsx watch) + web (Vite) together        |
-| `npm run build`     | Build `shared`, `server` and `web` into `dist/` |
-| `npm start`         | Run the built server (`apps/server/dist`)       |
-| `npm run lint`      | ESLint (flat config)                            |
-| `npm run typecheck` | `tsc --noEmit` in every workspace               |
-| `npm test`          | Vitest in every workspace                       |
-| `npm run format`    | Prettier (write); `format:check` only checks    |
+| Command                             | What it does                                                                      |
+| ----------------------------------- | --------------------------------------------------------------------------------- |
+| `npm run dev`                       | Server (tsx watch) + web (Vite) together                                          |
+| `npm run build`                     | Build `shared`, `server` and `web` into `dist/`                                   |
+| `npm start`                         | Run the built server (`apps/server/dist`)                                         |
+| `npm run lint`                      | ESLint (flat config)                                                              |
+| `npm run typecheck`                 | `tsc --noEmit` in every workspace                                                 |
+| `npm test`                          | Vitest in every workspace                                                         |
+| `npm run format`                    | Prettier (write); `format:check` only checks                                      |
+| `npm run db:migrate`                | Apply SQL migrations to `DB_PATH` (also runs on server start)                     |
+| `npm run db:generate`               | Create a new migration after editing `apps/server/src/db/schema.ts`               |
+| `npm run content:sync`              | Validate `content/` and upsert it into SQLite (`-- --dry-run`: validate only)     |
+| `npm run content:check-dict [slug]` | Words of a lesson missing from the dictionary, multi-sense words without a choice |
+| `npm run content:stats`             | Dictionary size, % reviewed, Oxford 3000 flags, lesson count                      |
 
 ## Structure
 
@@ -49,12 +54,35 @@ apps/
   web/      React 18 + Vite UI, tests in test/
 packages/
   shared/   Types and schemas shared by server and web
-scripts/    Repo tooling (check-staged.mjs: pre-commit guard)
-.github/    CI (lint, typecheck, test, build)
+content/    Lessons, dictionary and daily plan (synced into SQLite)
+scripts/    Repo tooling (content-*.ts, db-migrate.ts, check-staged.mjs: pre-commit guard)
+.github/    CI (lint, typecheck, test, build, content:sync --dry-run)
 ```
 
 `packages/shared` exposes its TypeScript source through the `source` export condition (used by
 `tsx`, Vite and Vitest in dev/test) and its compiled `dist/` for production builds.
+
+## Database
+
+SQLite (`better-sqlite3` + Drizzle ORM) at `DB_PATH` (default `./data/app.db`, git-ignored), with
+`journal_mode=WAL`, `foreign_keys=ON`, `synchronous=NORMAL`. Schema: `apps/server/src/db/schema.ts`,
+migrations: `apps/server/src/db/migrations/` (generated, applied automatically).
+
+## Content
+
+```
+content/
+  lessons/<level>/<slug>/lesson.yaml   lesson text, translation, focus words, senses, questions, dictation
+  dictionary/<lemma>.yaml              one entry per lemma or phrase (US IPA, Vietnamese meaning per sense)
+  daily-plan.yaml                      day N → reading + listening lesson
+```
+
+Schemas: `packages/shared/src/content.ts`. Tokenizer rules: `apps/server/src/content/tokenizer.ts`
+(phrases longest first, forms → lemma, `senses` with `word#n`, `ignore`, numbers skipped, contractions
+such as `it's` / `I'll` are dictionary entries of their own, `there's` is a form of `there is`).
+
+Workflow for a new lesson: write `lesson.yaml` → `npm run content:check-dict <slug>` → add the missing
+`content/dictionary/*.yaml` (`status: draft`) → `npm run content:sync`.
 
 ## Pre-commit hook
 

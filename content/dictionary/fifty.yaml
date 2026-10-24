@@ -1,0 +1,11 @@
+lemma: fifty
+ipa_us: /ˈfɪfti/
+cefr: A1
+oxford3000: true
+senses:
+  - key: fifty
+    pos: number
+    vi: năm mươi (số 50)
+    en: the number 50
+    example: The 10:15 only takes fifty minutes.
+status: draft

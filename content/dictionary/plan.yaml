@@ -1,0 +1,19 @@
+lemma: plan
+ipa_us: /plæn/
+cefr: A1
+oxford3000: true
+forms: [plans, planned, planning]
+senses:
+  - key: noun
+    pos: noun
+    vi: kế hoạch
+    en: 'something that you have decided to do in the future, and how you will do it'
+    collocations: [make a plan, plans for the weekend]
+    example: Do you have any plans for the weekend?
+  - key: verb
+    pos: verb
+    vi: lên kế hoạch (cho)
+    en: to decide what you are going to do and how you will do it
+    collocations: [plan my week, plan a trip]
+    example: 'I can sit for an hour, read the news, and plan my week.'
+status: draft
