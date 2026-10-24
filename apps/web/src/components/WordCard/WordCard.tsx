@@ -1,5 +1,6 @@
 import type { WordDto } from '@daily-learning/shared/api';
 import { cambridgeUrl, posLabel } from '../../lib/labels';
+import { playUrl } from '../../lib/playUrl';
 import { ExternalIcon, SpeakerIcon } from '../Icons';
 import styles from './WordCard.module.css';
 
@@ -12,6 +13,8 @@ export interface WordCardProps {
   saved?: boolean;
   saving?: boolean;
   onToggleSave?: () => void;
+  /** Shows a close button (listening page). */
+  onClose?: () => void;
 }
 
 export function WordCard({
@@ -21,6 +24,7 @@ export function WordCard({
   saved = false,
   saving = false,
   onToggleSave,
+  onClose,
 }: WordCardProps) {
   if (!word) {
     return (
@@ -37,25 +41,48 @@ export function WordCard({
     <section aria-label="Từ đang chọn" className={styles.card} aria-live="polite">
       <div className={styles.eyebrowRow}>
         <div className={styles.eyebrow}>Từ đang chọn</div>
-        {word.status === 'draft' && (
-          <span className={styles.draft} title="Nghĩa đang chờ duyệt">
-            bản nháp
-          </span>
-        )}
+        <div className={styles.eyebrowTools}>
+          {word.status === 'draft' && (
+            <span className={styles.draft} title="Nghĩa đang chờ duyệt">
+              bản nháp
+            </span>
+          )}
+          {onClose && (
+            <button
+              type="button"
+              className={styles.close}
+              onClick={onClose}
+              aria-label="Đóng thẻ từ"
+            >
+              ×
+            </button>
+          )}
+        </div>
       </div>
       <div className={styles.head}>
         <h2 className={styles.lemma} lang="en">
           {word.lemma}
         </h2>
-        <button
-          type="button"
-          className={styles.speaker}
-          aria-label={`Nghe phát âm ${word.lemma} (có ở Phase 3)`}
-          title="Có ở Phase 3"
-          disabled
-        >
-          <SpeakerIcon />
-        </button>
+        {word.audioUrl ? (
+          <button
+            type="button"
+            className={styles.speaker}
+            aria-label={`Nghe phát âm ${word.lemma}`}
+            onClick={() => playUrl(word.audioUrl!)}
+          >
+            <SpeakerIcon />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className={styles.speaker}
+            aria-label={`Nghe phát âm ${word.lemma} (chưa có audio)`}
+            title="Chưa có audio: chạy npm run content:tts-words"
+            disabled
+          >
+            <SpeakerIcon />
+          </button>
+        )}
       </div>
       {showSurface && (
         <div className={styles.surface}>

@@ -64,7 +64,7 @@ export function writeBundle(db: AppDatabase, bundle: ContentBundle): SyncCounts 
     // --- Dictionary -------------------------------------------------------
     const wordIds = new Map<string, number>(); // lemma key → id
     const senseIds = new Map<string, number>(); // `${lemmaKey}\u0000${senseKey}` → id
-    for (const { entry } of bundle.entries) {
+    for (const { entry, audioPath, audioVersion } of bundle.entries) {
       const values = {
         lemma: entry.lemma,
         ipaUs: entry.ipa_us,
@@ -72,6 +72,8 @@ export function writeBundle(db: AppDatabase, bundle: ContentBundle): SyncCounts 
         oxford3000: entry.oxford3000,
         isPhrase: entry.is_phrase,
         status: entry.status,
+        audioPath,
+        audioVersion,
       };
       const row = tx
         .insert(words)
@@ -135,8 +137,10 @@ export function writeBundle(db: AppDatabase, bundle: ContentBundle): SyncCounts 
         title: l.title,
         topic: l.topic,
         wordCount: p.wordCount,
-        durationMs: null,
+        durationMs: p.timings?.durationMs ?? null,
         audioPath: p.audioPath,
+        audioVersion: p.audioVersion,
+        peaks: p.timings?.peaks ?? null,
         coverPath: p.coverPath,
         orderIndex: l.order,
       };
@@ -154,6 +158,7 @@ export function writeBundle(db: AppDatabase, bundle: ContentBundle): SyncCounts 
       tx.delete(lessonWords).where(eq(lessonWords.lessonId, lessonId)).run();
 
       const segIds = new Map<string, number>();
+      const timing = new Map(p.timings?.segments.map((t) => [t.id, t]));
       l.segments.forEach((s, idx) => {
         const sv = {
           lessonId,
@@ -163,8 +168,8 @@ export function writeBundle(db: AppDatabase, bundle: ContentBundle): SyncCounts 
           speaker: s.speaker ?? null,
           textEn: s.text_en,
           textVi: s.text_vi ?? null,
-          startMs: s.start_ms ?? null,
-          endMs: s.end_ms ?? null,
+          startMs: timing.get(s.id)?.startMs ?? s.start_ms ?? null,
+          endMs: timing.get(s.id)?.endMs ?? s.end_ms ?? null,
         };
         const segId = tx
           .insert(segments)

@@ -5,12 +5,15 @@ import type { AppDatabase } from './db/client.js';
 import { registerErrorHandler } from './http.js';
 import { registerAuth } from './modules/auth/routes.js';
 import { lessonRoutes } from './modules/lessons/routes.js';
+import { registerContentStatic } from './modules/static/routes.js';
 import { vocabRoutes } from './modules/vocab/routes.js';
 
 export interface AppOptions {
   db: AppDatabase;
   /** Default `none` (single local user). */
   authMode?: AuthMode;
+  /** Serve lesson/word audio from this `content/` directory under `/content/`. */
+  contentDir?: string;
   fastify?: FastifyServerOptions;
 }
 
@@ -29,6 +32,7 @@ export async function buildApp(opts: AppOptions): Promise<FastifyInstance> {
   await registerAuth(app, { db: opts.db, authMode: opts.authMode ?? 'none' });
   lessonRoutes(app, opts.db);
   vocabRoutes(app, opts.db);
+  if (opts.contentDir) await registerContentStatic(app, opts.contentDir);
 
   return app;
 }

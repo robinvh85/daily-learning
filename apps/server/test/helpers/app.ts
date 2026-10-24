@@ -18,9 +18,10 @@ export interface TestApp {
 export async function createTestApp(authMode: AuthMode = 'none'): Promise<TestApp> {
   const dir = mkdtempSync(join(tmpdir(), 'dl-api-'));
   const db = openAndMigrate(join(dir, 'app.db'));
-  const r = syncContent({ contentDir: join(ROOT_DIR, 'content'), db });
+  const contentDir = join(ROOT_DIR, 'content');
+  const r = syncContent({ contentDir, db });
   if (!r.ok) throw new Error(`content sync failed: ${JSON.stringify(r.issues)}`);
-  const app = await buildApp({ db, authMode });
+  const app = await buildApp({ db, authMode, contentDir });
   return {
     app,
     db,

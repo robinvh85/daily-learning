@@ -21,7 +21,11 @@ export default defineConfig(({ mode }) => {
       host: '127.0.0.1',
       port: 5173,
       strictPort: true,
-      proxy: { '/api': { target: apiTarget, changeOrigin: true } },
+      // /content serves lesson and word audio (plan 2.3).
+      proxy: {
+        '/api': { target: apiTarget, changeOrigin: true },
+        '/content': { target: apiTarget, changeOrigin: true },
+      },
     },
     test: {
       environment: 'jsdom',

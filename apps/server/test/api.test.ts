@@ -118,6 +118,28 @@ describe('GET /api/lessons/:slug', () => {
   });
 });
 
+describe('lessons without audio', () => {
+  it('stay valid: no audio URL, peaks or timings', async () => {
+    const res = await t.app.inject({ method: 'GET', url: '/api/lessons/at-the-train-station' });
+    const detail = res.json<LessonDetailResponse>();
+    expect(detail.lesson).toMatchObject({ audioUrl: null, durationMs: null });
+    expect(detail.peaks).toBeNull();
+    expect(detail.segments.every((s) => s.startMs === null && s.endMs === null)).toBe(true);
+    expect(detail.segments.map((s) => s.speaker)).toContain('B');
+  });
+
+  it('never serves YAML or the TTS cache from /content', async () => {
+    for (const url of [
+      '/content/lessons/a2/at-the-train-station/lesson.yaml',
+      '/content/tts.config.yaml',
+      '/content/.tts-cache.json',
+      '/content/lessons/a2/at-the-train-station/audio.mp3',
+    ]) {
+      expect((await t.app.inject({ method: 'GET', url })).statusCode, url).toBe(404);
+    }
+  });
+});
+
 describe('POST /api/lessons/:slug/answers', () => {
   const answer = (payload: object, slug = 'a-new-coffee-shop') =>
     t.app.inject({ method: 'POST', url: `/api/lessons/${slug}/answers`, payload });
@@ -129,6 +151,7 @@ describe('POST /api/lessons/:slug/answers', () => {
     expect(wrong.json<AnswerResponse>()).toEqual({
       correct: false,
       feedback: 'Chưa đúng. Đọc lại câu thứ hai của đoạn 1.',
+      expected: null,
     });
     const right = (await answer({ questionId: q.id, value: 1 })).json<AnswerResponse>();
     expect(right.correct).toBe(true);
@@ -149,6 +172,7 @@ describe('POST /api/lessons/:slug/answers', () => {
       await answer({ dictationItemId: d.id, value: 'zzz' }, 'at-the-train-station')
     ).json<AnswerResponse>();
     expect(wrong.correct).toBe(false);
+    expect(wrong.expected).toBe('late');
     const stored = t.db.select().from(dictationItems).where(eq(dictationItems.id, d.id)).get()!;
     const right = (
       await answer(
@@ -156,7 +180,7 @@ describe('POST /api/lessons/:slug/answers', () => {
         'at-the-train-station',
       )
     ).json<AnswerResponse>();
-    expect(right.correct).toBe(true);
+    expect(right).toEqual({ correct: true, feedback: null, expected: null });
   });
 
   it('validates the body and the question', async () => {

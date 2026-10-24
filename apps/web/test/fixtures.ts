@@ -7,7 +7,7 @@ export const runWord: WordDto = {
   cefr: 'A1',
   isPhrase: false,
   status: 'draft',
-  audioPath: null,
+  audioUrl: null,
   senses: [
     {
       id: 70,

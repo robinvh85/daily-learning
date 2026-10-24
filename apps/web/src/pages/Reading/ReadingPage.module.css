@@ -118,6 +118,14 @@
   color: #fff;
 }
 
+.listen:hover:not([aria-disabled='true']) {
+  background: #93390a;
+}
+
+.listen[aria-pressed='true'] {
+  background: #93390a;
+}
+
 .listen[aria-disabled='true'] {
   opacity: 0.55;
   cursor: not-allowed;
@@ -194,6 +202,13 @@
 
 .paragraph {
   margin: 0;
+}
+
+/* Sentence being read aloud ("Nghe bài đọc"). */
+.speaking {
+  background: var(--color-orange-tint);
+  border-radius: 4px;
+  box-decoration-break: clone;
 }
 
 .translation {

@@ -30,3 +30,10 @@ playwright/.cache/
 
 # Claude local settings
 .claude/settings.local.json
+
+# Local scratch output (voice samples etc.)
+tmp/
+
+# TTS clip cache (plan 2.4): only the final audio.mp3 / words/*.mp3 are committed
+content/.tts-cache.json
+content/.tts-clips/

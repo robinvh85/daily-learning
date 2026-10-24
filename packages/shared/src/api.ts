@@ -86,9 +86,13 @@ export interface LessonSummary {
   title: string;
   topic: string;
   wordCount: number;
+  /** Audio length in ms (from timings.json), or null without audio. */
   durationMs: number | null;
-  /** URL path of the audio file, or null when the lesson has no audio yet. */
-  audioPath: string | null;
+  /**
+   * URL of audio.mp3 (`/content/…/audio.mp3?v=<hash>`), or null when the lesson has no audio
+   * yet. Listening lessons: dialogue; reading lessons: narrator ("Nghe bài đọc").
+   */
+  audioUrl: string | null;
   orderIndex: number;
   progress: LessonProgressDto | null;
 }
@@ -141,7 +145,8 @@ export interface WordDto {
   cefr: CefrLevel;
   isPhrase: boolean;
   status: WordStatus;
-  audioPath: string | null;
+  /** URL of the pronunciation (`/content/words/<slug>.mp3?v=<hash>`), or null. */
+  audioUrl: string | null;
   senses: SenseDto[];
 }
 
@@ -177,6 +182,11 @@ export interface LessonDetailResponse {
   focusWords: FocusWordDto[];
   questions: QuestionDto[];
   dictation: DictationItemDto[];
+  /**
+   * Normalized waveform peaks (0..1) of the audio, or null without audio. Segment timings are in
+   * `segments[].startMs/endMs`.
+   */
+  peaks: number[] | null;
 }
 
 /** `POST /api/lessons/:slug/answers` */
@@ -189,6 +199,8 @@ export type AnswerBody = z.input<typeof answerBodySchema>;
 export interface AnswerResponse {
   correct: boolean;
   feedback: string | null;
+  /** Dictation only: the expected answer, sent back when the answer was wrong. */
+  expected: string | null;
 }
 
 /** `POST /api/lessons/:slug/progress` */

@@ -1,0 +1,23 @@
+# Voices for `npm run content:tts` and `npm run content:tts-words` (plan 2.4, en-US only).
+# List voices: npm run content:tts:voices    Listen: npm run content:tts:voices -- --sample
+# Names are checked against Google's voice list before anything is synthesized.
+#
+# Tiers: Chirp3-HD (preferred) → Neural2 → WaveNet. Chirp3-HD voices get plain text only and no
+# speakingRate (it is ignored for them); Neural2/WaveNet use speakingRate below.
+# After changing a voice, regenerate with --force (cached clips of other voices are reused).
+
+# Listening lessons: speaker A (female) and speaker B (male).
+speakerA: en-US-Chirp3-HD-Aoede # TODO: confirm after listening
+speakerB: en-US-Chirp3-HD-Charon # TODO: confirm after listening
+
+# Reading lessons ("Nghe bài đọc").
+narrator: en-US-Chirp3-HD-Kore # TODO: confirm after listening
+
+# Word pronunciation (content/words/<lemma-slug>.mp3).
+word: en-US-Neural2-F # TODO: confirm after listening
+
+# 0.25–2.0, Neural2/WaveNet only.
+speakingRate: 0.95
+
+# Silence between two segments (ms).
+gapMs: 400

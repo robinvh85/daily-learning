@@ -1,4 +1,4 @@
-import { cpSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
@@ -179,5 +179,67 @@ describe('syncContent', () => {
       'day 1: "at-the-train-station" is not a reading lesson',
       'day 1: unknown lesson "nope"',
     ]);
+  });
+});
+
+describe('audio timings', () => {
+  const lessonDir = () => join(tmp, 'content/lessons/a2/at-the-train-station');
+  const ids = ['l1', 'l2', 'l3', 'l4', 'l5', 'l6', 'l7', 'l8'];
+  const timings = (over: Record<string, unknown> = {}) => ({
+    version: 1,
+    durationMs: 9000,
+    textHash: '0123456789abcdef',
+    segments: ids.map((id, i) => ({ id, startMs: i * 1000, endMs: i * 1000 + 800 })),
+    peaks: [0, 0.5, 1],
+    ...over,
+  });
+
+  it('fills segment offsets, duration and peaks; warns when the text changed', () => {
+    writeFileSync(join(lessonDir(), 'audio.mp3'), 'not really mp3');
+    writeFileSync(join(lessonDir(), 'timings.json'), JSON.stringify(timings()));
+    const r = syncContent({ contentDir: join(tmp, 'content'), db });
+    expect(r.ok).toBe(true);
+    expect(r.issues.map((i) => i.message)).toEqual([
+      'lesson text changed after the audio was made: run npm run content:tts -- at-the-train-station',
+    ]);
+    const lesson = db.$client
+      .prepare(`select duration_ms, audio_path, audio_version, peaks from lessons where slug = ?`)
+      .get('at-the-train-station') as Record<string, unknown>;
+    expect(lesson).toMatchObject({
+      duration_ms: 9000,
+      audio_path: 'lessons/a2/at-the-train-station/audio.mp3',
+      peaks: '[0,0.5,1]',
+    });
+    expect(lesson.audio_version).toMatch(/^[0-9a-f]{10}$/);
+    const segs = db.$client
+      .prepare(
+        `select key, start_ms, end_ms from segments where lesson_id = (select id from lessons where slug = ?) order by idx`,
+      )
+      .all('at-the-train-station');
+    expect(segs[1]).toEqual({ key: 'l2', start_ms: 1000, end_ms: 1800 });
+  });
+
+  it('ignores timings that do not match the segments (warning, lesson stays valid)', () => {
+    writeFileSync(join(lessonDir(), 'audio.mp3'), 'x');
+    writeFileSync(
+      join(lessonDir(), 'timings.json'),
+      JSON.stringify(timings({ segments: [{ id: 'l1', startMs: 0, endMs: 500 }] })),
+    );
+    const r = syncContent({ contentDir: join(tmp, 'content'), db });
+    expect(r.ok).toBe(true);
+    expect(r.issues).toHaveLength(1);
+    expect(r.issues[0]).toMatchObject({ level: 'warning' });
+    expect(r.issues[0]!.message).toMatch(/segment ids differ/);
+    const seg = db.$client.prepare(`select start_ms from segments where key = 'l2'`).get();
+    expect(seg).toEqual({ start_ms: null });
+  });
+
+  it('records word audio when content/words/<slug>.mp3 exists', () => {
+    mkdirSync(join(tmp, 'content/words'));
+    writeFileSync(join(tmp, 'content/words/i-m-afraid.mp3'), 'x');
+    expect(syncContent({ contentDir: join(tmp, 'content'), db }).ok).toBe(true);
+    expect(
+      db.$client.prepare(`select audio_path from words where lemma = ?`).get("I'm afraid"),
+    ).toEqual({ audio_path: 'words/i-m-afraid.mp3' });
   });
 });

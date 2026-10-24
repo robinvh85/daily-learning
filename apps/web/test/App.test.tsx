@@ -8,7 +8,7 @@ import { App } from '../src/App';
 function renderApp(me: MeResponse, path = '/') {
   const fetchMock = vi.fn((url: string) => {
     if (url === '/api/auth/me') return Promise.resolve(new Response(JSON.stringify(me)));
-    if (url.startsWith('/api/lessons'))
+    if (url === '/api/lessons' || url.startsWith('/api/lessons?'))
       return Promise.resolve(new Response(JSON.stringify({ lessons: [] })));
     return Promise.resolve(new Response('{}', { status: 404 }));
   });
@@ -40,9 +40,9 @@ describe('App', () => {
     expect(screen.queryByRole('navigation', { name: 'Điều hướng chính' })).toBeNull();
   });
 
-  it('shows the Phase 3 placeholder for listening lessons', async () => {
+  it('routes listening lessons to the listening page', async () => {
     renderApp({ authMode: 'none', user: { id: 1, email: null } }, '/listen/at-the-train-station');
-    expect(await screen.findByText(/Phase 3/)).toBeInTheDocument();
+    expect(await screen.findByText('Không tìm thấy bài nghe này.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Nghe' })).toHaveAttribute('aria-current', 'page');
   });
 });

@@ -13,10 +13,19 @@ export interface QuizProps {
   /** Question id whose answer is being graded. */
   pendingId?: number | null;
   error?: string | null;
+  /** Without the separator above (inside a card or tab panel). */
+  bare?: boolean;
   onPick: (question: QuestionDto, choice: number) => void;
 }
 
-export function Quiz({ questions, answers, pendingId = null, error = null, onPick }: QuizProps) {
+export function Quiz({
+  questions,
+  answers,
+  pendingId = null,
+  error = null,
+  bare = false,
+  onPick,
+}: QuizProps) {
   const answered = questions.filter((q) => answers[q.id]);
   const right = answered.filter((q) => answers[q.id]?.correct).length;
   const score =
@@ -25,7 +34,10 @@ export function Quiz({ questions, answers, pendingId = null, error = null, onPic
       : `${questions.length} câu · chọn một đáp án`;
 
   return (
-    <section aria-labelledby="quiz-title" className={styles.quiz}>
+    <section
+      aria-labelledby="quiz-title"
+      className={bare ? `${styles.quiz} ${styles.bare}` : styles.quiz}
+    >
       <div className={styles.header}>
         <h2 id="quiz-title" className={styles.title}>
           Câu hỏi hiểu bài

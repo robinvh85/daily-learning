@@ -16,10 +16,11 @@ import {
   useUpdateProgress,
 } from '../../api/hooks';
 import { FocusWordList } from '../../components/FocusWordList/FocusWordList';
-import { PlayIcon } from '../../components/Icons';
+import { PauseIcon, PlayIcon } from '../../components/Icons';
 import { Quiz, type QuizAnswer } from '../../components/Quiz/Quiz';
 import { TokenizedText } from '../../components/TokenizedText/TokenizedText';
 import { WordCard } from '../../components/WordCard/WordCard';
+import { timedSegments, useAudioPlayer } from '../../hooks/useAudioPlayer';
 import { topicLabel } from '../../lib/labels';
 import { readStorage, writeStorage } from '../../lib/storage';
 import styles from './ReadingPage.module.css';
@@ -85,6 +86,13 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
   const toggleSave = useToggleSavedWord(slug);
   const submit = useSubmitAnswer(slug);
   const progress = useUpdateProgress(slug);
+  // "Nghe bài đọc": narrator audio, current sentence highlighted (plan Phase 3).
+  const timed = useMemo(() => timedSegments(segments), [segments]);
+  const player = useAudioPlayer(lesson.audioUrl, timed, lesson.durationMs);
+  const speakingId =
+    timed.length > 0 && (player.playing || player.currentMs > 0)
+      ? (timed[player.current]?.id ?? null)
+      : null;
 
   const [fontSize, setFontSize] = useState(initialFontSize);
   const [showVi, setShowVi] = useState(false);
@@ -220,17 +228,29 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
             >
               Song ngữ
             </button>
-            <button
-              type="button"
-              className={styles.listen}
-              aria-disabled="true"
-              title="Có ở Phase 3"
-              onClick={(e) => e.preventDefault()}
-            >
-              <PlayIcon />
-              Nghe bài đọc
-              <span className="visually-hidden"> (có ở Phase 3)</span>
-            </button>
+            {lesson.audioUrl ? (
+              <button
+                type="button"
+                className={styles.listen}
+                aria-pressed={player.playing}
+                onClick={player.toggle}
+              >
+                {player.playing ? <PauseIcon size={18} /> : <PlayIcon />}
+                {player.playing ? 'Tạm dừng' : 'Nghe bài đọc'}
+              </button>
+            ) : (
+              <button
+                type="button"
+                className={styles.listen}
+                aria-disabled="true"
+                title={`Chưa có audio: chạy npm run content:tts -- ${slug}`}
+                onClick={(e) => e.preventDefault()}
+              >
+                <PlayIcon />
+                Nghe bài đọc
+                <span className="visually-hidden"> (chưa có audio)</span>
+              </button>
+            )}
           </div>
         </div>
       </header>
@@ -262,7 +282,12 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
                 <div key={p[0]!.id} className={styles.paragraphBlock}>
                   <p className={styles.paragraph} lang="en">
                     {p.map((s, i) => (
-                      <span key={s.id}>
+                      <span
+                        key={s.id}
+                        className={s.id === speakingId ? styles.speaking : undefined}
+                        aria-current={s.id === speakingId ? 'true' : undefined}
+                        data-testid={`sentence-${s.key}`}
+                      >
                         {i > 0 && ' '}
                         <TokenizedText
                           text={s.textEn}

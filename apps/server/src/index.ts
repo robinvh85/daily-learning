@@ -1,5 +1,6 @@
+import { join } from 'node:path';
 import { buildApp } from './app.js';
-import { loadEnvFile, readConfig } from './config.js';
+import { loadEnvFile, readConfig, ROOT_DIR } from './config.js';
 import { openAndMigrate } from './db/client.js';
 
 loadEnvFile();
@@ -13,7 +14,12 @@ try {
 }
 // Apply pending migrations before accepting requests (plan Phase 1 / Phase 7).
 const db = openAndMigrate(config.dbPath);
-const app = await buildApp({ db, authMode: config.authMode, fastify: { logger: true } });
+const app = await buildApp({
+  db,
+  authMode: config.authMode,
+  contentDir: join(ROOT_DIR, 'content'),
+  fastify: { logger: true },
+});
 app.addHook('onClose', () => {
   db.$client.close();
 });

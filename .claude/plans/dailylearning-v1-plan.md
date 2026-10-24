@@ -76,12 +76,13 @@ Cách làm đề xuất (không phụ thuộc nhà cung cấp TTS):
 
 - Thư viện: `@google-cloud/text-to-speech` (Node), chỉ dùng trong `scripts/`, **không** chạy trong server lúc người học dùng app.
 - Xác thực: service account JSON, đường dẫn đặt ở `GOOGLE_APPLICATION_CREDENTIALS` trong `.env`. File key nằm ngoài repo hoặc trong `secrets/` đã thêm vào `.gitignore`. **Không bao giờ commit key.**
+- **Cập nhật (2026-10-24, Phase 3):** dùng **API key** (`GOOGLE_TTS_API_KEY` trong `.env`) gọi thẳng REST `v1/text:synthesize` và `v1/voices` bằng `fetch`, không dùng thư viện `@google-cloud/text-to-speech` và service account.
 - Output: `audioEncoding: MP3`, sample rate 24 kHz; sau khi ghép bằng ffmpeg thì chuẩn hóa về MP3 mono 64 kbps (mục 2.3).
 - Dùng TTS cho 3 việc: (1) audio bài nghe (giọng A/B), (2) "Nghe bài đọc", (3) phát âm từng từ trong glossary (`content/words/<lemma>.mp3`, dùng chung giữa các bài).
 - **Giọng chuẩn — Đã chốt (2026-10-24): Anh-Mỹ (`en-US`)** cho mọi audio. Hội thoại dùng 2 giọng `en-US` khác giới tính để dễ phân biệt người nói.
 - **Chọn loại giọng:** nghe thử ở đầu Phase 3 rồi chốt, ưu tiên theo thứ tự: Chirp 3 HD → Neural2 → WaveNet. Theo trang giá Google (tra ngày 2026-10-24, có thể thay đổi), hạn mức miễn phí mỗi tháng: Chirp 3 HD và Neural2 1 triệu ký tự, WaveNet và Standard 4 triệu ký tự. Cả lộ trình A2→B1 ước tính ~300.000 ký tự, tạo một lần → nằm trong hạn mức miễn phí.
 - **Chống phát sinh phí:**
-  - Cache theo hash (`text + voice + speakingRate`) trong `content/.tts-cache.json` → chạy lại script không gọi API cho câu đã có audio.
+  - Cache theo hash (`text + voice + speakingRate`) trong `content/.tts-cache.json` → chạy lại script không gọi API cho câu đã có audio. (Phase 3: index và clip `content/.tts-clips/` đều gitignore, chỉ commit `audio.mp3`/`words/*.mp3`; bài có `timings.json` khớp nội dung thì được bỏ qua.)
   - Script đếm ký tự trước khi gọi, in ra tổng, dừng nếu một lần chạy vượt `TTS_MAX_CHARS` (mặc định 50.000).
   - Đặt **Budget alert** trong Google Cloud Billing (ví dụ 1 USD) để được báo ngay nếu có phí.
 - Không cần tính năng timepoint của Google vì đã tạo audio theo từng câu (offset chính xác hơn và đơn giản hơn).
@@ -258,18 +259,20 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - [x] Token màu/typography từ mockup (`tokens.css`), Sidebar, layout responsive (menu xếp lên trên ở mobile)
 - [x] Auth theo `AUTH_MODE` (mặc định `none` + user mặc định; chế độ `password` có test nhưng chưa dùng)
 - [x] Trang Bài đọc: render đoạn văn từ `lesson_tokens` (mọi từ bấm được, focus words gạch chân), WordCard (nghĩa theo ngữ cảnh, IPA Mỹ, phát âm, collocation, nhãn "bản nháp", link Cambridge US), lưu từ, song ngữ, cỡ chữ (nhớ lựa chọn trong localStorage), câu hỏi chấm ngay
-- [ ] Lời thoại ở trang Bài nghe dùng chung component render token → bấm từ cũng mở WordCard
+- [x] Lời thoại ở trang Bài nghe dùng chung component render token → bấm từ cũng mở WordCard (làm ở Phase 3)
 - **Xong khi:** đọc hết 1 bài, trả lời câu hỏi, lưu từ → dữ liệu nằm trong DB
 
 ### Phase 3 — Audio pipeline + Bài nghe (≈ 2–3 ngày)
-- [ ] Tạo service account + bật Text-to-Speech API trên Google Cloud, đặt Budget alert
-- [ ] Nghe thử cùng 1 đoạn với Chirp 3 HD / Neural2 / WaveNet (chỉ `en-US`) → chốt giọng A, giọng B, giọng đọc bài
-- [ ] Script `content:tts` (từng câu → Google TTS → ffmpeg ghép → `timings.json`), có cache và giới hạn ký tự
-- [ ] Script `content:tts-words` tạo audio phát âm cho từ trong glossary
-- [ ] AudioPlayer: play/pause, tốc độ (`playbackRate`), câu trước/sau, lặp câu, waveform tĩnh (tính sẵn peaks lúc tạo audio, lưu vào `timings.json`)
-- [ ] Lời thoại ẩn/hiện, highlight câu đang phát, bấm dòng để seek
-- [ ] Tab Nghe chép (so khớp không phân biệt hoa thường, bỏ dấu câu) và Nghe hiểu
-- [ ] Nút "Nghe bài đọc" ở trang Đọc dùng chung pipeline
+- [ ] Tạo API key + bật Text-to-Speech API trên Google Cloud, đặt Budget alert (người dùng chạy trên Mac)
+- [x] Lệnh `content:tts:voices` (liệt kê giọng, `--sample` tạo file nghe thử 8 giọng vào `tmp/voice-samples/`)
+- [ ] Nghe thử cùng 1 đoạn với Chirp 3 HD / Neural2 / WaveNet (chỉ `en-US`) → chốt giọng A, giọng B, giọng đọc bài trong `content/tts.config.yaml` (người dùng chạy trên Mac)
+- [x] Script `content:tts` (từng câu → Google TTS → ffmpeg ghép → `timings.json`), có cache và giới hạn ký tự
+- [x] Script `content:tts-words` tạo audio phát âm cho từ trong glossary
+- [ ] Chạy TTS thật cho 2 bài mẫu + từ, `content:sync`, commit audio (người dùng chạy trên Mac)
+- [x] AudioPlayer: play/pause, tốc độ (`playbackRate`), câu trước/sau, lặp câu, waveform tĩnh (tính sẵn peaks lúc tạo audio, lưu vào `timings.json`)
+- [x] Lời thoại ẩn/hiện, highlight câu đang phát, bấm dòng để seek
+- [x] Tab Nghe chép (so khớp không phân biệt hoa thường, bỏ dấu câu) và Nghe hiểu
+- [x] Nút "Nghe bài đọc" ở trang Đọc dùng chung pipeline
 - **Xong khi:** nghe 1 bài, làm nghe chép, lặp từng câu chính xác theo mốc thời gian
 
 ### Phase 4 — Từ vựng và SRS (≈ 1.5 ngày)
@@ -343,3 +346,4 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - 2026-10-24: xong Phase 0 (monorepo, Fastify `/api/health`, Vite React, Vitest, CI, pre-commit); khi dev API chạy ở `PORT` (mặc định 3000), web ở 5173 proxy `/api` sang; chưa push GitHub.
 - 2026-10-24: xong Phase 1 (Drizzle + SQLite WAL, migration tự chạy khi khởi động, Zod schema cho `lesson.yaml`/từ điển/`daily-plan.yaml`, tokenizer, `content:sync`/`check-dict`/`stats`, 2 bài mẫu + 130 entry từ điển `draft`); từ viết tắt (`it's`, `I'll`) là entry riêng, `there's` là dạng của `there is`; câu thoại bài nghe chưa có bản dịch tiếng Việt.
 - 2026-10-24: xong Phase 2 (tokens.css + Sidebar responsive, React Router + TanStack Query, auth `none`/`password` với argon2 + session cookie + bảng `sessions` + `npm run user:create`, chặn khởi động khi HOST không phải localhost mà `AUTH_MODE=none`, API bài học/trả lời/tiến độ/lưu từ có Zod, trang Bài đọc với `TokenizedText`, WordCard, song ngữ, cỡ chữ, câu hỏi chấm trên server); nút phát âm và "Nghe bài đọc" để tắt chờ Phase 3; lời thoại Bài nghe sẽ dùng `TokenizedText` ở Phase 3.
+- 2026-10-24: xong phần code Phase 3: Google TTS qua REST + API key (`GOOGLE_TTS_API_KEY`), provider `fake` (ffmpeg) để test; `content:tts:voices`/`content:tts`/`content:tts-words` có cache (gitignore), `TTS_MAX_CHARS`, `--dry-run`; `timings.json` (offset đo bằng ffprobe + 80 peaks), sync vào DB (migration `0002_audio`), serve `/content` tĩnh có cache 1 năm + `?v=`; trang Bài nghe (player, waveform, lời thoại token hóa, nghe chép, nghe hiểu), "Nghe bài đọc" và nút phát âm WordCard; chọn giọng và chạy TTS thật do người dùng làm trên Mac.

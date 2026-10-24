@@ -45,6 +45,10 @@ export const lessons = sqliteTable('lessons', {
   durationMs: integer('duration_ms'),
   /** Paths relative to `content/`, e.g. `lessons/a2/at-the-train-station/audio.mp3`. */
   audioPath: text('audio_path'),
+  /** Short hash of audio.mp3, appended as `?v=` so the file can be cached forever. */
+  audioVersion: text('audio_version'),
+  /** Normalized waveform peaks (0..1) from timings.json. */
+  peaks: text('peaks', { mode: 'json' }).$type<number[]>(),
   coverPath: text('cover_path'),
   orderIndex: integer('order_index').notNull().default(0),
 });
@@ -80,7 +84,9 @@ export const words = sqliteTable('words', {
   oxford3000: integer('oxford3000', { mode: 'boolean' }).notNull(),
   isPhrase: integer('is_phrase', { mode: 'boolean' }).notNull().default(false),
   status: text('status', { enum: WORD_STATUSES }).notNull(),
+  /** `words/<lemma-slug>.mp3` relative to `content/`, when the file exists. */
   audioPath: text('audio_path'),
+  audioVersion: text('audio_version'),
 });
 
 /** Every surface form (lowercase, straight apostrophe) → lemma. Includes the lemma itself. */

@@ -45,6 +45,9 @@ npm run dev
 | `npm run content:sync`              | Validate `content/` and upsert it into SQLite (`-- --dry-run`: validate only)     |
 | `npm run content:check-dict [slug]` | Words of a lesson missing from the dictionary, multi-sense words without a choice |
 | `npm run content:stats`             | Dictionary size, % reviewed, Oxford 3000 flags, lesson count                      |
+| `npm run content:tts:voices`        | List en-US Chirp3-HD / Neural2 / WaveNet voices (`-- --sample`: MP3 samples)      |
+| `npm run content:tts -- <slug>`     | Lesson audio: `audio.mp3` + `timings.json` (`--all`, `--dry-run`, `--force`)      |
+| `npm run content:tts-words`         | Word pronunciation `content/words/<lemma-slug>.mp3` for words without audio       |
 
 ## Structure
 
@@ -83,6 +86,52 @@ such as `it's` / `I'll` are dictionary entries of their own, `there's` is a form
 
 Workflow for a new lesson: write `lesson.yaml` → `npm run content:check-dict <slug>` → add the missing
 `content/dictionary/*.yaml` (`status: draft`) → `npm run content:sync`.
+
+## Tạo audio (chạy trên Mac)
+
+Audio is made once with Google Cloud Text-to-Speech (plan 2.4) and committed. The scripts run on
+your Mac, not in the app. You need `GOOGLE_TTS_API_KEY` in `.env` (an API key restricted to the
+Text-to-Speech API). Before the first run, set a **budget alert** in Google Cloud Billing (for
+example 1 USD) so you hear about any charge right away.
+
+Run these in order:
+
+```bash
+brew install ffmpeg                          # ffmpeg + ffprobe (checked at start)
+
+npm run content:tts:voices -- --sample       # list voices + 8 samples in tmp/voice-samples/
+open tmp/voice-samples                       # listen, then edit content/tts.config.yaml
+                                             # (speakerA, speakerB, narrator, word)
+
+npm run content:tts -- --all --dry-run       # character count only, nothing is sent
+npm run content:tts -- --all                 # audio.mp3 + timings.json next to each lesson.yaml
+
+npm run content:tts-words -- --dry-run       # optional: count first
+npm run content:tts-words                    # content/words/<lemma-slug>.mp3
+
+npm run content:sync                         # timings, durations, peaks, word audio → SQLite
+
+git add content && git commit -m "content: add lesson and word audio"
+```
+
+How it works:
+
+- One clip per segment (speaker A/B voices for listening lessons, the narrator for reading lessons),
+  joined by ffmpeg with `gapMs` of silence, normalized to MP3 mono 64 kbps. `timings.json` holds the
+  segment offsets (measured with ffprobe), the duration and 80 waveform peaks.
+- Each run prints the number of characters it would send and stops before any API call above
+  `TTS_MAX_CHARS` (default 50000). `--dry-run` only prints the count (no key, no ffmpeg needed).
+- Cache: `content/.tts-cache.json` + `content/.tts-clips/` (both git-ignored; committing the clips
+  would double the audio in git). Cached clips are never sent again. Lessons whose `timings.json`
+  matches the current text are skipped; after changing a voice, use `--force` (only the clips of
+  the new voice are synthesized).
+- Chirp 3 HD voices get plain text only and no `speakingRate` (it is ignored for them); Neural2 and
+  WaveNet use `speakingRate` from `content/tts.config.yaml`. Voice names are checked against
+  Google's voice list before anything is synthesized.
+- Testing without Google: `--provider fake --out <tmp dir>` writes ffmpeg test tones into a copy of
+  `content/` in `<tmp dir>`. The fake provider refuses to write into the repository `content/`.
+- The server serves only `*.mp3`, covers and `timings.json` from `content/` under `/content/`
+  (never YAML or the cache), with a one-year cache; API URLs carry `?v=<file hash>`.
 
 ## Pre-commit hook
 

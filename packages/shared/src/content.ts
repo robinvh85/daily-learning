@@ -344,3 +344,79 @@ export const dailyPlanSchema = z
   });
 
 export type DailyPlanFile = z.output<typeof dailyPlanSchema>;
+
+// ---------------------------------------------------------------------------
+// Audio timings: content/lessons/<level>/<slug>/timings.json (written by `content:tts`)
+// ---------------------------------------------------------------------------
+
+export const timingsSegmentSchema = z.strictObject({
+  /** Segment id from lesson.yaml. */
+  id: slug,
+  startMs: z.int().nonnegative(),
+  endMs: z.int().positive(),
+});
+
+export const timingsSchema = z
+  .strictObject({
+    version: z.literal(1),
+    /** Duration of audio.mp3 in milliseconds (ffprobe). */
+    durationMs: z.int().positive(),
+    /**
+     * Hash of the segment ids, speakers and texts the audio was made from. `content:sync` warns
+     * when lesson.yaml changed after the audio was generated.
+     */
+    textHash: z.string().regex(/^[0-9a-f]{16}$/),
+    segments: z.array(timingsSegmentSchema).min(1),
+    /** Normalized waveform peaks (0..1), one per bar. */
+    peaks: z.array(z.number().min(0).max(1)).max(400),
+  })
+  .superRefine((t, ctx) => {
+    let last = 0;
+    t.segments.forEach((s, i) => {
+      if (s.endMs <= s.startMs) {
+        ctx.addIssue({ code: 'custom', path: ['segments', i], message: 'endMs must be > startMs' });
+      }
+      if (s.startMs < last) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['segments', i],
+          message: 'segments must not overlap and must be in order',
+        });
+      }
+      last = s.endMs;
+    });
+    if (last > t.durationMs + 50) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['durationMs'],
+        message: 'last segment ends after the audio',
+      });
+    }
+  });
+
+export type TimingsFile = z.output<typeof timingsSchema>;
+
+// ---------------------------------------------------------------------------
+// TTS voices: content/tts.config.yaml (read by `content:tts` and `content:tts-words`)
+// ---------------------------------------------------------------------------
+
+/** A Google Cloud TTS voice name, e.g. `en-US-Chirp3-HD-Aoede`, `en-US-Neural2-F`. */
+const voiceName = z
+  .string()
+  .regex(/^en-US-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$/, 'use an en-US voice name, e.g. en-US-Neural2-F');
+
+export const ttsConfigSchema = z.strictObject({
+  /** Listening lessons: voice of speaker A and speaker B. */
+  speakerA: voiceName,
+  speakerB: voiceName,
+  /** Reading lessons ("Nghe bài đọc"). */
+  narrator: voiceName,
+  /** Word pronunciation (`content/words/<lemma-slug>.mp3`). */
+  word: voiceName,
+  /** 0.25–2.0. Ignored for voices that do not support it (Chirp 3 HD). */
+  speakingRate: z.number().min(0.25).max(2).default(1),
+  /** Silence between two segments, in milliseconds. */
+  gapMs: z.int().min(0).max(3000).default(400),
+});
+
+export type TtsConfig = z.output<typeof ttsConfigSchema>;

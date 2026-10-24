@@ -31,6 +31,7 @@ import {
 } from '../../db/schema.js';
 import { HttpError, notFound, parseInput } from '../../http.js';
 import { requireUser } from '../auth/routes.js';
+import { CONTENT_PREFIX } from '../static/routes.js';
 
 type LessonRow = typeof lessons.$inferSelect;
 type ProgressRow = typeof lessonProgress.$inferSelect;
@@ -55,10 +56,17 @@ function toSummary(l: LessonRow, p: ProgressRow | undefined | null): LessonSumma
     topic: l.topic,
     wordCount: l.wordCount,
     durationMs: l.durationMs,
-    audioPath: l.audioPath ? `/content/${l.audioPath}` : null,
+    audioUrl: contentUrl(l.audioPath, l.audioVersion),
     orderIndex: l.orderIndex,
     progress: toProgress(p),
   };
+}
+
+/** Public URL of a file under `content/` (served by `@fastify/static`, see app.ts). */
+export function contentUrl(path: string | null, version: string | null): string | null {
+  if (!path) return null;
+  const url = `${CONTENT_PREFIX}/${path.split('/').map(encodeURIComponent).join('/')}`;
+  return version ? `${url}?v=${version}` : url;
 }
 
 /** Lowercase, drop punctuation and extra spaces (dictation matching, plan Phase 3). */
@@ -154,7 +162,7 @@ export function lessonRoutes(app: FastifyInstance, db: AppDatabase): void {
           cefr: w.cefr,
           isPhrase: w.isPhrase,
           status: w.status,
-          audioPath: w.audioPath ? `/content/${w.audioPath}` : null,
+          audioUrl: contentUrl(w.audioPath, w.audioVersion),
           senses: [],
         };
       }
@@ -220,6 +228,7 @@ export function lessonRoutes(app: FastifyInstance, db: AppDatabase): void {
       focusWords: focusRows.map((f) => ({ wordId: f.wordId, senseId: f.senseId })),
       questions: questionRows,
       dictation: dictationRows,
+      peaks: lesson.audioPath ? lesson.peaks : null,
     };
   });
 
@@ -247,7 +256,11 @@ export function lessonRoutes(app: FastifyInstance, db: AppDatabase): void {
       db.insert(answers)
         .values({ userId: user.id, questionId: q.id, value: String(body.value), correct })
         .run();
-      return { correct, feedback: (correct ? q.feedbackOk : q.feedbackWrong) ?? null };
+      return {
+        correct,
+        feedback: (correct ? q.feedbackOk : q.feedbackWrong) ?? null,
+        expected: null,
+      };
     }
 
     const d = db
@@ -262,7 +275,7 @@ export function lessonRoutes(app: FastifyInstance, db: AppDatabase): void {
     db.insert(answers)
       .values({ userId: user.id, dictationItemId: d.id, value: body.value, correct })
       .run();
-    return { correct, feedback: null };
+    return { correct, feedback: null, expected: correct ? null : d.answer };
   });
 
   app.post(`${API_PREFIX}/lessons/:slug/progress`, async (request): Promise<ProgressResponse> => {

@@ -1,11 +1,12 @@
 import type { LessonDetailResponse } from '@daily-learning/shared/api';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { render, screen, within } from '@testing-library/react';
+import { cleanup, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { FONT_SIZE_KEY, ReadingPage } from '../src/pages/Reading/ReadingPage';
 import { runWord, sentence, tokens } from './fixtures';
+import { installMediaStub, lastPlayer } from './media';
 
 const simpleWord = (id: number, lemma: string, vi: string) => ({
   id,
@@ -14,7 +15,7 @@ const simpleWord = (id: number, lemma: string, vi: string) => ({
   cefr: 'A1' as const,
   isPhrase: false,
   status: 'reviewed' as const,
-  audioPath: null,
+  audioUrl: null,
   senses: [
     {
       id: id * 10,
@@ -28,7 +29,7 @@ const simpleWord = (id: number, lemma: string, vi: string) => ({
   ],
 });
 
-const lesson: LessonDetailResponse = {
+const baseLesson: LessonDetailResponse = {
   lesson: {
     id: 1,
     slug: 'a-new-coffee-shop',
@@ -38,7 +39,7 @@ const lesson: LessonDetailResponse = {
     topic: 'daily-life',
     wordCount: 7,
     durationMs: null,
-    audioPath: null,
+    audioUrl: null,
     orderIndex: 1,
     progress: null,
   },
@@ -76,12 +77,15 @@ const lesson: LessonDetailResponse = {
     },
   ],
   dictation: [],
+  peaks: null,
 };
 
+let lesson: LessonDetailResponse;
 let saved: number[];
 let calls: { url: string; method: string; body: unknown }[];
 
 beforeEach(() => {
+  lesson = baseLesson;
   saved = [];
   calls = [];
   window.localStorage.clear();
@@ -189,5 +193,40 @@ describe('ReadingPage', () => {
       status: 'completed',
       score: 1,
     });
+  });
+});
+
+describe('ReadingPage with narrator audio', () => {
+  let stub: ReturnType<typeof installMediaStub>;
+  beforeEach(() => {
+    stub = installMediaStub();
+    lesson = {
+      ...baseLesson,
+      lesson: { ...baseLesson.lesson, audioUrl: '/content/x/audio.mp3?v=1', durationMs: 3000 },
+      segments: baseLesson.segments.map((s) => ({ ...s, startMs: 0, endMs: 2500 })),
+      peaks: [0.5, 1],
+    };
+  });
+  afterEach(() => {
+    cleanup();
+    stub.restore();
+  });
+
+  it('plays "Nghe bài đọc" and highlights the sentence being read', async () => {
+    const user = userEvent.setup();
+    renderPage();
+    const listen = await screen.findByRole('button', { name: 'Nghe bài đọc' });
+    expect(listen).not.toHaveAttribute('aria-disabled');
+    expect(screen.getByTestId('sentence-p1s1')).not.toHaveAttribute('aria-current');
+    await user.click(listen);
+    expect(lastPlayer().getAttribute('src')).toBe('/content/x/audio.mp3?v=1');
+    expect(lastPlayer().paused).toBe(false);
+    expect(screen.getByRole('button', { name: 'Tạm dừng' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+    expect(screen.getByTestId('sentence-p1s1')).toHaveAttribute('aria-current', 'true');
+    await user.click(screen.getByRole('button', { name: 'Tạm dừng' }));
+    expect(lastPlayer().paused).toBe(true);
   });
 });

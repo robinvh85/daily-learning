@@ -23,6 +23,29 @@
   color: var(--color-muted);
 }
 
+.eyebrowTools {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.close {
+  width: var(--touch);
+  height: var(--touch);
+  margin: -10px -10px -10px 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.close:hover {
+  background: var(--color-surface-muted);
+}
+
 .draft {
   font-size: var(--fs-xs);
   font-weight: 600;

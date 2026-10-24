@@ -8,12 +8,15 @@ import {
   dailyPlanSchema,
   dictionaryEntrySchema,
   lessonSchema,
+  timingsSchema,
   type DailyPlanFile,
   type DictionaryEntry,
   type LessonFile,
+  type TimingsFile,
 } from '@daily-learning/shared/content';
 import { parse as parseYaml } from 'yaml';
 import { z } from 'zod';
+import { fileVersion, lessonTextHash, wordAudioPath } from './assets.js';
 import {
   buildLookup,
   normalizeWord,
@@ -33,6 +36,9 @@ export interface ContentIssue {
 export interface LoadedEntry {
   file: string;
   entry: DictionaryEntry;
+  /** `words/<lemma-slug>.mp3` when that file exists (made by `content:tts-words`). */
+  audioPath: string | null;
+  audioVersion: string | null;
 }
 
 export interface FocusWord {
@@ -47,6 +53,10 @@ export interface PreparedLesson {
   wordCount: number;
   /** Paths relative to the content directory, or null when the file does not exist yet. */
   audioPath: string | null;
+  /** Short hash of audio.mp3 (cache buster). */
+  audioVersion: string | null;
+  /** timings.json, when it exists and matches the lesson's segments. */
+  timings: TimingsFile | null;
   coverPath: string | null;
   /** Tokens per segment (same order as `lesson.segments`). */
   tokens: LessonToken[][];
@@ -120,7 +130,15 @@ export function loadDictionary(contentDir: string, issues: ContentIssue[]): Load
       });
       continue;
     }
-    entries.push({ file: rel, entry });
+    const audio = wordAudioPath(entry.lemma);
+    const audioFile = join(contentDir, audio);
+    const hasAudio = existsSync(audioFile);
+    entries.push({
+      file: rel,
+      entry,
+      audioPath: hasAudio ? audio : null,
+      audioVersion: hasAudio ? fileVersion(audioFile) : null,
+    });
   }
   return entries;
 }
@@ -218,18 +236,67 @@ function prepareLesson(
     existsSync(join(dir, name))
       ? relative(contentDir, join(dir, name)).split('\\').join('/')
       : null;
+  const audioPath = asset('audio.mp3');
   return {
     slug,
     file: rel,
     lesson,
     wordCount: texts.reduce((n, t) => n + splitWords(t).length, 0),
-    audioPath: asset('audio.mp3'),
+    audioPath,
+    audioVersion: audioPath ? fileVersion(join(contentDir, audioPath)) : null,
+    timings: readTimings(contentDir, dir, slug, lesson, audioPath !== null, issues),
     coverPath: asset('cover.webp'),
     tokens: result.tokens,
     focus,
     missing,
     ambiguous: result.ambiguous,
   };
+}
+
+/**
+ * Read `timings.json` next to a lesson. Problems are warnings: a lesson without (valid) timings
+ * stays usable, it just has no per-segment seeking.
+ */
+function readTimings(
+  contentDir: string,
+  dir: string,
+  slug: string,
+  lesson: LessonFile,
+  hasAudio: boolean,
+  issues: ContentIssue[],
+): TimingsFile | null {
+  const path = join(dir, 'timings.json');
+  const rel = relative(contentDir, path);
+  const warn = (message: string) => issues.push({ level: 'warning', file: rel, message });
+  if (!existsSync(path)) {
+    if (hasAudio) warn(`audio.mp3 has no timings.json: run npm run content:tts -- ${slug} --force`);
+    return null;
+  }
+  if (!hasAudio) {
+    warn('timings.json without audio.mp3 (ignored)');
+    return null;
+  }
+  let raw: unknown;
+  try {
+    raw = JSON.parse(readFileSync(path, 'utf8'));
+  } catch (err) {
+    warn(`invalid JSON (ignored): ${(err as Error).message}`);
+    return null;
+  }
+  const r = timingsSchema.safeParse(raw);
+  if (!r.success) {
+    warn(`invalid timings (ignored): ${formatZodError(r.error).join('; ')}`);
+    return null;
+  }
+  const ids = lesson.segments.map((s) => s.id).join(',');
+  if (r.data.segments.map((s) => s.id).join(',') !== ids) {
+    warn(`segment ids differ from lesson.yaml (ignored): run npm run content:tts -- ${slug}`);
+    return null;
+  }
+  if (r.data.textHash !== lessonTextHash(lesson.segments)) {
+    warn(`lesson text changed after the audio was made: run npm run content:tts -- ${slug}`);
+  }
+  return r.data;
 }
 
 /** Load the whole content directory and collect every problem. */

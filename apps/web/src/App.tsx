@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { useLogout, useMe } from './api/hooks';
 import { Layout } from './components/Layout/Layout';
 import { HomePage, LessonListPage } from './pages/Home/HomePage';
+import { ListeningPage } from './pages/Listening/ListeningPage';
 import { LoginPage } from './pages/Login/LoginPage';
 import { PlaceholderPage } from './pages/Placeholder/PlaceholderPage';
 import { ReadingPage } from './pages/Reading/ReadingPage';
@@ -33,12 +34,7 @@ export function App() {
         <Route path="/read" element={<LessonListPage kind="reading" />} />
         <Route path="/read/:slug" element={<ReadingPage />} />
         <Route path="/listen" element={<LessonListPage kind="listening" />} />
-        <Route
-          path="/listen/:slug"
-          element={
-            <PlaceholderPage title="Bài nghe">Trang bài nghe sẽ có ở Phase 3.</PlaceholderPage>
-          }
-        />
+        <Route path="/listen/:slug" element={<ListeningPage />} />
         <Route
           path="/vocab"
           element={

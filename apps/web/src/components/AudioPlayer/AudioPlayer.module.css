@@ -1,0 +1,147 @@
+.player {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 64px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.wave:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 4px;
+}
+
+.bar {
+  flex: 1 1 0;
+  min-width: 1px;
+  border-radius: 2px;
+  background: var(--color-border);
+}
+
+.played {
+  background: var(--color-orange);
+}
+
+.range {
+  width: 100%;
+  min-height: var(--touch);
+  accent-color: var(--color-orange);
+}
+
+.times {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.error {
+  margin: 0;
+  color: var(--color-red);
+  font-size: var(--fs-md);
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.transport {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  min-height: var(--touch);
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: #9db4ee;
+}
+
+.btn:disabled {
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.loopOn,
+.loopOn:hover:not(:disabled) {
+  background: var(--color-orange-tint);
+  border-color: var(--color-orange);
+}
+
+.play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-orange);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play:hover {
+  background: #93390a;
+}
+
+.speeds {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-ground);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.speed {
+  min-width: 56px;
+  min-height: var(--touch);
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+
+.speedOn {
+  background: var(--color-surface);
+  box-shadow: 0 1px 2px rgb(22 32 42 / 12%);
+}
+
+@media (width < 780px) {
+  .player {
+    padding: 20px;
+  }
+}

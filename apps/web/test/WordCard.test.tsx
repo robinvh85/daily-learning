@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { WordCard } from '../src/components/WordCard/WordCard';
 import { runWord } from './fixtures';
+import { installMediaStub, lastPlayer } from './media';
 
 describe('WordCard', () => {
   it('shows the sense used in context with IPA, part of speech, example and collocations', () => {
@@ -33,6 +34,20 @@ describe('WordCard', () => {
       'https://dictionary.cambridge.org/us/dictionary/english/run',
     );
     expect(link).toHaveAttribute('target', '_blank');
+  });
+
+  it('plays the pronunciation when the word has audio', async () => {
+    const stub = installMediaStub();
+    try {
+      render(<WordCard word={{ ...runWord, audioUrl: '/content/words/run.mp3?v=1' }} />);
+      const btn = screen.getByRole('button', { name: 'Nghe phát âm run' });
+      expect(btn).toBeEnabled();
+      await userEvent.setup().click(btn);
+      expect(stub.play).toHaveBeenCalledTimes(1);
+      expect(lastPlayer().getAttribute('src')).toBe('/content/words/run.mp3?v=1');
+    } finally {
+      stub.restore();
+    }
   });
 
   it('hides the draft badge for reviewed entries', () => {
