@@ -1,0 +1,12 @@
+lemma: this
+ipa_us: /ðɪs/
+cefr: A1
+oxford3000: true
+senses:
+  - key: this
+    pos: determiner
+    vi: này; điều này, việc này
+    en: used for a person, thing or idea that is near, present or just mentioned
+    collocations: [this week, this job, this morning]
+    example: This bag is too heavy for me.
+status: draft

@@ -1,0 +1,12 @@
+lemma: any
+ipa_us: /ˈeni/
+cefr: A1
+oxford3000: true
+senses:
+  - key: any
+    pos: determiner
+    vi: nào, gì (trong câu hỏi, câu phủ định, câu điều kiện)
+    en: used in questions and negatives to mean some or even the smallest amount
+    collocations: [any questions, any time, not any]
+    example: Do you have any brothers or sisters?
+status: draft

@@ -1,0 +1,12 @@
+lemma: we
+ipa_us: /wiː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: we
+    pos: pronoun
+    vi: chúng tôi, chúng ta
+    en: the speaker and one or more other people
+    collocations: [we are, we can]
+    example: We live in a small apartment.
+status: draft

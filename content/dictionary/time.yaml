@@ -1,0 +1,19 @@
+lemma: time
+ipa_us: /taɪm/
+cefr: A1
+oxford3000: true
+forms: [times]
+senses:
+  - key: time
+    pos: noun
+    vi: thời gian; giờ, lúc
+    en: the thing that is measured in minutes, hours and days; a particular point in the day
+    collocations: [a long time, at the same time, free time]
+    example: I don’t have much time today.
+  - key: occasion
+    pos: noun
+    vi: lần
+    en: an occasion when something happens
+    collocations: [three times a week, for the first time, next time]
+    example: I go to the gym two times a week.
+status: draft

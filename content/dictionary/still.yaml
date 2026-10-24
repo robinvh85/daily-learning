@@ -1,0 +1,18 @@
+lemma: still
+ipa_us: /stɪl/
+cefr: A1
+oxford3000: true
+senses:
+  - key: continuing
+    pos: adverb
+    vi: vẫn, vẫn còn
+    en: continuing until now and not finished or changed
+    collocations: [still have, still need, still live]
+    example: It’s ten o’clock, and he is still in bed.
+  - key: however
+    pos: adverb
+    vi: dù vậy, tuy vậy, nhưng mà
+    en: in spite of what has just been said
+    collocations: ['still, it was fun']
+    example: The hotel was old. Still, the rooms were clean.
+status: draft

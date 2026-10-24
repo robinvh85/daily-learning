@@ -1,0 +1,12 @@
+lemma: music
+ipa_us: /ˈmjuːzɪk/
+cefr: A1
+oxford3000: true
+senses:
+  - key: music
+    pos: noun
+    vi: âm nhạc, nhạc
+    en: sounds that are arranged in a way that is pleasant to listen to
+    collocations: [listen to music, pop music, play music]
+    example: What kind of music do you like?
+status: draft

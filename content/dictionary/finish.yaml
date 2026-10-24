@@ -1,0 +1,13 @@
+lemma: finish
+ipa_us: /ˈfɪnɪʃ/
+cefr: A1
+oxford3000: true
+forms: [finishes, finished, finishing]
+senses:
+  - key: finish
+    pos: verb
+    vi: xong, kết thúc, làm xong; finish work = tan làm
+    en: to stop doing something because it is complete
+    collocations: [finish work, finish your homework, finish early]
+    example: What time do you finish work on Fridays?
+status: draft

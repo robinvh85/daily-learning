@@ -1,0 +1,12 @@
+lemma: often
+ipa_us: /ˈɔːfən/
+cefr: A1
+oxford3000: true
+senses:
+  - key: often
+    pos: adverb
+    vi: thường, hay
+    en: many times
+    collocations: [very often, not often]
+    example: I often read before I go to sleep.
+status: draft

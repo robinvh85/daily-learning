@@ -1,0 +1,13 @@
+lemma: cut
+ipa_us: /kʌt/
+cefr: A1
+oxford3000: true
+forms: [cuts, cutting]
+senses:
+  - key: cut
+    pos: verb
+    vi: cắt, thái
+    en: to divide something into pieces with a knife
+    collocations: [cut something into pieces, cut bread]
+    example: Cut the onion into small pieces.
+status: draft

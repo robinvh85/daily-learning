@@ -1,0 +1,13 @@
+lemma: save
+ipa_us: /seɪv/
+cefr: A2
+oxford3000: true
+forms: [saves, saved, saving]
+senses:
+  - key: money
+    pos: verb
+    vi: tiết kiệm, để dành (tiền)
+    en: to keep money so that you can use it later
+    collocations: [save money, save for a trip, save up]
+    example: She is saving for a new laptop.
+status: draft

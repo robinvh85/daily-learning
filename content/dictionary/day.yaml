@@ -1,0 +1,13 @@
+lemma: day
+ipa_us: /deɪ/
+cefr: A1
+oxford3000: true
+forms: [days]
+senses:
+  - key: day
+    pos: noun
+    vi: ngày
+    en: a period of 24 hours; the time when it is light
+    collocations: [every day, a long day, three days a week]
+    example: We stayed there for three days.
+status: draft

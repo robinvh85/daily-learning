@@ -1,0 +1,13 @@
+lemma: healthy
+ipa_us: /ˈhelθi/
+cefr: A1
+oxford3000: true
+forms: [healthier, healthiest]
+senses:
+  - key: healthy
+    pos: adjective
+    vi: tốt cho sức khỏe; khỏe mạnh
+    en: good for your health; physically strong and well
+    collocations: [healthy food, a healthy lifestyle, stay healthy]
+    example: Fruit is a healthy snack.
+status: draft

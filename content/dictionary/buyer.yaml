@@ -1,0 +1,13 @@
+lemma: buyer
+ipa_us: /ˈbaɪər/
+cefr: B1
+oxford3000: false
+forms: [buyers]
+senses:
+  - key: buyer
+    pos: noun
+    vi: người mua
+    en: a person who buys something
+    collocations: [other buyers, online buyers]
+    example: The seller answered all the buyer’s questions.
+status: draft

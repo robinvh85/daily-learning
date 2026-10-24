@@ -1,0 +1,13 @@
+lemma: printer
+ipa_us: /ˈprɪntər/
+cefr: A2
+oxford3000: true
+forms: [printers]
+senses:
+  - key: printer
+    pos: noun
+    vi: máy in
+    en: a machine that prints documents from a computer
+    collocations: [use the printer, the printer is broken]
+    example: The printer in our office is out of paper.
+status: draft

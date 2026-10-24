@@ -1,0 +1,13 @@
+lemma: part
+ipa_us: /pɑːrt/
+cefr: A1
+oxford3000: true
+forms: [parts]
+senses:
+  - key: part
+    pos: noun
+    vi: phần, bộ phận
+    en: one of the pieces or sections that something is divided into
+    collocations: [three parts, part of the day, the first part]
+    example: The first part of the movie was a little slow.
+status: draft

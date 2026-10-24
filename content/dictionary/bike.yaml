@@ -1,0 +1,13 @@
+lemma: bike
+ipa_us: /baɪk/
+cefr: A1
+oxford3000: true
+forms: [bikes]
+senses:
+  - key: bike
+    pos: noun
+    vi: xe đạp
+    en: a bicycle
+    collocations: [ride a bike, by bike]
+    example: My daughter got a new bike for her birthday.
+status: draft

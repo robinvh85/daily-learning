@@ -1,0 +1,13 @@
+lemma: class
+ipa_us: /klæs/
+cefr: A1
+oxford3000: true
+forms: [classes]
+senses:
+  - key: class
+    pos: noun
+    vi: lớp, lớp học
+    en: a group of students who are taught together; a lesson
+    collocations: [the same class, an English class]
+    example: There are thirty students in my class.
+status: draft

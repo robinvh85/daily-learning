@@ -1,0 +1,12 @@
+lemma: weather
+ipa_us: /ˈweðər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: weather
+    pos: noun
+    vi: thời tiết
+    en: how hot, cold, wet, sunny, etc. it is outside
+    collocations: [good weather, the weather is nice, cold weather]
+    example: The weather is beautiful today.
+status: draft

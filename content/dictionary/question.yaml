@@ -1,0 +1,13 @@
+lemma: question
+ipa_us: /ˈkwestʃən/
+cefr: A1
+oxford3000: true
+forms: [questions]
+senses:
+  - key: question
+    pos: noun
+    vi: câu hỏi; thắc mắc
+    en: something that you ask someone
+    collocations: [ask a question, have a question, answer a question]
+    example: Can I ask you a question?
+status: draft

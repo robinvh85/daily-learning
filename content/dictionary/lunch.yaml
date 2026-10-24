@@ -1,0 +1,13 @@
+lemma: lunch
+ipa_us: /lʌntʃ/
+cefr: A1
+oxford3000: true
+forms: [lunches]
+senses:
+  - key: lunch
+    pos: noun
+    vi: bữa trưa
+    en: a meal that you eat in the middle of the day
+    collocations: [have lunch, eat lunch, lunch time]
+    example: What did you have for lunch?
+status: draft

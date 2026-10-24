@@ -1,0 +1,12 @@
+lemma: however
+ipa_us: /haʊˈevər/
+cefr: A2
+oxford3000: true
+senses:
+  - key: however
+    pos: adverb
+    vi: tuy nhiên
+    en: used to add a statement that is different from what you have just said
+    collocations: ['however, …']
+    example: The hotel was cheap. However, it was far from the beach.
+status: draft

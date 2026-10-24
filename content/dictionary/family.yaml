@@ -1,0 +1,13 @@
+lemma: family
+ipa_us: /ˈfæməli/
+cefr: A1
+oxford3000: true
+forms: [families]
+senses:
+  - key: family
+    pos: noun
+    vi: gia đình, cả nhà
+    en: a group of people who are related, such as parents and children
+    collocations: [my whole family, with my family, family dinner]
+    example: I spend every Sunday with my family.
+status: draft

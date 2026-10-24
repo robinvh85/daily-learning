@@ -1,0 +1,12 @@
+lemma: tired
+ipa_us: /taɪrd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: tired
+    pos: adjective
+    vi: mệt, mệt mỏi
+    en: feeling that you need to rest or sleep
+    collocations: [feel tired, very tired, tired after work]
+    example: I’m too tired to cook tonight.
+status: draft

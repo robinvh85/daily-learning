@@ -1,0 +1,19 @@
+lemma: travel
+ipa_us: /ˈtrævəl/
+cefr: A1
+oxford3000: true
+forms: [travels, traveled, traveling]
+senses:
+  - key: noun
+    pos: noun
+    vi: (việc) du lịch, đi lại; travel company = công ty du lịch
+    en: the activity of going from one place to another, especially on trips
+    collocations: [a travel company, travel plans]
+    example: I read a lot of travel blogs before my holiday.
+  - key: verb
+    pos: verb
+    vi: đi (du lịch), đi lại (từ nơi này đến nơi khác)
+    en: to go from one place to another, especially to a place far away
+    collocations: [travel by train, travel to another city, travel abroad]
+    example: They like to travel by train.
+status: draft

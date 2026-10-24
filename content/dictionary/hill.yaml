@@ -1,0 +1,13 @@
+lemma: hill
+ipa_us: /hɪl/
+cefr: A1
+oxford3000: true
+forms: [hills]
+senses:
+  - key: hill
+    pos: noun
+    vi: đồi, ngọn đồi
+    en: an area of high land, lower than a mountain
+    collocations: [on the hill, green hills]
+    example: There is a small temple on the hill.
+status: draft

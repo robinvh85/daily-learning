@@ -1,0 +1,13 @@
+lemma: friend
+ipa_us: /frend/
+cefr: A1
+oxford3000: true
+forms: [friends]
+senses:
+  - key: friend
+    pos: noun
+    vi: bạn, bạn bè
+    en: a person that you know well and like
+    collocations: [a good friend, an old friend, meet friends]
+    example: I’m meeting a friend for coffee this afternoon.
+status: draft

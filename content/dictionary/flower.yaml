@@ -1,0 +1,13 @@
+lemma: flower
+ipa_us: /ˈflaʊər/
+cefr: A1
+oxford3000: true
+forms: [flowers]
+senses:
+  - key: flower
+    pos: noun
+    vi: hoa, bông hoa
+    en: the colorful part of a plant
+    collocations: [a flower farm, buy flowers]
+    example: He bought her some flowers for her birthday.
+status: draft

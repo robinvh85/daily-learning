@@ -1,0 +1,19 @@
+lemma: stay
+ipa_us: /steɪ/
+cefr: A1
+oxford3000: true
+forms: [stays, stayed, staying]
+senses:
+  - key: lodge
+    pos: verb
+    vi: ở, ở lại (khách sạn, nhà nghỉ, nhà ai) trong một thời gian
+    en: to live in a place for a short time as a visitor
+    collocations: [stay at a hotel, stay with friends, stay for two nights]
+    example: We stayed with my aunt for a week.
+  - key: remain
+    pos: verb
+    vi: ở (yên một chỗ), không đi đâu
+    en: to not leave a place
+    collocations: [stay home, stay inside, stay in bed]
+    example: It was cold, so we stayed in bed all morning.
+status: draft

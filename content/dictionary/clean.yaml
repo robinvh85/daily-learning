@@ -1,0 +1,13 @@
+lemma: clean
+ipa_us: /kliːn/
+cefr: A1
+oxford3000: true
+forms: [cleans, cleaned, cleaning]
+senses:
+  - key: verb
+    pos: verb
+    vi: lau dọn, dọn dẹp, làm sạch
+    en: to remove dirt from something
+    collocations: [clean the house, clean the kitchen]
+    example: We clean the house every Saturday morning.
+status: draft

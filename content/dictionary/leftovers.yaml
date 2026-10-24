@@ -1,0 +1,12 @@
+lemma: leftovers
+ipa_us: /ˈleftˌoʊvərz/
+cefr: B1
+oxford3000: false
+senses:
+  - key: leftovers
+    pos: noun
+    vi: đồ ăn thừa, đồ ăn còn lại (sau bữa ăn)
+    en: food that has not been eaten at the end of a meal
+    collocations: [eat the leftovers, use the leftovers]
+    example: We had the leftovers from the party for lunch.
+status: draft

@@ -1,0 +1,13 @@
+lemma: photo
+ipa_us: /ˈfoʊtoʊ/
+cefr: A1
+oxford3000: true
+forms: [photos]
+senses:
+  - key: photo
+    pos: noun
+    vi: ảnh, bức ảnh
+    en: a picture made with a camera or phone
+    collocations: [take a photo, in the photo]
+    example: Can you take a photo of us?
+status: draft

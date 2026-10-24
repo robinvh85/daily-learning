@@ -1,0 +1,13 @@
+lemma: house
+ipa_us: /haʊs/
+cefr: A1
+oxford3000: true
+forms: [houses]
+senses:
+  - key: house
+    pos: noun
+    vi: nhà, ngôi nhà
+    en: a building where people live
+    collocations: [near my house, a big house]
+    example: They live in a small house by the river.
+status: draft

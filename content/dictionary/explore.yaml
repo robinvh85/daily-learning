@@ -1,0 +1,13 @@
+lemma: explore
+ipa_us: /ɪkˈsplɔːr/
+cefr: B1
+oxford3000: true
+forms: [explores, explored, exploring]
+senses:
+  - key: explore
+    pos: verb
+    vi: khám phá, đi tìm hiểu (một nơi)
+    en: to travel around a place to learn about it
+    collocations: [explore the city, explore the countryside]
+    example: We spent the afternoon exploring the old town.
+status: draft

@@ -1,0 +1,12 @@
+lemma: expensive
+ipa_us: /ɪkˈspensɪv/
+cefr: A1
+oxford3000: true
+senses:
+  - key: expensive
+    pos: adjective
+    vi: đắt, đắt tiền
+    en: costing a lot of money
+    collocations: [very expensive, too expensive]
+    example: Hotels in the city center are very expensive.
+status: draft

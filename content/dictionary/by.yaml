@@ -15,4 +15,10 @@ senses:
     en: used to say how you travel or how something is done
     collocations: [by bus, by train, by car]
     example: I go to work by bus.
+  - key: deadline
+    pos: preposition
+    vi: trước, chậm nhất là (một thời điểm)
+    en: not later than a particular time
+    collocations: [by Friday, by five o’clock, by tomorrow]
+    example: Please send me the report by Friday.
 status: draft

@@ -1,0 +1,13 @@
+lemma: busy
+ipa_us: /ˈbɪzi/
+cefr: A1
+oxford3000: true
+forms: [busier, busiest]
+senses:
+  - key: busy
+    pos: adjective
+    vi: bận, bận rộn; (nơi chốn) đông đúc, nhộn nhịp
+    en: having a lot to do; (of a place) full of people and activity
+    collocations: [a busy week, a busy street, too busy]
+    example: I’m busy now. Can I call you back?
+status: draft

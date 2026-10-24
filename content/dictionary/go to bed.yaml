@@ -1,0 +1,14 @@
+lemma: go to bed
+ipa_us: /ˌɡoʊ tə ˈbed/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [goes to bed, went to bed, going to bed, gone to bed]
+senses:
+  - key: go_to_bed
+    pos: phrase
+    vi: đi ngủ
+    en: to get into your bed in order to sleep
+    collocations: [go to bed early, go to bed late]
+    example: My kids go to bed at nine.
+status: draft

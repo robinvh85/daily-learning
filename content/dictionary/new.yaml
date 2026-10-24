@@ -1,0 +1,13 @@
+lemma: new
+ipa_us: /nuː/
+cefr: A1
+oxford3000: true
+forms: [newer, newest]
+senses:
+  - key: new
+    pos: adjective
+    vi: mới
+    en: recently made, bought or started
+    collocations: [a new job, a new phone, the new week]
+    example: My brother bought a new car last month.
+status: draft

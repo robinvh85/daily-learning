@@ -1,0 +1,13 @@
+lemma: card
+ipa_us: /kɑːrd/
+cefr: A1
+oxford3000: true
+forms: [cards]
+senses:
+  - key: card
+    pos: noun
+    vi: lá bài; (play cards) chơi bài
+    en: one of a set of small pieces of stiff paper used for playing games
+    collocations: [play cards, a game of cards]
+    example: My grandparents play cards every evening.
+status: draft

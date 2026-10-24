@@ -1,0 +1,12 @@
+lemma: most
+ipa_us: /moʊst/
+cefr: A1
+oxford3000: true
+senses:
+  - key: most
+    pos: determiner
+    vi: hầu hết, phần lớn
+    en: almost all of something; the largest part
+    collocations: [most of the time, most people]
+    example: Most of my friends live in the city.
+status: draft

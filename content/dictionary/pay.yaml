@@ -1,0 +1,13 @@
+lemma: pay
+ipa_us: /peɪ/
+cefr: A1
+oxford3000: true
+forms: [pays, paid, paying]
+senses:
+  - key: pay
+    pos: verb
+    vi: trả tiền, thanh toán
+    en: to give someone money for something you buy or for a service
+    collocations: [pay by card, pay the bill, pay for something]
+    example: Can I pay by credit card?
+status: draft

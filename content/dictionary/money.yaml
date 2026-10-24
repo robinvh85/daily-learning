@@ -1,0 +1,12 @@
+lemma: money
+ipa_us: /ˈmʌni/
+cefr: A1
+oxford3000: true
+senses:
+  - key: money
+    pos: noun
+    vi: tiền, tiền bạc
+    en: coins or paper notes that you use to buy things
+    collocations: [save money, spend money, borrow money]
+    example: I don’t have much money this month.
+status: draft

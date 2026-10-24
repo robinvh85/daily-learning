@@ -1,0 +1,13 @@
+lemma: right away
+ipa_us: /ˌraɪt əˈweɪ/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: right_away
+    pos: phrase
+    vi: ngay, ngay lập tức
+    en: immediately; without waiting
+    collocations: [call someone right away, start right away]
+    example: The doctor said I should come in right away.
+status: draft

@@ -1,0 +1,12 @@
+lemma: crowded
+ipa_us: /ˈkraʊdɪd/
+cefr: A2
+oxford3000: true
+senses:
+  - key: crowded
+    pos: adjective
+    vi: đông đúc, đông người, chật kín
+    en: full of people
+    collocations: [a crowded bus, very crowded, crowded on weekends]
+    example: The beach gets very crowded in summer.
+status: draft

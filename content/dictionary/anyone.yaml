@@ -1,0 +1,12 @@
+lemma: anyone
+ipa_us: /ˈeniwʌn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: anyone
+    pos: pronoun
+    vi: bất kỳ ai, ai đó
+    en: any person
+    collocations: [anyone on the team, does anyone know…?]
+    example: Does anyone have a pen?
+status: draft

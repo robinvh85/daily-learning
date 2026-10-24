@@ -1,0 +1,13 @@
+lemma: chicken
+ipa_us: /ˈtʃɪkɪn/
+cefr: A1
+oxford3000: true
+forms: [chickens]
+senses:
+  - key: chicken
+    pos: noun
+    vi: gà; thịt gà
+    en: a bird kept on farms for its eggs and meat; the meat of this bird
+    collocations: [chicken soup, fried chicken]
+    example: I’d like the chicken with rice, please.
+status: draft

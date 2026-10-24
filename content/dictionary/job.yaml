@@ -1,0 +1,13 @@
+lemma: job
+ipa_us: /dʒɑːb/
+cefr: A1
+oxford3000: true
+forms: [jobs]
+senses:
+  - key: job
+    pos: noun
+    vi: công việc, việc làm
+    en: the work that you do regularly to earn money
+    collocations: [a new job, find a job, a full-time job]
+    example: She is looking for a job in a bank.
+status: draft

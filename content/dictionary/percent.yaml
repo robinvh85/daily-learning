@@ -1,0 +1,12 @@
+lemma: percent
+ipa_us: /pərˈsent/
+cefr: A2
+oxford3000: true
+senses:
+  - key: percent
+    pos: noun
+    vi: phần trăm
+    en: one part in every hundred
+    collocations: [twenty percent, ten percent off]
+    example: About eighty percent of the students passed the test.
+status: draft

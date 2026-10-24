@@ -1,0 +1,12 @@
+lemma: takeout
+ipa_us: /ˈteɪkaʊt/
+cefr: B1
+oxford3000: false
+senses:
+  - key: takeout
+    pos: noun
+    vi: đồ ăn mua sẵn mang về (từ quán, nhà hàng)
+    en: a meal that you buy from a restaurant and eat at home
+    collocations: [order takeout, Chinese takeout]
+    example: We were tired, so we ordered takeout.
+status: draft

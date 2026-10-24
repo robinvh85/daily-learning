@@ -1,0 +1,12 @@
+lemma: popular
+ipa_us: /ˈpɑːpjələr/
+cefr: A1
+oxford3000: true
+senses:
+  - key: popular
+    pos: adjective
+    vi: được ưa chuộng, nhiều người biết đến, phổ biến
+    en: liked or used by a lot of people
+    collocations: [a popular website, very popular, popular with young people]
+    example: This café is popular with students.
+status: draft

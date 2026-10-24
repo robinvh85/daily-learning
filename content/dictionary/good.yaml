@@ -1,0 +1,12 @@
+lemma: good
+ipa_us: /ɡʊd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: good
+    pos: adjective
+    vi: tốt, hay, giỏi, ngon
+    en: of high quality; pleasant or useful
+    collocations: [a good idea, a good way, good food]
+    example: This is a good place for lunch.
+status: draft

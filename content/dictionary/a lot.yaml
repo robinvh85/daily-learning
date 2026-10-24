@@ -1,0 +1,13 @@
+lemma: a lot
+ipa_us: /ə ˈlɑːt/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: much
+    pos: pronoun
+    vi: nhiều, rất nhiều (thứ, điều)
+    en: a large amount; many things
+    collocations: [learn a lot, know a lot about something]
+    example: I learned a lot from my first boss.
+status: draft

@@ -15,4 +15,10 @@ senses:
     en: used before the base form of a verb
     collocations: [want to, need to, try to]
     example: Now she wants to run her own business.
+  - key: recipient
+    pos: preposition
+    vi: với, cho (ai)
+    en: used to show who receives something or who an action is directed at
+    collocations: [introduce someone to someone, give something to someone, talk to someone]
+    example: Please give this letter to your teacher.
 status: draft

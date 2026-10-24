@@ -1,0 +1,12 @@
+lemma: tomorrow
+ipa_us: /təˈmɑːroʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: tomorrow
+    pos: adverb
+    vi: ngày mai
+    en: on the day after today
+    collocations: [see you tomorrow, tomorrow morning]
+    example: I have a dentist appointment tomorrow.
+status: draft

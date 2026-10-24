@@ -1,0 +1,12 @@
+lemma: maybe
+ipa_us: /ˈmeɪbi/
+cefr: A1
+oxford3000: true
+senses:
+  - key: maybe
+    pos: adverb
+    vi: có lẽ, có thể
+    en: used to say that something is possible
+    collocations: [maybe tomorrow, maybe not]
+    example: Maybe we can go to the beach next weekend.
+status: draft

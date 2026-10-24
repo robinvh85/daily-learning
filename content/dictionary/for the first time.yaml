@@ -1,0 +1,13 @@
+lemma: for the first time
+ipa_us: /fɔːr ðə ˈfɝːst taɪm/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: first_time
+    pos: phrase
+    vi: lần đầu tiên
+    en: on one occasion and never before
+    collocations: [try something for the first time]
+    example: I saw snow for the first time last winter.
+status: draft

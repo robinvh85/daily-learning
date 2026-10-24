@@ -1,0 +1,12 @@
+lemma: after
+ipa_us: /ˈæftər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: after
+    pos: preposition
+    vi: sau, sau khi
+    en: later than something
+    collocations: [after work, after dinner, after two weeks]
+    example: Let’s go for a walk after lunch.
+status: draft

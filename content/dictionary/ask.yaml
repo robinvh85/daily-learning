@@ -1,0 +1,13 @@
+lemma: ask
+ipa_us: /æsk/
+cefr: A1
+oxford3000: true
+forms: [asks, asked, asking]
+senses:
+  - key: ask
+    pos: verb
+    vi: hỏi
+    en: to say something to get an answer
+    collocations: [ask a question, ask someone about something]
+    example: Can I ask you something?
+status: draft

@@ -1,0 +1,125 @@
+# Reading lesson (day 9). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: technology
+title: My Phone and Me
+order: 9
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: My phone is the first thing I look at in the morning and the last thing at night.
+    text_vi: Điện thoại là thứ đầu tiên tôi nhìn vào mỗi sáng và cũng là thứ cuối cùng tôi xem mỗi tối.
+  - id: p1s2
+    paragraph: 1
+    text_en: I use it for almost everything.
+    text_vi: Tôi dùng nó cho gần như mọi việc.
+  - id: p1s3
+    paragraph: 1
+    text_en: I check messages, pay bills, read the news, and listen to music on the bus.
+    text_vi: Tôi xem tin nhắn, thanh toán hóa đơn, đọc tin tức và nghe nhạc trên xe buýt.
+  - id: p2s1
+    paragraph: 2
+    text_en: Last month, I installed an app to check my screen time.
+    text_vi: Tháng trước, tôi cài một ứng dụng để xem thời gian mình dùng điện thoại.
+  - id: p2s2
+    paragraph: 2
+    text_en: I was surprised when I saw the result.
+    text_vi: Tôi đã rất bất ngờ khi thấy kết quả.
+  - id: p2s3
+    paragraph: 2
+    text_en: I spent almost five hours a day on my phone!
+    text_vi: Mỗi ngày tôi dành gần năm tiếng cho điện thoại!
+  - id: p2s4
+    paragraph: 2
+    text_en: Most of that time was social media and games.
+    text_vi: Phần lớn thời gian đó là lướt mạng xã hội và chơi game.
+  - id: p3s1
+    paragraph: 3
+    text_en: So I made a few changes.
+    text_vi: Vì vậy tôi đã thay đổi một vài thứ.
+  - id: p3s2
+    paragraph: 3
+    text_en: I turned off most notifications, and I deleted two games.
+    text_vi: Tôi tắt gần hết thông báo và xóa hai trò chơi.
+  - id: p3s3
+    paragraph: 3
+    text_en: Now I keep my phone in my bag during meals with my family.
+    text_vi: Giờ tôi cất điện thoại trong túi mỗi khi ăn cơm cùng gia đình.
+  - id: p3s4
+    paragraph: 3
+    text_en: I also set a time limit of thirty minutes a day for social media.
+    text_vi: Tôi cũng tự đặt giới hạn ba mươi phút mỗi ngày cho mạng xã hội.
+  - id: p4s1
+    paragraph: 4
+    text_en: At first, it wasn’t easy.
+    text_vi: Lúc đầu, việc này không dễ chút nào.
+  - id: p4s2
+    paragraph: 4
+    text_en: I often opened social media apps without thinking.
+    text_vi: Tôi hay mở các ứng dụng mạng xã hội mà không hề suy nghĩ.
+  - id: p4s3
+    paragraph: 4
+    text_en: But now I have more free time for reading and talking with friends.
+    text_vi: Nhưng giờ tôi có nhiều thời gian rảnh hơn để đọc sách và trò chuyện với bạn bè.
+  - id: p4s4
+    paragraph: 4
+    text_en: My phone is still useful, but it doesn’t control my day anymore.
+    text_vi: Điện thoại vẫn rất hữu ích, nhưng nó không còn chi phối một ngày của tôi nữa.
+
+focus_words: [app, surprised, spend, social media, turn off, notification, delete, limit, anymore]
+
+senses:
+  be: linking
+  first: first
+  in: time # "in the morning"
+  in#2: in # "in my bag"
+  last: final # "the last thing at night"
+  last#2: previous # "Last month"
+  at: time # "at night"
+  for: purpose
+  on: place # "on the bus"
+  on#2: activity # "I spent almost five hours a day on my phone"
+  to: infinitive
+  spend: time
+  time: time
+  make: create
+  change: noun
+  keep: store
+  open: thing
+  have: own
+  still: continuing
+
+ignore: []
+
+questions:
+  - prompt: How much time did the writer spend on the phone each day before the changes?
+    options: [About two hours, Almost five hours, Thirty minutes]
+    correct: 1
+    feedback_ok: 'Đúng: “I spent almost five hours a day on my phone!”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ ba của đoạn 2. Ba mươi phút là giới hạn mới cho mạng xã hội.
+    evidence: p2s3
+  - prompt: What did the writer do with two games?
+    options: [Played them with the family, Bought them, Deleted them]
+    correct: 2
+    feedback_ok: 'Đúng: “I deleted two games.”'
+    feedback_wrong: Chưa đúng. Xem lại câu thứ hai của đoạn 3.
+    evidence: p3s2
+  - prompt: Where is the writer’s phone during family meals now?
+    options: [In the bag, On the table, In the kitchen]
+    correct: 0
+    feedback_ok: 'Đúng: “Now I keep my phone in my bag during meals with my family.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ ba của đoạn 3.
+    evidence: p3s3
+  - prompt: What is the main idea of the text?
+    options:
+      [
+        The writer wants to buy a new phone,
+        The writer stopped using the phone completely,
+        The writer now uses the phone in a healthier way,
+      ]
+    correct: 2
+    feedback_ok: 'Đúng: người viết vẫn dùng điện thoại (“still useful”), nhưng “it doesn’t control my day anymore”.'
+    feedback_wrong: Chưa đúng. Đọc câu cuối của bài. Người viết có ngừng dùng điện thoại hẳn không?
+    evidence: p4s4

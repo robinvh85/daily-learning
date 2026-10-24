@@ -1,0 +1,12 @@
+lemma: them
+ipa_us: /ðem/
+cefr: A1
+oxford3000: true
+senses:
+  - key: them
+    pos: pronoun
+    vi: họ, chúng, những cái đó (làm tân ngữ)
+    en: used as the object of a verb or preposition for people or things already mentioned
+    collocations: [help them, one of them]
+    example: I bought some apples and put them in the fridge.
+status: draft

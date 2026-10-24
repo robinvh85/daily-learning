@@ -1,0 +1,12 @@
+lemma: our
+ipa_us: /aʊr/
+cefr: A1
+oxford3000: true
+senses:
+  - key: our
+    pos: determiner
+    vi: của chúng tôi, của chúng ta
+    en: belonging to the speaker and other people
+    collocations: [our team, our house]
+    example: Our house is near the river.
+status: draft

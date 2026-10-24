@@ -1,0 +1,12 @@
+lemma: thirty
+ipa_us: /ˈθɝːti/
+cefr: A1
+oxford3000: true
+senses:
+  - key: thirty
+    pos: number
+    vi: ba mươi (số 30)
+    en: the number 30
+    collocations: [thirty minutes, thirty years old]
+    example: The bus comes every thirty minutes.
+status: draft

@@ -1,0 +1,13 @@
+lemma: app
+ipa_us: /æp/
+cefr: A2
+oxford3000: true
+forms: [apps]
+senses:
+  - key: app
+    pos: noun
+    vi: ứng dụng (trên điện thoại, máy tính)
+    en: a program for a phone or computer that does a particular job
+    collocations: [install an app, a banking app, use an app]
+    example: I use an app to learn new English words.
+status: draft

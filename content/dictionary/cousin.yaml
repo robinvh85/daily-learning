@@ -1,0 +1,13 @@
+lemma: cousin
+ipa_us: /ˈkʌzən/
+cefr: A2
+oxford3000: true
+forms: [cousins]
+senses:
+  - key: cousin
+    pos: noun
+    vi: anh, chị, em họ
+    en: a child of your aunt or uncle
+    collocations: [my cousin, a cousin of mine]
+    example: My cousin lives in Canada with her parents.
+status: draft

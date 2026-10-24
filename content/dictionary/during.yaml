@@ -1,0 +1,12 @@
+lemma: during
+ipa_us: /ˈdʊrɪŋ/
+cefr: A2
+oxford3000: true
+senses:
+  - key: during
+    pos: preposition
+    vi: trong, trong lúc, trong suốt (một khoảng thời gian)
+    en: all through a period of time, or at some point in it
+    collocations: [during the day, during lunch, during the week]
+    example: Please turn off your phone during the movie.
+status: draft

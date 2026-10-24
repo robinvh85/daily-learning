@@ -1,0 +1,13 @@
+lemma: out of
+ipa_us: /ˈaʊt əv/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: none_left
+    pos: preposition
+    vi: (be out of something) hết, không còn (cái gì)
+    en: having no more of something
+    collocations: [out of money, out of time, out of milk]
+    example: We’re out of eggs. Can you buy some?
+status: draft

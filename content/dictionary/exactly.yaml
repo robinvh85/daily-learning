@@ -1,0 +1,12 @@
+lemma: exactly
+ipa_us: /ɪɡˈzæktli/
+cefr: A2
+oxford3000: true
+senses:
+  - key: exactly
+    pos: adverb
+    vi: chính xác, đúng, y hệt
+    en: used to say that something is completely correct or the same
+    collocations: [exactly like, exactly the same, exactly what I need]
+    example: The hotel looked exactly like the pictures.
+status: draft

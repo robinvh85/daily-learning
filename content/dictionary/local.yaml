@@ -1,0 +1,12 @@
+lemma: local
+ipa_us: /ˈloʊkəl/
+cefr: A2
+oxford3000: true
+senses:
+  - key: local
+    pos: adjective
+    vi: (thuộc) địa phương, ở vùng đó
+    en: from or relating to the area where you are
+    collocations: [local food, local people, a local market]
+    example: We always try the local food when we travel.
+status: draft

@@ -1,0 +1,11 @@
+lemma: couldn't
+ipa_us: /ˈkʊdənt/
+cefr: A1
+oxford3000: false
+senses:
+  - key: could_not
+    pos: contraction
+    vi: không thể, đã không thể (viết tắt của could not)
+    en: short form of “could not”
+    example: I couldn’t find my keys this morning.
+status: draft

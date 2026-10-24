@@ -1,0 +1,13 @@
+lemma: mistake
+ipa_us: /mɪˈsteɪk/
+cefr: A2
+oxford3000: true
+forms: [mistakes]
+senses:
+  - key: mistake
+    pos: noun
+    vi: lỗi, sai lầm
+    en: something that is wrong, or an action that you did not do correctly
+    collocations: [make a mistake, a big mistake, by mistake]
+    example: There are two spelling mistakes in this letter.
+status: draft

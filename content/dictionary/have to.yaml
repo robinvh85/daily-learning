@@ -1,0 +1,14 @@
+lemma: have to
+ipa_us: /ˈhæf tə/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [has to, had to, having to]
+senses:
+  - key: must
+    pos: modal verb
+    vi: phải (làm gì)
+    en: used to say that something is necessary
+    collocations: [have to work, had to wait]
+    example: We had to wait an hour for the bus.
+status: draft

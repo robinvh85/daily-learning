@@ -1,0 +1,121 @@
+# Reading lesson (day 4). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: shopping
+title: Shopping for Clothes Online
+order: 4
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: I don’t really enjoy shopping at the mall.
+    text_vi: Tôi không thích đi mua sắm ở trung tâm thương mại lắm.
+  - id: p1s2
+    paragraph: 1
+    text_en: The stores are always crowded on weekends, and it takes a long time to find the right size.
+    text_vi: Cuối tuần, các cửa hàng lúc nào cũng đông nghịt, và phải mất rất lâu mới tìm được cỡ vừa.
+  - id: p1s3
+    paragraph: 1
+    text_en: So last month, I bought my clothes online for the first time.
+    text_vi: Vì vậy tháng trước, lần đầu tiên tôi mua quần áo trên mạng.
+  - id: p2s1
+    paragraph: 2
+    text_en: I needed a warm jacket for the winter.
+    text_vi: Tôi cần một chiếc áo khoác ấm cho mùa đông.
+  - id: p2s2
+    paragraph: 2
+    text_en: On a popular website, I compared prices and read reviews from other buyers.
+    text_vi: Trên một trang web nhiều người dùng, tôi so sánh giá và đọc đánh giá của những người mua khác.
+  - id: p2s3
+    paragraph: 2
+    text_en: Many buyers said the jacket was a little small, so I ordered one size bigger.
+    text_vi: Nhiều người mua nói áo hơi chật, nên tôi đặt lớn hơn một cỡ.
+  - id: p2s4
+    paragraph: 2
+    text_en: Delivery was free, and the package arrived in three days.
+    text_vi: Giao hàng miễn phí, và ba ngày sau thì gói hàng đến nơi.
+  - id: p3s1
+    paragraph: 3
+    text_en: The jacket fit well, and the color was exactly like the photo.
+    text_vi: Áo mặc vừa vặn, và màu sắc giống hệt như trong ảnh.
+  - id: p3s2
+    paragraph: 3
+    text_en: However, the sleeves were too long for me.
+    text_vi: Tuy nhiên, tay áo lại quá dài so với tôi.
+  - id: p3s3
+    paragraph: 3
+    text_en: A tailor near my house made them shorter for only five dollars.
+    text_vi: Một thợ may gần nhà đã sửa cho ngắn lại, chỉ mất năm đô.
+  - id: p3s4
+    paragraph: 3
+    text_en: Now it is my favorite jacket.
+    text_vi: Giờ nó là chiếc áo khoác tôi thích nhất.
+  - id: p4s1
+    paragraph: 4
+    text_en: Shopping online is convenient, but you have to be careful.
+    text_vi: Mua sắm trên mạng rất tiện, nhưng bạn phải cẩn thận.
+  - id: p4s2
+    paragraph: 4
+    text_en: Always check the size chart before you pay.
+    text_vi: Hãy luôn xem bảng kích cỡ trước khi thanh toán.
+  - id: p4s3
+    paragraph: 4
+    text_en: Next time, I will also try on similar clothes in a store first.
+    text_vi: Lần sau, tôi cũng sẽ mặc thử những bộ quần áo tương tự ở cửa hàng trước.
+
+focus_words: [crowded, compare, review, delivery, package, fit, convenient, try on]
+
+senses:
+  at: place
+  be: linking
+  on: day # "on weekends"
+  on#2: place # "On a popular website"
+  take: time
+  time: time
+  to: infinitive
+  last: previous
+  for: purpose
+  for#2: opinion # "too long for me"
+  for#3: price # "for only five dollars"
+  a little: slightly
+  one: number
+  in: time # "in three days"
+  in#2: in # "in a store"
+  like: similar
+  make: cause # "made them shorter"
+  first: adverb
+
+ignore: []
+
+questions:
+  - prompt: Why doesn’t the writer enjoy shopping at the mall?
+    options:
+      [The clothes are too expensive, The stores are crowded on weekends, The mall is far away]
+    correct: 1
+    feedback_ok: 'Đúng: “The stores are always crowded on weekends…”'
+    feedback_wrong: Chưa đúng. Đọc lại câu thứ hai của đoạn 1.
+    evidence: p1s2
+  - prompt: Why did the writer order one size bigger?
+    options:
+      [
+        Other buyers said the jacket was a little small,
+        The writer wanted a long jacket,
+        The bigger size was cheaper,
+      ]
+    correct: 0
+    feedback_ok: 'Đúng: “Many buyers said the jacket was a little small, so I ordered one size bigger.”'
+    feedback_wrong: Chưa đúng. Xem lại câu thứ ba của đoạn 2, chú ý từ “so”.
+    evidence: p2s3
+  - prompt: What was the problem with the jacket?
+    options: [The color was different, It was too small, The sleeves were too long]
+    correct: 2
+    feedback_ok: 'Đúng: “However, the sleeves were too long for me.”'
+    feedback_wrong: Chưa đúng. Tìm từ “However” ở đoạn 3.
+    evidence: p3s2
+  - prompt: In paragraph 4, “convenient” means…
+    options: [slow and difficult, very expensive, easy and useful for you]
+    correct: 2
+    feedback_ok: 'Đúng: “convenient” là tiện lợi: mua ở nhà, không phải chen chúc ở trung tâm thương mại.'
+    feedback_wrong: Chưa đúng. Nghĩ lại vì sao người viết thích mua trên mạng hơn đi trung tâm thương mại (đoạn 1).
+    evidence: p4s1

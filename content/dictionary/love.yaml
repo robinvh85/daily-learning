@@ -1,0 +1,13 @@
+lemma: love
+ipa_us: /lʌv/
+cefr: A1
+oxford3000: true
+forms: [loves, loved, loving]
+senses:
+  - key: love
+    pos: verb
+    vi: rất thích, yêu
+    en: to like something very much; to have strong feelings for someone
+    collocations: [love doing something, love music]
+    example: I love Vietnamese coffee.
+status: draft

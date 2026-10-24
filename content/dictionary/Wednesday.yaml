@@ -1,0 +1,13 @@
+lemma: Wednesday
+ipa_us: /ˈwenzdeɪ/
+cefr: A1
+oxford3000: true
+forms: [Wednesdays]
+senses:
+  - key: wednesday
+    pos: noun
+    vi: thứ Tư
+    en: the day of the week after Tuesday and before Thursday
+    collocations: [on Wednesday, by Wednesday]
+    example: We have English class on Wednesday evenings.
+status: draft

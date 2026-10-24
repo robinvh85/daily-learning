@@ -1,0 +1,12 @@
+lemma: then
+ipa_us: /ðen/
+cefr: A1
+oxford3000: true
+senses:
+  - key: then
+    pos: adverb
+    vi: sau đó, rồi
+    en: after that; next
+    collocations: [and then, first… then…]
+    example: We had dinner, and then we watched a movie.
+status: draft

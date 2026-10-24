@@ -1,0 +1,13 @@
+lemma: decide
+ipa_us: /dɪˈsaɪd/
+cefr: A2
+oxford3000: true
+forms: [decides, decided, deciding]
+senses:
+  - key: decide
+    pos: verb
+    vi: quyết định
+    en: to choose what you are going to do after thinking about it
+    collocations: [decide to do something, decide what to do]
+    example: We decided to stay at home because of the rain.
+status: draft

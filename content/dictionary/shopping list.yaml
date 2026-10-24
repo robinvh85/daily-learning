@@ -1,0 +1,14 @@
+lemma: shopping list
+ipa_us: /ˈʃɑːpɪŋ lɪst/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [shopping lists]
+senses:
+  - key: shopping_list
+    pos: noun
+    vi: danh sách đồ cần mua
+    en: a list of things that you need to buy
+    collocations: [make a shopping list, check your shopping list]
+    example: Don’t forget to add milk to the shopping list.
+status: draft

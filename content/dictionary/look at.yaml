@@ -1,0 +1,14 @@
+lemma: look at
+ipa_us: /ˈlʊk æt/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [looks at, looked at, looking at]
+senses:
+  - key: look_at
+    pos: phrasal verb
+    vi: nhìn, xem
+    en: to turn your eyes towards someone or something
+    collocations: [look at the photo, look at your phone]
+    example: Look at that beautiful sunset!
+status: draft

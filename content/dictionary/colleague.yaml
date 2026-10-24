@@ -1,0 +1,13 @@
+lemma: colleague
+ipa_us: /ˈkɑːliːɡ/
+cefr: A2
+oxford3000: true
+forms: [colleagues]
+senses:
+  - key: colleague
+    pos: noun
+    vi: đồng nghiệp
+    en: a person that you work with
+    collocations: [a new colleague, my colleagues, a colleague from work]
+    example: I often have lunch with my colleagues.
+status: draft

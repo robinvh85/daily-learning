@@ -1,0 +1,13 @@
+lemma: bad
+ipa_us: /bæd/
+cefr: A1
+oxford3000: true
+forms: [worse, worst]
+senses:
+  - key: bad
+    pos: adjective
+    vi: tệ, xấu; feel bad about something = thấy áy náy, thấy có lỗi về điều gì
+    en: not good; (feel bad) feel sorry or guilty about something
+    collocations: [bad news, a bad day, feel bad about something]
+    example: I feel bad about missing your party.
+status: draft

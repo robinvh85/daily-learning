@@ -1,0 +1,13 @@
+lemma: color
+ipa_us: /ˈkʌlər/
+cefr: A1
+oxford3000: true
+forms: [colors]
+senses:
+  - key: color
+    pos: noun
+    vi: màu, màu sắc
+    en: red, blue, green, etc.
+    collocations: [a bright color, my favorite color, what color]
+    example: What color is your new car?
+status: draft

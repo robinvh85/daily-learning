@@ -1,0 +1,13 @@
+lemma: noisy
+ipa_us: /ˈnɔɪzi/
+cefr: A2
+oxford3000: true
+forms: [noisier, noisiest]
+senses:
+  - key: noisy
+    pos: adjective
+    vi: ồn, ồn ào
+    en: making a lot of noise; full of noise
+    collocations: [a noisy street, very noisy]
+    example: Our neighbors are very noisy at night.
+status: draft

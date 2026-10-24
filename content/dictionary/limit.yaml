@@ -1,0 +1,13 @@
+lemma: limit
+ipa_us: /ˈlɪmɪt/
+cefr: B1
+oxford3000: true
+forms: [limits]
+senses:
+  - key: limit
+    pos: noun
+    vi: giới hạn, mức tối đa
+    en: the largest amount of something that is allowed or possible
+    collocations: [a time limit, set a limit, a speed limit]
+    example: There is a time limit of one hour for the test.
+status: draft

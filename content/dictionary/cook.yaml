@@ -1,0 +1,13 @@
+lemma: cook
+ipa_us: /kʊk/
+cefr: A1
+oxford3000: true
+forms: [cooks, cooked, cooking]
+senses:
+  - key: cook
+    pos: verb
+    vi: nấu, nấu ăn
+    en: to make food ready to eat by heating it
+    collocations: [cook dinner, cook rice, learn to cook]
+    example: My grandmother cooks the best fish soup.
+status: draft

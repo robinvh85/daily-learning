@@ -1,0 +1,13 @@
+lemma: dollar
+ipa_us: /ˈdɑːlər/
+cefr: A1
+oxford3000: true
+forms: [dollars]
+senses:
+  - key: dollar
+    pos: noun
+    vi: đô la, đô
+    en: the money used in the US and some other countries
+    collocations: [five dollars, a hundred dollars]
+    example: The ticket costs twenty dollars.
+status: draft

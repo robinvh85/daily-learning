@@ -1,0 +1,12 @@
+lemma: all
+ipa_us: /ɔːl/
+cefr: A1
+oxford3000: true
+senses:
+  - key: all
+    pos: determiner
+    vi: tất cả, hết, mọi
+    en: the whole number or amount of something
+    collocations: [all the time, all day, all my friends]
+    example: She answered all the questions correctly.
+status: draft

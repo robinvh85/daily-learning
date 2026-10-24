@@ -149,7 +149,12 @@ describe.skipIf(!hasFfmpeg())('TTS pipeline (fake provider)', () => {
     // Punctuation-only edit: the lesson still validates, one segment text changes.
     writeFileSync(file, readFileSync(file, 'utf8').replace('Oh no.', 'Oh no!'));
     const before = provider.calls;
-    const r = await runLessonTts({ contentDir, provider, slugs: 'all' });
+    // Only the two lessons that already have audio, to keep the test fast as content grows.
+    const r = await runLessonTts({
+      contentDir,
+      provider,
+      slugs: ['a-new-coffee-shop', 'at-the-train-station'],
+    });
     expect(r.written.sort()).toEqual(['a-new-coffee-shop', 'at-the-train-station']);
     const reading = loadContent(contentDir).lessons.find((l) => l.slug === 'a-new-coffee-shop')!;
     expect(provider.calls - before).toBe(reading.lesson.segments.length + 1);

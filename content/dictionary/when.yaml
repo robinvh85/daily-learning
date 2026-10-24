@@ -1,0 +1,12 @@
+lemma: when
+ipa_us: /wen/
+cefr: A1
+oxford3000: true
+senses:
+  - key: when
+    pos: conjunction
+    vi: khi, lúc
+    en: at or during the time that
+    collocations: [when I was young, when I got home]
+    example: Call me when you get home.
+status: draft

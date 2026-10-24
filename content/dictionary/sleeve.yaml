@@ -1,0 +1,13 @@
+lemma: sleeve
+ipa_us: /sliːv/
+cefr: B1
+oxford3000: false
+forms: [sleeves]
+senses:
+  - key: sleeve
+    pos: noun
+    vi: tay áo
+    en: the part of a shirt, jacket, etc. that covers your arm
+    collocations: [long sleeves, short sleeves]
+    example: I prefer shirts with short sleeves in summer.
+status: draft

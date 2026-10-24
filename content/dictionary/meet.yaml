@@ -1,0 +1,13 @@
+lemma: meet
+ipa_us: /miːt/
+cefr: A1
+oxford3000: true
+forms: [meets, met]
+senses:
+  - key: meet
+    pos: verb
+    vi: gặp; đón (ai ở đâu)
+    en: to come together with someone; to wait for someone at a place when they arrive
+    collocations: [meet a friend, meet someone at the door, nice to meet you]
+    example: I met my best friend at university.
+status: draft

@@ -1,0 +1,14 @@
+lemma: listen to
+ipa_us: /ˈlɪsən tə/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [listens to, listened to, listening to]
+senses:
+  - key: listen_to
+    pos: phrasal verb
+    vi: nghe, lắng nghe
+    en: to pay attention to someone or something that you can hear
+    collocations: [listen to music, listen to the radio, listen to someone]
+    example: I listen to podcasts when I cook.
+status: draft

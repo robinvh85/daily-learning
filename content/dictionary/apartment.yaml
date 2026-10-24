@@ -1,0 +1,13 @@
+lemma: apartment
+ipa_us: /əˈpɑːrtmənt/
+cefr: A1
+oxford3000: true
+forms: [apartments]
+senses:
+  - key: apartment
+    pos: noun
+    vi: căn hộ
+    en: a set of rooms for living in, usually on one floor of a building
+    collocations: [a small apartment, rent an apartment]
+    example: They live in a two-bedroom apartment.
+status: draft

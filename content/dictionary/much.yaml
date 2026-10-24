@@ -1,0 +1,18 @@
+lemma: much
+ipa_us: /mʌtʃ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: amount
+    pos: determiner
+    vi: nhiều (dùng với danh từ không đếm được)
+    en: a large amount of something
+    collocations: [too much, how much, not much time]
+    example: How much money do you have?
+  - key: far
+    pos: adverb
+    vi: nhiều, hơn nhiều (much better = tốt hơn nhiều)
+    en: a lot; used before comparatives
+    collocations: [much better, much bigger, much more]
+    example: I feel much better today.
+status: draft

@@ -1,0 +1,18 @@
+lemma: next
+ipa_us: /nekst/
+cefr: A1
+oxford3000: true
+senses:
+  - key: following
+    pos: adjective
+    vi: tiếp theo, sau, tới (next time = lần sau, next year = năm sau)
+    en: coming straight after this one in time or order
+    collocations: [next time, next week, next year]
+    example: Our next class is on Thursday.
+  - key: beside
+    pos: adjective
+    vi: bên cạnh, kế bên (the next desk = bàn bên cạnh)
+    en: nearest to you in position
+    collocations: [the next desk, the next room, the next table]
+    example: The people in the next room were very noisy.
+status: draft

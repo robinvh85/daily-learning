@@ -1,0 +1,13 @@
+lemma: social media
+ipa_us: /ˌsoʊʃəl ˈmiːdiə/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: social_media
+    pos: noun
+    vi: mạng xã hội
+    en: websites and apps that people use to share messages, photos and videos
+    collocations: [on social media, social media apps, use social media]
+    example: She shares a lot of photos on social media.
+status: draft

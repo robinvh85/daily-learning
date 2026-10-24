@@ -1,0 +1,12 @@
+lemma: seven
+ipa_us: /ˈsevən/
+cefr: A1
+oxford3000: true
+senses:
+  - key: seven
+    pos: number
+    vi: bảy (số 7)
+    en: the number 7
+    collocations: [at seven, seven days]
+    example: Breakfast is from seven to ten.
+status: draft

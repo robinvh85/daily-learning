@@ -1,0 +1,13 @@
+lemma: team
+ipa_us: /tiːm/
+cefr: A2
+oxford3000: true
+forms: [teams]
+senses:
+  - key: team
+    pos: noun
+    vi: nhóm, đội (cùng làm việc với nhau)
+    en: a group of people who work together
+    collocations: [join a team, the sales team, on the team]
+    example: There are five people on our team.
+status: draft

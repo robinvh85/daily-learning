@@ -1,0 +1,13 @@
+lemma: winter
+ipa_us: /ˈwɪntər/
+cefr: A1
+oxford3000: true
+forms: [winters]
+senses:
+  - key: winter
+    pos: noun
+    vi: mùa đông
+    en: the coldest season of the year
+    collocations: [in winter, last winter, a cold winter]
+    example: It snows a lot here in winter.
+status: draft

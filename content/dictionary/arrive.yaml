@@ -1,0 +1,13 @@
+lemma: arrive
+ipa_us: /əˈraɪv/
+cefr: A2
+oxford3000: true
+forms: [arrives, arrived, arriving]
+senses:
+  - key: arrive
+    pos: verb
+    vi: đến, tới (nơi nào); (hàng, thư) được giao tới
+    en: to get to a place, especially at the end of a trip; to be delivered
+    collocations: [arrive at work, arrive on time, arrive in three days]
+    example: Our train arrived ten minutes late.
+status: draft

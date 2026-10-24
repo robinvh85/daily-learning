@@ -1,0 +1,12 @@
+lemma: many
+ipa_us: /ˈmeni/
+cefr: A1
+oxford3000: true
+senses:
+  - key: many
+    pos: determiner
+    vi: nhiều (dùng với danh từ đếm được)
+    en: a large number of
+    collocations: [many people, how many, many times]
+    example: How many people work in your office?
+status: draft

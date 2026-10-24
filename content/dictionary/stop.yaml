@@ -10,4 +10,10 @@ senses:
     en: '(of a bus or train) to stay at a place for a short time so that people can get on and off'
     collocations: [stop at every station, stop here]
     example: It stops at every station.
+  - key: quit
+    pos: verb
+    vi: ngừng, thôi (làm gì)
+    en: to no longer do something
+    collocations: [stop doing something, stop smoking]
+    example: My father stopped smoking ten years ago.
 status: draft

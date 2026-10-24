@@ -1,0 +1,12 @@
+lemma: similar
+ipa_us: /ˈsɪmələr/
+cefr: A2
+oxford3000: true
+senses:
+  - key: similar
+    pos: adjective
+    vi: tương tự, giống nhau
+    en: almost the same, but not exactly
+    collocations: [similar to, very similar]
+    example: My sister and I have similar taste in music.
+status: draft

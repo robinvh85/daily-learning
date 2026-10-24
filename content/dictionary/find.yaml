@@ -1,0 +1,13 @@
+lemma: find
+ipa_us: /faɪnd/
+cefr: A1
+oxford3000: true
+forms: [finds, found, finding]
+senses:
+  - key: find
+    pos: verb
+    vi: tìm thấy, tìm được
+    en: to discover or get something after looking for it
+    collocations: [find a job, find the right size, can’t find]
+    example: I can’t find my glasses anywhere.
+status: draft

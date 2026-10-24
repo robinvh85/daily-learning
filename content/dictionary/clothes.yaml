@@ -1,0 +1,12 @@
+lemma: clothes
+ipa_us: /kloʊðz/
+cefr: A1
+oxford3000: true
+senses:
+  - key: clothes
+    pos: noun
+    vi: quần áo
+    en: the things that you wear, such as shirts and pants
+    collocations: [buy clothes, new clothes, wash clothes]
+    example: She always wears nice clothes to work.
+status: draft

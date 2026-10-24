@@ -1,0 +1,13 @@
+lemma: system
+ipa_us: /ˈsɪstəm/
+cefr: A2
+oxford3000: true
+forms: [systems]
+senses:
+  - key: system
+    pos: noun
+    vi: hệ thống
+    en: a group of things, methods or computer programs that work together
+    collocations: [a computer system, a new system]
+    example: The bank is changing its computer system.
+status: draft

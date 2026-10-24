@@ -1,0 +1,13 @@
+lemma: habit
+ipa_us: /ˈhæbɪt/
+cefr: A2
+oxford3000: true
+forms: [habits]
+senses:
+  - key: habit
+    pos: noun
+    vi: thói quen
+    en: something that you do often and regularly, sometimes without thinking
+    collocations: [a good habit, a bad habit, change a habit]
+    example: Eating late at night is a bad habit.
+status: draft

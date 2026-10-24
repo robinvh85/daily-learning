@@ -1,0 +1,13 @@
+lemma: motorbike
+ipa_us: /ˈmoʊtərbaɪk/
+cefr: A2
+oxford3000: false
+forms: [motorbikes]
+senses:
+  - key: motorbike
+    pos: noun
+    vi: xe máy
+    en: a vehicle with two wheels and an engine
+    collocations: [ride a motorbike, rent a motorbike, by motorbike]
+    example: Most people here go to work by motorbike.
+status: draft

@@ -1,0 +1,13 @@
+lemma: screen time
+ipa_us: /ˈskriːn taɪm/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: screen_time
+    pos: noun
+    vi: thời gian dùng màn hình (điện thoại, máy tính, TV)
+    en: the time that someone spends looking at a phone, computer or TV
+    collocations: [check your screen time, reduce screen time]
+    example: Many parents try to limit their children’s screen time.
+status: draft

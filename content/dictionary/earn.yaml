@@ -1,0 +1,13 @@
+lemma: earn
+ipa_us: /ɝːn/
+cefr: A2
+oxford3000: true
+forms: [earns, earned, earning]
+senses:
+  - key: earn
+    pos: verb
+    vi: kiếm (tiền), có thu nhập
+    en: to get money for the work that you do
+    collocations: [earn money, earn a good salary, earn a living]
+    example: He earns more money in his new job.
+status: draft

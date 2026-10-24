@@ -1,0 +1,12 @@
+lemma: so
+ipa_us: /soʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: so
+    pos: conjunction
+    vi: nên, vì vậy, vì thế
+    en: used to show the result of something
+    collocations: [so I decided…, so we stayed home]
+    example: It was raining, so we took a taxi.
+status: draft

@@ -1,0 +1,13 @@
+lemma: eat
+ipa_us: /iːt/
+cefr: A1
+oxford3000: true
+forms: [eats, ate, eaten, eating]
+senses:
+  - key: eat
+    pos: verb
+    vi: ăn
+    en: to put food in your mouth and swallow it
+    collocations: [eat breakfast, eat out, eat together]
+    example: We usually eat dinner at seven.
+status: draft

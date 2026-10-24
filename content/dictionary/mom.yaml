@@ -1,0 +1,13 @@
+lemma: mom
+ipa_us: /mɑːm/
+cefr: A1
+oxford3000: true
+forms: [moms]
+senses:
+  - key: mom
+    pos: noun
+    vi: mẹ
+    en: an informal word for mother (US)
+    collocations: [my mom, call my mom]
+    example: I call my mom every weekend.
+status: draft

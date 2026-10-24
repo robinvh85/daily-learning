@@ -1,0 +1,12 @@
+lemma: two
+ipa_us: /tuː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: two
+    pos: number
+    vi: hai (số 2)
+    en: the number 2
+    collocations: [two weeks, at two o’clock]
+    example: I have two cats and a dog.
+status: draft

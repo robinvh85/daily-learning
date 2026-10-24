@@ -1,0 +1,13 @@
+lemma: guesthouse
+ipa_us: /ˈɡesthaʊs/
+cefr: B1
+oxford3000: false
+forms: [guesthouses]
+senses:
+  - key: guesthouse
+    pos: noun
+    vi: nhà nghỉ, nhà khách
+    en: a small, simple hotel, often in a family home
+    collocations: [stay at a guesthouse, a family guesthouse]
+    example: The guesthouse has only six rooms.
+status: draft

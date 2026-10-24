@@ -1,0 +1,11 @@
+lemma: wasn't
+ipa_us: /ˈwʌzənt/
+cefr: A1
+oxford3000: false
+senses:
+  - key: was_not
+    pos: contraction
+    vi: đã không, không phải là (viết tắt của was not)
+    en: short form of “was not”
+    example: The test wasn’t very difficult.
+status: draft

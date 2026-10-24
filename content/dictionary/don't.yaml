@@ -1,0 +1,11 @@
+lemma: don't
+ipa_us: /doʊnt/
+cefr: A1
+oxford3000: false
+senses:
+  - key: do_not
+    pos: contraction
+    vi: không (viết tắt của do not)
+    en: short form of “do not”
+    example: I don’t eat meat.
+status: draft

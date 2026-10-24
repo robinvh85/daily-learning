@@ -1,0 +1,13 @@
+lemma: email
+ipa_us: /ˈiːmeɪl/
+cefr: A1
+oxford3000: true
+forms: [emails]
+senses:
+  - key: email
+    pos: noun
+    vi: email, thư điện tử
+    en: a message that you send from one computer or phone to another
+    collocations: [send an email, answer an email, an email account]
+    example: I got an email from my teacher this morning.
+status: draft

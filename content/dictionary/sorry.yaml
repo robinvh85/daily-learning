@@ -1,0 +1,12 @@
+lemma: sorry
+ipa_us: /ˈsɑːri/
+cefr: A1
+oxford3000: true
+senses:
+  - key: sorry
+    pos: adjective
+    vi: xin lỗi; lấy làm tiếc
+    en: feeling bad about something you did or something that happened
+    collocations: [I’m sorry, sorry I’m late, sorry about that]
+    example: Sorry I’m late. The traffic was terrible.
+status: draft

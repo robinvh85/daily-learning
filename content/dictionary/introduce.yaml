@@ -1,0 +1,13 @@
+lemma: introduce
+ipa_us: /ˌɪntrəˈduːs/
+cefr: A2
+oxford3000: true
+forms: [introduces, introduced, introducing]
+senses:
+  - key: introduce
+    pos: verb
+    vi: giới thiệu (ai với ai)
+    en: to tell people each other’s names when they meet for the first time
+    collocations: [introduce yourself, introduce someone to someone]
+    example: Let me introduce you to my sister.
+status: draft

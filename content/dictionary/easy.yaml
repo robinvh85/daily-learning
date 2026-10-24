@@ -1,0 +1,13 @@
+lemma: easy
+ipa_us: /ˈiːzi/
+cefr: A1
+oxford3000: true
+forms: [easier, easiest]
+senses:
+  - key: easy
+    pos: adjective
+    vi: dễ, dễ dàng
+    en: not difficult
+    collocations: [an easy question, not easy, easy to use]
+    example: This recipe is quick and easy.
+status: draft

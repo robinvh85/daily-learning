@@ -1,0 +1,12 @@
+lemma: please
+ipa_us: /pliːz/
+cefr: A1
+oxford3000: true
+senses:
+  - key: please
+    pos: exclamation
+    vi: làm ơn, vui lòng; (đầu câu nhờ vả) nhớ…, hãy… nhé
+    en: used to ask for something politely
+    collocations: [please help me, yes please]
+    example: Please turn off the lights when you leave.
+status: draft

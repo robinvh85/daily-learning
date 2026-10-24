@@ -1,0 +1,13 @@
+lemma: try
+ipa_us: /traɪ/
+cefr: A1
+oxford3000: true
+forms: [tries, tried, trying]
+senses:
+  - key: try
+    pos: verb
+    vi: thử (làm, ăn, dùng cái gì); cố gắng
+    en: to do, eat or use something to see if it is good; to make an effort to do something
+    collocations: [try a new recipe, try some food, try to do something]
+    example: You should try the fish here. It’s great.
+status: draft

@@ -64,6 +64,7 @@ focus_words: [open, owner, run, comfortable, borrow, reasonable, regular, atmosp
 
 # Sense per word in this lesson. "word#n" = n-th occurrence of that word in the lesson.
 senses:
+  in: in
   last: previous
   open: business
   be#1: location # "It is next to the bakery"
@@ -76,6 +77,8 @@ senses:
   by: near
   about: topic
   plan: verb
+  work: work
+  go: go
 
 ignore: [Lan]
 

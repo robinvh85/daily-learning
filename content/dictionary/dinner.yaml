@@ -1,0 +1,13 @@
+lemma: dinner
+ipa_us: /ˈdɪnər/
+cefr: A1
+oxford3000: true
+forms: [dinners]
+senses:
+  - key: dinner
+    pos: noun
+    vi: bữa tối
+    en: the main meal of the day, usually eaten in the evening
+    collocations: [have dinner, cook dinner, after dinner]
+    example: We usually have dinner at seven.
+status: draft

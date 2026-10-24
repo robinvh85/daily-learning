@@ -10,4 +10,10 @@ senses:
     en: to go away from a place
     collocations: [leave from platform 4, leave home]
     example: Which platform does the train leave from?
+  - key: put
+    pos: verb
+    vi: để, để lại (ở đâu)
+    en: to put something somewhere and not take it with you
+    collocations: [leave something at home, leave your bag here]
+    example: I left my umbrella at the office.
 status: draft

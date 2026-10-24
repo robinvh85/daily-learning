@@ -1,0 +1,13 @@
+lemma: delete
+ipa_us: /dɪˈliːt/
+cefr: A2
+oxford3000: true
+forms: [deletes, deleted, deleting]
+senses:
+  - key: delete
+    pos: verb
+    vi: xóa (tin nhắn, ứng dụng, tệp…)
+    en: to remove something from a computer or phone
+    collocations: [delete an app, delete a message, delete a photo]
+    example: I deleted all my old emails.
+status: draft

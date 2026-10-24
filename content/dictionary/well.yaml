@@ -1,0 +1,12 @@
+lemma: well
+ipa_us: /wel/
+cefr: A1
+oxford3000: true
+senses:
+  - key: well
+    pos: adverb
+    vi: tốt, giỏi, khéo
+    en: in a good or satisfactory way
+    collocations: [fit well, sleep well, speak English well]
+    example: She speaks English very well.
+status: draft

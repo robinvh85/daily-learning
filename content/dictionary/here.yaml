@@ -1,0 +1,12 @@
+lemma: here
+ipa_us: /hɪr/
+cefr: A1
+oxford3000: true
+senses:
+  - key: here
+    pos: adverb
+    vi: ở đây, đây; here is… = đây là…
+    en: in or at this place; used to give or show something
+    collocations: [here is…, over here, come here]
+    example: Here is your coffee. Enjoy!
+status: draft

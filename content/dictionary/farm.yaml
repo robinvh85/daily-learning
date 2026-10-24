@@ -1,0 +1,13 @@
+lemma: farm
+ipa_us: /fɑːrm/
+cefr: A1
+oxford3000: true
+forms: [farms]
+senses:
+  - key: farm
+    pos: noun
+    vi: trang trại, nông trại; vườn (trồng hoa, cà phê…)
+    en: an area of land used for growing crops or keeping animals
+    collocations: [a flower farm, a coffee farm, work on a farm]
+    example: My uncle has a small farm with chickens and cows.
+status: draft

@@ -1,0 +1,12 @@
+lemma: almost
+ipa_us: /ˈɔːlmoʊst/
+cefr: A2
+oxford3000: true
+senses:
+  - key: almost
+    pos: adverb
+    vi: gần như, gần, hầu như
+    en: nearly; not quite
+    collocations: [almost everything, almost every day, almost five hours]
+    example: It’s almost ten o’clock. We need to go.
+status: draft

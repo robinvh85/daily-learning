@@ -1,0 +1,13 @@
+lemma: few
+ipa_us: /fjuː/
+cefr: A2
+oxford3000: true
+forms: [fewer, fewest]
+senses:
+  - key: few
+    pos: determiner
+    vi: ít, vài; the first few days = mấy ngày đầu
+    en: a small number of
+    collocations: [the first few days, every few months, very few people]
+    example: The last few weeks were very busy.
+status: draft

@@ -9,4 +9,10 @@ senses:
     en: 'inside a place, or at a place'
     collocations: [in a hotel, in the city]
     example: She worked in a hotel for five years.
+  - key: time
+    pos: preposition
+    vi: trong (khoảng thời gian); sau (in three days = sau ba ngày)
+    en: during a period of time; after a particular length of time
+    collocations: [in winter, in three days, in the morning]
+    example: The train leaves in ten minutes.
 status: draft

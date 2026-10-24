@@ -1,0 +1,12 @@
+lemma: midnight
+ipa_us: /ˈmɪdnaɪt/
+cefr: A2
+oxford3000: true
+senses:
+  - key: midnight
+    pos: noun
+    vi: nửa đêm, 12 giờ đêm
+    en: twelve o’clock at night
+    collocations: [after midnight, at midnight]
+    example: The party ended at midnight.
+status: draft

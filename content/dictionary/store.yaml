@@ -1,0 +1,13 @@
+lemma: store
+ipa_us: /stɔːr/
+cefr: A1
+oxford3000: true
+forms: [stores]
+senses:
+  - key: store
+    pos: noun
+    vi: cửa hàng, cửa hiệu
+    en: a building or room where people buy things (US)
+    collocations: [a clothing store, a grocery store, in a store]
+    example: The store closes at nine on weekdays.
+status: draft

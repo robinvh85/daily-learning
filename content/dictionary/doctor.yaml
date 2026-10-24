@@ -1,0 +1,13 @@
+lemma: doctor
+ipa_us: /ˈdɑːktər/
+cefr: A1
+oxford3000: true
+forms: [doctors]
+senses:
+  - key: doctor
+    pos: noun
+    vi: bác sĩ
+    en: a person whose job is to treat people who are sick or hurt
+    collocations: [see a doctor, my doctor, go to the doctor]
+    example: You should see a doctor about that cough.
+status: draft

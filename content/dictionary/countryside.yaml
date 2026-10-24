@@ -1,0 +1,12 @@
+lemma: countryside
+ipa_us: /ˈkʌntrisaɪd/
+cefr: A2
+oxford3000: true
+senses:
+  - key: countryside
+    pos: noun
+    vi: vùng quê, nông thôn
+    en: land outside towns and cities, with fields, farms and forests
+    collocations: [the beautiful countryside, live in the countryside]
+    example: My grandparents live in the countryside.
+status: draft

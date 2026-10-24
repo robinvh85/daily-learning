@@ -1,0 +1,19 @@
+lemma: fresh
+ipa_us: /freʃ/
+cefr: A2
+oxford3000: true
+forms: [fresher, freshest]
+senses:
+  - key: new
+    pos: adjective
+    vi: tươi, mới (thực phẩm)
+    en: (of food) recently picked, caught or made; not old
+    collocations: [fresh vegetables, fresh fish, fresh bread]
+    example: This bread is still fresh and warm.
+  - key: clean_air
+    pos: adjective
+    vi: (không khí) trong lành, mát mẻ
+    en: (of air or weather) clean and cool
+    collocations: [fresh air, cool and fresh]
+    example: Let’s open the window and get some fresh air.
+status: draft

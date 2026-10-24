@@ -1,0 +1,127 @@
+# Reading lesson (day 2). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: work
+title: My First Week at a New Job
+order: 2
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: Last Monday was my first day at a new job.
+    text_vi: Thứ Hai tuần trước là ngày đầu tiên tôi đi làm ở chỗ mới.
+  - id: p1s2
+    paragraph: 1
+    text_en: I work as an assistant at a small travel company.
+    text_vi: Tôi làm trợ lý ở một công ty du lịch nhỏ.
+  - id: p1s3
+    paragraph: 1
+    text_en: I was very nervous, so I got up early and arrived at the office before eight.
+    text_vi: Tôi rất hồi hộp nên đã dậy sớm và có mặt ở văn phòng trước tám giờ.
+  - id: p2s1
+    paragraph: 2
+    text_en: My manager, Linda, met me at the door and showed me my desk.
+    text_vi: Chị Linda, quản lý của tôi, đón tôi ở cửa và chỉ cho tôi chỗ ngồi.
+  - id: p2s2
+    paragraph: 2
+    text_en: Then she introduced me to the rest of the team.
+    text_vi: Sau đó chị giới thiệu tôi với những người còn lại trong nhóm.
+  - id: p2s3
+    paragraph: 2
+    text_en: Everyone was kind and helpful, but I couldn’t remember all their names.
+    text_vi: Mọi người đều tử tế và nhiệt tình giúp đỡ, nhưng tôi không nhớ hết tên của họ.
+  - id: p3s1
+    paragraph: 3
+    text_en: The first few days were not easy.
+    text_vi: Mấy ngày đầu không hề dễ dàng.
+  - id: p3s2
+    paragraph: 3
+    text_en: I had to learn a new computer system and answer a lot of emails from customers.
+    text_vi: Tôi phải học cách dùng một hệ thống máy tính mới và trả lời rất nhiều email của khách hàng.
+  - id: p3s3
+    paragraph: 3
+    text_en: Sometimes I made mistakes, and I felt bad about them.
+    text_vi: Đôi khi tôi mắc lỗi và cảm thấy áy náy vì điều đó.
+  - id: p3s4
+    paragraph: 3
+    text_en: Luckily, Tom sits at the next desk, and he always helps me with my questions.
+    text_vi: May mà anh Tom ngồi ở bàn bên cạnh, và anh ấy luôn giúp tôi giải đáp thắc mắc.
+  - id: p4s1
+    paragraph: 4
+    text_en: Now I am slowly getting used to my new routine.
+    text_vi: Giờ tôi đang dần quen với nếp sinh hoạt mới.
+  - id: p4s2
+    paragraph: 4
+    text_en: I take the bus at seven and get to work on time every day.
+    text_vi: Ngày nào tôi cũng bắt xe buýt lúc bảy giờ và đến chỗ làm đúng giờ.
+  - id: p4s3
+    paragraph: 4
+    text_en: During our lunch break, we often eat together at a small restaurant nearby.
+    text_vi: Vào giờ nghỉ trưa, chúng tôi hay cùng nhau ăn ở một quán nhỏ gần đó.
+  - id: p4s4
+    paragraph: 4
+    text_en: I still have a lot to learn, but I feel more confident now.
+    text_vi: Tôi vẫn còn nhiều điều phải học, nhưng giờ tôi đã thấy tự tin hơn.
+  - id: p4s5
+    paragraph: 4
+    text_en: I think I’m going to like this job.
+    text_vi: Tôi nghĩ mình sẽ thích công việc này.
+
+focus_words:
+  [nervous, manager, introduce, mistake, get used to, routine, on time, lunch break, confident]
+
+senses:
+  first: first
+  last: previous
+  be: linking
+  be#5: auxiliary # "I am slowly getting used to"
+  at: place
+  at#6: time # "at seven"
+  work: work
+  work#2: workplace # "get to work"
+  travel: noun
+  to: infinitive
+  to#1: recipient # "introduced me to the rest of the team"
+  to#2: direction # "get to work"
+  make: create
+  about: topic
+  next: beside
+  take: transport
+  still: continuing
+  have: own
+  go: future
+  like: enjoy
+
+ignore: [Linda, Tom]
+
+questions:
+  - prompt: Why did the writer arrive at the office early on the first day?
+    options: [The manager asked for it, The writer was nervous, The bus came early]
+    correct: 1
+    feedback_ok: 'Đúng: “I was very nervous, so I got up early…”'
+    feedback_wrong: Chưa đúng. Đọc lại câu cuối của đoạn 1, chú ý từ “so”.
+    evidence: p1s3
+  - prompt: Who helps the writer with questions?
+    options: [Linda, A customer, Tom]
+    correct: 2
+    feedback_ok: 'Đúng: “Tom sits at the next desk, and he always helps me with my questions.”'
+    feedback_wrong: Chưa đúng. Xem lại câu cuối của đoạn 3.
+    evidence: p3s4
+  - prompt: In paragraph 4, “getting used to my new routine” means the writer…
+    options:
+      [
+        is starting to feel normal with the new daily schedule,
+        is getting tired of the new job,
+        wants to change the daily schedule again,
+      ]
+    correct: 0
+    feedback_ok: 'Đúng: “get used to” là dần quen với điều gì đó; “routine” là những việc làm hằng ngày.'
+    feedback_wrong: Chưa đúng. Đọc câu đầu đoạn 4 và các câu ngay sau đó (đi làm đúng giờ, tự tin hơn).
+    evidence: p4s1
+  - prompt: How does the writer feel about the new job at the end of the first week?
+    options: [Worried and unhappy, Ready to look for another job, Positive about it]
+    correct: 2
+    feedback_ok: 'Đúng: “I feel more confident now… I think I’m going to like this job.”'
+    feedback_wrong: Chưa đúng. Đọc hai câu cuối của bài.
+    evidence: p4s5

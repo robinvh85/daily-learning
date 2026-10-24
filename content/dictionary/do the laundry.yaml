@@ -1,0 +1,14 @@
+lemma: do the laundry
+ipa_us: /ˌduː ðə ˈlɔːndri/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [does the laundry, did the laundry, doing the laundry, done the laundry]
+senses:
+  - key: do_the_laundry
+    pos: phrase
+    vi: giặt đồ, giặt giũ
+    en: to wash clothes, sheets, etc.
+    collocations: [do the laundry on Sunday]
+    example: I usually do the laundry on Sunday evening.
+status: draft

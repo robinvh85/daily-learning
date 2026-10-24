@@ -1,0 +1,13 @@
+lemma: learn
+ipa_us: /lɝːn/
+cefr: A1
+oxford3000: true
+forms: [learns, learned, learning]
+senses:
+  - key: learn
+    pos: verb
+    vi: học, học cách (làm gì)
+    en: to get knowledge or a new skill
+    collocations: [learn English, learn to drive, learn something new]
+    example: My son is learning to swim.
+status: draft

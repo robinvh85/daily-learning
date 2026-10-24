@@ -1,0 +1,11 @@
+lemma: isn't
+ipa_us: /ˈɪzənt/
+cefr: A1
+oxford3000: false
+senses:
+  - key: is_not
+    pos: contraction
+    vi: không phải là, không… (viết tắt của is not)
+    en: short form of “is not”
+    example: The bank isn’t open on Sundays.
+status: draft

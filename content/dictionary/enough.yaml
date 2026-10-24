@@ -1,0 +1,12 @@
+lemma: enough
+ipa_us: /ɪˈnʌf/
+cefr: A1
+oxford3000: true
+senses:
+  - key: enough
+    pos: determiner
+    vi: đủ
+    en: as much or as many as you need
+    collocations: [enough money, enough time, not enough]
+    example: Do we have enough chairs for everyone?
+status: draft

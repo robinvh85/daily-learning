@@ -1,0 +1,13 @@
+lemma: desk
+ipa_us: /desk/
+cefr: A1
+oxford3000: true
+forms: [desks]
+senses:
+  - key: desk
+    pos: noun
+    vi: bàn làm việc, bàn học
+    en: a table that you sit at to work, write or use a computer
+    collocations: [at my desk, an office desk]
+    example: She keeps a small plant on her desk.
+status: draft

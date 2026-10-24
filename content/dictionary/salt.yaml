@@ -1,0 +1,12 @@
+lemma: salt
+ipa_us: /sɔːlt/
+cefr: A2
+oxford3000: true
+senses:
+  - key: salt
+    pos: noun
+    vi: muối
+    en: a white substance used to give food more taste
+    collocations: [too much salt, add salt]
+    example: Could you pass me the salt, please?
+status: draft

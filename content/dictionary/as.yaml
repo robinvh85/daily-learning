@@ -1,0 +1,12 @@
+lemma: as
+ipa_us: /æz/
+cefr: A2
+oxford3000: true
+senses:
+  - key: role
+    pos: preposition
+    vi: là, với vai trò là (làm nghề gì, giữ vị trí gì)
+    en: used to describe the job or position someone has
+    collocations: [work as a teacher, as a manager]
+    example: My father worked as a taxi driver for ten years.
+status: draft

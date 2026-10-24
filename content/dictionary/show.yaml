@@ -1,0 +1,13 @@
+lemma: show
+ipa_us: /ʃoʊ/
+cefr: A1
+oxford3000: true
+forms: [shows, showed, shown, showing]
+senses:
+  - key: show
+    pos: verb
+    vi: cho xem, chỉ (cho ai cái gì, cách làm gì)
+    en: to let someone see something; to explain how to do something
+    collocations: [show someone the way, show someone how to do something]
+    example: Can you show me your photos from the trip?
+status: draft

@@ -1,0 +1,13 @@
+lemma: know
+ipa_us: /noʊ/
+cefr: A1
+oxford3000: true
+forms: [knows, knew, known, knowing]
+senses:
+  - key: know
+    pos: verb
+    vi: biết
+    en: to have information about something in your mind
+    collocations: [know a lot about…, I don’t know]
+    example: Do you know where the station is?
+status: draft

@@ -1,0 +1,12 @@
+lemma: slowly
+ipa_us: /ˈsloʊli/
+cefr: A1
+oxford3000: true
+senses:
+  - key: slowly
+    pos: adverb
+    vi: chậm, từ từ, dần dần
+    en: at a slow speed; little by little
+    collocations: [walk slowly, speak slowly]
+    example: Could you speak more slowly, please?
+status: draft

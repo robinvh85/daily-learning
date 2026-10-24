@@ -1,0 +1,13 @@
+lemma: game
+ipa_us: /ɡeɪm/
+cefr: A1
+oxford3000: true
+forms: [games]
+senses:
+  - key: game
+    pos: noun
+    vi: trò chơi, game
+    en: an activity that you play for fun, often with rules; a game on a phone or computer
+    collocations: [play games, a phone game, a card game]
+    example: My son plays games on his tablet after school.
+status: draft

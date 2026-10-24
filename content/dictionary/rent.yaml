@@ -1,0 +1,19 @@
+lemma: rent
+ipa_us: /rent/
+cefr: A2
+oxford3000: true
+forms: [rents, rented, renting]
+senses:
+  - key: verb
+    pos: verb
+    vi: thuê (xe, nhà, đồ…)
+    en: to pay money to use something that belongs to someone else
+    collocations: [rent a car, rent a motorbike, rent an apartment]
+    example: We rented bikes and rode along the beach.
+  - key: noun
+    pos: noun
+    vi: tiền thuê nhà, tiền nhà
+    en: the money that you pay every month to live in a house or apartment
+    collocations: [pay the rent, the rent is high]
+    example: The rent for this apartment is too high.
+status: draft

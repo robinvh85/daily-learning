@@ -1,0 +1,14 @@
+lemma: team leader
+ipa_us: /ˈtiːm ˌliːdər/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [team leaders]
+senses:
+  - key: team_leader
+    pos: noun
+    vi: trưởng nhóm
+    en: a person who manages a small group of people at work
+    collocations: [our team leader, talk to the team leader]
+    example: Ask your team leader if you can leave early.
+status: draft

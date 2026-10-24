@@ -1,0 +1,12 @@
+lemma: ready
+ipa_us: /ˈredi/
+cefr: A1
+oxford3000: true
+senses:
+  - key: ready
+    pos: adjective
+    vi: sẵn sàng, xong (để dùng)
+    en: prepared and able to be used or to do something
+    collocations: [be ready, ready to go, dinner is ready]
+    example: Dinner is ready! Come and eat.
+status: draft

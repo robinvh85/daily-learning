@@ -1,0 +1,13 @@
+lemma: help
+ipa_us: /help/
+cefr: A1
+oxford3000: true
+forms: [helps, helped, helping]
+senses:
+  - key: help
+    pos: verb
+    vi: giúp, giúp đỡ
+    en: to make it easier for someone to do something
+    collocations: [help someone with something, help someone do something]
+    example: Can you help me with my bags?
+status: draft

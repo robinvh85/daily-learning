@@ -1,0 +1,14 @@
+lemma: get used to
+ipa_us: /ɡet ˈjuːst tə/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [gets used to, got used to, getting used to, gotten used to]
+senses:
+  - key: get_used_to
+    pos: phrase
+    vi: (dần) quen với
+    en: to become familiar with something so that it no longer seems new or difficult
+    collocations: [get used to a new job, get used to getting up early]
+    example: It took me a month to get used to the cold weather.
+status: draft

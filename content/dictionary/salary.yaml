@@ -1,0 +1,13 @@
+lemma: salary
+ipa_us: /ˈsæləri/
+cefr: A2
+oxford3000: true
+forms: [salaries]
+senses:
+  - key: salary
+    pos: noun
+    vi: lương, tiền lương
+    en: the money that you get every month for your job
+    collocations: [a good salary, a high salary, pay a salary]
+    example: Her salary went up after two years.
+status: draft

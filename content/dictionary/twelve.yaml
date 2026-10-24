@@ -1,0 +1,12 @@
+lemma: twelve
+ipa_us: /twelv/
+cefr: A1
+oxford3000: true
+senses:
+  - key: twelve
+    pos: number
+    vi: mười hai (số 12)
+    en: the number 12
+    collocations: [at twelve, twelve months]
+    example: The store closes at twelve on Saturdays.
+status: draft

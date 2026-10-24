@@ -1,0 +1,13 @@
+lemma: jacket
+ipa_us: /ˈdʒækɪt/
+cefr: A1
+oxford3000: true
+forms: [jackets]
+senses:
+  - key: jacket
+    pos: noun
+    vi: áo khoác
+    en: a short coat
+    collocations: [a warm jacket, a leather jacket, put on a jacket]
+    example: Put on your jacket. It’s windy outside.
+status: draft

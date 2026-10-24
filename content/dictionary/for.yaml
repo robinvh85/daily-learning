@@ -21,4 +21,10 @@ senses:
     en: used to say whose opinion or situation you mean
     collocations: [for me, for most people]
     example: 'For me, the best thing about the shop is the quiet atmosphere.'
+  - key: price
+    pos: preposition
+    vi: với giá (bao nhiêu tiền)
+    en: used to show the price of something
+    collocations: [for five dollars, buy something for…]
+    example: I bought this bag for ten dollars.
 status: draft

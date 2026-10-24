@@ -1,0 +1,13 @@
+lemma: breakfast
+ipa_us: /ˈbrekfəst/
+cefr: A1
+oxford3000: true
+forms: [breakfasts]
+senses:
+  - key: breakfast
+    pos: noun
+    vi: bữa sáng
+    en: the first meal of the day
+    collocations: [have breakfast, eat breakfast, for breakfast]
+    example: I usually have bread and eggs for breakfast.
+status: draft

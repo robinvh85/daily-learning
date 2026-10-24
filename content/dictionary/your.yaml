@@ -1,0 +1,12 @@
+lemma: your
+ipa_us: /jʊr/
+cefr: A1
+oxford3000: true
+senses:
+  - key: your
+    pos: determiner
+    vi: của bạn, của anh, của chị…
+    en: belonging to the person or people you are talking to
+    collocations: [your name, your first day]
+    example: What’s your phone number?
+status: draft

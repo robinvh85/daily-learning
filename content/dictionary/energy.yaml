@@ -1,0 +1,12 @@
+lemma: energy
+ipa_us: /ˈenərdʒi/
+cefr: A2
+oxford3000: true
+senses:
+  - key: energy
+    pos: noun
+    vi: năng lượng, sức lực
+    en: the strength to be active without feeling tired
+    collocations: [have more energy, full of energy]
+    example: Children have so much energy.
+status: draft

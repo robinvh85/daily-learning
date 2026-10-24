@@ -1,0 +1,12 @@
+lemma: nearby
+ipa_us: /ˌnɪrˈbaɪ/
+cefr: A2
+oxford3000: true
+senses:
+  - key: nearby
+    pos: adverb
+    vi: gần đó, ở gần
+    en: not far away
+    collocations: [live nearby, a park nearby]
+    example: My parents live nearby, so I visit them often.
+status: draft

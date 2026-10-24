@@ -1,0 +1,13 @@
+lemma: result
+ipa_us: /rɪˈzʌlt/
+cefr: A2
+oxford3000: true
+forms: [results]
+senses:
+  - key: result
+    pos: noun
+    vi: kết quả
+    en: what happens or is shown at the end of something
+    collocations: [the result of a test, good results]
+    example: I’m waiting for the results of my English test.
+status: draft

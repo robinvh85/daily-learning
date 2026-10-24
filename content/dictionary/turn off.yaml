@@ -1,0 +1,14 @@
+lemma: turn off
+ipa_us: /ˌtɝːn ˈɔːf/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [turns off, turned off, turning off]
+senses:
+  - key: turn_off
+    pos: phrasal verb
+    vi: tắt (đèn, máy, thông báo…)
+    en: to stop a machine, light or feature from working
+    collocations: [turn off the light, turn off your phone, turn off notifications]
+    example: Please turn off the TV before you go to bed.
+status: draft

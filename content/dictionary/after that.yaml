@@ -1,0 +1,13 @@
+lemma: after that
+ipa_us: /ˌæftər ˈðæt/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: after_that
+    pos: phrase
+    vi: sau đó
+    en: next; following the thing just mentioned
+    collocations: ['after that, …']
+    example: We had lunch. After that, we went to the museum.
+status: draft

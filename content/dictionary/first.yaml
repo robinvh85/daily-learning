@@ -1,0 +1,18 @@
+lemma: first
+ipa_us: /fɝːst/
+cefr: A1
+oxford3000: true
+senses:
+  - key: first
+    pos: adjective
+    vi: đầu tiên, thứ nhất
+    en: coming before all the others in time or order
+    collocations: [the first time, my first day, the first few days]
+    example: Do you remember your first teacher?
+  - key: adverb
+    pos: adverb
+    vi: trước, trước tiên; đầu tiên (khi kể các bước)
+    en: before anything else; at the beginning of a list of steps
+    collocations: [first of all, try it first]
+    example: First, wash your hands. Then, start cooking.
+status: draft

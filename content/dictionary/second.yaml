@@ -1,0 +1,12 @@
+lemma: second
+ipa_us: /ˈsekənd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: second
+    pos: adjective
+    vi: thứ hai; thêm (một… nữa)
+    en: coming after the first; another
+    collocations: [a second bowl, the second day]
+    example: This is my second visit to this city.
+status: draft

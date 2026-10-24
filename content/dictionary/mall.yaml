@@ -1,0 +1,13 @@
+lemma: mall
+ipa_us: /mɔːl/
+cefr: A2
+oxford3000: false
+forms: [malls]
+senses:
+  - key: mall
+    pos: noun
+    vi: trung tâm thương mại
+    en: a large building with many stores and restaurants inside
+    collocations: [go to the mall, a shopping mall]
+    example: The new mall has a cinema on the top floor.
+status: draft

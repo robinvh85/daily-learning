@@ -1,0 +1,13 @@
+lemma: college
+ipa_us: /ˈkɑːlɪdʒ/
+cefr: A1
+oxford3000: true
+forms: [colleges]
+senses:
+  - key: college
+    pos: noun
+    vi: đại học, cao đẳng (in college = hồi học đại học)
+    en: a place where people study after high school (in the US, often used to mean university)
+    collocations: [in college, go to college, a college student]
+    example: My brother is in his second year of college.
+status: draft

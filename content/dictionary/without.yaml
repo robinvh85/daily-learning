@@ -1,0 +1,12 @@
+lemma: without
+ipa_us: /wɪˈðaʊt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: without
+    pos: preposition
+    vi: không có, mà không (làm gì)
+    en: not having or not doing something
+    collocations: [without thinking, without sugar, without a word]
+    example: I can’t drink coffee without milk.
+status: draft

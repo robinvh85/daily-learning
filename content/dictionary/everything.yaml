@@ -1,0 +1,12 @@
+lemma: everything
+ipa_us: /ˈevriθɪŋ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: everything
+    pos: pronoun
+    vi: mọi thứ, tất cả
+    en: all things
+    collocations: [everything is fine, almost everything]
+    example: Thank you for everything.
+status: draft

@@ -1,0 +1,12 @@
+lemma: will
+ipa_us: /wɪl/
+cefr: A1
+oxford3000: true
+senses:
+  - key: will
+    pos: modal verb
+    vi: sẽ
+    en: used to talk about the future
+    collocations: [will be, will do something]
+    example: I will call you tomorrow.
+status: draft

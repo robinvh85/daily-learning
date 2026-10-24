@@ -1,0 +1,12 @@
+lemma: he
+ipa_us: /hiː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: he
+    pos: pronoun
+    vi: anh ấy, ông ấy, cậu ấy
+    en: a man or boy who has already been mentioned
+    collocations: [he is, he says]
+    example: My brother lives in Hanoi, and he works in a bank.
+status: draft

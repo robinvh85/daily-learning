@@ -1,0 +1,12 @@
+lemma: badly
+ipa_us: /ˈbædli/
+cefr: A2
+oxford3000: true
+senses:
+  - key: badly
+    pos: adverb
+    vi: tệ, kém, không tốt
+    en: in a way that is not good
+    collocations: [sleep badly, play badly]
+    example: Our team played badly in the first half.
+status: draft

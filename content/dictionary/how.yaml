@@ -1,0 +1,12 @@
+lemma: how
+ipa_us: /haʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: how
+    pos: adverb
+    vi: như thế nào, thế nào; how to… = cách (làm gì)
+    en: in what way; (how to) the way to do something
+    collocations: [how to use, how are you]
+    example: Can you tell me how to get to the station?
+status: draft

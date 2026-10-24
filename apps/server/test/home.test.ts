@@ -65,16 +65,20 @@ describe('GET /api/today', () => {
     expect(today).toMatchObject({ day: 1, allDone: true, continueUrl: null, estimatedMinutes: 0 });
   });
 
-  it('shows "Đã học hết bài hiện có" the next day when every lesson is done', async () => {
+  it('moves on to day 2 the next day', async () => {
+    // The "Đã học hết bài hiện có" fallback is covered in daily-plan.test.ts.
     setClock('2026-10-24T17:05:00Z'); // 00:05 on the 25th in Vietnam
     const today = await get<TodayResponse>('/api/today');
     expect(today).toMatchObject({
       date: '2026-10-25',
-      source: 'finished',
-      day: null,
-      title: 'Đã học hết bài hiện có',
+      source: 'plan',
+      day: 2,
+      title: 'Công việc mới',
+      continueUrl: '/read/my-first-week-at-a-new-job',
+      allDone: false,
     });
-    expect(today.steps.map((s) => s.kind)).toEqual(['reviews']);
+    expect(today.steps[0]).toMatchObject({ kind: 'reading', status: 'not_started' });
+    expect(today.steps.at(-1)?.kind).toBe('reviews');
   });
 });
 
@@ -122,13 +126,14 @@ describe('GET /api/dashboard', () => {
     await t.app.inject({ method: 'POST', url: `/api/vocab/${run.id}`, payload: {} });
     await t.app.inject({ method: 'POST', url: `/api/reviews/${run.id}`, payload: { rating: 3 } });
 
+    const total = (await get<{ lessons: unknown[] }>('/api/lessons')).lessons.length;
     const d = await get<DashboardResponse>('/api/dashboard');
     expect(d).toMatchObject({
       displayName: 'Viet',
       level: 'A2',
       date: '2026-10-25',
       streak: { days: 2, activeToday: true },
-      path: { level: 'A2', completed: 2, total: 2, percent: 100 },
+      path: { level: 'A2', completed: 2, total, percent: Math.round((2 / total) * 100) },
       words: { remembered: 1, learning: 1, known: 0 },
     });
     // `run` is in the Oxford 3000.

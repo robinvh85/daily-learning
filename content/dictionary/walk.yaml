@@ -1,0 +1,19 @@
+lemma: walk
+ipa_us: /wɔːk/
+cefr: A1
+oxford3000: true
+forms: [walks, walked, walking]
+senses:
+  - key: noun
+    pos: noun
+    vi: cuộc đi bộ, việc đi dạo
+    en: a trip that you make on foot
+    collocations: [go for a walk, a short walk, take a walk]
+    example: Let’s go for a walk in the park.
+  - key: verb
+    pos: verb
+    vi: đi bộ
+    en: to move on foot
+    collocations: [walk to work, walk slowly]
+    example: I walk to school every day.
+status: draft

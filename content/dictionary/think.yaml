@@ -1,0 +1,13 @@
+lemma: think
+ipa_us: /θɪŋk/
+cefr: A1
+oxford3000: true
+forms: [thinks, thought, thinking]
+senses:
+  - key: think
+    pos: verb
+    vi: nghĩ, cho rằng; suy nghĩ
+    en: to have an opinion or idea; to use your mind
+    collocations: [I think so, think about something, without thinking]
+    example: I think it’s going to rain this afternoon.
+status: draft

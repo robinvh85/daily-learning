@@ -1,0 +1,13 @@
+lemma: kitchen
+ipa_us: /ˈkɪtʃən/
+cefr: A1
+oxford3000: true
+forms: [kitchens]
+senses:
+  - key: kitchen
+    pos: noun
+    vi: nhà bếp, bếp
+    en: a room where you cook food
+    collocations: [in the kitchen, a small kitchen]
+    example: My mom is cooking in the kitchen.
+status: draft

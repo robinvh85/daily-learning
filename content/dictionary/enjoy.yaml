@@ -1,0 +1,13 @@
+lemma: enjoy
+ipa_us: /ɪnˈdʒɔɪ/
+cefr: A1
+oxford3000: true
+forms: [enjoys, enjoyed, enjoying]
+senses:
+  - key: enjoy
+    pos: verb
+    vi: thích, thích thú, tận hưởng
+    en: to get pleasure from something
+    collocations: [enjoy doing something, enjoy the view, enjoy your meal]
+    example: We really enjoyed the concert last night.
+status: draft

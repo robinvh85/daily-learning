@@ -1,0 +1,13 @@
+lemma: soup
+ipa_us: /suːp/
+cefr: A1
+oxford3000: true
+forms: [soups]
+senses:
+  - key: soup
+    pos: noun
+    vi: súp, canh
+    en: a liquid food made by cooking meat, fish or vegetables in water
+    collocations: [make soup, chicken soup, a bowl of soup]
+    example: Hot soup is perfect on a cold day.
+status: draft

@@ -1,0 +1,13 @@
+lemma: meeting
+ipa_us: /ˈmiːtɪŋ/
+cefr: A2
+oxford3000: true
+forms: [meetings]
+senses:
+  - key: meeting
+    pos: noun
+    vi: cuộc họp, buổi họp
+    en: an occasion when people come together to discuss something
+    collocations: [a team meeting, have a meeting, in a meeting]
+    example: Sorry, I can’t talk now. I’m in a meeting.
+status: draft

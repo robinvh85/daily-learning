@@ -1,0 +1,13 @@
+lemma: routine
+ipa_us: /ruːˈtiːn/
+cefr: B1
+oxford3000: true
+forms: [routines]
+senses:
+  - key: routine
+    pos: noun
+    vi: nếp sinh hoạt hằng ngày, những việc làm quen thuộc hằng ngày
+    en: the usual things that you do every day, in the same order
+    collocations: [a daily routine, a morning routine, a new routine]
+    example: Exercise is part of my morning routine.
+status: draft

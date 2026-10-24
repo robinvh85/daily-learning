@@ -1,0 +1,12 @@
+lemma: garlic
+ipa_us: /ˈɡɑːrlɪk/
+cefr: B1
+oxford3000: false
+senses:
+  - key: garlic
+    pos: noun
+    vi: tỏi
+    en: a small plant like an onion with a very strong taste, used in cooking
+    collocations: [fried garlic, a clove of garlic]
+    example: This soup needs more garlic.
+status: draft

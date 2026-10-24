@@ -1,0 +1,13 @@
+lemma: control
+ipa_us: /kənˈtroʊl/
+cefr: B1
+oxford3000: true
+forms: [controls, controlled, controlling]
+senses:
+  - key: control
+    pos: verb
+    vi: kiểm soát, chi phối, điều khiển
+    en: to have power over someone or something
+    collocations: [control your time, control the TV]
+    example: Don’t let stress control your life.
+status: draft

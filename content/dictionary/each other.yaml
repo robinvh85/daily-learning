@@ -1,0 +1,13 @@
+lemma: each other
+ipa_us: /ˌiːtʃ ˈʌðər/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: each_other
+    pos: pronoun
+    vi: nhau, lẫn nhau
+    en: used to show that each person does something to or for the other
+    collocations: [help each other, know each other, talk to each other]
+    example: My sister and I call each other every day.
+status: draft

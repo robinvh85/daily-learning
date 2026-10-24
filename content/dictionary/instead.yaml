@@ -1,0 +1,12 @@
+lemma: instead
+ipa_us: /ɪnˈsted/
+cefr: A2
+oxford3000: true
+senses:
+  - key: instead
+    pos: adverb
+    vi: thay vào đó, thay vì thế
+    en: in the place of someone or something else
+    collocations: [instead of, do something instead]
+    example: There was no coffee, so I had tea instead.
+status: draft

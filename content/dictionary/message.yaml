@@ -1,0 +1,13 @@
+lemma: message
+ipa_us: /ˈmesɪdʒ/
+cefr: A1
+oxford3000: true
+forms: [messages]
+senses:
+  - key: message
+    pos: noun
+    vi: tin nhắn, lời nhắn
+    en: a short piece of written or spoken information that you send to someone
+    collocations: [send a message, check messages, a text message]
+    example: I sent you a message, but you didn’t answer.
+status: draft

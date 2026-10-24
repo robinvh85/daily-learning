@@ -1,0 +1,12 @@
+lemma: already
+ipa_us: /ɔːlˈredi/
+cefr: A2
+oxford3000: true
+senses:
+  - key: already
+    pos: adverb
+    vi: đã… rồi, rồi (sớm hơn mong đợi)
+    en: before now, or earlier than expected
+    collocations: [already know, already finished]
+    example: It’s only nine, and she is already asleep.
+status: draft

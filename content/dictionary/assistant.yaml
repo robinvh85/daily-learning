@@ -1,0 +1,13 @@
+lemma: assistant
+ipa_us: /əˈsɪstənt/
+cefr: A2
+oxford3000: true
+forms: [assistants]
+senses:
+  - key: assistant
+    pos: noun
+    vi: trợ lý, phụ tá
+    en: a person who helps someone else in their work
+    collocations: [an office assistant, a shop assistant]
+    example: Her assistant answers the phone when she is busy.
+status: draft

@@ -1,0 +1,12 @@
+lemma: paper
+ipa_us: /ˈpeɪpər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: paper
+    pos: noun
+    vi: giấy; (làm bằng) giấy
+    en: thin material for writing or printing on
+    collocations: [a paper book, a piece of paper, a paper bag]
+    example: Write your name on a piece of paper.
+status: draft

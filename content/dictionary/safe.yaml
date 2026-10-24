@@ -1,0 +1,13 @@
+lemma: safe
+ipa_us: /seɪf/
+cefr: A2
+oxford3000: true
+forms: [safer, safest]
+senses:
+  - key: safe
+    pos: adjective
+    vi: an toàn; yên tâm
+    en: not in danger; feeling protected and not worried
+    collocations: [feel safe, a safe place]
+    example: I feel safe in this neighborhood.
+status: draft

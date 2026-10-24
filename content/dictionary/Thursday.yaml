@@ -1,0 +1,13 @@
+lemma: Thursday
+ipa_us: /ˈθɝːzdeɪ/
+cefr: A1
+oxford3000: true
+forms: [Thursdays]
+senses:
+  - key: thursday
+    pos: noun
+    vi: thứ Năm
+    en: the day of the week after Wednesday and before Friday
+    collocations: [on Thursday, next Thursday]
+    example: Our team plays soccer on Thursday evenings.
+status: draft

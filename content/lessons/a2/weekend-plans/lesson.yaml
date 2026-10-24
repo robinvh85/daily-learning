@@ -1,0 +1,127 @@
+# Reading lesson (day 8). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: daily-life
+title: Weekend Plans
+order: 8
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: It’s Friday evening, and I’m finally home after a busy week.
+    text_vi: Tối thứ Sáu rồi, cuối cùng tôi cũng về đến nhà sau một tuần bận rộn.
+  - id: p1s2
+    paragraph: 1
+    text_en: This weekend, I don’t need to work, so I have lots of plans.
+    text_vi: Cuối tuần này tôi không phải đi làm, nên tôi có rất nhiều dự định.
+  - id: p2s1
+    paragraph: 2
+    text_en: On Saturday morning, I’m going to sleep in until nine.
+    text_vi: Sáng thứ Bảy, tôi sẽ ngủ nướng đến chín giờ.
+  - id: p2s2
+    paragraph: 2
+    text_en: After that, I’m having breakfast with my old classmate Vy.
+    text_vi: Sau đó, tôi sẽ đi ăn sáng với Vy, bạn học cũ của tôi.
+  - id: p2s3
+    paragraph: 2
+    text_en: We were in the same class in college, and we still meet every few months.
+    text_vi: Hồi đại học, chúng tôi học cùng lớp, và đến giờ vẫn gặp nhau vài tháng một lần.
+  - id: p2s4
+    paragraph: 2
+    text_en: In the afternoon, I’ll clean my apartment and do the laundry.
+    text_vi: Buổi chiều, tôi sẽ dọn dẹp căn hộ và giặt đồ.
+  - id: p3s1
+    paragraph: 3
+    text_en: On Saturday night, my cousin is having a birthday party.
+    text_vi: Tối thứ Bảy, em họ tôi tổ chức tiệc sinh nhật.
+  - id: p3s2
+    paragraph: 3
+    text_en: The party starts at seven at her new apartment.
+    text_vi: Bữa tiệc bắt đầu lúc bảy giờ ở căn hộ mới của em ấy.
+  - id: p3s3
+    paragraph: 3
+    text_en: Our whole family will be there.
+    text_vi: Cả nhà tôi sẽ có mặt ở đó.
+  - id: p3s4
+    paragraph: 3
+    text_en: I still need to buy a gift for her.
+    text_vi: Tôi vẫn còn phải mua quà cho em ấy.
+  - id: p3s5
+    paragraph: 3
+    text_en: Maybe I’ll buy her a nice bag or a book.
+    text_vi: Có lẽ tôi sẽ mua cho em ấy một chiếc túi xinh hoặc một cuốn sách.
+  - id: p4s1
+    paragraph: 4
+    text_en: Sunday is my quiet day.
+    text_vi: Chủ nhật là ngày yên tĩnh của tôi.
+  - id: p4s2
+    paragraph: 4
+    text_en: I usually stay home, call my parents, and get ready for the new week.
+    text_vi: Tôi thường ở nhà, gọi điện cho bố mẹ và chuẩn bị cho tuần mới.
+  - id: p4s3
+    paragraph: 4
+    text_en: If the weather is nice, I’ll ride my bike in the park.
+    text_vi: Nếu trời đẹp, tôi sẽ đạp xe trong công viên.
+  - id: p4s4
+    paragraph: 4
+    text_en: 'I love weekends like this: busy, but not too busy.'
+    text_vi: 'Tôi thích những ngày cuối tuần như thế này: bận rộn, nhưng không quá bận.'
+
+focus_words:
+  [finally, sleep in, after that, classmate, do the laundry, cousin, gift, get ready, ride]
+
+senses:
+  finally: at_last
+  to: infinitive
+  work: work
+  have: own # "I have lots of plans"
+  have#2: eat_drink # "I’m having breakfast"
+  have#3: hold # "my cousin is having a birthday party"
+  plan: noun
+  on: day
+  go: future
+  be: linking
+  be#2: auxiliary # "is having"
+  in: in
+  in#3: time # "In the afternoon"
+  still: continuing
+  at: place
+  at#1: time # "at seven"
+  for: purpose
+  stay: remain
+  call: phone
+  like: similar
+
+ignore: [Vy]
+
+questions:
+  - prompt: What is the writer going to do first on Saturday morning?
+    options: [Clean the apartment, Sleep in, Buy a gift]
+    correct: 1
+    feedback_ok: 'Đúng: “On Saturday morning, I’m going to sleep in until nine.”'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 2. Dọn nhà là việc buổi chiều.
+    evidence: p2s1
+  - prompt: Who is Vy?
+    options: [The writer’s cousin, An old classmate, A new colleague]
+    correct: 1
+    feedback_ok: 'Đúng: “my old classmate Vy… We were in the same class in college.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai và thứ ba của đoạn 2.
+    evidence: p2s2
+  - prompt: Why does the writer need to buy a gift?
+    options: [It’s the cousin’s birthday, It’s Vy’s birthday, It’s for the writer’s parents]
+    correct: 0
+    feedback_ok: 'Đúng: “my cousin is having a birthday party… I still need to buy a gift for her.”'
+    feedback_wrong: Chưa đúng. Đọc lại đoạn 3, xem “her” là ai.
+    evidence: p3s1
+  - prompt: What does “busy, but not too busy” tell us about the writer?
+    options:
+      [
+        The writer wants to work on weekends,
+        The writer doesn’t like making plans,
+        The writer likes some plans and some quiet time,
+      ]
+    correct: 2
+    feedback_ok: 'Đúng: thứ Bảy nhiều hoạt động, Chủ nhật là “my quiet day”. Người viết thích sự cân bằng đó.'
+    feedback_wrong: Chưa đúng. So sánh kế hoạch thứ Bảy (đoạn 2–3) và Chủ nhật (đoạn 4).
+    evidence: p4s4

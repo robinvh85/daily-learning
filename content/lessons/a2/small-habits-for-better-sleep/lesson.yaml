@@ -1,0 +1,124 @@
+# Reading lesson (day 5). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: health
+title: Small Habits for Better Sleep
+order: 5
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: For a long time, I slept badly.
+    text_vi: Suốt một thời gian dài, tôi ngủ không ngon.
+  - id: p1s2
+    paragraph: 1
+    text_en: I went to bed after midnight and woke up tired every morning.
+    text_vi: Tôi đi ngủ sau nửa đêm và sáng nào thức dậy cũng thấy mệt.
+  - id: p1s3
+    paragraph: 1
+    text_en: At work, I couldn’t focus, and I drank three cups of coffee a day.
+    text_vi: Ở chỗ làm, tôi không tập trung được và mỗi ngày uống tới ba ly cà phê.
+  - id: p2s1
+    paragraph: 2
+    text_en: Last month, my doctor gave me some simple advice.
+    text_vi: Tháng trước, bác sĩ cho tôi vài lời khuyên đơn giản.
+  - id: p2s2
+    paragraph: 2
+    text_en: She said, “Small habits can make a big difference.”
+    text_vi: 'Bác sĩ nói: “Những thói quen nhỏ có thể tạo ra khác biệt lớn.”'
+  - id: p2s3
+    paragraph: 2
+    text_en: So I decided to change a few things.
+    text_vi: Vì vậy tôi quyết định thay đổi vài điều.
+  - id: p3s1
+    paragraph: 3
+    text_en: First, I stopped using my phone in bed.
+    text_vi: Đầu tiên, tôi thôi không dùng điện thoại trên giường nữa.
+  - id: p3s2
+    paragraph: 3
+    text_en: Now I leave it in the kitchen and read a paper book instead.
+    text_vi: Giờ tôi để điện thoại trong bếp và đọc sách giấy thay vào đó.
+  - id: p3s3
+    paragraph: 3
+    text_en: Second, I don’t drink coffee after two in the afternoon.
+    text_vi: Thứ hai, tôi không uống cà phê sau hai giờ chiều.
+  - id: p3s4
+    paragraph: 3
+    text_en: I also go for a short walk after dinner.
+    text_vi: Tôi cũng đi bộ một chút sau bữa tối.
+  - id: p3s5
+    paragraph: 3
+    text_en: Finally, I try to go to bed at the same time every night, even on weekends.
+    text_vi: Cuối cùng, tôi cố gắng đi ngủ vào cùng một giờ mỗi tối, kể cả cuối tuần.
+  - id: p4s1
+    paragraph: 4
+    text_en: The changes were hard at first.
+    text_vi: Lúc đầu, những thay đổi này khá khó khăn.
+  - id: p4s2
+    paragraph: 4
+    text_en: After two weeks, though, I started to fall asleep more quickly.
+    text_vi: Nhưng sau hai tuần, tôi bắt đầu dễ ngủ hơn.
+  - id: p4s3
+    paragraph: 4
+    text_en: Now I wake up with more energy, and I can focus better at work.
+    text_vi: Giờ tôi thức dậy với nhiều năng lượng hơn và làm việc tập trung hơn.
+  - id: p4s4
+    paragraph: 4
+    text_en: I’m going to keep these small habits.
+    text_vi: Tôi sẽ duy trì những thói quen nhỏ này.
+
+focus_words: [habit, wake up, focus, advice, difference, instead, at first, fall asleep, energy]
+
+senses:
+  for: duration # "For a long time"
+  for#2: purpose # "go for a short walk"
+  time: time
+  at: place
+  at#2: time # "at the same time"
+  work: workplace
+  last: previous
+  make: create
+  to: infinitive
+  change: verb
+  change#2: noun # "The changes"
+  first: adverb
+  stop: quit
+  in: in
+  in#3: time # "in the afternoon"
+  leave: put
+  go: go
+  go#2: future # "I’m going to keep"
+  walk: noun
+  finally: lastly
+  on: day
+  be: linking
+  keep: continue
+
+ignore: []
+
+questions:
+  - prompt: What was the writer’s problem at work before the changes?
+    options: [The writer couldn’t focus, The writer was often late, The writer had too much work]
+    correct: 0
+    feedback_ok: 'Đúng: “At work, I couldn’t focus…”'
+    feedback_wrong: Chưa đúng. Đọc lại câu cuối của đoạn 1.
+    evidence: p1s3
+  - prompt: Where does the writer leave the phone now?
+    options: [In bed, In the kitchen, In the living room]
+    correct: 1
+    feedback_ok: 'Đúng: “Now I leave it in the kitchen…”'
+    feedback_wrong: Chưa đúng. Xem lại hai câu đầu của đoạn 3.
+    evidence: p3s2
+  - prompt: Why does the writer probably not drink coffee after two in the afternoon?
+    options: [To save money, To sleep better at night, Because the doctor doesn’t like coffee]
+    correct: 1
+    feedback_ok: 'Đúng: cả bài nói về những thói quen giúp ngủ ngon hơn, và cà phê buổi chiều làm khó ngủ.'
+    feedback_wrong: Chưa đúng. Hãy nghĩ về chủ đề của cả bài (tiêu đề và đoạn 1) và tác dụng của cà phê.
+    evidence: p3s3
+  - prompt: When did the changes start to help?
+    options: [After two days, After two months, After two weeks]
+    correct: 2
+    feedback_ok: 'Đúng: “After two weeks, though, I started to fall asleep more quickly.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 4.
+    evidence: p4s2

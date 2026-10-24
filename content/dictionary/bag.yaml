@@ -1,0 +1,13 @@
+lemma: bag
+ipa_us: /bæɡ/
+cefr: A1
+oxford3000: true
+forms: [bags]
+senses:
+  - key: bag
+    pos: noun
+    vi: túi, cặp, giỏ
+    en: a container made of cloth, paper, leather, etc., used for carrying things
+    collocations: [a shopping bag, in my bag, a school bag]
+    example: She put her phone in her bag.
+status: draft

@@ -10,4 +10,16 @@ senses:
     en: 'to do a job, usually for money'
     collocations: [work in a hotel, work hard, work for a company]
     example: She worked in a hotel for five years.
+  - key: workplace
+    pos: noun
+    vi: chỗ làm, nơi làm việc
+    en: the place where you do your job
+    collocations: [get to work, at work, after work]
+    example: My new apartment is close to work.
+  - key: job
+    pos: noun
+    vi: công việc, việc (phải làm); finish work = tan làm
+    en: the job or the tasks that you do to earn money
+    collocations: [finish work, after work, a lot of work]
+    example: I have a lot of work this week.
 status: draft

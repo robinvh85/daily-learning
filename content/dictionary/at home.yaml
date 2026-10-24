@@ -1,0 +1,13 @@
+lemma: at home
+ipa_us: /æt ˈhoʊm/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: at_home
+    pos: phrase
+    vi: ở nhà
+    en: in your house or apartment
+    collocations: [stay at home, eat at home, work at home]
+    example: I worked at home yesterday because I was sick.
+status: draft

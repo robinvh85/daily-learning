@@ -1,0 +1,13 @@
+lemma: divide
+ipa_us: /dɪˈvaɪd/
+cefr: A2
+oxford3000: true
+forms: [divides, divided, dividing]
+senses:
+  - key: divide
+    pos: verb
+    vi: chia, chia ra
+    en: to separate something into parts
+    collocations: [divide something into parts, divide the bill]
+    example: The teacher divided the class into four groups.
+status: draft

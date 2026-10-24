@@ -1,0 +1,13 @@
+lemma: best regards
+ipa_us: /ˌbest rɪˈɡɑːrdz/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: best_regards
+    pos: phrase
+    vi: trân trọng (lời chào cuối thư, email)
+    en: a polite way to end an email or letter
+    collocations: ['best regards, [name]']
+    example: Thanks for your help. Best regards, Anna
+status: draft

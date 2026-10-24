@@ -1,0 +1,13 @@
+lemma: computer
+ipa_us: /kəmˈpjuːtər/
+cefr: A1
+oxford3000: true
+forms: [computers]
+senses:
+  - key: computer
+    pos: noun
+    vi: máy tính
+    en: an electronic machine that stores information and runs programs
+    collocations: [use a computer, a computer system]
+    example: I use a computer at work every day.
+status: draft

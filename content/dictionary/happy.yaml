@@ -1,0 +1,13 @@
+lemma: happy
+ipa_us: /ˈhæpi/
+cefr: A1
+oxford3000: true
+forms: [happier, happiest]
+senses:
+  - key: happy
+    pos: adjective
+    vi: vui, vui vẻ, hạnh phúc
+    en: feeling pleased
+    collocations: [happy to…, happy that…, very happy]
+    example: I’m so happy that you can come to my party.
+status: draft

@@ -1,0 +1,13 @@
+lemma: view
+ipa_us: /vjuː/
+cefr: A2
+oxford3000: true
+forms: [views]
+senses:
+  - key: view
+    pos: noun
+    vi: quang cảnh, tầm nhìn (từ một chỗ nào đó)
+    en: what you can see from a place, especially beautiful countryside
+    collocations: [a view of the sea, a beautiful view, a room with a view]
+    example: Our room had a great view of the river.
+status: draft

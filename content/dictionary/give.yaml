@@ -1,0 +1,13 @@
+lemma: give
+ipa_us: /ɡɪv/
+cefr: A1
+oxford3000: true
+forms: [gives, gave, given, giving]
+senses:
+  - key: give
+    pos: verb
+    vi: cho, đưa, tặng
+    en: to let someone have something
+    collocations: [give advice, give someone a gift]
+    example: My parents gave me a watch for my birthday.
+status: draft

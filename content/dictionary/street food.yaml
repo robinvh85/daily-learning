@@ -1,0 +1,13 @@
+lemma: street food
+ipa_us: /ˈstriːt fuːd/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: street_food
+    pos: noun
+    vi: đồ ăn đường phố
+    en: food that is cooked and sold in the street or at a market
+    collocations: [try street food, cheap street food]
+    example: Saigon is famous for its street food.
+status: draft

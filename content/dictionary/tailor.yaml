@@ -1,0 +1,13 @@
+lemma: tailor
+ipa_us: /ˈteɪlər/
+cefr: B2
+oxford3000: false
+forms: [tailors]
+senses:
+  - key: tailor
+    pos: noun
+    vi: thợ may
+    en: a person who makes or repairs clothes
+    collocations: [take something to a tailor, a good tailor]
+    example: My uncle is a tailor, and he made my wedding suit.
+status: draft

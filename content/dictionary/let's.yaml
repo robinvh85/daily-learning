@@ -1,0 +1,11 @@
+lemma: let's
+ipa_us: /lets/
+cefr: A1
+oxford3000: false
+senses:
+  - key: let_us
+    pos: contraction
+    vi: chúng ta hãy… nhé, mình cùng… nhé (viết tắt của let us)
+    en: short form of “let us”, used to suggest doing something together
+    example: Let’s eat out tonight.
+status: draft

@@ -1,0 +1,13 @@
+lemma: fry
+ipa_us: /fraɪ/
+cefr: A2
+oxford3000: true
+forms: [fries, fried, frying]
+senses:
+  - key: fry
+    pos: verb
+    vi: chiên, rán; xào
+    en: to cook something in hot oil
+    collocations: [fry an egg, fry with garlic]
+    example: Fry the onions for two minutes.
+status: draft

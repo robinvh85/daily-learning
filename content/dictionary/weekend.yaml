@@ -1,0 +1,13 @@
+lemma: weekend
+ipa_us: /ˈwiːkend/
+cefr: A1
+oxford3000: true
+forms: [weekends]
+senses:
+  - key: weekend
+    pos: noun
+    vi: cuối tuần
+    en: Saturday and Sunday
+    collocations: [on weekends, this weekend, last weekend]
+    example: What did you do last weekend?
+status: draft

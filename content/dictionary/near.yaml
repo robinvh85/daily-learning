@@ -1,0 +1,12 @@
+lemma: near
+ipa_us: /nɪr/
+cefr: A1
+oxford3000: true
+senses:
+  - key: near
+    pos: preposition
+    vi: gần
+    en: not far from
+    collocations: [near my house, near here]
+    example: Is there a pharmacy near here?
+status: draft

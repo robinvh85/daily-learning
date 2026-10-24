@@ -1,0 +1,12 @@
+lemma: though
+ipa_us: /ðoʊ/
+cefr: B1
+oxford3000: true
+senses:
+  - key: however
+    pos: adverb
+    vi: tuy vậy, dù vậy, nhưng
+    en: however (often used at the end or in the middle of a sentence)
+    collocations: ['it was fun, though']
+    example: The room was small. It was very clean, though.
+status: draft

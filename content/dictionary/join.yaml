@@ -1,0 +1,13 @@
+lemma: join
+ipa_us: /dʒɔɪn/
+cefr: A2
+oxford3000: true
+forms: [joins, joined, joining]
+senses:
+  - key: join
+    pos: verb
+    vi: tham gia, gia nhập; về làm cùng (một nhóm, công ty)
+    en: to become a member of a group, team or company; to do something together with someone
+    collocations: [join a team, join a club, join us for dinner]
+    example: She joined the company two years ago.
+status: draft

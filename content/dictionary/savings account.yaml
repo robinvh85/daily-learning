@@ -1,0 +1,14 @@
+lemma: savings account
+ipa_us: /ˈseɪvɪŋz əˌkaʊnt/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [savings accounts]
+senses:
+  - key: savings_account
+    pos: noun
+    vi: tài khoản tiết kiệm
+    en: a bank account where you keep money that you want to save
+    collocations: [open a savings account, put money into a savings account]
+    example: I opened a savings account for my daughter.
+status: draft

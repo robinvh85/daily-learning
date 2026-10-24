@@ -1,0 +1,13 @@
+lemma: website
+ipa_us: /ˈwebsaɪt/
+cefr: A1
+oxford3000: true
+forms: [websites]
+senses:
+  - key: website
+    pos: noun
+    vi: trang web
+    en: a place on the internet with information about something
+    collocations: [visit a website, on a website, a shopping website]
+    example: You can book tickets on the website.
+status: draft

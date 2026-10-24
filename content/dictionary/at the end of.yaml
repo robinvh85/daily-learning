@@ -1,0 +1,13 @@
+lemma: at the end of
+ipa_us: /æt ði ˈend əv/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: at_the_end_of
+    pos: phrase
+    vi: vào cuối (tháng, năm, ngày…); ở cuối (con đường…)
+    en: at the last part of a period of time or a place
+    collocations: [at the end of the month, at the end of the day, at the end of the street]
+    example: We’re moving to a new apartment at the end of the year.
+status: draft

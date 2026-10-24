@@ -1,0 +1,13 @@
+lemma: afternoon
+ipa_us: /ˌæftərˈnuːn/
+cefr: A1
+oxford3000: true
+forms: [afternoons]
+senses:
+  - key: afternoon
+    pos: noun
+    vi: buổi chiều
+    en: the part of the day from about 12 o’clock until about 6 o’clock
+    collocations: [in the afternoon, this afternoon]
+    example: I usually feel sleepy in the afternoon.
+status: draft

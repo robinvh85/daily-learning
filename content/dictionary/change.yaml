@@ -1,0 +1,19 @@
+lemma: change
+ipa_us: /tʃeɪndʒ/
+cefr: A1
+oxford3000: true
+forms: [changes, changed, changing]
+senses:
+  - key: verb
+    pos: verb
+    vi: thay đổi, đổi
+    en: to become different, or to make something different
+    collocations: [change a habit, change your plans, change jobs]
+    example: She changed her hairstyle last week.
+  - key: noun
+    pos: noun
+    vi: sự thay đổi, điều thay đổi
+    en: the act of becoming different, or something that is different
+    collocations: [make a change, a big change, small changes]
+    example: Moving to a new city was a big change for me.
+status: draft

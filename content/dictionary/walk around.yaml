@@ -1,0 +1,14 @@
+lemma: walk around
+ipa_us: /ˌwɔːk əˈraʊnd/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [walks around, walked around, walking around]
+senses:
+  - key: walk_around
+    pos: phrasal verb
+    vi: đi dạo quanh, đi bộ vòng quanh
+    en: to walk in different directions in a place, often without a fixed plan
+    collocations: [walk around the city, walk around the market]
+    example: We walked around the old town after lunch.
+status: draft

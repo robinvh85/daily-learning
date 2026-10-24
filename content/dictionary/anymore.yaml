@@ -1,0 +1,12 @@
+lemma: anymore
+ipa_us: /ˌeniˈmɔːr/
+cefr: A2
+oxford3000: false
+senses:
+  - key: anymore
+    pos: adverb
+    vi: (not… anymore) không còn… nữa
+    en: used in negative sentences to say that something is no longer true
+    collocations: [not anymore, don’t … anymore]
+    example: She doesn’t live here anymore.
+status: draft

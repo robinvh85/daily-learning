@@ -1,0 +1,129 @@
+# Reading lesson (day 3). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: food
+title: Cooking Dinner at Home
+order: 3
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: I usually finish work late, so I often buy dinner on the way home.
+    text_vi: Tôi thường tan làm muộn nên hay mua đồ ăn tối trên đường về nhà.
+  - id: p1s2
+    paragraph: 1
+    text_en: But takeout is expensive, and it isn’t very healthy.
+    text_vi: Nhưng đồ ăn mua sẵn thì đắt, lại không tốt cho sức khỏe lắm.
+  - id: p1s3
+    paragraph: 1
+    text_en: This month, I decided to cook dinner at home three times a week.
+    text_vi: Tháng này, tôi quyết định tự nấu bữa tối ở nhà mỗi tuần ba lần.
+  - id: p2s1
+    paragraph: 2
+    text_en: On Sunday, I made a shopping list and went to the market near my apartment.
+    text_vi: Chủ nhật, tôi viết danh sách đồ cần mua rồi ra chợ gần căn hộ.
+  - id: p2s2
+    paragraph: 2
+    text_en: I bought fresh vegetables, some chicken, rice, and a few eggs.
+    text_vi: Tôi mua rau tươi, một ít thịt gà, gạo và vài quả trứng.
+  - id: p2s3
+    paragraph: 2
+    text_en: Everything cost less than one meal at a restaurant.
+    text_vi: Tất cả chỗ đó còn rẻ hơn một bữa ăn ở nhà hàng.
+  - id: p3s1
+    paragraph: 3
+    text_en: Last night, I tried a simple recipe from my mom.
+    text_vi: Tối qua, tôi thử nấu một món đơn giản theo công thức của mẹ.
+  - id: p3s2
+    paragraph: 3
+    text_en: First, I cut the chicken into small pieces and fried it with garlic.
+    text_vi: Đầu tiên, tôi cắt thịt gà thành miếng nhỏ rồi xào với tỏi.
+  - id: p3s3
+    paragraph: 3
+    text_en: Then I added the vegetables and a little fish sauce.
+    text_vi: Sau đó tôi cho rau vào và nêm một chút nước mắm.
+  - id: p3s4
+    paragraph: 3
+    text_en: The whole dish took only twenty minutes.
+    text_vi: Cả món chỉ mất có hai mươi phút.
+  - id: p4s1
+    paragraph: 4
+    text_en: The food wasn’t perfect, because I put in too much salt.
+    text_vi: Món ăn chưa được hoàn hảo vì tôi lỡ cho quá nhiều muối.
+  - id: p4s2
+    paragraph: 4
+    text_en: Still, it tasted much better than takeout.
+    text_vi: Dù vậy, nó vẫn ngon hơn đồ mua sẵn nhiều.
+  - id: p4s3
+    paragraph: 4
+    text_en: My sister tried it and asked for a second bowl.
+    text_vi: Em gái tôi ăn thử và còn xin thêm một bát nữa.
+  - id: p4s4
+    paragraph: 4
+    text_en: Tomorrow I’m going to make soup with the leftovers.
+    text_vi: Ngày mai tôi sẽ nấu canh với chỗ đồ ăn còn thừa.
+  - id: p4s5
+    paragraph: 4
+    text_en: Cooking is also a good way to relax after a long day.
+    text_vi: Nấu ăn cũng là một cách hay để thư giãn sau một ngày dài.
+
+focus_words:
+  [on the way home, healthy, decide, shopping list, fresh, recipe, dish, taste, leftovers]
+
+senses:
+  first: adverb
+  work: job # "finish work"
+  be: linking
+  to: infinitive
+  to#2: direction # "went to the market"
+  time: occasion # "three times a week"
+  on: day
+  make: create
+  make#2: cook # "make soup"
+  go: go
+  go#2: future # "I’m going to make soup"
+  fresh: new
+  one: number
+  at: place
+  last: previous
+  into: change
+  a little: amount
+  take: time
+  still: however
+  much: amount
+  much#2: far # "much better"
+
+ignore: []
+
+questions:
+  - prompt: Why did the writer start cooking at home?
+    options:
+      [
+        The writer finishes work early,
+        Takeout is expensive and not very healthy,
+        The writer’s mom asked them to,
+      ]
+    correct: 1
+    feedback_ok: 'Đúng: “takeout is expensive, and it isn’t very healthy.”'
+    feedback_wrong: Chưa đúng. Đọc lại hai câu đầu của đoạn 1.
+    evidence: p1s2
+  - prompt: Where did the recipe come from?
+    options: [The writer’s mom, A cooking website, A restaurant]
+    correct: 0
+    feedback_ok: 'Đúng: “I tried a simple recipe from my mom.”'
+    feedback_wrong: Chưa đúng. Xem lại câu đầu của đoạn 3.
+    evidence: p3s1
+  - prompt: What was wrong with the food?
+    options: [It took too long to cook, It was cold, It was too salty]
+    correct: 2
+    feedback_ok: 'Đúng: “I put in too much salt.”'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 4, chú ý từ “because”.
+    evidence: p4s1
+  - prompt: In paragraph 4, “leftovers” are…
+    options:
+      [fresh vegetables from the market, food that is still there after a meal, a kind of soup]
+    correct: 1
+    feedback_ok: 'Đúng: “leftovers” là đồ ăn còn thừa sau bữa ăn; người viết dùng chúng để nấu canh.'
+    feedback_wrong: Chưa đúng. Người viết nấu xong bữa tối hôm qua, và hôm sau dùng phần còn lại để nấu canh.
+    evidence: p4s4

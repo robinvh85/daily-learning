@@ -1,0 +1,12 @@
+lemma: rice
+ipa_us: /raɪs/
+cefr: A1
+oxford3000: true
+senses:
+  - key: rice
+    pos: noun
+    vi: gạo; cơm
+    en: small white or brown grains that you cook and eat
+    collocations: [cook rice, a bowl of rice, fried rice]
+    example: We eat rice almost every day.
+status: draft

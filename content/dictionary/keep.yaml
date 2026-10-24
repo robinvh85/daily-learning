@@ -1,0 +1,19 @@
+lemma: keep
+ipa_us: /kiːp/
+cefr: A1
+oxford3000: true
+forms: [keeps, kept, keeping]
+senses:
+  - key: continue
+    pos: verb
+    vi: giữ, duy trì (thói quen, nếp sống)
+    en: to continue having or doing something
+    collocations: [keep a habit, keep calm, keep in touch]
+    example: She keeps a diary every day.
+  - key: store
+    pos: verb
+    vi: cất, để (ở đâu)
+    en: to put or store something in a particular place
+    collocations: [keep something in a bag, keep money in the bank]
+    example: I keep my keys in a small box by the door.
+status: draft

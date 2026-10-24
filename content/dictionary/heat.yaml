@@ -1,0 +1,12 @@
+lemma: heat
+ipa_us: /hiːt/
+cefr: A2
+oxford3000: true
+senses:
+  - key: heat
+    pos: noun
+    vi: hơi nóng, cái nóng
+    en: hot weather; the quality of being hot
+    collocations: [the summer heat, the heat in the city]
+    example: I can’t sleep in this heat.
+status: draft

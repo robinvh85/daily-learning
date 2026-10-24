@@ -1,0 +1,12 @@
+lemma: welcome
+ipa_us: /ˈwelkəm/
+cefr: A1
+oxford3000: true
+senses:
+  - key: welcome
+    pos: exclamation
+    vi: chào mừng
+    en: used to greet someone who has just arrived or joined
+    collocations: [welcome to…, welcome back, welcome home]
+    example: Welcome to our home! Please come in.
+status: draft

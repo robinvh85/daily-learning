@@ -1,0 +1,13 @@
+lemma: cool
+ipa_us: /kuːl/
+cefr: A1
+oxford3000: true
+forms: [cooler, coolest]
+senses:
+  - key: cool
+    pos: adjective
+    vi: mát, mát mẻ
+    en: a little cold, often in a pleasant way
+    collocations: [cool weather, cool air, a cool evening]
+    example: It’s cool in the evening, so take a jacket.
+status: draft

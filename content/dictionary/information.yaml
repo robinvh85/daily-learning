@@ -1,0 +1,12 @@
+lemma: information
+ipa_us: /ˌɪnfərˈmeɪʃən/
+cefr: A1
+oxford3000: true
+senses:
+  - key: information
+    pos: noun
+    vi: thông tin
+    en: facts or details about someone or something
+    collocations: [useful information, more information, information about something]
+    example: You can find more information on our website.
+status: draft

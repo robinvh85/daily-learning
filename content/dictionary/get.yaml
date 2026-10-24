@@ -1,0 +1,13 @@
+lemma: get
+ipa_us: /ɡet/
+cefr: A1
+oxford3000: true
+forms: [gets, got, getting, gotten]
+senses:
+  - key: arrive
+    pos: verb
+    vi: đến, tới (một nơi)
+    en: to arrive at a place
+    collocations: [get to work, get home, get there]
+    example: What time did you get home last night?
+status: draft

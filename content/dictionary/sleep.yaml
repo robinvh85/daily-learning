@@ -1,0 +1,13 @@
+lemma: sleep
+ipa_us: /sliːp/
+cefr: A1
+oxford3000: true
+forms: [sleeps, slept, sleeping]
+senses:
+  - key: sleep
+    pos: verb
+    vi: ngủ
+    en: to rest with your eyes closed and your mind and body not active
+    collocations: [sleep well, sleep badly, sleep for eight hours]
+    example: The baby sleeps for about ten hours at night.
+status: draft

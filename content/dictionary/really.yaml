@@ -1,0 +1,12 @@
+lemma: really
+ipa_us: /ˈriːəli/
+cefr: A1
+oxford3000: true
+senses:
+  - key: really
+    pos: adverb
+    vi: thật sự, rất; not really = không… lắm
+    en: very; in fact; (not really) not very much
+    collocations: [really good, not really, really like]
+    example: I really like your new haircut.
+status: draft

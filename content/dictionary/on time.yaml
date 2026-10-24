@@ -1,0 +1,13 @@
+lemma: on time
+ipa_us: /ɑːn ˈtaɪm/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: on_time
+    pos: phrase
+    vi: đúng giờ
+    en: at the correct time; not late
+    collocations: [arrive on time, be on time, start on time]
+    example: The meeting started on time.
+status: draft

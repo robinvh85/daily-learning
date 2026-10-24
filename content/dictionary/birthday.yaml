@@ -1,0 +1,13 @@
+lemma: birthday
+ipa_us: /ˈbɝːθdeɪ/
+cefr: A1
+oxford3000: true
+forms: [birthdays]
+senses:
+  - key: birthday
+    pos: noun
+    vi: sinh nhật
+    en: the day in each year that is the same date as the day you were born
+    collocations: [a birthday party, happy birthday, a birthday gift]
+    example: When is your birthday?
+status: draft

@@ -1,0 +1,12 @@
+lemma: careful
+ipa_us: /ˈkerfəl/
+cefr: A2
+oxford3000: true
+senses:
+  - key: careful
+    pos: adjective
+    vi: cẩn thận
+    en: paying attention to what you do so that you avoid problems
+    collocations: [be careful, careful with money]
+    example: Be careful. The floor is wet.
+status: draft

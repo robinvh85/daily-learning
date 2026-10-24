@@ -1,0 +1,12 @@
+lemma: helpful
+ipa_us: /ˈhelpfəl/
+cefr: A2
+oxford3000: true
+senses:
+  - key: helpful
+    pos: adjective
+    vi: hay giúp đỡ, nhiệt tình; có ích
+    en: happy to help other people; useful
+    collocations: [very helpful, helpful advice]
+    example: The hotel staff were very helpful.
+status: draft

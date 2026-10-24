@@ -1,0 +1,14 @@
+lemma: sleep in
+ipa_us: /ˌsliːp ˈɪn/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [sleeps in, slept in, sleeping in]
+senses:
+  - key: sleep_in
+    pos: phrasal verb
+    vi: ngủ nướng, ngủ dậy muộn hơn thường lệ
+    en: to sleep later than usual in the morning
+    collocations: [sleep in on Sundays, sleep in until ten]
+    example: I love to sleep in on holidays.
+status: draft

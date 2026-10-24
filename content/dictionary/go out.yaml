@@ -1,0 +1,14 @@
+lemma: go out
+ipa_us: /ˌɡoʊ ˈaʊt/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [goes out, went out, going out, gone out]
+senses:
+  - key: go_out
+    pos: phrasal verb
+    vi: đi chơi, ra ngoài (ăn uống, giải trí)
+    en: to leave your home to do something fun, such as eat at a restaurant or see a movie
+    collocations: [go out with friends, go out for dinner]
+    example: We usually go out for dinner on Saturday.
+status: draft

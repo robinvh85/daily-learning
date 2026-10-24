@@ -1,0 +1,13 @@
+lemma: parent
+ipa_us: /ˈperənt/
+cefr: A1
+oxford3000: true
+forms: [parents]
+senses:
+  - key: parent
+    pos: noun
+    vi: bố hoặc mẹ; (parents) bố mẹ
+    en: a mother or father
+    collocations: [my parents, call my parents, visit my parents]
+    example: My parents live in a small town near the sea.
+status: draft

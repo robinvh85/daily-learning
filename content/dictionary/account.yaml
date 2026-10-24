@@ -1,0 +1,13 @@
+lemma: account
+ipa_us: /əˈkaʊnt/
+cefr: A2
+oxford3000: true
+forms: [accounts]
+senses:
+  - key: user
+    pos: noun
+    vi: tài khoản (email, mạng xã hội, ứng dụng)
+    en: an arrangement that lets you use a website, an app or an email service
+    collocations: [an email account, create an account, log in to your account]
+    example: I forgot the password for my old account.
+status: draft

@@ -1,0 +1,19 @@
+lemma: visit
+ipa_us: /ˈvɪzɪt/
+cefr: A1
+oxford3000: true
+forms: [visits, visited, visiting]
+senses:
+  - key: verb
+    pos: verb
+    vi: thăm, ghé thăm, tham quan
+    en: to go to see a person or a place
+    collocations: [visit a museum, visit my parents]
+    example: We visit our grandparents every Sunday.
+  - key: noun
+    pos: noun
+    vi: chuyến thăm, lần đến thăm
+    en: an occasion when you go to see a person or a place
+    collocations: [our next visit, a short visit]
+    example: This is my first visit to Japan.
+status: draft

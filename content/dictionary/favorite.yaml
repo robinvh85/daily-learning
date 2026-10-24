@@ -1,0 +1,12 @@
+lemma: favorite
+ipa_us: /ˈfeɪvərɪt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: favorite
+    pos: adjective
+    vi: yêu thích nhất, ưa thích
+    en: liked more than all the others
+    collocations: [my favorite food, a favorite place]
+    example: Summer is my favorite season.
+status: draft

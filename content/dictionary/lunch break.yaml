@@ -1,0 +1,14 @@
+lemma: lunch break
+ipa_us: /ˈlʌntʃ breɪk/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [lunch breaks]
+senses:
+  - key: lunch_break
+    pos: noun
+    vi: giờ nghỉ trưa
+    en: a short time in the middle of the working day when you stop to eat
+    collocations: [during my lunch break, a one-hour lunch break]
+    example: I often go for a walk during my lunch break.
+status: draft

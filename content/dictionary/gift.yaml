@@ -1,0 +1,13 @@
+lemma: gift
+ipa_us: /ɡɪft/
+cefr: A2
+oxford3000: true
+forms: [gifts]
+senses:
+  - key: gift
+    pos: noun
+    vi: quà, món quà
+    en: something that you give to someone, especially on a special day
+    collocations: [buy a gift, a birthday gift, a gift for someone]
+    example: This watch was a gift from my father.
+status: draft

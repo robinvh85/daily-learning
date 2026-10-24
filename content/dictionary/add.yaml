@@ -1,0 +1,13 @@
+lemma: add
+ipa_us: /æd/
+cefr: A1
+oxford3000: true
+forms: [adds, added, adding]
+senses:
+  - key: add
+    pos: verb
+    vi: thêm, cho thêm (vào)
+    en: to put something with something else
+    collocations: [add salt, add some water]
+    example: Add a little sugar to the tea.
+status: draft

@@ -1,0 +1,12 @@
+lemma: also
+ipa_us: /ˈɔːlsoʊ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: also
+    pos: adverb
+    vi: cũng, cũng như vậy
+    en: in addition; too
+    collocations: [also like, can also]
+    example: She speaks English, and she also speaks a little Japanese.
+status: draft

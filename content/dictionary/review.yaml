@@ -1,0 +1,13 @@
+lemma: review
+ipa_us: /rɪˈvjuː/
+cefr: A2
+oxford3000: true
+forms: [reviews]
+senses:
+  - key: review
+    pos: noun
+    vi: bài đánh giá, lời nhận xét (về sản phẩm, nhà hàng, phim…)
+    en: a report that gives an opinion about a product, a restaurant, a movie, etc.
+    collocations: [read reviews, write a review, good reviews]
+    example: The hotel has great reviews online.
+status: draft

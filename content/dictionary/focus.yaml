@@ -1,0 +1,13 @@
+lemma: focus
+ipa_us: /ˈfoʊkəs/
+cefr: A2
+oxford3000: true
+forms: [focuses, focused, focusing]
+senses:
+  - key: focus
+    pos: verb
+    vi: tập trung
+    en: to give all your attention to something
+    collocations: [focus on something, can’t focus, focus at work]
+    example: It’s hard to focus when the office is noisy.
+status: draft

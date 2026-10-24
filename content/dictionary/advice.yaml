@@ -1,0 +1,12 @@
+lemma: advice
+ipa_us: /ədˈvaɪs/
+cefr: A2
+oxford3000: true
+senses:
+  - key: advice
+    pos: noun
+    vi: lời khuyên
+    en: an opinion that you give someone about what they should do
+    collocations: [give advice, ask for advice, a piece of advice]
+    example: Can I ask you for some advice about my new job?
+status: draft

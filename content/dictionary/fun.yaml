@@ -1,0 +1,12 @@
+lemma: fun
+ipa_us: /fʌn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: fun
+    pos: noun
+    vi: niềm vui, sự vui vẻ; a lot of fun = rất vui
+    en: enjoyment or pleasure; something that gives you pleasure
+    collocations: [a lot of fun, have fun, just for fun]
+    example: The party was a lot of fun.
+status: draft

@@ -1,0 +1,13 @@
+lemma: feel free
+ipa_us: /ˌfiːl ˈfriː/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: feel_free
+    pos: phrase
+    vi: (feel free to…) cứ thoải mái, cứ tự nhiên (làm gì), đừng ngại
+    en: used to tell someone that they are allowed to do something
+    collocations: [feel free to ask, feel free to call me]
+    example: Feel free to call me if you need anything.
+status: draft

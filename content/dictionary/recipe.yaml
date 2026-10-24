@@ -1,0 +1,13 @@
+lemma: recipe
+ipa_us: /ˈresəpi/
+cefr: A2
+oxford3000: true
+forms: [recipes]
+senses:
+  - key: recipe
+    pos: noun
+    vi: công thức nấu ăn
+    en: a set of instructions that tells you how to cook something
+    collocations: [follow a recipe, a recipe for soup, try a new recipe]
+    example: This recipe is from my grandmother.
+status: draft

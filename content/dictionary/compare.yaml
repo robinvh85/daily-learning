@@ -1,0 +1,13 @@
+lemma: compare
+ipa_us: /kəmˈper/
+cefr: A2
+oxford3000: true
+forms: [compares, compared, comparing]
+senses:
+  - key: compare
+    pos: verb
+    vi: so sánh
+    en: to look at two or more things to see how they are the same or different
+    collocations: [compare prices, compare A with B]
+    example: Always compare prices before you buy a new phone.
+status: draft

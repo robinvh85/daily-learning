@@ -1,0 +1,14 @@
+lemma: get paid
+ipa_us: /ɡet ˈpeɪd/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [gets paid, got paid, getting paid, gotten paid]
+senses:
+  - key: get_paid
+    pos: phrase
+    vi: được trả lương, nhận lương
+    en: to receive money for your work
+    collocations: [get paid every month, get paid on Friday]
+    example: I get paid on the last day of the month.
+status: draft

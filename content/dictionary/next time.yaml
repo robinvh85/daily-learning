@@ -1,0 +1,13 @@
+lemma: next time
+ipa_us: /ˈnekst taɪm/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: next_time
+    pos: phrase
+    vi: lần sau, lần tới
+    en: on the next occasion
+    collocations: [see you next time, next time I go there]
+    example: Next time, let’s take a taxi.
+status: draft

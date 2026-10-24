@@ -1,0 +1,13 @@
+lemma: the rest
+ipa_us: /ðə ˈrest/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: the_rest
+    pos: noun
+    vi: phần còn lại; những người (cái) còn lại
+    en: the part or the people that remain
+    collocations: [the rest of the team, the rest of the day]
+    example: I ate half of the pizza and kept the rest for tomorrow.
+status: draft

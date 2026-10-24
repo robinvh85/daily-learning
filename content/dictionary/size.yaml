@@ -1,0 +1,13 @@
+lemma: size
+ipa_us: /saɪz/
+cefr: A1
+oxford3000: true
+forms: [sizes]
+senses:
+  - key: size
+    pos: noun
+    vi: cỡ, kích cỡ (quần áo, giày)
+    en: how big or small something is; one of the standard measurements for clothes
+    collocations: [the right size, one size bigger, what size]
+    example: Do you have these shoes in a bigger size?
+status: draft

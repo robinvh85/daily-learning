@@ -1,0 +1,12 @@
+lemma: quickly
+ipa_us: /ˈkwɪkli/
+cefr: A1
+oxford3000: true
+senses:
+  - key: quickly
+    pos: adverb
+    vi: nhanh, nhanh chóng
+    en: fast; in a short time
+    collocations: [more quickly, walk quickly]
+    example: She quickly finished her breakfast and left.
+status: draft

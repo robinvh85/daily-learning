@@ -1,0 +1,12 @@
+lemma: everyone
+ipa_us: /ˈevriwʌn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: everyone
+    pos: pronoun
+    vi: mọi người, ai cũng
+    en: every person
+    collocations: [everyone in the office, hello everyone]
+    example: Everyone in my family likes noodles.
+status: draft

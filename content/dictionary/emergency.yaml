@@ -1,0 +1,13 @@
+lemma: emergency
+ipa_us: /ɪˈmɝːdʒənsi/
+cefr: B1
+oxford3000: true
+forms: [emergencies]
+senses:
+  - key: emergency
+    pos: noun
+    vi: trường hợp khẩn cấp, việc gấp bất ngờ
+    en: a sudden, serious situation when you need to act quickly
+    collocations: [in an emergency, an emergency fund]
+    example: Keep some cash at home for emergencies.
+status: draft

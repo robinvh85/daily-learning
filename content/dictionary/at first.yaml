@@ -1,0 +1,13 @@
+lemma: at first
+ipa_us: /æt ˈfɝːst/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: at_first
+    pos: phrase
+    vi: lúc đầu, ban đầu
+    en: at the beginning, especially when things changed later
+    collocations: [hard at first, at first I thought…]
+    example: At first, I didn’t like the city, but now I love it.
+status: draft

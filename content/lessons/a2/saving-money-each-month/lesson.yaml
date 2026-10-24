@@ -1,0 +1,130 @@
+# Reading lesson (day 10). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: money
+title: Saving Money Each Month
+order: 10
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: Last year, I was often out of money at the end of the month.
+    text_vi: Năm ngoái, tôi thường hết sạch tiền vào cuối tháng.
+  - id: p1s2
+    paragraph: 1
+    text_en: I earned a good salary, but I didn’t know where it went.
+    text_vi: Lương của tôi khá, nhưng tôi không biết tiền đã đi đâu hết.
+  - id: p1s3
+    paragraph: 1
+    text_en: Sometimes I had to borrow money from my sister.
+    text_vi: Đôi khi tôi còn phải mượn tiền chị gái.
+  - id: p1s4
+    paragraph: 1
+    text_en: So I decided to make a budget.
+    text_vi: Vì vậy tôi quyết định lập ngân sách chi tiêu.
+  - id: p2s1
+    paragraph: 2
+    text_en: Now, when I get paid, I divide my money into three parts.
+    text_vi: Giờ đây, mỗi lần nhận lương, tôi chia tiền thành ba phần.
+  - id: p2s2
+    paragraph: 2
+    text_en: Half is for rent, bills, and food.
+    text_vi: Một nửa dành cho tiền nhà, các hóa đơn và tiền ăn.
+  - id: p2s3
+    paragraph: 2
+    text_en: Twenty percent goes into my savings account right away.
+    text_vi: Hai mươi phần trăm được chuyển ngay vào tài khoản tiết kiệm.
+  - id: p2s4
+    paragraph: 2
+    text_en: The rest is for other things, like clothes and going out with friends.
+    text_vi: Phần còn lại dành cho những thứ khác, như quần áo hay đi chơi với bạn bè.
+  - id: p3s1
+    paragraph: 3
+    text_en: I also write down everything I spend in an app on my phone.
+    text_vi: Tôi cũng ghi lại mọi khoản chi tiêu vào một ứng dụng trên điện thoại.
+  - id: p3s2
+    paragraph: 3
+    text_en: This helps me see where my money goes.
+    text_vi: Việc này giúp tôi thấy tiền của mình đi đâu.
+  - id: p3s3
+    paragraph: 3
+    text_en: I check the app every Sunday evening.
+    text_vi: Tối Chủ nhật nào tôi cũng xem lại ứng dụng này.
+  - id: p3s4
+    paragraph: 3
+    text_en: For example, I spent too much on coffee, so now I make it at home.
+    text_vi: Ví dụ, trước đây tôi tiêu quá nhiều tiền vào cà phê, nên giờ tôi tự pha ở nhà.
+  - id: p4s1
+    paragraph: 4
+    text_en: After one year, I have enough savings for an emergency.
+    text_vi: Sau một năm, tôi đã có đủ tiền tiết kiệm để phòng khi có việc khẩn cấp.
+  - id: p4s2
+    paragraph: 4
+    text_en: Next year, I’m going to save for a trip to Japan.
+    text_vi: Năm tới, tôi sẽ để dành tiền cho một chuyến đi Nhật.
+  - id: p4s3
+    paragraph: 4
+    text_en: Saving money isn’t always easy, but it makes me feel safe.
+    text_vi: Tiết kiệm tiền không phải lúc nào cũng dễ, nhưng nó giúp tôi thấy an tâm.
+
+focus_words: [earn, salary, budget, get paid, bill, savings, right away, write down, emergency]
+
+senses:
+  last: previous
+  be: linking
+  go: go
+  go#4: future # "I’m going to save"
+  to: infinitive
+  to#3: direction # "a trip to Japan"
+  make: create # "make a budget"
+  make#2: cook # "I make it at home"
+  make#3: cause # "it makes me feel safe"
+  into: change # "divide my money into three parts"
+  into#2: inside # "goes into my savings account"
+  rent: noun
+  for: purpose
+  like: similar
+  spend: money
+  in: in
+  on: place # "an app on my phone"
+  on#2: activity # "spent too much on coffee"
+  much: amount
+  one: number
+  have: own
+  next: following
+
+ignore: [Japan]
+
+questions:
+  - prompt: What was the writer’s problem last year?
+    options:
+      [The salary was very low, Money often ran out at the end of the month, The rent went up]
+    correct: 1
+    feedback_ok: 'Đúng: “I was often out of money at the end of the month.”'
+    feedback_wrong: Chưa đúng. Đọc lại đoạn 1. Lương của người viết là “a good salary”.
+    evidence: p1s1
+  - prompt: How much of the money goes into the savings account?
+    options: [Twenty percent, Half, The rest]
+    correct: 0
+    feedback_ok: 'Đúng: “Twenty percent goes into my savings account right away.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ ba của đoạn 2. Một nửa là cho tiền nhà, hóa đơn và tiền ăn.
+    evidence: p2s3
+  - prompt: In paragraph 2, “right away” means…
+    options: [at the end of the month, immediately, slowly over time]
+    correct: 1
+    feedback_ok: 'Đúng: “right away” = ngay lập tức, ngay khi nhận lương.'
+    feedback_wrong: Chưa đúng. Người viết chuyển tiền vào tài khoản tiết kiệm khi nào? Đọc câu đầu và câu thứ ba của đoạn 2.
+    evidence: p2s3
+  - prompt: Why does the writer make coffee at home now?
+    options: [Because the coffee shop closed, Because a friend asked, To spend less money]
+    correct: 2
+    feedback_ok: 'Đúng: người viết từng “spent too much on coffee”, nên giờ tự pha ở nhà để tiết kiệm.'
+    feedback_wrong: Chưa đúng. Đọc câu cuối của đoạn 3, chú ý từ “so”.
+    evidence: p3s4
+  - prompt: What is the writer’s plan for next year?
+    options: [Buy a new phone, Save for a trip to Japan, Pay for an emergency]
+    correct: 1
+    feedback_ok: 'Đúng: “Next year, I’m going to save for a trip to Japan.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 4.
+    evidence: p4s2

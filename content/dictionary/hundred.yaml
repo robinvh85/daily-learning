@@ -1,0 +1,13 @@
+lemma: hundred
+ipa_us: /ˈhʌndrəd/
+cefr: A1
+oxford3000: true
+forms: [hundreds]
+senses:
+  - key: hundred
+    pos: number
+    vi: trăm
+    en: the number 100
+    collocations: [a hundred, three hundred, hundreds of]
+    example: The concert hall has five hundred seats.
+status: draft

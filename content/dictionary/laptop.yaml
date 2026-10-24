@@ -1,0 +1,13 @@
+lemma: laptop
+ipa_us: /ˈlæptɑːp/
+cefr: A2
+oxford3000: true
+forms: [laptops]
+senses:
+  - key: laptop
+    pos: noun
+    vi: máy tính xách tay, laptop
+    en: a small computer that you can carry with you
+    collocations: [bring your laptop, a new laptop]
+    example: I usually work on my laptop in a café.
+status: draft

@@ -1,0 +1,12 @@
+lemma: free
+ipa_us: /friː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: no_cost
+    pos: adjective
+    vi: miễn phí
+    en: costing no money
+    collocations: [free delivery, free tickets, for free]
+    example: Children under five travel for free.
+status: draft

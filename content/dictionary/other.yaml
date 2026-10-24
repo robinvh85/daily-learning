@@ -1,0 +1,12 @@
+lemma: other
+ipa_us: /ˈʌðər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: other
+    pos: determiner
+    vi: khác
+    en: more of the same kind; different from the one already mentioned
+    collocations: [other people, other things, the other day]
+    example: Some students walk to school, and other students take the bus.
+status: draft

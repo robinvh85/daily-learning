@@ -1,0 +1,12 @@
+lemma: better
+ipa_us: /ˈbetər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: better
+    pos: adjective
+    vi: tốt hơn, hay hơn, ngon hơn
+    en: of a higher quality; more good or more well (comparative of “good” and “well”)
+    collocations: [much better, better than, feel better]
+    example: This phone is better than my old one.
+status: draft

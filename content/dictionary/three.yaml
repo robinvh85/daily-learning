@@ -1,0 +1,12 @@
+lemma: three
+ipa_us: /θriː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: three
+    pos: number
+    vi: ba (số 3)
+    en: the number 3
+    collocations: [three times, three days]
+    example: I have three brothers.
+status: draft

@@ -1,0 +1,19 @@
+lemma: like
+ipa_us: /laɪk/
+cefr: A1
+oxford3000: true
+forms: [likes, liked, liking]
+senses:
+  - key: enjoy
+    pos: verb
+    vi: thích
+    en: to find someone or something nice or enjoyable
+    collocations: [like something, like doing something]
+    example: Do you like spicy food?
+  - key: similar
+    pos: preposition
+    vi: giống, như; chẳng hạn như
+    en: similar to; for example
+    collocations: [look like, like this, things like…]
+    example: She sings like a professional singer.
+status: draft

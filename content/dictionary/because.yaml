@@ -1,0 +1,12 @@
+lemma: because
+ipa_us: /bɪˈkɔːz/
+cefr: A1
+oxford3000: true
+senses:
+  - key: because
+    pos: conjunction
+    vi: vì, bởi vì
+    en: used to give the reason for something
+    collocations: [because of, just because]
+    example: I stayed home because I was sick.
+status: draft

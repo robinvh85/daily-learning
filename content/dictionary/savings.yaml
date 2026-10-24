@@ -1,0 +1,12 @@
+lemma: savings
+ipa_us: /ˈseɪvɪŋz/
+cefr: B1
+oxford3000: true
+senses:
+  - key: savings
+    pos: noun
+    vi: tiền tiết kiệm, khoản để dành
+    en: money that you have saved, especially in a bank
+    collocations: [use your savings, have some savings, a savings account]
+    example: They used all their savings to buy a house.
+status: draft

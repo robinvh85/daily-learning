@@ -1,0 +1,13 @@
+lemma: delivery
+ipa_us: /dɪˈlɪvəri/
+cefr: B1
+oxford3000: true
+forms: [deliveries]
+senses:
+  - key: delivery
+    pos: noun
+    vi: (việc) giao hàng
+    en: the act of taking goods to the person who ordered them
+    collocations: [free delivery, fast delivery, home delivery]
+    example: Delivery takes two or three days.
+status: draft

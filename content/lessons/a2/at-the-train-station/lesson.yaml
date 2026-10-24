@@ -50,6 +50,8 @@ senses:
   one: pronoun
   at#1: time # "at 10:05" (#2 "at every station" keeps the first sense)
   take: time
+  stop: stop
+  leave: leave
 
 ignore: [Oxford]
 

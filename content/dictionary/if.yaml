@@ -1,0 +1,12 @@
+lemma: if
+ipa_us: /ɪf/
+cefr: A1
+oxford3000: true
+senses:
+  - key: if
+    pos: conjunction
+    vi: nếu
+    en: used to say that something can happen only when something else happens
+    collocations: [if you want, if possible]
+    example: If it rains tomorrow, we’ll stay home.
+status: draft

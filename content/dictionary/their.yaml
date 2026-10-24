@@ -1,0 +1,12 @@
+lemma: their
+ipa_us: /ðer/
+cefr: A1
+oxford3000: true
+senses:
+  - key: their
+    pos: determiner
+    vi: của họ, của chúng
+    en: belonging to the people or things already mentioned
+    collocations: [their names, their house]
+    example: My neighbors are selling their car.
+status: draft

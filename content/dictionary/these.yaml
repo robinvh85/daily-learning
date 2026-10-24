@@ -1,0 +1,12 @@
+lemma: these
+ipa_us: /ðiːz/
+cefr: A1
+oxford3000: true
+senses:
+  - key: these
+    pos: determiner
+    vi: này, những… này
+    en: plural of “this”
+    collocations: [these days, these shoes]
+    example: These apples are very sweet.
+status: draft

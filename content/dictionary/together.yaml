@@ -1,0 +1,12 @@
+lemma: together
+ipa_us: /təˈɡeðər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: together
+    pos: adverb
+    vi: cùng nhau, với nhau
+    en: with each other
+    collocations: [eat together, work together, live together]
+    example: My friends and I study together on Sundays.
+status: draft

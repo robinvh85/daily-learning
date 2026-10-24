@@ -1,0 +1,12 @@
+lemma: different
+ipa_us: /ˈdɪfərənt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: different
+    pos: adjective
+    vi: khác, khác biệt
+    en: not the same
+    collocations: [different from, very different]
+    example: My new school is very different from my old one.
+status: draft

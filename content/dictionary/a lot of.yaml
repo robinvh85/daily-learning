@@ -1,0 +1,14 @@
+lemma: a lot of
+ipa_us: /ə ˈlɑːt əv/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [lots of]
+senses:
+  - key: many
+    pos: determiner
+    vi: nhiều, rất nhiều
+    en: a large number or amount of
+    collocations: [a lot of people, a lot of work, a lot of fun]
+    example: There are a lot of cafés on this street.
+status: draft

@@ -1,0 +1,12 @@
+lemma: less
+ipa_us: /les/
+cefr: A2
+oxford3000: true
+senses:
+  - key: less
+    pos: determiner
+    vi: ít hơn
+    en: a smaller amount of something
+    collocations: [less than, less money, less time]
+    example: I want to spend less time on my phone.
+status: draft

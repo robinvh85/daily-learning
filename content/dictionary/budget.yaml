@@ -1,0 +1,13 @@
+lemma: budget
+ipa_us: /ˈbʌdʒɪt/
+cefr: B1
+oxford3000: true
+forms: [budgets]
+senses:
+  - key: budget
+    pos: noun
+    vi: ngân sách, kế hoạch chi tiêu
+    en: a plan of how much money you will spend and on what
+    collocations: [make a budget, a monthly budget, on a budget]
+    example: We have a small budget for our holiday this year.
+status: draft

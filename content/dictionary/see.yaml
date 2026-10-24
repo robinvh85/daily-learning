@@ -1,0 +1,13 @@
+lemma: see
+ipa_us: /siː/
+cefr: A1
+oxford3000: true
+forms: [sees, saw, seen, seeing]
+senses:
+  - key: see
+    pos: verb
+    vi: thấy, nhìn thấy
+    en: to notice or become aware of something using your eyes or your mind
+    collocations: [see the result, see a movie, I see]
+    example: Can you see the mountains from your window?
+status: draft

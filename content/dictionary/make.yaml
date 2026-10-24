@@ -1,0 +1,25 @@
+lemma: make
+ipa_us: /meɪk/
+cefr: A1
+oxford3000: true
+forms: [makes, made, making]
+senses:
+  - key: create
+    pos: verb
+    vi: làm, tạo ra; lập (danh sách, kế hoạch); mắc (lỗi)
+    en: to create or produce something; to do something such as a mistake or a change
+    collocations: [make a list, make a mistake, make a change]
+    example: Let’s make a plan for the weekend.
+  - key: cook
+    pos: verb
+    vi: nấu, làm (món ăn); pha (đồ uống)
+    en: to prepare food or a drink
+    collocations: [make dinner, make soup, make coffee]
+    example: My dad makes pancakes every Sunday.
+  - key: cause
+    pos: verb
+    vi: làm cho, khiến (ai cảm thấy thế nào, làm gì)
+    en: to cause someone to feel something or to do something
+    collocations: [make someone happy, make someone feel tired]
+    example: Sad movies always make me cry.
+status: draft

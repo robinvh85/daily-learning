@@ -1,0 +1,12 @@
+lemma: food
+ipa_us: /fuːd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: food
+    pos: noun
+    vi: đồ ăn, thức ăn, món ăn
+    en: things that people eat
+    collocations: [street food, healthy food, fast food]
+    example: The food at this restaurant is great.
+status: draft

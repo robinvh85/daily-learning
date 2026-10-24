@@ -1,0 +1,13 @@
+lemma: company
+ipa_us: /ˈkʌmpəni/
+cefr: A1
+oxford3000: true
+forms: [companies]
+senses:
+  - key: company
+    pos: noun
+    vi: công ty
+    en: a business that sells goods or services
+    collocations: [a small company, work for a company]
+    example: He works for a big phone company.
+status: draft

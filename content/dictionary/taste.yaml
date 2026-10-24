@@ -1,0 +1,13 @@
+lemma: taste
+ipa_us: /teɪst/
+cefr: A2
+oxford3000: true
+forms: [tastes, tasted, tasting]
+senses:
+  - key: taste
+    pos: verb
+    vi: có vị; taste good = ngon
+    en: to have a particular flavor
+    collocations: [taste good, taste better, taste sweet]
+    example: This soup tastes a little salty.
+status: draft

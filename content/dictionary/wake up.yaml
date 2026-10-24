@@ -1,0 +1,14 @@
+lemma: wake up
+ipa_us: /ˌweɪk ˈʌp/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [wakes up, woke up, waking up, woken up]
+senses:
+  - key: wake_up
+    pos: phrasal verb
+    vi: thức dậy, tỉnh giấc
+    en: to stop sleeping
+    collocations: [wake up early, wake up tired, wake up in the night]
+    example: I woke up at five because of the noise outside.
+status: draft

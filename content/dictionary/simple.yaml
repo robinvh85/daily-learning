@@ -1,0 +1,13 @@
+lemma: simple
+ipa_us: /ˈsɪmpəl/
+cefr: A1
+oxford3000: true
+forms: [simpler, simplest]
+senses:
+  - key: simple
+    pos: adjective
+    vi: đơn giản
+    en: easy to understand or do; not complicated
+    collocations: [a simple recipe, simple advice]
+    example: The instructions are short and simple.
+status: draft

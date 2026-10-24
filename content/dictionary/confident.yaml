@@ -1,0 +1,12 @@
+lemma: confident
+ipa_us: /ˈkɑːnfɪdənt/
+cefr: B1
+oxford3000: true
+senses:
+  - key: confident
+    pos: adjective
+    vi: tự tin
+    en: feeling sure about yourself and your abilities
+    collocations: [feel confident, confident about something]
+    example: After a month of practice, she felt confident on stage.
+status: draft

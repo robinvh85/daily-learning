@@ -1,0 +1,12 @@
+lemma: air
+ipa_us: /er/
+cefr: A1
+oxford3000: true
+senses:
+  - key: air
+    pos: noun
+    vi: không khí
+    en: the gas around us that we breathe
+    collocations: [fresh air, cool air]
+    example: The air in the city is not very clean.
+status: draft

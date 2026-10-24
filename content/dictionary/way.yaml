@@ -1,0 +1,13 @@
+lemma: way
+ipa_us: /weɪ/
+cefr: A1
+oxford3000: true
+forms: [ways]
+senses:
+  - key: method
+    pos: noun
+    vi: cách, cách thức
+    en: a method or style of doing something
+    collocations: [a good way to…, the best way, in the same way]
+    example: Walking is a cheap way to stay healthy.
+status: draft

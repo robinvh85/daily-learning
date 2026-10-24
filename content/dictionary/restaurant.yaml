@@ -1,0 +1,13 @@
+lemma: restaurant
+ipa_us: /ˈrestərɑːnt/
+cefr: A1
+oxford3000: true
+forms: [restaurants]
+senses:
+  - key: restaurant
+    pos: noun
+    vi: nhà hàng, quán ăn
+    en: a place where you can buy and eat a meal
+    collocations: [eat at a restaurant, a Vietnamese restaurant]
+    example: There is a good Thai restaurant near my office.
+status: draft

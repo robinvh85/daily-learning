@@ -1,0 +1,13 @@
+lemma: free time
+ipa_us: /ˌfriː ˈtaɪm/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: free_time
+    pos: noun
+    vi: thời gian rảnh
+    en: time when you are not working or studying and can do what you like
+    collocations: [in my free time, have more free time]
+    example: What do you do in your free time?
+status: draft

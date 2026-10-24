@@ -1,0 +1,12 @@
+lemma: hi
+ipa_us: /haɪ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: hi
+    pos: exclamation
+    vi: chào, xin chào (thân mật)
+    en: an informal way of saying hello
+    collocations: [hi there, say hi to someone]
+    example: Hi, Tom! How are you?
+status: draft

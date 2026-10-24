@@ -16,4 +16,10 @@ senses:
     en: used to say where someone or something is
     collocations: [be at home, be next to something]
     example: It is next to the bakery and across from the bus stop.
+  - key: auxiliary
+    pos: verb
+    vi: (trợ động từ; be + V-ing = đang làm gì / sắp làm gì; thường không dịch)
+    en: used with the -ing form of a verb for actions in progress or plans
+    collocations: [be doing something, be going to]
+    example: We are waiting for the bus.
 status: draft

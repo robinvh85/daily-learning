@@ -1,0 +1,13 @@
+lemma: need
+ipa_us: /niːd/
+cefr: A1
+oxford3000: true
+forms: [needs, needed, needing]
+senses:
+  - key: need
+    pos: verb
+    vi: cần
+    en: to have to have something; to want something because it is necessary
+    collocations: [need help, need to do something, need a new phone]
+    example: I need a new pair of shoes.
+status: draft

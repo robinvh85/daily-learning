@@ -10,4 +10,10 @@ senses:
     en: to move or travel to a place
     collocations: [go there, go to work, go home]
     example: I usually go there on Saturday mornings.
+  - key: future
+    pos: verb
+    vi: (be going to + động từ) sẽ, định (làm gì)
+    en: used in “be going to” to talk about plans or things that will happen
+    collocations: [be going to do something]
+    example: It’s going to be hot tomorrow.
 status: draft

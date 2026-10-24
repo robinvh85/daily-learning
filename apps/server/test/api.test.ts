@@ -25,17 +25,17 @@ describe('GET /api/lessons', () => {
     const res = await t.app.inject({ method: 'GET', url: '/api/lessons' });
     expect(res.statusCode).toBe(200);
     const { lessons } = res.json<LessonListResponse>();
-    expect(lessons.map((l) => l.slug).sort()).toEqual([
-      'a-new-coffee-shop',
-      'at-the-train-station',
-    ]);
+    expect(lessons.map((l) => l.slug)).toEqual(
+      expect.arrayContaining(['a-new-coffee-shop', 'at-the-train-station']),
+    );
   });
 
   it('filters by kind and level', async () => {
     const get = async (qs: string) =>
       (await t.app.inject({ method: 'GET', url: `/api/lessons?${qs}` })).json<LessonListResponse>()
         .lessons;
-    expect((await get('kind=listening')).map((l) => l.slug)).toEqual(['at-the-train-station']);
+    expect((await get('kind=listening')).map((l) => l.slug)).toContain('at-the-train-station');
+    expect((await get('kind=listening')).map((l) => l.slug)).not.toContain('a-new-coffee-shop');
     expect(await get('level=B1')).toEqual([]);
     expect((await get('kind=reading&level=A2'))[0]).toMatchObject({
       slug: 'a-new-coffee-shop',

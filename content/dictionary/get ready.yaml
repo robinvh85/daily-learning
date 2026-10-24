@@ -1,0 +1,14 @@
+lemma: get ready
+ipa_us: /ɡet ˈredi/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [gets ready, got ready, getting ready, gotten ready]
+senses:
+  - key: get_ready
+    pos: phrase
+    vi: chuẩn bị, sửa soạn (cho việc gì)
+    en: to prepare yourself or things for something
+    collocations: [get ready for work, get ready for school]
+    example: The kids are getting ready for school.
+status: draft

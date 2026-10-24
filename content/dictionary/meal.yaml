@@ -1,0 +1,13 @@
+lemma: meal
+ipa_us: /miːl/
+cefr: A1
+oxford3000: true
+forms: [meals]
+senses:
+  - key: meal
+    pos: noun
+    vi: bữa ăn
+    en: the food that you eat at one time, such as breakfast or dinner
+    collocations: [a big meal, during meals, a meal at a restaurant]
+    example: We have three meals a day.
+status: draft

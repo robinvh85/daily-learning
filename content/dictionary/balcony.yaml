@@ -1,0 +1,13 @@
+lemma: balcony
+ipa_us: /ˈbælkəni/
+cefr: B1
+oxford3000: false
+forms: [balconies]
+senses:
+  - key: balcony
+    pos: noun
+    vi: ban công
+    en: a small area outside an upper floor of a building, where you can stand or sit
+    collocations: [on the balcony, a small balcony]
+    example: We like to eat breakfast on the balcony.
+status: draft

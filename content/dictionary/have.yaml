@@ -1,0 +1,25 @@
+lemma: have
+ipa_us: /hæv/
+cefr: A1
+oxford3000: true
+forms: [has, had, having]
+senses:
+  - key: own
+    pos: verb
+    vi: có
+    en: to own something, or to have something as part of you or your life
+    collocations: [have a car, have time, have a question]
+    example: Do you have a pen I can use?
+  - key: eat_drink
+    pos: verb
+    vi: ăn, uống (have lunch, have coffee)
+    en: to eat or drink something
+    collocations: [have lunch, have coffee, have dinner]
+    example: Let’s have lunch together tomorrow.
+  - key: hold
+    pos: verb
+    vi: tổ chức, có (tiệc, cuộc họp)
+    en: to organize or hold an event
+    collocations: [have a party, have a meeting]
+    example: We’re having a small party on Friday.
+status: draft

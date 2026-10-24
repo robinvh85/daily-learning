@@ -1,0 +1,12 @@
+lemma: surprised
+ipa_us: /sərˈpraɪzd/
+cefr: A2
+oxford3000: true
+senses:
+  - key: surprised
+    pos: adjective
+    vi: ngạc nhiên, bất ngờ
+    en: feeling that something is unexpected
+    collocations: [surprised by something, surprised to see…, really surprised]
+    example: I was surprised to see my old teacher at the party.
+status: draft

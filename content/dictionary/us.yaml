@@ -1,0 +1,12 @@
+lemma: us
+ipa_us: /ʌs/
+cefr: A1
+oxford3000: true
+senses:
+  - key: us
+    pos: pronoun
+    vi: chúng tôi, chúng ta (làm tân ngữ)
+    en: used as the object of a verb or preposition for the speaker and other people
+    collocations: [join us, some of us, with us]
+    example: Can you take a photo of us?
+status: draft

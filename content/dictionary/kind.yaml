@@ -1,0 +1,13 @@
+lemma: kind
+ipa_us: /kaɪnd/
+cefr: A2
+oxford3000: true
+forms: [kinder, kindest]
+senses:
+  - key: kind
+    pos: adjective
+    vi: tử tế, tốt bụng
+    en: friendly and caring towards other people
+    collocations: [kind to someone, a kind person]
+    example: It was very kind of you to help me.
+status: draft

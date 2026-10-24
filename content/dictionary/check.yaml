@@ -1,0 +1,13 @@
+lemma: check
+ipa_us: /tʃek/
+cefr: A1
+oxford3000: true
+forms: [checks, checked, checking]
+senses:
+  - key: check
+    pos: verb
+    vi: kiểm tra, xem (lại)
+    en: to look at something to make sure it is correct or to find information
+    collocations: [check the price, check your email, check messages]
+    example: Please check your answers before you finish.
+status: draft

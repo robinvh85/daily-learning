@@ -1,0 +1,12 @@
+lemma: perfect
+ipa_us: /ˈpɝːfɪkt/
+cefr: A2
+oxford3000: true
+senses:
+  - key: perfect
+    pos: adjective
+    vi: hoàn hảo, hoàn toàn đúng ý
+    en: having no mistakes or problems; as good as it can be
+    collocations: [not perfect, a perfect day, perfect for something]
+    example: The weather was perfect for a picnic.
+status: draft

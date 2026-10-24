@@ -1,0 +1,13 @@
+lemma: city
+ipa_us: /ˈsɪti/
+cefr: A1
+oxford3000: true
+forms: [cities]
+senses:
+  - key: city
+    pos: noun
+    vi: thành phố
+    en: a large and important town
+    collocations: [in the city, a big city, city life]
+    example: Hanoi is a very old city.
+status: draft

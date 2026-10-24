@@ -1,0 +1,13 @@
+lemma: mountain
+ipa_us: /ˈmaʊntən/
+cefr: A1
+oxford3000: true
+forms: [mountains]
+senses:
+  - key: mountain
+    pos: noun
+    vi: núi; (in the mountains) vùng núi
+    en: a very high hill
+    collocations: [in the mountains, climb a mountain]
+    example: We spent our holiday in the mountains.
+status: draft

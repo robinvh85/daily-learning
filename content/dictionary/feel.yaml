@@ -1,0 +1,13 @@
+lemma: feel
+ipa_us: /fiːl/
+cefr: A1
+oxford3000: true
+forms: [feels, felt, feeling]
+senses:
+  - key: feel
+    pos: verb
+    vi: cảm thấy, thấy
+    en: to have a particular emotion or physical feeling
+    collocations: [feel tired, feel better, feel bad about something]
+    example: I feel much better after a hot shower.
+status: draft

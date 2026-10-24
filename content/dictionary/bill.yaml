@@ -1,0 +1,13 @@
+lemma: bill
+ipa_us: /bɪl/
+cefr: A2
+oxford3000: true
+forms: [bills]
+senses:
+  - key: bill
+    pos: noun
+    vi: hóa đơn (tiền điện, nước, internet…)
+    en: a paper or message that shows how much money you must pay for something
+    collocations: [pay the bills, an electricity bill, a phone bill]
+    example: Our electricity bill was very high in summer.
+status: draft

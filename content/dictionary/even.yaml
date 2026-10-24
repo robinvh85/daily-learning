@@ -1,0 +1,12 @@
+lemma: even
+ipa_us: /ˈiːvən/
+cefr: A2
+oxford3000: true
+senses:
+  - key: even
+    pos: adverb
+    vi: ngay cả, thậm chí, kể cả
+    en: used to say that something is surprising or more than expected
+    collocations: [even on weekends, even now]
+    example: He works hard, even on Sundays.
+status: draft

@@ -1,0 +1,18 @@
+lemma: finally
+ipa_us: /ˈfaɪnəli/
+cefr: A2
+oxford3000: true
+senses:
+  - key: lastly
+    pos: adverb
+    vi: cuối cùng (khi kể điều cuối trong danh sách)
+    en: used to introduce the last point in a list
+    collocations: ['first…, second…, finally…']
+    example: Finally, don’t forget to turn off the lights.
+  - key: at_last
+    pos: adverb
+    vi: cuối cùng thì, rốt cuộc (sau một thời gian chờ đợi)
+    en: after a long time or after waiting
+    collocations: [finally home, finally finish]
+    example: After two hours in traffic, we finally arrived.
+status: draft

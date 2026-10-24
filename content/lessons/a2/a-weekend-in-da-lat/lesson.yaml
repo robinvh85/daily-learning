@@ -1,0 +1,128 @@
+# Reading lesson (day 6). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: travel
+title: A Weekend in Da Lat
+order: 6
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: Last weekend, my sister and I traveled to Da Lat.
+    text_vi: Cuối tuần trước, tôi và chị gái đi Đà Lạt.
+  - id: p1s2
+    paragraph: 1
+    text_en: It is a city in the mountains, about three hundred kilometers from Ho Chi Minh City.
+    text_vi: Đó là một thành phố trên vùng núi, cách TP. Hồ Chí Minh khoảng ba trăm cây số.
+  - id: p1s3
+    paragraph: 1
+    text_en: We went by bus, and the trip took about seven hours.
+    text_vi: Chúng tôi đi xe khách, chuyến đi mất khoảng bảy tiếng.
+  - id: p2s1
+    paragraph: 2
+    text_en: The weather was cool and fresh, very different from the heat in the city.
+    text_vi: Thời tiết mát mẻ, trong lành, khác hẳn cái nóng ở thành phố.
+  - id: p2s2
+    paragraph: 2
+    text_en: We stayed at a small guesthouse with a beautiful view of the hills.
+    text_vi: Chúng tôi ở một nhà nghỉ nhỏ có tầm nhìn rất đẹp ra những ngọn đồi.
+  - id: p2s3
+    paragraph: 2
+    text_en: On our first morning, we had coffee on the balcony and enjoyed the cool air.
+    text_vi: Buổi sáng đầu tiên, chúng tôi uống cà phê ngoài ban công và tận hưởng không khí mát lạnh.
+  - id: p3s1
+    paragraph: 3
+    text_en: On Saturday, we rented a motorbike and explored the countryside.
+    text_vi: Thứ Bảy, chúng tôi thuê xe máy đi khám phá vùng quê xung quanh.
+  - id: p3s2
+    paragraph: 3
+    text_en: We visited a flower farm and tried some local coffee.
+    text_vi: Chúng tôi ghé thăm một vườn hoa và uống thử cà phê địa phương.
+  - id: p3s3
+    paragraph: 3
+    text_en: In the evening, we walked around the night market and ate street food.
+    text_vi: Buổi tối, chúng tôi dạo quanh chợ đêm và ăn đồ ăn đường phố.
+  - id: p3s4
+    paragraph: 3
+    text_en: It was busy and noisy, but a lot of fun.
+    text_vi: Chợ đông và ồn ào, nhưng rất vui.
+  - id: p4s1
+    paragraph: 4
+    text_en: On Sunday morning, it rained, so we stayed inside and played cards.
+    text_vi: Sáng Chủ nhật trời mưa, nên chúng tôi ở trong phòng chơi bài.
+  - id: p4s2
+    paragraph: 4
+    text_en: In the afternoon, we went back home by bus.
+    text_vi: Buổi chiều, chúng tôi đi xe khách về nhà.
+  - id: p4s3
+    paragraph: 4
+    text_en: The trip was short, but it was exactly what we needed.
+    text_vi: Chuyến đi tuy ngắn nhưng đúng là điều chúng tôi cần.
+  - id: p4s4
+    paragraph: 4
+    text_en: We are already planning our next visit.
+    text_vi: Chúng tôi đã lên kế hoạch cho chuyến đi lần sau rồi.
+
+focus_words: [trip, weather, stay, view, rent, explore, countryside, local, already]
+
+senses:
+  last: previous
+  travel: verb
+  to: direction
+  be: linking
+  be#6: auxiliary # "We are already planning"
+  in: in
+  in#3: time # "In the evening"
+  in#4: time # "In the afternoon"
+  about: approximately
+  go: go
+  by: means
+  take: time
+  fresh: clean_air
+  stay: lodge
+  stay#2: remain # "we stayed inside"
+  at: place
+  on: day
+  on#2: place # "on the balcony"
+  first: first
+  have: eat_drink
+  rent: verb
+  visit: verb
+  visit#2: noun # "our next visit"
+  plan: verb
+  next: following
+
+ignore: [Da Lat, Ho Chi Minh City]
+
+questions:
+  - prompt: How did the writer and her sister travel to Da Lat?
+    options: [By plane, By motorbike, By bus]
+    correct: 2
+    feedback_ok: 'Đúng: “We went by bus, and the trip took about seven hours.”'
+    feedback_wrong: Chưa đúng. Đọc lại câu cuối của đoạn 1. Xe máy là xe họ thuê khi đã ở Đà Lạt.
+    evidence: p1s3
+  - prompt: What was the weather like in Da Lat?
+    options: [Cool and fresh, Hot like the city, Rainy all weekend]
+    correct: 0
+    feedback_ok: 'Đúng: “The weather was cool and fresh…”'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 2.
+    evidence: p2s1
+  - prompt: What did they do on Sunday morning?
+    options:
+      [
+        They explored the countryside,
+        They went to the night market,
+        They stayed inside and played cards,
+      ]
+    correct: 2
+    feedback_ok: 'Đúng: “On Sunday morning, it rained, so we stayed inside and played cards.”'
+    feedback_wrong: Chưa đúng. Khám phá vùng quê và đi chợ đêm là việc của ngày thứ Bảy. Đọc câu đầu của đoạn 4.
+    evidence: p4s1
+  - prompt: How does the writer feel about the trip?
+    options:
+      [It was too short to enjoy, They loved it and want to go again, They didn’t like the rain]
+    correct: 1
+    feedback_ok: 'Đúng: “it was exactly what we needed” và họ “already planning our next visit”.'
+    feedback_wrong: Chưa đúng. Đọc hai câu cuối của bài.
+    evidence: p4s4

@@ -45,10 +45,11 @@ describe('repository content', () => {
   it('validates without errors or warnings', () => {
     const bundle = loadContent(REAL_CONTENT);
     expect(bundle.issues).toEqual([]);
-    expect(bundle.lessons.map((l) => l.slug).sort()).toEqual([
-      'a-new-coffee-shop',
-      'at-the-train-station',
-    ]);
+    expect(bundle.lessons.map((l) => l.slug)).toEqual(
+      expect.arrayContaining(['a-new-coffee-shop', 'at-the-train-station']),
+    );
+    // Every lesson in the daily plan exists (unknown slugs would be issues above).
+    expect(bundle.dailyPlan?.days.length).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -63,7 +64,9 @@ describe('syncContent', () => {
     // Context senses from lesson.yaml.
     expect(
       q(`select t.surface, ws.key from lesson_tokens t join word_senses ws on ws.id = t.sense_id
-         join words w on w.id = t.word_id where w.lemma in ('run', 'for') order by t.lesson_id, t.segment_id, t.idx`),
+         join words w on w.id = t.word_id join lessons l on l.id = t.lesson_id
+         where w.lemma in ('run', 'for') and l.slug in ('a-new-coffee-shop', 'at-the-train-station')
+         order by t.lesson_id, t.segment_id, t.idx`),
     ).toEqual([
       { surface: 'for', key: 'duration' },
       { surface: 'run', key: 'manage' },
@@ -119,14 +122,17 @@ describe('syncContent', () => {
     // Dictionary entries only used by the removed lesson are still valid files, so they stay.
     expect(syncContent({ contentDir: join(tmp, 'content'), db }).ok).toBe(true);
     expect(db.$client.prepare(`select id from words where lemma = 'run'`).get()).toEqual(runId);
-    expect(db.$client.prepare('select slug from lessons').all()).toEqual([
-      { slug: 'a-new-coffee-shop' },
-    ]);
+    const slugs = (db.$client.prepare('select slug from lessons').all() as { slug: string }[]).map(
+      (r) => r.slug,
+    );
+    expect(slugs).toContain('a-new-coffee-shop');
+    expect(slugs).not.toContain('at-the-train-station');
     expect(db.$client.prepare('select count(*) n from dictation_items').get()).toEqual({ n: 0 });
   });
 
   it('refuses to delete a dictionary entry that a user saved', () => {
     syncContent({ contentDir: join(tmp, 'content'), db });
+    const lessonCount = db.$client.prepare('select count(*) n from lessons').get();
     db.$client.exec(`insert into users (id) values (1);
       insert into user_words (user_id, word_id) select 1, id from words where lemma = 'oh'`);
     rmSync(join(tmp, 'content/lessons/a2/at-the-train-station'), { recursive: true });
@@ -141,7 +147,7 @@ describe('syncContent', () => {
       /cannot remove dictionary entries that a user has saved: oh/,
     );
     // The transaction was rolled back.
-    expect(db.$client.prepare('select count(*) n from lessons').get()).toEqual({ n: 2 });
+    expect(db.$client.prepare('select count(*) n from lessons').get()).toEqual(lessonCount);
   });
 
   it('dry-run reports a word missing from the dictionary and writes nothing', () => {

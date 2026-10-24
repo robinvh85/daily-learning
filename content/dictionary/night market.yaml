@@ -1,0 +1,14 @@
+lemma: night market
+ipa_us: /ˈnaɪt ˌmɑːrkɪt/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [night markets]
+senses:
+  - key: night_market
+    pos: noun
+    vi: chợ đêm
+    en: an outdoor market that is open in the evening and at night
+    collocations: [go to the night market]
+    example: You can buy cheap clothes at the night market.
+status: draft

@@ -1,0 +1,13 @@
+lemma: share
+ipa_us: /ʃer/
+cefr: A2
+oxford3000: true
+forms: [shares, shared, sharing]
+senses:
+  - key: share
+    pos: verb
+    vi: chia sẻ; dùng chung
+    en: to tell other people about something; to have or use something with other people
+    collocations: [share ideas, share a room, share photos]
+    example: My brother and I shared a bedroom when we were kids.
+status: draft

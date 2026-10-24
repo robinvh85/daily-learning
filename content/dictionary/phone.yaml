@@ -1,0 +1,13 @@
+lemma: phone
+ipa_us: /foʊn/
+cefr: A1
+oxford3000: true
+forms: [phones]
+senses:
+  - key: phone
+    pos: noun
+    vi: điện thoại
+    en: a device that you use to talk to people, send messages and use apps
+    collocations: [my phone, on the phone, turn off your phone]
+    example: Can I borrow your phone for a minute?
+status: draft

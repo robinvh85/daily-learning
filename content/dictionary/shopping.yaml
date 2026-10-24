@@ -1,0 +1,12 @@
+lemma: shopping
+ipa_us: /ˈʃɑːpɪŋ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: shopping
+    pos: noun
+    vi: (việc) mua sắm, đi chợ
+    en: the activity of going to shops or websites to buy things
+    collocations: [go shopping, do the shopping, shopping online]
+    example: Let’s go shopping on Saturday.
+status: draft

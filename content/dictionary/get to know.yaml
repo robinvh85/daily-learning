@@ -1,0 +1,14 @@
+lemma: get to know
+ipa_us: /ɡet tə ˈnoʊ/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [gets to know, got to know, getting to know, gotten to know]
+senses:
+  - key: get_to_know
+    pos: phrase
+    vi: làm quen với, dần hiểu (ai)
+    en: to spend time with someone so that you learn more about them
+    collocations: [get to know each other, get to know someone better]
+    example: I got to know my neighbors at a street party.
+status: draft

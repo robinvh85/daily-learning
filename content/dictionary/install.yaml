@@ -1,0 +1,13 @@
+lemma: install
+ipa_us: /ɪnˈstɔːl/
+cefr: B1
+oxford3000: true
+forms: [installs, installed, installing]
+senses:
+  - key: install
+    pos: verb
+    vi: cài đặt (ứng dụng, phần mềm); lắp đặt
+    en: to put a new app or program on a computer or phone; to put a machine in place
+    collocations: [install an app, install a program]
+    example: You need to install the bank’s app first.
+status: draft

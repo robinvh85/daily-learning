@@ -1,0 +1,13 @@
+lemma: ride
+ipa_us: /raɪd/
+cefr: A1
+oxford3000: true
+forms: [rides, rode, ridden, riding]
+senses:
+  - key: ride
+    pos: verb
+    vi: đi, đạp (xe đạp), lái (xe máy), cưỡi (ngựa)
+    en: to sit on a bicycle, motorbike or horse and control it as it moves
+    collocations: [ride a bike, ride a motorbike, ride to work]
+    example: I ride my bike to work when the weather is good.
+status: draft

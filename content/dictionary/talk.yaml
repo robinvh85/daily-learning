@@ -1,0 +1,13 @@
+lemma: talk
+ipa_us: /tɔːk/
+cefr: A1
+oxford3000: true
+forms: [talks, talked, talking]
+senses:
+  - key: talk
+    pos: verb
+    vi: nói chuyện, trò chuyện
+    en: to speak to someone; to have a conversation
+    collocations: [talk with friends, talk to someone, talk about something]
+    example: We talked for hours about our trip.
+status: draft

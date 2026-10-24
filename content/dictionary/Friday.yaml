@@ -1,0 +1,13 @@
+lemma: Friday
+ipa_us: /ˈfraɪdeɪ/
+cefr: A1
+oxford3000: true
+forms: [Fridays]
+senses:
+  - key: friday
+    pos: noun
+    vi: thứ Sáu
+    en: the day of the week after Thursday and before Saturday
+    collocations: [on Friday, Friday evening, every Friday]
+    example: We often eat out on Friday nights.
+status: draft

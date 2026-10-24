@@ -1,0 +1,14 @@
+lemma: put in
+ipa_us: /pʊt ˈɪn/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [puts in, putting in]
+senses:
+  - key: put_in
+    pos: phrasal verb
+    vi: cho vào, bỏ vào
+    en: to add something to food or to put something inside something else
+    collocations: [put in some salt, put in too much sugar]
+    example: Don’t put in too much sugar.
+status: draft

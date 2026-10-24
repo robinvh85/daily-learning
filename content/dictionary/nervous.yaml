@@ -1,0 +1,12 @@
+lemma: nervous
+ipa_us: /ˈnɝːvəs/
+cefr: A2
+oxford3000: true
+senses:
+  - key: nervous
+    pos: adjective
+    vi: hồi hộp, lo lắng, bồn chồn
+    en: a little afraid or worried about something that is going to happen
+    collocations: [feel nervous, nervous about something, a little nervous]
+    example: I always feel nervous before a job interview.
+status: draft

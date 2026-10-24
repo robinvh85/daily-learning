@@ -16,4 +16,10 @@ senses:
     en: to need a particular amount of time
     collocations: [take fifty minutes, how long does it take]
     example: The 10:15 only takes fifty minutes.
+  - key: transport
+    pos: verb
+    vi: đi (xe buýt, tàu, taxi…)
+    en: to use a bus, train, taxi, etc. to travel somewhere
+    collocations: [take the bus, take a taxi, take the train]
+    example: I usually take the train to work.
 status: draft

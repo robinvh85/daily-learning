@@ -1,0 +1,12 @@
+lemma: luckily
+ipa_us: /ˈlʌkɪli/
+cefr: A2
+oxford3000: true
+senses:
+  - key: luckily
+    pos: adverb
+    vi: may mà, may mắn là
+    en: used to say that something good happens by chance
+    collocations: [luckily for me]
+    example: Luckily, it stopped raining before the game.
+status: draft

@@ -1,0 +1,12 @@
+lemma: than
+ipa_us: /ðæn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: than
+    pos: preposition
+    vi: hơn (dùng khi so sánh)
+    en: used to compare two people or things
+    collocations: [better than, more than, less than]
+    example: My brother is taller than me.
+status: draft

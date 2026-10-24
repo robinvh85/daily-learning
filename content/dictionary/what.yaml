@@ -1,0 +1,12 @@
+lemma: what
+ipa_us: /wʌt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: what
+    pos: pronoun
+    vi: cái gì; điều (mà), cái (mà)
+    en: used to ask about something; the thing or things that
+    collocations: [what we needed, what I want]
+    example: This is exactly what I wanted.
+status: draft

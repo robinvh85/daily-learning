@@ -1,0 +1,12 @@
+lemma: home
+ipa_us: /hoʊm/
+cefr: A1
+oxford3000: true
+senses:
+  - key: adverb
+    pos: adverb
+    vi: về nhà; ở nhà
+    en: to or at the place where you live
+    collocations: [go home, get home, stay home]
+    example: I’m tired. Let’s go home.
+status: draft

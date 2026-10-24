@@ -1,0 +1,18 @@
+lemma: into
+ipa_us: /ˈɪntuː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: change
+    pos: preposition
+    vi: thành (cắt, chia… thành)
+    en: used to show the result of cutting or dividing something
+    collocations: [cut into pieces, divide into parts]
+    example: She cut the cake into eight pieces.
+  - key: inside
+    pos: preposition
+    vi: vào, vào trong
+    en: to a position inside something
+    collocations: [go into, put something into]
+    example: He put the money into his wallet.
+status: draft

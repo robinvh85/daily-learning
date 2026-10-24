@@ -1,0 +1,14 @@
+lemma: ask for
+ipa_us: /ˈæsk fɔːr/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [asks for, asked for, asking for]
+senses:
+  - key: ask_for
+    pos: phrasal verb
+    vi: xin, hỏi xin, đề nghị (được cái gì)
+    en: to say that you want someone to give you something
+    collocations: [ask for help, ask for the bill, ask for more]
+    example: If you need anything, just ask for it.
+status: draft

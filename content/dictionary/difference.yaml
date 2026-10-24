@@ -1,0 +1,13 @@
+lemma: difference
+ipa_us: /ˈdɪfərəns/
+cefr: A2
+oxford3000: true
+forms: [differences]
+senses:
+  - key: difference
+    pos: noun
+    vi: sự khác biệt; make a difference = tạo ra thay đổi, có tác dụng
+    en: the way in which things are not the same; (make a difference) to have a good effect
+    collocations: [make a difference, a big difference, the difference between A and B]
+    example: A good teacher can make a big difference in a child’s life.
+status: draft

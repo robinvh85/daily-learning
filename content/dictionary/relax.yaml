@@ -1,0 +1,13 @@
+lemma: relax
+ipa_us: /rɪˈlæks/
+cefr: A2
+oxford3000: true
+forms: [relaxes, relaxed, relaxing]
+senses:
+  - key: relax
+    pos: verb
+    vi: thư giãn, nghỉ ngơi
+    en: to rest and stop worrying or working
+    collocations: [relax at home, relax after work]
+    example: I like to relax with a book on Sunday afternoons.
+status: draft

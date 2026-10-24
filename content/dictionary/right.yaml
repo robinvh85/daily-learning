@@ -1,0 +1,12 @@
+lemma: right
+ipa_us: /raɪt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: correct
+    pos: adjective
+    vi: đúng, phù hợp
+    en: correct, or the most suitable
+    collocations: [the right size, the right answer, the right time]
+    example: Is this the right bus for the airport?
+status: draft

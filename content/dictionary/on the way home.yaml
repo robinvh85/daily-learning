@@ -1,0 +1,13 @@
+lemma: on the way home
+ipa_us: /ɑːn ðə ˌweɪ ˈhoʊm/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: on_the_way_home
+    pos: phrase
+    vi: trên đường về nhà
+    en: while you are traveling back to your home
+    collocations: [stop somewhere on the way home, buy something on the way home]
+    example: Can you get some bread on the way home?
+status: draft

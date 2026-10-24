@@ -1,0 +1,13 @@
+lemma: hard
+ipa_us: /hɑːrd/
+cefr: A1
+oxford3000: true
+forms: [harder, hardest]
+senses:
+  - key: difficult
+    pos: adjective
+    vi: khó, khó khăn, vất vả
+    en: difficult to do or understand
+    collocations: [hard work, a hard question, hard at first]
+    example: Learning a new language is hard but fun.
+status: draft

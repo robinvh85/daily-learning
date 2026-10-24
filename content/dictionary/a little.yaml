@@ -1,0 +1,19 @@
+lemma: a little
+ipa_us: /ə ˈlɪtəl/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: amount
+    pos: determiner
+    vi: một chút, một ít
+    en: a small amount of something
+    collocations: [a little sugar, a little time]
+    example: Can I have a little more water?
+  - key: slightly
+    pos: adverb
+    vi: hơi, một chút
+    en: slightly; to a small degree
+    collocations: [a little tired, a little small]
+    example: I’m a little tired today.
+status: draft

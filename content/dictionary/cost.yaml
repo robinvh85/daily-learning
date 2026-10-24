@@ -1,0 +1,13 @@
+lemma: cost
+ipa_us: /kɔːst/
+cefr: A1
+oxford3000: true
+forms: [costs, costing]
+senses:
+  - key: cost
+    pos: verb
+    vi: có giá, tốn (bao nhiêu tiền)
+    en: to have a particular price
+    collocations: [cost a lot, cost less than…, how much does it cost]
+    example: How much does this shirt cost?
+status: draft

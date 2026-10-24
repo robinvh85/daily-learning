@@ -1,0 +1,13 @@
+lemma: start
+ipa_us: /stɑːrt/
+cefr: A1
+oxford3000: true
+forms: [starts, started, starting]
+senses:
+  - key: start
+    pos: verb
+    vi: bắt đầu
+    en: to begin doing something
+    collocations: [start to do something, start work, start a new job]
+    example: The movie starts at eight.
+status: draft

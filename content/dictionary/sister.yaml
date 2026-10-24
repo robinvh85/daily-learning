@@ -1,0 +1,13 @@
+lemma: sister
+ipa_us: /ˈsɪstər/
+cefr: A1
+oxford3000: true
+forms: [sisters]
+senses:
+  - key: sister
+    pos: noun
+    vi: chị gái, em gái
+    en: a girl or woman who has the same parents as you
+    collocations: [my older sister, my little sister]
+    example: My sister lives in Da Nang with her husband.
+status: draft

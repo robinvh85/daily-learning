@@ -1,0 +1,14 @@
+lemma: get up
+ipa_us: /ɡet ˈʌp/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [gets up, got up, getting up, gotten up]
+senses:
+  - key: get_up
+    pos: phrasal verb
+    vi: thức dậy, ra khỏi giường
+    en: to get out of bed after sleeping
+    collocations: [get up early, get up at six]
+    example: On weekdays, I get up at six thirty.
+status: draft

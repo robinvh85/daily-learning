@@ -1,0 +1,13 @@
+lemma: rain
+ipa_us: /reɪn/
+cefr: A1
+oxford3000: true
+forms: [rains, rained, raining]
+senses:
+  - key: rain
+    pos: verb
+    vi: mưa, trời mưa
+    en: when it rains, water falls from the sky
+    collocations: [it rained, start to rain, rain hard]
+    example: It rained all night.
+status: draft

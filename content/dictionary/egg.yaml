@@ -1,0 +1,13 @@
+lemma: egg
+ipa_us: /eɡ/
+cefr: A1
+oxford3000: true
+forms: [eggs]
+senses:
+  - key: egg
+    pos: noun
+    vi: trứng, quả trứng
+    en: an oval object that a bird lays, eaten as food
+    collocations: [fried eggs, boil an egg]
+    example: I had two eggs for breakfast.
+status: draft

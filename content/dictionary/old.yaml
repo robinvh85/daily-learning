@@ -1,0 +1,13 @@
+lemma: old
+ipa_us: /oʊld/
+cefr: A1
+oxford3000: true
+forms: [older, oldest]
+senses:
+  - key: old
+    pos: adjective
+    vi: cũ (quen biết từ lâu); già, cũ
+    en: that you have known for a long time; having lived or existed for a long time
+    collocations: [an old friend, an old classmate, an old house]
+    example: I met an old friend at the supermarket yesterday.
+status: draft

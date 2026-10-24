@@ -1,0 +1,12 @@
+lemma: too
+ipa_us: /tuː/
+cefr: A1
+oxford3000: true
+senses:
+  - key: too
+    pos: adverb
+    vi: quá
+    en: more than is good or necessary
+    collocations: [too much, too long, too busy]
+    example: This coffee is too hot to drink.
+status: draft

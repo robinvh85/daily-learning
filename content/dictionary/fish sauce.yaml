@@ -1,0 +1,13 @@
+lemma: fish sauce
+ipa_us: /ˈfɪʃ sɔːs/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: fish_sauce
+    pos: noun
+    vi: nước mắm
+    en: a salty brown sauce made from fish, used a lot in Southeast Asian cooking
+    collocations: [a little fish sauce, add fish sauce]
+    example: My mom always puts fish sauce in her soup.
+status: draft

@@ -1,0 +1,14 @@
+lemma: fall asleep
+ipa_us: /ˌfɔːl əˈsliːp/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [falls asleep, fell asleep, falling asleep, fallen asleep]
+senses:
+  - key: fall_asleep
+    pos: phrase
+    vi: ngủ thiếp đi, chìm vào giấc ngủ
+    en: to start sleeping
+    collocations: [fall asleep quickly, fall asleep on the sofa]
+    example: I fell asleep in front of the TV last night.
+status: draft

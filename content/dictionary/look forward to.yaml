@@ -1,0 +1,14 @@
+lemma: look forward to
+ipa_us: /lʊk ˈfɔːrwərd tə/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [looks forward to, looked forward to, looking forward to]
+senses:
+  - key: look_forward_to
+    pos: phrase
+    vi: mong đợi, mong chờ (điều gì; thường đi với V-ing)
+    en: to feel happy and excited about something that is going to happen
+    collocations: [look forward to seeing you, look forward to the weekend]
+    example: I’m looking forward to the holidays.
+status: draft

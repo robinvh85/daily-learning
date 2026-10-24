@@ -1,0 +1,11 @@
+lemma: I'm
+ipa_us: /aɪm/
+cefr: A1
+oxford3000: false
+senses:
+  - key: i_am
+    pos: contraction
+    vi: tôi là, tôi đang… (viết tắt của I am)
+    en: short form of “I am”
+    example: I’m tired, so I’m going to bed early.
+status: draft

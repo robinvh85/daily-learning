@@ -1,0 +1,13 @@
+lemma: party
+ipa_us: /ˈpɑːrti/
+cefr: A1
+oxford3000: true
+forms: [parties]
+senses:
+  - key: party
+    pos: noun
+    vi: bữa tiệc, buổi tiệc
+    en: a social event where people eat, drink, talk, dance, etc.
+    collocations: [have a party, a birthday party, go to a party]
+    example: We had a big party for my grandfather’s eightieth birthday.
+status: draft

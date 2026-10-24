@@ -1,0 +1,13 @@
+lemma: say
+ipa_us: /seɪ/
+cefr: A1
+oxford3000: true
+forms: [says, said, saying]
+senses:
+  - key: say
+    pos: verb
+    vi: nói, bảo; (bài viết, biển báo) ghi là
+    en: to speak words; to give information or an opinion
+    collocations: [say hello, say that…, say sorry]
+    example: She said she was tired.
+status: draft

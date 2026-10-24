@@ -1,0 +1,11 @@
+lemma: didn't
+ipa_us: /ˈdɪdənt/
+cefr: A1
+oxford3000: false
+senses:
+  - key: did_not
+    pos: contraction
+    vi: đã không (viết tắt của did not)
+    en: short form of “did not”
+    example: I didn’t sleep well last night.
+status: draft

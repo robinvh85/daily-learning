@@ -1,0 +1,12 @@
+lemma: beautiful
+ipa_us: /ˈbjuːtɪfəl/
+cefr: A1
+oxford3000: true
+senses:
+  - key: beautiful
+    pos: adjective
+    vi: đẹp
+    en: very attractive or pleasant to look at
+    collocations: [a beautiful view, a beautiful day]
+    example: What a beautiful garden!
+status: draft

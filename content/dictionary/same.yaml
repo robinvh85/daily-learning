@@ -1,0 +1,12 @@
+lemma: same
+ipa_us: /seɪm/
+cefr: A1
+oxford3000: true
+senses:
+  - key: same
+    pos: adjective
+    vi: giống nhau, cùng một
+    en: exactly like another, or not different
+    collocations: [the same time, the same class, the same as]
+    example: We live on the same street.
+status: draft

@@ -1,0 +1,13 @@
+lemma: play
+ipa_us: /pleɪ/
+cefr: A1
+oxford3000: true
+forms: [plays, played, playing]
+senses:
+  - key: play
+    pos: verb
+    vi: chơi (trò chơi, thể thao)
+    en: to take part in a game or sport
+    collocations: [play cards, play games, play soccer]
+    example: The kids are playing in the garden.
+status: draft

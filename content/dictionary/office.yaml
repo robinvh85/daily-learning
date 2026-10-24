@@ -1,0 +1,13 @@
+lemma: office
+ipa_us: /ˈɔːfɪs/
+cefr: A1
+oxford3000: true
+forms: [offices]
+senses:
+  - key: office
+    pos: noun
+    vi: văn phòng
+    en: a room or building where people work at desks
+    collocations: [at the office, in the office, an office job]
+    example: Our office is on the fifth floor.
+status: draft

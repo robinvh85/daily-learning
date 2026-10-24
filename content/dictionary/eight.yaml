@@ -1,0 +1,12 @@
+lemma: eight
+ipa_us: /eɪt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: eight
+    pos: number
+    vi: tám (số 8)
+    en: the number 8
+    collocations: [at eight, eight hours]
+    example: The shop opens at eight in the morning.
+status: draft

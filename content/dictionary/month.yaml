@@ -1,0 +1,13 @@
+lemma: month
+ipa_us: /mʌnθ/
+cefr: A1
+oxford3000: true
+forms: [months]
+senses:
+  - key: month
+    pos: noun
+    vi: tháng
+    en: one of the twelve periods that a year is divided into
+    collocations: [this month, last month, every month]
+    example: My rent goes up next month.
+status: draft

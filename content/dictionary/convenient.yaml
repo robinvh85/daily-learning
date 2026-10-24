@@ -1,0 +1,12 @@
+lemma: convenient
+ipa_us: /kənˈviːniənt/
+cefr: B1
+oxford3000: true
+senses:
+  - key: convenient
+    pos: adjective
+    vi: tiện, tiện lợi
+    en: easy to use or useful for you; not causing problems
+    collocations: [very convenient, a convenient time, convenient for someone]
+    example: The new subway station is very convenient for me.
+status: draft

@@ -1,0 +1,13 @@
+lemma: door
+ipa_us: /dɔːr/
+cefr: A1
+oxford3000: true
+forms: [doors]
+senses:
+  - key: door
+    pos: noun
+    vi: cửa, cửa ra vào
+    en: the thing you open and close to go into or out of a room or building
+    collocations: [open the door, at the door, close the door]
+    example: Please close the door when you leave.
+status: draft

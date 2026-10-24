@@ -1,0 +1,145 @@
+# Reading lesson (day 7). Original text: a welcome email from a team leader.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: work
+title: An Email to a New Colleague
+order: 7
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: Hi Sarah,
+    text_vi: Chào Sarah,
+  - id: p1s2
+    paragraph: 1
+    text_en: Welcome to the team!
+    text_vi: Chào mừng bạn đến với nhóm!
+  - id: p1s3
+    paragraph: 1
+    text_en: My name is Huong, and I’m the team leader.
+    text_vi: Mình là Hương, trưởng nhóm.
+  - id: p1s4
+    paragraph: 1
+    text_en: I’m sorry I wasn’t in the office on your first day.
+    text_vi: Xin lỗi vì mình không có mặt ở văn phòng vào ngày đầu tiên bạn đi làm.
+  - id: p1s5
+    paragraph: 1
+    text_en: All your new colleagues are very happy that you joined us.
+    text_vi: Các đồng nghiệp mới đều rất vui vì bạn đã về làm cùng nhóm mình.
+  - id: p2s1
+    paragraph: 2
+    text_en: Here is some useful information for your first week.
+    text_vi: Dưới đây là một số thông tin hữu ích cho tuần đầu tiên của bạn.
+  - id: p2s2
+    paragraph: 2
+    text_en: We have a short team meeting every Monday at nine.
+    text_vi: Nhóm mình có một buổi họp ngắn vào chín giờ sáng thứ Hai hằng tuần.
+  - id: p2s3
+    paragraph: 2
+    text_en: Please bring your laptop, because everyone shares their plans for the week.
+    text_vi: Bạn nhớ mang theo laptop nhé, vì mọi người sẽ chia sẻ kế hoạch trong tuần của mình.
+  - id: p2s4
+    paragraph: 2
+    text_en: Your email account will be ready by Wednesday.
+    text_vi: Tài khoản email của bạn sẽ sẵn sàng trước thứ Tư.
+  - id: p3s1
+    paragraph: 3
+    text_en: If you have any questions, feel free to ask me or anyone on the team.
+    text_vi: Nếu có thắc mắc gì, bạn cứ thoải mái hỏi mình hoặc bất kỳ ai trong nhóm.
+  - id: p3s2
+    paragraph: 3
+    text_en: Minh sits by the window, and he knows a lot about our customers.
+    text_vi: Minh ngồi cạnh cửa sổ, và cậu ấy biết rất nhiều về khách hàng của chúng ta.
+  - id: p3s3
+    paragraph: 3
+    text_en: He can also show you how to use the printer.
+    text_vi: Cậu ấy cũng có thể chỉ cho bạn cách dùng máy in.
+  - id: p3s4
+    paragraph: 3
+    text_en: Lunch is usually at twelve, and some of us eat together in the kitchen.
+    text_vi: Giờ ăn trưa thường là mười hai giờ, và vài người trong nhóm hay ăn chung ở bếp.
+  - id: p4s1
+    paragraph: 4
+    text_en: I’m back on Thursday, so let’s have coffee and get to know each other.
+    text_vi: Thứ Năm mình sẽ quay lại, lúc đó mình cùng uống cà phê và làm quen với nhau nhé.
+  - id: p4s2
+    paragraph: 4
+    text_en: I’m really looking forward to working with you.
+    text_vi: Mình rất mong được làm việc cùng bạn.
+  - id: p4s3
+    paragraph: 4
+    text_en: Best regards, Huong
+    text_vi: Trân trọng, Hương
+
+focus_words:
+  [
+    colleague,
+    join,
+    information,
+    share,
+    account,
+    feel free,
+    get to know,
+    each other,
+    look forward to,
+  ]
+
+senses:
+  to: direction # "Welcome to the team"
+  to#2: infinitive # "feel free to ask"
+  to#3: infinitive # "how to use"
+  be: linking
+  in: in
+  on: day # "on your first day", "on Thursday"
+  on#2: group # "anyone on the team"
+  first: first
+  for: purpose
+  have: hold # "We have a short team meeting"
+  have#2: own # "If you have any questions"
+  have#3: eat_drink # "let’s have coffee"
+  at: time
+  plan: noun
+  by: deadline # "by Wednesday"
+  by#2: near # "by the window"
+  about: topic
+  work: work
+
+ignore: [Sarah, Huong, Minh]
+
+questions:
+  - prompt: Why did Huong write this email?
+    options:
+      [
+        To ask Sarah for help with customers,
+        To welcome a new colleague,
+        To change the time of a meeting,
+      ]
+    correct: 1
+    feedback_ok: 'Đúng: “Welcome to the team!” Hương viết để chào đón đồng nghiệp mới.'
+    feedback_wrong: Chưa đúng. Đọc lại đoạn 1, nhất là câu “Welcome to the team!”
+    evidence: p1s2
+  - prompt: When is the team meeting?
+    options: [Every Monday at nine, On Wednesday morning, Every Thursday at twelve]
+    correct: 0
+    feedback_ok: 'Đúng: “We have a short team meeting every Monday at nine.”'
+    feedback_wrong: Chưa đúng. Xem lại câu thứ hai của đoạn 2.
+    evidence: p2s2
+  - prompt: Who can show Sarah how to use the printer?
+    options: [Huong, A customer, Minh]
+    correct: 2
+    feedback_ok: 'Đúng: Minh. “He can also show you how to use the printer.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai và thứ ba của đoạn 3, xem “He” là ai.
+    evidence: p3s3
+  - prompt: In paragraph 3, “feel free to ask me” means…
+    options: [Don’t be shy. Just ask me., Ask me only by email., Don’t ask me any questions.]
+    correct: 0
+    feedback_ok: 'Đúng: “feel free to…” = cứ thoải mái làm gì, đừng ngại.'
+    feedback_wrong: Chưa đúng. Đọc lại câu đầu của đoạn 3. Hương đang mời Sarah hỏi khi cần.
+    evidence: p3s1
+  - prompt: What will Huong and Sarah probably do on Thursday?
+    options: [Have a customer meeting, Fix Sarah’s laptop, Have coffee together]
+    correct: 2
+    feedback_ok: 'Đúng: “I’m back on Thursday, so let’s have coffee and get to know each other.”'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 4.
+    evidence: p4s1

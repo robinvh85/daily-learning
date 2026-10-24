@@ -1,0 +1,12 @@
+lemma: nine
+ipa_us: /naɪn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: nine
+    pos: number
+    vi: chín (số 9)
+    en: the number 9
+    collocations: [at nine, nine o’clock]
+    example: The bank opens at nine.
+status: draft

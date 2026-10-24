@@ -1,0 +1,11 @@
+lemma: doesn't
+ipa_us: /ˈdʌzənt/
+cefr: A1
+oxford3000: false
+senses:
+  - key: does_not
+    pos: contraction
+    vi: không (viết tắt của does not)
+    en: short form of “does not”
+    example: My brother doesn’t like coffee.
+status: draft

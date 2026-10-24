@@ -1,0 +1,13 @@
+lemma: notification
+ipa_us: /ˌnoʊtɪfɪˈkeɪʃən/
+cefr: B2
+oxford3000: false
+forms: [notifications]
+senses:
+  - key: notification
+    pos: noun
+    vi: thông báo (trên điện thoại, ứng dụng)
+    en: a short message from an app that appears on your phone or computer screen
+    collocations: [turn off notifications, get a notification]
+    example: I got a notification from my bank app.
+status: draft

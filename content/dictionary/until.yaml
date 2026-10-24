@@ -1,0 +1,12 @@
+lemma: until
+ipa_us: /ənˈtɪl/
+cefr: A1
+oxford3000: true
+senses:
+  - key: until
+    pos: preposition
+    vi: đến, cho đến (khi)
+    en: up to a particular time
+    collocations: [until nine, until tomorrow, wait until…]
+    example: The store is open until ten tonight.
+status: draft

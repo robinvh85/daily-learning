@@ -1,0 +1,12 @@
+lemma: inside
+ipa_us: /ˌɪnˈsaɪd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: inside
+    pos: adverb
+    vi: ở trong, bên trong (nhà, phòng)
+    en: in or into a room or building
+    collocations: [stay inside, go inside]
+    example: It’s cold. Let’s go inside.
+status: draft
