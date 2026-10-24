@@ -2,6 +2,7 @@
 import type {
   AnswerBody,
   AnswerResponse,
+  DueReviewsResponse,
   LessonDetailResponse,
   LessonListQuery,
   LessonListResponse,
@@ -9,9 +10,14 @@ import type {
   MeResponse,
   ProgressBody,
   ProgressResponse,
+  ReviewBody,
+  ReviewResponse,
   SavedWordResponse,
   SavedWordsResponse,
   SaveWordBody,
+  VocabListQuery,
+  VocabListResponse,
+  VocabStatsResponse,
 } from '@daily-learning/shared/api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { api } from './client';
@@ -21,7 +27,17 @@ export const queryKeys = {
   lessons: (q: LessonListQuery = {}) => ['lessons', q] as const,
   lesson: (slug: string) => ['lesson', slug] as const,
   saved: (slug?: string) => ['vocab', 'saved', slug ?? null] as const,
+  vocabList: (q: VocabListQuery) =>
+    ['vocab', 'list', q.source ?? 'all', q.status ?? 'all'] as const,
+  vocabStats: ['vocab', 'stats'] as const,
+  dueReviews: ['reviews', 'due'] as const,
 };
+
+/** After saving, removing or reviewing a word: word book, stats (Sidebar badge) and queue. */
+function invalidateVocab(qc: ReturnType<typeof useQueryClient>) {
+  void qc.invalidateQueries({ queryKey: ['vocab'] });
+  void qc.invalidateQueries({ queryKey: ['reviews'] });
+}
 
 export function useMe() {
   return useQuery({
@@ -128,8 +144,64 @@ export function useToggleSavedWord(slug?: string) {
     onError: (_err, _v, ctx) => {
       if (ctx?.prev) qc.setQueryData(key, ctx.prev);
     },
-    onSettled: () => {
-      void qc.invalidateQueries({ queryKey: ['vocab'] });
+    onSettled: () => invalidateVocab(qc),
+  });
+}
+
+/** Totals per status and the due count (Sidebar badge). Refreshed every minute. */
+export function useVocabStats(enabled = true) {
+  return useQuery({
+    queryKey: queryKeys.vocabStats,
+    enabled,
+    queryFn: ({ signal }) => api<VocabStatsResponse>('/vocab/stats', { signal }),
+    refetchInterval: 60_000,
+  });
+}
+
+export function useVocabList(q: VocabListQuery) {
+  const source = q.source ?? 'all';
+  const status = q.status ?? 'all';
+  return useQuery({
+    queryKey: queryKeys.vocabList(q),
+    queryFn: ({ signal }) =>
+      api<VocabListResponse>(`/vocab?source=${source}&status=${status}`, { signal }),
+    placeholderData: (prev) => prev,
+  });
+}
+
+export function useRemoveWord() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (wordId: number) =>
+      api<SavedWordResponse>(`/vocab/${wordId}`, { method: 'DELETE' }),
+    onSettled: () => invalidateVocab(qc),
+  });
+}
+
+export function useDueReviews() {
+  return useQuery({
+    queryKey: queryKeys.dueReviews,
+    queryFn: ({ signal }) => api<DueReviewsResponse>('/reviews/due', { signal }),
+  });
+}
+
+/** Rate a card. The card leaves the local queue at once; then everything is refetched. */
+export function useSubmitReview() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (v: { wordId: number } & ReviewBody) =>
+      api<ReviewResponse>(`/reviews/${v.wordId}`, { method: 'POST', body: { rating: v.rating } }),
+    onSuccess: (res) => {
+      qc.setQueryData<DueReviewsResponse>(queryKeys.dueReviews, (prev) =>
+        prev
+          ? {
+              ...prev,
+              cards: prev.cards.filter((c) => c.wordId !== res.wordId),
+              counts: res.counts,
+            }
+          : prev,
+      );
     },
+    onSettled: () => invalidateVocab(qc),
   });
 }

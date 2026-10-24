@@ -18,6 +18,13 @@ import {
   type Speaker,
   type WordStatus,
 } from './constants.js';
+import {
+  REVIEW_RATINGS,
+  VOCAB_SOURCES,
+  VOCAB_STATUSES,
+  type ReviewRating,
+  type VocabStatus,
+} from './srs.js';
 
 /** `none` = single local user, no login. `password` = login required (VPS). */
 export const AUTH_MODES = ['none', 'password'] as const;
@@ -239,4 +246,118 @@ export const savedWordsQuerySchema = z.strictObject({ lesson: slugParam.optional
 
 export interface SavedWordsResponse {
   wordIds: number[];
+}
+
+/** `GET /api/vocab?source=read|listen|all&status=new|learning|known|all` (word book) */
+export const vocabListQuerySchema = z.strictObject({
+  source: z.enum([...VOCAB_SOURCES, 'all']).default('all'),
+  status: z.enum([...VOCAB_STATUSES, 'all']).default('all'),
+});
+export type VocabListQuery = z.input<typeof vocabListQuerySchema>;
+
+export interface SourceLessonDto {
+  id: number;
+  slug: string;
+  kind: LessonKind;
+  title: string;
+}
+
+export interface VocabItemDto {
+  wordId: number;
+  lemma: string;
+  /** Vietnamese meaning of the saved sense (first sense when none was saved). */
+  meaningVi: string;
+  status: VocabStatus;
+  sourceLesson: SourceLessonDto | null;
+  /** Next review (ISO 8601). */
+  due: string;
+  savedAt: string;
+}
+
+export interface VocabListResponse {
+  items: VocabItemDto[];
+}
+
+/** `GET /api/vocab/stats` */
+export interface VocabStatsResponse {
+  total: number;
+  new: number;
+  learning: number;
+  known: number;
+  /** Cards due now. */
+  due: number;
+}
+
+// ---------------------------------------------------------------------------
+// Reviews (FSRS): /api/reviews
+// ---------------------------------------------------------------------------
+
+/** `GET /api/reviews/due?limit=` */
+export const dueReviewsQuerySchema = z.strictObject({
+  limit: z.coerce.number().int().min(1).max(200).default(50),
+});
+export type DueReviewsQuery = z.input<typeof dueReviewsQuerySchema>;
+
+export interface ReviewPreviewDto {
+  rating: ReviewRating;
+  /** When the card would be due after this rating (ISO 8601). */
+  due: string;
+  /** Interval in Vietnamese ("10 phút", "1 ngày", "2 tuần"). */
+  interval: string;
+}
+
+export interface ReviewCardDto {
+  wordId: number;
+  lemma: string;
+  ipaUs: string;
+  pos: string;
+  meaningVi: string;
+  example: string;
+  sourceLesson: SourceLessonDto | null;
+  /** Pronunciation URL, or null without audio. */
+  audioUrl: string | null;
+  status: VocabStatus;
+  due: string;
+  /** One preview per rating 1..4, computed with FSRS `repeat()`. */
+  previews: ReviewPreviewDto[];
+}
+
+export interface ReviewCountsDto {
+  /** Cards due now. */
+  due: number;
+  /** Reviews done today (Asia/Ho_Chi_Minh day). */
+  doneToday: number;
+}
+
+export interface DueReviewsResponse {
+  cards: ReviewCardDto[];
+  counts: ReviewCountsDto;
+  /** Earliest due date among cards not due yet (ISO 8601), or null. */
+  nextDueAt: string | null;
+}
+
+/** `POST /api/reviews/:wordId` */
+export const reviewBodySchema = z.strictObject({
+  rating: z.literal(REVIEW_RATINGS),
+});
+export type ReviewBody = z.input<typeof reviewBodySchema>;
+
+export interface CardStateDto {
+  due: string;
+  /** FSRS state: 0 New, 1 Learning, 2 Review, 3 Relearning. */
+  state: number;
+  status: VocabStatus;
+  stability: number;
+  difficulty: number;
+  reps: number;
+  lapses: number;
+  scheduledDays: number;
+  lastReview: string | null;
+}
+
+export interface ReviewResponse {
+  wordId: number;
+  rating: ReviewRating;
+  card: CardStateDto;
+  counts: ReviewCountsDto;
 }

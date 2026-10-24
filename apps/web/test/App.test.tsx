@@ -1,13 +1,17 @@
 import type { MeResponse } from '@daily-learning/shared/api';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import { App } from '../src/App';
 
-function renderApp(me: MeResponse, path = '/') {
+function renderApp(me: MeResponse, path = '/', withStats = false) {
   const fetchMock = vi.fn((url: string) => {
     if (url === '/api/auth/me') return Promise.resolve(new Response(JSON.stringify(me)));
+    if (withStats && url === '/api/vocab/stats')
+      return Promise.resolve(
+        new Response(JSON.stringify({ total: 9, new: 2, learning: 5, known: 2, due: 7 })),
+      );
     if (url === '/api/lessons' || url.startsWith('/api/lessons?'))
       return Promise.resolve(new Response(JSON.stringify({ lessons: [] })));
     return Promise.resolve(new Response('{}', { status: 404 }));
@@ -44,5 +48,11 @@ describe('App', () => {
     renderApp({ authMode: 'none', user: { id: 1, email: null } }, '/listen/at-the-train-station');
     expect(await screen.findByText('Không tìm thấy bài nghe này.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Nghe' })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('shows the real due count in the sidebar badge', async () => {
+    renderApp({ authMode: 'none', user: { id: 1, email: null } }, '/', true);
+    const link = await screen.findByRole('link', { name: /Từ vựng/ });
+    await waitFor(() => expect(link).toHaveTextContent('7 thẻ đến hạn'));
   });
 });

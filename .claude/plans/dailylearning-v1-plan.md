@@ -31,6 +31,7 @@
 | Web | **React 18 + Vite** + React Router + TanStack Query | Vite build nhanh; TanStack Query lo cache/refetch API |
 | Style | CSS Modules + CSS variables (token màu/size từ mockup) | Không phụ thuộc framework CSS, dễ bê token từ mockup. (Phương án khác: Tailwind — nhanh hơn khi dựng UI nhưng markup dài) |
 | SRS | **FSRS** qua thư viện `ts-fsrs` | 4 mức Again/Hard/Good/Easy khớp đúng mockup; chính xác hơn SM-2 |
+| Trạng thái sổ từ | Mới = FSRS New; Đang ôn = Learning/Relearning hoặc Review có stability < 21 ngày; Đã thuộc = Review có stability ≥ 21 ngày | Suy ra từ thẻ FSRS, không lưu thêm cột |
 | Test | Vitest (unit + API), Playwright (E2E vài luồng chính) | |
 | Chạy production | 1 process Node serve cả API và bản build React | Ít tài nguyên nhất, không cần server riêng cho frontend |
 
@@ -212,7 +213,7 @@ daily-learning/
 | `lesson_progress` | user_id, lesson_id, status, step, score, completed_at |
 | `answers` | user_id, question_id / dictation_item_id, value, correct, answered_at |
 | `user_words` | user_id, word_id, sense_id (nghĩa lúc lưu), source_lesson_id, FSRS state (due, stability, difficulty, reps, lapses, state, last_review) |
-| `review_logs` | user_id, word_id, rating, reviewed_at, elapsed_days |
+| `review_logs` | user_id, word_id, rating, reviewed_at, elapsed_days, state (trước khi ôn), stability, difficulty, scheduled_days, due (sau khi ôn) |
 | `daily_activity` | user_id, date, seconds_studied, lessons_done, reviews_done (tính streak + biểu đồ tuần) |
 
 ## 5. API (REST, prefix `/api`)
@@ -227,9 +228,10 @@ daily-learning/
 | POST | `/lessons/:slug/answers` | Nộp câu hỏi / nghe chép → chấm, trả feedback |
 | POST | `/lessons/:slug/progress` | Cập nhật bước, đánh dấu hoàn thành |
 | POST | `/activity/heartbeat` | Cộng thời gian học (gửi mỗi 30s khi tab đang mở và có tương tác) |
-| GET | `/vocab?filter=&status=` | Sổ từ |
+| GET | `/vocab?source=&status=` | Sổ từ (`source` = read/listen/all, `status` = new/learning/known/all) |
+| GET | `/vocab/stats` | Số từ theo trạng thái + số thẻ đến hạn (badge Sidebar, Trang chủ) |
 | POST/DELETE | `/vocab/:wordId` | Lưu / bỏ từ |
-| GET | `/reviews/due` | Hàng thẻ cần ôn hôm nay |
+| GET | `/reviews/due?limit=` | Hàng thẻ cần ôn hôm nay (kèm khoảng thời gian xem trước cho 4 mức, số thẻ đến hạn và đã ôn hôm nay) |
 | POST | `/reviews/:wordId` | Gửi rating 1–4 → FSRS tính lịch ôn tiếp |
 
 ## 6. Các giai đoạn triển khai
@@ -276,9 +278,9 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - **Xong khi:** nghe 1 bài, làm nghe chép, lặp từng câu chính xác theo mốc thời gian
 
 ### Phase 4 — Từ vựng và SRS (≈ 1.5 ngày)
-- [ ] Tích hợp `ts-fsrs`, unit test lịch ôn
-- [ ] Trang Ôn từ: lật thẻ, 4 nút rating hiển thị khoảng thời gian tiếp theo thật (lấy từ FSRS, không hard-code), thanh tiến độ hôm nay
-- [ ] Sổ từ: lọc nguồn + trạng thái; badge số thẻ đến hạn ở Sidebar
+- [x] Tích hợp `ts-fsrs`, unit test lịch ôn
+- [x] Trang Ôn từ: lật thẻ, 4 nút rating hiển thị khoảng thời gian tiếp theo thật (lấy từ FSRS, không hard-code), thanh tiến độ hôm nay
+- [x] Sổ từ: lọc nguồn + trạng thái; badge số thẻ đến hạn ở Sidebar
 - **Xong khi:** từ lưu ở bài đọc xuất hiện trong hàng ôn, rating cập nhật ngày đến hạn đúng
 
 ### Phase 5 — Trang chủ, tiến độ, bài học hôm nay (≈ 1.5 ngày)
@@ -347,3 +349,4 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - 2026-10-24: xong Phase 1 (Drizzle + SQLite WAL, migration tự chạy khi khởi động, Zod schema cho `lesson.yaml`/từ điển/`daily-plan.yaml`, tokenizer, `content:sync`/`check-dict`/`stats`, 2 bài mẫu + 130 entry từ điển `draft`); từ viết tắt (`it's`, `I'll`) là entry riêng, `there's` là dạng của `there is`; câu thoại bài nghe chưa có bản dịch tiếng Việt.
 - 2026-10-24: xong Phase 2 (tokens.css + Sidebar responsive, React Router + TanStack Query, auth `none`/`password` với argon2 + session cookie + bảng `sessions` + `npm run user:create`, chặn khởi động khi HOST không phải localhost mà `AUTH_MODE=none`, API bài học/trả lời/tiến độ/lưu từ có Zod, trang Bài đọc với `TokenizedText`, WordCard, song ngữ, cỡ chữ, câu hỏi chấm trên server); nút phát âm và "Nghe bài đọc" để tắt chờ Phase 3; lời thoại Bài nghe sẽ dùng `TokenizedText` ở Phase 3.
 - 2026-10-24: xong phần code Phase 3: Google TTS qua REST + API key (`GOOGLE_TTS_API_KEY`), provider `fake` (ffmpeg) để test; `content:tts:voices`/`content:tts`/`content:tts-words` có cache (gitignore), `TTS_MAX_CHARS`, `--dry-run`; `timings.json` (offset đo bằng ffprobe + 80 peaks), sync vào DB (migration `0002_audio`), serve `/content` tĩnh có cache 1 năm + `?v=`; trang Bài nghe (player, waveform, lời thoại token hóa, nghe chép, nghe hiểu), "Nghe bài đọc" và nút phát âm WordCard; chọn giọng và chạy TTS thật do người dùng làm trên Mac.
+- 2026-10-24: xong Phase 4: `services/srs.ts` dùng `ts-fsrs` (tham số mặc định, "now" truyền vào được để test), lưu từ = thẻ FSRS mới đến hạn ngay; API `/reviews/due` (xem trước khoảng thời gian 4 mức bằng `repeat()`), `POST /reviews/:wordId`, `/vocab?source=&status=`, `/vocab/stats`; migration `0003_review_logs_fsrs` thêm cột FSRS vào `review_logs`, mỗi lần ôn cộng `daily_activity.reviews_done` (ngày theo Asia/Ho_Chi_Minh); trang Ôn từ (thẻ lật, phím Space/Enter và 1–4, trạng thái trống), sổ từ có lọc và xóa có xác nhận, badge Sidebar lấy số thẻ đến hạn thật.

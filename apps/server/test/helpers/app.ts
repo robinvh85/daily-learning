@@ -15,13 +15,16 @@ export interface TestApp {
 }
 
 /** A Fastify app on a temp SQLite file synced with the real `content/`. */
-export async function createTestApp(authMode: AuthMode = 'none'): Promise<TestApp> {
+export async function createTestApp(
+  authMode: AuthMode = 'none',
+  opts: { now?: () => Date } = {},
+): Promise<TestApp> {
   const dir = mkdtempSync(join(tmpdir(), 'dl-api-'));
   const db = openAndMigrate(join(dir, 'app.db'));
   const contentDir = join(ROOT_DIR, 'content');
   const r = syncContent({ contentDir, db });
   if (!r.ok) throw new Error(`content sync failed: ${JSON.stringify(r.issues)}`);
-  const app = await buildApp({ db, authMode, contentDir });
+  const app = await buildApp({ db, authMode, contentDir, now: opts.now });
   return {
     app,
     db,

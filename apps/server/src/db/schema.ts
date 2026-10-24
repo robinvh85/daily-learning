@@ -333,7 +333,15 @@ export const reviewLogs = sqliteTable(
     /** FSRS rating: 1 Again, 2 Hard, 3 Good, 4 Easy. */
     rating: integer('rating').notNull(),
     reviewedAt: integer('reviewed_at', { mode: 'timestamp_ms' }).notNull().default(nowMs),
+    /** Days since the previous review (0 for the first one). */
     elapsedDays: real('elapsed_days').notNull().default(0),
+    /** FSRS state before this review (0 New, 1 Learning, 2 Review, 3 Relearning). */
+    state: integer('state').notNull().default(0),
+    /** Card after this review: memory state and the new schedule. */
+    stability: real('stability').notNull().default(0),
+    difficulty: real('difficulty').notNull().default(0),
+    scheduledDays: integer('scheduled_days').notNull().default(0),
+    due: integer('due', { mode: 'timestamp_ms' }),
   },
   (t) => [
     index('review_logs_user_idx').on(t.userId, t.reviewedAt),
