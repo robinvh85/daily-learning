@@ -10,27 +10,35 @@ segments:
   - id: l1
     speaker: A
     text_en: Excuse me, which platform does the 10:15 train to Oxford leave from?
+    text_vi: Xin lỗi, chuyến tàu 10:15 đi Oxford khởi hành ở sân ga nào vậy?
   - id: l2
     speaker: B
     text_en: Platform 4. But I’m afraid it’s running about twenty minutes late.
+    text_vi: Sân ga số 4. Nhưng tôi e là tàu đang trễ khoảng hai mươi phút.
   - id: l3
     speaker: A
     text_en: Oh no. Is there an earlier train?
+    text_vi: Ôi không. Có chuyến nào sớm hơn không?
   - id: l4
     speaker: B
     text_en: There’s one at 10:05, but it’s a slow train. It stops at every station.
+    text_vi: Có một chuyến lúc 10:05, nhưng đó là tàu chậm. Nó dừng ở mọi ga.
   - id: l5
     speaker: A
     text_en: How long does that one take?
+    text_vi: Chuyến đó đi mất bao lâu?
   - id: l6
     speaker: B
     text_en: About an hour and a half. The 10:15 only takes fifty minutes.
+    text_vi: Khoảng một tiếng rưỡi. Chuyến 10:15 chỉ mất năm mươi phút.
   - id: l7
     speaker: A
     text_en: OK, I’ll wait for the 10:15. Where can I buy a ticket?
+    text_vi: Được rồi, tôi sẽ đợi chuyến 10:15. Tôi có thể mua vé ở đâu?
   - id: l8
     speaker: B
     text_en: You can use the machine over there, or buy one online.
+    text_vi: Bạn có thể dùng máy bán vé ở đằng kia, hoặc mua trên mạng.
 
 focus_words: [platform, I'm afraid, run, late, station, wait for, ticket, machine]
 
@@ -63,8 +71,12 @@ questions:
   - prompt: Why does the woman decide to wait?
     options: [The 10:05 train is slower, She has no ticket, Platform 4 is closed]
     correct: 0
+    feedback_ok: 'Đúng: chuyến 10:05 là “a slow train”, mất khoảng một tiếng rưỡi.'
+    feedback_wrong: Chưa đúng. Nghe lại câu thoại lúc 0:14 và 0:23.
     evidence: l4
   - prompt: How long does the 10:15 train take?
     options: [About 20 minutes, About 50 minutes, About 90 minutes]
     correct: 1
+    feedback_ok: 'Đúng: “The 10:15 only takes fifty minutes.”'
+    feedback_wrong: Chưa đúng. Nghe lại câu thoại lúc 0:23, chú ý “fifty”, không phải “fifteen”.
     evidence: l6
