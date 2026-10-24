@@ -3,6 +3,11 @@
 // --dry-run only validates and exits 1 on any error (used by CI).
 import { join } from 'node:path';
 import { loadEnvFile, resolveDbPath, ROOT_DIR } from '../apps/server/src/config.js';
+import {
+  CONTENT_HASH_KEY,
+  contentFingerprint,
+  writeMeta,
+} from '../apps/server/src/content/fingerprint.js';
 import { formatIssues } from '../apps/server/src/content/load.js';
 import { syncContent } from '../apps/server/src/content/sync.js';
 import { openAndMigrate } from '../apps/server/src/db/client.js';
@@ -22,6 +27,8 @@ loadEnvFile();
 const dbPath = resolveDbPath();
 const db = dryRun ? undefined : openAndMigrate(dbPath);
 try {
+  // Hash before reading, so a file edited during the sync makes the next `npm start` sync again.
+  const hash = dryRun ? null : contentFingerprint(contentDir);
   const result = syncContent({ contentDir, db, dryRun });
   if (result.issues.length > 0) console.log(formatIssues(result.issues));
   const errors = result.issues.filter((i) => i.level === 'error').length;
@@ -34,6 +41,8 @@ try {
   } else if (dryRun) {
     console.log(`content:sync --dry-run: OK (${warnings} warning(s)). Nothing was written.`);
   } else {
+    // Lets `npm start` skip its automatic sync until content/ changes again.
+    if (db && hash) writeMeta(db, CONTENT_HASH_KEY, hash);
     const c = result.counts!;
     console.log(
       `content:sync: OK → ${dbPath}\n` +

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Start DailyLearning (the built app, `npm start`) when you log in to macOS.
+  1. Replace /Users/YOU/daily-learning with the repository path and YOU in the log path.
+  2. cp scripts/launchd/com.dailylearning.plist.example ~/Library/LaunchAgents/com.dailylearning.plist
+  3. launchctl load ~/Library/LaunchAgents/com.dailylearning.plist
+  A login shell (zsh -l) is used so nvm / Homebrew from ~/.zprofile / ~/.zshrc put node on PATH.
+-->
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.dailylearning</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/zsh</string>
+      <string>-lc</string>
+      <string>cd /Users/YOU/daily-learning &amp;&amp; source ~/.nvm/nvm.sh 2&gt;/dev/null; nvm use --silent 2&gt;/dev/null; exec npm start</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/YOU/daily-learning</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <!-- Restart after a crash, but not after a clean stop (launchctl unload). -->
+    <key>KeepAlive</key>
+    <dict>
+      <key>SuccessfulExit</key>
+      <false/>
+    </dict>
+    <key>ThrottleInterval</key>
+    <integer>30</integer>
+    <key>StandardOutPath</key>
+    <string>/Users/YOU/Library/Logs/dailylearning.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/YOU/Library/Logs/dailylearning.log</string>
+  </dict>
+</plist>

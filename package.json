@@ -17,8 +17,9 @@
     "build": "npm run build -w @daily-learning/shared && npm run build -w @daily-learning/server -w @daily-learning/web",
     "start": "npm run start -w @daily-learning/server",
     "lint": "eslint .",
-    "typecheck": "npm run typecheck --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present && tsc -p e2e",
     "test": "npm run test --workspaces --if-present",
+    "test:e2e": "npm run build && playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "db:generate": "npm run build -w @daily-learning/shared && npm run db:generate -w @daily-learning/server",
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
     "@types/node": "^22.20.5",
     "concurrently": "^10.0.6",
     "drizzle-orm": "^0.45.4",

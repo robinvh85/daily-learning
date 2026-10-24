@@ -4,6 +4,7 @@ import type { LessonSummary } from '@daily-learning/shared/api';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useLessons } from '../../api/hooks';
 import { lessonHref, topicLabel } from '../../lib/labels';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import { LESSON_STATUS_VI, lessonDuration, lessonStatus } from '../../lib/lessonMeta';
 import styles from './LibraryPage.module.css';
 
@@ -14,6 +15,7 @@ const TITLES: Record<LessonKind, string> = {
 
 export function LibraryPage({ kind }: { kind: LessonKind }) {
   const lessons = useLessons({ kind });
+  useDocumentTitle(TITLES[kind]);
   const [params, setParams] = useSearchParams();
   const level = params.get('level');
   const topic = params.get('topic');

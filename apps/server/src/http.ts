@@ -1,5 +1,5 @@
 import type { ApiError } from '@daily-learning/shared/api';
-import type { FastifyError, FastifyInstance } from 'fastify';
+import type { FastifyError, FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import { z } from 'zod';
 
 /** Error with an HTTP status, turned into an `ApiError` body by the error handler. */
@@ -24,7 +24,10 @@ export function parseInput<S extends z.ZodType>(schema: S, data: unknown): z.out
   return r.data;
 }
 
-export function registerErrorHandler(app: FastifyInstance): void {
+/** Optional handler tried before the JSON 404 (the SPA fallback); returns true when it replied. */
+export type NotFoundFallback = (request: FastifyRequest, reply: FastifyReply) => boolean;
+
+export function registerErrorHandler(app: FastifyInstance, fallback?: NotFoundFallback): void {
   app.setErrorHandler((err: FastifyError | HttpError, request, reply) => {
     if (err instanceof HttpError) {
       const body: ApiError = { error: err.code, message: err.message };
@@ -39,6 +42,7 @@ export function registerErrorHandler(app: FastifyInstance): void {
     return reply.code(status).send(body);
   });
   app.setNotFoundHandler((request, reply) => {
+    if (fallback?.(request, reply)) return reply;
     const body: ApiError = {
       error: 'not_found',
       message: `Route ${request.method} ${request.url} not found`,

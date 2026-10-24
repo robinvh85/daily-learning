@@ -24,6 +24,7 @@ describe('database', () => {
     ).map((r) => r.name);
     expect(tables).toEqual([
       'answers',
+      'app_meta',
       'daily_activity',
       'daily_plans_template',
       'dictation_items',
@@ -49,7 +50,7 @@ describe('database', () => {
     openAndMigrate(path).$client.close();
     const db = openAndMigrate(path);
     expect(db.$client.prepare('select count(*) n from __drizzle_migrations').get()).toEqual({
-      n: 5,
+      n: 6,
     });
     db.$client.close();
   });

@@ -4,6 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import { App } from '../src/App';
+import { expectNoAxeViolations } from './axe';
 
 function renderApp(me: MeResponse, path = '/', withStats = false) {
   const fetchMock = vi.fn((url: string) => {
@@ -54,5 +55,25 @@ describe('App', () => {
     renderApp({ authMode: 'none', user: { id: 1, email: null } }, '/', true);
     const link = await screen.findByRole('link', { name: /Từ vựng/ });
     await waitFor(() => expect(link).toHaveTextContent('7 thẻ đến hạn'));
+  });
+});
+
+describe('App shell accessibility', () => {
+  it('has a skip link to the main landmark and no axe violations (regions on)', async () => {
+    renderApp({ authMode: 'none', user: { id: 1, email: null } }, '/nope', true);
+    await screen.findByRole('heading', { name: 'Không tìm thấy trang' });
+    const skip = screen.getByRole('link', { name: 'Bỏ qua đến nội dung chính' });
+    const main = screen.getByRole('main');
+    expect(skip).toHaveAttribute('href', `#${main.id}`);
+    expect(document.body.querySelector('a, button')).toBe(skip);
+    expect(document.title).toBe('Không tìm thấy trang · DailyLearning');
+    await expectNoAxeViolations(document.body, { allowOutsideLandmarks: false });
+  });
+
+  it('gives the login page its own title', async () => {
+    renderApp({ authMode: 'password', user: null });
+    await screen.findByRole('heading', { name: 'Đăng nhập' });
+    expect(document.title).toBe('Đăng nhập · DailyLearning');
+    await expectNoAxeViolations(document.body, { allowOutsideLandmarks: false });
   });
 });

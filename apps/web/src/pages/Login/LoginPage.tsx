@@ -1,11 +1,13 @@
 import { useState, type FormEvent } from 'react';
 import { ApiRequestError } from '../../api/client';
 import { useLogin } from '../../api/hooks';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import styles from './LoginPage.module.css';
 
 /** Shown only when the server runs with AUTH_MODE=password. */
 export function LoginPage() {
   const login = useLogin();
+  useDocumentTitle('Đăng nhập');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

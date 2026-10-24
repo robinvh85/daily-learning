@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import styles from '../Home/Home.module.css';
 
 export function PlaceholderPage({ title, children }: { title: string; children: ReactNode }) {
+  useDocumentTitle(title);
   return (
     <>
       <header>

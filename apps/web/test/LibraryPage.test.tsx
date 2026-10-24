@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import { LibraryPage } from '../src/pages/Library/LibraryPage';
+import { expectNoAxeViolations } from './axe';
 
 const lesson = (id: number, extra: Partial<LessonSummary>): LessonSummary => ({
   id,
@@ -93,5 +94,14 @@ describe('LibraryPage', () => {
     expect(screen.getByText('0 bài')).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: 'Bỏ lọc' }));
     expect(screen.getByText('3 bài')).toBeInTheDocument();
+  });
+});
+
+describe('LibraryPage accessibility', () => {
+  it('has a page title and no axe violations', async () => {
+    renderLibrary();
+    await screen.findByText('3 bài');
+    expect(document.title).toBe('Thư viện bài đọc · DailyLearning');
+    await expectNoAxeViolations();
   });
 });

@@ -7,6 +7,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { FONT_SIZE_KEY, ReadingPage } from '../src/pages/Reading/ReadingPage';
 import { runWord, sentence, tokens } from './fixtures';
 import { installMediaStub, lastPlayer } from './media';
+import { expectNoAxeViolations } from './axe';
 
 const simpleWord = (id: number, lemma: string, vi: string) => ({
   id,
@@ -228,5 +229,14 @@ describe('ReadingPage with narrator audio', () => {
     expect(screen.getByTestId('sentence-p1s1')).toHaveAttribute('aria-current', 'true');
     await user.click(screen.getByRole('button', { name: 'Tạm dừng' }));
     expect(lastPlayer().paused).toBe(true);
+  });
+});
+
+describe('ReadingPage accessibility', () => {
+  it('has a page title and no axe violations', async () => {
+    renderPage();
+    await screen.findByRole('region', { name: 'Từ đang chọn' });
+    expect(document.title).toBe('A New Coffee Shop – Bài đọc · DailyLearning');
+    await expectNoAxeViolations();
   });
 });

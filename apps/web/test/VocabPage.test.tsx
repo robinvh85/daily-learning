@@ -11,6 +11,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import { VocabPage } from '../src/pages/Vocab/VocabPage';
 import { installMediaStub, lastPlayer } from './media';
+import { expectNoAxeViolations } from './axe';
 
 const card = (
   wordId: number,
@@ -253,5 +254,17 @@ describe('VocabPage', () => {
     const confirm = screen.getByRole('group', { name: 'Xóa run?' });
     await user.click(within(confirm).getByRole('button', { name: 'Xóa run khỏi sổ từ' }));
     await waitFor(() => expect(calls.find((c) => c.method === 'DELETE')?.url).toBe('/api/vocab/1'));
+  });
+});
+
+describe('VocabPage accessibility', () => {
+  it('has a page title and no axe violations (front and back of the card)', async () => {
+    const user = userEvent.setup();
+    renderPage({ due: twoCards });
+    await screen.findByRole('heading', { name: 'run' });
+    expect(document.title).toBe('Ôn từ vựng · DailyLearning');
+    await expectNoAxeViolations();
+    await user.click(screen.getByRole('button', { name: 'Xem nghĩa' }));
+    await expectNoAxeViolations();
   });
 });

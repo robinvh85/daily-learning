@@ -21,6 +21,7 @@ import { Quiz, type QuizAnswer } from '../../components/Quiz/Quiz';
 import { TokenizedText } from '../../components/TokenizedText/TokenizedText';
 import { WordCard } from '../../components/WordCard/WordCard';
 import { timedSegments, useAudioPlayer } from '../../hooks/useAudioPlayer';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import { topicLabel } from '../../lib/labels';
 import { readStorage, writeStorage } from '../../lib/storage';
 import styles from './ReadingPage.module.css';
@@ -58,6 +59,13 @@ interface Selection {
 export function ReadingPage() {
   const { slug = '' } = useParams();
   const lesson = useLesson(slug);
+  useDocumentTitle(
+    lesson.data
+      ? `${lesson.data.lesson.title} – Bài đọc`
+      : lesson.isError
+        ? 'Không tìm thấy bài đọc'
+        : 'Bài đọc',
+  );
 
   if (lesson.isPending) {
     return (

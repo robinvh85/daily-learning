@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { queryKeys, useDueReviews, useSubmitReview } from '../../api/hooks';
 import { Flashcard, type FlashcardHandle } from '../../components/Flashcard/Flashcard';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import { WordBook } from './WordBook';
 import styles from './VocabPage.module.css';
 
@@ -35,6 +36,7 @@ function formatClock(d: Date): string {
 export function VocabPage() {
   const qc = useQueryClient();
   const due = useDueReviews();
+  useDocumentTitle('Ôn từ vựng');
   const submit = useSubmitReview();
   const [flippedFor, setFlippedFor] = useState<number | null>(null);
   const cardRef = useRef<FlashcardHandle>(null);

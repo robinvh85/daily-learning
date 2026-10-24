@@ -367,3 +367,12 @@ export const dailyActivity = sqliteTable(
   },
   (t) => [primaryKey({ columns: [t.userId, t.date] })],
 );
+
+/**
+ * Small key/value store for app bookkeeping, e.g. `content_hash`: fingerprint of `content/` at the
+ * last successful `content:sync`, so `npm start` only re-syncs when the content changed.
+ */
+export const appMeta = sqliteTable('app_meta', {
+  key: text('key').primaryKey(),
+  value: text('value').notNull(),
+});

@@ -9,6 +9,7 @@ import { registerAuth } from './modules/auth/routes.js';
 import { lessonRoutes } from './modules/lessons/routes.js';
 import { reviewRoutes } from './modules/reviews/routes.js';
 import { registerContentStatic } from './modules/static/routes.js';
+import { registerWebStatic, trySpaFallback } from './modules/static/web.js';
 import { todayRoutes } from './modules/today/routes.js';
 import { vocabRoutes } from './modules/vocab/routes.js';
 
@@ -20,6 +21,8 @@ export interface AppOptions {
   contentDir?: string;
   /** Source of "now" for scheduling (tests inject a fake clock). */
   now?: Clock;
+  /** Serve the built web app (`apps/web/dist`) at `/` with an SPA fallback (production). */
+  webDir?: string;
   /** Name of the default local user (`USER_DISPLAY_NAME`, AUTH_MODE=none). */
   displayName?: string;
   fastify?: FastifyServerOptions;
@@ -27,7 +30,7 @@ export interface AppOptions {
 
 export async function buildApp(opts: AppOptions): Promise<FastifyInstance> {
   const app = Fastify(opts.fastify);
-  registerErrorHandler(app);
+  registerErrorHandler(app, opts.webDir ? trySpaFallback : undefined);
 
   app.get(`${API_PREFIX}/health`, async (): Promise<HealthResponse> => {
     return {
@@ -49,6 +52,7 @@ export async function buildApp(opts: AppOptions): Promise<FastifyInstance> {
   todayRoutes(app, opts.db, now);
   activityRoutes(app, opts.db, now);
   if (opts.contentDir) await registerContentStatic(app, opts.contentDir);
+  if (opts.webDir) await registerWebStatic(app, opts.webDir);
 
   return app;
 }

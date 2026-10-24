@@ -6,6 +6,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ListeningPage } from '../src/pages/Listening/ListeningPage';
 import { installMediaStub, lastPlayer } from './media';
+import { expectNoAxeViolations } from './axe';
 
 const word = (id: number, lemma: string, vi: string, audioUrl: string | null = null) => ({
   id,
@@ -278,5 +279,22 @@ describe('ListeningPage with audio', () => {
     const audio = lastPlayer();
     expect(audio.currentTime).toBe(5.4);
     expect(audio.paused).toBe(false);
+  });
+});
+
+describe('ListeningPage accessibility', () => {
+  beforeEach(() => {
+    lesson = makeLesson(true);
+  });
+
+  it('has a page title and no axe violations (player, transcript, both tabs)', async () => {
+    const user = userEvent.setup();
+    renderPage();
+    await screen.findByRole('region', { name: 'Trình phát' });
+    expect(document.title).toMatch(/ – Bài nghe · DailyLearning$/);
+    await user.click(screen.getByRole('button', { name: 'Hiện lời thoại' }));
+    await expectNoAxeViolations();
+    await user.click(screen.getByRole('tab', { name: 'Nghe hiểu' }));
+    await expectNoAxeViolations();
   });
 });

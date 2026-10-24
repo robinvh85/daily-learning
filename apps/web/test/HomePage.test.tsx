@@ -10,6 +10,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import { formatMinutes, formatVnDate } from '../src/lib/date';
 import { HomePage } from '../src/pages/Home/HomePage';
+import { expectNoAxeViolations } from './axe';
 
 const lesson = (id: number, kind: LessonSummary['kind'], extra: Partial<LessonSummary> = {}) =>
   ({
@@ -222,5 +223,14 @@ describe('date helpers', () => {
     expect(formatMinutes(92)).toBe('1 giờ 32 phút');
     expect(formatMinutes(45)).toBe('45 phút');
     expect(formatMinutes(120)).toBe('2 giờ');
+  });
+});
+
+describe('HomePage accessibility', () => {
+  it('has a page title and no axe violations', async () => {
+    renderHome();
+    await screen.findByRole('heading', { name: 'Chào Viet, hôm nay học 15 phút nhé' });
+    expect(document.title).toBe('Trang chủ · DailyLearning');
+    await expectNoAxeViolations();
   });
 });

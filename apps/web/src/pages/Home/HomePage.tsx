@@ -7,6 +7,7 @@ import { lessonDuration, pickLibraryLessons } from '../../lib/lessonMeta';
 import { formatTime } from '../../lib/time';
 import { WeekChart } from './WeekChart';
 import styles from './Home.module.css';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 const STEP_LABEL: Record<TodayStepDto['kind'], string> = {
   reading: 'Đọc',
@@ -23,6 +24,7 @@ export function HomePage() {
   const dashboard = useDashboard();
   const today = useToday();
   const d = dashboard.data;
+  useDocumentTitle('Trang chủ');
 
   return (
     <>

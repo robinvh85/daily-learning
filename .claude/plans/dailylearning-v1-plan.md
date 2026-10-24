@@ -1,6 +1,6 @@
 # DailyLearning — Kế hoạch v1 (Đọc & Nghe)
 
-> Ngày lập: 2026-10-24 · Trạng thái: **Draft, chờ duyệt**
+> Ngày lập: 2026-10-24 · Trạng thái: **Code v1 hoàn tất (Phase 0–7), chờ tạo audio thật trên Mac** (Phase 8 VPS để sau)
 > Mockup tham chiếu: canvas "English Learning Web Mockup" (4 màn hình: Trang chủ, Bài đọc, Bài nghe, Ôn từ vựng)
 
 ## 1. Mục tiêu và phạm vi
@@ -295,13 +295,13 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - [x] Checklist review: đúng cấp độ, không lỗi ngữ pháp, nghĩa tiếng Việt chính xác và đúng ngữ cảnh
 
 ### Phase 7 — Hoàn thiện và chạy local (≈ 1 ngày)
-- [ ] Playwright E2E: luồng Đọc → Nghe → Ôn từ
-- [ ] Kiểm tra a11y cơ bản (dùng được bằng bàn phím, tương phản màu, nút ≥ 44px)
-- [ ] Build production: Fastify serve `apps/web/dist` + `content/` (static, cache dài cho audio/ảnh)
-- [ ] `npm start` chạy bản build tại `http://127.0.0.1:3000`; tự chạy migration khi khởi động
+- [x] Playwright E2E: luồng Đọc → Nghe → Ôn từ (chạy trên Mac)
+- [x] Kiểm tra a11y cơ bản (dùng được bằng bàn phím, tương phản màu, nút ≥ 44px)
+- [x] Build production: Fastify serve `apps/web/dist` + `content/` (static, cache dài cho audio/ảnh)
+- [x] `npm start` chạy bản build tại `http://127.0.0.1:3000`; tự chạy migration khi khởi động
 - [ ] ~~Backup DB local~~ **Tạm hoãn (2026-10-24)**, xem mục 9 (Backlog)
-- [ ] README: cài đặt, chạy
-- [ ] (Tùy chọn) Tự khởi động cùng macOS bằng `launchd`, nếu muốn mở trình duyệt là học ngay
+- [x] README: cài đặt, chạy
+- [x] (Tùy chọn) Tự khởi động cùng macOS bằng `launchd`, nếu muốn mở trình duyệt là học ngay (file mẫu `scripts/launchd/`)
 
 ### Phase 8 — Lên VPS (sau này, khi cần) (≈ 0.5–1 ngày)
 - [ ] Bật `AUTH_MODE=password`, tạo user bằng lệnh `npm run user:create`
@@ -352,3 +352,4 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - 2026-10-24: xong Phase 4: `services/srs.ts` dùng `ts-fsrs` (tham số mặc định, "now" truyền vào được để test), lưu từ = thẻ FSRS mới đến hạn ngay; API `/reviews/due` (xem trước khoảng thời gian 4 mức bằng `repeat()`), `POST /reviews/:wordId`, `/vocab?source=&status=`, `/vocab/stats`; migration `0003_review_logs_fsrs` thêm cột FSRS vào `review_logs`, mỗi lần ôn cộng `daily_activity.reviews_done` (ngày theo Asia/Ho_Chi_Minh); trang Ôn từ (thẻ lật, phím Space/Enter và 1–4, trạng thái trống), sổ từ có lọc và xóa có xác nhận, badge Sidebar lấy số thẻ đến hạn thật.
 - 2026-10-24: xong Phase 5: `services/daily-plan.ts` (ngày N = ngày đầu tiên trong lộ trình còn bài chưa xong, không theo lịch; xong cả 2 bài thì giữ ngày N đến hết ngày theo giờ VN, hết lộ trình thì lấy bài chưa học theo cấp/thứ tự, rồi "Đã học hết bài hiện có"), `GET /api/today`, `GET /api/dashboard` (streak, % lộ trình theo cấp hiện tại, từ đã nhớ + Oxford 3000, phút học tuần T2–CN), `POST /api/activity/heartbeat` (0–60 s, hook `useStudyTimer` gửi 30 s/lần khi tab hiện và có tương tác, `sendBeacon` khi ẩn tab), `lessons_done` chỉ cộng một lần khi bài chuyển sang hoàn thành; migration `0004_home_progress` thêm `daily_plans_template.title` và `users.display_name` (đặt bằng `USER_DISPLAY_NAME`); Trang chủ theo mockup và thư viện `/read`, `/listen` có lọc cấp độ/chủ đề.
 - 2026-10-24: xong Phase 6 (review 6c): duyệt 20 bài và toàn bộ từ điển (660 entry, 100% `reviewed`); sửa nghĩa chọn sai ngữ cảnh (thêm nghĩa mới cho `account`, `back`, `card`, `her`, `in`, `for`, `much`, `so`, `then`, `see`), thêm cụm `you're welcome`, `hi there`, `good morning`, `good evening`, chuẩn hóa IPA Mỹ (ɝː), sửa vài bản dịch (`by Wednesday`, `By Thursday afternoon`) và bỏ mốc giờ 0:14/0:23 trong phản hồi bài nghe; mọi từ nhiều nghĩa trong bài đều được chọn nghĩa tường minh.
+- 2026-10-24: xong Phase 7: `npm start` serve `apps/web/dist` (asset hash cache 1 năm, `index.html` no-cache, SPA fallback trừ `/api`, `/content`, `/assets`), tự migration và tự `content:sync` khi DB chưa có bài hoặc hash nội dung `content/` khác hash lưu ở bảng `app_meta` (migration `0005_app_meta`); a11y: skip link, `document.title` riêng mỗi trang, kiểm tra axe-core trong Vitest, tương phản token đều ≥ 4.5:1 (không cần sửa); Playwright E2E Đọc → Nghe → Ôn từ với DB tạm (`npm run test:e2e`, chưa chạy được trong sandbox vì không tải được Chromium, chạy trên Mac); README tiếng Việt; file mẫu launchd.

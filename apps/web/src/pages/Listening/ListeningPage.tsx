@@ -26,6 +26,7 @@ import { Quiz, type QuizAnswer } from '../../components/Quiz/Quiz';
 import { TokenizedText } from '../../components/TokenizedText/TokenizedText';
 import { WordCard } from '../../components/WordCard/WordCard';
 import { timedSegments, useAudioPlayer } from '../../hooks/useAudioPlayer';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import { formatTime } from '../../lib/time';
 import styles from './ListeningPage.module.css';
 
@@ -40,6 +41,13 @@ interface Selection {
 export function ListeningPage() {
   const { slug = '' } = useParams();
   const lesson = useLesson(slug);
+  useDocumentTitle(
+    lesson.data
+      ? `${lesson.data.lesson.title} – Bài nghe`
+      : lesson.isError
+        ? 'Không tìm thấy bài nghe'
+        : 'Bài nghe',
+  );
 
   if (lesson.isPending) {
     return (
