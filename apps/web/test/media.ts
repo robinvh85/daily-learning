@@ -10,7 +10,7 @@ interface MediaState {
   rate: number;
 }
 
-const state = new WeakMap<HTMLMediaElement, MediaState>();
+let state = new WeakMap<HTMLMediaElement, MediaState>();
 export const media: HTMLMediaElement[] = [];
 
 function get(el: HTMLMediaElement): MediaState {
@@ -24,6 +24,8 @@ function get(el: HTMLMediaElement): MediaState {
 }
 
 export function installMediaStub() {
+  // Fresh state per install: elements that outlive a test (the shared clip player) re-register.
+  state = new WeakMap();
   media.length = 0;
   const proto = HTMLMediaElement.prototype;
   const originals = {

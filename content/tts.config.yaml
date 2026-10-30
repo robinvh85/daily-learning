@@ -7,14 +7,14 @@
 # After changing a voice, regenerate with --force (cached clips of other voices are reused).
 
 # Listening lessons: speaker A (female) and speaker B (male).
-speakerA: en-US-Chirp3-HD-Aoede # TODO: confirm after listening
-speakerB: en-US-Chirp3-HD-Charon # TODO: confirm after listening
+speakerA: en-US-Chirp3-HD-Aoede
+speakerB: en-US-Chirp3-HD-Charon
 
 # Reading lessons ("Nghe bài đọc").
-narrator: en-US-Chirp3-HD-Kore # TODO: confirm after listening
+narrator: en-US-Chirp3-HD-Kore
 
 # Word pronunciation (content/words/<lemma-slug>.mp3).
-word: en-US-Neural2-F # TODO: confirm after listening
+word: en-US-Neural2-F
 
 # 0.25–2.0, Neural2/WaveNet only.
 speakingRate: 0.95

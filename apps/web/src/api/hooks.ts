@@ -9,9 +9,11 @@ import type {
   LessonListResponse,
   LoginBody,
   MeResponse,
+  PostponeResponse,
   ProgressBody,
   ProgressResponse,
   ReviewBody,
+  ReviewCardResponse,
   ReviewResponse,
   SavedWordResponse,
   SavedWordsResponse,
@@ -33,6 +35,7 @@ export const queryKeys = {
     ['vocab', 'list', q.source ?? 'all', q.status ?? 'all'] as const,
   vocabStats: ['vocab', 'stats'] as const,
   dueReviews: ['reviews', 'due'] as const,
+  reviewCard: (wordId: number | null) => ['reviews', 'card', wordId] as const,
   today: ['home', 'today'] as const,
   dashboard: ['home', 'dashboard'] as const,
 };
@@ -192,23 +195,45 @@ export function useDueReviews() {
   });
 }
 
+/** A saved word picked from the word book, due or not (`null`: nothing picked). */
+export function useReviewCard(wordId: number | null) {
+  return useQuery({
+    queryKey: queryKeys.reviewCard(wordId),
+    enabled: wordId !== null,
+    queryFn: ({ signal }) => api<ReviewCardResponse>(`/reviews/card/${wordId}`, { signal }),
+  });
+}
+
+/** The answered card leaves the local queue at once (the refetch follows). */
+function dropFromQueue(
+  qc: ReturnType<typeof useQueryClient>,
+  res: { wordId: number; counts: DueReviewsResponse['counts'] },
+) {
+  qc.setQueryData<DueReviewsResponse>(queryKeys.dueReviews, (prev) =>
+    prev
+      ? { ...prev, cards: prev.cards.filter((c) => c.wordId !== res.wordId), counts: res.counts }
+      : prev,
+  );
+}
+
 /** Rate a card. The card leaves the local queue at once; then everything is refetched. */
 export function useSubmitReview() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (v: { wordId: number } & ReviewBody) =>
       api<ReviewResponse>(`/reviews/${v.wordId}`, { method: 'POST', body: { rating: v.rating } }),
-    onSuccess: (res) => {
-      qc.setQueryData<DueReviewsResponse>(queryKeys.dueReviews, (prev) =>
-        prev
-          ? {
-              ...prev,
-              cards: prev.cards.filter((c) => c.wordId !== res.wordId),
-              counts: res.counts,
-            }
-          : prev,
-      );
-    },
+    onSuccess: (res) => dropFromQueue(qc, res),
+    onSettled: () => invalidateVocab(qc),
+  });
+}
+
+/** "Mai ôn": the card is due again tomorrow, without a rating. */
+export function usePostponeReview() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (wordId: number) =>
+      api<PostponeResponse>(`/reviews/${wordId}/postpone`, { method: 'POST' }),
+    onSuccess: (res) => dropFromQueue(qc, res),
     onSettled: () => invalidateVocab(qc),
   });
 }

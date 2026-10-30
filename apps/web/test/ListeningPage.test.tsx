@@ -71,7 +71,9 @@ function makeLesson(withAudio: boolean): LessonDetailResponse {
       seg(1, 'l1', 'A', 'Which platform?', 'Sân ga nào?', ...t(0, 2000), [
         { idx: 0, surface: 'platform', start: 6, end: 14, wordId: 5, senseId: 50 },
       ]),
-      seg(2, 'l2', 'B', 'It is late.', 'Tàu trễ.', ...t(2400, 5000)),
+      // Ends after 5 s: the waveform's 5 s step must land inside l2, not on its end, or the
+      // segment loop may jump back to 2.4 s before the assertion.
+      seg(2, 'l2', 'B', 'It is late.', 'Tàu trễ.', ...t(2400, 5200)),
       seg(3, 'l3', 'A', 'Every station.', 'Mọi ga.', ...t(5400, 9000)),
     ],
     words: { 5: word(5, 'platform', 'sân ga', '/content/words/platform.mp3?v=1') },

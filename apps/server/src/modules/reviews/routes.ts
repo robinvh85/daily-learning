@@ -7,6 +7,9 @@ import {
   reviewBodySchema,
   vocabWordParamsSchema,
   type DueReviewsResponse,
+  type PostponeResponse,
+  type ReviewCardDto,
+  type ReviewCardResponse,
   type ReviewResponse,
 } from '@daily-learning/shared/api';
 import { and, asc, eq, gt, lte, min } from 'drizzle-orm';
@@ -18,13 +21,50 @@ import { recordActivity } from '../../services/activity.js';
 import {
   previewRatings,
   review,
+  startOfNextLocalDay,
   systemClock,
   vocabStatus,
   type Clock,
 } from '../../services/srs.js';
 import { requireUser } from '../auth/routes.js';
 import { contentUrl } from '../lessons/routes.js';
-import { reviewCounts, savedWordRows, sourceLessonOf } from '../vocab/queries.js';
+import {
+  exampleSentence,
+  reviewCounts,
+  savedWordRows,
+  sourceLessonOf,
+  type SavedWordRow,
+} from '../vocab/queries.js';
+
+/** A saved word as a review card, with a preview of the 4 ratings at `t`. */
+function reviewCard(db: AppDatabase, r: SavedWordRow, t: Date): ReviewCardDto {
+  // Prefer a sentence the learner met in a lesson, so it can be played from the lesson audio.
+  const ex = exampleSentence(db, r.wordId, r.senseId, r.lessonId);
+  return {
+    wordId: r.wordId,
+    lemma: r.lemma,
+    ipaUs: r.ipaUs,
+    pos: r.pos ?? '',
+    meaningVi: r.meaningVi ?? '',
+    example: ex?.textEn ?? r.example ?? '',
+    exampleAudio: ex
+      ? {
+          url: contentUrl(ex.audioPath, ex.audioVersion)!,
+          startMs: ex.startMs!,
+          endMs: ex.endMs!,
+        }
+      : null,
+    sourceLesson: sourceLessonOf(r),
+    audioUrl: contentUrl(r.audioPath, r.audioVersion),
+    status: vocabStatus(r.card.state, r.card.stability),
+    due: r.card.due.toISOString(),
+    previews: previewRatings(r.card, t).map((p) => ({
+      rating: p.rating,
+      due: p.due.toISOString(),
+      interval: p.interval,
+    })),
+  };
+}
 
 export function reviewRoutes(
   app: FastifyInstance,
@@ -46,26 +86,42 @@ export function reviewRoutes(
       .where(and(eq(userWords.userId, user.id), gt(userWords.due, t)))
       .get();
     return {
-      cards: rows.map((r) => ({
-        wordId: r.wordId,
-        lemma: r.lemma,
-        ipaUs: r.ipaUs,
-        pos: r.pos ?? '',
-        meaningVi: r.meaningVi ?? '',
-        example: r.example ?? '',
-        sourceLesson: sourceLessonOf(r),
-        audioUrl: contentUrl(r.audioPath, r.audioVersion),
-        status: vocabStatus(r.card.state, r.card.stability),
-        due: r.card.due.toISOString(),
-        previews: previewRatings(r.card, t).map((p) => ({
-          rating: p.rating,
-          due: p.due.toISOString(),
-          interval: p.interval,
-        })),
-      })),
+      cards: rows.map((r) => reviewCard(db, r, t)),
       counts: reviewCounts(db, user.id, t),
       nextDueAt: next?.due ? next.due.toISOString() : null,
     };
+  });
+
+  /** One saved word as a card, due or not: reviewing a word picked from the word book. */
+  app.get(`${API_PREFIX}/reviews/card/:wordId`, async (request): Promise<ReviewCardResponse> => {
+    const user = requireUser(request);
+    const { wordId } = parseInput(vocabWordParamsSchema, request.params);
+    const [row] = savedWordRows(
+      db,
+      and(eq(userWords.userId, user.id), eq(userWords.wordId, wordId)),
+      { orderBy: [asc(userWords.wordId)], limit: 1 },
+    );
+    if (!row) throw notFound(`Saved word ${wordId}`);
+    return { card: reviewCard(db, row, now()) };
+  });
+
+  /**
+   * "Mai ôn": the card is due again at the start of tomorrow. Only `due` moves: no FSRS review,
+   * no log, no activity, so tomorrow's rating is scheduled from the real memory state.
+   */
+  app.post(`${API_PREFIX}/reviews/:wordId/postpone`, async (request): Promise<PostponeResponse> => {
+    const user = requireUser(request);
+    const { wordId } = parseInput(vocabWordParamsSchema, request.params);
+    const t = now();
+    const due = startOfNextLocalDay(t);
+    const updated = db
+      .update(userWords)
+      .set({ due })
+      .where(and(eq(userWords.userId, user.id), eq(userWords.wordId, wordId)))
+      .returning({ wordId: userWords.wordId })
+      .all();
+    if (updated.length === 0) throw notFound(`Saved word ${wordId}`);
+    return { wordId, due: due.toISOString(), counts: reviewCounts(db, user.id, t) };
   });
 
   /** Rate a saved word: FSRS computes the next schedule; every review is logged. */

@@ -307,13 +307,23 @@ export interface ReviewPreviewDto {
   interval: string;
 }
 
+/** A slice of an audio file. */
+export interface AudioClipDto {
+  url: string;
+  startMs: number;
+  endMs: number;
+}
+
 export interface ReviewCardDto {
   wordId: number;
   lemma: string;
   ipaUs: string;
   pos: string;
   meaningVi: string;
+  /** A lesson sentence with the word when one has audio, else the dictionary example. */
   example: string;
+  /** Where `example` is spoken in the lesson audio, or null (dictionary example, no audio). */
+  exampleAudio: AudioClipDto | null;
   sourceLesson: SourceLessonDto | null;
   /** Pronunciation URL, or null without audio. */
   audioUrl: string | null;
@@ -360,6 +370,22 @@ export interface ReviewResponse {
   wordId: number;
   rating: ReviewRating;
   card: CardStateDto;
+  counts: ReviewCountsDto;
+}
+
+/** `GET /api/reviews/card/:wordId`: any saved word, due or not (picked from the word book). */
+export interface ReviewCardResponse {
+  card: ReviewCardDto;
+}
+
+/**
+ * `POST /api/reviews/:wordId/postpone` ("Mai ôn"): the card comes back at the start of tomorrow
+ * (Asia/Ho_Chi_Minh). Not an FSRS review: memory state and review log are untouched.
+ */
+export interface PostponeResponse {
+  wordId: number;
+  /** New due date (ISO 8601). */
+  due: string;
   counts: ReviewCountsDto;
 }
 

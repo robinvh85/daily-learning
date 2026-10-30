@@ -63,6 +63,14 @@
   opacity: 0.6;
 }
 
+.exampleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 560px;
+}
+
 .example {
   margin: 0;
   font-family: var(--font-reading);
@@ -114,7 +122,9 @@
 
 .ratings {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* One column per button: 4 for a new word, 5 with "Mai ôn". */
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
   gap: 10px;
   border-radius: 12px;
 }
@@ -168,6 +178,11 @@
   --rate-bg: var(--color-green-tint);
 }
 
+.rate[data-rating='postpone'] {
+  --rate-border: var(--color-muted);
+  --rate-bg: var(--color-surface-muted);
+}
+
 .rateLabel {
   font-weight: 700;
   font-size: var(--fs-base);
@@ -189,6 +204,20 @@
   }
 
   .ratings {
+    grid-auto-flow: row;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* 5 buttons: 3 + 2, each spanning 2 of 6 columns, the last row centred. */
+  .ratings[data-count='5'] {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .ratings[data-count='5'] .rate {
+    grid-column: span 2;
+  }
+
+  .ratings[data-count='5'] .rate:nth-child(4) {
+    grid-column: 2 / span 2;
   }
 }

@@ -1,6 +1,8 @@
 import type {
   DueReviewsResponse,
   LessonDetailResponse,
+  PostponeResponse,
+  ReviewCardResponse,
   ReviewResponse,
   VocabListResponse,
   VocabStatsResponse,
@@ -64,17 +66,29 @@ describe('save → due → review → stats', () => {
       ipaUs: run.ipaUs,
       pos: 'verb',
       meaningVi: manage.meaningVi,
-      example: manage.example,
       sourceLesson: { slug: 'a-new-coffee-shop', kind: 'reading', title: 'A New Coffee Shop' },
       status: 'new',
       due: clock.toISOString(),
     });
     expect(card.audioUrl === null || card.audioUrl.startsWith('/content/words/')).toBe(true);
+    // The example is the lesson sentence when the lesson has audio, cut from that recording.
+    const seg = reading.segments.find((s) => s.textEn.includes('run her own business'))!;
+    if (reading.lesson.audioUrl && seg.startMs !== null) {
+      expect(card.example).toBe(seg.textEn);
+      expect(card.exampleAudio).toEqual({
+        url: reading.lesson.audioUrl,
+        startMs: seg.startMs,
+        endMs: seg.endMs,
+      });
+    } else {
+      expect(card.example).toBe(manage.example);
+      expect(card.exampleAudio).toBeNull();
+    }
     expect(card.previews.map((p) => [p.rating, p.interval])).toEqual([
-      [1, '1 phút'],
-      [2, '6 phút'],
-      [3, '10 phút'],
-      [4, expect.stringMatching(/^\d+ ngày$/)],
+      [1, '10 phút'],
+      [2, '15 phút'],
+      [3, '1 ngày'],
+      [4, '3 ngày'],
     ]);
     expect(await stats()).toMatchObject({ total: 1, new: 1, due: 1 });
   });
@@ -99,18 +113,19 @@ describe('save → due → review → stats', () => {
 
   it('reviews a card: FSRS schedule, log, daily activity', async () => {
     const run = word(reading, 'run');
-    const res = await rate(run.id, 3);
+    // Khó keeps a new word in the session (Nhớ would graduate it to tomorrow).
+    const res = await rate(run.id, 2);
     expect(res.statusCode).toBe(200);
     const body = res.json<ReviewResponse>();
     expect(body.card).toMatchObject({ state: 1, status: 'learning', reps: 1, lapses: 0 });
-    expect(new Date(body.card.due).getTime() - clock.getTime()).toBe(10 * MIN);
+    expect(new Date(body.card.due).getTime() - clock.getTime()).toBe(15 * MIN);
     expect(body.counts).toEqual({ due: 1, doneToday: 1 });
 
     const d = await due();
     expect(d.cards.map((c) => c.lemma)).toEqual(['platform']);
     expect(d.nextDueAt).toBe(body.card.due);
     expect(t.db.select().from(reviewLogs).all()).toMatchObject([
-      { wordId: run.id, rating: 3, state: 0, elapsedDays: 0 },
+      { wordId: run.id, rating: 2, state: 0, elapsedDays: 0 },
     ]);
     expect(t.db.select().from(dailyActivity).get()).toMatchObject({
       date: '2026-10-24',
@@ -120,7 +135,7 @@ describe('save → due → review → stats', () => {
 
   it('brings the card back when it is due and graduates it to Review', async () => {
     const run = word(reading, 'run');
-    advance(10 * MIN);
+    advance(15 * MIN);
     expect((await due()).cards.map((c) => c.lemma)).toEqual(['platform', 'run']);
     const body = (await rate(run.id, 3)).json<ReviewResponse>();
     expect(body.card.state).toBe(2);
@@ -164,6 +179,52 @@ describe('save → due → review → stats', () => {
     await t.app.inject({ method: 'DELETE', url: `/api/vocab/${platform.id}` });
     expect((await due()).cards.map((c) => c.lemma)).toEqual(['run']);
     expect(await stats()).toMatchObject({ total: 1, new: 0 });
+  });
+
+  it('serves any saved word as a card, due or not', async () => {
+    const run = word(reading, 'run');
+    const res = await t.app.inject({ method: 'GET', url: `/api/reviews/card/${run.id}` });
+    expect(res.statusCode).toBe(200);
+    const { card } = res.json<ReviewCardResponse>();
+    expect(card).toMatchObject({ wordId: run.id, lemma: 'run', status: 'learning' });
+    expect(card.previews.map((p) => p.rating)).toEqual([1, 2, 3, 4]);
+    // Removed and never-saved words have no card.
+    for (const w of [word(listening, 'platform'), word(reading, 'owner')]) {
+      const r = await t.app.inject({ method: 'GET', url: `/api/reviews/card/${w.id}` });
+      expect(r.statusCode).toBe(404);
+    }
+  });
+
+  it('postpones a card to the start of tomorrow without an FSRS review', async () => {
+    const run = word(reading, 'run');
+    // 20:30 UTC on Nov 5 is already 03:30 on Nov 6 in Vietnam: tomorrow starts Nov 7, 00:00 (+7).
+    clock = new Date('2026-11-05T20:30:00Z');
+    const before = t.db.select().from(userWords).where(eq(userWords.wordId, run.id)).get()!;
+    const logs = t.db.select().from(reviewLogs).all().length;
+    expect((await due()).cards.map((c) => c.lemma)).toEqual(['run']);
+
+    const res = await t.app.inject({ method: 'POST', url: `/api/reviews/${run.id}/postpone` });
+    expect(res.statusCode).toBe(200);
+    const body = res.json<PostponeResponse>();
+    expect(body).toEqual({
+      wordId: run.id,
+      due: '2026-11-06T17:00:00.000Z',
+      counts: { due: 0, doneToday: 0 },
+    });
+    const d = await due();
+    expect(d.cards).toEqual([]);
+    expect(d.nextDueAt).toBe(body.due);
+
+    const after = t.db.select().from(userWords).where(eq(userWords.wordId, run.id)).get()!;
+    expect(after).toEqual({ ...before, due: new Date(body.due) });
+    expect(t.db.select().from(reviewLogs).all()).toHaveLength(logs);
+
+    // Still reviewable when picked from the word book.
+    const card = await get<ReviewCardResponse>(`/api/reviews/card/${run.id}`);
+    expect(card.card.due).toBe(body.due);
+    const missing = word(reading, 'owner');
+    const r = await t.app.inject({ method: 'POST', url: `/api/reviews/${missing.id}/postpone` });
+    expect(r.statusCode).toBe(404);
   });
 });
 

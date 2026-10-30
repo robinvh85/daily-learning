@@ -14,6 +14,9 @@ export const REVIEW_RATING_LABELS: Record<ReviewRating, string> = {
   4: 'Dễ',
 };
 
+/** "Mai ôn": postpone the card to tomorrow without rating it (shown between Khó and Nhớ). */
+export const POSTPONE_LABEL = 'Mai ôn';
+
 /**
  * Word-book status derived from the FSRS card:
  * - `new`: FSRS state New (saved, never reviewed)

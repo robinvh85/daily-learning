@@ -5,9 +5,17 @@ import type {
   SourceLessonDto,
   VocabStatsResponse,
 } from '@daily-learning/shared/api';
-import { and, count, eq, gte, lte, sql, type SQL } from 'drizzle-orm';
+import { and, asc, count, desc, eq, gte, isNotNull, lte, sql, type SQL } from 'drizzle-orm';
 import type { AppDatabase } from '../../db/client.js';
-import { lessons, reviewLogs, userWords, words, wordSenses } from '../../db/schema.js';
+import {
+  lessons,
+  lessonTokens,
+  reviewLogs,
+  segments,
+  userWords,
+  words,
+  wordSenses,
+} from '../../db/schema.js';
 import { startOfLocalDay } from '../../services/srs.js';
 
 /** SQL form of `vocabStatus()` in services/srs.ts (keep both in sync). */
@@ -50,6 +58,7 @@ export function savedWordRows(
       ipaUs: words.ipaUs,
       audioPath: words.audioPath,
       audioVersion: words.audioVersion,
+      senseId: wordSenses.id,
       pos: wordSenses.pos,
       meaningVi: wordSenses.meaningVi,
       example: wordSenses.example,
@@ -72,6 +81,48 @@ export type SavedWordRow = ReturnType<typeof savedWordRows>[number];
 export function sourceLessonOf(r: SavedWordRow): SourceLessonDto | null {
   if (r.lessonId === null || !r.lessonSlug || !r.lessonKind || !r.lessonTitle) return null;
   return { id: r.lessonId, slug: r.lessonSlug, kind: r.lessonKind, title: r.lessonTitle };
+}
+
+/**
+ * A lesson sentence containing the word, with its slice of the lesson audio: the source lesson
+ * first, then the saved sense, then lesson order. Only lessons with audio and timings count.
+ */
+export function exampleSentence(
+  db: AppDatabase,
+  wordId: number,
+  senseId: number | null,
+  sourceLessonId: number | null,
+) {
+  return (
+    db
+      .select({
+        textEn: segments.textEn,
+        startMs: segments.startMs,
+        endMs: segments.endMs,
+        audioPath: lessons.audioPath,
+        audioVersion: lessons.audioVersion,
+      })
+      .from(lessonTokens)
+      .innerJoin(segments, eq(segments.id, lessonTokens.segmentId))
+      .innerJoin(lessons, eq(lessons.id, lessonTokens.lessonId))
+      .where(
+        and(
+          eq(lessonTokens.wordId, wordId),
+          isNotNull(lessons.audioPath),
+          isNotNull(segments.startMs),
+          isNotNull(segments.endMs),
+        ),
+      )
+      .orderBy(
+        desc(sql`${lessons.id} is ${sourceLessonId}`),
+        desc(sql`${lessonTokens.senseId} is ${senseId}`),
+        asc(lessons.orderIndex),
+        asc(lessons.id),
+        asc(segments.idx),
+      )
+      .limit(1)
+      .get() ?? null
+  );
 }
 
 export function countDue(db: AppDatabase, userId: number, now: Date): number {

@@ -1,16 +1,30 @@
 /**
  * Ôn từ vựng (mockup Vocab.dc.html): today's progress, the FSRS review card and the word book.
  *
- * Keyboard: Space/Enter flips the card, 1–4 rate it. The listener lives only while this page is
- * mounted and ignores typing in form fields, modified keys and the word book panel.
+ * The card is the first due card, or a word picked in the word book (due or not) until it is
+ * answered. "Từ khác" skips a due card: it moves to the end of the local queue, nothing is sent.
+ *
+ * Keyboard: Space/Enter flips the card, number keys pick the n-th answer button (Quên, Khó,
+ * Mai ôn, Nhớ, Dễ; no Mai ôn while Nhớ is only a day away), R plays
+ * the word, S the example sentence, N/→ skips, ? opens the shortcuts list. The listener lives
+ * only while this page is mounted and ignores typing in form fields, modified keys and the word
+ * book panel.
  */
-import { formatIntervalVi, REVIEW_RATINGS, type ReviewRating } from '@daily-learning/shared';
+import { formatIntervalVi, type ReviewRating } from '@daily-learning/shared';
 import { useQueryClient } from '@tanstack/react-query';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { queryKeys, useDueReviews, useSubmitReview } from '../../api/hooks';
+import {
+  queryKeys,
+  useDueReviews,
+  usePostponeReview,
+  useReviewCard,
+  useSubmitReview,
+} from '../../api/hooks';
 import { Flashcard, type FlashcardHandle } from '../../components/Flashcard/Flashcard';
+import { playExample, playWord, reviewChoices } from '../../components/Flashcard/review';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { ShortcutsHelp } from './ShortcutsHelp';
 import { WordBook } from './WordBook';
 import styles from './VocabPage.module.css';
 
@@ -38,16 +52,40 @@ export function VocabPage() {
   const due = useDueReviews();
   useDocumentTitle('Ôn từ vựng');
   const submit = useSubmitReview();
+  const postpone = usePostponeReview();
+  const busy = submit.isPending || postpone.isPending;
   const [flippedFor, setFlippedFor] = useState<number | null>(null);
+  /** Word picked in the word book, shown until answered. */
+  const [pickedId, setPickedId] = useState<number | null>(null);
+  /** Due cards skipped with "Từ khác", in skip order: they go to the end of the queue. */
+  const [skipped, setSkipped] = useState<number[]>([]);
+  const [helpOpen, setHelpOpen] = useState(false);
   const cardRef = useRef<FlashcardHandle>(null);
   /** Move focus only after the learner has interacted with the card. */
   const interacted = useRef(false);
 
-  const card = due.data?.cards[0] ?? null;
+  const queue = useMemo(() => {
+    const cards = due.data?.cards ?? [];
+    const rank = new Map(skipped.map((id, i) => [id, i]));
+    return [...cards.filter((c) => !rank.has(c.wordId))].concat(
+      cards
+        .filter((c) => rank.has(c.wordId))
+        .sort((a, b) => rank.get(a.wordId)! - rank.get(b.wordId)!),
+    );
+  }, [due.data, skipped]);
+  // A picked word that is due is already in the queue; others are fetched on their own.
+  const pickedInQueue = queue.find((c) => c.wordId === pickedId) ?? null;
+  const pickedCard = useReviewCard(pickedId !== null && !pickedInQueue ? pickedId : null);
+  const card =
+    pickedId === null ? (queue[0] ?? null) : (pickedInQueue ?? pickedCard.data?.card ?? null);
   const flipped = card !== null && flippedFor === card.wordId;
   const counts = due.data?.counts ?? { due: 0, doneToday: 0 };
   const total = counts.doneToday + counts.due;
   const pct = total > 0 ? Math.round((counts.doneToday / total) * 100) : 0;
+
+  /** After an answer: back to the queue if the answered card was the picked one. */
+  const answered = (res: { wordId: number }) =>
+    setPickedId((id) => (id === res.wordId ? null : id));
 
   const flip = () => {
     if (!card) return;
@@ -55,10 +93,36 @@ export function VocabPage() {
     setFlippedFor(card.wordId);
   };
   const rate = (rating: ReviewRating) => {
-    if (!card || !flipped || submit.isPending) return;
+    if (!card || !flipped || busy) return;
     interacted.current = true;
-    submit.mutate({ wordId: card.wordId, rating });
+    submit.mutate({ wordId: card.wordId, rating }, { onSuccess: answered });
   };
+  const postponeCard = () => {
+    if (!card || !flipped || busy) return;
+    interacted.current = true;
+    postpone.mutate(card.wordId, { onSuccess: answered });
+  };
+  const choices = card ? reviewChoices(card) : [];
+  const choose = (n: number) => {
+    const choice = choices[n - 1];
+    if (choice === undefined) return;
+    if (choice === 'postpone') postponeCard();
+    else rate(choice);
+  };
+  const skip = () => {
+    if (!card) return;
+    interacted.current = true;
+    if (pickedId !== null) {
+      setPickedId(null);
+      return;
+    }
+    setSkipped((ids) => [...ids.filter((id) => id !== card.wordId), card.wordId]);
+  };
+  const pick = (wordId: number) => {
+    interacted.current = true;
+    setPickedId(wordId);
+  };
+  const canSkip = pickedId !== null || queue.length > 1;
 
   // Keep keyboard focus on the main action as the card flips and advances.
   useEffect(() => {
@@ -66,9 +130,9 @@ export function VocabPage() {
   }, [card?.wordId, flipped]);
 
   // Latest handlers for the key listener, so it is bound once per mount.
-  const keys = useRef({ flip, rate, flipped });
+  const keys = useRef({ flip, choose, skip, card, flipped });
   useEffect(() => {
-    keys.current = { flip, rate, flipped };
+    keys.current = { flip, choose, skip, card, flipped };
   });
 
   useEffect(() => {
@@ -77,6 +141,11 @@ export function VocabPage() {
       const target = e.target instanceof Element ? e.target : null;
       if (isEditable(target) || target?.closest('[data-card-keys="off"]')) return;
       const k = keys.current;
+      if (e.key === '?') {
+        e.preventDefault();
+        setHelpOpen((open) => !open);
+        return;
+      }
       if (e.key === ' ' || e.key === 'Enter') {
         // A focused button or link already reacts to Space/Enter natively.
         if (target?.closest('button, a, [role="button"]')) return;
@@ -86,10 +155,26 @@ export function VocabPage() {
         }
         return;
       }
+      if (!k.card) return;
+      switch (e.key.toLowerCase()) {
+        case 'r':
+          e.preventDefault();
+          playWord(k.card);
+          return;
+        case 's':
+          e.preventDefault();
+          playExample(k.card);
+          return;
+        case 'n':
+        case 'arrowright':
+          e.preventDefault();
+          k.skip();
+          return;
+      }
       const n = Number(e.key);
-      if ((REVIEW_RATINGS as readonly number[]).includes(n) && k.flipped) {
+      if (Number.isInteger(n) && n >= 1 && k.flipped) {
         e.preventDefault();
-        k.rate(n as ReviewRating);
+        k.choose(n);
       }
     };
     document.addEventListener('keydown', onKeyDown);
@@ -125,26 +210,29 @@ export function VocabPage() {
           </nav>
           <h1 className={styles.h1}>Ôn từ hôm nay</h1>
         </div>
-        <div className={styles.progress}>
-          <div className={styles.progressRow}>
-            <span className={styles.muted} id="review-progress-label">
-              Đã ôn
-            </span>
-            <span className={styles.progressValue}>
-              {counts.doneToday} / {total}
-            </span>
+        <div className={styles.headerEnd}>
+          <div className={styles.progress}>
+            <div className={styles.progressRow}>
+              <span className={styles.muted} id="review-progress-label">
+                Đã ôn
+              </span>
+              <span className={styles.progressValue}>
+                {counts.doneToday} / {total}
+              </span>
+            </div>
+            <div
+              className={styles.bar}
+              role="progressbar"
+              aria-labelledby="review-progress-label"
+              aria-valuemin={0}
+              aria-valuemax={total}
+              aria-valuenow={counts.doneToday}
+              aria-valuetext={`Đã ôn ${counts.doneToday} trên ${total} thẻ hôm nay`}
+            >
+              <div className={styles.barFill} style={{ width: `${pct}%` }} />
+            </div>
           </div>
-          <div
-            className={styles.bar}
-            role="progressbar"
-            aria-labelledby="review-progress-label"
-            aria-valuemin={0}
-            aria-valuemax={total}
-            aria-valuenow={counts.doneToday}
-            aria-valuetext={`Đã ôn ${counts.doneToday} trên ${total} thẻ hôm nay`}
-          >
-            <div className={styles.barFill} style={{ width: `${pct}%` }} />
-          </div>
+          <ShortcutsHelp open={helpOpen} onOpenChange={setHelpOpen} />
         </div>
       </header>
 
@@ -158,6 +246,25 @@ export function VocabPage() {
             <p role="alert" className={styles.error}>
               Không tải được thẻ cần ôn: {due.error.message}
             </p>
+          ) : pickedId !== null && !card ? (
+            pickedCard.isError ? (
+              <div className={styles.cardBar}>
+                <p role="alert" className={styles.error}>
+                  Không tải được thẻ: {pickedCard.error.message}
+                </p>
+                <button
+                  type="button"
+                  className={styles.textButton}
+                  onClick={() => setPickedId(null)}
+                >
+                  Về thẻ đến hạn
+                </button>
+              </div>
+            ) : (
+              <p role="status" className={styles.muted}>
+                Đang tải thẻ…
+              </p>
+            )
           ) : card ? (
             <>
               <Flashcard
@@ -167,17 +274,36 @@ export function VocabPage() {
                 flipped={flipped}
                 onFlip={flip}
                 onRate={rate}
-                busy={submit.isPending}
+                onPostpone={postponeCard}
+                busy={busy}
               />
-              {submit.isError && (
+              {(submit.isError || postpone.isError) && (
                 <p role="alert" className={styles.error}>
-                  Không lưu được kết quả: {submit.error.message}
+                  Không lưu được kết quả: {(submit.error ?? postpone.error)?.message}
                 </p>
               )}
+              <div className={styles.cardBar}>
+                <p className={styles.picked}>
+                  {pickedId !== null
+                    ? 'Đang ôn từ bạn chọn trong sổ từ.'
+                    : `Còn ${counts.due} thẻ đến hạn.`}
+                </p>
+                {canSkip && (
+                  <button
+                    type="button"
+                    className={styles.textButton}
+                    aria-keyshortcuts="N ArrowRight"
+                    onClick={skip}
+                  >
+                    {pickedId !== null ? 'Về thẻ đến hạn' : 'Từ khác'} <kbd>N</kbd>
+                  </button>
+                )}
+              </div>
               <p className={styles.hint}>
                 Hệ thống lặp lại ngắt quãng: từ càng dễ thì càng lâu mới hỏi lại.
                 <br />
-                Phím tắt: <kbd>Space</kbd> lật thẻ, <kbd>1</kbd>–<kbd>4</kbd> chọn mức nhớ.
+                Phím tắt: <kbd>Space</kbd> lật thẻ, <kbd>1</kbd>–<kbd>{choices.length}</kbd> chọn
+                mức nhớ, <kbd>?</kbd> xem tất cả.
               </p>
             </>
           ) : (
@@ -205,7 +331,11 @@ export function VocabPage() {
         </section>
 
         <div data-card-keys="off" className={styles.bookWrap}>
-          <WordBook />
+          <WordBook
+            currentId={card?.wordId ?? null}
+            onPick={pick}
+            onRemoved={(wordId) => setPickedId((id) => (id === wordId ? null : id))}
+          />
         </div>
       </div>
     </>

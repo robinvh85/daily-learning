@@ -27,18 +27,18 @@ describe('newCardColumns', () => {
   });
 });
 
-describe('review (FSRS default parameters)', () => {
-  it('moves New → Learning on Again/Hard/Good with short steps', () => {
+describe('review (scheduler parameters: 10-minute step, retention 0.95, max 180 days)', () => {
+  it('keeps a New card in the session on Again/Hard, Good graduates it to tomorrow', () => {
     const c = newCardColumns(T0);
     const again = rate(c, 1, T0);
     expect(again.state).toBe(1);
-    expect(again.due.getTime() - T0.getTime()).toBe(1 * MIN);
+    expect(again.due.getTime() - T0.getTime()).toBe(10 * MIN);
     const hard = rate(c, 2, T0);
     expect(hard.state).toBe(1);
-    expect(hard.due.getTime() - T0.getTime()).toBe(6 * MIN);
+    expect(hard.due.getTime() - T0.getTime()).toBe(15 * MIN);
     const good = rate(c, 3, T0);
-    expect(good.state).toBe(1);
-    expect(good.due.getTime() - T0.getTime()).toBe(10 * MIN);
+    expect(good.state).toBe(2);
+    expect(good.due.getTime() - T0.getTime()).toBe(DAY);
     expect(good.reps).toBe(1);
     expect(good.lastReview?.getTime()).toBe(T0.getTime());
   });
@@ -51,9 +51,9 @@ describe('review (FSRS default parameters)', () => {
     expect(vocabStatus(easy.state, easy.stability)).toBe('learning');
   });
 
-  it('graduates Learning → Review after Good, Good', () => {
-    let c = rate(newCardColumns(T0), 3, T0);
-    c = rate(c, 3, at(10 * MIN));
+  it('graduates Learning → Review after Hard, Good', () => {
+    let c = rate(newCardColumns(T0), 2, T0);
+    c = rate(c, 3, at(15 * MIN));
     expect(c.state).toBe(2);
     expect(c.scheduledDays).toBeGreaterThanOrEqual(1);
     expect(c.reps).toBe(2);
@@ -117,8 +117,33 @@ describe('previewRatings', () => {
 
   it('formats a new card in Vietnamese', () => {
     const labels = previewRatings(newCardColumns(T0), T0).map((p) => p.interval);
-    expect(labels.slice(0, 3)).toEqual(['1 phút', '6 phút', '10 phút']);
-    expect(labels[3]).toMatch(/^\d+ ngày$/);
+    expect(labels).toEqual(['10 phút', '15 phút', '1 ngày', '3 ngày']);
+  });
+
+  it('keeps Dễ at least a day past Nhớ on a weak card, in the preview and the review', () => {
+    // A new word answered Quên comes back after 10 minutes; FSRS alone gives Nhớ = Dễ = 1 day.
+    const c = rate(newCardColumns(T0), 1, T0);
+    const t = at(10 * MIN);
+    const previews = previewRatings(c, t);
+    expect(previews.map((p) => p.interval)).toEqual(['10 phút', '15 phút', '1 ngày', '2 ngày']);
+    const easy = rate(c, 4, t);
+    expect(easy.due.getTime()).toBe(previews[3]!.due.getTime());
+    expect(easy.scheduledDays).toBe(2);
+    expect(easy.state).toBe(2);
+  });
+
+  it('caps intervals at 180 days (Nhớ/Dễ one/two days more, to keep their order)', () => {
+    let c = newCardColumns(T0);
+    let t = T0;
+    for (let i = 0; i < 12; i++) {
+      const previews = previewRatings(c, t);
+      expect(previews[1]!.due.getTime() - t.getTime()).toBeLessThanOrEqual(180 * DAY);
+      c = rate(c, 4, t);
+      expect(c.scheduledDays).toBeLessThanOrEqual(182);
+      t = c.due;
+    }
+    const capped = previewRatings(c, t).map((p) => (p.due.getTime() - t.getTime()) / DAY);
+    expect(capped.slice(1)).toEqual([180, 181, 182]);
   });
 });
 

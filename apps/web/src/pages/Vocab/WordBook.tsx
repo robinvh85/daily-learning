@@ -1,4 +1,7 @@
-/** "Sổ từ của tôi": saved words filtered by source and status, with remove + confirm. */
+/**
+ * "Sổ từ của tôi": saved words filtered by source and status, with remove + confirm. Clicking a
+ * word puts it on the review card, due or not.
+ */
 import {
   VOCAB_STATUS_LABELS,
   VOCAB_STATUSES,
@@ -15,7 +18,15 @@ const SOURCES: { value: VocabSource | 'all'; label: string }[] = [
   { value: 'listen', label: 'Từ bài nghe' },
 ];
 
-export function WordBook() {
+export interface WordBookProps {
+  /** The word on the review card, highlighted in the list. */
+  currentId: number | null;
+  /** Review this word now. */
+  onPick: (wordId: number) => void;
+  onRemoved: (wordId: number) => void;
+}
+
+export function WordBook({ currentId, onPick, onRemoved }: WordBookProps) {
   const [source, setSource] = useState<VocabSource | 'all'>('all');
   const [status, setStatus] = useState<VocabStatus | 'all'>('all');
   const [confirmId, setConfirmId] = useState<number | null>(null);
@@ -72,13 +83,22 @@ export function WordBook() {
       ) : (
         <ul className={styles.rows} aria-label="Danh sách từ đã lưu">
           {list.data.items.map((it) => (
-            <li key={it.wordId} className={styles.row}>
-              <div className={styles.rowText}>
+            <li
+              key={it.wordId}
+              className={styles.row}
+              aria-current={currentId === it.wordId ? 'true' : undefined}
+            >
+              <button
+                type="button"
+                className={styles.rowText}
+                aria-label={`Ôn từ ${it.lemma}: ${it.meaningVi}`}
+                onClick={() => onPick(it.wordId)}
+              >
                 <span className={styles.rowWord} lang="en">
                   {it.lemma}
                 </span>
                 <span className={styles.rowMeaning}>{it.meaningVi}</span>
-              </div>
+              </button>
               {confirmId === it.wordId ? (
                 <div className={styles.confirm} role="group" aria-label={`Xóa ${it.lemma}?`}>
                   <span className={styles.confirmText}>Xóa?</span>
@@ -88,7 +108,10 @@ export function WordBook() {
                     aria-label={`Xóa ${it.lemma} khỏi sổ từ`}
                     disabled={remove.isPending}
                     onClick={() =>
-                      remove.mutate(it.wordId, { onSettled: () => setConfirmId(null) })
+                      remove.mutate(it.wordId, {
+                        onSuccess: () => onRemoved(it.wordId),
+                        onSettled: () => setConfirmId(null),
+                      })
                     }
                   >
                     Xóa

@@ -1,6 +1,5 @@
 /**
- * Spaced repetition with FSRS (`ts-fsrs`, plan 2.1), using the library's default parameters
- * (request retention 0.9, learning steps 1m/10m, relearning step 10m, no fuzz).
+ * Spaced repetition with FSRS (`ts-fsrs`, plan 2.1), tuned for A2–B1 learners (see `scheduler`).
  *
  * Pure functions only: the caller passes "now", so tests control time. Database rows
  * (`user_words`) are converted to and from the ts-fsrs `Card` here.
@@ -11,7 +10,15 @@ import {
   type ReviewRating,
   type VocabStatus,
 } from '@daily-learning/shared';
-import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from 'ts-fsrs';
+import {
+  createEmptyCard,
+  fsrs,
+  generatorParameters,
+  Rating,
+  State,
+  type Card,
+  type Grade,
+} from 'ts-fsrs';
 
 /** Source of "now". Injected into the app so tests can move time. */
 export type Clock = () => Date;
@@ -19,8 +26,25 @@ export const systemClock: Clock = () => new Date();
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-/** FSRS scheduler with default parameters. */
-export const scheduler = fsrs();
+/**
+ * FSRS scheduler. The library defaults (retention 0.9, steps 1m/10m, no cap) suit long-time Anki
+ * users: Quên came back after 1 minute, Khó/Nhớ were 6/10 minutes apart, and a few Nhớ answers
+ * pushed a word years away. For new learners:
+ * - one 10-minute (re)learning step: Quên comes back later in the session, Nhớ on a new word
+ *   means tomorrow;
+ * - retention 0.95: words come back sooner (new word on Nhớ: 1 → 3 → … → ~3 months);
+ * - at most 180 days between reviews (at the cap Nhớ/Dễ get 181/182 days, so the buttons stay
+ *   in order); no fuzz (tests and previews stay exact).
+ */
+export const scheduler = fsrs(
+  generatorParameters({
+    learning_steps: ['10m'],
+    relearning_steps: ['10m'],
+    request_retention: 0.95,
+    maximum_interval: 180,
+    enable_fuzz: false,
+  }),
+);
 
 /** UI rating → FSRS grade: Quên = Again, Khó = Hard, Nhớ = Good, Dễ = Easy. */
 export const UI_RATING_TO_FSRS: Record<ReviewRating, Grade> = {
@@ -96,9 +120,26 @@ export interface ReviewResult {
   };
 }
 
+/**
+ * The next card for each rating. On a weak card (just forgotten, or a new word answered Quên/Khó)
+ * FSRS rounds Nhớ and Dễ to the same 1-day minimum; like Anki, Dễ is then pushed one day past
+ * Nhớ, so the two buttons never do the same thing.
+ */
+function schedule(row: CardColumns, now: Date): Record<ReviewRating, Card> {
+  const log = scheduler.repeat(rowToCard(row, now), now);
+  const next = (rating: ReviewRating) => log[UI_RATING_TO_FSRS[rating]].card;
+  const good = next(3);
+  let easy = next(4);
+  if (good.state === State.Review && easy.scheduled_days <= good.scheduled_days) {
+    const days = good.scheduled_days + 1;
+    easy = { ...easy, scheduled_days: days, due: new Date(now.getTime() + days * DAY_MS) };
+  }
+  return { 1: next(1), 2: next(2), 3: good, 4: easy };
+}
+
 /** Apply a rating at `now`. */
 export function review(row: CardColumns, rating: ReviewRating, now: Date): ReviewResult {
-  const { card } = scheduler.next(rowToCard(row, now), now, UI_RATING_TO_FSRS[rating]);
+  const card = schedule(row, now)[rating];
   const elapsedDays = row.lastReview
     ? Math.max(0, (now.getTime() - row.lastReview.getTime()) / DAY_MS)
     : 0;
@@ -124,11 +165,11 @@ export interface RatingPreview {
   interval: string;
 }
 
-/** What each of the 4 ratings would do, via FSRS `repeat()`. */
+/** What each of the 4 ratings would do (the same schedule `review()` applies). */
 export function previewRatings(row: CardColumns, now: Date): RatingPreview[] {
-  const preview = scheduler.repeat(rowToCard(row, now), now);
+  const cards = schedule(row, now);
   return ([1, 2, 3, 4] as const).map((rating) => {
-    const due = preview[UI_RATING_TO_FSRS[rating]].card.due;
+    const due = cards[rating].due;
     return { rating, due, interval: formatIntervalVi(due.getTime() - now.getTime()) };
   });
 }
@@ -150,6 +191,11 @@ const VN_OFFSET_MS = 7 * 60 * 60 * 1000;
 export function startOfLocalDay(now: Date): Date {
   const local = now.getTime() + VN_OFFSET_MS;
   return new Date(local - (local % DAY_MS) - VN_OFFSET_MS);
+}
+
+/** Start of the next local day: when a postponed ("Mai ôn") card comes back. */
+export function startOfNextLocalDay(now: Date): Date {
+  return new Date(startOfLocalDay(now).getTime() + DAY_MS);
 }
 
 /** Local date `YYYY-MM-DD` (Asia/Ho_Chi_Minh), for `daily_activity.date`. */

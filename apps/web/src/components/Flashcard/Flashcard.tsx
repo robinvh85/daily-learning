@@ -1,20 +1,23 @@
 /**
  * Review card (mockup Vocab.dc.html): front = word + example, "Xem nghĩa" flips it, then the
- * 4 rating buttons show the real FSRS intervals from the server.
+ * 4 rating buttons show the real FSRS intervals from the server, with "Mai ôn" (postpone to
+ * tomorrow, no rating) between Khó and Nhớ when Nhớ is more than a day away.
  */
-import { REVIEW_RATING_LABELS, type ReviewRating } from '@daily-learning/shared';
+import { POSTPONE_LABEL, REVIEW_RATING_LABELS, type ReviewRating } from '@daily-learning/shared';
 import type { ReviewCardDto } from '@daily-learning/shared/api';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 import { posLabel } from '../../lib/labels';
-import { playUrl } from '../../lib/playUrl';
 import { SpeakerIcon } from '../Icons';
 import styles from './Flashcard.module.css';
+import { playExample, playWord, reviewChoices } from './review';
 
 export interface FlashcardProps {
   card: ReviewCardDto;
   flipped: boolean;
   onFlip: () => void;
   onRate: (rating: ReviewRating) => void;
+  /** "Mai ôn": review again tomorrow. */
+  onPostpone: () => void;
   /** While the rating is being sent. */
   busy?: boolean;
 }
@@ -25,9 +28,10 @@ export interface FlashcardHandle {
 }
 
 export const Flashcard = forwardRef<FlashcardHandle, FlashcardProps>(function Flashcard(
-  { card, flipped, onFlip, onRate, busy = false },
+  { card, flipped, onFlip, onRate, onPostpone, busy = false },
   ref,
 ) {
+  const choices = reviewChoices(card);
   const flipRef = useRef<HTMLButtonElement>(null);
   const ratingsRef = useRef<HTMLDivElement>(null);
   useImperativeHandle(ref, () => ({
@@ -56,15 +60,28 @@ export const Flashcard = forwardRef<FlashcardHandle, FlashcardProps>(function Fl
             }
             title={card.audioUrl ? undefined : 'Chưa có audio: chạy npm run content:tts-words'}
             disabled={!card.audioUrl}
-            onClick={() => card.audioUrl && playUrl(card.audioUrl)}
+            onClick={() => playWord(card)}
           >
             <SpeakerIcon />
           </button>
         </div>
         {card.example && (
-          <p className={styles.example} lang="en">
-            “{card.example}”
-          </p>
+          <div className={styles.exampleRow}>
+            <p className={styles.example} lang="en">
+              “{card.example}”
+            </p>
+            {card.exampleAudio && (
+              <button
+                type="button"
+                className={styles.speaker}
+                aria-label="Nghe câu ví dụ"
+                title="Nghe câu ví dụ trong bài"
+                onClick={() => playExample(card)}
+              >
+                <SpeakerIcon />
+              </button>
+            )}
+          </div>
         )}
         {flipped && (
           <div className={styles.back} aria-live="polite">
@@ -88,23 +105,45 @@ export const Flashcard = forwardRef<FlashcardHandle, FlashcardProps>(function Fl
           role="group"
           aria-label="Bạn nhớ từ này thế nào?"
           className={styles.ratings}
+          data-count={choices.length}
           tabIndex={-1}
         >
-          {card.previews.map((p) => (
-            <button
-              key={p.rating}
-              type="button"
-              className={styles.rate}
-              data-rating={p.rating}
-              disabled={busy}
-              aria-keyshortcuts={String(p.rating)}
-              aria-label={`${REVIEW_RATING_LABELS[p.rating]}: hỏi lại sau ${p.interval} (phím ${p.rating})`}
-              onClick={() => onRate(p.rating)}
-            >
-              <span className={styles.rateLabel}>{REVIEW_RATING_LABELS[p.rating]}</span>
-              <span className={styles.rateNext}>{p.interval}</span>
-            </button>
-          ))}
+          {choices.map((choice, i) => {
+            const key = String(i + 1);
+            if (choice === 'postpone')
+              return (
+                <button
+                  key={choice}
+                  type="button"
+                  className={styles.rate}
+                  data-rating="postpone"
+                  disabled={busy}
+                  aria-keyshortcuts={key}
+                  aria-label={`${POSTPONE_LABEL}: ôn lại vào ngày mai (phím ${key})`}
+                  onClick={onPostpone}
+                >
+                  <span className={styles.rateLabel}>{POSTPONE_LABEL}</span>
+                  <span className={styles.rateNext}>ngày mai</span>
+                </button>
+              );
+            const p = card.previews.find((x) => x.rating === choice);
+            if (!p) return null;
+            return (
+              <button
+                key={choice}
+                type="button"
+                className={styles.rate}
+                data-rating={choice}
+                disabled={busy}
+                aria-keyshortcuts={key}
+                aria-label={`${REVIEW_RATING_LABELS[choice]}: hỏi lại sau ${p.interval} (phím ${key})`}
+                onClick={() => onRate(choice)}
+              >
+                <span className={styles.rateLabel}>{REVIEW_RATING_LABELS[choice]}</span>
+                <span className={styles.rateNext}>{p.interval}</span>
+              </button>
+            );
+          })}
         </div>
       ) : (
         <button

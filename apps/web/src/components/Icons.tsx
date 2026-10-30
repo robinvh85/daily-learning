@@ -105,3 +105,10 @@ export const PauseIcon = ({ size = 22, ...rest }: IconProps) => (
     <rect x="14" y="5" width="4" height="14" rx="1" />
   </svg>
 );
+
+export const KeyboardIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="2.5" y="6" width="19" height="12" rx="2" />
+    <path d="M6.5 10h.01M10 10h.01M13.5 10h.01M17 10h.01M6.5 14h.01M17 14h.01M9.5 14h5" />
+  </Svg>
+);
