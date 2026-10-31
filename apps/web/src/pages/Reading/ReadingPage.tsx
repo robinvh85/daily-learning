@@ -16,7 +16,7 @@ import {
   useUpdateProgress,
 } from '../../api/hooks';
 import { FocusWordList } from '../../components/FocusWordList/FocusWordList';
-import { PauseIcon, PlayIcon } from '../../components/Icons';
+import { NextIcon, PauseIcon, PlayIcon, PrevIcon } from '../../components/Icons';
 import { Quiz, type QuizAnswer } from '../../components/Quiz/Quiz';
 import { TokenizedText } from '../../components/TokenizedText/TokenizedText';
 import { WordCard } from '../../components/WordCard/WordCard';
@@ -237,15 +237,40 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
               Song ngữ
             </button>
             {lesson.audioUrl ? (
-              <button
-                type="button"
-                className={styles.listen}
-                aria-pressed={player.playing}
-                onClick={player.toggle}
-              >
-                {player.playing ? <PauseIcon size={18} /> : <PlayIcon />}
-                {player.playing ? 'Tạm dừng' : 'Nghe bài đọc'}
-              </button>
+              <div role="group" aria-label="Nghe bài đọc" className={styles.listenGroup}>
+                {timed.length > 0 && (
+                  <button
+                    type="button"
+                    className={styles.tool}
+                    aria-label="Câu trước"
+                    title="Câu trước"
+                    onClick={player.prev}
+                  >
+                    <PrevIcon size={18} />
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className={styles.listen}
+                  aria-pressed={player.playing}
+                  onClick={player.toggle}
+                >
+                  {player.playing ? <PauseIcon size={18} /> : <PlayIcon />}
+                  {player.playing ? 'Tạm dừng' : 'Nghe bài đọc'}
+                </button>
+                {timed.length > 0 && (
+                  <button
+                    type="button"
+                    className={styles.tool}
+                    aria-label="Câu sau"
+                    title="Câu sau"
+                    disabled={player.current >= timed.length - 1}
+                    onClick={player.next}
+                  >
+                    <NextIcon size={18} />
+                  </button>
+                )}
+              </div>
             ) : (
               <button
                 type="button"

@@ -112,3 +112,17 @@ export const KeyboardIcon = (p: IconProps) => (
     <path d="M6.5 10h.01M10 10h.01M13.5 10h.01M17 10h.01M6.5 14h.01M17 14h.01M9.5 14h5" />
   </Svg>
 );
+
+export const PrevIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M6 5v14" />
+    <path d="M19 5 9 12l10 7z" fill="currentColor" />
+  </Svg>
+);
+
+export const NextIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M18 5v14" />
+    <path d="M5 5l10 7-10 7z" fill="currentColor" />
+  </Svg>
+);

@@ -230,6 +230,42 @@ describe('ReadingPage with narrator audio', () => {
     await user.click(screen.getByRole('button', { name: 'Tạm dừng' }));
     expect(lastPlayer().paused).toBe(true);
   });
+
+  it('jumps to the previous / next sentence', async () => {
+    const user = userEvent.setup();
+    const first = baseLesson.segments[0]!;
+    lesson = {
+      ...lesson,
+      segments: [
+        { ...first, startMs: 0, endMs: 1400 },
+        { ...first, id: 12, key: 'p1s2', idx: 1, startMs: 1500, endMs: 2900 },
+      ],
+    };
+    renderPage();
+    await user.click(await screen.findByRole('button', { name: 'Nghe bài đọc' }));
+    expect(screen.getByTestId('sentence-p1s1')).toHaveAttribute('aria-current', 'true');
+
+    const next = screen.getByRole('button', { name: 'Câu sau' });
+    await user.click(next);
+    expect(lastPlayer().currentTime).toBe(1.5);
+    expect(lastPlayer().paused).toBe(false);
+    expect(screen.getByTestId('sentence-p1s2')).toHaveAttribute('aria-current', 'true');
+    expect(screen.getByTestId('sentence-p1s1')).not.toHaveAttribute('aria-current');
+    expect(next).toBeDisabled();
+
+    await user.click(screen.getByRole('button', { name: 'Câu trước' }));
+    expect(lastPlayer().currentTime).toBe(0);
+    expect(screen.getByTestId('sentence-p1s1')).toHaveAttribute('aria-current', 'true');
+    expect(next).toBeEnabled();
+  });
+
+  it('hides sentence navigation when the audio has no timings', async () => {
+    lesson = { ...lesson, segments: baseLesson.segments };
+    renderPage();
+    await screen.findByRole('button', { name: 'Nghe bài đọc' });
+    expect(screen.queryByRole('button', { name: 'Câu sau' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Câu trước' })).toBeNull();
+  });
 });
 
 describe('ReadingPage accessibility', () => {
