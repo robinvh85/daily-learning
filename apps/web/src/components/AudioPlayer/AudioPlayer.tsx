@@ -15,7 +15,7 @@ export interface AudioPlayerProps {
 
 export function AudioPlayer({ player, peaks, hasSegments }: AudioPlayerProps) {
   return (
-    <section aria-label="Trình phát" className={styles.player}>
+    <section aria-label="Trình phát" className={styles.player} data-player>
       {peaks && peaks.length > 0 ? (
         <Waveform
           peaks={peaks}
@@ -48,6 +48,8 @@ export function AudioPlayer({ player, peaks, hasSegments }: AudioPlayerProps) {
           <button
             type="button"
             className={styles.btn}
+            title="Câu trước (←)"
+            aria-keyshortcuts="ArrowLeft"
             onClick={player.prev}
             disabled={!hasSegments}
           >
@@ -57,6 +59,8 @@ export function AudioPlayer({ player, peaks, hasSegments }: AudioPlayerProps) {
             type="button"
             className={styles.play}
             aria-label={player.playing ? 'Tạm dừng' : 'Phát'}
+            title={player.playing ? 'Tạm dừng (Space)' : 'Phát (Space)'}
+            aria-keyshortcuts="Space"
             onClick={player.toggle}
           >
             {player.playing ? <PauseIcon /> : <PlayIcon size={22} />}
@@ -64,6 +68,8 @@ export function AudioPlayer({ player, peaks, hasSegments }: AudioPlayerProps) {
           <button
             type="button"
             className={styles.btn}
+            title="Câu sau (→)"
+            aria-keyshortcuts="ArrowRight"
             onClick={player.next}
             disabled={!hasSegments}
           >
@@ -93,6 +99,15 @@ export function AudioPlayer({ player, peaks, hasSegments }: AudioPlayerProps) {
           ))}
         </div>
       </div>
+      <p className={styles.keysHint}>
+        Phím tắt: <kbd>Space</kbd> nghe / tạm dừng
+        {hasSegments && (
+          <>
+            {' · '}
+            <kbd>←</kbd> câu trước · <kbd>→</kbd> câu sau
+          </>
+        )}
+      </p>
     </section>
   );
 }

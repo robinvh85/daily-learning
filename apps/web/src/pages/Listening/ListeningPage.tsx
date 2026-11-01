@@ -27,6 +27,7 @@ import { TokenizedText } from '../../components/TokenizedText/TokenizedText';
 import { WordCard } from '../../components/WordCard/WordCard';
 import { timedSegments, useAudioPlayer } from '../../hooks/useAudioPlayer';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { usePlayerShortcuts } from '../../hooks/usePlayerShortcuts';
 import { formatTime } from '../../lib/time';
 import styles from './ListeningPage.module.css';
 
@@ -99,6 +100,7 @@ function ListeningLesson({ slug, data }: { slug: string; data: LessonDetailRespo
   const savedIds = useMemo(() => new Set(saved.data?.wordIds ?? []), [saved.data]);
   const hasAudio = lesson.audioUrl !== null;
   const hasTimings = hasAudio && timed.length > 0;
+  usePlayerShortcuts(player, { enabled: hasAudio, segments: hasTimings });
   const segIndex = useMemo(() => new Map(segments.map((s, i) => [s.id, i])), [segments]);
   const playingIdx = hasTimings && (player.playing || player.currentMs > 0) ? player.current : -1;
 

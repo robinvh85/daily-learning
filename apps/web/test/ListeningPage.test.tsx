@@ -273,6 +273,53 @@ describe('ListeningPage with audio', () => {
     expect(audio.currentTime).toBe(4.5);
   });
 
+  it('controls playback from the keyboard: Space, ← and →', async () => {
+    const user = userEvent.setup();
+    renderPage();
+    const player = await screen.findByRole('region', { name: 'Trình phát' });
+    expect(within(player).getByText(/Phím tắt:/)).toBeInTheDocument();
+    const audio = lastPlayer();
+
+    await user.keyboard(' ');
+    expect(audio.paused).toBe(false);
+    await user.keyboard('{ArrowRight}');
+    expect(audio.currentTime).toBe(2.4);
+    await user.keyboard('{ArrowRight}');
+    expect(audio.currentTime).toBe(5.4);
+    await user.keyboard('{ArrowLeft}');
+    expect(audio.currentTime).toBe(2.4);
+    await user.keyboard(' ');
+    expect(audio.paused).toBe(true);
+
+    // After clicking a player button, Space plays / pauses instead of repeating that button.
+    await user.click(within(player).getByRole('button', { name: 'Câu sau' }));
+    expect(audio.currentTime).toBe(5.4);
+    await user.keyboard(' ');
+    expect(audio.paused).toBe(false);
+    expect(audio.currentTime).toBe(5.4);
+    await user.keyboard(' ');
+    expect(audio.paused).toBe(true);
+
+    // The waveform slider keeps its own arrow keys (5 s steps), no sentence jump on top.
+    const wave = within(player).getByRole('slider', { name: 'Vị trí phát' });
+    act(() => wave.focus());
+    await user.keyboard('{Home}{ArrowRight}');
+    expect(audio.currentTime).toBe(5);
+
+    // Typing the dictation answer: keys stay text input.
+    const input = screen.getAllByRole('textbox')[0]!;
+    await user.click(input);
+    await user.keyboard('a b{ArrowLeft}');
+    expect(input).toHaveValue('a b');
+    expect(audio.paused).toBe(true);
+    expect(audio.currentTime).toBe(5);
+
+    // Modifier combos (browser back/forward, word jumps) are left alone.
+    act(() => input.blur());
+    await user.keyboard('{Meta>}{ArrowRight}{/Meta}');
+    expect(audio.currentTime).toBe(5);
+  });
+
   it('plays a single dictation segment', async () => {
     const user = userEvent.setup();
     renderPage();

@@ -145,3 +145,19 @@
     padding: 20px;
   }
 }
+
+.keysHint {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+.keysHint kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+  font-family: inherit;
+  font-size: 0.9em;
+  color: var(--color-ink);
+}
