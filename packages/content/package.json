@@ -1,0 +1,25 @@
+{
+  "name": "@daily-learning/content",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Content tooling: validate content/, build the static JSON the web app reads, TTS audio.",
+  "type": "module",
+  "exports": {
+    "./build": "./src/content/build.ts",
+    "./load": "./src/content/load.ts",
+    "./tokenizer": "./src/content/tokenizer.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@daily-learning/shared": "0.1.0",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "vitest": "^5.0.5"
+  }
+}

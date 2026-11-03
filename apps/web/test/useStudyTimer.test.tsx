@@ -9,7 +9,6 @@ function Timer() {
 
 let visibility: DocumentVisibilityState = 'visible';
 let fetchMock: ReturnType<typeof vi.fn>;
-let beaconMock: ReturnType<typeof vi.fn>;
 
 beforeEach(() => {
   vi.useFakeTimers();
@@ -17,8 +16,6 @@ beforeEach(() => {
   vi.spyOn(document, 'visibilityState', 'get').mockImplementation(() => visibility);
   fetchMock = vi.fn(() => Promise.resolve(new Response('{}')));
   vi.stubGlobal('fetch', fetchMock);
-  beaconMock = vi.fn(() => true);
-  Object.defineProperty(navigator, 'sendBeacon', { value: beaconMock, configurable: true });
 });
 afterEach(() => {
   vi.useRealTimers();
@@ -63,22 +60,18 @@ describe('useStudyTimer', () => {
     expect(sentSeconds()).toEqual([30, 30, 30]);
   });
 
-  it('does not count while the tab is hidden and sends the rest with sendBeacon', async () => {
+  it('sends the rest when the tab is hidden, then stops counting', () => {
     render(<Timer />);
     act(() => {
       vi.advanceTimersByTime(12_000);
       visibility = 'hidden';
       document.dispatchEvent(new Event('visibilitychange'));
     });
-    expect(beaconMock).toHaveBeenCalledTimes(1);
-    const [url, blob] = beaconMock.mock.calls[0] as [string, Blob];
-    expect(url).toBe(HEARTBEAT_URL);
-    expect(blob.type).toBe('application/json');
-    expect(JSON.parse(await blob.text())).toEqual({ seconds: 12 });
+    expect(sentSeconds()).toEqual([12]);
 
     act(() => {
       vi.advanceTimersByTime(60_000);
     });
-    expect(fetchMock).not.toHaveBeenCalled();
+    expect(sentSeconds()).toEqual([12]);
   });
 });

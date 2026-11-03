@@ -3,14 +3,14 @@
 // with ffmpeg (gapMs of silence) and write audio.mp3 + timings.json next to lesson.yaml.
 // --dry-run only prints the character count. Aborts before any API call above TTS_MAX_CHARS.
 import { parseArgs } from 'node:util';
-import { loadEnvFile } from '../apps/server/src/config.js';
+import { loadEnvFile } from '../packages/content/src/config.js';
 import {
   createProvider,
   maxChars,
   reportError,
   resolveContentDir,
-} from '../apps/server/src/content/tts/cli.js';
-import { runLessonTts } from '../apps/server/src/content/tts/run.js';
+} from '../packages/content/src/content/tts/cli.js';
+import { runLessonTts } from '../packages/content/src/content/tts/run.js';
 
 const USAGE =
   'Usage: npm run content:tts -- <slug…|--all> [--dry-run] [--force] [--provider google|fake] [--out <dir>]';
@@ -45,7 +45,7 @@ try {
     log,
   });
   if (dryRun) console.log(`--dry-run: nothing was sent. Total characters: ${result.charsToSend}.`);
-  else if (result.written.length > 0) console.log('Next: npm run content:sync');
+  else if (result.written.length > 0) console.log('Next: npm run content:build');
 } catch (err) {
   reportError(err);
 }

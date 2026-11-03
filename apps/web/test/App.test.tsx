@@ -29,8 +29,8 @@ function renderApp(me: MeResponse, path = '/', withStats = false) {
 }
 
 describe('App', () => {
-  it('shows the sidebar and home page without login in AUTH_MODE=none', async () => {
-    renderApp({ authMode: 'none', user: { id: 1, email: null } });
+  it('shows the sidebar and home page without a login screen (authMode none)', async () => {
+    renderApp({ authMode: 'none', user: { id: 'u1', email: null } });
     expect(await screen.findByRole('navigation', { name: 'Điều hướng chính' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Trang chủ' })).toHaveAttribute('aria-current', 'page');
     expect(screen.getByRole('link', { name: /Từ vựng/ })).toHaveTextContent('0');
@@ -39,20 +39,23 @@ describe('App', () => {
     expect(screen.queryByRole('button', { name: 'Đăng xuất' })).toBeNull();
   });
 
-  it('shows the login page in AUTH_MODE=password when logged out', async () => {
+  it('shows the login page when nobody is signed in', async () => {
     renderApp({ authMode: 'password', user: null }, '/read/a-new-coffee-shop');
     expect(await screen.findByRole('heading', { name: 'Đăng nhập' })).toBeInTheDocument();
     expect(screen.queryByRole('navigation', { name: 'Điều hướng chính' })).toBeNull();
   });
 
   it('routes listening lessons to the listening page', async () => {
-    renderApp({ authMode: 'none', user: { id: 1, email: null } }, '/listen/at-the-train-station');
+    renderApp(
+      { authMode: 'none', user: { id: 'u1', email: null } },
+      '/listen/at-the-train-station',
+    );
     expect(await screen.findByText('Không tìm thấy bài nghe này.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Nghe' })).toHaveAttribute('aria-current', 'page');
   });
 
   it('shows the real due count in the sidebar badge', async () => {
-    renderApp({ authMode: 'none', user: { id: 1, email: null } }, '/', true);
+    renderApp({ authMode: 'none', user: { id: 'u1', email: null } }, '/', true);
     const link = await screen.findByRole('link', { name: /Từ vựng/ });
     await waitFor(() => expect(link).toHaveTextContent('7 thẻ đến hạn'));
   });
@@ -60,7 +63,7 @@ describe('App', () => {
 
 describe('App shell accessibility', () => {
   it('has a skip link to the main landmark and no axe violations (regions on)', async () => {
-    renderApp({ authMode: 'none', user: { id: 1, email: null } }, '/nope', true);
+    renderApp({ authMode: 'none', user: { id: 'u1', email: null } }, '/nope', true);
     await screen.findByRole('heading', { name: 'Không tìm thấy trang' });
     const skip = screen.getByRole('link', { name: 'Bỏ qua đến nội dung chính' });
     const main = screen.getByRole('main');

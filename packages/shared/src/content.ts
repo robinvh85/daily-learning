@@ -364,7 +364,7 @@ export const timingsSchema = z
     /** Duration of audio.mp3 in milliseconds (ffprobe). */
     durationMs: z.int().positive(),
     /**
-     * Hash of the segment ids, speakers and texts the audio was made from. `content:sync` warns
+     * Hash of the segment ids, speakers and texts the audio was made from. `content:build` warns
      * when lesson.yaml changed after the audio was generated.
      */
     textHash: z.string().regex(/^[0-9a-f]{16}$/),

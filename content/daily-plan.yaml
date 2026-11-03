@@ -1,5 +1,5 @@
 # Learning path template: day N → title, reading and listening lesson (by slug).
-# Synced into the daily_plans_template table by `npm run content:sync`.
+# Built into /content/data/catalog.json by `npm run content:build`.
 days:
   - day: 1
     title: Cuộc sống quanh khu phố

@@ -28,7 +28,7 @@ export function App() {
   if (me.isError) {
     return (
       <p role="alert" style={{ padding: 24, color: 'var(--color-red)' }}>
-        Không kết nối được máy chủ: {me.error.message}
+        Không kết nối được Firebase: {me.error.message}
       </p>
     );
   }

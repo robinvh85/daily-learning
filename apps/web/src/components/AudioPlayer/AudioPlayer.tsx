@@ -40,7 +40,7 @@ export function AudioPlayer({ player, peaks, hasSegments }: AudioPlayerProps) {
       </div>
       {player.error && (
         <p role="alert" className={styles.error}>
-          Không tải được file audio. Chạy lại <code>npm run content:sync</code> rồi tải lại trang.
+          Không tải được file audio. Chạy lại <code>npm run content:build</code> rồi tải lại trang.
         </p>
       )}
       <div className={styles.controls}>

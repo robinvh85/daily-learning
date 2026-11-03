@@ -2,7 +2,7 @@
   "name": "@daily-learning/shared",
   "version": "0.1.0",
   "private": true,
-  "description": "Types and schemas shared by server and web.",
+  "description": "Types and schemas shared by the web app and the content tooling.",
   "type": "module",
   "exports": {
     ".": {
@@ -19,6 +19,11 @@
       "source": "./src/api.ts",
       "types": "./dist/api.d.ts",
       "default": "./dist/api.js"
+    },
+    "./content-data": {
+      "source": "./src/content-data.ts",
+      "types": "./dist/content-data.d.ts",
+      "default": "./dist/content-data.js"
     }
   },
   "scripts": {

@@ -5,21 +5,21 @@
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
-import { loadEnvFile, ROOT_DIR } from '../apps/server/src/config.js';
+import { loadEnvFile, ROOT_DIR } from '../packages/content/src/config.js';
 import {
   createProvider,
   maxChars,
   reportError,
   REPO_CONTENT_DIR,
-} from '../apps/server/src/content/tts/cli.js';
-import { loadTtsConfig } from '../apps/server/src/content/tts/config.js';
+} from '../packages/content/src/content/tts/cli.js';
+import { loadTtsConfig } from '../packages/content/src/content/tts/config.js';
 import {
   SAMPLE_TEXT,
   TIER_FEATURES,
   usableVoices,
   VOICE_SHORTLIST,
   voiceTier,
-} from '../apps/server/src/content/tts/voices.js';
+} from '../packages/content/src/content/tts/voices.js';
 
 try {
   const { values } = parseArgs({

@@ -2,8 +2,8 @@
 // List the words of a lesson (or of every lesson) that are missing from content/dictionary/,
 // and the multi-sense words that have no `senses` choice in lesson.yaml.
 import { join } from 'node:path';
-import { ROOT_DIR } from '../apps/server/src/config.js';
-import { formatIssues, loadContent } from '../apps/server/src/content/load.js';
+import { ROOT_DIR } from '../packages/content/src/config.js';
+import { formatIssues, loadContent } from '../packages/content/src/content/load.js';
 
 const slug = process.argv[2];
 const bundle = loadContent(join(ROOT_DIR, 'content'));

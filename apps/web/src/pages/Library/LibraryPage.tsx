@@ -59,7 +59,7 @@ export function LibraryPage({ kind }: { kind: LessonKind }) {
         </p>
       ) : all.length === 0 ? (
         <p className={styles.muted}>
-          Chưa có bài nào. Chạy <code>npm run content:sync</code> để nạp bài học.
+          Chưa có bài nào. Chạy <code>npm run content:build</code> để nạp bài học.
         </p>
       ) : (
         <>

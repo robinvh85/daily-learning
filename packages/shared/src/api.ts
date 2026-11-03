@@ -1,10 +1,11 @@
 /**
- * REST API contract (plan section 5): Zod schemas for request input and TypeScript types for
- * responses. Exposed as `@daily-learning/shared/api`.
+ * API contract (plan section 5): request and response types of every `/api/*` path. Exposed as
+ * `@daily-learning/shared/api`.
  *
- * The web app imports only types from here (`import type`), so zod stays out of its bundle.
+ * There is no HTTP server: the web app answers these paths in the browser (`apps/web/src/backend`)
+ * from the static content files and Firestore. The paths and types stay as a stable seam between
+ * the pages and that backend.
  */
-import { z } from 'zod';
 import {
   CEFR_LEVELS,
   LESSON_KINDS,
@@ -18,23 +19,14 @@ import {
   type Speaker,
   type WordStatus,
 } from './constants.js';
-import {
-  REVIEW_RATINGS,
-  VOCAB_SOURCES,
-  VOCAB_STATUSES,
-  type ReviewRating,
-  type VocabStatus,
-} from './srs.js';
+import type { ReviewRating, VocabSource, VocabStatus } from './srs.js';
 
-/** `none` = single local user, no login. `password` = login required (VPS). */
+/** `none` = no login screen. `password` = Firebase Auth email/password login (the mode used). */
 export const AUTH_MODES = ['none', 'password'] as const;
 export type AuthMode = (typeof AUTH_MODES)[number];
 
 // Re-exported so API consumers can validate enums without importing constants separately.
 export { CEFR_LEVELS, LESSON_KINDS, LESSON_LEVELS, LESSON_PROGRESS_STATUSES, WORD_STATUSES };
-
-const id = z.coerce.number().int().positive();
-const slugParam = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 
 /** Error body for every non-2xx response. */
 export interface ApiError {
@@ -46,15 +38,14 @@ export interface ApiError {
 // Auth: /api/auth/*
 // ---------------------------------------------------------------------------
 
-export const loginBodySchema = z.strictObject({
-  email: z.string().trim().toLowerCase().pipe(z.email()),
-  password: z.string().min(1).max(1024),
-});
-export type LoginBody = z.input<typeof loginBodySchema>;
+export interface LoginBody {
+  email: string;
+  password: string;
+}
 
 export interface AuthUser {
-  id: number;
-  /** Null for the default local user (`AUTH_MODE=none`). */
+  /** Firebase Auth uid. */
+  id: string;
   email: string | null;
 }
 
@@ -68,14 +59,11 @@ export interface MeResponse {
 // Lessons: /api/lessons
 // ---------------------------------------------------------------------------
 
-export const lessonListQuerySchema = z.strictObject({
-  kind: z.enum(LESSON_KINDS).optional(),
-  level: z.enum(LESSON_LEVELS).optional(),
-  topic: slugParam.optional(),
-});
-export type LessonListQuery = z.input<typeof lessonListQuerySchema>;
-
-export const lessonSlugParamsSchema = z.strictObject({ slug: slugParam });
+export interface LessonListQuery {
+  kind?: LessonKind;
+  level?: LessonLevel;
+  topic?: string;
+}
 
 export interface LessonProgressDto {
   status: LessonProgressStatus;
@@ -163,7 +151,7 @@ export interface FocusWordDto {
   senseId: number | null;
 }
 
-/** A comprehension question. The correct option is never sent to the client. */
+/** A comprehension question (the correct option stays in the backend). */
 export interface QuestionDto {
   id: number;
   idx: number;
@@ -172,7 +160,7 @@ export interface QuestionDto {
   evidenceSegmentId: number | null;
 }
 
-/** A dictation gap. The answer is never sent to the client. */
+/** A dictation gap (the answer stays in the backend). */
 export interface DictationItemDto {
   id: number;
   idx: number;
@@ -198,11 +186,8 @@ export interface LessonDetailResponse {
 }
 
 /** `POST /api/lessons/:slug/answers` */
-export const answerBodySchema = z.union([
-  z.strictObject({ questionId: id, value: z.int().min(0).max(20) }),
-  z.strictObject({ dictationItemId: id, value: z.string().max(200) }),
-]);
-export type AnswerBody = z.input<typeof answerBodySchema>;
+export type AnswerBody =
+  { questionId: number; value: number } | { dictationItemId: number; value: string };
 
 export interface AnswerResponse {
   correct: boolean;
@@ -212,12 +197,12 @@ export interface AnswerResponse {
 }
 
 /** `POST /api/lessons/:slug/progress` */
-export const progressBodySchema = z.strictObject({
-  step: z.int().min(0).max(20),
-  status: z.enum(LESSON_PROGRESS_STATUSES).optional(),
-  score: z.number().min(0).max(1).nullable().optional(),
-});
-export type ProgressBody = z.input<typeof progressBodySchema>;
+export interface ProgressBody {
+  step: number;
+  status?: LessonProgressStatus;
+  /** 0..1 */
+  score?: number | null;
+}
 
 export interface ProgressResponse {
   progress: LessonProgressDto;
@@ -227,14 +212,11 @@ export interface ProgressResponse {
 // Vocabulary: /api/vocab
 // ---------------------------------------------------------------------------
 
-export const vocabWordParamsSchema = z.strictObject({ wordId: id });
-
 /** `POST /api/vocab/:wordId` */
-export const saveWordBodySchema = z.strictObject({
-  senseId: id.nullable().optional(),
-  sourceLessonId: id.nullable().optional(),
-});
-export type SaveWordBody = z.input<typeof saveWordBodySchema>;
+export interface SaveWordBody {
+  senseId?: number | null;
+  sourceLessonId?: number | null;
+}
 
 export interface SavedWordResponse {
   wordId: number;
@@ -243,18 +225,17 @@ export interface SavedWordResponse {
 }
 
 /** `GET /api/vocab/saved?lesson=<slug>` */
-export const savedWordsQuerySchema = z.strictObject({ lesson: slugParam.optional() });
-
 export interface SavedWordsResponse {
   wordIds: number[];
 }
 
 /** `GET /api/vocab?source=read|listen|all&status=new|learning|known|all` (word book) */
-export const vocabListQuerySchema = z.strictObject({
-  source: z.enum([...VOCAB_SOURCES, 'all']).default('all'),
-  status: z.enum([...VOCAB_STATUSES, 'all']).default('all'),
-});
-export type VocabListQuery = z.input<typeof vocabListQuerySchema>;
+export interface VocabListQuery {
+  /** Default `all`. */
+  source?: VocabSource | 'all';
+  /** Default `all`. */
+  status?: VocabStatus | 'all';
+}
 
 export interface SourceLessonDto {
   id: number;
@@ -294,10 +275,10 @@ export interface VocabStatsResponse {
 // ---------------------------------------------------------------------------
 
 /** `GET /api/reviews/due?limit=` */
-export const dueReviewsQuerySchema = z.strictObject({
-  limit: z.coerce.number().int().min(1).max(200).default(50),
-});
-export type DueReviewsQuery = z.input<typeof dueReviewsQuerySchema>;
+export interface DueReviewsQuery {
+  /** 1..200, default 50. */
+  limit?: number;
+}
 
 export interface ReviewPreviewDto {
   rating: ReviewRating;
@@ -348,10 +329,9 @@ export interface DueReviewsResponse {
 }
 
 /** `POST /api/reviews/:wordId` */
-export const reviewBodySchema = z.strictObject({
-  rating: z.literal(REVIEW_RATINGS),
-});
-export type ReviewBody = z.input<typeof reviewBodySchema>;
+export interface ReviewBody {
+  rating: ReviewRating;
+}
 
 export interface CardStateDto {
   due: string;
@@ -442,11 +422,10 @@ export interface TodayResponse {
 /** Longest study time one heartbeat can add. */
 export const HEARTBEAT_MAX_SECONDS = 60;
 
-/** `POST /api/activity/heartbeat`. `seconds` is clamped to 0..60 by the server. */
-export const heartbeatBodySchema = z.strictObject({
-  seconds: z.number().finite(),
-});
-export type HeartbeatBody = z.input<typeof heartbeatBodySchema>;
+/** `POST /api/activity/heartbeat`. `seconds` is clamped to 0..60 by the backend. */
+export interface HeartbeatBody {
+  seconds: number;
+}
 
 export interface HeartbeatResponse {
   /** Seconds added by this heartbeat (after clamping). */

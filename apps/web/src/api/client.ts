@@ -1,21 +1,32 @@
+/**
+ * `api('/lessons')`: the pages' single entry point to data.
+ *
+ * There is no server: the default transport answers the `/api/*` paths in the browser
+ * (`backend/`, Firestore + static content files), loaded lazily so the first paint does not wait
+ * for the Firebase SDK. Tests swap in `fetchTransport` and stub `fetch` with canned responses.
+ */
 import { API_PREFIX } from '@daily-learning/shared';
 import type { ApiError } from '@daily-learning/shared/api';
+import { ApiRequestError } from './errors';
 
-export class ApiRequestError extends Error {
-  constructor(
-    readonly status: number,
-    readonly code: string,
-    message: string,
-  ) {
-    super(message);
-  }
+export { ApiRequestError };
+
+export interface ApiInit {
+  method?: string;
+  body?: unknown;
+  signal?: AbortSignal;
 }
 
-/** Fetch `/api<path>` as JSON. Throws `ApiRequestError` for non-2xx responses. */
-export async function api<T>(
-  path: string,
-  init: { method?: string; body?: unknown; signal?: AbortSignal } = {},
-): Promise<T> {
+/** Answers `path` (without the `/api` prefix, with its query string). */
+export type ApiTransport = (path: string, init: ApiInit) => Promise<unknown>;
+
+const browserTransport: ApiTransport = async (path, init) => {
+  const { handleApi } = await import('../backend');
+  return handleApi(path, init);
+};
+
+/** Real HTTP: `fetch('/api' + path)`. Used by the component tests. */
+export const fetchTransport: ApiTransport = async (path, init) => {
   const res = await fetch(`${API_PREFIX}${path}`, {
     method: init.method ?? 'GET',
     headers: init.body === undefined ? undefined : { 'content-type': 'application/json' },
@@ -28,7 +39,7 @@ export async function api<T>(
     try {
       body = (await res.json()) as ApiError;
     } catch {
-      // Not JSON (e.g. proxy error).
+      // Not JSON.
     }
     throw new ApiRequestError(
       res.status,
@@ -36,6 +47,17 @@ export async function api<T>(
       body.message ?? `HTTP ${res.status}`,
     );
   }
-  if (res.status === 204) return undefined as T;
-  return (await res.json()) as T;
+  if (res.status === 204) return undefined;
+  return res.json();
+};
+
+let transport: ApiTransport = browserTransport;
+
+export function setApiTransport(t: ApiTransport): void {
+  transport = t;
+}
+
+/** Call `/api<path>`. Throws `ApiRequestError` on failure. */
+export async function api<T>(path: string, init: ApiInit = {}): Promise<T> {
+  return (await transport(path, init)) as T;
 }

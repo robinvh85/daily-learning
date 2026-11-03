@@ -1,8 +1,8 @@
 // npm run content:stats: dictionary size, share of reviewed entries, Oxford 3000 coverage, lessons.
 import { join } from 'node:path';
 import { CEFR_LEVELS } from '@daily-learning/shared';
-import { ROOT_DIR } from '../apps/server/src/config.js';
-import { loadContent } from '../apps/server/src/content/load.js';
+import { ROOT_DIR } from '../packages/content/src/config.js';
+import { loadContent } from '../packages/content/src/content/load.js';
 
 const bundle = loadContent(join(ROOT_DIR, 'content'));
 const entries = bundle.entries.map((e) => e.entry);
@@ -32,4 +32,4 @@ Lessons
   total:       ${bundle.lessons.length} (${reading} reading, ${bundle.lessons.length - reading} listening)
   tokens:      ${tokens}
   plan days:   ${bundle.dailyPlan?.days.length ?? 0}
-Validation:    ${errors === 0 ? 'OK' : `${errors} error(s), run npm run content:sync -- --dry-run`}`);
+Validation:    ${errors === 0 ? 'OK' : `${errors} error(s), run npm run content:build -- --check`}`);

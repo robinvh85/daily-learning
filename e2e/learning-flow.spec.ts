@@ -1,12 +1,13 @@
 /**
- * Main learning flow (plan Phase 7): Home → Reading → Listening → Vocab, on a fresh database.
- * Correct answers are read from the lesson YAML, so the test follows content edits.
- * Runs without audio files (the listening page then shows its "no audio" notice).
+ * Main learning flow (plan Phase 7): Login → Home → Reading → Listening → Vocab, for a new
+ * learner on empty emulators (see global-setup.ts). Correct answers are read from the lesson
+ * YAML, so the test follows content edits.
  */
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 import { parse } from 'yaml';
+import { E2E_USER } from './global-setup.js';
 
 interface LessonYaml {
   title: string;
@@ -47,8 +48,19 @@ async function answerQuiz(quiz: Locator, questions: LessonYaml['questions']) {
 }
 
 test('reading → listening → vocab review', async ({ page }) => {
-  await test.step('home shows today’s lesson', async () => {
+  await test.step('log in', async () => {
     await page.goto('/');
+    await expect(page.getByRole('heading', { name: 'Đăng nhập' })).toBeVisible();
+    await page.getByLabel('Email').fill(E2E_USER.email);
+    await page.getByLabel('Mật khẩu').fill('wrong-password');
+    await page.getByRole('button', { name: 'Đăng nhập' }).click();
+    await expect(page.getByRole('alert')).toHaveText('Email hoặc mật khẩu không đúng.');
+    await page.getByLabel('Mật khẩu').fill(E2E_USER.password);
+    await page.getByRole('button', { name: 'Đăng nhập' }).click();
+    await expect(nav(page)).toBeVisible();
+  });
+
+  await test.step('home shows today’s lesson', async () => {
     await expect(page).toHaveTitle('Trang chủ · DailyLearning');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Chào E2E');
     await expect(page.getByRole('region', { name: 'Cuộc sống quanh khu phố' })).toBeVisible();
@@ -145,5 +157,17 @@ test('reading → listening → vocab review', async ({ page }) => {
 
     // The only due card was rated → the sidebar badge drops to 0.
     await expectDue(page, 0);
+  });
+
+  await test.step('a reload keeps the session and the progress (Firestore)', async () => {
+    await page.goto('/read');
+    await expect(nav(page)).toBeVisible();
+    await expect(page.getByRole('link', { name: new RegExp(reading.title) })).toBeVisible();
+    await expectDue(page, 0);
+  });
+
+  await test.step('log out', async () => {
+    await page.getByRole('button', { name: 'Đăng xuất' }).click();
+    await expect(page.getByRole('heading', { name: 'Đăng nhập' })).toBeVisible();
   });
 });

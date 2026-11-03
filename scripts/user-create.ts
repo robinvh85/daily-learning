@@ -1,11 +1,14 @@
-// npm run user:create -- <email>
-// Create a login for AUTH_MODE=password (plan 2.6 / Phase 8). The password is asked twice without
-// echo, or read from the first line of stdin when stdin is not a terminal:
-//   echo 'secret-password' | npm run user:create -- me@example.com
+// npm run user:create -- <email> (--emulator | --project <id>) [--name <display name>]
+//
+// Create a Firebase Auth login (the app has no sign-up) with the `learner` claim that
+// firestore.rules require, and its profile document. The password is asked twice without echo,
+// or read from the first line of stdin when stdin is not a terminal:
+//   echo 'secret-password' | npm run user:create -- me@example.com --emulator
 import { createInterface } from 'node:readline';
-import { loadEnvFile, resolveDbPath } from '../apps/server/src/config.js';
-import { openAndMigrate } from '../apps/server/src/db/client.js';
-import { createUser } from '../apps/server/src/modules/auth/users.js';
+import { parseArgs } from 'node:util';
+import { getAuth } from 'firebase-admin/auth';
+import { getFirestore, Timestamp } from 'firebase-admin/firestore';
+import { initAdmin } from './lib/firebase-admin.js';
 
 function askHidden(question: string): Promise<string> {
   return new Promise((resolve) => {
@@ -32,9 +35,19 @@ async function readFirstLine(): Promise<string> {
   return '';
 }
 
-const [email, ...rest] = process.argv.slice(2);
-if (!email || rest.length > 0) {
-  console.error('Usage: npm run user:create -- <email>');
+const { values, positionals } = parseArgs({
+  allowPositionals: true,
+  options: {
+    emulator: { type: 'boolean', default: false },
+    project: { type: 'string' },
+    name: { type: 'string' },
+  },
+});
+const email = positionals[0]?.trim().toLowerCase();
+if (!email || positionals.length > 1 || (!values.emulator && !values.project)) {
+  console.error(
+    'Usage: npm run user:create -- <email> (--emulator | --project <id>) [--name <display name>]',
+  );
   process.exit(2);
 }
 
@@ -49,19 +62,32 @@ if (process.stdin.isTTY) {
 } else {
   password = await readFirstLine();
 }
+if (password.length < 8) {
+  console.error('Password must have at least 8 characters.');
+  process.exit(1);
+}
 
-loadEnvFile();
-const dbPath = resolveDbPath();
-const db = openAndMigrate(dbPath);
+const { app, label } = initAdmin({ emulator: values.emulator, project: values.project });
 try {
-  const user = await createUser(db, email, password);
-  console.log(`Created user #${user.id} <${user.email}> in ${dbPath}`);
-  if ((process.env.AUTH_MODE ?? 'none') !== 'password') {
-    console.log('Note: set AUTH_MODE=password in .env to require a login.');
-  }
+  const auth = getAuth(app);
+  const user = await auth.createUser({
+    email,
+    password,
+    displayName: values.name,
+    emailVerified: true,
+  });
+  // firestore.rules only open users/{uid} to accounts with this claim.
+  await auth.setCustomUserClaims(user.uid, { learner: true });
+  await getFirestore(app)
+    .doc(`users/${user.uid}`)
+    .create({
+      displayName: values.name?.trim() || 'bạn',
+      level: 'A2',
+      dailyGoalMin: 15,
+      createdAt: Timestamp.now(),
+    });
+  console.log(`Created ${email} (uid ${user.uid}) in ${label}`);
 } catch (err) {
   console.error((err as Error).message);
   process.exitCode = 1;
-} finally {
-  db.$client.close();
 }

@@ -212,7 +212,7 @@ function ListeningLesson({ slug, data }: { slug: string; data: LessonDetailRespo
           <pre className={styles.command}>
             <code>
               npm run content:tts -- {slug}
-              {'\n'}npm run content:sync
+              {'\n'}npm run content:build
             </code>
           </pre>
         </section>

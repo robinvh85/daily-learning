@@ -2,14 +2,14 @@
 // Pronunciation audio for every dictionary lemma that has no content/words/<lemma-slug>.mp3 yet.
 // Shares the clip cache, TTS_MAX_CHARS limit and --dry-run with content:tts.
 import { parseArgs } from 'node:util';
-import { loadEnvFile } from '../apps/server/src/config.js';
+import { loadEnvFile } from '../packages/content/src/config.js';
 import {
   createProvider,
   maxChars,
   reportError,
   resolveContentDir,
-} from '../apps/server/src/content/tts/cli.js';
-import { runWordTts } from '../apps/server/src/content/tts/run.js';
+} from '../packages/content/src/content/tts/cli.js';
+import { runWordTts } from '../packages/content/src/content/tts/run.js';
 
 try {
   const { values, positionals } = parseArgs({
@@ -38,7 +38,7 @@ try {
     log,
   });
   if (dryRun) console.log(`--dry-run: nothing was sent. Total characters: ${result.charsToSend}.`);
-  else if (result.written.length > 0) console.log('Next: npm run content:sync');
+  else if (result.written.length > 0) console.log('Next: npm run content:build');
 } catch (err) {
   reportError(err);
 }

@@ -1,36 +1,29 @@
-import { fileURLToPath } from 'node:url';
 import react from '@vitejs/plugin-react';
-import { defaultClientConditions, loadEnv } from 'vite';
+import { defaultClientConditions } from 'vite';
 import { defineConfig } from 'vitest/config';
 
-const rootDir = fileURLToPath(new URL('../../', import.meta.url));
-
-export default defineConfig(({ mode }) => {
-  // Read the shared root .env so the proxy follows the server's HOST/PORT.
-  const env = { ...loadEnv(mode, rootDir, ''), ...process.env };
-  const apiHost = env.HOST && env.HOST !== '0.0.0.0' ? env.HOST : '127.0.0.1';
-  const apiTarget = `http://${apiHost}:${env.PORT ?? '3000'}`;
-
-  return {
-    plugins: [react()],
-    resolve: {
-      // Use the TypeScript source of workspace packages (see packages/shared exports).
-      conditions: ['source', ...defaultClientConditions],
-    },
-    server: {
-      host: '127.0.0.1',
-      port: 5173,
-      strictPort: true,
-      // /content serves lesson and word audio (plan 2.3).
-      proxy: {
-        '/api': { target: apiTarget, changeOrigin: true },
-        '/content': { target: apiTarget, changeOrigin: true },
-      },
-    },
-    test: {
-      environment: 'jsdom',
-      include: ['test/**/*.test.{ts,tsx}'],
-      setupFiles: ['test/setup.ts'],
-    },
-  };
+// `/content/` (lesson JSON + audio) comes from `public/content/`, written by `npm run
+// content:build`. Data lives in Firestore: the dev server talks to the local emulators
+// (`npm run emulators`), see src/backend/firebase.ts.
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    // Use the TypeScript source of workspace packages (see packages/shared exports).
+    conditions: ['source', ...defaultClientConditions],
+  },
+  build: {
+    // The lazily loaded `backend` chunk holds the Firebase Auth + Firestore SDKs (~210 kB gzip).
+    chunkSizeWarningLimit: 800,
+  },
+  server: {
+    host: '127.0.0.1',
+    port: 5173,
+    strictPort: true,
+  },
+  test: {
+    environment: 'jsdom',
+    include: ['test/**/*.test.{ts,tsx}'],
+    exclude: ['test/emulator/**'],
+    setupFiles: ['test/setup.ts'],
+  },
 });

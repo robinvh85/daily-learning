@@ -1,6 +1,6 @@
 # DailyLearning — Kế hoạch v1 (Đọc & Nghe)
 
-> Ngày lập: 2026-10-24 · Trạng thái: **Code v1 hoàn tất (Phase 0–7), chờ tạo audio thật trên Mac** (Phase 8 VPS để sau)
+> Ngày lập: 2026-10-24 · Trạng thái: **Code v1 hoàn tất (Phase 0–7), chờ tạo audio thật trên Mac** (Phase 8 thay bằng Firebase, xem [`firebase-deploy-plan.md`](firebase-deploy-plan.md))
 > Mockup tham chiếu: canvas "English Learning Web Mockup" (4 màn hình: Trang chủ, Bài đọc, Bài nghe, Ôn từ vựng)
 
 ## 1. Mục tiêu và phạm vi
@@ -304,6 +304,9 @@ Mỗi phase kết thúc bằng một bản chạy được và commit riêng.
 - [x] (Tùy chọn) Tự khởi động cùng macOS bằng `launchd`, nếu muốn mở trình duyệt là học ngay (file mẫu `scripts/launchd/`)
 
 ### Phase 8 — Lên VPS (sau này, khi cần) (≈ 0.5–1 ngày)
+
+> **Thay thế (2026-11-04):** không lên VPS nữa; app chạy trên Firebase (Hosting + Auth + Firestore,
+> không có server), xem [`firebase-deploy-plan.md`](firebase-deploy-plan.md).
 - [ ] Bật `AUTH_MODE=password`, tạo user bằng lệnh `npm run user:create`
 - [ ] VPS nhỏ (1 vCPU / 1 GB RAM là đủ): systemd hoặc PM2, Caddy làm reverse proxy + HTTPS tự động
 - [ ] Chuyển dữ liệu: copy file backup DB mới nhất lên VPS (nội dung bài học đã có sẵn trong git)
