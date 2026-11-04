@@ -123,6 +123,59 @@ Site chạy ở `https://<project-id>.web.app`. Cấu hình Firebase của web l
   `FIREBASE_PROJECT_ID` thì workflow bỏ qua.
 - Rollback web: Hosting → Release history → Rollback.
 
+## Cấp quyền cho người học
+
+Ai có tài khoản Google cũng đăng nhập được, nhưng chỉ người được cấp quyền (custom claim
+`learner`, xem `firestore.rules`) mới đọc / ghi được dữ liệu. Người chưa được cấp quyền chỉ thấy
+trang **"Chưa được cấp quyền"**.
+
+```
+Người học: mở site → "Đăng nhập bằng Google" → thấy "Chưa được cấp quyền"
+Anh:       npm run user:grant -- <email> --project <project-id>
+Người học: tải lại trang → vào app, bắt đầu từ Ngày 1 (tiến độ, sổ từ trống)
+```
+
+### Cấp quyền
+
+1. Nhờ người học **đăng nhập Google trên site một lần** (để Firebase tạo tài khoản). Chưa làm bước
+   này thì lệnh ở dưới báo `No account for <email> …`.
+2. Chuẩn bị credential Admin SDK (key service account trong `secrets/`, như bước 6 của "Lần đầu"):
+
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS=secrets/<file>.json
+   ```
+
+3. Cấp quyền:
+
+   ```bash
+   npm run user:grant -- ban.hoc@gmail.com --project <project-id>
+   npm run user:grant -- ban.hoc@gmail.com --project <project-id> --name "Lan"   # đặt tên chào
+   ```
+
+   Lệnh gán claim `learner` và tạo profile (`users/{uid}`). Tên chào lấy từ `--name`, không có thì
+   lấy tên tài khoản Google. Chạy lại an toàn: tài khoản đã có quyền thì giữ nguyên dữ liệu, chỉ đổi
+   tên khi có `--name`.
+
+4. Báo người học **tải lại trang** là vào được (không cần đăng xuất).
+
+### Thu hồi quyền
+
+```bash
+npm run user:grant -- ban.hoc@gmail.com --project <project-id> --revoke
+```
+
+Người đó mất quyền đọc / ghi chậm nhất sau khoảng 1 giờ (thời hạn của ID token Firebase), hoặc
+ngay khi đăng nhập lại. Dữ liệu học vẫn nằm trong Firestore; cấp quyền lại là dùng tiếp. Muốn chặn
+ngay lập tức: Console → Authentication → Users → chọn tài khoản → **Disable account**.
+
+### Xem ai đang có quyền
+
+Console → Authentication → Users (danh sách mọi tài khoản đã đăng nhập). Claim không hiện trên
+console; tài khoản có thư mục `users/{uid}` trong Firestore là người đã được cấp quyền (hoặc đã chuyển
+dữ liệu bằng `migrate:sqlite`).
+
+Trên emulator (local) dùng `--emulator` thay cho `--project <project-id>`, không cần credential.
+
 ## Lệnh
 
 | Lệnh                                | Tác dụng                                                                      |
