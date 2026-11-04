@@ -7,7 +7,6 @@ import type {
   LessonDetailResponse,
   LessonListQuery,
   LessonListResponse,
-  LoginBody,
   MeResponse,
   PostponeResponse,
   ProgressBody,
@@ -58,7 +57,7 @@ export function useMe() {
 export function useLogin() {
   const qc = useQueryClient();
   return useMutation({
-    mutationFn: (body: LoginBody) => api<MeResponse>('/auth/login', { method: 'POST', body }),
+    mutationFn: () => api<MeResponse>('/auth/login', { method: 'POST' }),
     onSuccess: (me) => {
       qc.setQueryData(queryKeys.me, me);
     },
@@ -70,8 +69,10 @@ export function useLogout() {
   return useMutation({
     mutationFn: () => api<void>('/auth/logout', { method: 'POST' }),
     onSuccess: () => {
-      qc.clear();
-      void qc.invalidateQueries({ queryKey: queryKeys.me });
+      // Drop the previous user's data, then show the login page right away. (`clear()` alone
+      // also removes the `me` query under its observer, so the page would not change.)
+      qc.removeQueries({ predicate: (q) => q.queryKey[0] !== queryKeys.me[0] });
+      qc.setQueryData<MeResponse>(queryKeys.me, { authMode: 'password', user: null });
     },
   });
 }

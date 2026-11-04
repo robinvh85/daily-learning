@@ -48,7 +48,7 @@ describe('firestore.rules', () => {
     await denied(getDocs(collection(bob.db, 'lessons')));
   });
 
-  it('closes everything to an account without the learner claim (not made by user:create)', async () => {
+  it('closes everything to an account without the learner claim (not granted by user:grant)', async () => {
     const stranger = await learner({ learner: false });
     await denied(getDoc(doc(stranger.db, 'users', stranger.uid)));
     await denied(

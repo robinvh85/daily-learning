@@ -55,7 +55,7 @@ export interface Learner {
   close(): Promise<void>;
 }
 
-/** Set custom claims on an Auth emulator account (what `user:create` does with the Admin SDK). */
+/** Set custom claims on an Auth emulator account (what `user:grant` does with the Admin SDK). */
 export async function setClaims(uid: string, claims: Record<string, unknown>): Promise<void> {
   const res = await fetch(
     `http://127.0.0.1:9099/identitytoolkit.googleapis.com/v1/projects/${DEMO_PROJECT_ID}/accounts:update`,
@@ -70,7 +70,7 @@ export async function setClaims(uid: string, claims: Record<string, unknown>): P
 
 /**
  * A fresh signed-in user with an empty Firestore tree. `learner: false` leaves out the custom
- * claim that firestore.rules require (an account not made by `user:create`).
+ * claim that firestore.rules require (an account not given access by `user:grant`).
  */
 export async function newLearner(
   now: Date | string = '2026-10-24T02:00:00Z',

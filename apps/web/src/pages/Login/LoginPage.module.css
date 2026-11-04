@@ -44,22 +44,11 @@
   font-size: 22px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.hint {
+  margin: 0;
+  color: var(--color-ink-soft);
   font-size: var(--fs-md);
-  font-weight: 600;
-}
-
-.field input {
-  min-height: var(--touch);
-  padding: 0 12px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  font: inherit;
-  font-weight: 400;
-  font-size: var(--fs-lg);
+  line-height: 1.5;
 }
 
 .error {
@@ -69,16 +58,46 @@
   font-size: var(--fs-md);
 }
 
-.submit {
+.google,
+.secondary {
   min-height: var(--touch);
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   border-radius: var(--radius-md);
-  background: var(--color-blue);
-  color: #fff;
+  font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 
-.submit:hover {
+.google {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.google:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+}
+
+.google:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.secondary {
+  border: none;
+  background: var(--color-blue);
+  color: #fff;
+}
+
+.secondary:hover {
   background: var(--color-blue-hover);
 }

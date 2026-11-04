@@ -10,7 +10,7 @@ chuyển sang Firebase: [`.claude/plans/firebase-deploy-plan.md`](.claude/plans/
 ```mermaid
 flowchart LR
   B[Trình duyệt] -->|"/, /assets, /content/**"| H[Firebase Hosting]
-  B -->|"đăng nhập email + mật khẩu"| A[Firebase Auth]
+  B -->|"đăng nhập Google (popup)"| A[Firebase Auth]
   B -->|"users/{uid}/… (SDK, firestore.rules)"| F[(Firestore)]
   C["content/ (YAML, mp3)"] -->|"npm run content:build"| H
 ```
@@ -19,8 +19,9 @@ flowchart LR
   `/content/data/*.json` (+ copy mp3) và đi cùng bản build web lên Hosting. Không nằm trong
   Firestore.
 - **Tiến độ người học**: Firestore, mỗi người một cây `users/{uid}/…` (bảng dưới). `firestore.rules`
-  chỉ cho đúng chủ tài khoản đọc / ghi, và chỉ tài khoản có claim `learner` (tạo bằng
-  `npm run user:create`). App không có màn hình đăng ký.
+  chỉ cho đúng chủ tài khoản đọc / ghi, và chỉ tài khoản có claim `learner` (cấp bằng
+  `npm run user:grant`). Ai có tài khoản Google cũng đăng nhập được, nhưng chưa được cấp quyền thì
+  chỉ thấy trang "Chưa được cấp quyền".
 - **"API" chạy ngay trong trình duyệt**: các trang vẫn gọi `api('/lessons')`, `api('/reviews/due')`…
   như trước; `apps/web/src/backend/` trả lời các path đó từ file JSON + Firestore (FSRS, chấm bài,
   streak, kế hoạch hôm nay đều tính ở client). Kiểu dữ liệu chung: `packages/shared/src/api.ts`.
@@ -55,13 +56,15 @@ cp -n .env.example .env              # chỉ cần cho content:tts
 npm run dev                          # content:build + Auth/Firestore emulator + Vite
 ```
 
-Lần đầu, ở terminal khác, tạo tài khoản đăng nhập trong emulator:
+Mở **http://127.0.0.1:5173** → **Đăng nhập bằng Google**. Emulator không gọi Google thật: popup
+cho chọn hoặc thêm một tài khoản giả (nhập email bất kỳ). Lần đầu app báo "Chưa được cấp quyền";
+ở terminal khác cấp quyền cho email đó rồi tải lại trang:
 
 ```bash
-npm run user:create -- you@example.com --emulator --name Viet
+npm run user:grant -- you@example.com --emulator --name Viet
 ```
 
-Mở **http://127.0.0.1:5173** và đăng nhập. Dữ liệu emulator được lưu ở `tmp/emulator-data/` khi tắt
+Dữ liệu emulator được lưu ở `tmp/emulator-data/` khi tắt
 `npm run dev` (Ctrl+C) và nạp lại lần sau. Emulator UI: http://127.0.0.1:4000. Cổng: Auth 9099,
 Firestore 8180, Hosting 5002 (`firebase.json`).
 
@@ -73,7 +76,9 @@ Firestore 8180, Hosting 5002 (`firebase.json`).
    là đủ; cần **Blaze** nếu muốn bật backup Firestore theo lịch).
 2. **Firestore Database** → Create database, Native mode, location **`asia-southeast1`**
    (không đổi được về sau).
-3. **Authentication** → Sign-in method → bật **Email/Password**.
+3. **Authentication** → Sign-in method → **Add new provider** → **Google** → Enable, chọn
+   _support email_ → Save. Domain `<project-id>.web.app` / `.firebaseapp.com` đã có sẵn trong
+   _Authorized domains_; dùng tên miền riêng thì thêm vào đó.
 4. Gắn project vào repo và deploy lần đầu:
 
    ```bash
@@ -82,21 +87,24 @@ Firestore 8180, Hosting 5002 (`firebase.json`).
    npm run deploy                       # build + hosting + firestore.rules + indexes
    ```
 
-5. Tạo tài khoản thật. Script dùng Admin SDK nên cần credential: tải key service account
+5. Mở `https://<project-id>.web.app` → **Đăng nhập bằng Google** một lần để Firebase tạo tài
+   khoản. App sẽ báo "Chưa được cấp quyền" — đúng như mong đợi.
+6. Cấp quyền và chuyển dữ liệu. Script dùng Admin SDK nên cần credential: tải key service account
    (Project settings → Service accounts → Generate new private key) vào `secrets/` (đã gitignore,
    pre-commit chặn file có `private_key`):
 
    ```bash
    export GOOGLE_APPLICATION_CREDENTIALS=secrets/<file>.json
-   npm run user:create -- you@example.com --project <project-id> --name Viet
+
+   # Có tiến độ cũ trong data/app.db: chuyển sang (lệnh này cũng cấp quyền)
+   npm run migrate:sqlite -- --project <project-id> --email you@gmail.com --dry-run   # đếm trước
+   npm run migrate:sqlite -- --project <project-id> --email you@gmail.com
+
+   # Không có dữ liệu cũ (hoặc thêm người học khác): chỉ cấp quyền
+   npm run user:grant -- you@gmail.com --project <project-id> --name Viet
    ```
 
-6. Chuyển tiến độ cũ từ SQLite (bản chạy local trước đây) sang tài khoản vừa tạo:
-
-   ```bash
-   npm run migrate:sqlite -- --project <project-id> --email you@example.com --dry-run   # đếm trước
-   npm run migrate:sqlite -- --project <project-id> --email you@example.com
-   ```
+   Tải lại trang là vào được app. Thu hồi quyền: `npm run user:grant -- <email> --project <id> --revoke`.
 
    Script chỉ đọc `data/app.db`, id document cố định nên chạy lại không tạo bản trùng. Xong thì
    xoá key trong `secrets/` nếu không cần nữa.
@@ -134,7 +142,7 @@ Site chạy ở `https://<project-id>.web.app`. Cấu hình Firebase của web l
 | `npm run content:tts:voices`        | Liệt kê giọng en-US (`-- --sample`: file nghe thử trong `tmp/voice-samples/`) |
 | `npm run content:tts -- <slug>`     | Audio bài: `audio.mp3` + `timings.json` (`--all`, `--dry-run`, `--force`)     |
 | `npm run content:tts-words`         | Phát âm từ `content/words/<lemma>.mp3` cho từ chưa có audio                   |
-| `npm run user:create -- <email> …`  | Tạo tài khoản + claim `learner` (`--emulator` hoặc `--project <id>`)          |
+| `npm run user:grant -- <email> …`   | Cấp quyền (claim `learner`) cho tài khoản Google đã đăng nhập một lần         |
 | `npm run migrate:sqlite -- …`       | Copy tiến độ từ `data/app.db` cũ sang Firestore (`--dry-run` để đếm trước)    |
 | `npm run format`                    | Prettier (ghi); `format:check` chỉ kiểm tra                                   |
 
@@ -229,17 +237,20 @@ Cách hoạt động:
   trang chủ, heartbeat) và `firestore.rules` trên Auth + Firestore emulator. CI chạy cả lệnh này.
 - `npm run test:e2e`: lần đầu cài trình duyệt bằng `npx playwright install chromium`. Build web ở mode
   `e2e`, khởi động Hosting + Auth + Firestore emulator (trống, bỏ đi sau khi chạy) và chạy luồng:
-  Đăng nhập → Trang chủ → bài đọc → bài nghe → Ôn từ → tải lại trang → Đăng xuất. Báo cáo:
-  `npx playwright show-report`. Không nằm trong CI.
+  đăng nhập Google (tài khoản chưa cấp quyền bị chặn, rồi tài khoản đã cấp quyền) → Trang chủ →
+  bài đọc → bài nghe → Ôn từ → tải lại trang → Đăng xuất. Báo cáo: `npx playwright show-report`.
+  Không nằm trong CI.
 
 ## Xử lý sự cố
 
 - **`Could not start … Emulator, port taken`**: cổng trong `firebase.json` đang bị chiếm
   (`lsof -nP -iTCP:<port> -sTCP:LISTEN`). Firestore dùng 8180 vì 8080 hay bị nginx / app khác dùng.
 - **`Unable to locate a Java Runtime`**: cài Java 21 và thêm vào `PATH` (mục Yêu cầu).
-- **Đăng nhập được nhưng báo "chưa được cấp quyền dùng app"**: tài khoản thiếu claim `learner` (tạo
-  ngoài `user:create`). Chạy `migrate:sqlite` hoặc tạo lại bằng `user:create`, rồi đăng xuất / đăng
-  nhập lại.
+- **Đăng nhập Google được nhưng báo "Chưa được cấp quyền"**: tài khoản chưa có claim `learner`.
+  Chạy `npm run user:grant -- <email> --project <id>` (hoặc `migrate:sqlite`), rồi tải lại trang.
+- **Bấm "Đăng nhập bằng Google" không thấy gì / báo bị chặn popup**: cho phép popup cho site.
+- **`auth/unauthorized-domain`**: tên miền đang mở chưa có trong Authentication → Settings →
+  Authorized domains.
 - **"Chưa có nội dung bài học"** khi `vite` chạy riêng: chạy `npm run content:build` (hoặc dùng
   `npm run dev`).
 - **Thiếu ffmpeg** (`ffmpeg not found` khi chạy `content:tts`): `brew install ffmpeg`, kiểm tra bằng

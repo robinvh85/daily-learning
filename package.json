@@ -31,7 +31,7 @@
     "content:tts": "tsx --conditions=source scripts/tts.ts",
     "content:tts-words": "tsx --conditions=source scripts/tts-words.ts",
     "content:tts:voices": "tsx --conditions=source scripts/tts-voices.ts",
-    "user:create": "tsx --conditions=source scripts/user-create.ts",
+    "user:grant": "tsx --conditions=source scripts/user-grant.ts",
     "migrate:sqlite": "tsx --conditions=source scripts/migrate-sqlite-to-firestore.ts",
     "prepare": "husky"
   },

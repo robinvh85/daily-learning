@@ -5,6 +5,9 @@
 // Firestore `users/{uid}/…`. Content ids of SQLite are turned into natural keys (slug, lemma,
 // sense key, question index). Every document id is fixed (`sqlite-<id>` for logs), so running it
 // again overwrites the same documents instead of adding copies. The SQLite file is only read.
+//
+// The target account must exist (sign in once with Google on the site); it is given the `learner`
+// claim like `npm run user:grant`.
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parseArgs } from 'node:util';
@@ -263,14 +266,20 @@ if (values['dry-run']) {
 
 const { app, label } = initAdmin({ emulator: values.emulator, project: values.project });
 const auth = getAuth(app);
-const account = values.uid
-  ? await auth.getUser(values.uid)
-  : await auth.getUserByEmail(values.email!);
+const account = await (
+  values.uid ? auth.getUser(values.uid) : auth.getUserByEmail(values.email!)
+).catch((err: { code?: string }) => {
+  if (err.code !== 'auth/user-not-found') throw err;
+  console.error(
+    `No account ${values.uid ?? values.email} in ${label}: sign in once with Google on the site first.`,
+  );
+  process.exit(1);
+});
 const uid = account.uid;
 if (account.customClaims?.learner !== true) {
-  // Same claim as `user:create`: without it firestore.rules keep the account out.
+  // Same claim as `user:grant`: without it firestore.rules keep the account out.
   await auth.setCustomUserClaims(uid, { ...account.customClaims, learner: true });
-  console.log(`Gave ${account.email ?? uid} the learner claim (sign out and in again to use it).`);
+  console.log(`Gave ${account.email ?? uid} the learner claim (reload the site to use it).`);
 }
 const firestore = getFirestore(app);
 const writer = firestore.bulkWriter();

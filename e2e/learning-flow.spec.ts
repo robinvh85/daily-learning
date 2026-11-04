@@ -7,7 +7,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 import { parse } from 'yaml';
-import { E2E_USER } from './global-setup.js';
+import { E2E_USER, STRANGER } from './global-setup.js';
 
 interface LessonYaml {
   title: string;
@@ -38,6 +38,15 @@ async function expectDue(page: Page, n: number) {
   await expect(vocabLink(page)).toContainText(`${n} thẻ đến hạn`);
 }
 
+/** Google sign-in: the Auth emulator's popup lists the accounts made in global-setup.ts. */
+async function signInWithGoogle(page: Page, email: string) {
+  const popupPromise = page.waitForEvent('popup');
+  await page.getByRole('button', { name: 'Đăng nhập bằng Google' }).click();
+  const popup = await popupPromise;
+  await popup.waitForLoadState();
+  await popup.getByText(email).click();
+}
+
 async function answerQuiz(quiz: Locator, questions: LessonYaml['questions']) {
   for (const q of questions) {
     const question = quiz.getByRole('group', { name: q.prompt });
@@ -48,15 +57,18 @@ async function answerQuiz(quiz: Locator, questions: LessonYaml['questions']) {
 }
 
 test('reading → listening → vocab review', async ({ page }) => {
-  await test.step('log in', async () => {
+  await test.step('a Google account without access is turned away', async () => {
     await page.goto('/');
     await expect(page.getByRole('heading', { name: 'Đăng nhập' })).toBeVisible();
-    await page.getByLabel('Email').fill(E2E_USER.email);
-    await page.getByLabel('Mật khẩu').fill('wrong-password');
-    await page.getByRole('button', { name: 'Đăng nhập' }).click();
-    await expect(page.getByRole('alert')).toHaveText('Email hoặc mật khẩu không đúng.');
-    await page.getByLabel('Mật khẩu').fill(E2E_USER.password);
-    await page.getByRole('button', { name: 'Đăng nhập' }).click();
+    await signInWithGoogle(page, STRANGER.email);
+    await expect(page.getByRole('heading', { name: 'Chưa được cấp quyền' })).toBeVisible();
+    await expect(page.getByRole('alert')).toContainText(STRANGER.email);
+    await page.getByRole('button', { name: 'Đăng nhập bằng tài khoản khác' }).click();
+    await expect(page.getByRole('heading', { name: 'Đăng nhập' })).toBeVisible();
+  });
+
+  await test.step('log in with the granted Google account', async () => {
+    await signInWithGoogle(page, E2E_USER.email);
     await expect(nav(page)).toBeVisible();
   });
 

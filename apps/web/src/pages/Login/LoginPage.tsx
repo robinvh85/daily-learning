@@ -1,31 +1,14 @@
-import { useState, type FormEvent } from 'react';
+import type { ReactNode } from 'react';
 import { ApiRequestError } from '../../api/client';
-import { useLogin } from '../../api/hooks';
+import { useLogin, useLogout } from '../../api/hooks';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import styles from './LoginPage.module.css';
 
-/** Shown while nobody is signed in (Firebase Auth, email + password). */
-export function LoginPage() {
-  const login = useLogin();
-  useDocumentTitle('Đăng nhập');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    login.mutate({ email, password });
-  }
-
-  const error =
-    login.error instanceof ApiRequestError && login.error.status === 401
-      ? 'Email hoặc mật khẩu không đúng.'
-      : login.error
-        ? `Không đăng nhập được: ${login.error.message}`
-        : null;
-
+function LoginCard({ title, children }: { title: string; children: ReactNode }) {
+  useDocumentTitle(title);
   return (
     <main className={styles.page}>
-      <form className={styles.card} onSubmit={onSubmit} aria-labelledby="login-title">
+      <section className={styles.card} aria-labelledby="login-title">
         <div className={styles.brand}>
           <div className={styles.logo} aria-hidden="true">
             D
@@ -33,37 +16,83 @@ export function LoginPage() {
           DailyLearning
         </div>
         <h1 id="login-title" className={styles.title}>
-          Đăng nhập
+          {title}
         </h1>
-        <label className={styles.field}>
-          Email
-          <input
-            type="email"
-            autoComplete="username"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label className={styles.field}>
-          Mật khẩu
-          <input
-            type="password"
-            autoComplete="current-password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        {error && (
-          <p role="alert" className={styles.error}>
-            {error}
-          </p>
-        )}
-        <button type="submit" className={styles.submit} disabled={login.isPending}>
-          {login.isPending ? 'Đang đăng nhập…' : 'Đăng nhập'}
-        </button>
-      </form>
+        {children}
+      </section>
     </main>
+  );
+}
+
+function GoogleIcon() {
+  return (
+    <svg className={styles.googleIcon} viewBox="0 0 48 48" aria-hidden="true">
+      <path
+        fill="#FFC107"
+        d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"
+      />
+      <path
+        fill="#FF3D00"
+        d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"
+      />
+      <path
+        fill="#4CAF50"
+        d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"
+      />
+      <path
+        fill="#1976D2"
+        d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"
+      />
+    </svg>
+  );
+}
+
+/** Shown while nobody is signed in: Google sign-in (Firebase Auth popup). */
+export function LoginPage() {
+  const login = useLogin();
+  const err = login.error;
+  const error =
+    err instanceof ApiRequestError && err.code === 'cancelled'
+      ? null
+      : err instanceof ApiRequestError && err.code === 'popup_blocked'
+        ? err.message
+        : err
+          ? `Không đăng nhập được: ${err.message}`
+          : null;
+
+  return (
+    <LoginCard title="Đăng nhập">
+      <p className={styles.hint}>Dùng tài khoản Google đã được cấp quyền.</p>
+      {error && (
+        <p role="alert" className={styles.error}>
+          {error}
+        </p>
+      )}
+      <button
+        type="button"
+        className={styles.google}
+        onClick={() => login.mutate()}
+        disabled={login.isPending}
+      >
+        <GoogleIcon />
+        {login.isPending ? 'Đang đăng nhập…' : 'Đăng nhập bằng Google'}
+      </button>
+    </LoginCard>
+  );
+}
+
+/** Signed in with Google, but the account was not given access yet (`npm run user:grant`). */
+export function NoAccessPage({ email }: { email: string | null }) {
+  const logout = useLogout();
+  return (
+    <LoginCard title="Chưa được cấp quyền">
+      <p role="alert" className={styles.hint}>
+        Tài khoản <strong>{email ?? 'này'}</strong> chưa được cấp quyền dùng DailyLearning. Sau khi
+        được cấp quyền, tải lại trang là vào được.
+      </p>
+      <button type="button" className={styles.secondary} onClick={() => logout.mutate()}>
+        Đăng nhập bằng tài khoản khác
+      </button>
+    </LoginCard>
   );
 }

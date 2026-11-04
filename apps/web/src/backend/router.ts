@@ -1,7 +1,6 @@
 /** Dispatch an `/api/*` path (without the prefix) to its handler. */
 import type {
   AnswerBody,
-  LoginBody,
   MeResponse,
   ProgressBody,
   ReviewBody,
@@ -15,7 +14,8 @@ import * as h from './handlers';
 
 export interface RouterDeps {
   me(): Promise<MeResponse>;
-  login(body: LoginBody): Promise<MeResponse>;
+  /** Sign in with Google (popup). */
+  login(): Promise<MeResponse>;
   logout(): Promise<void>;
   /** The signed-in learner's context; throws 401 when nobody is signed in. */
   context(): Promise<h.BackendContext>;
@@ -43,7 +43,7 @@ const body = <T>(b: unknown): T => {
 
 const routes: [method: string, pattern: RegExp, handler: Handler][] = [
   ['GET', /^\/auth\/me$/, (_m, _q, _b, d) => d.me()],
-  ['POST', /^\/auth\/login$/, (_m, _q, b, d) => d.login(body<LoginBody>(b))],
+  ['POST', /^\/auth\/login$/, (_m, _q, _b, d) => d.login()],
   ['POST', /^\/auth\/logout$/, (_m, _q, _b, d) => d.logout()],
 
   [

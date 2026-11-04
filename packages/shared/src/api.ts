@@ -21,7 +21,7 @@ import {
 } from './constants.js';
 import type { ReviewRating, VocabSource, VocabStatus } from './srs.js';
 
-/** `none` = no login screen. `password` = Firebase Auth email/password login (the mode used). */
+/** `none` = no login screen. `password` = login required (Firebase Auth with Google; the mode used). */
 export const AUTH_MODES = ['none', 'password'] as const;
 export type AuthMode = (typeof AUTH_MODES)[number];
 
@@ -38,21 +38,18 @@ export interface ApiError {
 // Auth: /api/auth/*
 // ---------------------------------------------------------------------------
 
-export interface LoginBody {
-  email: string;
-  password: string;
-}
-
 export interface AuthUser {
   /** Firebase Auth uid. */
   id: string;
   email: string | null;
 }
 
-/** `GET /api/auth/me`, `POST /api/auth/login`. `user` is null when not logged in. */
+/** `GET /api/auth/me`, `POST /api/auth/login` (Google popup). `user` is null when not logged in. */
 export interface MeResponse {
   authMode: AuthMode;
   user: AuthUser | null;
+  /** Signed in, but the account was not given access (`npm run user:grant`). */
+  forbidden?: boolean;
 }
 
 // ---------------------------------------------------------------------------

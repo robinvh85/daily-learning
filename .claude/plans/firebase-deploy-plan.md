@@ -21,7 +21,7 @@ chép nằm trong file JSON tải về. Chấp nhận được vì là app học
 ```mermaid
 flowchart LR
   B[Trình duyệt] -->|"/, /assets, /content/**"| H[Firebase Hosting]
-  B -->|"email + mật khẩu"| A[Firebase Auth]
+  B -->|"đăng nhập Google"| A[Firebase Auth]
   B -->|"users/{uid}/… qua SDK"| F[(Firestore)]
   C["content/ (YAML, mp3)"] -->|"npm run content:build"| H
 ```
@@ -36,7 +36,9 @@ flowchart LR
   nhỏ, 1 người) → mọi màn hình tính từ bộ nhớ, refetch không tốn read. `answers`, `reviewLogs` chỉ
   ghi. Cache offline IndexedDB.
 - `firestore.rules`: chỉ chủ tài khoản, chỉ tài khoản có custom claim `learner` (do
-  `user:create` / `migrate:sqlite` gán), log chỉ thêm, kiểm kiểu dữ liệu chính. App không có đăng ký.
+  `user:grant` / `migrate:sqlite` gán), log chỉ thêm, kiểm kiểu dữ liệu chính. Đăng nhập bằng
+  Google (popup, 2026-11-04): ai cũng đăng nhập được nhưng chưa có claim thì chỉ thấy trang "Chưa
+  được cấp quyền".
 - Cấu hình Firebase lấy từ `/__/firebase/init.json` của Hosting; dev / e2e dùng project demo trên
   emulator.
 
@@ -65,8 +67,9 @@ flowchart LR
 
 ## 5. Còn lại (làm tay, theo README → "Deploy lên Firebase")
 
-- [ ] Tạo project, Firestore `asia-southeast1`, bật Email/Password.
+- [ ] Tạo project, Firestore `asia-southeast1`, bật provider Google.
 - [ ] `npx firebase use --add` (alias `prod`), `npm run deploy`.
-- [ ] `user:create --project …`, `migrate:sqlite --project … --dry-run` rồi chạy thật.
+- [ ] Đăng nhập Google một lần trên site, rồi `migrate:sqlite --project … --email … --dry-run` và chạy
+      thật (lệnh này cũng cấp quyền).
 - [ ] (Tùy chọn) biến repo cho `deploy.yml` (Workload Identity Federation).
 - [ ] (Tùy chọn, cần Blaze) backup Firestore theo lịch; budget alert.

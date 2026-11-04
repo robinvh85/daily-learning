@@ -2,9 +2,8 @@ rules_version = '2';
 
 // The web app talks to Firestore directly (no server). Each learner can only read and write
 // their own tree `users/{uid}/…`; everything else is closed. Lesson content is not in Firestore
-// (static JSON on Hosting). Only accounts made by `npm run user:create` carry the `learner`
-// custom claim, so an account created any other way (e.g. sign-up through the Auth REST API)
-// cannot read or write anything.
+// (static JSON on Hosting). Anyone can sign in with Google, but only accounts given the
+// `learner` custom claim by `npm run user:grant` (or `migrate:sqlite`) can read or write.
 service cloud.firestore {
   match /databases/{database}/documents {
     function isOwner(uid) {

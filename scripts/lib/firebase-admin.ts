@@ -1,5 +1,5 @@
 /**
- * Firebase Admin SDK for the maintenance scripts (`user:create`, `migrate:sqlite`).
+ * Firebase Admin SDK for the maintenance scripts (`user:grant`, `migrate:sqlite`).
  *
  * Target, from the command line:
  * - `--emulator`: the local emulators (`npm run emulators` / `npm run dev`), project

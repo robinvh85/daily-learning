@@ -45,6 +45,26 @@ describe('App', () => {
     expect(screen.queryByRole('navigation', { name: 'Điều hướng chính' })).toBeNull();
   });
 
+  it('offers Google sign-in only', async () => {
+    renderApp({ authMode: 'password', user: null });
+    expect(await screen.findByRole('button', { name: 'Đăng nhập bằng Google' })).toBeEnabled();
+    expect(screen.queryByRole('textbox')).toBeNull();
+  });
+
+  it('tells a signed-in account without access that it is not allowed yet', async () => {
+    renderApp({
+      authMode: 'password',
+      user: { id: 'u2', email: 'someone@gmail.com' },
+      forbidden: true,
+    });
+    expect(await screen.findByRole('heading', { name: 'Chưa được cấp quyền' })).toBeInTheDocument();
+    expect(screen.getByRole('alert')).toHaveTextContent('someone@gmail.com');
+    expect(
+      screen.getByRole('button', { name: 'Đăng nhập bằng tài khoản khác' }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole('navigation', { name: 'Điều hướng chính' })).toBeNull();
+  });
+
   it('routes listening lessons to the listening page', async () => {
     renderApp(
       { authMode: 'none', user: { id: 'u1', email: null } },

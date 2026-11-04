@@ -5,7 +5,7 @@ import { useStudyTimer } from './hooks/useStudyTimer';
 import { HomePage } from './pages/Home/HomePage';
 import { LibraryPage } from './pages/Library/LibraryPage';
 import { ListeningPage } from './pages/Listening/ListeningPage';
-import { LoginPage } from './pages/Login/LoginPage';
+import { LoginPage, NoAccessPage } from './pages/Login/LoginPage';
 import { PlaceholderPage } from './pages/Placeholder/PlaceholderPage';
 import { ReadingPage } from './pages/Reading/ReadingPage';
 import { VocabPage } from './pages/Vocab/VocabPage';
@@ -13,7 +13,7 @@ import { VocabPage } from './pages/Vocab/VocabPage';
 export function App() {
   const me = useMe();
   const logout = useLogout();
-  const loggedIn = Boolean(me.data?.user);
+  const loggedIn = Boolean(me.data?.user) && !me.data?.forbidden;
   const stats = useVocabStats(loggedIn);
   // Study time for the streak and the week chart (only while logged in).
   useStudyTimer(loggedIn);
@@ -33,6 +33,7 @@ export function App() {
     );
   }
   if (me.data.authMode === 'password' && !me.data.user) return <LoginPage />;
+  if (me.data.user && me.data.forbidden) return <NoAccessPage email={me.data.user.email} />;
 
   return (
     <Layout
