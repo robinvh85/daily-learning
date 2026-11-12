@@ -273,7 +273,7 @@ describe('ListeningPage with audio', () => {
     expect(audio.currentTime).toBe(4.5);
   });
 
-  it('controls playback from the keyboard: Space, ← and →', async () => {
+  it('controls playback from the keyboard: Space / P, ← and →', async () => {
     const user = userEvent.setup();
     renderPage();
     const player = await screen.findByRole('region', { name: 'Trình phát' });
@@ -289,6 +289,10 @@ describe('ListeningPage with audio', () => {
     await user.keyboard('{ArrowLeft}');
     expect(audio.currentTime).toBe(2.4);
     await user.keyboard(' ');
+    expect(audio.paused).toBe(true);
+    await user.keyboard('p');
+    expect(audio.paused).toBe(false);
+    await user.keyboard('p');
     expect(audio.paused).toBe(true);
 
     // After clicking a player button, Space plays / pauses instead of repeating that button.

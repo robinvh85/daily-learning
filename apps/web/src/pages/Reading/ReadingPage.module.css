@@ -198,6 +198,26 @@
   color: var(--color-muted);
 }
 
+.hint:has(+ .keysHint) {
+  margin-bottom: 4px;
+}
+
+.keysHint {
+  margin: 0 0 24px;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+.keysHint kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+  font-family: inherit;
+  font-size: 0.9em;
+  color: var(--color-ink);
+}
+
 .text {
   font-family: var(--font-reading);
   line-height: 1.75;

@@ -100,7 +100,7 @@ export function AudioPlayer({ player, peaks, hasSegments }: AudioPlayerProps) {
         </div>
       </div>
       <p className={styles.keysHint}>
-        Phím tắt: <kbd>Space</kbd> nghe / tạm dừng
+        Phím tắt: <kbd>Space</kbd> / <kbd>P</kbd> nghe / tạm dừng
         {hasSegments && (
           <>
             {' · '}

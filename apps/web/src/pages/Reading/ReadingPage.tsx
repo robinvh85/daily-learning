@@ -22,6 +22,7 @@ import { TokenizedText } from '../../components/TokenizedText/TokenizedText';
 import { WordCard } from '../../components/WordCard/WordCard';
 import { timedSegments, useAudioPlayer } from '../../hooks/useAudioPlayer';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { usePlayerShortcuts } from '../../hooks/usePlayerShortcuts';
 import { topicLabel } from '../../lib/labels';
 import { readStorage, writeStorage } from '../../lib/storage';
 import styles from './ReadingPage.module.css';
@@ -101,6 +102,7 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
     timed.length > 0 && (player.playing || player.currentMs > 0)
       ? (timed[player.current]?.id ?? null)
       : null;
+  usePlayerShortcuts(player, { enabled: Boolean(lesson.audioUrl), segments: timed.length > 0 });
 
   const [fontSize, setFontSize] = useState(initialFontSize);
   const [showVi, setShowVi] = useState(false);
@@ -237,13 +239,18 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
               Song ngữ
             </button>
             {lesson.audioUrl ? (
-              <div role="group" aria-label="Nghe bài đọc" className={styles.listenGroup}>
+              <div
+                role="group"
+                aria-label="Nghe bài đọc"
+                className={styles.listenGroup}
+                data-player
+              >
                 {timed.length > 0 && (
                   <button
                     type="button"
                     className={styles.tool}
                     aria-label="Câu trước"
-                    title="Câu trước"
+                    title="Câu trước (←)"
                     onClick={player.prev}
                   >
                     <PrevIcon size={18} />
@@ -253,6 +260,7 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
                   type="button"
                   className={styles.listen}
                   aria-pressed={player.playing}
+                  title="Nghe / tạm dừng (Space hoặc P)"
                   onClick={player.toggle}
                 >
                   {player.playing ? <PauseIcon size={18} /> : <PlayIcon />}
@@ -263,7 +271,7 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
                     type="button"
                     className={styles.tool}
                     aria-label="Câu sau"
-                    title="Câu sau"
+                    title="Câu sau (→)"
                     disabled={player.current >= timed.length - 1}
                     onClick={player.next}
                   >
@@ -301,6 +309,17 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
           <p className={styles.hint}>
             Bấm vào từ gạch chân để xem nghĩa. Bấm vào từ bất kỳ khác để tra nhanh.
           </p>
+          {lesson.audioUrl && (
+            <p className={styles.keysHint}>
+              Phím tắt: <kbd>Space</kbd> / <kbd>P</kbd> nghe / tạm dừng
+              {timed.length > 0 && (
+                <>
+                  {' · '}
+                  <kbd>←</kbd> câu trước · <kbd>→</kbd> câu sau
+                </>
+              )}
+            </p>
+          )}
           <div
             className={styles.text}
             style={{ fontSize: `${fontSize}px` }}

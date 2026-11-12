@@ -1,6 +1,6 @@
 /**
  * Page-wide keyboard shortcuts for a lesson player:
- * - Space: play / pause
+ * - Space or P: play / pause
  * - ←: previous sentence, →: next sentence (only with segment timings)
  *
  * Keys keep their normal meaning while typing (inputs, textareas, contenteditable), with a
@@ -38,6 +38,11 @@ export function usePlayerShortcuts(
       if (e.key === ' ') {
         const control = target?.closest('button, a, [role="button"]');
         if (control && !control.closest('[data-player]')) return;
+        e.preventDefault();
+        if (!e.repeat) p.toggle();
+        return;
+      }
+      if (e.key === 'p' || e.key === 'P') {
         e.preventDefault();
         if (!e.repeat) p.toggle();
         return;

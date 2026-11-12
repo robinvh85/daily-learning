@@ -1,6 +1,6 @@
 import type { LessonDetailResponse } from '@daily-learning/shared/api';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { cleanup, render, screen, within } from '@testing-library/react';
+import { act, cleanup, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -257,6 +257,55 @@ describe('ReadingPage with narrator audio', () => {
     expect(lastPlayer().currentTime).toBe(0);
     expect(screen.getByTestId('sentence-p1s1')).toHaveAttribute('aria-current', 'true');
     expect(next).toBeEnabled();
+  });
+
+  it('controls narration from the keyboard: Space / P, ← and →', async () => {
+    const user = userEvent.setup();
+    const first = baseLesson.segments[0]!;
+    lesson = {
+      ...lesson,
+      segments: [
+        { ...first, startMs: 0, endMs: 1400 },
+        { ...first, id: 12, key: 'p1s2', idx: 1, startMs: 1500, endMs: 2900 },
+      ],
+    };
+    renderPage();
+    await screen.findByRole('button', { name: 'Nghe bài đọc' });
+    expect(screen.getByText(/Phím tắt:/)).toHaveTextContent(
+      'Phím tắt: Space / P nghe / tạm dừng · ← câu trước · → câu sau',
+    );
+    const audio = lastPlayer();
+
+    await user.keyboard(' ');
+    expect(audio.paused).toBe(false);
+    await user.keyboard('{ArrowRight}');
+    expect(audio.currentTime).toBe(1.5);
+    expect(screen.getByTestId('sentence-p1s2')).toHaveAttribute('aria-current', 'true');
+    await user.keyboard('{ArrowLeft}');
+    expect(audio.currentTime).toBe(0);
+    await user.keyboard('p');
+    expect(audio.paused).toBe(true);
+    await user.keyboard('P');
+    expect(audio.paused).toBe(false);
+
+    // After clicking a narration button, Space plays / pauses instead of repeating that button.
+    await user.click(screen.getByRole('button', { name: 'Câu sau' }));
+    expect(audio.currentTime).toBe(1.5);
+    await user.keyboard(' ');
+    expect(audio.paused).toBe(true);
+    expect(audio.currentTime).toBe(1.5);
+
+    // Space on a word button keeps selecting that word; P still plays / pauses.
+    const word = within(screen.getByTestId('sentence-p1s1')).getAllByRole('button')[0]!;
+    act(() => word.focus());
+    await user.keyboard(' ');
+    expect(audio.paused).toBe(true);
+    await user.keyboard('p');
+    expect(audio.paused).toBe(false);
+
+    // Modifier combos (browser back / forward, word jumps) are left alone.
+    await user.keyboard('{Meta>}{ArrowLeft}{/Meta}');
+    expect(audio.currentTime).toBe(1.5);
   });
 
   it('hides sentence navigation when the audio has no timings', async () => {
