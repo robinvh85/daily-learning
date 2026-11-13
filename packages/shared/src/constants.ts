@@ -41,3 +41,19 @@ export type PartOfSpeech = (typeof PARTS_OF_SPEECH)[number];
 /** Status of a lesson for one user (`lesson_progress.status`). */
 export const LESSON_PROGRESS_STATUSES = ['not_started', 'in_progress', 'completed'] as const;
 export type LessonProgressStatus = (typeof LESSON_PROGRESS_STATUSES)[number];
+
+/** Groups of grammar points, used by the grammar library (grammar plan section 3.4). */
+export const GRAMMAR_GROUPS = [
+  'tenses',
+  'modals',
+  'comparison',
+  'nouns',
+  'verb-patterns',
+  'sentence',
+  'review',
+] as const;
+export type GrammarGroup = (typeof GRAMMAR_GROUPS)[number];
+
+/** Exercise types of a grammar point (grammar plan section 4.1). */
+export const GRAMMAR_EXERCISE_TYPES = ['choice', 'gap', 'order', 'find_error'] as const;
+export type GrammarExerciseType = (typeof GRAMMAR_EXERCISE_TYPES)[number];

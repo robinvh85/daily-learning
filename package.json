@@ -27,6 +27,7 @@
     "content:build": "tsx --conditions=source scripts/content-build.ts",
     "content:check": "tsx --conditions=source scripts/content-build.ts --check",
     "content:check-dict": "tsx --conditions=source scripts/content-check-dict.ts",
+    "content:check-grammar": "tsx --conditions=source scripts/content-check-grammar.ts",
     "content:stats": "tsx --conditions=source scripts/content-stats.ts",
     "content:tts": "tsx --conditions=source scripts/tts.ts",
     "content:tts-words": "tsx --conditions=source scripts/tts-words.ts",

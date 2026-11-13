@@ -1,0 +1,90 @@
+slug: past-simple-regular
+title: Quá khứ đơn – động từ có quy tắc
+title_en: Past simple (regular verbs)
+level: A2
+group: tenses
+summary: >-
+  Dùng quá khứ đơn cho việc đã xảy ra và kết thúc trong quá khứ. Động từ có quy tắc thêm -ed,
+  giống nhau với mọi chủ ngữ.
+discover:
+  question: Các động từ tô đậm có điểm gì chung về hình thức? Chúng nói về lúc nào?
+  answer: >-
+    Đều thêm -ed (hoặc -d) và nói về việc đã xong trong quá khứ: ngày đầu đi làm, "before that",
+    "last week". Dù chủ ngữ là I, she hay my manager, động từ vẫn chỉ có một dạng.
+  pinned:
+    - a-new-coffee-shop#p1s4
+    - a-weekend-in-da-lat#p3s2
+form:
+  - label: Khẳng định
+    pattern: S + V-ed
+    example: She worked in a hotel.
+  - label: Phủ định
+    pattern: S + didn't + V
+    example: She didn't work in a bank.
+  - label: Nghi vấn
+    pattern: Did + S + V?
+    example: Did she work in a hotel?
+usage:
+  - Việc đã xảy ra và kết thúc tại một thời điểm trong quá khứ (Last week, a coffee shop opened).
+  - Một chuỗi việc nối tiếp nhau khi kể chuyện (I arrived, she showed me my desk…).
+  - Việc kéo dài nhưng đã chấm dứt (She worked in a hotel for five years).
+signals:
+  - yesterday
+  - last week / last year
+  - two days ago
+  - in 2020
+  - before that
+spelling:
+  - 'Thường: thêm -ed (work → worked, open → opened)'
+  - 'Tận cùng -e: chỉ thêm -d (arrive → arrived, live → lived)'
+  - 'Phụ âm + y: đổi y → ied (try → tried, study → studied); nguyên âm + y: thêm -ed (stay → stayed)'
+  - 'Một nguyên âm + một phụ âm, trọng âm cuối: gấp đôi phụ âm (stop → stopped, plan → planned)'
+common_mistakes:
+  - wrong: Did she worked in a hotel?
+    right: Did she work in a hotel?
+    why: Sau did / didn't, động từ trở về nguyên mẫu.
+  - wrong: Yesterday I work late.
+    right: Yesterday I worked late.
+    why: 'Có mốc quá khứ (yesterday) → phải dùng V-ed, tiếng Anh không dựa vào trạng từ để chỉ thời gian như tiếng Việt.'
+  - wrong: We stoped at a café.
+    right: We stopped at a café.
+    why: stop có một nguyên âm + một phụ âm → gấp đôi p.
+exercises:
+  - type: choice
+    prompt: Last year we ___ to a new apartment.
+    options: [move, moved, moving]
+    correct: 1
+    explain: '"Last year" là quá khứ → moved.'
+  - type: choice
+    prompt: ___ you call the landlord yesterday?
+    options: [Do, Did, Are]
+    correct: 1
+    explain: 'Câu hỏi quá khứ: Did + chủ ngữ + động từ nguyên mẫu.'
+  - type: gap
+    prompt: She ___ (not / like) the hotel food.
+    answer: didn't like
+    accept: [did not like]
+    explain: "Phủ định quá khứ: didn't + động từ nguyên mẫu (like, không phải liked)."
+  - type: gap
+    prompt: We ___ (try) some local coffee in Da Lat.
+    answer: tried
+    explain: 'Phụ âm + y → ied: try → tried.'
+  - type: gap
+    prompt: The bus ___ (stop) in front of the bank.
+    answer: stopped
+    explain: 'stop: một nguyên âm + một phụ âm → gấp đôi p rồi thêm -ed.'
+  - type: order
+    words: [the, at, she, door, waited]
+    answer: She waited at the door.
+    explain: 'Câu khẳng định: chủ ngữ + V-ed + phần còn lại.'
+  - type: order
+    words: [you, did, the, call, landlord]
+    answer: Did you call the landlord?
+    explain: 'Câu hỏi: Did + chủ ngữ + động từ nguyên mẫu.'
+  - type: find_error
+    sentence: I watch a film with my friends yesterday.
+    wrong: watch
+    right: watched
+    explain: 'Có "yesterday" → quá khứ: watched.'
+detect: \b\w+ed\b
+status: draft

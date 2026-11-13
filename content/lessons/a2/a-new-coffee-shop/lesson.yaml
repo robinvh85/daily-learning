@@ -105,3 +105,29 @@ questions:
     feedback_ok: 'Đúng: “the best thing … is the quiet atmosphere.”'
     feedback_wrong: Chưa đúng. Tìm cụm “the best thing” ở đoạn 4.
     evidence: p4s1
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: present-simple-frequency
+    segment: p3s1
+    match: usually go
+    note: 'Trạng từ tần suất đứng trước động từ thường: "usually go".'
+  - point: present-simple-frequency
+    segment: p3s2
+    match: order … sometimes
+  - point: present-simple-frequency
+    segment: p3s3
+    match: are always
+    note: 'Với động từ "be", trạng từ tần suất đứng sau: "are always".'
+  - point: present-simple-frequency
+    segment: p3s4
+    match: remembers
+    note: 'Chủ ngữ ngôi thứ ba số ít (Lan) → động từ thêm -s.'
+  - point: past-simple-regular
+    segment: p1s1
+    match: opened
+  - point: past-simple-regular
+    segment: p1s4
+    match: worked
+    note: '"for five years" nhưng việc đã kết thúc (giờ cô ấy không làm ở khách sạn nữa) → quá khứ đơn.'

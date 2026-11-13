@@ -128,3 +128,41 @@ questions:
     feedback_ok: 'Đúng: “it was exactly what we needed” và họ “already planning our next visit”.'
     feedback_wrong: Chưa đúng. Đọc hai câu cuối của bài.
     evidence: p4s4
+
+grammar:
+  - point: past-simple-irregular
+    segment: p1s3
+    match: went … took
+    note: 'go → went, take → took: không thêm -ed.'
+  - point: past-simple-irregular
+    segment: p2s1
+    match: was
+  - point: past-simple-irregular
+    segment: p2s3
+    match: had
+  - point: past-simple-irregular
+    segment: p3s3
+    match: ate
+  - point: past-simple-irregular
+    segment: p3s4
+    match: was
+  - point: past-simple-irregular
+    segment: p4s2
+    match: went back
+  - point: past-simple-irregular
+    segment: p4s3
+    match: was … was
+  - point: past-simple-regular
+    segment: p1s1
+    match: traveled
+    note: 'Tiếng Anh-Mỹ viết "traveled" (một chữ l).'
+  - point: past-simple-regular
+    segment: p2s2
+    match: stayed
+  - point: past-simple-regular
+    segment: p3s1
+    match: rented … explored
+  - point: past-simple-regular
+    segment: p3s2
+    match: visited … tried
+    note: 'Phụ âm + y → đổi thành -ied (try → tried).'

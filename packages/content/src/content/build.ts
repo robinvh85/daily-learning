@@ -20,13 +20,20 @@ import { dirname, join, relative } from 'node:path';
 import type { SegmentDto, TokenDto } from '@daily-learning/shared/api';
 import {
   CONTENT_DATA_PREFIX,
+  type CatalogGrammarPoint,
   type CatalogLesson,
   type CatalogWord,
   type ContentCatalog,
   type ExamplesData,
+  type GrammarExample,
+  type GrammarExampleSource,
+  type GrammarExerciseData,
+  type GrammarPointData,
   type LessonData,
   type WordExample,
 } from '@daily-learning/shared/content-data';
+import type { GrammarExercise } from '@daily-learning/shared/content';
+import { collectGrammarMarks, planDaysFor, type GrammarMark } from './grammar.js';
 import type { ContentBundle } from './load.js';
 import { normalizeWord } from './tokenizer.js';
 
@@ -37,6 +44,7 @@ export interface BuiltContent {
   catalog: ContentCatalog;
   lessons: LessonData[];
   examples: ExamplesData;
+  grammar: GrammarPointData[];
 }
 
 /** Public URL of a file under `content/`, with `?v=<hash>` so it can be cached forever. */
@@ -63,6 +71,12 @@ export function lessonId(slug: string): number {
 }
 export function segmentId(slug: string, key: string): number {
   return hashId('segment', slug, key);
+}
+export function grammarPointId(slug: string): number {
+  return hashId('grammar', slug);
+}
+export function grammarExerciseId(slug: string, idx: number): number {
+  return hashId('grammar-exercise', slug, idx);
 }
 export function questionId(slug: string, idx: number): number {
   return hashId('question', slug, idx);
@@ -132,6 +146,14 @@ export function buildContentData(bundle: ContentBundle): BuiltContent {
   const lessons: CatalogLesson[] = [];
   const lessonData: LessonData[] = [];
   const byWord = new Map<number, WordExample[]>();
+  /** Grammar marks in library order (lesson order, then segment order). */
+  const marks = collectGrammarMarks(prepared);
+  const marksByLesson = new Map<string, GrammarMark[]>();
+  for (const m of marks) {
+    const list = marksByLesson.get(m.lesson.slug) ?? [];
+    list.push(m);
+    marksByLesson.set(m.lesson.slug, list);
+  }
 
   for (const p of prepared) {
     const l = p.lesson;
@@ -235,6 +257,12 @@ export function buildContentData(bundle: ContentBundle): BuiltContent {
       })),
       peaks: p.audioPath ? (p.timings?.peaks ?? null) : null,
       wordIds: [...usedWords].sort((a, b) => a - b),
+      grammar: (marksByLesson.get(p.slug) ?? []).map((m) => ({
+        segmentId: segIds.get(m.segmentKey)!,
+        point: m.point,
+        ranges: m.ranges.map(([s, e]) => [s, e]),
+        notes: m.notes,
+      })),
     });
   }
 
@@ -245,18 +273,150 @@ export function buildContentData(bundle: ContentBundle): BuiltContent {
       title: d.title ?? null,
       reading: d.reading ?? null,
       listening: d.listening ?? null,
+      grammar: d.grammar ?? null,
     }));
 
-  const body = { lessons, words, plan };
+  // --- Grammar ----------------------------------------------------------
+  const grammarCatalog: CatalogGrammarPoint[] = [];
+  const grammarData: GrammarPointData[] = [];
+  for (const { slug, point } of bundle.grammar) {
+    const days = planDaysFor(bundle.dailyPlan, slug);
+    const own = marks.filter((m) => m.point === slug);
+    grammarCatalog.push({
+      id: ids.add(grammarPointId(slug), `grammar "${slug}"`),
+      slug,
+      title: point.title,
+      titleEn: point.title_en,
+      level: point.level,
+      group: point.group,
+      summary: point.summary,
+      status: point.status,
+      exerciseCount: point.exercises.length,
+      days: days.map((d) => d.day).sort((a, b) => a - b),
+      lessons: [...new Set(own.map((m) => m.lesson.slug))],
+    });
+    grammarData.push({
+      slug,
+      discover: {
+        question: point.discover.question,
+        answer: point.discover.answer,
+        examples: orderExamples(own, days, point.discover.pinned),
+      },
+      form: point.form.map((f) => ({ ...f })),
+      usage: point.usage,
+      signals: point.signals,
+      spelling: point.spelling,
+      mistakes: point.common_mistakes.map((m) => ({ ...m })),
+      exercises: point.exercises.map((e, idx) =>
+        exerciseData(e, idx, ids.add(grammarExerciseId(slug, idx), `exercise "${slug}#${idx}"`)),
+      ),
+    });
+  }
+  const firstDay = (g: CatalogGrammarPoint) => g.days[0] ?? Number.MAX_SAFE_INTEGER;
+  grammarCatalog.sort(
+    (a, b) =>
+      levelOrder(a.level) - levelOrder(b.level) ||
+      firstDay(a) - firstDay(b) ||
+      a.title.localeCompare(b.title) ||
+      a.slug.localeCompare(b.slug),
+  );
+  grammarData.sort((a, b) => a.slug.localeCompare(b.slug));
+
+  const body = { lessons, words, plan, grammar: grammarCatalog };
   const version = createHash('sha256')
-    .update(JSON.stringify([body, lessonData]))
+    .update(JSON.stringify([body, lessonData, grammarData]))
     .digest('hex')
     .slice(0, 12);
   const examples: ExamplesData = {
     version,
     byWord: Object.fromEntries([...byWord].sort((a, b) => a[0] - b[0])),
   };
-  return { catalog: { version, ...body }, lessons: lessonData, examples };
+  return { catalog: { version, ...body }, lessons: lessonData, examples, grammar: grammarData };
+}
+
+/**
+ * "Nhận ra" examples: sentences of the days that teach the point (by day, reading before
+ * listening, then segment order), then pinned sentences (in pin order), then every other marked
+ * sentence (library order).
+ */
+function orderExamples(
+  own: readonly GrammarMark[],
+  days: readonly { day: number; lessons: string[] }[],
+  pinned: readonly string[],
+): GrammarExample[] {
+  const dayRank = new Map<string, number>();
+  days.forEach((d, i) => d.lessons.forEach((slug, j) => dayRank.set(slug, i * 2 + j)));
+  const key = (m: GrammarMark) => `${m.lesson.slug}#${m.segmentKey}`;
+  const pinRank = new Map(pinned.map((p, i) => [p, i]));
+  const sourceOf = (m: GrammarMark): GrammarExampleSource =>
+    dayRank.has(m.lesson.slug) ? 'day' : pinRank.has(key(m)) ? 'pinned' : 'other';
+  const order: GrammarExampleSource[] = ['day', 'pinned', 'other'];
+  const rank = (m: GrammarMark): number => {
+    const source = sourceOf(m);
+    if (source === 'day') return dayRank.get(m.lesson.slug)!;
+    if (source === 'pinned') return pinRank.get(key(m))!;
+    return 0;
+  };
+  return own
+    .map((m, i) => ({ m, i }))
+    .sort(
+      (a, b) =>
+        order.indexOf(sourceOf(a.m)) - order.indexOf(sourceOf(b.m)) ||
+        rank(a.m) - rank(b.m) ||
+        a.i - b.i,
+    )
+    .map(({ m }) => {
+      const seg = m.lesson.lesson.segments[m.segmentIdx]!;
+      return {
+        source: sourceOf(m),
+        lessonSlug: m.lesson.slug,
+        lessonKind: m.lesson.lesson.kind,
+        lessonTitle: m.lesson.lesson.title,
+        segmentId: segmentId(m.lesson.slug, m.segmentKey),
+        segmentKey: m.segmentKey,
+        textEn: seg.text_en,
+        textVi: seg.text_vi ?? null,
+        ranges: m.ranges.map(([s, e]) => [s, e]),
+        notes: m.notes,
+      };
+    });
+}
+
+function exerciseData(e: GrammarExercise, idx: number, id: number): GrammarExerciseData {
+  switch (e.type) {
+    case 'choice':
+      return {
+        type: e.type,
+        id,
+        idx,
+        explain: e.explain,
+        prompt: e.prompt,
+        options: e.options,
+        correctIdx: e.correct,
+      };
+    case 'gap':
+      return {
+        type: e.type,
+        id,
+        idx,
+        explain: e.explain,
+        prompt: e.prompt,
+        answer: e.answer,
+        accept: e.accept,
+      };
+    case 'order':
+      return { type: e.type, id, idx, explain: e.explain, words: e.words, answer: e.answer };
+    case 'find_error':
+      return {
+        type: e.type,
+        id,
+        idx,
+        explain: e.explain,
+        sentence: e.sentence,
+        wrong: e.wrong,
+        right: e.right,
+      };
+  }
 }
 
 /** Relative path (under the output dir) of each JSON file, as served under `/content/data`. */
@@ -265,6 +425,7 @@ export function dataFiles(built: BuiltContent): Map<string, unknown> {
   files.set('catalog.json', built.catalog);
   files.set('examples.json', built.examples);
   for (const l of built.lessons) files.set(`lessons/${l.slug}.json`, l);
+  for (const g of built.grammar) files.set(`grammar/${g.slug}.json`, g);
   return files;
 }
 

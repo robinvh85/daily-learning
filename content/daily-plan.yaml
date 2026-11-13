@@ -1,14 +1,17 @@
-# Learning path template: day N → title, reading and listening lesson (by slug).
+# Learning path template: day N → title, reading and listening lesson (by slug), and the
+# grammar point of the day (content/grammar/<slug>.yaml, optional).
 # Built into /content/data/catalog.json by `npm run content:build`.
 days:
   - day: 1
     title: Cuộc sống quanh khu phố
     reading: a-new-coffee-shop
     listening: at-the-train-station
+    grammar: present-simple-frequency
   - day: 2
     title: Công việc mới
     reading: my-first-week-at-a-new-job
     listening: introducing-yourself-at-work
+    grammar: past-simple-regular
   - day: 3
     title: Ăn uống
     reading: cooking-dinner-at-home
@@ -25,6 +28,7 @@ days:
     title: Du lịch
     reading: a-weekend-in-da-lat
     listening: checking-in-at-a-hotel
+    grammar: past-simple-irregular
   - day: 7
     title: Giao tiếp ở công ty
     reading: an-email-to-a-new-colleague

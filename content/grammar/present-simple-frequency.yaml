@@ -1,0 +1,96 @@
+slug: present-simple-frequency
+title: Hiện tại đơn và trạng từ tần suất
+title_en: Present simple + adverbs of frequency
+level: A2
+group: tenses
+summary: >-
+  Dùng hiện tại đơn để nói về thói quen, việc lặp đi lặp lại và sự thật. Trạng từ tần suất
+  (always, usually, often, sometimes, never) cho biết việc đó xảy ra thường xuyên đến mức nào.
+discover:
+  question: >-
+    Các động từ tô đậm nói về một lần duy nhất hay về việc lặp lại? Vì sao có câu "remembers",
+    "stops" (thêm -s) nhưng có câu "go", "order" (không thêm)?
+  answer: >-
+    Đều nói về việc lặp lại (thói quen, lịch cố định). Chủ ngữ là he / she / it hoặc một người, một
+    vật (Lan, it) thì động từ thêm -s; chủ ngữ I / you / we / they thì giữ nguyên.
+  pinned:
+    - my-first-week-at-a-new-job#p3s4
+form:
+  - label: Khẳng định
+    pattern: I / you / we / they + V · he / she / it + V-s
+    example: She usually drinks coffee in the morning.
+  - label: Phủ định
+    pattern: S + don't / doesn't + V
+    example: He doesn't work on Sundays.
+  - label: Nghi vấn
+    pattern: Do / Does + S + V?
+    example: Do you often go to the gym?
+  - label: Vị trí trạng từ tần suất
+    pattern: S + trạng từ + V · S + be + trạng từ
+    example: I always walk to work. The bus is often late.
+usage:
+  - Thói quen, việc làm hằng ngày (I usually go there on Saturday mornings).
+  - Lịch trình cố định, giờ tàu xe (The train stops at every station).
+  - Sự thật, điều luôn đúng (The sun rises in the east).
+signals:
+  - always (100%)
+  - usually (~90%)
+  - often (~70%)
+  - sometimes (~50%)
+  - never (0%)
+  - every day / every week
+  - on Mondays
+spelling:
+  - 'Thêm -es sau -s, -sh, -ch, -x, -o: watch → watches, go → goes'
+  - 'Phụ âm + y: đổi y → ies (study → studies); nguyên âm + y: chỉ thêm -s (play → plays)'
+  - 'have → has'
+common_mistakes:
+  - wrong: She work in a bank.
+    right: She works in a bank.
+    why: Chủ ngữ ngôi thứ ba số ít (she) → động từ thêm -s.
+  - wrong: He doesn't works on Sundays.
+    right: He doesn't work on Sundays.
+    why: Sau doesn't, động từ trở về nguyên mẫu (chữ -s đã nằm ở "does").
+  - wrong: I go always to the market.
+    right: I always go to the market.
+    why: Trạng từ tần suất đứng trước động từ thường (nhưng đứng sau "be").
+exercises:
+  - type: choice
+    prompt: My sister ___ to work by bus.
+    options: [go, goes, going]
+    correct: 1
+    explain: '"My sister" = she → động từ thêm -es: goes.'
+  - type: choice
+    prompt: The staff ___ friendly.
+    options: [always are, are always, always is]
+    correct: 1
+    explain: 'Với "be", trạng từ tần suất đứng sau: are always. "The staff" ở đây là số nhiều → are.'
+  - type: gap
+    prompt: Tom ___ (not / drink) coffee after dinner.
+    answer: doesn't drink
+    accept: [does not drink]
+    explain: "Phủ định với he / she / it: doesn't + động từ nguyên mẫu."
+  - type: gap
+    prompt: ___ you usually have lunch at 12:30?
+    answer: Do
+    explain: 'Chủ ngữ "you" → câu hỏi bắt đầu bằng Do.'
+  - type: order
+    words: [often, the, we, at, eat, restaurant]
+    answer: We often eat at the restaurant.
+    explain: 'Trạng từ tần suất (often) đứng giữa chủ ngữ và động từ thường.'
+  - type: order
+    words: [never, late, is, she]
+    answer: She is never late.
+    explain: 'Với "be", trạng từ đứng sau: is never.'
+  - type: find_error
+    sentence: Lan remember the names of her customers.
+    wrong: remember
+    right: remembers
+    explain: '"Lan" = she → remembers.'
+  - type: find_error
+    sentence: The train stop at every station.
+    wrong: stop
+    right: stops
+    explain: '"The train" = it → stops.'
+detect: \b(always|usually|often|sometimes|never|every)\b
+status: draft

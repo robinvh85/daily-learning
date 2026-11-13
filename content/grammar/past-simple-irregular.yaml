@@ -1,0 +1,88 @@
+slug: past-simple-irregular
+title: Quá khứ đơn – động từ bất quy tắc
+title_en: Past simple (irregular verbs)
+level: A2
+group: tenses
+summary: >-
+  Nhiều động từ thông dụng không thêm -ed ở quá khứ mà đổi hẳn hình thức (go → went, have → had).
+  Cách dùng giống hệt động từ có quy tắc; phủ định và câu hỏi vẫn dùng did + động từ nguyên mẫu.
+discover:
+  question: >-
+    Các động từ tô đậm đều nói về chuyến đi cuối tuần trước. Chúng có thêm -ed không? Dạng nguyên
+    mẫu của chúng là gì?
+  answer: >-
+    Không thêm -ed: went (go), took (take), had (have), ate (eat), was (be). Đây là động từ bất quy
+    tắc, phải học thuộc dạng quá khứ.
+  pinned:
+    - my-first-week-at-a-new-job#p2s1
+    - my-first-week-at-a-new-job#p3s3
+form:
+  - label: Khẳng định
+    pattern: S + V2 (dạng quá khứ riêng)
+    example: We went to Da Lat by bus.
+  - label: Phủ định
+    pattern: S + didn't + V (nguyên mẫu)
+    example: We didn't go by plane.
+  - label: Nghi vấn
+    pattern: Did + S + V (nguyên mẫu)?
+    example: Did you go by bus?
+  - label: Riêng động từ be
+    pattern: I / he / she / it + was · you / we / they + were · wasn't / weren't
+    example: The weather was cool. The streets were busy.
+usage:
+  - Giống quá khứ đơn có quy tắc - việc đã xảy ra và kết thúc trong quá khứ.
+  - Mười động từ hay gặp nhất ở trình độ A2 - be → was / were, have → had, go → went, get → got, make → made, take → took, see → saw, eat → ate, meet → met, feel → felt.
+signals:
+  - yesterday
+  - last weekend
+  - on our first morning
+  - in the afternoon (của một ngày đã qua)
+common_mistakes:
+  - wrong: We goed to the market.
+    right: We went to the market.
+    why: go là động từ bất quy tắc → went, không thêm -ed.
+  - wrong: Did you went to Da Lat?
+    right: Did you go to Da Lat?
+    why: Sau did, dùng động từ nguyên mẫu (go), kể cả với động từ bất quy tắc.
+  - wrong: The weather were cool.
+    right: The weather was cool.
+    why: '"The weather" là số ít → was. Dùng were với you / we / they và danh từ số nhiều.'
+exercises:
+  - type: choice
+    prompt: On Sunday, we ___ back home by bus.
+    options: [goed, went, gone]
+    correct: 1
+    explain: 'go → went. "gone" là quá khứ phân từ, không dùng một mình ở quá khứ đơn.'
+  - type: choice
+    prompt: The rooms ___ small but clean.
+    options: [was, were, are]
+    correct: 1
+    explain: '"The rooms" là số nhiều, câu chuyện ở quá khứ → were.'
+  - type: gap
+    prompt: We ___ (have) coffee on the balcony.
+    answer: had
+    explain: 'have → had.'
+  - type: gap
+    prompt: The trip ___ (take) about seven hours.
+    answer: took
+    explain: 'take → took.'
+  - type: gap
+    prompt: I ___ (not / see) the night market.
+    answer: didn't see
+    accept: [did not see]
+    explain: "Phủ định: didn't + động từ nguyên mẫu (see, không phải saw)."
+  - type: order
+    words: [street, ate, food, we]
+    answer: We ate street food.
+    explain: 'eat → ate. Chủ ngữ + V2 + tân ngữ.'
+  - type: order
+    words: [you, did, a, get, ticket]
+    answer: Did you get a ticket?
+    explain: 'Câu hỏi: Did + chủ ngữ + động từ nguyên mẫu (get, không phải got).'
+  - type: find_error
+    sentence: My manager meet me at the door yesterday.
+    wrong: meet
+    right: met
+    explain: 'Có "yesterday" → quá khứ: meet → met.'
+detect: \b(was|were|went|had|took|ate|got|made|met|felt|saw|came|bought|left|found|told|said)\b
+status: draft

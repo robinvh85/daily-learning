@@ -7,6 +7,7 @@ import { basename, join, relative } from 'node:path';
 import {
   dailyPlanSchema,
   dictionaryEntrySchema,
+  grammarPointSchema,
   lessonSchema,
   timingsSchema,
   type DailyPlanFile,
@@ -17,6 +18,7 @@ import {
 import { parse as parseYaml } from 'yaml';
 import { z } from 'zod';
 import { fileVersion, lessonTextHash, wordAudioPath } from './assets.js';
+import { checkGrammar, type LoadedGrammar } from './grammar.js';
 import {
   buildLookup,
   normalizeWord,
@@ -70,6 +72,7 @@ export interface ContentBundle {
   entries: LoadedEntry[];
   lookup: DictionaryLookup;
   lessons: PreparedLesson[];
+  grammar: LoadedGrammar[];
   dailyPlan: DailyPlanFile | null;
   issues: ContentIssue[];
 }
@@ -141,6 +144,29 @@ export function loadDictionary(contentDir: string, issues: ContentIssue[]): Load
     });
   }
   return entries;
+}
+
+/** Load and validate `content/grammar/*.yaml` (file name = slug). */
+export function loadGrammar(contentDir: string, issues: ContentIssue[]): LoadedGrammar[] {
+  const dir = join(contentDir, 'grammar');
+  if (!isDir(dir)) return [];
+  const out: LoadedGrammar[] = [];
+  for (const name of readdirSync(dir).sort()) {
+    if (!name.endsWith('.yaml')) continue;
+    const rel = relative(contentDir, join(dir, name));
+    const point = parseFile(grammarPointSchema, join(dir, name), rel, issues);
+    if (!point) continue;
+    if (basename(name, '.yaml') !== point.slug) {
+      issues.push({
+        level: 'error',
+        file: rel,
+        message: `file name must be "${point.slug}.yaml" (same as slug)`,
+      });
+      continue;
+    }
+    out.push({ slug: point.slug, file: rel, point });
+  }
+  return out;
 }
 
 /** Folders `content/lessons/<level>/<slug>/` that contain a lesson.yaml. */
@@ -350,7 +376,10 @@ export function loadContent(contentDir: string): ContentBundle {
     });
   }
 
-  return { contentDir, entries, lookup: built.lookup, lessons, dailyPlan, issues };
+  const grammar = loadGrammar(contentDir, issues);
+  issues.push(...checkGrammar(grammar, lessons, dailyPlan));
+
+  return { contentDir, entries, lookup: built.lookup, lessons, grammar, dailyPlan, issues };
 }
 
 /** Human-readable list of issues, errors first. */

@@ -69,7 +69,7 @@ describe('writeContentOutput', () => {
   it('writes the JSON files, copies media once and removes stale files', () => {
     const out = join(tmp, 'out');
     const first = writeContentOutput(built, REPO_CONTENT, out);
-    expect(first.dataFiles).toBe(2 + built.lessons.length);
+    expect(first.dataFiles).toBe(2 + built.lessons.length + built.grammar.length);
     const catalog = JSON.parse(
       readFileSync(join(out, 'data/catalog.json'), 'utf8'),
     ) as ContentCatalog;

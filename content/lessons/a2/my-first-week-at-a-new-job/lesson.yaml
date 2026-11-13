@@ -128,3 +128,30 @@ questions:
     feedback_ok: 'Đúng: “I feel more confident now… I think I’m going to like this job.”'
     feedback_wrong: Chưa đúng. Đọc hai câu cuối của bài.
     evidence: p4s5
+
+grammar:
+  - point: past-simple-regular
+    segment: p1s3
+    match: arrived
+  - point: past-simple-regular
+    segment: p2s1
+    match: showed
+  - point: past-simple-regular
+    segment: p2s2
+    match: introduced
+    note: 'Tận cùng -e: chỉ thêm -d (introduce → introduced).'
+  - point: past-simple-irregular
+    segment: p1s3
+    match: was … got up
+  - point: past-simple-irregular
+    segment: p2s1
+    match: met
+  - point: past-simple-irregular
+    segment: p3s3
+    match: made … felt
+  - point: present-simple-frequency
+    segment: p3s4
+    match: sits … always helps
+  - point: present-simple-frequency
+    segment: p4s3
+    match: often eat

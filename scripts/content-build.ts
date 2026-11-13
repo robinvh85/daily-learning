@@ -35,7 +35,8 @@ if (hasErrors(bundle.issues)) {
 const built = buildContentData(bundle);
 const counts =
   `${built.catalog.lessons.length} lessons, ${built.catalog.words.length} words, ` +
-  `${built.catalog.plan.length} plan days, ${warnings} warning(s)`;
+  `${built.catalog.grammar.length} grammar points, ${built.catalog.plan.length} plan days, ` +
+  `${warnings} warning(s)`;
 if (values.check) {
   console.log(`content:build --check: OK (${counts}). Nothing was written.`);
 } else {

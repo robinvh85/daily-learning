@@ -144,3 +144,13 @@ questions:
     feedback_ok: 'Đúng: “I’ll come to your desk at 12:30.”'
     feedback_wrong: Chưa đúng. Nghe lại câu cuối của David, chú ý giờ hẹn.
     evidence: l13
+
+grammar:
+  - point: past-simple-regular
+    segment: l7
+    match: worked
+    note: '"Before that" = trước đó, việc đã kết thúc → quá khứ đơn.'
+  - point: present-simple-frequency
+    segment: l10
+    match: do people usually have
+    note: 'Câu hỏi: do + chủ ngữ + (trạng từ) + động từ nguyên mẫu.'

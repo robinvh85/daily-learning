@@ -1,7 +1,8 @@
 /**
- * Zod schemas for the files under `content/` (plan sections 2.3 and 2.5):
+ * Zod schemas for the files under `content/` (plan sections 2.3 and 2.5, grammar plan section 4):
  *  - `content/lessons/<level>/<slug>/lesson.yaml`
  *  - `content/dictionary/<lemma>.yaml`
+ *  - `content/grammar/<slug>.yaml`
  *  - `content/daily-plan.yaml`
  *
  * Exposed as `@daily-learning/shared/content` so the web bundle does not pull in zod
@@ -10,6 +11,7 @@
 import { z } from 'zod';
 import {
   CEFR_LEVELS,
+  GRAMMAR_GROUPS,
   LESSON_KINDS,
   LESSON_LEVELS,
   PARTS_OF_SPEECH,
@@ -114,6 +116,53 @@ export type DictionarySense = z.output<typeof dictionarySenseSchema>;
 export type DictionaryEntry = z.output<typeof dictionaryEntrySchema>;
 
 // ---------------------------------------------------------------------------
+// Grammar marks inside a sentence
+// ---------------------------------------------------------------------------
+
+/** Separator between the parts of a non-contiguous grammar match: `is … going to`. */
+export const GRAMMAR_MATCH_GAP = '…';
+
+/** Same length as the input: curly apostrophes become straight, letters lowercase. */
+function foldForMatch(s: string): string {
+  return s.replace(/[’‘]/g, "'").toLowerCase();
+}
+
+const WORD_CHAR = /[\p{L}\p{N}']/u;
+
+/**
+ * Find a grammar `match` inside a sentence. Parts separated by `…` are searched in order, each on
+ * word boundaries, ignoring case and curly vs straight apostrophes. Returns the UTF-16 ranges
+ * `[start, end)` of every part, or null when the match is not in the sentence.
+ */
+export function findGrammarMatch(sentence: string, match: string): [number, number][] | null {
+  const text = foldForMatch(sentence);
+  // Offsets are computed on the folded text, so it must keep the same length.
+  if (text.length !== sentence.length) return null;
+  const parts = match
+    .split(GRAMMAR_MATCH_GAP)
+    .map((p) => foldForMatch(p.trim()))
+    .filter((p) => p.length > 0);
+  if (parts.length === 0) return null;
+  const ranges: [number, number][] = [];
+  let from = 0;
+  for (const part of parts) {
+    let at = text.indexOf(part, from);
+    while (at >= 0) {
+      const before = at > 0 ? text[at - 1]! : '';
+      const after = text[at + part.length] ?? '';
+      const startOk = !WORD_CHAR.test(part[0]!) || !WORD_CHAR.test(before);
+      const endOk = !WORD_CHAR.test(part[part.length - 1]!) || !WORD_CHAR.test(after);
+      if (startOk && endOk) break;
+      at = text.indexOf(part, at + 1);
+    }
+    if (at < 0) return null;
+    ranges.push([at, at + part.length]);
+    from = at + part.length;
+  }
+  return ranges;
+}
+
+// ---------------------------------------------------------------------------
 // Lesson: content/lessons/<level>/<slug>/lesson.yaml
 // ---------------------------------------------------------------------------
 
@@ -158,6 +207,18 @@ export const lessonDictationSchema = z.strictObject({
   after: z.string().trim().default(''),
 });
 
+/** `grammar:` in lesson.yaml: a sentence that shows a grammar point (grammar plan 4.2). */
+export const lessonGrammarSchema = z.strictObject({
+  /** Slug of a file in content/grammar/. */
+  point: slug,
+  /** Segment id of the sentence. */
+  segment: slug,
+  /** Words to underline; parts of a non-contiguous match are separated by `…`. */
+  match: text,
+  /** Optional note for this sentence, shown in the grammar card. */
+  note: text.optional(),
+});
+
 export const lessonSchema = z
   .strictObject({
     kind: z.enum(LESSON_KINDS),
@@ -178,6 +239,8 @@ export const lessonSchema = z
     ignore: z.array(text).default([]),
     questions: z.array(lessonQuestionSchema).default([]),
     dictation: z.array(lessonDictationSchema).default([]),
+    /** Sentences that show a grammar point (underlined in the lesson). */
+    grammar: z.array(lessonGrammarSchema).default([]),
   })
   .superRefine((lesson, ctx) => {
     const byId = new Map<string, z.output<typeof lessonSegmentSchema>>();
@@ -294,6 +357,36 @@ export const lessonSchema = z
         });
       focus.add(k);
     });
+    const marks = new Set<string>();
+    lesson.grammar.forEach((g, i) => {
+      const at = ['grammar', i];
+      const seg = byId.get(g.segment);
+      if (!seg) {
+        ctx.addIssue({
+          code: 'custom',
+          path: [...at, 'segment'],
+          message: `unknown segment id "${g.segment}"`,
+        });
+        return;
+      }
+      if (!findGrammarMatch(seg.text_en, g.match)) {
+        ctx.addIssue({
+          code: 'custom',
+          path: [...at, 'match'],
+          message: `"${g.match}" is not in segment "${g.segment}" (whole words; put … between separate parts)`,
+        });
+      }
+      const key = `${g.point}|${g.segment}|${foldForMatch(g.match)}`;
+      if (marks.has(key)) {
+        ctx.addIssue({
+          code: 'custom',
+          path: at,
+          message: `"${g.match}" in segment "${g.segment}" is marked twice for ${g.point}`,
+        });
+      }
+      marks.add(key);
+    });
+
     const ignored = lowerSet(lesson.ignore);
     if (ignored.size !== lesson.ignore.length) {
       ctx.addIssue({ code: 'custom', path: ['ignore'], message: 'duplicate entries in ignore' });
@@ -303,7 +396,173 @@ export const lessonSchema = z
 export type LessonSegment = z.output<typeof lessonSegmentSchema>;
 export type LessonQuestion = z.output<typeof lessonQuestionSchema>;
 export type LessonDictation = z.output<typeof lessonDictationSchema>;
+export type LessonGrammar = z.output<typeof lessonGrammarSchema>;
 export type LessonFile = z.output<typeof lessonSchema>;
+
+// ---------------------------------------------------------------------------
+// Grammar point: content/grammar/<slug>.yaml (grammar plan section 4.1)
+// ---------------------------------------------------------------------------
+
+/** Blank shown in `choice` and `gap` prompts. */
+export const GRAMMAR_BLANK = '___';
+
+/** `lesson-slug#segment-id`: a lesson sentence pinned to the "Nhận ra" step. */
+export const GRAMMAR_PIN_PATTERN = /^([a-z0-9]+(?:-[a-z0-9]+)*)#([a-z0-9]+(?:-[a-z0-9]+)*)$/;
+
+/** Words of an `order` answer, lowercase, without the end punctuation. */
+export function orderWords(sentence: string): string[] {
+  return sentence
+    .trim()
+    .split(/\s+/)
+    .map((w) => foldForMatch(w).replace(/^[.,!?;:"]+|[.,!?;:"]+$/g, ''))
+    .filter((w) => w.length > 0);
+}
+
+const choiceExerciseSchema = z.strictObject({
+  type: z.literal('choice'),
+  /** Sentence with one `___`. */
+  prompt: text,
+  options: z.array(text).min(2).max(6),
+  /** Index of the correct option, 0-based. */
+  correct: z.int().min(0),
+  explain: text,
+});
+
+const gapExerciseSchema = z.strictObject({
+  type: z.literal('gap'),
+  /** Sentence with one `___`, usually followed by the base form in brackets: `She ___ (work).` */
+  prompt: text,
+  answer: text,
+  /** Other accepted answers (`did not like` for `didn't like`). */
+  accept: z.array(text).default([]),
+  explain: text,
+});
+
+const orderExerciseSchema = z.strictObject({
+  type: z.literal('order'),
+  /** Words in shuffled order, as shown. */
+  words: z.array(text).min(3).max(14),
+  /** The sentence the words make. */
+  answer: text,
+  explain: text,
+});
+
+const findErrorExerciseSchema = z.strictObject({
+  type: z.literal('find_error'),
+  sentence: text,
+  /** The wrong part, as written in the sentence. */
+  wrong: text,
+  /** What it should be. */
+  right: text,
+  explain: text,
+});
+
+export const grammarExerciseSchema = z.discriminatedUnion('type', [
+  choiceExerciseSchema,
+  gapExerciseSchema,
+  orderExerciseSchema,
+  findErrorExerciseSchema,
+]);
+
+export const grammarPointSchema = z
+  .strictObject({
+    slug,
+    /** Vietnamese name: "Quá khứ đơn – động từ có quy tắc". */
+    title: text,
+    /** English name: "Past simple (regular verbs)". */
+    title_en: text,
+    level: z.enum(LESSON_LEVELS),
+    group: z.enum(GRAMMAR_GROUPS),
+    /** One or two sentences in Vietnamese: what it is for. */
+    summary: text,
+    /** Step 1 "Nhận ra". Example sentences come from lesson `grammar:` marks. */
+    discover: z.strictObject({
+      question: text,
+      answer: text,
+      /** Lesson sentences shown right after the day's own sentences (`lesson-slug#segment`). */
+      pinned: z
+        .array(z.string().regex(GRAMMAR_PIN_PATTERN, 'use "lesson-slug#segment-id"'))
+        .default([]),
+    }),
+    /** Step 2 "Quy tắc": the forms (affirmative, negative, question…). */
+    form: z.array(z.strictObject({ label: text, pattern: text, example: text })).min(1),
+    usage: z.array(text).min(1),
+    /** Signal words: `yesterday`, `usually`… */
+    signals: z.array(text).default([]),
+    /** Spelling rules (`study → studied`). */
+    spelling: z.array(text).default([]),
+    common_mistakes: z.array(z.strictObject({ wrong: text, right: text, why: text })).default([]),
+    /** Step 3 "Luyện tập". */
+    exercises: z.array(grammarExerciseSchema).min(1),
+    /**
+     * Optional regular expression (case-insensitive) used by `content:check-grammar` to suggest
+     * lesson sentences that could be marked. Never used by the app.
+     */
+    detect: z.string().optional(),
+    status: z.enum(WORD_STATUSES),
+  })
+  .superRefine((point, ctx) => {
+    if (point.detect !== undefined) {
+      try {
+        new RegExp(point.detect, 'iu');
+      } catch (err) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['detect'],
+          message: `invalid regular expression: ${(err as Error).message}`,
+        });
+      }
+    }
+    const pins = new Set<string>();
+    point.discover.pinned.forEach((p, i) => {
+      if (pins.has(p))
+        ctx.addIssue({
+          code: 'custom',
+          path: ['discover', 'pinned', i],
+          message: `"${p}" is pinned twice`,
+        });
+      pins.add(p);
+    });
+    const blanks = (s: string) => s.split(GRAMMAR_BLANK).length - 1;
+    point.exercises.forEach((e, i) => {
+      const at = (key?: string) => (key ? ['exercises', i, key] : ['exercises', i]);
+      const issue = (message: string, key?: string) =>
+        ctx.addIssue({ code: 'custom', path: at(key), message });
+      switch (e.type) {
+        case 'choice':
+          if (blanks(e.prompt) !== 1)
+            issue(`the prompt needs exactly one ${GRAMMAR_BLANK}`, 'prompt');
+          if (e.correct >= e.options.length)
+            issue('correct must be the index of one of the options (0-based)', 'correct');
+          if (lowerSet(e.options).size !== e.options.length) issue('duplicate options', 'options');
+          break;
+        case 'gap':
+          if (blanks(e.prompt) !== 1)
+            issue(`the prompt needs exactly one ${GRAMMAR_BLANK}`, 'prompt');
+          if (lowerSet([e.answer, ...e.accept]).size !== e.accept.length + 1)
+            issue('accept repeats the answer or another accepted answer', 'accept');
+          break;
+        case 'order': {
+          const want = orderWords(e.answer).sort().join(' ');
+          const got = e.words
+            .flatMap((w) => orderWords(w))
+            .sort()
+            .join(' ');
+          if (want !== got) issue('words must be exactly the words of the answer', 'words');
+          break;
+        }
+        case 'find_error':
+          if (!findGrammarMatch(e.sentence, e.wrong))
+            issue(`"${e.wrong}" is not in the sentence (whole words)`, 'wrong');
+          if (foldForMatch(e.wrong) === foldForMatch(e.right))
+            issue('right must differ from wrong', 'right');
+          break;
+      }
+    });
+  });
+
+export type GrammarExercise = z.output<typeof grammarExerciseSchema>;
+export type GrammarPointFile = z.output<typeof grammarPointSchema>;
 
 // ---------------------------------------------------------------------------
 // Daily plan template: content/daily-plan.yaml
@@ -321,6 +580,8 @@ export const dailyPlanSchema = z
           reading: slug.optional(),
           /** Slug of the listening lesson for this day. */
           listening: slug.optional(),
+          /** Slug of the grammar point of this day (`content/grammar/<slug>.yaml`). */
+          grammar: slug.optional(),
         }),
       )
       .min(1),

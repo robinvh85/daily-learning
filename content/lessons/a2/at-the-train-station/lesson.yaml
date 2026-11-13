@@ -82,3 +82,12 @@ questions:
     feedback_ok: 'Đúng: “The 10:15 only takes fifty minutes.”'
     feedback_wrong: Chưa đúng. Nghe lại câu người nhân viên nói về chuyến 10:15, chú ý “fifty”, không phải “fifteen”.
     evidence: l6
+
+grammar:
+  - point: present-simple-frequency
+    segment: l4
+    match: stops at every station
+    note: 'Lịch tàu là việc lặp lại cố định → hiện tại đơn; "it" → stops.'
+  - point: present-simple-frequency
+    segment: l6
+    match: only takes
