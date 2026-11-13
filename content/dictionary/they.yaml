@@ -1,0 +1,12 @@
+lemma: they
+ipa_us: /ðeɪ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: they
+    pos: pronoun
+    vi: họ, chúng nó, chúng (cũng dùng cho một người khi không biết hoặc không nói là nam hay nữ)
+    en: 'used for two or more people or things; also used for one person when you do not know or say if they are a man or a woman'
+    collocations: [they are, they live, they say]
+    example: My parents are at home. They are watching TV.
+status: reviewed

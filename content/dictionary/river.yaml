@@ -1,0 +1,13 @@
+lemma: river
+ipa_us: /ˈrɪvər/
+cefr: A1
+oxford3000: true
+forms: [rivers]
+senses:
+  - key: river
+    pos: noun
+    vi: dòng sông
+    en: a long natural line of water that flows into the sea or a lake
+    collocations: [along the river, cross the river, by the river]
+    example: We walked along the river after dinner.
+status: reviewed

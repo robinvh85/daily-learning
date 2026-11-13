@@ -1,0 +1,13 @@
+lemma: laugh
+ipa_us: /læf/
+cefr: A2
+oxford3000: true
+forms: [laughs, laughed, laughing]
+senses:
+  - key: laugh
+    pos: verb
+    vi: cười (thành tiếng)
+    en: to make sounds with your voice because something is funny
+    collocations: [laugh at something, laugh a lot, make someone laugh]
+    example: The children laughed at the clown.
+status: reviewed

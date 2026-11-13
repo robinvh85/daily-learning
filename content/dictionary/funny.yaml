@@ -1,0 +1,13 @@
+lemma: funny
+ipa_us: /ˈfʌni/
+cefr: A1
+oxford3000: true
+forms: [funnier, funniest]
+senses:
+  - key: funny
+    pos: adjective
+    vi: buồn cười, hài hước
+    en: making you laugh
+    collocations: [a funny story, a funny film, really funny]
+    example: My friend told me a funny joke at lunch.
+status: reviewed

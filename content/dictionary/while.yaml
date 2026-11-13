@@ -1,0 +1,12 @@
+lemma: while
+ipa_us: /waɪl/
+cefr: A2
+oxford3000: true
+senses:
+  - key: while
+    pos: conjunction
+    vi: trong khi
+    en: during the time that something else is happening
+    collocations: [while you wait, while I was cooking]
+    example: I listen to music while I cook dinner.
+status: reviewed

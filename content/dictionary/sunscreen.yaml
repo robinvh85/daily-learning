@@ -1,0 +1,12 @@
+lemma: sunscreen
+ipa_us: /ˈsʌnskriːn/
+cefr: B1
+oxford3000: false
+senses:
+  - key: sunscreen
+    pos: noun
+    vi: kem chống nắng
+    en: a cream that you put on your skin to protect it from the sun
+    collocations: [put on sunscreen, wear sunscreen, bring sunscreen]
+    example: Put on some sunscreen before you go outside.
+status: reviewed

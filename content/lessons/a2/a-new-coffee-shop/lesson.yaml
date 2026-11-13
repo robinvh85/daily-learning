@@ -64,6 +64,7 @@ focus_words: [open, owner, run, comfortable, borrow, reasonable, regular, atmosp
 
 # Sense per word in this lesson. "word#n" = n-th occurrence of that word in the lesson.
 senses:
+  book: book
   back: back
   her: her
   order: order

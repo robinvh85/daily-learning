@@ -1,0 +1,13 @@
+lemma: forecast
+ipa_us: /ˈfɔːrkæst/
+cefr: B1
+oxford3000: true
+forms: [forecasts]
+senses:
+  - key: forecast
+    pos: noun
+    vi: dự báo (nhất là dự báo thời tiết)
+    en: a statement about what will happen, especially about the weather
+    collocations: [the weather forecast, check the forecast, a forecast for rain]
+    example: The forecast says it will be sunny tomorrow.
+status: reviewed

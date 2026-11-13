@@ -1,0 +1,12 @@
+lemma: never
+ipa_us: /ˈnevər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: never
+    pos: adverb
+    vi: không bao giờ, chưa bao giờ
+    en: not at any time
+    collocations: [never again, never too late, have never been]
+    example: I have never been to Japan.
+status: reviewed

@@ -1,0 +1,12 @@
+lemma: afraid
+ipa_us: /əˈfreɪd/
+cefr: A2
+oxford3000: true
+senses:
+  - key: afraid
+    pos: adjective
+    vi: 'sợ, ngại (afraid of + V-ing / afraid to + V: sợ làm gì)'
+    en: feeling fear, or worried that something bad will happen
+    collocations: [afraid of dogs, afraid to ask, afraid of making mistakes]
+    example: My little sister is afraid of the dark.
+status: reviewed

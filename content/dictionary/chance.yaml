@@ -1,0 +1,19 @@
+lemma: chance
+ipa_us: /tʃæns/
+cefr: A2
+oxford3000: true
+forms: [chances]
+senses:
+  - key: opportunity
+    pos: noun
+    vi: 'cơ hội (a chance to + V: cơ hội để làm gì)'
+    en: a time when you can do something
+    collocations: [have a chance to, get a chance, a second chance]
+    example: I didn’t have a chance to call you yesterday.
+  - key: possibility
+    pos: noun
+    vi: 'khả năng (a chance of rain: có khả năng mưa)'
+    en: how likely it is that something will happen
+    collocations: [a chance of rain, a good chance, no chance]
+    example: There is a small chance of rain tomorrow.
+status: reviewed

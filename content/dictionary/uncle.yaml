@@ -1,0 +1,13 @@
+lemma: uncle
+ipa_us: /ˈʌŋkəl/
+cefr: A1
+oxford3000: true
+forms: [uncles]
+senses:
+  - key: uncle
+    pos: noun
+    vi: chú, bác, cậu, dượng
+    en: the brother of your mother or father, or the husband of your aunt
+    collocations: [my uncle, aunts and uncles]
+    example: My uncle lives in Da Nang.
+status: reviewed

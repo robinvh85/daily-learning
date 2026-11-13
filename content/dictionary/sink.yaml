@@ -1,0 +1,13 @@
+lemma: sink
+ipa_us: /sɪŋk/
+cefr: B1
+oxford3000: true
+forms: [sinks]
+senses:
+  - key: sink
+    pos: noun
+    vi: bồn rửa (bát, tay)
+    en: a large bowl in a kitchen or bathroom where you wash dishes or your hands
+    collocations: [the kitchen sink, in the sink, a blocked sink]
+    example: There are dirty cups in the sink.
+status: reviewed

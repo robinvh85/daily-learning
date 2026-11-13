@@ -1,0 +1,13 @@
+lemma: sentence
+ipa_us: /ˈsentəns/
+cefr: A1
+oxford3000: true
+forms: [sentences]
+senses:
+  - key: sentence
+    pos: noun
+    vi: câu (văn)
+    en: a group of words that has a subject and a verb and expresses a complete idea
+    collocations: [write a sentence, a short sentence, the first sentence]
+    example: Read the first sentence again, please.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: sofa
+ipa_us: /ˈsoʊfə/
+cefr: A1
+oxford3000: true
+forms: [sofas]
+senses:
+  - key: sofa
+    pos: noun
+    vi: ghế sofa, ghế dài
+    en: a long, soft seat for two or more people
+    collocations: [sit on the sofa, a new sofa, sleep on the sofa]
+    example: My cat likes to sleep on the sofa.
+status: reviewed

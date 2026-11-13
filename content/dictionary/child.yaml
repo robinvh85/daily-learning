@@ -1,0 +1,13 @@
+lemma: child
+ipa_us: /tʃaɪld/
+cefr: A1
+oxford3000: true
+forms: [children]
+senses:
+  - key: child
+    pos: noun
+    vi: 'đứa trẻ, trẻ em; con (của ai)'
+    en: a young boy or girl, or a son or daughter
+    collocations: [as a child, have two children, when I was a child]
+    example: They have three children, two boys and a girl.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: lesson
+ipa_us: /ˈlesən/
+cefr: A1
+oxford3000: true
+forms: [lessons]
+senses:
+  - key: lesson
+    pos: noun
+    vi: bài học, buổi học
+    en: a time when someone teaches you something
+    collocations: [swimming lessons, take lessons, an English lesson]
+    example: I have a piano lesson every Tuesday.
+status: reviewed

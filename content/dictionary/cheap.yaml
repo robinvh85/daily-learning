@@ -1,0 +1,13 @@
+lemma: cheap
+ipa_us: /tʃiːp/
+cefr: A1
+oxford3000: true
+forms: [cheaper, cheapest]
+senses:
+  - key: cheap
+    pos: adjective
+    vi: rẻ
+    en: costing little money
+    collocations: [cheap food, a cheap hotel, quite cheap]
+    example: The food at this market is very cheap.
+status: reviewed

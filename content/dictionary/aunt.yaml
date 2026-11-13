@@ -1,0 +1,13 @@
+lemma: aunt
+ipa_us: /ænt/
+cefr: A1
+oxford3000: true
+forms: [aunts]
+senses:
+  - key: aunt
+    pos: noun
+    vi: 'cô, dì, bác gái, thím, mợ'
+    en: the sister of your mother or father, or the wife of your uncle
+    collocations: [my aunt and uncle, visit my aunt]
+    example: My aunt lives in Da Nang with her husband.
+status: reviewed

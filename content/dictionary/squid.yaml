@@ -1,0 +1,13 @@
+lemma: squid
+ipa_us: /skwɪd/
+cefr: B2
+oxford3000: false
+forms: [squids]
+senses:
+  - key: squid
+    pos: noun
+    vi: mực (con mực)
+    en: a sea animal with a long soft body and ten arms, often eaten as food
+    collocations: [dried squid, grilled squid, fried squid]
+    example: We had grilled squid at a restaurant by the beach.
+status: reviewed

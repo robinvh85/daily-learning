@@ -1,0 +1,13 @@
+lemma: school
+ipa_us: /skuːl/
+cefr: A1
+oxford3000: true
+forms: [schools]
+senses:
+  - key: school
+    pos: noun
+    vi: trường học; việc đi học
+    en: a place where children go to learn
+    collocations: [at school, go to school, after school]
+    example: My daughter walks to school every morning.
+status: reviewed

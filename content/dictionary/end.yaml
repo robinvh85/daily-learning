@@ -1,0 +1,19 @@
+lemma: end
+ipa_us: /end/
+cefr: A1
+oxford3000: true
+forms: [ends, ended, ending]
+senses:
+  - key: noun
+    pos: noun
+    vi: 'đầu, phía cuối; cuối (at the end of = vào cuối…)'
+    en: the furthest part of something, or the last part of a period of time
+    collocations: [at the end of the month, one end of the road, the end of the film]
+    example: The bathroom is at the end of the hall.
+  - key: verb
+    pos: verb
+    vi: kết thúc
+    en: to finish or stop
+    collocations: [end at five, end in June, the class ends]
+    example: The movie ends at ten o’clock.
+status: reviewed

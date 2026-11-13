@@ -1,0 +1,13 @@
+lemma: noise
+ipa_us: /nɔɪz/
+cefr: A2
+oxford3000: true
+forms: [noises]
+senses:
+  - key: noise
+    pos: noun
+    vi: tiếng ồn, tiếng động
+    en: a sound, especially a loud or unpleasant one
+    collocations: [make a noise, a loud noise, a strange noise]
+    example: The car makes a strange noise when I start it.
+status: reviewed

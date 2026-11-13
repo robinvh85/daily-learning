@@ -1,0 +1,11 @@
+lemma: won't
+ipa_us: /woʊnt/
+cefr: A1
+oxford3000: false
+senses:
+  - key: will_not
+    pos: contraction
+    vi: sẽ không (viết tắt của will not)
+    en: short form of "will not"
+    example: Don’t worry, I won’t be late.
+status: reviewed

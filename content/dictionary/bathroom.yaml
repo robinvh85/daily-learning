@@ -1,0 +1,13 @@
+lemma: bathroom
+ipa_us: /ˈbæθruːm/
+cefr: A1
+oxford3000: true
+forms: [bathrooms]
+senses:
+  - key: bathroom
+    pos: noun
+    vi: phòng tắm, nhà vệ sinh
+    en: a room with a toilet, a shower or bath, and a sink
+    collocations: [go to the bathroom, clean the bathroom, a small bathroom]
+    example: Our bathroom is next to the kitchen.
+status: reviewed

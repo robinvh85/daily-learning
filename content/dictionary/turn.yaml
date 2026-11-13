@@ -1,0 +1,13 @@
+lemma: turn
+ipa_us: /tɝːn/
+cefr: B1
+oxford3000: true
+forms: [turns, turned, turning]
+senses:
+  - key: age
+    pos: verb
+    vi: (turn + số tuổi) tròn, bước sang (… tuổi)
+    en: to reach a particular age
+    collocations: [turn thirty, turn eighteen next year]
+    example: My son turns ten in May.
+status: reviewed

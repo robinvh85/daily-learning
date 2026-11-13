@@ -1,0 +1,13 @@
+lemma: hope
+ipa_us: /hoʊp/
+cefr: A1
+oxford3000: true
+forms: [hopes, hoped, hoping]
+senses:
+  - key: hope
+    pos: verb
+    vi: hy vọng, mong (I hope so = mong là vậy)
+    en: to want something to happen and think it is possible
+    collocations: [I hope so, hope to do something, hope that…]
+    example: I hope you have a nice weekend.
+status: reviewed

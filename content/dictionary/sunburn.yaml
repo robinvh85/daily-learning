@@ -1,0 +1,12 @@
+lemma: sunburn
+ipa_us: /ˈsʌnbɝːn/
+cefr: B1
+oxford3000: false
+senses:
+  - key: sunburn
+    pos: noun
+    vi: cháy nắng (da bị đỏ, rát vì nắng)
+    en: red, painful skin that you get when you stay in the sun too long
+    collocations: [get a sunburn, a bad sunburn]
+    example: My back is red because I got a sunburn yesterday.
+status: reviewed

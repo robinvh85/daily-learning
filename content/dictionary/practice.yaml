@@ -1,0 +1,13 @@
+lemma: practice
+ipa_us: /ˈpræktɪs/
+cefr: A2
+oxford3000: true
+forms: [practices, practiced, practicing, practise, practised, practising]
+senses:
+  - key: practice
+    pos: verb
+    vi: luyện tập, tập
+    en: to do something many times so that you get better at it
+    collocations: [practice English, practice every day, practice speaking]
+    example: I practice the guitar for an hour every evening.
+status: reviewed

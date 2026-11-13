@@ -1,0 +1,12 @@
+lemma: Celsius
+ipa_us: /ˈselsiəs/
+cefr: B1
+oxford3000: false
+senses:
+  - key: celsius
+    pos: adjective
+    vi: '(độ) C, độ bách phân (34 degrees Celsius = 34 độ C)'
+    en: using a scale of temperature where water freezes at 0 degrees and boils at 100 degrees
+    collocations: [degrees Celsius, 30 degrees Celsius]
+    example: It is about 30 degrees Celsius today.
+status: reviewed

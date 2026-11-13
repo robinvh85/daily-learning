@@ -16,4 +16,10 @@ senses:
     en: to not leave a place
     collocations: [stay home, stay inside, stay in bed]
     example: It was cold, so we stayed in bed all morning.
+  - key: keep_being
+    pos: verb
+    vi: 'giữ, vẫn (ở trạng thái nào): stay healthy = giữ sức khỏe, stay calm = giữ bình tĩnh'
+    en: to continue to be in a particular state
+    collocations: [stay healthy, stay calm, stay awake]
+    example: Drink lots of water to stay healthy.
 status: reviewed

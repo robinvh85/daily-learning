@@ -1,0 +1,13 @@
+lemma: face
+ipa_us: /feɪs/
+cefr: A1
+oxford3000: true
+forms: [faces]
+senses:
+  - key: face
+    pos: noun
+    vi: khuôn mặt, mặt
+    en: the front part of your head, with your eyes, nose and mouth
+    collocations: [wash your face, a happy face, on his face]
+    example: I wash my face with cold water every morning.
+status: reviewed

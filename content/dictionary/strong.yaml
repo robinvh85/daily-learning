@@ -1,0 +1,13 @@
+lemma: strong
+ipa_us: /strɔːŋ/
+cefr: A2
+oxford3000: true
+forms: [stronger, strongest]
+senses:
+  - key: strong
+    pos: adjective
+    vi: 'mạnh; (nắng) gắt'
+    en: having a lot of power or force
+    collocations: [strong sun, strong wind, strong coffee]
+    example: The wind is very strong today, so be careful.
+status: reviewed

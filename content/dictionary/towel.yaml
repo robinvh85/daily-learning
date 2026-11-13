@@ -1,0 +1,13 @@
+lemma: towel
+ipa_us: /ˈtaʊəl/
+cefr: A2
+oxford3000: true
+forms: [towels]
+senses:
+  - key: towel
+    pos: noun
+    vi: khăn tắm, khăn lau
+    en: a piece of cloth that you use to dry your body
+    collocations: [a bath towel, bring a towel, a clean towel]
+    example: Can I have a clean towel, please?
+status: reviewed

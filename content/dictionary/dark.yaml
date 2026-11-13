@@ -1,0 +1,12 @@
+lemma: dark
+ipa_us: /dɑːrk/
+cefr: A2
+oxford3000: true
+senses:
+  - key: dark
+    pos: noun
+    vi: 'bóng tối, lúc trời tối (before dark = trước khi trời tối)'
+    en: the time of day when there is no light
+    collocations: [before dark, after dark, in the dark]
+    example: Please come home before dark.
+status: reviewed

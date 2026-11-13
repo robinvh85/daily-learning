@@ -1,0 +1,13 @@
+lemma: repair
+ipa_us: /rɪˈper/
+cefr: B1
+oxford3000: true
+forms: [repairs, repaired, repairing]
+senses:
+  - key: repair
+    pos: noun
+    vi: 'việc sửa chữa (động từ repair = sửa)'
+    en: work that is done to fix something that is broken or damaged
+    collocations: [pay for the repairs, need repairs, do repairs]
+    example: The repairs to my motorbike cost a lot of money.
+status: reviewed

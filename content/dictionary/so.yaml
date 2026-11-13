@@ -15,4 +15,10 @@ senses:
     en: very; very much
     collocations: [so much, so happy, thank you so much]
     example: I’m so happy to see you again!
+  - key: that
+    pos: adverb
+    vi: 'như vậy, vậy (I hope so = mình mong là vậy; I think so = mình nghĩ vậy)'
+    en: used after some verbs instead of repeating what was just said
+    collocations: [I hope so, I think so, I don't think so]
+    example: “Is the shop open today?” “I think so.”
 status: reviewed

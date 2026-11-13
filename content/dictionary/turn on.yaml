@@ -1,0 +1,14 @@
+lemma: turn on
+ipa_us: /ˌtɝːn ˈɑːn/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [turns on, turned on, turning on]
+senses:
+  - key: turn_on
+    pos: phrasal verb
+    vi: bật (máy, đèn); (máy) bật lên, chạy
+    en: to make a machine or light start working; (of a machine) to start working
+    collocations: [turn on the light, turn on the TV, it won't turn on]
+    example: Can you turn on the light, please?
+status: reviewed

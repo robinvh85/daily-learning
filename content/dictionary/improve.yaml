@@ -1,0 +1,13 @@
+lemma: improve
+ipa_us: /ɪmˈpruːv/
+cefr: A2
+oxford3000: true
+forms: [improves, improved, improving]
+senses:
+  - key: improve
+    pos: verb
+    vi: tiến bộ, cải thiện, (làm) tốt hơn
+    en: to become better, or to make something better
+    collocations: [improve your English, improve quickly, keep improving]
+    example: My English is improving every month.
+status: reviewed

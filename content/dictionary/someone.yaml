@@ -1,0 +1,12 @@
+lemma: someone
+ipa_us: /ˈsʌmwʌn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: someone
+    pos: pronoun
+    vi: ai đó, một người nào đó
+    en: a person, when you do not know or do not say who
+    collocations: [someone else, ask someone, someone is at the door]
+    example: Someone left a bag on the bus.
+status: reviewed

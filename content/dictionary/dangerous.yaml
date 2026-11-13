@@ -1,0 +1,12 @@
+lemma: dangerous
+ipa_us: /ˈdeɪndʒərəs/
+cefr: A2
+oxford3000: true
+senses:
+  - key: dangerous
+    pos: adjective
+    vi: nguy hiểm
+    en: likely to hurt you or cause problems
+    collocations: [very dangerous, a dangerous road, dangerous for children]
+    example: It is dangerous to ride a motorbike without a helmet.
+status: reviewed

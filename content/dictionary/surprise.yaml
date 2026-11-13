@@ -1,0 +1,13 @@
+lemma: surprise
+ipa_us: /sərˈpraɪz/
+cefr: A2
+oxford3000: true
+forms: [surprises]
+senses:
+  - key: surprise
+    pos: noun
+    vi: 'sự bất ngờ, điều bất ngờ (a surprise party: tiệc bất ngờ)'
+    en: something that happens that you did not expect
+    collocations: [a surprise party, a big surprise, a nice surprise]
+    example: The gift was a nice surprise for my sister.
+status: reviewed

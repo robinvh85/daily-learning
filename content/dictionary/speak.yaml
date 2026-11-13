@@ -1,0 +1,19 @@
+lemma: speak
+ipa_us: /spiːk/
+cefr: A1
+oxford3000: true
+forms: [speaks, spoke, spoken, speaking]
+senses:
+  - key: speak
+    pos: verb
+    vi: nói
+    en: to say words; to be able to use a language
+    collocations: [speak English, speak slowly, speak to someone]
+    example: Can you speak more slowly, please?
+  - key: skill
+    pos: noun
+    vi: '(speaking) kỹ năng nói'
+    en: (speaking) the skill of talking in a language
+    collocations: [my speaking, practice speaking, speaking and listening]
+    example: I want to improve my speaking this year.
+status: reviewed

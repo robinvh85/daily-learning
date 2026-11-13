@@ -1,0 +1,13 @@
+lemma: student
+ipa_us: /ˈstuːdənt/
+cefr: A1
+oxford3000: true
+forms: [students]
+senses:
+  - key: student
+    pos: noun
+    vi: học sinh, sinh viên, học viên
+    en: a person who is studying at a school, college or in a class
+    collocations: [a new student, a university student, students in the class]
+    example: There are twenty students in my English class.
+status: reviewed

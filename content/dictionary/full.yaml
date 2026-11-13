@@ -1,0 +1,13 @@
+lemma: full
+ipa_us: /fʊl/
+cefr: A1
+oxford3000: true
+forms: [fuller, fullest]
+senses:
+  - key: full
+    pos: adjective
+    vi: đầy; kín chỗ, hết chỗ
+    en: with no space left; containing as many people or things as possible
+    collocations: [full of something, the class is full, a full bus]
+    example: The bus was full, so I took a taxi.
+status: reviewed

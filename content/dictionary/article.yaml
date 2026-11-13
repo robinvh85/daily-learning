@@ -1,0 +1,13 @@
+lemma: article
+ipa_us: /ˈɑːrtɪkəl/
+cefr: A2
+oxford3000: true
+forms: [articles]
+senses:
+  - key: article
+    pos: noun
+    vi: bài báo, bài viết
+    en: a piece of writing in a newspaper, magazine or on a website
+    collocations: [read an article, a newspaper article, an article about]
+    example: I read an interesting article about healthy food today.
+status: reviewed

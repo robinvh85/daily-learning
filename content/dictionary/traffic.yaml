@@ -1,0 +1,12 @@
+lemma: traffic
+ipa_us: /ˈtræfɪk/
+cefr: A2
+oxford3000: true
+senses:
+  - key: traffic
+    pos: noun
+    vi: xe cộ, giao thông (trên đường)
+    en: the cars, motorbikes and other vehicles on a road
+    collocations: [heavy traffic, in traffic, a traffic jam]
+    example: There is a lot of traffic in the city at 6 p.m.
+status: reviewed

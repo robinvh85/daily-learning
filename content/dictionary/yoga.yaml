@@ -1,0 +1,12 @@
+lemma: yoga
+ipa_us: /ˈjoʊɡə/
+cefr: B1
+oxford3000: false
+senses:
+  - key: yoga
+    pos: noun
+    vi: yoga (môn tập kết hợp động tác và hít thở)
+    en: a type of exercise where you move and hold your body in different positions and control your breathing
+    collocations: [do yoga, a yoga class, yoga mat]
+    example: My mother does yoga every morning.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: drive
+ipa_us: /draɪv/
+cefr: A1
+oxford3000: true
+forms: [drives, drove, driven, driving]
+senses:
+  - key: drive
+    pos: verb
+    vi: 'lái xe, đi bằng ô tô'
+    en: to control a car and make it go somewhere
+    collocations: [drive a car, drive home, drive to work]
+    example: My father drives to work every day.
+status: reviewed

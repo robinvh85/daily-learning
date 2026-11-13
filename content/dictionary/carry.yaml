@@ -1,0 +1,13 @@
+lemma: carry
+ipa_us: /ˈkæri/
+cefr: A2
+oxford3000: true
+forms: [carries, carried, carrying]
+senses:
+  - key: carry
+    pos: verb
+    vi: 'mang, khiêng, xách'
+    en: to hold something and take it from one place to another
+    collocations: [carry a bag, carry boxes, help someone carry]
+    example: Can you help me carry this bag?
+status: reviewed

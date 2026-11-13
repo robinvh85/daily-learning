@@ -1,0 +1,13 @@
+lemma: pick
+ipa_us: /pɪk/
+cefr: B1
+oxford3000: true
+forms: [picks, picked, picking]
+senses:
+  - key: pick
+    pos: verb
+    vi: hái (rau, quả, hoa)
+    en: to take a flower, fruit or vegetable from the plant where it is growing
+    collocations: [pick fruit, pick flowers, pick vegetables]
+    example: We picked some apples from the tree.
+status: reviewed

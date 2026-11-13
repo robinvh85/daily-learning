@@ -1,0 +1,13 @@
+lemma: hat
+ipa_us: /hæt/
+cefr: A1
+oxford3000: true
+forms: [hats]
+senses:
+  - key: hat
+    pos: noun
+    vi: mũ, nón
+    en: a thing that you wear on your head
+    collocations: [wear a hat, a sun hat, take off your hat]
+    example: She always wears a hat in the sun.
+status: reviewed

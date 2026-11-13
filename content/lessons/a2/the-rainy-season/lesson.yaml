@@ -1,0 +1,127 @@
+# Reading lesson (day 12). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: weather
+title: The Rainy Season
+order: 12
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: In Ho Chi Minh City, there are only two seasons, the dry season and the rainy season.
+    text_vi: Ở Thành phố Hồ Chí Minh chỉ có hai mùa, mùa khô và mùa mưa.
+  - id: p1s2
+    paragraph: 1
+    text_en: The rainy season usually starts in May and ends in November.
+    text_vi: Mùa mưa thường bắt đầu vào tháng Năm và kết thúc vào tháng Mười Một.
+  - id: p1s3
+    paragraph: 1
+    text_en: During these months, it rains almost every afternoon.
+    text_vi: Trong những tháng này, gần như chiều nào cũng có mưa.
+  - id: p2s1
+    paragraph: 2
+    text_en: The rain is often very heavy, but it doesn’t last long.
+    text_vi: Mưa thường rất to, nhưng không kéo dài lâu.
+  - id: p2s2
+    paragraph: 2
+    text_en: After thirty minutes or an hour, the sky is clear again.
+    text_vi: Sau ba mươi phút hay một tiếng, trời lại quang đãng.
+  - id: p2s3
+    paragraph: 2
+    text_en: Some streets flood quickly, so the traffic becomes very slow.
+    text_vi: Một số con đường bị ngập rất nhanh, nên xe cộ di chuyển rất chậm.
+  - id: p2s4
+    paragraph: 2
+    text_en: I always keep a raincoat under the seat of my motorbike.
+    text_vi: Tôi lúc nào cũng để sẵn một cái áo mưa dưới yên xe máy.
+  - id: p3s1
+    paragraph: 3
+    text_en: I actually like this season.
+    text_vi: Thật ra tôi lại thích mùa này.
+  - id: p3s2
+    paragraph: 3
+    text_en: The weather is cooler, and the trees look green and fresh.
+    text_vi: Thời tiết mát hơn, cây cối trông xanh tươi.
+  - id: p3s3
+    paragraph: 3
+    text_en: On rainy evenings, I like to stay at home with a cup of hot tea and a good book.
+    text_vi: Vào những tối mưa, tôi thích ở nhà với một tách trà nóng và một cuốn sách hay.
+  - id: p4s1
+    paragraph: 4
+    text_en: But I check the weather forecast every morning before I go out.
+    text_vi: Nhưng sáng nào tôi cũng xem dự báo thời tiết trước khi ra ngoài.
+  - id: p4s2
+    paragraph: 4
+    text_en: If it says rain, I leave work early or wait in a café until the rain stops.
+    text_vi: Nếu dự báo có mưa, tôi tan làm sớm hoặc ngồi đợi trong quán cà phê cho đến khi tạnh mưa.
+  - id: p4s3
+    paragraph: 4
+    text_en: Getting wet on the way home is no fun!
+    text_vi: Bị ướt trên đường về nhà chẳng vui chút nào!
+
+focus_words: [season, dry, heavy, last, flood, traffic, raincoat, weather forecast, wet]
+
+senses:
+  in: in
+  in#2: time # "in May"
+  in#3: time # "in November"
+  dry: weather
+  end: verb
+  be: linking
+  last: continue
+  so: so
+  keep: store
+  like: enjoy
+  fresh: bright # "the trees look green and fresh"
+  on: day # "On rainy evenings"
+  to: infinitive
+  stay: remain
+  book: book
+  leave: leave
+  work: job
+  stop: stop
+  get: become # "Getting wet"
+
+ignore: [Ho Chi Minh City]
+
+questions:
+  - prompt: When does the rainy season usually start?
+    options: [In November, In May, In January]
+    correct: 1
+    feedback_ok: 'Đúng: “The rainy season usually starts in May and ends in November.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 1. Tháng Mười Một là lúc mùa mưa kết thúc.
+    evidence: p1s2
+  - prompt: In paragraph 2, “heavy” rain is rain that is…
+    options: [very strong, very short, very cold]
+    correct: 0
+    feedback_ok: 'Đúng: “heavy rain” = mưa to, mưa nặng hạt.'
+    feedback_wrong: Chưa đúng. Câu thứ ba của đoạn 2 nói đường ngập rất nhanh, vậy mưa ở đây là mưa thế nào?
+    evidence: p2s1
+  - prompt: Why does the traffic become slow?
+    options:
+      - Some streets flood
+      - People stay at home
+      - The buses stop running
+    correct: 0
+    feedback_ok: 'Đúng: “Some streets flood quickly, so the traffic becomes very slow.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ ba của đoạn 2, chú ý từ “so”.
+    evidence: p2s3
+  - prompt: What does the writer like about the rainy season?
+    options:
+      - The streets are quiet
+      - The weather is cooler and the trees look green
+      - The rain lasts all day
+    correct: 1
+    feedback_ok: 'Đúng: “The weather is cooler, and the trees look green and fresh.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 3.
+    evidence: p3s2
+  - prompt: What does the writer do every morning before going out?
+    options:
+      - Buys a new raincoat
+      - Checks the weather forecast
+      - Drinks a cup of hot tea
+    correct: 1
+    feedback_ok: 'Đúng: “I check the weather forecast every morning before I go out.”'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 4.
+    evidence: p4s1

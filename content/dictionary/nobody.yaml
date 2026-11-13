@@ -1,0 +1,12 @@
+lemma: nobody
+ipa_us: /ˈnoʊbɑːdi/
+cefr: A2
+oxford3000: true
+senses:
+  - key: nobody
+    pos: pronoun
+    vi: không ai, chẳng ai
+    en: no person; not anyone
+    collocations: [nobody knows, nobody else, nobody is home]
+    example: I called, but nobody answered the phone.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: on the left
+ipa_us: /ɑːn ðə ˈleft/
+cefr: A1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: on_the_left
+    pos: phrase
+    vi: ở bên trái
+    en: on the left side of something or someone
+    collocations: [the door on the left, it's on the left]
+    example: The bank is on the left, next to the café.
+status: reviewed

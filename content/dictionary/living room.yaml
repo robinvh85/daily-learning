@@ -1,0 +1,14 @@
+lemma: living room
+ipa_us: /ˈlɪvɪŋ ˌruːm/
+cefr: A1
+oxford3000: false
+is_phrase: true
+forms: [living rooms]
+senses:
+  - key: living_room
+    pos: noun
+    vi: phòng khách
+    en: the room in a house where people sit, relax and watch TV
+    collocations: [in the living room, a big living room]
+    example: We watch TV in the living room after dinner.
+status: reviewed

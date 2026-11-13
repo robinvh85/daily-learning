@@ -1,0 +1,13 @@
+lemma: Tuesday
+ipa_us: /ˈtuːzdeɪ/
+cefr: A1
+oxford3000: true
+forms: [Tuesdays]
+senses:
+  - key: tuesday
+    pos: noun
+    vi: thứ Ba
+    en: the day of the week after Monday and before Wednesday
+    collocations: [on Tuesday, next Tuesday, every Tuesday]
+    example: I have a meeting on Tuesday morning.
+status: reviewed

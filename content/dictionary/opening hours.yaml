@@ -1,0 +1,13 @@
+lemma: opening hours
+ipa_us: /ˈoʊpənɪŋ ˌaʊərz/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: opening_hours
+    pos: noun
+    vi: giờ mở cửa
+    en: the times when a shop, gym or office is open
+    collocations: [the opening hours, check the opening hours]
+    example: The opening hours are from 8 a.m. to 9 p.m.
+status: reviewed

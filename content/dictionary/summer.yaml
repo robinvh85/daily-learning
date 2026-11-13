@@ -1,0 +1,13 @@
+lemma: summer
+ipa_us: /ˈsʌmər/
+cefr: A1
+oxford3000: true
+forms: [summers]
+senses:
+  - key: summer
+    pos: noun
+    vi: mùa hè
+    en: the warmest season of the year, between spring and autumn
+    collocations: [this summer, in (the) summer, summer vacation]
+    example: We go to the beach every summer.
+status: reviewed

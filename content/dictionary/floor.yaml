@@ -10,4 +10,10 @@ senses:
     en: all the rooms on one level of a building
     collocations: [the first floor, on the third floor]
     example: The bathroom is on the second floor.
+  - key: ground
+    pos: noun
+    vi: sàn nhà
+    en: the flat surface that you walk on inside a room
+    collocations: [sit on the floor, clean the floor]
+    example: The kids like to sit on the floor and play.
 status: reviewed

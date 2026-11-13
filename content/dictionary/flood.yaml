@@ -1,0 +1,13 @@
+lemma: flood
+ipa_us: /flʌd/
+cefr: B1
+oxford3000: true
+forms: [floods, flooded, flooding]
+senses:
+  - key: flood
+    pos: verb
+    vi: bị ngập, ngập nước
+    en: to become covered with water, usually after a lot of rain
+    collocations: [the street floods, the river floods, get flooded]
+    example: The road near my house floods every year.
+status: reviewed

@@ -1,0 +1,139 @@
+# Listening lesson (day 13). Original dialogue, en-US voices A/B.
+# A = Minh, a tenant (learner-like character). B = Mr. Lee, the landlord.
+kind: listening
+level: A2
+topic: home
+title: Calling the Landlord
+order: 13
+
+segments:
+  - id: l1
+    speaker: A
+    text_en: Hello, Mr. Lee? This is Minh from apartment 8B.
+    text_vi: Alô, bác Lee phải không ạ? Cháu là Minh ở căn hộ 8B.
+  - id: l2
+    speaker: B
+    text_en: Hi, Minh. Is everything OK?
+    text_vi: Chào Minh. Mọi thứ ổn chứ?
+  - id: l3
+    speaker: A
+    text_en: Not really. The air conditioner in my bedroom stopped working last night.
+    text_vi: Không ổn lắm ạ. Máy lạnh trong phòng ngủ của cháu bị hỏng từ tối qua.
+  - id: l4
+    speaker: B
+    text_en: Oh no. Is it making any noise?
+    text_vi: Ôi trời. Máy có kêu tiếng gì không?
+  - id: l5
+    speaker: A
+    text_en: No, it doesn’t turn on at all. And it’s really hot in the room.
+    text_vi: Không ạ, máy hoàn toàn không bật lên được. Mà trong phòng nóng lắm.
+  - id: l6
+    speaker: B
+    text_en: I’m sorry about that. I’ll ask someone to come and fix it today.
+    text_vi: Bác xin lỗi nhé. Hôm nay bác sẽ nhờ thợ đến sửa.
+  - id: l7
+    speaker: A
+    text_en: Thank you. What time will they come?
+    text_vi: Cháu cảm ơn. Mấy giờ thợ đến ạ?
+  - id: l8
+    speaker: B
+    text_en: Probably between two and four this afternoon. Will you be home?
+    text_vi: Chắc khoảng từ hai đến bốn giờ chiều nay. Lúc đó cháu có ở nhà không?
+  - id: l9
+    speaker: A
+    text_en: No, I’ll be at work. Can they come in without me?
+    text_vi: Không ạ, lúc đó cháu đi làm. Thợ vào nhà khi không có cháu được không ạ?
+  - id: l10
+    speaker: B
+    text_en: Yes, I have a spare key. I’ll let them in.
+    text_vi: Được, bác có chìa khóa dự phòng. Bác sẽ mở cửa cho họ vào.
+  - id: l11
+    speaker: A
+    text_en: Great. Also, the kitchen sink is leaking a little.
+    text_vi: Tốt quá. Còn nữa, bồn rửa trong bếp bị rỉ nước một chút.
+  - id: l12
+    speaker: B
+    text_en: OK, I’ll ask them to look at that too.
+    text_vi: Được, bác sẽ nhờ họ xem luôn chỗ đó.
+  - id: l13
+    speaker: A
+    text_en: Do I need to pay for the repairs?
+    text_vi: Cháu có phải trả tiền sửa không ạ?
+  - id: l14
+    speaker: B
+    text_en: No, don’t worry. Repairs are my job. You just pay the rent.
+    text_vi: Không, cháu đừng lo. Sửa chữa là việc của bác. Cháu chỉ cần trả tiền thuê nhà thôi.
+  - id: l15
+    speaker: A
+    text_en: Thanks a lot, Mr. Lee.
+    text_vi: Cháu cảm ơn bác nhiều ạ.
+
+focus_words: [air conditioner, noise, turn on, fix, spare, sink, leak, repair]
+
+senses:
+  be: linking
+  be#3: auxiliary # "Is it making"
+  be#4: location # "be home"
+  be#5: location # "be at work"
+  be#6: auxiliary # "is leaking"
+  in: in
+  stop: stop
+  work: function # "stopped working"
+  work#2: workplace # "at work"
+  last: previous
+  make: create
+  about: topic
+  to: infinitive
+  time: time
+  at: place
+  have: own
+  a little: slightly
+  too: also
+  do: auxiliary
+  for: purpose
+  rent: noun
+
+ignore: [Minh, Lee, 8B]
+
+dictation:
+  - segment: l3
+    before: Not really. The air conditioner in my bedroom stopped
+    answer: working
+    after: last night.
+  - segment: l11
+    before: Great. Also, the kitchen sink is
+    answer: leaking
+    after: a little.
+  - segment: l14
+    before: No, don’t worry. Repairs are my job. You just pay the
+    answer: rent
+    after: .
+
+questions:
+  - prompt: What is the main problem in Minh’s apartment?
+    options:
+      - The air conditioner doesn’t work
+      - The lights don’t turn on
+      - The front door is broken
+    correct: 0
+    feedback_ok: 'Đúng: “The air conditioner in my bedroom stopped working last night.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh trả lời “Not really.”
+    evidence: l3
+  - prompt: How will the worker get into the apartment?
+    options:
+      - Minh will come home and open the door
+      - Mr. Lee will let them in with a spare key
+      - The worker already has a key
+    correct: 1
+    feedback_ok: 'Đúng: “I have a spare key. I’ll let them in.”'
+    feedback_wrong: Chưa đúng. Minh đi làm vào buổi chiều. Nghe lại câu trả lời của Mr. Lee.
+    evidence: l10
+  - prompt: Who pays for the repairs?
+    options:
+      - Minh
+      - Mr. Lee
+      - Minh and Mr. Lee together
+    correct: 1
+    feedback_ok: 'Đúng: “Repairs are my job. You just pay the rent.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “Do I need to pay for the repairs?”.
+    evidence: l14

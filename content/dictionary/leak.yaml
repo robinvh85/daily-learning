@@ -1,0 +1,13 @@
+lemma: leak
+ipa_us: /liːk/
+cefr: B2
+oxford3000: false
+forms: [leaks, leaked, leaking]
+senses:
+  - key: leak
+    pos: verb
+    vi: rỉ nước, bị rò (ống, bồn, mái nhà…)
+    en: to let water or gas come out through a small hole
+    collocations: [the roof leaks, the pipe is leaking, a leaking tap]
+    example: The roof leaks when it rains.
+status: reviewed

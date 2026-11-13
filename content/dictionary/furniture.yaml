@@ -1,0 +1,12 @@
+lemma: furniture
+ipa_us: /ˈfɝːnɪtʃər/
+cefr: A2
+oxford3000: true
+senses:
+  - key: furniture
+    pos: noun
+    vi: đồ nội thất, đồ đạc (bàn, ghế, giường…)
+    en: things like tables, chairs and beds that you put in a room
+    collocations: [buy furniture, a piece of furniture, old furniture]
+    example: We need some new furniture for the living room.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: tall
+ipa_us: /tɔːl/
+cefr: A1
+oxford3000: true
+forms: [taller, tallest]
+senses:
+  - key: tall
+    pos: adjective
+    vi: cao
+    en: higher than other people or things
+    collocations: [a tall building, a tall man, tall trees]
+    example: My brother is taller than me.
+status: reviewed

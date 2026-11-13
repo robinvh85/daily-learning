@@ -1,0 +1,141 @@
+# Listening lesson (day 11). Original dialogue, en-US voices A/B.
+# A = Minh (learner-like character). B = Nam, Minh’s older brother.
+kind: listening
+level: A2
+topic: family
+title: A Surprise Party for Mom
+order: 11
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Hi Minh, it’s Nam. Do you have a minute?
+    text_vi: Chào Minh, anh Nam đây. Em rảnh một chút không?
+  - id: l2
+    speaker: A
+    text_en: Sure. What’s up?
+    text_vi: Dạ được. Có chuyện gì vậy anh?
+  - id: l3
+    speaker: B
+    text_en: Mom turns sixty next Saturday. I want to plan a surprise party for her.
+    text_vi: Thứ Bảy tới mẹ tròn sáu mươi tuổi. Anh muốn tổ chức một bữa tiệc bất ngờ cho mẹ.
+  - id: l4
+    speaker: A
+    text_en: That’s a great idea! Where do you want to have it?
+    text_vi: Ý hay quá! Anh muốn tổ chức ở đâu?
+  - id: l5
+    speaker: B
+    text_en: At my house. I can cook, but I need some help.
+    text_vi: Ở nhà anh. Anh nấu ăn được, nhưng cần người phụ một tay.
+  - id: l6
+    speaker: A
+    text_en: I can bring the cake. What kind does Mom like?
+    text_vi: Em mang bánh kem tới nhé. Mẹ thích loại nào?
+  - id: l7
+    speaker: B
+    text_en: She likes chocolate cake, but not too sweet.
+    text_vi: Mẹ thích bánh sô-cô-la, nhưng đừng ngọt quá.
+  - id: l8
+    speaker: A
+    text_en: OK. I know a good bakery near my office. How many people are coming?
+    text_vi: Vâng. Em biết một tiệm bánh ngon gần công ty. Có bao nhiêu người đến vậy anh?
+  - id: l9
+    speaker: B
+    text_en: About twenty. I’m going to invite our aunts, uncles, and some of her old friends.
+    text_vi: Khoảng hai mươi người. Anh định mời các cô, các chú và vài người bạn cũ của mẹ.
+  - id: l10
+    speaker: A
+    text_en: Should I bring a present too?
+    text_vi: Em có nên mang thêm quà không?
+  - id: l11
+    speaker: B
+    text_en: Let’s buy one present together. Maybe a new watch? Her old one is broken.
+    text_vi: Mình góp tiền mua chung một món quà đi. Một chiếc đồng hồ mới chẳng hạn? Cái cũ của mẹ hỏng rồi.
+  - id: l12
+    speaker: A
+    text_en: Good idea. What time should I arrive?
+    text_vi: Ý hay đó. Em nên đến lúc mấy giờ?
+  - id: l13
+    speaker: B
+    text_en: Please come at five. Mom will be here at six, so don’t be late!
+    text_vi: Em đến lúc năm giờ nhé. Sáu giờ mẹ tới, nên đừng đến muộn đấy!
+  - id: l14
+    speaker: A
+    text_en: Don’t worry. I won’t tell her anything. See you on Saturday.
+    text_vi: Anh đừng lo. Em sẽ không nói gì với mẹ đâu. Hẹn gặp anh thứ Bảy.
+
+focus_words: [turn, plan, surprise, bakery, invite, present, together, broken]
+
+senses:
+  do: auxiliary
+  have: own
+  have#2: hold # "have it" (the party)
+  next: following
+  to: infinitive
+  plan: verb
+  for: purpose
+  her: object # "for her"
+  her#2: her # "her old friends"
+  her#3: her # "Her old one"
+  at: place
+  at#2: time # "come at five"
+  at#3: time # "at six"
+  like: enjoy
+  too: too # "not too sweet"
+  too#2: also # "a present too"
+  be: linking
+  be#1: auxiliary # "are coming"
+  be#3: location # "will be here"
+  about: approximately
+  go: future # "I’m going to invite"
+  one: number
+  one#2: pronoun # "Her old one"
+  time: time
+  so: so
+  see: goodbye
+  on: day
+
+ignore: [Minh, Nam]
+
+dictation:
+  - segment: l3
+    before: Mom turns sixty next Saturday. I want to plan a
+    answer: surprise
+    after: party for her.
+  - segment: l9
+    before: About twenty. I’m going to
+    answer: invite
+    after: our aunts, uncles, and some of her old friends.
+  - segment: l13
+    before: Please come at five. Mom will be here at six, so don’t be
+    answer: late
+    after: '!'
+
+questions:
+  - prompt: Why is Nam planning a party?
+    options:
+      - Minh got a new job
+      - Their mom turns sixty
+      - Nam moved to a new house
+    correct: 1
+    feedback_ok: 'Đúng: “Mom turns sixty next Saturday.”'
+    feedback_wrong: Chưa đúng. Nghe lại câu đầu tiên Nam nói về bữa tiệc.
+    evidence: l3
+  - prompt: What will Minh bring to the party?
+    options:
+      - The cake
+      - The food
+      - Flowers
+    correct: 0
+    feedback_ok: 'Đúng: “I can bring the cake.”'
+    feedback_wrong: Chưa đúng. Nam nấu ăn. Nghe lại đoạn Minh hỏi mẹ thích loại bánh nào.
+    evidence: l6
+  - prompt: Why do they want to buy a watch?
+    options:
+      - Mom’s old watch is broken
+      - Mom asked for a watch
+      - Watches are cheap
+    correct: 0
+    feedback_ok: 'Đúng: “Her old one is broken.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “Should I bring a present too?”.
+    evidence: l11

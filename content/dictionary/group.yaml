@@ -1,0 +1,13 @@
+lemma: group
+ipa_us: /ɡruːp/
+cefr: A1
+oxford3000: true
+forms: [groups]
+senses:
+  - key: group
+    pos: noun
+    vi: nhóm
+    en: a number of people or things that are together or do something together
+    collocations: [a group class, a study group, in a group]
+    example: We work in small groups in English class.
+status: reviewed

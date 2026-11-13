@@ -1,0 +1,12 @@
+lemma: o'clock
+ipa_us: /əˈklɑːk/
+cefr: A1
+oxford3000: true
+senses:
+  - key: o_clock
+    pos: adverb
+    vi: 'giờ đúng (ten o’clock = mười giờ)'
+    en: used after the numbers one to twelve to say an exact hour
+    collocations: [at six o'clock, ten o'clock in the morning]
+    example: The shop opens at nine o’clock.
+status: reviewed

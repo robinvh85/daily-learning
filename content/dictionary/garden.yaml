@@ -1,0 +1,13 @@
+lemma: garden
+ipa_us: /ˈɡɑːrdən/
+cefr: A1
+oxford3000: true
+forms: [gardens]
+senses:
+  - key: garden
+    pos: noun
+    vi: vườn
+    en: a piece of land near a house where you grow flowers, fruit or vegetables
+    collocations: [in the garden, a vegetable garden, a small garden]
+    example: My mother grows flowers in her garden.
+status: reviewed

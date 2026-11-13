@@ -1,0 +1,137 @@
+# Listening lesson (day 12). Original dialogue, en-US voices A/B.
+# A = Minh (learner-like character). B = Ryan, a coworker.
+kind: listening
+level: A2
+topic: weather
+title: Will It Rain This Weekend?
+order: 12
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Minh, are you still going to the beach this weekend?
+    text_vi: Minh ơi, cuối tuần này bạn vẫn đi biển chứ?
+  - id: l2
+    speaker: A
+    text_en: I hope so. But I heard it might rain.
+    text_vi: Mình mong là vậy. Nhưng mình nghe nói có thể trời sẽ mưa.
+  - id: l3
+    speaker: B
+    text_en: Let me check the forecast on my phone.
+    text_vi: Để mình xem dự báo thời tiết trên điện thoại.
+  - id: l4
+    speaker: A
+    text_en: Thanks. What does it say?
+    text_vi: Cảm ơn bạn. Dự báo nói sao?
+  - id: l5
+    speaker: B
+    text_en: Saturday will be sunny and hot, about 34 degrees Celsius.
+    text_vi: Thứ Bảy trời nắng và nóng, khoảng 34 độ C.
+  - id: l6
+    speaker: A
+    text_en: Great! And what about Sunday?
+    text_vi: Tuyệt! Còn Chủ nhật thì sao?
+  - id: l7
+    speaker: B
+    text_en: Sunday will be cloudy in the morning, with a chance of storms in the afternoon.
+    text_vi: Chủ nhật buổi sáng nhiều mây, buổi chiều có thể có dông.
+  - id: l8
+    speaker: A
+    text_en: Hmm. Then I should come back on Saturday evening.
+    text_vi: Hừm. Vậy chắc mình nên về vào tối thứ Bảy.
+  - id: l9
+    speaker: B
+    text_en: That’s a good idea. Storms near the sea can be dangerous.
+    text_vi: Ý hay đấy. Dông ở gần biển có thể rất nguy hiểm.
+  - id: l10
+    speaker: A
+    text_en: You’re right. I’ll swim on Saturday morning and drive home before dark.
+    text_vi: Bạn nói đúng. Sáng thứ Bảy mình sẽ đi bơi, rồi lái xe về nhà trước khi trời tối.
+  - id: l11
+    speaker: B
+    text_en: Don’t forget your sunscreen. The sun is very strong at the beach.
+    text_vi: Đừng quên kem chống nắng nhé. Nắng ở biển gắt lắm.
+  - id: l12
+    speaker: A
+    text_en: Good point. I got a bad sunburn last time.
+    text_vi: Đúng thật. Lần trước mình bị cháy nắng nặng.
+  - id: l13
+    speaker: B
+    text_en: And take a hat and lots of water.
+    text_vi: Mang theo mũ và thật nhiều nước nữa.
+  - id: l14
+    speaker: A
+    text_en: I will. Thanks, Ryan. I’ll bring you back some dried squid!
+    text_vi: Mình nhớ rồi. Cảm ơn Ryan nhé. Mình sẽ mua mực khô về làm quà cho bạn!
+
+focus_words: [forecast, sunny, degree, cloudy, chance, storm, dangerous, sunscreen]
+
+senses:
+  be: linking
+  be#1: auxiliary # "are you still going"
+  still: continuing
+  go: go
+  to: direction
+  so: that # "I hope so"
+  on: place
+  on#2: day # "on Saturday evening"
+  on#3: day # "on Saturday morning"
+  do: auxiliary
+  about: approximately # "about 34 degrees"
+  about#2: topic # "what about Sunday"
+  in: time
+  chance: possibility
+  then: in_that_case
+  right: correct
+  at: place
+  get: obtain # "got a bad sunburn"
+  last: previous
+  time: occasion # "last time"
+  take: hold
+  back: back
+  dry: dried
+
+ignore: [Minh, Ryan]
+
+dictation:
+  - segment: l5
+    before: Saturday will be sunny and hot, about 34
+    answer: degrees
+    after: Celsius.
+  - segment: l7
+    before: Sunday will be cloudy in the morning, with a chance of
+    answer: storms
+    after: in the afternoon.
+  - segment: l9
+    before: That’s a good idea. Storms near the sea can be
+    answer: dangerous
+    after: .
+
+questions:
+  - prompt: What will the weather be like on Saturday?
+    options:
+      - Rainy and cool
+      - Sunny and hot
+      - Cloudy all day
+    correct: 1
+    feedback_ok: 'Đúng: “Saturday will be sunny and hot, about 34 degrees Celsius.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Ryan đọc dự báo cho thứ Bảy.
+    evidence: l5
+  - prompt: Why does Minh decide to come back on Saturday evening?
+    options:
+      - There may be storms on Sunday
+      - Minh has to work on Sunday
+      - The hotel is full on Sunday
+    correct: 0
+    feedback_ok: 'Đúng: Chủ nhật có “a chance of storms in the afternoon”, nên Minh về sớm.'
+    feedback_wrong: Chưa đúng. Nghe lại dự báo cho Chủ nhật.
+    evidence: l7
+  - prompt: What does Ryan tell Minh to bring?
+    options:
+      - A raincoat and an umbrella
+      - Sunscreen, a hat, and lots of water
+      - Some dried squid
+    correct: 1
+    feedback_ok: 'Đúng: Ryan nhắc mang “sunscreen”, “a hat and lots of water”.'
+    feedback_wrong: Chưa đúng. Mực khô là quà Minh định mua cho Ryan. Nghe lại hai lời nhắc cuối của Ryan.
+    evidence: l11

@@ -1,0 +1,13 @@
+lemma: include
+ipa_us: /ɪnˈkluːd/
+cefr: A2
+oxford3000: true
+forms: [includes, included, including]
+senses:
+  - key: include
+    pos: verb
+    vi: bao gồm, gồm cả
+    en: to have something as one of the parts
+    collocations: [include breakfast, be included in the price, include tax]
+    example: The hotel price includes breakfast.
+status: reviewed

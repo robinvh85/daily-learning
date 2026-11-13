@@ -1,0 +1,13 @@
+lemma: learner
+ipa_us: /ˈlɝːnər/
+cefr: B1
+oxford3000: false
+forms: [learners]
+senses:
+  - key: learner
+    pos: noun
+    vi: người học
+    en: a person who is learning something
+    collocations: [English learners, a fast learner, language learners]
+    example: This book is good for new learners.
+status: reviewed

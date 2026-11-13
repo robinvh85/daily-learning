@@ -1,0 +1,14 @@
+lemma: work out
+ipa_us: /ˌwɝːk ˈaʊt/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [works out, worked out, working out]
+senses:
+  - key: work_out
+    pos: phrasal verb
+    vi: tập thể dục, tập luyện
+    en: to do exercise to make your body strong and healthy
+    collocations: [work out at the gym, work out every day]
+    example: I work out three times a week to stay healthy.
+status: reviewed

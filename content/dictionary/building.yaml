@@ -1,0 +1,13 @@
+lemma: building
+ipa_us: /ˈbɪldɪŋ/
+cefr: A1
+oxford3000: true
+forms: [buildings]
+senses:
+  - key: building
+    pos: noun
+    vi: tòa nhà
+    en: a structure with a roof and walls, such as a house or an office
+    collocations: [a tall building, an office building, the old building]
+    example: Our office is in that tall building.
+status: reviewed

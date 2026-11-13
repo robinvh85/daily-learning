@@ -1,0 +1,13 @@
+lemma: heavy
+ipa_us: /ˈhevi/
+cefr: A2
+oxford3000: true
+forms: [heavier, heaviest]
+senses:
+  - key: heavy
+    pos: adjective
+    vi: nặng; to, nặng hạt (mưa), đông (giao thông)
+    en: weighing a lot; also more or stronger than usual (heavy rain, heavy traffic)
+    collocations: [heavy rain, a heavy bag, heavy traffic]
+    example: There was heavy rain all night.
+status: reviewed

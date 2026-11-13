@@ -1,0 +1,12 @@
+lemma: January
+ipa_us: /ˈdʒænjueri/
+cefr: A1
+oxford3000: true
+senses:
+  - key: january
+    pos: noun
+    vi: tháng Một
+    en: the first month of the year
+    collocations: [in January, next January, on January 5th]
+    example: School starts again in January.
+status: reviewed

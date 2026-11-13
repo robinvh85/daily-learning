@@ -1,0 +1,13 @@
+lemma: point
+ipa_us: /pɔɪnt/
+cefr: B1
+oxford3000: true
+forms: [points]
+senses:
+  - key: point
+    pos: noun
+    vi: 'ý, ý kiến (Good point. = Ý hay đấy / Đúng thật.)'
+    en: an idea or opinion that someone says
+    collocations: [good point, make a point, a fair point]
+    example: '“We should leave early.” “Good point. The traffic is bad today.”'
+status: reviewed

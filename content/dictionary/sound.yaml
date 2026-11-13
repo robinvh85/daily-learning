@@ -1,0 +1,13 @@
+lemma: sound
+ipa_us: /saʊnd/
+cefr: A2
+oxford3000: true
+forms: [sounds, sounded, sounding]
+senses:
+  - key: seem
+    pos: verb
+    vi: 'nghe có vẻ (That sounds great. = Nghe hay đấy.)'
+    en: to seem good, bad, interesting, etc. from what you hear or read
+    collocations: [sounds good, sounds great, sounds like fun]
+    example: '“Let’s eat out tonight.” “Sounds good!”'
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: high
+ipa_us: /haɪ/
+cefr: A1
+oxford3000: true
+forms: [higher, highest]
+senses:
+  - key: high
+    pos: adjective
+    vi: cao (giá, mức, số lượng)
+    en: more than the usual amount or level
+    collocations: [high prices, a high rent, a high temperature]
+    example: Prices are very high in the city center.
+status: reviewed

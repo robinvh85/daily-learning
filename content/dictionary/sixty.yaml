@@ -1,0 +1,12 @@
+lemma: sixty
+ipa_us: /ˈsɪksti/
+cefr: A1
+oxford3000: true
+senses:
+  - key: sixty
+    pos: number
+    vi: sáu mươi (số 60)
+    en: the number 60
+    collocations: [sixty minutes, sixty years old]
+    example: There are sixty minutes in an hour.
+status: reviewed

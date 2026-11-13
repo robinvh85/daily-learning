@@ -1,0 +1,13 @@
+lemma: grow
+ipa_us: /ɡroʊ/
+cefr: A2
+oxford3000: true
+forms: [grows, grew, grown, growing]
+senses:
+  - key: plant
+    pos: verb
+    vi: trồng (cây, rau, hoa)
+    en: to put plants in the ground and take care of them
+    collocations: [grow vegetables, grow flowers, grow rice]
+    example: We grow tomatoes on our balcony.
+status: reviewed

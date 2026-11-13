@@ -1,0 +1,13 @@
+lemma: word
+ipa_us: /wɝːd/
+cefr: A1
+oxford3000: true
+forms: [words]
+senses:
+  - key: word
+    pos: noun
+    vi: từ, chữ
+    en: a single unit of language that has a meaning
+    collocations: [a new word, learn new words, the right word]
+    example: What does this word mean?
+status: reviewed

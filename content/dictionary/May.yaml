@@ -1,0 +1,12 @@
+lemma: May
+ipa_us: /meɪ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: month
+    pos: noun
+    vi: tháng Năm
+    en: the fifth month of the year
+    collocations: [in May, early May, on May 1st]
+    example: My birthday is in May.
+status: reviewed

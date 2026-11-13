@@ -1,0 +1,12 @@
+lemma: water
+ipa_us: /ˈwɔːtər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: water
+    pos: noun
+    vi: nước
+    en: the clear liquid in rivers, seas and rain, that people drink
+    collocations: [a glass of water, drink water, in the water]
+    example: Please drink a lot of water when it’s hot.
+status: reviewed

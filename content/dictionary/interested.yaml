@@ -1,0 +1,12 @@
+lemma: interested
+ipa_us: /ˈɪntrəstɪd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: interested
+    pos: adjective
+    vi: quan tâm đến, thích (interested in)
+    en: wanting to know more about something or to do something
+    collocations: [interested in something, very interested, interested in doing]
+    example: My son is interested in music.
+status: reviewed

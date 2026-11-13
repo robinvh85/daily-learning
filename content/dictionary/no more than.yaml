@@ -1,0 +1,13 @@
+lemma: no more than
+ipa_us: /noʊ ˈmɔːr ðən/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: no_more_than
+    pos: phrase
+    vi: không quá, tối đa
+    en: used to say that a number or amount is not bigger than something
+    collocations: [no more than ten people, no more than an hour]
+    example: The trip takes no more than two hours.
+status: reviewed

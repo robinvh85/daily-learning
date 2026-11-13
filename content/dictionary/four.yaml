@@ -1,0 +1,13 @@
+lemma: four
+ipa_us: /fɔːr/
+cefr: A1
+oxford3000: true
+forms: [fours]
+senses:
+  - key: four
+    pos: number
+    vi: bốn, số 4
+    en: the number 4
+    collocations: [four o'clock, four people, four days]
+    example: There are four people in my family.
+status: reviewed

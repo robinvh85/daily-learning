@@ -1,0 +1,134 @@
+# Reading lesson (day 11). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: family
+title: Sunday Lunch with My Family
+order: 11
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: Every Sunday, my family has lunch at my grandparents’ house.
+    text_vi: Chủ nhật nào gia đình tôi cũng ăn trưa ở nhà ông bà.
+  - id: p1s2
+    paragraph: 1
+    text_en: They live in a small town about an hour from the city.
+    text_vi: Ông bà sống ở một thị trấn nhỏ, cách thành phố khoảng một tiếng.
+  - id: p1s3
+    paragraph: 1
+    text_en: My parents, my younger brother, and I usually leave home at ten o’clock.
+    text_vi: Bố mẹ tôi, em trai tôi và tôi thường rời nhà lúc mười giờ.
+  - id: p1s4
+    paragraph: 1
+    text_en: My aunt and uncle often come too, with their two children.
+    text_vi: Cô chú tôi cũng hay đến, cùng với hai đứa con của họ.
+  - id: p2s1
+    paragraph: 2
+    text_en: My grandmother loves cooking for everyone.
+    text_vi: Bà tôi rất thích nấu ăn cho cả nhà.
+  - id: p2s2
+    paragraph: 2
+    text_en: She always makes fish soup and fried spring rolls.
+    text_vi: Lần nào bà cũng nấu canh cá và chả giò chiên.
+  - id: p2s3
+    paragraph: 2
+    text_en: My grandfather grows vegetables in the garden behind the house.
+    text_vi: Ông tôi trồng rau trong khu vườn phía sau nhà.
+  - id: p2s4
+    paragraph: 2
+    text_en: Before lunch, my cousins and I help him pick some for the meal.
+    text_vi: Trước bữa trưa, tôi và các em họ phụ ông hái một ít rau cho bữa ăn.
+  - id: p3s1
+    paragraph: 3
+    text_en: At lunch, we sit around a big table and share our news.
+    text_vi: Trong bữa trưa, cả nhà ngồi quanh một chiếc bàn lớn và kể cho nhau nghe chuyện của mình.
+  - id: p3s2
+    paragraph: 3
+    text_en: My uncle tells funny stories about his job, and everyone laughs.
+    text_vi: Chú tôi kể những chuyện vui ở chỗ làm, và ai cũng cười.
+  - id: p3s3
+    paragraph: 3
+    text_en: After lunch, the adults drink tea and talk, while the children play outside.
+    text_vi: Sau bữa trưa, người lớn uống trà và trò chuyện, còn bọn trẻ chơi ở ngoài sân.
+  - id: p4s1
+    paragraph: 4
+    text_en: Sometimes I’m very busy with work, but I try not to miss these lunches.
+    text_vi: Đôi khi tôi rất bận việc, nhưng tôi cố gắng không bỏ lỡ những bữa trưa này.
+  - id: p4s2
+    paragraph: 4
+    text_en: My grandparents are getting older, and I want to spend more time with them.
+    text_vi: Ông bà tôi ngày càng già đi, và tôi muốn dành nhiều thời gian hơn bên ông bà.
+  - id: p4s3
+    paragraph: 4
+    text_en: For me, Sunday is the most important day of the week.
+    text_vi: Với tôi, Chủ nhật là ngày quan trọng nhất trong tuần.
+
+focus_words: [grandparents, aunt, uncle, cousin, grow, garden, share, news, miss]
+
+senses:
+  have: eat_drink # "has lunch"
+  at: place
+  at#2: time # "at ten o’clock"
+  at#3: time # "At lunch"
+  in: in
+  about: approximately # "about an hour"
+  about#2: topic # "stories about his job"
+  leave: leave
+  too: also
+  for: purpose
+  for#3: opinion # "For me"
+  make: cook
+  work: job
+  to: infinitive
+  be: linking
+  be#1: auxiliary # "are getting older"
+  get: become
+  spend: time
+  time: time
+
+ignore: []
+
+questions:
+  - prompt: Where do the writer’s grandparents live?
+    options:
+      - In the city center
+      - In a small town about an hour from the city
+      - Next to the writer’s house
+    correct: 1
+    feedback_ok: 'Đúng: “They live in a small town about an hour from the city.”'
+    feedback_wrong: Chưa đúng. Đọc lại câu thứ hai của đoạn 1.
+    evidence: p1s2
+  - prompt: What does the grandfather do?
+    options:
+      - He cooks fish soup
+      - He grows vegetables in the garden
+      - He tells funny stories
+    correct: 1
+    feedback_ok: 'Đúng: “My grandfather grows vegetables in the garden behind the house.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ ba của đoạn 2. Người nấu canh cá là bà, người kể chuyện vui là chú.
+    evidence: p2s3
+  - prompt: In paragraph 3, “share our news” means…
+    options:
+      - tell each other what happened recently
+      - read the newspaper together
+      - give each other food
+    correct: 0
+    feedback_ok: 'Đúng: “share our news” = kể cho nhau nghe chuyện gần đây của mình.'
+    feedback_wrong: Chưa đúng. Câu sau kể chú “tells funny stories about his job”, đó là một ví dụ về “news”.
+    evidence: p3s1
+  - prompt: What do the children do after lunch?
+    options: [They drink tea, They play outside, They wash the dishes]
+    correct: 1
+    feedback_ok: 'Đúng: “the children play outside.”'
+    feedback_wrong: Chưa đúng. Đọc câu cuối của đoạn 3. Người uống trà là người lớn.
+    evidence: p3s3
+  - prompt: Why does the writer try not to miss the Sunday lunches?
+    options:
+      - Because the food is free
+      - Because the grandparents are getting older
+      - Because the uncle asks the writer to come
+    correct: 1
+    feedback_ok: 'Đúng: “My grandparents are getting older, and I want to spend more time with them.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 4.
+    evidence: p4s2

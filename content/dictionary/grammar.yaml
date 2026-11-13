@@ -1,0 +1,12 @@
+lemma: grammar
+ipa_us: /ˈɡræmər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: grammar
+    pos: noun
+    vi: ngữ pháp
+    en: the rules of a language about how words are used and put together
+    collocations: [English grammar, grammar rules, a grammar book]
+    example: I practice English grammar every evening.
+status: reviewed

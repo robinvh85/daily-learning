@@ -1,0 +1,13 @@
+lemma: fish
+ipa_us: /fɪʃ/
+cefr: A1
+oxford3000: true
+forms: [fishes]
+senses:
+  - key: fish
+    pos: noun
+    vi: 'cá (con cá; món cá)'
+    en: an animal that lives in water, or its meat eaten as food
+    collocations: [fish soup, fried fish, fresh fish]
+    example: We had grilled fish and rice for dinner.
+status: reviewed

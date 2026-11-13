@@ -1,0 +1,13 @@
+lemma: language
+ipa_us: /ˈlæŋɡwɪdʒ/
+cefr: A1
+oxford3000: true
+forms: [languages]
+senses:
+  - key: language
+    pos: noun
+    vi: ngôn ngữ, tiếng (tiếng Anh, tiếng Việt…)
+    en: the words and system people of one country or group use to talk and write
+    collocations: [learn a language, a foreign language, speak two languages]
+    example: How many languages can you speak?
+status: reviewed

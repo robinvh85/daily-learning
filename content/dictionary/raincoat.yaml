@@ -1,0 +1,13 @@
+lemma: raincoat
+ipa_us: /ˈreɪnkoʊt/
+cefr: A2
+oxford3000: false
+forms: [raincoats]
+senses:
+  - key: raincoat
+    pos: noun
+    vi: áo mưa
+    en: a coat that keeps you dry in the rain
+    collocations: [wear a raincoat, put on a raincoat, a plastic raincoat]
+    example: Don’t forget to take your raincoat today.
+status: reviewed

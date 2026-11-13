@@ -1,0 +1,13 @@
+lemma: what's up
+ipa_us: /ˌwʌts ˈʌp/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: what_s_up
+    pos: exclamation
+    vi: có chuyện gì vậy?, sao thế? (thân mật)
+    en: an informal way to ask what is happening or what someone wants
+    collocations: ["Hey, what's up?", "what's up with you?"]
+    example: You look sad. What’s up?
+status: reviewed

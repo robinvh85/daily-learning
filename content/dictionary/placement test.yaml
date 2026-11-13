@@ -1,0 +1,14 @@
+lemma: placement test
+ipa_us: /ˈpleɪsmənt ˌtest/
+cefr: B2
+oxford3000: false
+is_phrase: true
+forms: [placement tests]
+senses:
+  - key: placement_test
+    pos: noun
+    vi: bài kiểm tra xếp lớp
+    en: a test that shows which class or level is right for a student
+    collocations: [take a placement test, do a placement test, an online placement test]
+    example: Every new student takes a short placement test.
+status: reviewed

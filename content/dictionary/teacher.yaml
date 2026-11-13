@@ -1,0 +1,13 @@
+lemma: teacher
+ipa_us: /ˈtiːtʃər/
+cefr: A1
+oxford3000: true
+forms: [teachers]
+senses:
+  - key: teacher
+    pos: noun
+    vi: giáo viên, thầy giáo, cô giáo
+    en: a person whose job is to teach
+    collocations: [an English teacher, a good teacher, my teacher]
+    example: Our teacher gives us homework every day.
+status: reviewed

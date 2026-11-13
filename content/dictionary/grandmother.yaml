@@ -1,0 +1,13 @@
+lemma: grandmother
+ipa_us: /ˈɡrænmʌðər/
+cefr: A1
+oxford3000: true
+forms: [grandmothers]
+senses:
+  - key: grandmother
+    pos: noun
+    vi: bà (nội, ngoại)
+    en: the mother of your father or mother
+    collocations: [my grandmother, visit your grandmother]
+    example: My grandmother makes the best soup.
+status: reviewed

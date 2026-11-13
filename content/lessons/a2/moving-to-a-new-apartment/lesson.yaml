@@ -1,0 +1,137 @@
+# Reading lesson (day 13). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: home
+title: Moving to a New Apartment
+order: 13
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: Last month, I moved to a new apartment near my office.
+    text_vi: Tháng trước, tôi chuyển đến một căn hộ mới gần công ty.
+  - id: p1s2
+    paragraph: 1
+    text_en: My old room was cheap, but it was small and far from work.
+    text_vi: Căn phòng cũ của tôi rẻ, nhưng nhỏ và xa chỗ làm.
+  - id: p1s3
+    paragraph: 1
+    text_en: I spent almost two hours on the bus every day.
+    text_vi: Ngày nào tôi cũng mất gần hai tiếng trên xe buýt.
+  - id: p2s1
+    paragraph: 2
+    text_en: The new apartment is on the eighth floor of a tall building.
+    text_vi: Căn hộ mới nằm ở tầng tám của một tòa nhà cao.
+  - id: p2s2
+    paragraph: 2
+    text_en: It has a bedroom, a small kitchen, a bathroom, and a living room with a big window.
+    text_vi: Căn hộ có một phòng ngủ, một gian bếp nhỏ, một phòng tắm và một phòng khách có cửa sổ lớn.
+  - id: p2s3
+    paragraph: 2
+    text_en: From the window, I can see the river.
+    text_vi: Từ cửa sổ, tôi có thể nhìn thấy dòng sông.
+  - id: p2s4
+    paragraph: 2
+    text_en: The rent is higher, but I don’t need to take the bus anymore.
+    text_vi: Tiền thuê cao hơn, nhưng tôi không cần đi xe buýt nữa.
+  - id: p3s1
+    paragraph: 3
+    text_en: Moving was hard work.
+    text_vi: Chuyển nhà thật là vất vả.
+  - id: p3s2
+    paragraph: 3
+    text_en: I packed my things into fifteen boxes, and two friends helped me carry them.
+    text_vi: Tôi đóng đồ đạc vào mười lăm cái thùng, và hai người bạn đã giúp tôi khiêng chúng.
+  - id: p3s3
+    paragraph: 3
+    text_en: Luckily, the building has an elevator!
+    text_vi: May mà tòa nhà có thang máy!
+  - id: p3s4
+    paragraph: 3
+    text_en: After that, we ordered pizza and ate on the floor because I didn’t have a table yet.
+    text_vi: Sau đó, chúng tôi gọi pizza và ngồi ăn dưới sàn vì tôi chưa có bàn.
+  - id: p4s1
+    paragraph: 4
+    text_en: Now I walk to work in ten minutes.
+    text_vi: Bây giờ tôi đi bộ đến chỗ làm chỉ mất mười phút.
+  - id: p4s2
+    paragraph: 4
+    text_en: I have more free time in the evening, so I’m learning to cook.
+    text_vi: Buổi tối tôi có nhiều thời gian rảnh hơn, nên tôi đang học nấu ăn.
+  - id: p4s3
+    paragraph: 4
+    text_en: I’m also slowly buying furniture, and a new sofa is coming next week.
+    text_vi: Tôi cũng đang mua dần đồ nội thất, và tuần sau sẽ có một chiếc ghế sofa mới được giao tới.
+  - id: p4s4
+    paragraph: 4
+    text_en: It finally feels like home.
+    text_vi: Cuối cùng nơi này cũng có cảm giác như nhà mình.
+
+focus_words: [move, floor, living room, rent, pack, carry, elevator, furniture, feel like]
+
+senses:
+  last: previous
+  to: direction
+  to#2: infinitive # "need to take"
+  to#4: infinitive # "learning to cook"
+  be: linking
+  be#3: location # "is on the eighth floor"
+  be#6: auxiliary # "is coming"
+  work: workplace
+  work#2: job # "hard work"
+  spend: time
+  on: place
+  floor: level
+  floor#2: ground # "ate on the floor"
+  have: own
+  see: see
+  rent: noun
+  take: transport
+  into: inside
+  order: order
+  walk: verb
+  in: time
+  so: so
+  next: following
+  finally: at_last
+
+ignore: []
+
+questions:
+  - prompt: What was the problem with the writer’s old room?
+    options:
+      - It was expensive
+      - It was small and far from work
+      - It had no window
+    correct: 1
+    feedback_ok: 'Đúng: “it was small and far from work.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 1. Phòng cũ thì “cheap”, tức là rẻ.
+    evidence: p1s2
+  - prompt: What can the writer see from the window?
+    options: [The river, The office, A park]
+    correct: 0
+    feedback_ok: 'Đúng: “From the window, I can see the river.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ ba của đoạn 2.
+    evidence: p2s3
+  - prompt: Who helped the writer carry the boxes?
+    options: [The landlord, Two friends, The writer’s parents]
+    correct: 1
+    feedback_ok: 'Đúng: “two friends helped me carry them.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 3.
+    evidence: p3s2
+  - prompt: Why did they eat on the floor?
+    options:
+      - The writer didn’t have a table yet
+      - The kitchen was too small
+      - They wanted to have a picnic
+    correct: 0
+    feedback_ok: 'Đúng: “because I didn’t have a table yet.”'
+    feedback_wrong: Chưa đúng. Đọc câu cuối của đoạn 3, chú ý từ “because”.
+    evidence: p3s4
+  - prompt: How does the writer get to work now?
+    options: [By bus, On foot, By motorbike]
+    correct: 1
+    feedback_ok: 'Đúng: “Now I walk to work in ten minutes.” (walk = đi bộ = on foot)'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 4. Người viết không cần đi xe buýt nữa.
+    evidence: p4s1

@@ -1,0 +1,128 @@
+# Reading lesson (day 15). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: education
+title: How I Learn English
+order: 15
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: I started learning English again six months ago.
+    text_vi: Tôi bắt đầu học lại tiếng Anh từ sáu tháng trước.
+  - id: p1s2
+    paragraph: 1
+    text_en: At school, I studied grammar for many years, but I couldn’t speak well.
+    text_vi: Hồi đi học, tôi học ngữ pháp nhiều năm, nhưng tôi nói không tốt.
+  - id: p1s3
+    paragraph: 1
+    text_en: Now I need English for my job, because I write emails to customers in other countries.
+    text_vi: Giờ tôi cần tiếng Anh cho công việc, vì tôi phải viết email cho khách hàng ở nước ngoài.
+  - id: p2s1
+    paragraph: 2
+    text_en: I don’t have much time, so I study for fifteen minutes every day.
+    text_vi: Tôi không có nhiều thời gian, nên mỗi ngày tôi học mười lăm phút.
+  - id: p2s2
+    paragraph: 2
+    text_en: In the morning, I read a short story or an article on my phone.
+    text_vi: Buổi sáng, tôi đọc một truyện ngắn hoặc một bài báo trên điện thoại.
+  - id: p2s3
+    paragraph: 2
+    text_en: In the evening, I listen to conversations and repeat the sentences out loud.
+    text_vi: Buổi tối, tôi nghe các đoạn hội thoại và đọc to lặp lại từng câu.
+  - id: p2s4
+    paragraph: 2
+    text_en: I also save new words and review them a few days later.
+    text_vi: Tôi cũng lưu lại từ mới và ôn lại chúng vài ngày sau.
+  - id: p3s1
+    paragraph: 3
+    text_en: My biggest problem is speaking.
+    text_vi: Khó khăn lớn nhất của tôi là nói.
+  - id: p3s2
+    paragraph: 3
+    text_en: I often understand what people say, but I’m afraid of making mistakes.
+    text_vi: Tôi thường hiểu người khác nói gì, nhưng lại sợ nói sai.
+  - id: p3s3
+    paragraph: 3
+    text_en: So every Friday, I join an online conversation group with learners from around the world.
+    text_vi: Vì vậy, thứ Sáu nào tôi cũng tham gia một nhóm luyện nói trực tuyến với những người học từ khắp nơi trên thế giới.
+  - id: p3s4
+    paragraph: 3
+    text_en: Everyone makes mistakes there, and nobody laughs.
+    text_vi: Ở đó ai cũng nói sai, và không ai cười cả.
+  - id: p4s1
+    paragraph: 4
+    text_en: Learning a language takes time.
+    text_vi: Học một ngôn ngữ cần có thời gian.
+  - id: p4s2
+    paragraph: 4
+    text_en: Some days I feel like I’m not improving, but when I look back, I can see my progress.
+    text_vi: Có những ngày tôi thấy mình tiến bộ chậm, nhưng khi nhìn lại, tôi thấy rõ mình đã tiến bộ.
+  - id: p4s3
+    paragraph: 4
+    text_en: Last week, I talked to a customer on the phone for ten minutes without any problems!
+    text_vi: Tuần trước, tôi đã nói chuyện điện thoại với một khách hàng suốt mười phút mà không gặp trục trặc gì!
+
+focus_words: [grammar, article, conversation, repeat, out loud, review, mistake, progress, without]
+
+senses:
+  at: place
+  for: duration
+  for#2: purpose # "for my job"
+  speak: speak
+  speak#2: skill # "My biggest problem is speaking."
+  to: recipient
+  in: in
+  in#2: time # "In the morning"
+  in#3: time # "In the evening"
+  have: own
+  much: amount
+  time: time
+  so: so
+  on: place
+  be: linking
+  make: create
+  take: time
+  see: see
+  last: previous
+
+ignore: []
+
+questions:
+  - prompt: Why does the writer need English now?
+    options: [For a trip abroad, For work, For a school exam]
+    correct: 1
+    feedback_ok: 'Đúng: “I need English for my job, because I write emails to customers in other countries.”'
+    feedback_wrong: Chưa đúng. Đọc câu cuối của đoạn 1.
+    evidence: p1s3
+  - prompt: How long does the writer study each day?
+    options: [Fifteen minutes, One hour, Six months]
+    correct: 0
+    feedback_ok: 'Đúng: “I study for fifteen minutes every day.”'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 2. “Six months” là thời gian người viết đã học lại.
+    evidence: p2s1
+  - prompt: What is the writer’s biggest problem?
+    options: [Reading, Speaking, Writing emails]
+    correct: 1
+    feedback_ok: 'Đúng: “My biggest problem is speaking.”'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 3.
+    evidence: p3s1
+  - prompt: Why does the writer feel OK in the conversation group?
+    options:
+      - The teacher speaks Vietnamese
+      - Everyone makes mistakes and nobody laughs
+      - The group meets near the writer’s home
+    correct: 1
+    feedback_ok: 'Đúng: “Everyone makes mistakes there, and nobody laughs.”'
+    feedback_wrong: Chưa đúng. Người viết sợ nói sai. Đọc câu cuối của đoạn 3.
+    evidence: p3s4
+  - prompt: What happened last week?
+    options:
+      - The writer passed an English test
+      - The writer talked to a customer on the phone without problems
+      - The writer joined a new class
+    correct: 1
+    feedback_ok: 'Đúng: “I talked to a customer on the phone for ten minutes without any problems!”'
+    feedback_wrong: Chưa đúng. Đọc câu cuối của đoạn 4.
+    evidence: p4s3

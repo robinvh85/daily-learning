@@ -1,0 +1,14 @@
+lemma: look back
+ipa_us: /ˌlʊk ˈbæk/
+cefr: B2
+oxford3000: false
+is_phrase: true
+forms: [looks back, looked back, looking back]
+senses:
+  - key: look_back
+    pos: phrasal verb
+    vi: nhìn lại (quá khứ), nghĩ lại
+    en: to think about something that happened in the past
+    collocations: [look back on, when I look back]
+    example: When I look back on my school days, I feel happy.
+status: reviewed

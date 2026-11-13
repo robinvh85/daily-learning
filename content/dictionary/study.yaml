@@ -1,0 +1,13 @@
+lemma: study
+ipa_us: /ˈstʌdi/
+cefr: A1
+oxford3000: true
+forms: [studies, studied, studying]
+senses:
+  - key: study
+    pos: verb
+    vi: học, nghiên cứu
+    en: to spend time learning about a subject
+    collocations: [study English, study for a test, study hard]
+    example: She studies for two hours every evening.
+status: reviewed

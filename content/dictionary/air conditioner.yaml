@@ -1,0 +1,14 @@
+lemma: air conditioner
+ipa_us: /ˈer kənˌdɪʃənər/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [air conditioners]
+senses:
+  - key: air_conditioner
+    pos: noun
+    vi: máy lạnh, máy điều hòa
+    en: a machine that makes the air in a room cool
+    collocations: [turn on the air conditioner, a new air conditioner]
+    example: It’s very hot, so please turn on the air conditioner.
+status: reviewed

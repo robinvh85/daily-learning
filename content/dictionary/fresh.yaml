@@ -16,4 +16,10 @@ senses:
     en: (of air or weather) clean and cool
     collocations: [fresh air, cool and fresh]
     example: Let’s open the window and get some fresh air.
+  - key: bright
+    pos: adjective
+    vi: tươi, tươi tắn (cây cối, màu sắc trông sạch và sáng)
+    en: looking clean, bright and healthy
+    collocations: [green and fresh, look fresh, fresh colors]
+    example: After the rain, the garden looks green and fresh.
 status: reviewed

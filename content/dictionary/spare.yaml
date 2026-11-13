@@ -1,0 +1,12 @@
+lemma: spare
+ipa_us: /sper/
+cefr: B1
+oxford3000: true
+senses:
+  - key: spare
+    pos: adjective
+    vi: dự phòng, dư ra
+    en: kept for when you need an extra one
+    collocations: [a spare key, a spare room, spare time]
+    example: I keep a spare key at my sister’s house.
+status: reviewed

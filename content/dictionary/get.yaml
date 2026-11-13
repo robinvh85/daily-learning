@@ -16,4 +16,10 @@ senses:
     en: to receive or obtain something; also used to ask for something politely
     collocations: [get a refund, can I get…?, get a letter]
     example: 'Can I get a glass of water, please?'
+  - key: become
+    pos: verb
+    vi: 'trở nên, bị (get older = già đi, get wet = bị ướt)'
+    en: to become; to start to be in a particular state
+    collocations: [get older, get wet, get tired]
+    example: It gets dark very early in winter.
 status: reviewed

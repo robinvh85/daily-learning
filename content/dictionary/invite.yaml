@@ -1,0 +1,13 @@
+lemma: invite
+ipa_us: /ɪnˈvaɪt/
+cefr: A2
+oxford3000: true
+forms: [invites, invited, inviting]
+senses:
+  - key: invite
+    pos: verb
+    vi: mời
+    en: to ask someone to come to a party, a meal or another event
+    collocations: [invite someone to a party, invite friends, invite someone for dinner]
+    example: She invited me to her birthday party.
+status: reviewed

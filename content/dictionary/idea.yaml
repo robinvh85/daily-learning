@@ -1,0 +1,13 @@
+lemma: idea
+ipa_us: /aɪˈdiːə/
+cefr: A1
+oxford3000: true
+forms: [ideas]
+senses:
+  - key: idea
+    pos: noun
+    vi: ý tưởng, ý kiến
+    en: a plan or thought about what to do
+    collocations: [a good idea, have an idea, great idea]
+    example: Going to the beach is a nice idea.
+status: reviewed

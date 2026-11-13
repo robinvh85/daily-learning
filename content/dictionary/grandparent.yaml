@@ -1,0 +1,13 @@
+lemma: grandparent
+ipa_us: /ˈɡrænperənt/
+cefr: A1
+oxford3000: true
+forms: [grandparents]
+senses:
+  - key: grandparent
+    pos: noun
+    vi: ông hoặc bà (grandparents = ông bà)
+    en: the father or mother of your father or mother
+    collocations: [my grandparents, visit your grandparents, live with your grandparents]
+    example: I visit my grandparents every summer.
+status: reviewed

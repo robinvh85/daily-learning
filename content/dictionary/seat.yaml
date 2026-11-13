@@ -1,0 +1,13 @@
+lemma: seat
+ipa_us: /siːt/
+cefr: A2
+oxford3000: true
+forms: [seats]
+senses:
+  - key: seat
+    pos: noun
+    vi: 'ghế ngồi, chỗ ngồi; yên xe (xe máy, xe đạp)'
+    en: a thing that you sit on, for example a chair or the part of a motorbike you sit on
+    collocations: [take a seat, a window seat, under the seat]
+    example: Please take a seat. The doctor will see you soon.
+status: reviewed

@@ -2,7 +2,7 @@ lemma: book
 ipa_us: /bʊk/
 cefr: A1
 oxford3000: true
-forms: [books]
+forms: [books, booked, booking]
 senses:
   - key: book
     pos: noun
@@ -10,4 +10,10 @@ senses:
     en: a set of printed pages fixed inside a cover
     collocations: [read a book, borrow a book]
     example: Customers can borrow a book and bring it back later.
+  - key: reserve
+    pos: verb
+    vi: 'đặt (chỗ, phòng, vé, lớp) trước'
+    en: to arrange to have a seat, room, ticket, etc. at a later time
+    collocations: [book a table, book a room, book a class]
+    example: I booked a table for two at seven.
 status: reviewed

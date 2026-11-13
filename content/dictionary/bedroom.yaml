@@ -1,0 +1,13 @@
+lemma: bedroom
+ipa_us: /ˈbedruːm/
+cefr: A1
+oxford3000: true
+forms: [bedrooms]
+senses:
+  - key: bedroom
+    pos: noun
+    vi: phòng ngủ
+    en: a room used for sleeping in
+    collocations: [a two-bedroom apartment, my bedroom, the main bedroom]
+    example: My bedroom has a big window and a small desk.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: swim
+ipa_us: /swɪm/
+cefr: A1
+oxford3000: true
+forms: [swims, swam, swum, swimming]
+senses:
+  - key: swim
+    pos: verb
+    vi: bơi
+    en: to move through water using your arms and legs
+    collocations: [swim in the sea, go swimming, learn to swim]
+    example: My son can swim very well.
+status: reviewed

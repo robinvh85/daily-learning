@@ -2,6 +2,7 @@ lemma: last
 ipa_us: /læst/
 cefr: A1
 oxford3000: true
+forms: [lasts, lasted, lasting]
 senses:
   - key: previous
     pos: adjective
@@ -15,4 +16,10 @@ senses:
     en: coming after all the others
     collocations: [the last train, the last day]
     example: December is the last month of the year.
+  - key: continue
+    pos: verb
+    vi: 'kéo dài, diễn ra (trong bao lâu)'
+    en: to continue for a particular length of time
+    collocations: [last long, last for two hours]
+    example: The meeting lasted for two hours.
 status: reviewed

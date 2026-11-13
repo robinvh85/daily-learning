@@ -1,0 +1,13 @@
+lemma: live
+ipa_us: /lɪv/
+cefr: A1
+oxford3000: true
+forms: [lives, lived, living]
+senses:
+  - key: live
+    pos: verb
+    vi: sống, ở (một nơi)
+    en: to have your home in a particular place
+    collocations: [live in a city, live with your parents, live near]
+    example: I live in a small apartment near my office.
+status: reviewed

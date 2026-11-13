@@ -1,0 +1,14 @@
+lemma: locker room
+ipa_us: /ˈlɑːkər ˌruːm/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [locker rooms]
+senses:
+  - key: locker_room
+    pos: noun
+    vi: phòng thay đồ (có tủ khóa để cất đồ, ở phòng tập, hồ bơi)
+    en: a room at a gym, pool or school where you change your clothes and leave your things in a locker
+    collocations: [in the locker room, the men’s locker room]
+    example: You can leave your bag in the locker room.
+status: reviewed

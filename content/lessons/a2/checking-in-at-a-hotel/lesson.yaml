@@ -67,6 +67,7 @@ segments:
 focus_words: [reservation, passport, key card, lobby, password, checkout, front desk, flight]
 
 senses:
+  floor: level
   see: see
   to: direction
   to#2: range # "from 6:30 to 10:00"

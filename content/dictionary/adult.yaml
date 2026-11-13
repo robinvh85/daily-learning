@@ -1,0 +1,13 @@
+lemma: adult
+ipa_us: /əˈdʌlt/
+cefr: A2
+oxford3000: true
+forms: [adults]
+senses:
+  - key: adult
+    pos: noun
+    vi: người lớn
+    en: a person who is fully grown, not a child
+    collocations: [adults and children, a young adult, for adults only]
+    example: The ticket costs ten dollars for adults and five for children.
+status: reviewed

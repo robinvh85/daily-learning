@@ -1,0 +1,13 @@
+lemma: break
+ipa_us: /breɪk/
+cefr: A2
+oxford3000: true
+forms: [breaks, broke, broken, breaking]
+senses:
+  - key: damage
+    pos: verb
+    vi: 'làm vỡ, làm hỏng (be broken = bị vỡ, bị hỏng)'
+    en: to make something go into pieces or stop working
+    collocations: [break a glass, break your leg, be broken]
+    example: The TV is broken, so we can’t watch the game.
+status: reviewed

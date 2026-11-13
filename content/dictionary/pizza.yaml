@@ -1,0 +1,13 @@
+lemma: pizza
+ipa_us: /ˈpiːtsə/
+cefr: A1
+oxford3000: true
+forms: [pizzas]
+senses:
+  - key: pizza
+    pos: noun
+    vi: bánh pizza
+    en: a flat round bread with tomato, cheese and other food on top, baked in an oven
+    collocations: [order pizza, a slice of pizza, a large pizza]
+    example: Let’s order a large pizza for dinner.
+status: reviewed

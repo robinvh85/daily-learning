@@ -1,0 +1,133 @@
+# Listening lesson (day 14). Original dialogue, en-US voices A/B.
+# A = Minh, a new customer (learner-like character). B = a receptionist at a gym.
+kind: listening
+level: A2
+topic: hobbies
+title: Joining a Gym
+order: 14
+
+segments:
+  - id: l1
+    speaker: B
+    text_en: Hi there. Welcome to Green Park Gym. How can I help you?
+    text_vi: Xin chào. Chào mừng bạn đến với phòng tập Green Park. Tôi có thể giúp gì cho bạn?
+  - id: l2
+    speaker: A
+    text_en: Hi. I’d like some information about membership.
+    text_vi: Chào anh. Tôi muốn hỏi thông tin về việc đăng ký làm hội viên.
+  - id: l3
+    speaker: B
+    text_en: Sure. A monthly membership is $40, or you can pay $400 for a whole year.
+    text_vi: Vâng. Gói hội viên theo tháng là 40 đô, hoặc bạn có thể trả 400 đô cho cả năm.
+  - id: l4
+    speaker: A
+    text_en: What’s included in the price?
+    text_vi: Giá đó bao gồm những gì vậy anh?
+  - id: l5
+    speaker: B
+    text_en: You can use all the machines and join any group class, like yoga or boxing.
+    text_vi: Bạn được dùng tất cả các máy tập và tham gia mọi lớp tập nhóm, như yoga hay đấm bốc.
+  - id: l6
+    speaker: A
+    text_en: Do I need to book the classes?
+    text_vi: Tôi có cần đặt chỗ trước cho các lớp không?
+  - id: l7
+    speaker: B
+    text_en: Yes, you can book them in our app. Classes are usually full in the evening.
+    text_vi: Có, bạn đặt chỗ trong ứng dụng của chúng tôi. Buổi tối các lớp thường kín chỗ.
+  - id: l8
+    speaker: A
+    text_en: What are your opening hours?
+    text_vi: Phòng tập mở cửa giờ nào vậy anh?
+  - id: l9
+    speaker: B
+    text_en: We’re open from six in the morning to ten at night, every day.
+    text_vi: Chúng tôi mở cửa từ sáu giờ sáng đến mười giờ tối, tất cả các ngày.
+  - id: l10
+    speaker: A
+    text_en: That’s perfect. I usually work out after work.
+    text_vi: Vậy thì quá hợp. Tôi thường tập thể dục sau giờ làm.
+  - id: l11
+    speaker: B
+    text_en: Would you like a free trial first? You can try the gym for three days.
+    text_vi: Bạn có muốn tập thử miễn phí trước không? Bạn có thể tập thử ba ngày.
+  - id: l12
+    speaker: A
+    text_en: Yes, please. That sounds great.
+    text_vi: Vâng, có ạ. Nghe hay quá.
+  - id: l13
+    speaker: B
+    text_en: OK. I just need your name and phone number. And please bring a towel next time.
+    text_vi: Được. Tôi chỉ cần tên và số điện thoại của bạn. Lần sau nhớ mang theo khăn nhé.
+  - id: l14
+    speaker: A
+    text_en: Sure. Can I start today?
+    text_vi: Vâng. Hôm nay tôi tập luôn được không?
+  - id: l15
+    speaker: B
+    text_en: Of course. The locker rooms are on the left.
+    text_vi: Tất nhiên rồi. Phòng thay đồ có tủ đồ ở bên trái.
+
+focus_words: [membership, include, machine, book, full, opening hours, work out, free trial, towel]
+
+senses:
+  to: direction
+  to#2: infinitive # "need to book"
+  to#3: range # "from six … to ten"
+  about: topic
+  be: linking
+  be#4: location # "are on the left"
+  for: duration
+  in: in
+  in#3: time # "in the evening"
+  in#4: time # "in the morning"
+  like: similar # "like yoga or boxing"
+  like#2: would_like
+  do: auxiliary
+  book: reserve
+  open: business
+  at: time # "at night"
+  work: job # "after work"
+  first: adverb
+
+ignore: [Green Park]
+
+dictation:
+  - segment: l5
+    before: You can use all the
+    answer: machines
+    after: and join any group class, like yoga or boxing.
+  - segment: l7
+    before: Yes, you can book them in our app. Classes are usually
+    answer: full
+    after: in the evening.
+  - segment: l13
+    before: OK. I just need your name and phone number. And please bring a
+    answer: towel
+    after: next time.
+
+questions:
+  - prompt: How much is a monthly membership?
+    options: [$40, $400, $10]
+    correct: 0
+    feedback_ok: 'Đúng: “A monthly membership is $40.” 400 đô là giá cả năm.'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “information about membership”.
+    evidence: l3
+  - prompt: Why should Minh book the classes?
+    options:
+      - They are usually full in the evening
+      - They are not included in the price
+      - The teacher asks everyone to book
+    correct: 0
+    feedback_ok: 'Đúng: “Classes are usually full in the evening.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “Do I need to book the classes?”.
+    evidence: l7
+  - prompt: What can Minh try for free?
+    options:
+      - One yoga class
+      - The gym for three days
+      - A towel
+    correct: 1
+    feedback_ok: 'Đúng: “You can try the gym for three days.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn có cụm “free trial”.
+    evidence: l11

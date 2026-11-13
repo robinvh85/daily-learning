@@ -1,0 +1,13 @@
+lemma: elevator
+ipa_us: /ˈeləveɪtər/
+cefr: A2
+oxford3000: false
+forms: [elevators]
+senses:
+  - key: elevator
+    pos: noun
+    vi: thang máy
+    en: a machine that carries people up and down in a building
+    collocations: [take the elevator, wait for the elevator, the elevator is broken]
+    example: Let’s take the elevator to the tenth floor.
+status: reviewed

@@ -1,0 +1,12 @@
+lemma: difficult
+ipa_us: /ˈdɪfəkəlt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: difficult
+    pos: adjective
+    vi: khó, khó khăn
+    en: not easy; needing a lot of effort
+    collocations: [a difficult question, very difficult, difficult to understand]
+    example: The test was difficult, but I passed.
+status: reviewed

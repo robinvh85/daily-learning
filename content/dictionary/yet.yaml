@@ -1,0 +1,12 @@
+lemma: yet
+ipa_us: /jet/
+cefr: A2
+oxford3000: true
+senses:
+  - key: yet
+    pos: adverb
+    vi: (not … yet) chưa
+    en: until now; used in negative sentences and questions
+    collocations: [not yet, haven't … yet]
+    example: I haven’t finished my homework yet.
+status: reviewed

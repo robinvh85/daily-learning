@@ -1,0 +1,13 @@
+lemma: present
+ipa_us: /ˈprezənt/
+cefr: A1
+oxford3000: true
+forms: [presents]
+senses:
+  - key: present
+    pos: noun
+    vi: món quà
+    en: something that you give to someone, for example on their birthday
+    collocations: [a birthday present, buy a present, give someone a present]
+    example: I bought a book as a birthday present for my friend.
+status: reviewed

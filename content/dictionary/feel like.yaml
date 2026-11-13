@@ -1,0 +1,14 @@
+lemma: feel like
+ipa_us: /ˈfiːl laɪk/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [feels like, felt like, feeling like]
+senses:
+  - key: feel_like
+    pos: phrase
+    vi: có cảm giác như, giống như (It feels like home. = Thấy như ở nhà.)
+    en: to seem like something; to give you the feeling of something
+    collocations: [feel like home, feel like a dream, feel like summer]
+    example: It’s only March, but it feels like summer.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: wet
+ipa_us: /wet/
+cefr: A2
+oxford3000: true
+forms: [wetter, wettest]
+senses:
+  - key: wet
+    pos: adjective
+    vi: ướt
+    en: covered with water or another liquid
+    collocations: [get wet, wet clothes, wet hair]
+    example: My shoes are wet because of the rain.
+status: reviewed

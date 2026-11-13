@@ -1,0 +1,19 @@
+lemma: dry
+ipa_us: /draɪ/
+cefr: A2
+oxford3000: true
+forms: [drier, driest, dries, dried, drying]
+senses:
+  - key: weather
+    pos: adjective
+    vi: 'khô, khô ráo, ít mưa (the dry season = mùa khô)'
+    en: with little or no rain
+    collocations: [the dry season, dry weather, a dry day]
+    example: The weather is hot and dry in March.
+  - key: dried
+    pos: adjective
+    vi: '(dried) khô, đã phơi/sấy khô (dried squid = mực khô)'
+    en: (dried) with the water taken out so that it can be kept for a long time
+    collocations: [dried squid, dried fruit, dried fish]
+    example: My mother buys dried fish at the market.
+status: reviewed

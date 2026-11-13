@@ -1,0 +1,12 @@
+lemma: English
+ipa_us: /ˈɪŋɡlɪʃ/
+cefr: A1
+oxford3000: true
+senses:
+  - key: english
+    pos: noun
+    vi: tiếng Anh
+    en: the language spoken in the UK, the US and many other countries
+    collocations: [speak English, learn English, an English class]
+    example: My son is good at English.
+status: reviewed

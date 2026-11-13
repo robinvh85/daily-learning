@@ -1,0 +1,13 @@
+lemma: sweet
+ipa_us: /swiːt/
+cefr: A1
+oxford3000: true
+forms: [sweeter, sweetest]
+senses:
+  - key: sweet
+    pos: adjective
+    vi: ngọt
+    en: tasting of sugar
+    collocations: [too sweet, sweet food, a sweet drink]
+    example: This coffee is too sweet for me.
+status: reviewed

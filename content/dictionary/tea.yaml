@@ -1,0 +1,13 @@
+lemma: tea
+ipa_us: /tiː/
+cefr: A1
+oxford3000: true
+forms: [teas]
+senses:
+  - key: tea
+    pos: noun
+    vi: trà, nước trà
+    en: a hot drink made by putting dry leaves in boiling water
+    collocations: [a cup of tea, drink tea, green tea]
+    example: Would you like a cup of tea?
+status: reviewed

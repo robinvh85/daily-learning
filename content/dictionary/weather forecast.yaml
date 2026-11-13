@@ -1,0 +1,15 @@
+lemma: weather forecast
+ipa_us: /ˈweðər ˌfɔːrkæst/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [weather forecasts]
+senses:
+  - key: weather_forecast
+    pos: noun
+    vi: dự báo thời tiết
+    en: a report on TV, radio or the internet that says what the weather will be like
+    collocations:
+      [check the weather forecast, the weather forecast says, watch the weather forecast]
+    example: The weather forecast says it will rain tomorrow.
+status: reviewed

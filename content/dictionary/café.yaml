@@ -1,0 +1,13 @@
+lemma: café
+ipa_us: /kæˈfeɪ/
+cefr: A1
+oxford3000: true
+forms: [cafe, cafés, cafes]
+senses:
+  - key: cafe
+    pos: noun
+    vi: quán cà phê
+    en: a small place where you can buy drinks and simple food
+    collocations: [go to a café, a small café, meet at a café]
+    example: We often meet at a small café near the park.
+status: reviewed

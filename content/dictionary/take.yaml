@@ -22,4 +22,10 @@ senses:
     en: to use a bus, train, taxi, etc. to travel somewhere
     collocations: [take the bus, take a taxi, take the train]
     example: I usually take the train to work.
+  - key: test
+    pos: verb
+    vi: 'làm, dự (bài kiểm tra, kỳ thi); học (một lớp, khóa học)'
+    en: to do a test or exam; to study a course or class
+    collocations: [take a test, take an exam, take a class]
+    example: I’m going to take my driving test next week.
 status: reviewed

@@ -1,0 +1,13 @@
+lemma: key
+ipa_us: /kiː/
+cefr: A1
+oxford3000: true
+forms: [keys]
+senses:
+  - key: key
+    pos: noun
+    vi: chìa khóa
+    en: a small piece of metal used to open or lock a door, car, etc.
+    collocations: [a door key, a spare key, lose your keys]
+    example: I cannot find my car keys.
+status: reviewed

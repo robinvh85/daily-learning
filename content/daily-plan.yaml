@@ -41,3 +41,23 @@ days:
     title: Tiền bạc
     reading: saving-money-each-month
     listening: at-the-bank
+  - day: 11
+    title: Gia đình
+    reading: sunday-lunch-with-my-family
+    listening: a-surprise-party-for-mom
+  - day: 12
+    title: Thời tiết
+    reading: the-rainy-season
+    listening: will-it-rain-this-weekend
+  - day: 13
+    title: Nhà ở
+    reading: moving-to-a-new-apartment
+    listening: calling-the-landlord
+  - day: 14
+    title: Thể thao và sở thích
+    reading: learning-to-swim
+    listening: joining-a-gym
+  - day: 15
+    title: Học tập
+    reading: how-i-learn-english
+    listening: signing-up-for-an-english-class

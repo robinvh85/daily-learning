@@ -1,0 +1,12 @@
+lemma: hmm
+ipa_us: /hm/
+cefr: A2
+oxford3000: false
+senses:
+  - key: hmm
+    pos: exclamation
+    vi: ừm, hừm (khi đang suy nghĩ)
+    en: a sound you make when you are thinking about something
+    collocations: ['hmm, let me think']
+    example: Hmm, I’m not sure which one to buy.
+status: reviewed

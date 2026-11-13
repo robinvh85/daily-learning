@@ -1,0 +1,12 @@
+lemma: twice
+ipa_us: /twaɪs/
+cefr: A2
+oxford3000: true
+senses:
+  - key: twice
+    pos: adverb
+    vi: hai lần
+    en: two times
+    collocations: [twice a week, twice a day, more than twice]
+    example: I go to the gym twice a week.
+status: reviewed

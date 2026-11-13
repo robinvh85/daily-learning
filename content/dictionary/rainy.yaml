@@ -1,0 +1,13 @@
+lemma: rainy
+ipa_us: /ˈreɪni/
+cefr: A1
+oxford3000: false
+forms: [rainier, rainiest]
+senses:
+  - key: rainy
+    pos: adjective
+    vi: có mưa, mưa nhiều
+    en: having a lot of rain
+    collocations: [a rainy day, the rainy season, rainy weather]
+    example: We watched a movie at home on a rainy afternoon.
+status: reviewed

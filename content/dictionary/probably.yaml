@@ -1,0 +1,12 @@
+lemma: probably
+ipa_us: /ˈprɑːbəbli/
+cefr: A2
+oxford3000: true
+senses:
+  - key: probably
+    pos: adverb
+    vi: có lẽ, chắc là
+    en: almost certainly; very likely
+    collocations: [will probably, probably not, most probably]
+    example: It will probably rain this evening.
+status: reviewed

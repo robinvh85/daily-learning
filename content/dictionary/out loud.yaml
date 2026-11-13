@@ -1,0 +1,13 @@
+lemma: out loud
+ipa_us: /ˌaʊt ˈlaʊd/
+cefr: B1
+oxford3000: false
+is_phrase: true
+senses:
+  - key: out_loud
+    pos: phrase
+    vi: to, thành tiếng (đọc to, nói thành tiếng)
+    en: in a voice that other people can hear
+    collocations: [read out loud, say it out loud, laugh out loud]
+    example: Please read the first sentence out loud.
+status: reviewed

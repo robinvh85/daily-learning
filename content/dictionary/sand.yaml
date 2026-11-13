@@ -1,0 +1,12 @@
+lemma: sand
+ipa_us: /sænd/
+cefr: A2
+oxford3000: true
+senses:
+  - key: sand
+    pos: noun
+    vi: cát
+    en: the very small pieces of rock that cover beaches and deserts
+    collocations: [on the sand, white sand, play in the sand]
+    example: The children played in the sand all morning.
+status: reviewed

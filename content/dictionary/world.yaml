@@ -1,0 +1,13 @@
+lemma: world
+ipa_us: /wɝːld/
+cefr: A1
+oxford3000: true
+forms: [worlds]
+senses:
+  - key: world
+    pos: noun
+    vi: thế giới
+    en: the earth and all the people and countries on it
+    collocations: [around the world, all over the world, in the world]
+    example: She wants to travel around the world.
+status: reviewed

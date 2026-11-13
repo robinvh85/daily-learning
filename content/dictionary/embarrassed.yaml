@@ -1,0 +1,12 @@
+lemma: embarrassed
+ipa_us: /ɪmˈbærəst/
+cefr: B1
+oxford3000: true
+senses:
+  - key: embarrassed
+    pos: adjective
+    vi: 'ngại, xấu hổ, ngượng'
+    en: feeling shy or uncomfortable because of what other people think
+    collocations: [feel embarrassed, a little embarrassed, too embarrassed to]
+    example: I was embarrassed when I forgot his name.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: breathe
+ipa_us: /briːð/
+cefr: B1
+oxford3000: true
+forms: [breathes, breathed, breathing]
+senses:
+  - key: breathe
+    pos: verb
+    vi: thở, hít thở
+    en: to take air into your body and let it out again
+    collocations: [breathe in, breathe out, breathe deeply]
+    example: Close your eyes and breathe slowly.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: November
+ipa_us: /noʊˈvembər/
+cefr: A1
+oxford3000: true
+forms: [Novembers]
+senses:
+  - key: november
+    pos: noun
+    vi: tháng Mười Một
+    en: the eleventh month of the year, after October and before December
+    collocations: [in November, last November, early November]
+    example: My sister’s birthday is in November.
+status: reviewed

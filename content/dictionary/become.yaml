@@ -1,0 +1,13 @@
+lemma: become
+ipa_us: /bɪˈkʌm/
+cefr: A2
+oxford3000: true
+forms: [becomes, became, becoming]
+senses:
+  - key: become
+    pos: verb
+    vi: 'trở nên, trở thành'
+    en: to start to be something
+    collocations: [become famous, become a doctor, become cold]
+    example: She wants to become a teacher after university.
+status: reviewed

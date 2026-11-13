@@ -1,0 +1,13 @@
+lemma: course
+ipa_us: /kɔːrs/
+cefr: A2
+oxford3000: true
+forms: [courses]
+senses:
+  - key: course
+    pos: noun
+    vi: khóa học
+    en: a set of classes or lessons about a subject
+    collocations: [take a course, an English course, a cooking course]
+    example: She is taking a cooking course on weekends.
+status: reviewed

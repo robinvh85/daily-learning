@@ -1,0 +1,13 @@
+lemma: miss
+ipa_us: /mɪs/
+cefr: A2
+oxford3000: true
+forms: [misses, missed, missing]
+senses:
+  - key: miss
+    pos: verb
+    vi: bỏ lỡ, vắng mặt (không đến, không tham gia)
+    en: to not go to or not take part in something
+    collocations: [miss a class, miss a meeting, miss the bus]
+    example: I was sick, so I missed my English class.
+status: reviewed

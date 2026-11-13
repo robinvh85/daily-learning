@@ -1,0 +1,14 @@
+lemma: sign up
+ipa_us: /ˌsaɪn ˈʌp/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [signs up, signed up, signing up]
+senses:
+  - key: sign_up
+    pos: phrasal verb
+    vi: (sign up for…) đăng ký (khóa học, lớp, câu lạc bộ)
+    en: to put your name on a list because you want to join a class, club or activity
+    collocations: [sign up for a class, sign up online, sign up for a course]
+    example: I want to sign up for a cooking class.
+status: reviewed

@@ -1,0 +1,12 @@
+lemma: progress
+ipa_us: /ˈprɑːɡres/
+cefr: B1
+oxford3000: true
+senses:
+  - key: progress
+    pos: noun
+    vi: sự tiến bộ
+    en: the process of getting better at something or getting closer to a goal
+    collocations: [make progress, good progress, see your progress]
+    example: My son is making good progress at school.
+status: reviewed

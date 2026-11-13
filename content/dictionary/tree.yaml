@@ -1,0 +1,13 @@
+lemma: tree
+ipa_us: /triː/
+cefr: A1
+oxford3000: true
+forms: [trees]
+senses:
+  - key: tree
+    pos: noun
+    vi: cây (to, có thân gỗ)
+    en: a tall plant with a wooden trunk, branches and leaves
+    collocations: [under a tree, plant a tree, a big tree]
+    example: The children are sitting under a big tree.
+status: reviewed

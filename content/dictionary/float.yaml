@@ -1,0 +1,13 @@
+lemma: float
+ipa_us: /floʊt/
+cefr: B1
+oxford3000: true
+forms: [floats, floated, floating]
+senses:
+  - key: float
+    pos: verb
+    vi: nổi (trên mặt nước)
+    en: to stay on the top of water and not go down
+    collocations: [float on the water, float on your back]
+    example: Wood floats on water.
+status: reviewed

@@ -1,0 +1,14 @@
+lemma: come back
+ipa_us: /ˌkʌm ˈbæk/
+cefr: A2
+oxford3000: false
+is_phrase: true
+forms: [comes back, came back, coming back]
+senses:
+  - key: come_back
+    pos: phrasal verb
+    vi: quay lại, trở về
+    en: to return to a place
+    collocations: [come back home, come back later, come back tomorrow]
+    example: The manager is busy now. Can you come back later?
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: discount
+ipa_us: /ˈdɪskaʊnt/
+cefr: B1
+oxford3000: true
+forms: [discounts]
+senses:
+  - key: discount
+    pos: noun
+    vi: giảm giá, chiết khấu
+    en: an amount of money taken off the usual price
+    collocations: [get a discount, a ten percent discount, a student discount]
+    example: Students get a discount at this cinema.
+status: reviewed

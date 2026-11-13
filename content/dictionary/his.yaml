@@ -1,0 +1,12 @@
+lemma: his
+ipa_us: /hɪz/
+cefr: A1
+oxford3000: true
+senses:
+  - key: his
+    pos: determiner
+    vi: của anh ấy, của ông ấy
+    en: belonging to a man or boy who was already mentioned
+    collocations: [his job, his family, his car]
+    example: Nam lives with his parents.
+status: reviewed

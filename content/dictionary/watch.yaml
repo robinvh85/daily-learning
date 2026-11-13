@@ -1,0 +1,13 @@
+lemma: watch
+ipa_us: /wɑːtʃ/
+cefr: A2
+oxford3000: true
+forms: [watches]
+senses:
+  - key: watch
+    pos: noun
+    vi: đồng hồ đeo tay
+    en: a small clock that you wear on your wrist
+    collocations: [a new watch, wear a watch, look at your watch]
+    example: My watch says it’s ten o’clock.
+status: reviewed

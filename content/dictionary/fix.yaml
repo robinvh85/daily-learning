@@ -1,0 +1,13 @@
+lemma: fix
+ipa_us: /fɪks/
+cefr: A2
+oxford3000: true
+forms: [fixes, fixed, fixing]
+senses:
+  - key: fix
+    pos: verb
+    vi: sửa, sửa chữa (đồ bị hỏng)
+    en: to repair something that is broken or not working
+    collocations: [fix a car, fix the sink, get something fixed]
+    example: My brother can fix old bikes.
+status: reviewed

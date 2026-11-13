@@ -1,0 +1,13 @@
+lemma: put
+ipa_us: /pʊt/
+cefr: A1
+oxford3000: true
+forms: [puts, putting]
+senses:
+  - key: put
+    pos: verb
+    vi: đặt, để, cho (vào)
+    en: to move something into a place or position
+    collocations: [put something on the table, put something in a bag, put it here]
+    example: Can you put the milk in the fridge, please?
+status: reviewed

@@ -1,0 +1,136 @@
+# Reading lesson (day 14). Original text, first person.
+# One segment per sentence; `paragraph` groups sentences into paragraphs (1-based).
+kind: reading
+level: A2
+topic: hobbies
+title: Learning to Swim
+order: 14
+
+segments:
+  - id: p1s1
+    paragraph: 1
+    text_en: When I was a child, I never learned to swim.
+    text_vi: Hồi nhỏ, tôi chưa bao giờ học bơi.
+  - id: p1s2
+    paragraph: 1
+    text_en: My family lived far from the sea, and there was no pool in our town.
+    text_vi: Nhà tôi ở xa biển, và thị trấn chỗ tôi không có hồ bơi.
+  - id: p1s3
+    paragraph: 1
+    text_en: Last year, my friends invited me to the beach, but I stayed on the sand while they swam.
+    text_vi: Năm ngoái, bạn bè rủ tôi đi biển, nhưng tôi chỉ ngồi trên bãi cát trong lúc họ bơi.
+  - id: p1s4
+    paragraph: 1
+    text_en: I felt a little embarrassed.
+    text_vi: Tôi thấy hơi xấu hổ.
+  - id: p2s1
+    paragraph: 2
+    text_en: So in January, I signed up for swimming lessons at a pool near my home.
+    text_vi: Vì vậy, vào tháng Một, tôi đăng ký học bơi ở một hồ bơi gần nhà.
+  - id: p2s2
+    paragraph: 2
+    text_en: The class meets twice a week, on Tuesday and Thursday evenings.
+    text_vi: Lớp học hai buổi một tuần, vào tối thứ Ba và tối thứ Năm.
+  - id: p2s3
+    paragraph: 2
+    text_en: My teacher is very patient, and there are only five students in the class.
+    text_vi: Thầy dạy tôi rất kiên nhẫn, và lớp chỉ có năm học viên.
+  - id: p3s1
+    paragraph: 3
+    text_en: At first, I was afraid to put my face in the water.
+    text_vi: Lúc đầu, tôi sợ úp mặt xuống nước.
+  - id: p3s2
+    paragraph: 3
+    text_en: In the first lesson, I only learned how to breathe and float.
+    text_vi: Ở buổi học đầu tiên, tôi chỉ học cách thở và nổi trên mặt nước.
+  - id: p3s3
+    paragraph: 3
+    text_en: It was difficult, but I practiced a lot.
+    text_vi: Việc đó khó, nhưng tôi đã tập rất nhiều.
+  - id: p3s4
+    paragraph: 3
+    text_en: After two months, I could swim from one end of the pool to the other.
+    text_vi: Sau hai tháng, tôi đã có thể bơi từ đầu này sang đầu kia của hồ.
+  - id: p4s1
+    paragraph: 4
+    text_en: Now I go swimming every Saturday morning to stay healthy.
+    text_vi: Giờ đây, sáng thứ Bảy nào tôi cũng đi bơi để giữ sức khỏe.
+  - id: p4s2
+    paragraph: 4
+    text_en: This summer, I want to swim in the sea with my friends.
+    text_vi: Mùa hè này, tôi muốn bơi ở biển cùng bạn bè.
+  - id: p4s3
+    paragraph: 4
+    text_en: It’s never too late to learn something new!
+    text_vi: Học một điều mới thì không bao giờ là quá muộn!
+
+focus_words: [pool, embarrassed, sign up, twice, patient, afraid, breathe, float, practice]
+
+senses:
+  be: linking
+  to: infinitive
+  to#2: direction # "to the beach"
+  to#5: range # "from one end of the pool to the other"
+  in: in
+  in#2: time # "in January"
+  in#5: time # "In the first lesson"
+  last: previous
+  stay: remain
+  stay#2: keep_being # "stay healthy"
+  on: place
+  on#2: day # "on Tuesday"
+  a little: slightly
+  so: so
+  for: purpose
+  at: place
+  first: first
+  one: number
+  end: noun
+  go: go
+  too: too
+
+ignore: []
+
+questions:
+  - prompt: Why didn’t the writer learn to swim as a child?
+    options:
+      - The sea was far away and there was no pool in the town
+      - The writer didn’t like water
+      - The lessons were too expensive
+    correct: 0
+    feedback_ok: 'Đúng: “My family lived far from the sea, and there was no pool in our town.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 1.
+    evidence: p1s2
+  - prompt: How often does the swimming class meet?
+    options: [Once a week, Twice a week, Every day]
+    correct: 1
+    feedback_ok: 'Đúng: “The class meets twice a week” (twice = hai lần).'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 2. Lớp học vào thứ Ba và thứ Năm.
+    evidence: p2s2
+  - prompt: In paragraph 2, a “patient” teacher…
+    options:
+      - gets angry quickly
+      - stays calm and doesn’t hurry the students
+      - is very strong
+    correct: 1
+    feedback_ok: 'Đúng: “patient” = kiên nhẫn, bình tĩnh, không hối thúc học viên.'
+    feedback_wrong: Chưa đúng. Lớp chỉ có năm học viên, và lúc đầu người viết còn sợ úp mặt xuống nước. Thầy “patient” là thầy thế nào?
+    evidence: p2s3
+  - prompt: What was the writer afraid of at first?
+    options:
+      - Finding a pool
+      - Putting their face in the water
+      - Talking to the teacher
+    correct: 1
+    feedback_ok: 'Đúng: “At first, I was afraid to put my face in the water.”'
+    feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 3.
+    evidence: p3s1
+  - prompt: What does the writer want to do this summer?
+    options:
+      - Teach swimming to friends
+      - Swim in the sea with friends
+      - Take more lessons at the pool
+    correct: 1
+    feedback_ok: 'Đúng: “This summer, I want to swim in the sea with my friends.”'
+    feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 4.
+    evidence: p4s2

@@ -1,0 +1,13 @@
+lemma: Mr
+ipa_us: /ˈmɪstər/
+cefr: A1
+oxford3000: true
+forms: [Mr.]
+senses:
+  - key: mr
+    pos: noun
+    vi: ông, anh (đặt trước họ của đàn ông, vd Mr. Lee)
+    en: a title used before a man's family name
+    collocations: [Mr. Smith, Mr. and Mrs. Lee]
+    example: Mr. Brown is our new teacher.
+status: reviewed

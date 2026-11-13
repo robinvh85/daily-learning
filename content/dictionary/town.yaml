@@ -1,0 +1,13 @@
+lemma: town
+ipa_us: /taʊn/
+cefr: A1
+oxford3000: true
+forms: [towns]
+senses:
+  - key: town
+    pos: noun
+    vi: thị trấn, thị xã
+    en: a place where people live and work, bigger than a village but smaller than a city
+    collocations: [a small town, in town, my home town]
+    example: There is only one cinema in our town.
+status: reviewed

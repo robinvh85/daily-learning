@@ -1,0 +1,141 @@
+# Listening lesson (day 15). Original dialogue, en-US voices A/B.
+# A = Minh (learner-like character). B = a staff member at a language center.
+kind: listening
+level: A2
+topic: education
+title: Signing Up for an English Class
+order: 15
+
+segments:
+  - id: l1
+    speaker: A
+    text_en: Hi. I’m interested in your evening English classes.
+    text_vi: Chào anh. Tôi quan tâm đến các lớp tiếng Anh buổi tối bên mình.
+  - id: l2
+    speaker: B
+    text_en: Great. Have you studied English before?
+    text_vi: Tốt quá. Trước đây bạn đã học tiếng Anh chưa?
+  - id: l3
+    speaker: A
+    text_en: Yes, but my speaking isn’t very good.
+    text_vi: Rồi ạ, nhưng kỹ năng nói của tôi chưa tốt lắm.
+  - id: l4
+    speaker: B
+    text_en: Then you should take our placement test first. It takes about thirty minutes.
+    text_vi: Vậy bạn nên làm bài kiểm tra xếp lớp trước. Bài kiểm tra mất khoảng ba mươi phút.
+  - id: l5
+    speaker: A
+    text_en: Can I do it today?
+    text_vi: Hôm nay tôi làm được không?
+  - id: l6
+    speaker: B
+    text_en: Yes. You can do it online at home, or here in our office.
+    text_vi: Được. Bạn có thể làm trực tuyến ở nhà, hoặc làm ngay tại văn phòng này.
+  - id: l7
+    speaker: A
+    text_en: I’ll do it here. How long is the course?
+    text_vi: Tôi làm ở đây luôn. Khóa học kéo dài bao lâu vậy anh?
+  - id: l8
+    speaker: B
+    text_en: Ten weeks. Classes are on Monday and Wednesday, from seven to nine in the evening.
+    text_vi: Mười tuần. Lớp học vào thứ Hai và thứ Tư, từ bảy đến chín giờ tối.
+  - id: l9
+    speaker: A
+    text_en: How many students are in each class?
+    text_vi: Mỗi lớp có bao nhiêu học viên?
+  - id: l10
+    speaker: B
+    text_en: No more than twelve, so everyone has a chance to speak.
+    text_vi: Không quá mười hai người, nên ai cũng có cơ hội được nói.
+  - id: l11
+    speaker: A
+    text_en: That sounds good. How much does it cost?
+    text_vi: Nghe được đấy. Học phí bao nhiêu vậy anh?
+  - id: l12
+    speaker: B
+    text_en: It’s $300, and that includes the books.
+    text_vi: 300 đô, đã bao gồm tiền sách.
+  - id: l13
+    speaker: A
+    text_en: Can I pay by credit card?
+    text_vi: Tôi trả bằng thẻ tín dụng được không?
+  - id: l14
+    speaker: B
+    text_en: Of course. And if you sign up this week, you get a ten percent discount.
+    text_vi: Tất nhiên rồi. Và nếu bạn đăng ký trong tuần này, bạn được giảm giá mười phần trăm.
+  - id: l15
+    speaker: A
+    text_en: Perfect. Let me do the test first.
+    text_vi: Tuyệt quá. Để tôi làm bài kiểm tra trước đã.
+
+focus_words: [interested, placement test, online, course, no more than, cost, credit card, discount]
+
+senses:
+  in: in
+  in#3: time # "in the evening"
+  have: auxiliary # "Have you studied"
+  have#2: own
+  speak: skill # "my speaking"
+  speak#2: speak
+  then: in_that_case
+  take: test
+  take#2: time
+  first: adverb
+  about: approximately
+  do: action
+  do#4: auxiliary # "How much does it cost?"
+  be: linking
+  be#3: location # "are in each class"
+  on: day
+  to: range # "from seven to nine"
+  to#2: infinitive
+  so: so
+  chance: opportunity
+  book: book
+  by: means
+  get: obtain
+
+ignore: []
+
+dictation:
+  - segment: l4
+    before: Then you should take our placement
+    answer: test
+    after: first. It takes about thirty minutes.
+  - segment: l10
+    before: No more than twelve, so everyone has a
+    answer: chance
+    after: to speak.
+  - segment: l14
+    before: Of course. And if you sign up this week, you get a ten percent
+    answer: discount
+    after: .
+
+questions:
+  - prompt: What should Minh do first?
+    options:
+      - Pay for the course
+      - Take a placement test
+      - Buy the books
+    correct: 1
+    feedback_ok: 'Đúng: “you should take our placement test first.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh nói “my speaking isn’t very good”.
+    evidence: l4
+  - prompt: When are the classes?
+    options:
+      - On Monday and Wednesday evenings
+      - Every morning
+      - On weekends
+    correct: 0
+    feedback_ok: 'Đúng: “Classes are on Monday and Wednesday, from seven to nine in the evening.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “How long is the course?”.
+    evidence: l8
+  - prompt: How can Minh get a discount?
+    options:
+      - Pay in cash
+      - Sign up this week
+      - Bring a friend
+    correct: 1
+    feedback_ok: 'Đúng: “if you sign up this week, you get a ten percent discount.”'
+    feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “Can I pay by credit card?”.
+    evidence: l14

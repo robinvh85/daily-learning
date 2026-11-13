@@ -1,0 +1,12 @@
+lemma: him
+ipa_us: /hɪm/
+cefr: A1
+oxford3000: true
+senses:
+  - key: him
+    pos: pronoun
+    vi: anh ấy, ông ấy, cậu ấy (dùng làm tân ngữ)
+    en: used to talk about a man or boy who was already mentioned, after a verb or preposition
+    collocations: [help him, call him, with him]
+    example: I saw Tom yesterday and talked to him.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: degree
+ipa_us: /dɪˈɡriː/
+cefr: A2
+oxford3000: true
+forms: [degrees]
+senses:
+  - key: degree
+    pos: noun
+    vi: độ (nhiệt độ)
+    en: a unit for measuring temperature
+    collocations: [30 degrees, minus five degrees, degrees Celsius]
+    example: It was 38 degrees in the city yesterday.
+status: reviewed

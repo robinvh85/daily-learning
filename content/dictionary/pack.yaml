@@ -1,0 +1,13 @@
+lemma: pack
+ipa_us: /pæk/
+cefr: A2
+oxford3000: true
+forms: [packs, packed, packing]
+senses:
+  - key: pack
+    pos: verb
+    vi: đóng gói, xếp đồ (vào thùng, vali)
+    en: to put things into a bag, box or suitcase so you can take them somewhere
+    collocations: [pack a bag, pack your things, pack for a trip]
+    example: I need to pack my bag for the trip tonight.
+status: reviewed

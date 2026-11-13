@@ -1,0 +1,13 @@
+lemma: beach
+ipa_us: /biːtʃ/
+cefr: A1
+oxford3000: true
+forms: [beaches]
+senses:
+  - key: beach
+    pos: noun
+    vi: bãi biển
+    en: an area of sand or small stones next to the sea
+    collocations: [go to the beach, on the beach, a sandy beach]
+    example: We played volleyball on the beach all afternoon.
+status: reviewed

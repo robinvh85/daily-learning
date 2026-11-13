@@ -1,0 +1,13 @@
+lemma: conversation
+ipa_us: /ˌkɑːnvərˈseɪʃən/
+cefr: A2
+oxford3000: true
+forms: [conversations]
+senses:
+  - key: conversation
+    pos: noun
+    vi: cuộc trò chuyện, hội thoại
+    en: a talk between two or more people
+    collocations: [have a conversation, a short conversation, a conversation group]
+    example: I had a long conversation with my neighbor this morning.
+status: reviewed

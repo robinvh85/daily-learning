@@ -1,0 +1,14 @@
+lemma: free trial
+ipa_us: /ˌfriː ˈtraɪəl/
+cefr: B1
+oxford3000: false
+is_phrase: true
+forms: [free trials]
+senses:
+  - key: free_trial
+    pos: noun
+    vi: dùng thử, tập thử miễn phí
+    en: a short time when you can try a product or service without paying
+    collocations: [a free trial, a seven-day free trial, try a free trial]
+    example: The app has a one-week free trial.
+status: reviewed

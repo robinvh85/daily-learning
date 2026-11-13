@@ -1,0 +1,13 @@
+lemma: at all
+ipa_us: /ət ˈɔːl/
+cefr: A2
+oxford3000: false
+is_phrase: true
+senses:
+  - key: at_all
+    pos: phrase
+    vi: (not … at all) hoàn toàn không, chẳng … chút nào
+    en: used in negative sentences to make them stronger
+    collocations: [not at all, not … at all]
+    example: I don’t like this movie at all.
+status: reviewed

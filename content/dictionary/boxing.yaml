@@ -1,0 +1,12 @@
+lemma: boxing
+ipa_us: /ˈbɑːksɪŋ/
+cefr: A2
+oxford3000: false
+senses:
+  - key: boxing
+    pos: noun
+    vi: quyền anh, đấm bốc (môn thể thao)
+    en: a sport in which two people fight by hitting each other with their hands
+    collocations: [do boxing, a boxing class, boxing gloves]
+    example: My brother does boxing twice a week.
+status: reviewed

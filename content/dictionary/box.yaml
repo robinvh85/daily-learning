@@ -1,0 +1,13 @@
+lemma: box
+ipa_us: /bɑːks/
+cefr: A1
+oxford3000: true
+forms: [boxes]
+senses:
+  - key: box
+    pos: noun
+    vi: hộp, thùng
+    en: a container with straight sides, often made of paper or wood
+    collocations: [a cardboard box, a box of chocolates, pack a box]
+    example: I put all my old books in a big box.
+status: reviewed

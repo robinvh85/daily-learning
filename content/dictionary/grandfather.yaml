@@ -1,0 +1,13 @@
+lemma: grandfather
+ipa_us: /ˈɡrænfɑːðər/
+cefr: A1
+oxford3000: true
+forms: [grandfathers]
+senses:
+  - key: grandfather
+    pos: noun
+    vi: ông (nội, ngoại)
+    en: the father of your father or mother
+    collocations: [my grandfather, visit your grandfather]
+    example: My grandfather is eighty years old.
+status: reviewed

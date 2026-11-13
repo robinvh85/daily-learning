@@ -1,0 +1,12 @@
+lemma: important
+ipa_us: /ɪmˈpɔːrtənt/
+cefr: A1
+oxford3000: true
+senses:
+  - key: important
+    pos: adjective
+    vi: quan trọng
+    en: having a big effect or value; needing serious attention
+    collocations: [very important, an important day, important to someone]
+    example: Sleep is very important for your health.
+status: reviewed

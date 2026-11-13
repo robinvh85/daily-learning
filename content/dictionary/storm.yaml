@@ -1,0 +1,13 @@
+lemma: storm
+ipa_us: /stɔːrm/
+cefr: A2
+oxford3000: true
+forms: [storms]
+senses:
+  - key: storm
+    pos: noun
+    vi: cơn bão, giông
+    en: very bad weather with strong wind and heavy rain
+    collocations: [a big storm, a storm is coming, after the storm]
+    example: Some trees fell down in the storm last night.
+status: reviewed

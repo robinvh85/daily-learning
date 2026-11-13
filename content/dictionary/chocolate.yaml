@@ -1,0 +1,13 @@
+lemma: chocolate
+ipa_us: /ˈtʃɑːklət/
+cefr: A1
+oxford3000: true
+forms: [chocolates]
+senses:
+  - key: chocolate
+    pos: noun
+    vi: sô-cô-la
+    en: a sweet brown food made from cocoa
+    collocations: [chocolate cake, a bar of chocolate, hot chocolate]
+    example: Would you like some hot chocolate?
+status: reviewed

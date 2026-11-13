@@ -1,0 +1,12 @@
+lemma: behind
+ipa_us: /bɪˈhaɪnd/
+cefr: A1
+oxford3000: true
+senses:
+  - key: behind
+    pos: preposition
+    vi: phía sau, đằng sau
+    en: at the back of something or someone
+    collocations: [behind the house, behind the door, behind me]
+    example: The bike is behind the door.
+status: reviewed

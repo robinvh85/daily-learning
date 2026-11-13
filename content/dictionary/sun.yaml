@@ -1,0 +1,12 @@
+lemma: sun
+ipa_us: /sʌn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: sun
+    pos: noun
+    vi: mặt trời, ánh nắng
+    en: the star in the sky that gives us light and heat; the light and heat from it
+    collocations: [the sun is strong, in the sun, sit in the sun]
+    example: Don’t sit in the sun for too long.
+status: reviewed

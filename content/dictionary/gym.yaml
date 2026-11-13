@@ -1,0 +1,13 @@
+lemma: gym
+ipa_us: /dʒɪm/
+cefr: A1
+oxford3000: true
+forms: [gyms]
+senses:
+  - key: gym
+    pos: noun
+    vi: phòng tập thể dục, phòng gym
+    en: a room or building with equipment for doing exercise
+    collocations: [go to the gym, join a gym, at the gym]
+    example: I go to the gym three times a week.
+status: reviewed

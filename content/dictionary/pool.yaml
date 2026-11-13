@@ -1,0 +1,13 @@
+lemma: pool
+ipa_us: /puːl/
+cefr: A1
+oxford3000: true
+forms: [pools]
+senses:
+  - key: pool
+    pos: noun
+    vi: hồ bơi, bể bơi
+    en: a swimming pool; a place built for people to swim in
+    collocations: [swimming pool, swim in the pool, go to the pool]
+    example: There is a big pool at our hotel.
+status: reviewed

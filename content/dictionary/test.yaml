@@ -1,0 +1,13 @@
+lemma: test
+ipa_us: /test/
+cefr: A1
+oxford3000: true
+forms: [tests]
+senses:
+  - key: test
+    pos: noun
+    vi: bài kiểm tra
+    en: a set of questions to find out how much someone knows or can do
+    collocations: [take a test, do a test, pass a test]
+    example: I have an English test on Friday.
+status: reviewed

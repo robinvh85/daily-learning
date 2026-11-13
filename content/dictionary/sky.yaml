@@ -1,0 +1,13 @@
+lemma: sky
+ipa_us: /skaɪ/
+cefr: A1
+oxford3000: true
+forms: [skies]
+senses:
+  - key: sky
+    pos: noun
+    vi: bầu trời
+    en: the space above the earth where you can see the sun, moon and clouds
+    collocations: [blue sky, in the sky, a clear sky]
+    example: The sky is very blue today.
+status: reviewed

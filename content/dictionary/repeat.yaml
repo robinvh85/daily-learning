@@ -1,0 +1,13 @@
+lemma: repeat
+ipa_us: /rɪˈpiːt/
+cefr: A1
+oxford3000: true
+forms: [repeats, repeated, repeating]
+senses:
+  - key: repeat
+    pos: verb
+    vi: lặp lại, nhắc lại
+    en: to say or do something again
+    collocations: [repeat after me, repeat the question, repeat the word]
+    example: Could you repeat that, please?
+status: reviewed

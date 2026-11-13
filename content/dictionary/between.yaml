@@ -1,0 +1,12 @@
+lemma: between
+ipa_us: /bɪˈtwiːn/
+cefr: A1
+oxford3000: true
+senses:
+  - key: between
+    pos: preposition
+    vi: 'giữa; từ … đến … (thời gian, số lượng)'
+    en: in the space or time from one thing to another
+    collocations: [between two and four, between the bank and the school, between meals]
+    example: The shop is closed between twelve and one.
+status: reviewed

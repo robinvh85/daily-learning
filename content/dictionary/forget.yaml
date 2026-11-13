@@ -1,0 +1,13 @@
+lemma: forget
+ipa_us: /fərˈɡet/
+cefr: A1
+oxford3000: true
+forms: [forgets, forgot, forgotten, forgetting]
+senses:
+  - key: forget
+    pos: verb
+    vi: quên
+    en: to not remember something, or to not remember to do or bring something
+    collocations: [forget your keys, forget to do something, don't forget]
+    example: I often forget my umbrella at work.
+status: reviewed

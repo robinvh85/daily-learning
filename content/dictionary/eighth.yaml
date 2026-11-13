@@ -1,0 +1,12 @@
+lemma: eighth
+ipa_us: /eɪtθ/
+cefr: A2
+oxford3000: true
+senses:
+  - key: eighth
+    pos: number
+    vi: thứ tám
+    en: coming after seven other things in order; 8th
+    collocations: [the eighth floor, the eighth day, on the eighth of May]
+    example: Her birthday is on the eighth of June.
+status: reviewed

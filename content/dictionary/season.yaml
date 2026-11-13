@@ -1,0 +1,13 @@
+lemma: season
+ipa_us: /ˈsiːzən/
+cefr: A2
+oxford3000: true
+forms: [seasons]
+senses:
+  - key: season
+    pos: noun
+    vi: mùa
+    en: one of the parts of the year, such as summer or the rainy season
+    collocations: [the rainy season, the dry season, my favorite season]
+    example: Spring is my favorite season.
+status: reviewed

@@ -1,0 +1,13 @@
+lemma: sunny
+ipa_us: /ˈsʌni/
+cefr: A1
+oxford3000: true
+forms: [sunnier, sunniest]
+senses:
+  - key: sunny
+    pos: adjective
+    vi: nắng, có nắng
+    en: with a lot of light from the sun
+    collocations: [a sunny day, sunny and hot, sunny weather]
+    example: It’s a sunny day, so let’s go to the park.
+status: reviewed

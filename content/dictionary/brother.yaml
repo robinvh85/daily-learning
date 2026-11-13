@@ -1,0 +1,13 @@
+lemma: brother
+ipa_us: /ˈbrʌðər/
+cefr: A1
+oxford3000: true
+forms: [brothers]
+senses:
+  - key: brother
+    pos: noun
+    vi: 'anh trai, em trai'
+    en: a boy or man who has the same parents as you
+    collocations: [older brother, younger brother, my little brother]
+    example: My older brother works in a bank.
+status: reviewed

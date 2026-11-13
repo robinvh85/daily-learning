@@ -1,0 +1,12 @@
+lemma: patient
+ipa_us: /ˈpeɪʃənt/
+cefr: B1
+oxford3000: true
+senses:
+  - key: patient
+    pos: adjective
+    vi: kiên nhẫn
+    en: able to wait or deal with problems calmly, without getting angry
+    collocations: [be patient, patient with someone, a patient teacher]
+    example: Please be patient. The bus will come soon.
+status: reviewed

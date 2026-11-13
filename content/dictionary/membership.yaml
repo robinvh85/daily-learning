@@ -1,0 +1,13 @@
+lemma: membership
+ipa_us: /ˈmembərʃɪp/
+cefr: B1
+oxford3000: false
+forms: [memberships]
+senses:
+  - key: membership
+    pos: noun
+    vi: gói hội viên, tư cách hội viên
+    en: being a member of a club or group, or the right to use it
+    collocations: [a monthly membership, a gym membership, buy a membership]
+    example: My gym membership costs $30 a month.
+status: reviewed

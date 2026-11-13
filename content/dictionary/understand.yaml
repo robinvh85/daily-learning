@@ -1,0 +1,13 @@
+lemma: understand
+ipa_us: /ˌʌndərˈstænd/
+cefr: A1
+oxford3000: true
+forms: [understands, understood, understanding]
+senses:
+  - key: understand
+    pos: verb
+    vi: hiểu
+    en: to know what something means
+    collocations: [understand English, understand the question, I don't understand]
+    example: Sorry, I don’t understand. Can you say it again?
+status: reviewed

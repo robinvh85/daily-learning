@@ -1,0 +1,12 @@
+lemma: might
+ipa_us: /maɪt/
+cefr: A2
+oxford3000: true
+senses:
+  - key: might
+    pos: modal verb
+    vi: có thể (nói về khả năng, không chắc chắn)
+    en: used to say that something is possible but not certain
+    collocations: [might rain, might be late, might not come]
+    example: Take an umbrella. It might rain later.
+status: reviewed

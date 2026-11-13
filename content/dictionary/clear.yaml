@@ -1,0 +1,13 @@
+lemma: clear
+ipa_us: /klɪr/
+cefr: A2
+oxford3000: true
+forms: [clearer, clearest]
+senses:
+  - key: clear
+    pos: adjective
+    vi: 'quang đãng, trong (trời không mây)'
+    en: (of the sky or weather) without clouds or rain
+    collocations: [a clear sky, a clear day, clear water]
+    example: On a clear day, you can see the mountains.
+status: reviewed

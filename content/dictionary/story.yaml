@@ -1,0 +1,13 @@
+lemma: story
+ipa_us: /ˈstɔːri/
+cefr: A1
+oxford3000: true
+forms: [stories]
+senses:
+  - key: story
+    pos: noun
+    vi: câu chuyện, truyện
+    en: a description of events, real or imagined, that you tell or read
+    collocations: [tell a story, a funny story, read a story]
+    example: My grandmother tells me a story every night.
+status: reviewed

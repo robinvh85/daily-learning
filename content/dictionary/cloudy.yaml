@@ -1,0 +1,13 @@
+lemma: cloudy
+ipa_us: /ˈklaʊdi/
+cefr: A2
+oxford3000: true
+forms: [cloudier, cloudiest]
+senses:
+  - key: cloudy
+    pos: adjective
+    vi: nhiều mây, âm u
+    en: with a lot of clouds in the sky
+    collocations: [a cloudy day, cloudy weather, cloudy skies]
+    example: It was cloudy all day, but it didn’t rain.
+status: reviewed

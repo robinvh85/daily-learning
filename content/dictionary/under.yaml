@@ -1,0 +1,12 @@
+lemma: under
+ipa_us: /ˈʌndər/
+cefr: A1
+oxford3000: true
+senses:
+  - key: under
+    pos: preposition
+    vi: ở dưới, bên dưới
+    en: in or to a position below something
+    collocations: [under the table, under the bed, under a tree]
+    example: The cat is sleeping under the table.
+status: reviewed
