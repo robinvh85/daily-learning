@@ -1,6 +1,7 @@
 # DailyLearning — Kế hoạch thêm phần Ngữ pháp
 
-> Ngày lập: 2026-11-14 · Trạng thái: **Bản đề xuất, chờ anh chốt các quyết định ở mục 9**
+> Ngày lập: 2026-11-14 · Trạng thái: **Đã chốt (2026-11-14)** — phương án C (anh chọn), các quyết
+> còn lại em kiểm trên nội dung thật rồi chốt (mục 9). Sẵn sàng làm Phase 1.
 > Liên quan: [`dailylearning-v1-plan.md`](dailylearning-v1-plan.md) (format bài học, từ điển, daily plan)
 
 ## 1. Mục tiêu
@@ -23,13 +24,13 @@
 | Công code | Trang mới + bài tập | Chỉ thêm highlight + popup | Cả hai, nhưng tái dùng được Quiz, WordCard, TokenizedText |
 | Rủi ro | Cảm giác "học giáo trình", bỏ ngang | Không đủ để thật sự dùng đúng ngữ pháp | Ngày học dài thêm ~5 phút |
 
-**Đề xuất: phương án C.** Lý do:
+**Đã chốt: phương án C** (anh chọn 2026-11-14). Lý do:
 
 1. Người học A2 nhớ quy tắc tốt nhất khi **gặp nó trong câu đã hiểu nghĩa trước** (học kiểu
    "nhận ra rồi mới học quy tắc"). Bài đọc của ngày là nguồn câu sẵn có, không tốn thêm công viết ví dụ.
 2. Chỉ ghép vào bài đọc (B) thì không có luyện tập, và lộ trình phụ thuộc vào việc bài tình cờ có
-   cấu trúc gì. Bản quét 30 bài hiện có (mục 6) cho thấy gần như **chưa có hiện tại hoàn thành và so
-   sánh hơn** — là hai điểm quan trọng của B1.
+   cấu trúc gì. Bản quét 30 bài hiện có (mục 6) cho thấy **hiện tại hoàn thành chỉ có 2 câu**, câu
+   điều kiện và `should` mỗi thứ vài câu rải rác — chưa đủ để học, phải viết bài mới có chủ đích.
 3. App đã có sẵn hầu hết thành phần: `Quiz` (trắc nghiệm chấm ngay), `Dictation` (điền chỗ trống),
    `TokenizedText` (đánh dấu từ trong câu), `WordCard` (popup), daily plan theo ngày.
 
@@ -210,53 +211,80 @@ users/{uid}/grammarProgress/{slug}
 
 ### 5.3 Ảnh hưởng tới "ngày đã xong"
 
-Hiện `pickToday` coi một ngày xong khi bài đọc và bài nghe xong. Có hai lựa chọn (anh chốt ở mục 9):
+Hiện `pickToday` coi một ngày xong khi bài đọc và bài nghe xong. Có hai lựa chọn:
 
-- **(a) Ngữ pháp bắt buộc:** ngày chỉ xong khi cả Ngữ pháp xong → người đang ở giữa lộ trình (đã
-  qua ngày 1–15) sẽ bị kéo về ngày 1 nếu không xử lý. Cần quy tắc chuyển tiếp: ngày đã xong trước khi
-  có ngữ pháp vẫn tính là xong, điểm ngữ pháp của các ngày đó hiện ở thư viện như "chưa học".
-- **(b) Ngữ pháp tùy chọn (đề xuất cho bước đầu):** ngày xong như cũ; bước Ngữ pháp hiện trên trang
-  chủ nhưng không chặn sang ngày mới. Không phải sửa logic chuyển ngày, không ảnh hưởng streak.
+- (a) Ngữ pháp bắt buộc: ngày chỉ xong khi cả Ngữ pháp xong → người đang ở giữa lộ trình (đã
+  qua ngày 1–15) sẽ bị kéo về ngày 1 nếu không có quy tắc chuyển tiếp.
+- **(b) Ngữ pháp tùy chọn — Đã chốt.** Ngày xong như cũ (`pickToday` và `isDone` không đổi); bước
+  Ngữ pháp hiện trên trang chủ với trạng thái riêng nhưng không chặn sang ngày mới.
+  - Khi ngày đang "giữ lại vì đã xong hôm nay" (stay rule) mà Ngữ pháp chưa làm, bước Ngữ pháp vẫn
+    hiện "Chưa học" để người học làm nốt.
+  - Điểm ngữ pháp của các ngày đã qua (người học cũ) hiện ở thư viện là "Chưa học", trang chủ có một
+    dòng gợi ý "Còn N điểm ngữ pháp của các ngày trước" dẫn tới `/grammar`.
+  - Trang ngữ pháp chạy `useStudyTimer` như trang Đọc/Nghe, nên thời gian học vẫn tính vào
+    `dailyActivity` (biểu đồ tuần, mục tiêu phút/ngày).
 
 ## 6. Lộ trình ngữ pháp (bản nháp)
 
-### 6.1 Ngày 1–15: gán vào bài đã có
+### 6.1 Ngày 1–15: gán vào bài đã có — Đã chốt
 
-Bảng dưới dựa trên bản quét regex 30 bài hiện có (đếm thô, sẽ kiểm lại bằng
-`content:check-grammar` ở Phase 1). Cột cuối là số câu mẫu ước tính trong bài của ngày đó.
+Đã kiểm bằng cách đọc toàn văn bài đọc + bài nghe của từng ngày (2026-11-14). Mọi ngày đều có
+**≥ 2 câu mẫu ngay trong bài của ngày đó**, nên **không cần sửa bài cũ** (không phải tạo lại audio).
+Bản nháp trước gán `will` cho ngày 4, `should / have to` cho ngày 5, `much / many` cho ngày 10,
+`V-ing` cho ngày 14 — kiểm ra mỗi ngày chỉ có 1–2 câu yếu, nên đổi sang điểm mà bài thật sự có.
 
-| Ngày | Chủ đề | Điểm ngữ pháp | Câu mẫu có sẵn |
+| Ngày | Chủ đề | Điểm ngữ pháp (slug) | Câu mẫu trong bài của ngày (segment) |
 |---|---|---|---|
-| 1 | Cuộc sống quanh khu phố | Hiện tại đơn + trạng từ tần suất (usually, always, sometimes) | Có ("I usually go there…") |
-| 2 | Công việc mới | Quá khứ đơn – động từ có quy tắc | Nhiều (~9 trong bài đọc) |
-| 3 | Ăn uống | Danh từ đếm được / không đếm được; some / any | Cần kiểm |
-| 4 | Mua sắm | `will` cho quyết định tức thì, đề nghị ("I'll take it") | Ít (2) — có thể bổ sung 1–2 câu vào bài |
-| 5 | Sức khỏe | Lời khuyên và bắt buộc: `should`, `have to` | Ít — có thể bổ sung |
-| 6 | Du lịch | Quá khứ đơn – động từ bất quy tắc | Rất nhiều (~20) |
-| 7 | Giao tiếp ở công ty | `can / could` để xin phép, nhờ lịch sự | Có |
-| 8 | Cuối tuần | Kế hoạch tương lai: `be going to` và hiện tại tiếp diễn | Có |
-| 9 | Công nghệ | `can / can't` – khả năng; `how to` | Nhiều (can ~5) |
-| 10 | Tiền bạc | `how much / how many`, `a lot of / much / many` | Cần kiểm |
-| 11 | Gia đình | So sánh hơn và so sánh nhất | Ít (1–2) — cần bổ sung |
-| 12 | Thời tiết | `will` dự đoán + câu điều kiện loại 1 | Có (will ~3, if) |
-| 13 | Nhà ở | Hiện tại đơn và hiện tại tiếp diễn | Có (~3) |
-| 14 | Thể thao và sở thích | Động từ + V-ing (like, enjoy, start, stop) | Cần kiểm |
-| 15 | Học tập | **Ôn tập tổng hợp** ngày 1–14 (bài luyện trộn, không có quy tắc mới) | — |
+| 1 | Cuộc sống quanh khu phố | Hiện tại đơn + trạng từ tần suất (`present-simple-frequency`) | "I **usually go** there…" (coffee-shop p3s1), "**sometimes** a piece of banana cake" (p3s2), "the staff **are always** friendly" (p3s3), "It **stops** at every station" (train-station l4) |
+| 2 | Công việc mới | Quá khứ đơn – có quy tắc (`past-simple-regular`) | "**arrived** at the office" (new-job p1s3), "**showed** me my desk" (p2s1), "**introduced** me" (p2s2), "I **worked** at a bank" (introducing l7) |
+| 3 | Ăn uống | Đếm được / không đếm được: some, a few, a little, much (`countable-uncountable`) | "**some** chicken… **a few** eggs" (cooking p2s2), "**a little** fish sauce" (p3s3), "**too much** salt" (p4s1), "**How much** is that?" (ordering l6), "**some** food" (l2) |
+| 4 | Mua sắm | `too` + tính từ (`too-adjective`) | "the sleeves were **too long**" (shopping), "it's **too small**" (returning-a-shirt), "that's **too bad**" (returning-a-shirt) |
+| 5 | Sức khỏe | Động từ + to V / V-ing (`verb-to-or-ing`) | "**decided to change**", "**stopped using** my phone", "**try to go** to bed", "**started to fall** asleep" (better-sleep), "I'd **like to make** an appointment" (doctor) |
+| 6 | Du lịch | Quá khứ đơn – bất quy tắc (`past-simple-irregular`) | "We **went** by bus… the trip **took**" (da-lat p1s3), "we **had** coffee" (p2s3), "**ate** street food" (p3s3), ~20 động từ |
+| 7 | Giao tiếp ở công ty | Nhờ và xin phép lịch sự: can / could (`can-could-requests`) | "**Could you write** the summary?" (meeting l11), "When **can you finish** it?" (l5), "He **can show** you…" (email p3s3) |
+| 8 | Cuối tuần | Kế hoạch tương lai: be going to và hiện tại tiếp diễn (`future-plans`) | "I'm **going to sleep in**" (weekend-plans p2s1), "my cousin **is having** a birthday party" (p3s1); ghim thêm "I'm **going to keep**…" (ngày 5), "I'm **going to save**…" (ngày 10) |
+| 9 | Công nghệ | can / can't – khả năng (`can-ability`) | "My laptop **can't connect**" (wi-fi l2), "**Can you see** the router?" (l5), "I **can see** the website" (l12) |
+| 10 | Tiền bạc | have to / had to / need to – sự cần thiết (`have-to-need-to`) | "I **had to borrow** money" (saving), "I **need** it for my salary", "I **need to see** your passport" (bank); ghim "you **have to be** careful" (ngày 4), "I **have to work**" (ngày 5) |
+| 11 | Gia đình | So sánh hơn và so sánh nhất (`comparatives-superlatives`) | "my **younger** brother" (sunday-lunch p1s3), "**getting older**" (p4s2), "**the most important** day" (p4s3); ghim "**one size bigger**", "made them **shorter**" (ngày 4), "**much better than** takeout" (ngày 3) |
+| 12 | Thời tiết | will – dự đoán và quyết định tức thì (`will-predictions-decisions`) | "Saturday **will be** sunny" (l5), "Sunday **will be** cloudy" (l7), "**I'll swim** on Saturday morning" (l10), "**I'll bring** you back some dried squid" (l14) |
+| 13 | Nhà ở | Hiện tại tiếp diễn và hiện tại đơn (`present-continuous-vs-simple`) | "I'm slowly **buying** furniture… a new sofa **is coming**" (apartment p4s3), "the kitchen sink **is leaking**" (landlord l11); ghim "I am slowly **getting** used to…" (ngày 2) |
+| 14 | Thể thao và sở thích | Từ nối thời gian khi kể chuyện: when, while, after, at first (`time-linkers`) | "**When** I was a child…", "I stayed on the sand **while** they swam", "**At first**, I was afraid…", "**After** two months, I could swim…" (learning-to-swim) |
+| 15 | Học tập | **Ôn tập tổng hợp** ngày 1–14 (`review-days-1-14`): bài luyện trộn, không có quy tắc mới | Lấy câu luyện tập từ 14 điểm trước |
 
-Nguyên tắc: điểm nào có dưới 2 câu mẫu thì **sửa nhẹ bài cũ** (thêm 1–2 câu tự nhiên) thay vì đổi
-điểm ngữ pháp. Sửa câu kéo theo tạo lại audio (`content:tts` có cache theo câu nên chỉ tốn ký tự của
-câu mới) và cập nhật `timings.json`.
+- "Ghim" = câu ở bài của ngày khác, khai báo qua `discover.pinned` (mục 4.1). Bước "Nhận ra" luôn ưu
+  tiên câu của ngày hôm đó, câu ghim chỉ bổ sung.
+- Bài nghe dùng dấu nháy cong (`it’s`) trong `text_en`: `match` của chú thích `grammar` so khớp sau
+  khi chuẩn hóa `’` → `'` (giống `normalizeDictation`), để không phải sửa bài.
+- Sau này nếu một điểm thiếu câu mẫu: ưu tiên đổi điểm hoặc ghim câu từ ngày khác; chỉ sửa bài cũ khi
+  không còn cách khác, tối đa 2 câu / bài, giữ nguyên câu hỏi và nghe chép.
 
 ### 6.2 Ngày 16–30 trở đi: viết bài mới có chủ đích (hướng B1)
 
 Từ đây **chọn điểm ngữ pháp trước, viết bài sau**: khi soạn `lesson.yaml` mới, đưa vào yêu cầu
 "bài đọc dùng tự nhiên 3–5 câu với cấu trúc X", rồi chú thích `grammar` luôn.
 
-Danh sách đề xuất (theo thứ tự): quá khứ tiếp diễn · hiện tại hoàn thành (ever / never) · hiện tại
-hoàn thành với for / since · hiện tại hoàn thành và quá khứ đơn · `used to` · mệnh đề quan hệ
-who / which / that · bị động hiện tại và quá khứ · `might / may` (khả năng) · `too / enough` · động
-từ + to V và động từ + V-ing · câu điều kiện loại 2 · câu tường thuật cơ bản (said / told) · mạo từ
-a / an / the · đại từ bất định (something, anyone…) · ôn tập.
+Danh sách theo thứ tự (A2+ → B1). Cột cuối là câu đã có trong bài cũ, dùng làm câu ghim:
+
+| # | Điểm ngữ pháp | Câu ghim có sẵn |
+|---|---|---|
+| 16 | `should / shouldn't` – lời khuyên | "I **should come back** on Saturday evening" (ngày 12), vài câu ở ngày 7, 11, 15 |
+| 17 | Câu điều kiện loại 0 và 1 | "**If** it says rain, I leave work early…" (ngày 12), "it's free **if** you keep…" (ngày 10) |
+| 18 | Quá khứ tiếp diễn (was / were + V-ing, when / while) | — |
+| 19 | could / couldn't – khả năng trong quá khứ | "I **could swim**…" (ngày 14), "I **couldn't focus**" (ngày 5) |
+| 20 | Hiện tại hoàn thành: ever / never, kinh nghiệm | — |
+| 21 | Hiện tại hoàn thành với for / since | "I**'ve had** a bad cough **since** Monday" (ngày 5), "How long **have** you **worked** here?" (ngày 2) |
+| 22 | Hiện tại hoàn thành và quá khứ đơn | — |
+| 23 | `used to` | (1 câu rải rác, kiểm khi soạn) |
+| 24 | Mệnh đề quan hệ who / which / that | rải rác ở 12 bài |
+| 25 | `enough` và `too` (ôn ngày 4) | "I have **enough** savings" (ngày 10), "One page is **enough**" (ngày 7) |
+| 26 | Bị động hiện tại và quá khứ | — |
+| 27 | `might / may` – khả năng | "I heard it **might rain**" (ngày 12) |
+| 28 | Câu điều kiện loại 2 | — |
+| 29 | Câu tường thuật cơ bản (said / told) | "Many buyers **said** the jacket was a little small" (ngày 4), "She **said**, …" (ngày 5) |
+| 30 | Ôn tập tổng hợp | — |
+
+Mạo từ a / an / the và đại từ bất định (something, anyone…) không làm điểm riêng ở chặng này, chỉ
+đưa vào mục "lỗi người Việt hay mắc" của các điểm liên quan.
 
 ## 7. Các phase
 
@@ -266,7 +294,7 @@ a / an / the · đại từ bất định (something, anyone…) · ôn tập.
 | **2. Trang ngữ pháp** | `/grammar/:slug` 3 bước, component `WordOrder`, mở rộng chấm điền chỗ trống (dùng lại `normalizeDictation`); `/grammar` thư viện; mục Sidebar | Test component + axe; chạy thật trên dev server 3 điểm thử |
 | **3. Gắn vào bài đọc / nghe** | Gạch chân trong `TokenizedText`, `GrammarCard`, nút bật/tắt; link câu mẫu → đúng câu trong bài | Test ReadingPage/ListeningPage; đáp án nghe chép không bị lộ |
 | **4. Tiến độ và trang chủ** | `grammarProgress` + rules + test emulator; bước Ngữ pháp trong "Bài học hôm nay" theo lựa chọn 5.3; thống kê trên trang chủ | Test emulator rules, `dailyPlan` unit test, E2E thêm bước Ngữ pháp vào `learning-flow.spec.ts` |
-| **5. Soạn đủ nội dung ngày 1–15** | 14 điểm + bài ôn tập; chú thích câu mẫu; bổ sung câu cho ngày ít ví dụ; TTS câu ví dụ | `content:check-grammar` không còn cảnh báo cho ngày 1–15; anh duyệt `status: reviewed` |
+| **5. Soạn đủ nội dung ngày 1–15** | 14 điểm + bài ôn tập theo bảng 6.1; chú thích câu mẫu (không sửa bài cũ); TTS câu ví dụ | `content:check-grammar` không còn cảnh báo cho ngày 1–15; anh duyệt `status: reviewed` |
 | **6. Ôn ngữ pháp bằng FSRS** (tùy chọn) | Thẻ FSRS cho mỗi điểm; câu ôn trộn vào màn Ôn từ vựng | Unit test chấm điểm → rating; E2E một lượt ôn |
 
 Phase 1–4 là phần code (làm trước, mỗi phase một commit / MR). Phase 5 làm song song với việc viết
@@ -278,7 +306,7 @@ bài cho ngày 16+ theo quy trình soạn bài hiện tại (Claude soạn → c
 flowchart TD
   A[Chọn điểm ngữ pháp cho ngày] --> B{Bài của ngày có >= 2 câu mẫu?}
   B -- Có --> C[Thêm chú thích grammar vào lesson.yaml]
-  B -- Không --> D[Sửa nhẹ bài: thêm 1-2 câu<br/>chạy lại content:tts] --> C
+  B -- Không --> D[Đổi điểm ngữ pháp hoặc ghim câu từ ngày khác<br/>bài mới: viết lại bài cho có câu mẫu] --> C
   C --> E[Viết content/grammar/slug.yaml<br/>status: draft]
   E --> F[content:check-grammar + content:check-dict]
   F --> G[Duyệt → status: reviewed] --> H[content:build]
@@ -290,13 +318,13 @@ flowchart TD
 - Nội dung: một điểm ngữ pháp ~1,5–2 KB YAML, 6–8 bài tập. 15 điểm ngày 1–15 ≈ 30 KB.
 - TTS câu ví dụ: ~15 điểm × ~10 câu × ~50 ký tự ≈ 7.500 ký tự, nằm trong hạn mức miễn phí.
 
-## 9. Quyết định cần anh chốt
+## 9. Quyết định đã chốt (2026-11-14)
 
-| # | Câu hỏi | Đề xuất |
-|---|---|---|
-| 1 | Cách học: A / B / C | **C** (điểm ngữ pháp của ngày, gắn với bài) |
-| 2 | Bước Ngữ pháp có bắt buộc để hoàn thành ngày không (mục 5.3) | **Tùy chọn** ở bước đầu, xem lại sau 2 tuần dùng thử |
-| 3 | Ngôn ngữ giải thích | **Tiếng Việt**, thuật ngữ kèm tên tiếng Anh trong ngoặc (Quá khứ đơn – Past simple) |
-| 4 | Có làm Phase 6 (ôn bằng FSRS) không | Có, nhưng **sau** khi Phase 1–5 dùng ổn |
-| 5 | Được sửa nhẹ bài cũ để đủ câu mẫu không (mục 6.1) | Có, tối đa 2 câu / bài, giữ nguyên câu hỏi và nghe chép |
-| 6 | Danh sách điểm ngữ pháp ngày 1–15 (mục 6.1) | Anh xem và đổi nếu muốn, đặc biệt ngày 3, 10, 14 (chưa chắc có đủ câu mẫu) |
+| # | Câu hỏi | Chốt | Căn cứ |
+|---|---|---|---|
+| 1 | Cách học: A / B / C | **C** — điểm ngữ pháp của ngày, gắn với bài | Anh chọn |
+| 2 | Bước Ngữ pháp có bắt buộc để hoàn thành ngày không | **Tùy chọn** (mục 5.3 b) | Không đổi `pickToday`, không kéo người học cũ về ngày 1, streak giữ nguyên. Xem lại sau 2 tuần dùng thử: nếu bước Ngữ pháp hay bị bỏ thì mới cân nhắc bắt buộc |
+| 3 | Ngôn ngữ giải thích | **Tiếng Việt**, thuật ngữ kèm tên tiếng Anh (Quá khứ đơn – Past simple) | Người học A2 hiểu quy tắc nhanh nhất bằng tiếng mẹ đẻ; tên tiếng Anh để tra thêm được. Câu ví dụ và bài tập vẫn bằng tiếng Anh, có bản dịch khi bấm |
+| 4 | Có làm Phase 6 (ôn bằng FSRS) | **Có, sau Phase 1–5** | Học xong không ôn thì quên; FSRS đã có sẵn (`ts-fsrs`, `isCard()` trong rules). Làm sau để có đủ bài tập trong kho câu trước |
+| 5 | Sửa bài cũ để đủ câu mẫu | **Không cần** cho ngày 1–15 | Đọc toàn văn đã thấy đổi điểm ngữ pháp ở ngày 4, 5, 10, 14 là đủ câu mẫu (mục 6.1). Không phải tạo lại audio / `timings.json` |
+| 6 | Danh sách ngày 1–15 | **Bảng 6.1** (đã kiểm từng câu) | Mỗi ngày ≥ 2 câu mẫu trong bài của chính ngày đó |
