@@ -4,6 +4,32 @@
   color: var(--color-ink-soft);
 }
 
+.summaryRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.reviewLink {
+  min-height: var(--touch);
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  border-radius: var(--radius-md);
+  background: var(--color-violet);
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--fs-md);
+  text-decoration: none;
+}
+
+.reviewLink:hover {
+  color: #fff;
+  background: #53299e;
+}
+
 .level {
   display: flex;
   flex-direction: column;

@@ -3,6 +3,7 @@ import type {
   AnswerBody,
   GrammarAnswerBody,
   GrammarProgressBody,
+  GrammarReviewBody,
   MeResponse,
   ProgressBody,
   ReviewBody,
@@ -115,6 +116,14 @@ const routes: [method: string, pattern: RegExp, handler: Handler][] = [
   ],
 
   ['GET', /^\/grammar$/, async (_m, _q, _b, d) => g.listGrammar(await d.context())],
+  // Before /grammar/:slug, which would match "reviews".
+  ['GET', /^\/grammar\/reviews$/, async (_m, _q, _b, d) => g.listGrammarReviews(await d.context())],
+  [
+    'POST',
+    /^\/grammar\/([^/]+)\/review$/,
+    async (m, _q, b, d) =>
+      g.submitGrammarReview(await d.context(), m[1]!, body<GrammarReviewBody>(b)),
+  ],
   ['GET', /^\/grammar\/([^/]+)$/, async (m, _q, _b, d) => g.getGrammar(await d.context(), m[1]!)],
   [
     'POST',

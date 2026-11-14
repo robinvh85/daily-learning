@@ -4,6 +4,7 @@ import { Layout } from './components/Layout/Layout';
 import { useStudyTimer } from './hooks/useStudyTimer';
 import { GrammarLibraryPage } from './pages/Grammar/GrammarLibraryPage';
 import { GrammarPage } from './pages/Grammar/GrammarPage';
+import { GrammarReviewPage } from './pages/Grammar/GrammarReviewPage';
 import { HomePage } from './pages/Home/HomePage';
 import { LibraryPage } from './pages/Library/LibraryPage';
 import { ListeningPage } from './pages/Listening/ListeningPage';
@@ -49,6 +50,7 @@ export function App() {
         <Route path="/listen" element={<LibraryPage kind="listening" />} />
         <Route path="/listen/:slug" element={<ListeningPage />} />
         <Route path="/grammar" element={<GrammarLibraryPage />} />
+        <Route path="/grammar/review" element={<GrammarReviewPage />} />
         <Route path="/grammar/:slug" element={<GrammarPage />} />
         <Route path="/vocab" element={<VocabPage />} />
         <Route path="/login" element={<Navigate to="/" replace />} />

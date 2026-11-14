@@ -79,6 +79,7 @@ const today: TodayResponse = {
   ],
   estimatedMinutes: 15,
   grammarBacklog: 0,
+  grammarReviewsDue: 0,
   continueUrl: '/read/a-new-coffee-shop',
   allDone: false,
 };
@@ -214,6 +215,7 @@ describe('HomePage', () => {
         reviews,
       ],
       grammarBacklog: 2,
+      grammarReviewsDue: 3,
     });
     const steps = await screen.findByRole('list', { name: 'Các bước hôm nay' });
     const g = within(steps).getByRole('link', { name: /3 · Ngữ pháp/ });
@@ -225,6 +227,11 @@ describe('HomePage', () => {
     expect(screen.getByRole('link', { name: 'Xem thư viện ngữ pháp' })).toHaveAttribute(
       'href',
       '/grammar',
+    );
+    expect(screen.getByText(/3 điểm ngữ pháp đến hạn ôn/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Ôn ngữ pháp' })).toHaveAttribute(
+      'href',
+      '/grammar/review',
     );
   });
 

@@ -49,9 +49,16 @@ export function GrammarLibraryPage() {
         <p className={lib.muted}>Chưa có điểm ngữ pháp nào.</p>
       ) : (
         <>
-          <p className={lib.count}>
-            Đã học {done}/{points.length} điểm ngữ pháp
-          </p>
+          <div className={styles.summaryRow}>
+            <p className={lib.count}>
+              Đã học {done}/{points.length} điểm ngữ pháp
+            </p>
+            {done > 0 && (
+              <Link to="/grammar/review" className={styles.reviewLink}>
+                Ôn ngữ pháp
+              </Link>
+            )}
+          </div>
           {LESSON_LEVELS.filter((level) => points.some((g) => g.level === level)).map((level) => (
             <section key={level} aria-labelledby={`level-${level}`} className={styles.level}>
               <h2 id={`level-${level}`} className={styles.h2}>

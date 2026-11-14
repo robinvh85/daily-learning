@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { ApiRequestError } from '../../src/api/errors';
 import * as g from '../../src/backend/grammarHandlers';
 import * as h from '../../src/backend/handlers';
+import { localDate } from '../../src/backend/logic/srs';
 import { newLearner, reopen, repoContent, type Learner } from './helpers';
 
 const learners: Learner[] = [];
@@ -178,6 +179,38 @@ describe('grammar', () => {
     const reloaded = await reopen(l);
     expect(reloaded.grammarProgress.get(SLUG)?.status).toBe('completed');
     reloaded.dispose();
+  });
+
+  it('schedules a completed point for review and reviews it from the exercise score', async () => {
+    const l = await learner(T0);
+    expect((await g.listGrammarReviews(l.ctx)).items).toEqual([]);
+    await g.updateGrammarProgress(l.ctx, SLUG, { step: 2, status: 'completed', score: 1 });
+    const card = l.store.grammarCards.get(SLUG)!;
+    expect(card.reps).toBe(1);
+    expect(card.due.getTime()).toBeGreaterThan(new Date(T0).getTime());
+    // Completing again does not reschedule.
+    await g.updateGrammarProgress(l.ctx, SLUG, { step: 2, status: 'completed', score: 0 });
+    expect(l.store.grammarCards.get(SLUG)?.reps).toBe(1);
+
+    expect((await g.listGrammarReviews(l.ctx)).nextDueAt).toBe(card.due.toISOString());
+    l.setNow(new Date(card.due.getTime() + 60_000));
+    const due = await g.listGrammarReviews(l.ctx);
+    expect(due.items.map((i) => i.point.slug)).toEqual([SLUG]);
+    expect(due.items[0]!.exercises).toHaveLength(3);
+    expect((await h.today(l.ctx)).grammarReviewsDue).toBe(1);
+
+    const r = await g.submitGrammarReview(l.ctx, SLUG, { correct: 0, total: 3 });
+    expect(r).toMatchObject({ slug: SLUG, rating: 1 });
+    expect((await g.listGrammarReviews(l.ctx)).items).toEqual([]);
+    await expectStatus(g.submitGrammarReview(l.ctx, SLUG, { correct: 4, total: 3 }), 400);
+    await expectStatus(
+      g.submitGrammarReview(l.ctx, 'past-simple-irregular', { correct: 1, total: 3 }),
+      404,
+    );
+    const logs = await getDocs(collection(l.db, 'users', l.uid, 'reviewLogs'));
+    expect(logs.docs.map((d) => d.data().grammar)).toEqual([SLUG, SLUG]);
+    // Grammar reviews are not counted as word reviews.
+    expect(l.store.activity.get(localDate(l.ctx.now()))?.reviewsDone).toBeUndefined();
   });
 
   it('sends the grammar marks with the lesson', async () => {

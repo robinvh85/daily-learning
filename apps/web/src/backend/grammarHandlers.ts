@@ -1,7 +1,8 @@
 /**
  * `/api/grammar/*` (grammar plan sections 3 and 5): the grammar library, one grammar point with
- * its exercises (answers stay here), answer checking and progress.
+ * its exercises (answers stay here), answer checking, progress and FSRS reviews (3.5).
  */
+import { GRAMMAR_REVIEW_EXERCISES } from '@daily-learning/shared/api';
 import type {
   GrammarAnswerBody,
   GrammarAnswerResponse,
@@ -11,8 +12,13 @@ import type {
   GrammarProgressBody,
   GrammarProgressDto,
   GrammarProgressResponse,
+  GrammarReviewBody,
+  GrammarReviewItemDto,
+  GrammarReviewResponse,
+  GrammarReviewsResponse,
   GrammarSummary,
 } from '@daily-learning/shared/api';
+import type { ReviewRating } from '@daily-learning/shared';
 import type {
   CatalogGrammarPoint,
   GrammarExerciseData,
@@ -21,6 +27,7 @@ import type {
 import { ApiRequestError } from '../api/errors';
 import type { BackendContext } from './handlers';
 import { normalizeDictation } from './logic/dailyPlan';
+import { newCardColumns, review } from './logic/srs';
 import type { ProgressDoc, UserStore } from './userStore';
 
 const GRAMMAR_STEPS = 3;
@@ -187,5 +194,98 @@ export async function updateGrammarProgress(
     updatedAt: t,
   };
   await ctx.store.saveGrammarProgress(slug, next);
+  // First completion: the point becomes an FSRS card, first scheduled from this attempt's score.
+  if (status === 'completed' && !ctx.store.grammarCards.has(slug)) {
+    const rating = ratingFromScore(next.score ?? 1);
+    await ctx.store.recordGrammarReview(slug, review(newCardColumns(t), rating, t));
+  }
   return { progress: toGrammarProgress(next)! };
+}
+
+// ---------------------------------------------------------------------------
+// Reviews (grammar plan 3.5)
+// ---------------------------------------------------------------------------
+
+/** All right = Easy, most = Good, some = Hard, none = Again. Pure, exported for tests. */
+export function ratingFromScore(score: number): ReviewRating {
+  if (score >= 1) return 4;
+  if (score >= 0.6) return 3;
+  if (score > 0) return 2;
+  return 1;
+}
+
+/**
+ * The exercises of a review: `GRAMMAR_REVIEW_EXERCISES` in a row, starting further on at each
+ * review (`reps`), so successive reviews do not repeat the same exercises. Pure, exported for tests.
+ */
+export function reviewExercises<T>(exercises: readonly T[], reps: number): T[] {
+  const n = exercises.length;
+  if (n <= GRAMMAR_REVIEW_EXERCISES) return [...exercises];
+  const start = (reps * GRAMMAR_REVIEW_EXERCISES) % n;
+  return Array.from({ length: GRAMMAR_REVIEW_EXERCISES }, (_, i) => exercises[(start + i) % n]!);
+}
+
+/** Completed points whose card is due now (count only, for Home). */
+export function grammarReviewsDue(store: UserStore, now: Date, known: ReadonlySet<string>): number {
+  let due = 0;
+  for (const [slug, c] of store.grammarCards) if (known.has(slug) && c.due <= now) due++;
+  return due;
+}
+
+export async function listGrammarReviews(ctx: BackendContext): Promise<GrammarReviewsResponse> {
+  const index = await ctx.content.catalog();
+  const now = ctx.now();
+  const due: [string, Date, number][] = [];
+  let nextDueAt: Date | null = null;
+  for (const [slug, c] of ctx.store.grammarCards) {
+    if (!index.grammarBySlug.has(slug)) continue;
+    if (c.due <= now) due.push([slug, c.due, c.reps]);
+    else if (!nextDueAt || c.due < nextDueAt) nextDueAt = c.due;
+  }
+  due.sort((a, b) => a[1].getTime() - b[1].getTime() || a[0].localeCompare(b[0]));
+  const items: GrammarReviewItemDto[] = [];
+  for (const [slug, at, reps] of due) {
+    const data = await ctx.content.grammar(slug);
+    if (!data) continue;
+    items.push({
+      point: grammarSummary(index.grammarBySlug.get(slug)!, ctx.store),
+      exercises: reviewExercises(data.exercises, reps).map(exerciseDto),
+      due: at.toISOString(),
+    });
+  }
+  return { items, nextDueAt: nextDueAt?.toISOString() ?? null };
+}
+
+export async function submitGrammarReview(
+  ctx: BackendContext,
+  slug: string,
+  body: GrammarReviewBody,
+): Promise<GrammarReviewResponse> {
+  await loadGrammar(ctx, slug);
+  const card = ctx.store.grammarCards.get(slug);
+  if (!card) throw new ApiRequestError(404, 'not_found', `No review card for "${slug}"`);
+  const { correct, total } = body;
+  if (
+    !Number.isInteger(total) ||
+    total < 1 ||
+    !Number.isInteger(correct) ||
+    correct < 0 ||
+    correct > total
+  ) {
+    throw new ApiRequestError(
+      400,
+      'bad_request',
+      'correct and total must be 0 ≤ correct ≤ total, total ≥ 1',
+    );
+  }
+  const t = ctx.now();
+  const rating = ratingFromScore(correct / total);
+  const result = review(card, rating, t);
+  await ctx.store.recordGrammarReview(slug, result);
+  return {
+    slug,
+    rating,
+    due: result.card.due.toISOString(),
+    scheduledDays: result.card.scheduledDays,
+  };
 }

@@ -415,6 +415,8 @@ export interface TodayResponse {
   steps: TodayStepDto[];
   /** Grammar points of earlier plan days that are not completed yet. */
   grammarBacklog: number;
+  /** Completed grammar points due for review. */
+  grammarReviewsDue: number;
   /** Minutes left for the steps that are not done. */
   estimatedMinutes: number;
   /** First unfinished step, or null when everything is done. */
@@ -598,4 +600,40 @@ export interface LessonGrammarPointDto {
   summary: string;
   /** First form pattern, as a one-line formula. */
   pattern: string | null;
+}
+
+// ---------------------------------------------------------------------------
+// Grammar reviews (FSRS, grammar plan 3.5): /api/grammar/reviews
+// ---------------------------------------------------------------------------
+
+/** Exercises per grammar review. */
+export const GRAMMAR_REVIEW_EXERCISES = 3;
+
+/** A completed grammar point that is due, with the exercises of this review. */
+export interface GrammarReviewItemDto {
+  point: GrammarSummary;
+  exercises: GrammarExerciseDto[];
+  due: string;
+}
+
+/** `GET /api/grammar/reviews`: due points, earliest first. */
+export interface GrammarReviewsResponse {
+  items: GrammarReviewItemDto[];
+  /** Earliest due date among cards not due yet (ISO 8601), or null. */
+  nextDueAt: string | null;
+}
+
+/** `POST /api/grammar/:slug/review`: the result of the review's exercises. */
+export interface GrammarReviewBody {
+  correct: number;
+  total: number;
+}
+
+export interface GrammarReviewResponse {
+  slug: string;
+  rating: ReviewRating;
+  /** Next review (ISO 8601). */
+  due: string;
+  /** Whole days until the next review (0 = again today). */
+  scheduledDays: number;
 }

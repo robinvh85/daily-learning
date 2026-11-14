@@ -2,7 +2,11 @@ import type { GrammarSummary } from '@daily-learning/shared/api';
 import type { GrammarExerciseData } from '@daily-learning/shared/content-data';
 import { describe, expect, it } from 'vitest';
 import { ApiRequestError } from '../../src/api/errors';
-import { checkGrammarAnswer } from '../../src/backend/grammarHandlers';
+import {
+  checkGrammarAnswer,
+  ratingFromScore,
+  reviewExercises,
+} from '../../src/backend/grammarHandlers';
 import { grammarStep } from '../../src/backend/logic/dailyPlan';
 
 const base = { id: 1, idx: 0, explain: 'x' };
@@ -65,6 +69,24 @@ describe('checkGrammarAnswer', () => {
       false,
     );
     expect(checkGrammarAnswer(findError, { value: 'watch' }).correct).toBe(false);
+  });
+});
+
+describe('grammar reviews', () => {
+  it('turns the share of right answers into a rating', () => {
+    expect(ratingFromScore(1)).toBe(4);
+    expect(ratingFromScore(2 / 3)).toBe(3);
+    expect(ratingFromScore(0.6)).toBe(3);
+    expect(ratingFromScore(1 / 3)).toBe(2);
+    expect(ratingFromScore(0)).toBe(1);
+  });
+
+  it('takes 3 exercises in a row, further on at each review, wrapping around', () => {
+    const all = [0, 1, 2, 3, 4, 5, 6, 7];
+    expect(reviewExercises(all, 0)).toEqual([0, 1, 2]);
+    expect(reviewExercises(all, 1)).toEqual([3, 4, 5]);
+    expect(reviewExercises(all, 2)).toEqual([6, 7, 0]);
+    expect(reviewExercises([0, 1], 5)).toEqual([0, 1]);
   });
 });
 

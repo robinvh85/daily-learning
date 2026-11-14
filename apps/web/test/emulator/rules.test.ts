@@ -89,6 +89,30 @@ describe('firestore.rules', () => {
     await denied(setDoc(ref, { status: 'in_progress', step: 1, updatedAt: 'now' }));
   });
 
+  it('validates grammar review cards', async () => {
+    const l = await learner();
+    const card = {
+      slug: 'past-simple-regular',
+      due: Timestamp.now(),
+      stability: 1,
+      difficulty: 5,
+      scheduledDays: 1,
+      learningSteps: 0,
+      reps: 1,
+      lapses: 0,
+      state: 2,
+      lastReview: null,
+    };
+    await setDoc(doc(l.db, 'users', l.uid, 'grammarCards', 'past-simple-regular'), card);
+    await denied(setDoc(doc(l.db, 'users', l.uid, 'grammarCards', 'other'), card));
+    await denied(
+      setDoc(doc(l.db, 'users', l.uid, 'grammarCards', 'past-simple-regular'), {
+        ...card,
+        state: 9,
+      }),
+    );
+  });
+
   it('validates the profile and saved word cards', async () => {
     const l = await learner();
     await denied(

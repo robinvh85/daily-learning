@@ -116,6 +116,12 @@ function TodayCard({ today }: { today: TodayResponse }) {
           </li>
         ))}
       </ol>
+      {today.grammarReviewsDue > 0 && (
+        <p className={styles.backlog}>
+          {today.grammarReviewsDue} điểm ngữ pháp đến hạn ôn.{' '}
+          <Link to="/grammar/review">Ôn ngữ pháp</Link>
+        </p>
+      )}
       {today.grammarBacklog > 0 && (
         <p className={styles.backlog}>
           Còn {today.grammarBacklog} điểm ngữ pháp của các ngày trước chưa học.{' '}

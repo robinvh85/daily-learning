@@ -38,7 +38,7 @@ import type { ReviewRating } from '@daily-learning/shared';
 import type { CatalogLesson, CatalogWord, LessonData } from '@daily-learning/shared/content-data';
 import { ApiRequestError } from '../api/errors';
 import type { ContentIndex, ContentStore } from './content';
-import { grammarSummary } from './grammarHandlers';
+import { grammarReviewsDue, grammarSummary } from './grammarHandlers';
 import {
   grammarStep,
   lessonStep,
@@ -577,6 +577,7 @@ export async function today(ctx: BackendContext): Promise<TodayResponse> {
     title,
     steps,
     grammarBacklog: backlog.size,
+    grammarReviewsDue: grammarReviewsDue(ctx.store, now, new Set(index.grammarBySlug.keys())),
     estimatedMinutes: open.reduce((n, s) => n + s.minutes, 0),
     continueUrl: open[0]?.url ?? null,
     allDone: open.length === 0,

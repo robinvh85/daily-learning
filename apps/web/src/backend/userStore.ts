@@ -6,12 +6,13 @@
  * | `users/{uid}`                         | profile: display name, level, daily goal       |
  * | `users/{uid}/lessonProgress/{slug}`   | status, step, score of a lesson                |
  * | `users/{uid}/grammarProgress/{slug}`  | status, step, score of a grammar point         |
+ * | `users/{uid}/grammarCards/{slug}`     | FSRS card of a completed grammar point         |
  * | `users/{uid}/words/{lemma}`           | a saved word and its FSRS card                 |
  * | `users/{uid}/dailyActivity/{date}`    | study seconds, lessons and reviews of a day    |
  * | `users/{uid}/answers/{auto}`          | every answer (write-only log)                  |
  * | `users/{uid}/reviewLogs/{auto}`       | every rating (write-only log)                  |
  *
- * The first five are small (one user) and kept in memory by snapshot listeners, so screens are
+ * The first six are small (one user) and kept in memory by snapshot listeners, so screens are
  * computed locally and a refetch costs no Firestore reads. Writes go through the same listeners
  * (Firestore applies local writes to them at once), so the next read sees them.
  *
@@ -99,6 +100,20 @@ function readProgress(d: DocumentData): ProgressDoc {
   };
 }
 
+function readCard(d: DocumentData): CardColumns {
+  return {
+    due: toDate(d.due) ?? new Date(0),
+    stability: num(d.stability),
+    difficulty: num(d.difficulty),
+    scheduledDays: num(d.scheduledDays),
+    learningSteps: num(d.learningSteps),
+    reps: num(d.reps),
+    lapses: num(d.lapses),
+    state: num(d.state),
+    lastReview: toDate(d.lastReview),
+  };
+}
+
 function readWord(d: DocumentData): SavedWordDoc {
   return {
     lemma: String(d.lemma),
@@ -151,6 +166,8 @@ export class UserStore {
   readonly progress = new Map<string, ProgressDoc>();
   /** Keyed by grammar point slug. */
   readonly grammarProgress = new Map<string, ProgressDoc>();
+  /** FSRS cards of completed grammar points, keyed by slug. */
+  readonly grammarCards = new Map<string, CardColumns>();
   /** Keyed by lemma. */
   readonly words = new Map<string, SavedWordDoc>();
   /** Keyed by local date `YYYY-MM-DD`. */
@@ -226,6 +243,15 @@ export class UserStore {
         for (const ch of snap.docChanges()) {
           if (ch.type === 'removed') this.grammarProgress.delete(ch.doc.id);
           else this.grammarProgress.set(ch.doc.id, readProgress(ch.doc.data()));
+        }
+      },
+    );
+    listen<QuerySnapshot>(
+      (next, err) => onSnapshot(query('grammarCards'), opts, next, err),
+      (snap) => {
+        for (const ch of snap.docChanges()) {
+          if (ch.type === 'removed') this.grammarCards.delete(ch.doc.id);
+          else this.grammarCards.set(ch.doc.id, readCard(ch.doc.data()));
         }
       },
     );
@@ -323,6 +349,28 @@ export class UserStore {
       completedAt: ts(p.completedAt),
       updatedAt: Timestamp.fromDate(p.updatedAt),
     });
+  }
+
+  /**
+   * Apply a grammar review (or the first schedule when a point is completed): new card state and
+   * a review log, atomically. Not counted in today's word reviews.
+   */
+  async recordGrammarReview(slug: string, result: ReviewResult): Promise<void> {
+    const batch = writeBatch(this.db);
+    batch.set(this.ref('grammarCards', slug), { slug, ...cardFields(result.card) });
+    const log = result.log;
+    batch.set(doc(collection(this.db, 'users', this.uid, 'reviewLogs')), {
+      grammar: slug,
+      rating: log.rating,
+      reviewedAt: Timestamp.fromDate(log.reviewedAt),
+      elapsedDays: log.elapsedDays,
+      state: log.state,
+      stability: log.stability,
+      difficulty: log.difficulty,
+      scheduledDays: log.scheduledDays,
+      due: Timestamp.fromDate(log.due),
+    });
+    await batch.commit();
   }
 
   /** Log a grammar exercise answer (same `answers` log as lesson questions). */

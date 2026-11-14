@@ -10,6 +10,9 @@ import type {
   GrammarListResponse,
   GrammarProgressBody,
   GrammarProgressResponse,
+  GrammarReviewBody,
+  GrammarReviewResponse,
+  GrammarReviewsResponse,
   LessonDetailResponse,
   LessonListQuery,
   LessonListResponse,
@@ -43,6 +46,7 @@ export const queryKeys = {
   reviewCard: (wordId: number | null) => ['reviews', 'card', wordId] as const,
   grammarList: ['grammar', 'list'] as const,
   grammar: (slug: string) => ['grammar', 'point', slug] as const,
+  grammarReviews: ['grammar', 'reviews'] as const,
   today: ['home', 'today'] as const,
   dashboard: ['home', 'dashboard'] as const,
 };
@@ -285,6 +289,35 @@ export function useUpdateGrammarProgress(slug: string) {
       }),
     onSuccess: () => {
       void qc.invalidateQueries({ queryKey: queryKeys.grammarList });
+      // Completing a point creates its review card.
+      void qc.invalidateQueries({ queryKey: queryKeys.grammarReviews });
+      void qc.invalidateQueries({ queryKey: ['home'] });
+    },
+  });
+}
+
+/**
+ * Due grammar reviews. Not refetched while the review page is open, so the queue does not
+ * change under the learner; the page refetches when the queue is done.
+ */
+export function useGrammarReviews() {
+  return useQuery({
+    queryKey: queryKeys.grammarReviews,
+    queryFn: ({ signal }) => api<GrammarReviewsResponse>('/grammar/reviews', { signal }),
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+  });
+}
+
+export function useSubmitGrammarReview() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (v: { slug: string } & GrammarReviewBody) =>
+      api<GrammarReviewResponse>(`/grammar/${encodeURIComponent(v.slug)}/review`, {
+        method: 'POST',
+        body: { correct: v.correct, total: v.total },
+      }),
+    onSuccess: () => {
       void qc.invalidateQueries({ queryKey: ['home'] });
     },
   });
