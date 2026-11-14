@@ -1,6 +1,8 @@
 /** Dispatch an `/api/*` path (without the prefix) to its handler. */
 import type {
   AnswerBody,
+  GrammarAnswerBody,
+  GrammarProgressBody,
   MeResponse,
   ProgressBody,
   ReviewBody,
@@ -10,6 +12,7 @@ import type {
 import type { LessonKind, LessonLevel } from '@daily-learning/shared';
 import { ApiRequestError } from '../api/errors';
 import type { ApiInit } from '../api/client';
+import * as g from './grammarHandlers';
 import * as h from './handlers';
 
 export interface RouterDeps {
@@ -109,6 +112,21 @@ const routes: [method: string, pattern: RegExp, handler: Handler][] = [
     'POST',
     /^\/reviews\/(\d+)$/,
     async (m, _q, b, d) => h.submitReview(await d.context(), id(m[1]), body<ReviewBody>(b).rating),
+  ],
+
+  ['GET', /^\/grammar$/, async (_m, _q, _b, d) => g.listGrammar(await d.context())],
+  ['GET', /^\/grammar\/([^/]+)$/, async (m, _q, _b, d) => g.getGrammar(await d.context(), m[1]!)],
+  [
+    'POST',
+    /^\/grammar\/([^/]+)\/answers$/,
+    async (m, _q, b, d) =>
+      g.submitGrammarAnswer(await d.context(), m[1]!, body<GrammarAnswerBody>(b)),
+  ],
+  [
+    'POST',
+    /^\/grammar\/([^/]+)\/progress$/,
+    async (m, _q, b, d) =>
+      g.updateGrammarProgress(await d.context(), m[1]!, body<GrammarProgressBody>(b)),
   ],
 
   ['GET', /^\/today$/, async (_m, _q, _b, d) => h.today(await d.context())],

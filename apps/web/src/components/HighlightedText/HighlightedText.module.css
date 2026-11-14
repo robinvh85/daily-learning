@@ -1,0 +1,7 @@
+.mark {
+  background: var(--color-violet-tint);
+  color: var(--color-violet);
+  font-weight: 700;
+  padding: 0 2px;
+  border-radius: 3px;
+}

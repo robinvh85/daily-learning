@@ -5,12 +5,13 @@
  * | ------------------------------------- | ---------------------------------------------- |
  * | `users/{uid}`                         | profile: display name, level, daily goal       |
  * | `users/{uid}/lessonProgress/{slug}`   | status, step, score of a lesson                |
+ * | `users/{uid}/grammarProgress/{slug}`  | status, step, score of a grammar point         |
  * | `users/{uid}/words/{lemma}`           | a saved word and its FSRS card                 |
  * | `users/{uid}/dailyActivity/{date}`    | study seconds, lessons and reviews of a day    |
  * | `users/{uid}/answers/{auto}`          | every answer (write-only log)                  |
  * | `users/{uid}/reviewLogs/{auto}`       | every rating (write-only log)                  |
  *
- * The first four are small (one user) and kept in memory by snapshot listeners, so screens are
+ * The first five are small (one user) and kept in memory by snapshot listeners, so screens are
  * computed locally and a refetch costs no Firestore reads. Writes go through the same listeners
  * (Firestore applies local writes to them at once), so the next read sees them.
  *
@@ -148,6 +149,8 @@ export class UserStore {
   profileExists = false;
   private profileKnown = false;
   readonly progress = new Map<string, ProgressDoc>();
+  /** Keyed by grammar point slug. */
+  readonly grammarProgress = new Map<string, ProgressDoc>();
   /** Keyed by lemma. */
   readonly words = new Map<string, SavedWordDoc>();
   /** Keyed by local date `YYYY-MM-DD`. */
@@ -214,6 +217,15 @@ export class UserStore {
         for (const ch of snap.docChanges()) {
           if (ch.type === 'removed') this.progress.delete(ch.doc.id);
           else this.progress.set(ch.doc.id, readProgress(ch.doc.data()));
+        }
+      },
+    );
+    listen<QuerySnapshot>(
+      (next, err) => onSnapshot(query('grammarProgress'), opts, next, err),
+      (snap) => {
+        for (const ch of snap.docChanges()) {
+          if (ch.type === 'removed') this.grammarProgress.delete(ch.doc.id);
+          else this.grammarProgress.set(ch.doc.id, readProgress(ch.doc.data()));
         }
       },
     );
@@ -300,6 +312,34 @@ export class UserStore {
       );
     }
     await batch.commit();
+  }
+
+  /** Save the progress of a grammar point (not counted as a lesson for today). */
+  async saveGrammarProgress(slug: string, p: ProgressDoc): Promise<void> {
+    await setDoc(this.ref('grammarProgress', slug), {
+      status: p.status,
+      step: p.step,
+      score: p.score,
+      completedAt: ts(p.completedAt),
+      updatedAt: Timestamp.fromDate(p.updatedAt),
+    });
+  }
+
+  /** Log a grammar exercise answer (same `answers` log as lesson questions). */
+  async addGrammarAnswer(a: {
+    grammar: string;
+    exercise: number;
+    value: string;
+    correct: boolean;
+    at: Date;
+  }): Promise<void> {
+    await addDoc(collection(this.db, 'users', this.uid, 'answers'), {
+      grammar: a.grammar,
+      exercise: a.exercise,
+      value: a.value,
+      correct: a.correct,
+      answeredAt: Timestamp.fromDate(a.at),
+    });
   }
 
   async saveWord(w: SavedWordDoc): Promise<void> {

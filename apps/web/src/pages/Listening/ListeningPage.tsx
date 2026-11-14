@@ -22,11 +22,13 @@ import {
 } from '../../api/hooks';
 import { AudioPlayer } from '../../components/AudioPlayer/AudioPlayer';
 import { Dictation } from '../../components/Dictation/Dictation';
+import { GrammarCard } from '../../components/GrammarCard/GrammarCard';
 import { Quiz, type QuizAnswer } from '../../components/Quiz/Quiz';
 import { TokenizedText } from '../../components/TokenizedText/TokenizedText';
 import { WordCard } from '../../components/WordCard/WordCard';
 import { timedSegments, useAudioPlayer } from '../../hooks/useAudioPlayer';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { useLessonGrammar } from '../../hooks/useLessonGrammar';
 import { usePlayerShortcuts } from '../../hooks/usePlayerShortcuts';
 import { formatTime } from '../../lib/time';
 import styles from './ListeningPage.module.css';
@@ -103,6 +105,7 @@ function ListeningLesson({ slug, data }: { slug: string; data: LessonDetailRespo
   usePlayerShortcuts(player, { enabled: hasAudio, segments: hasTimings });
   const segIndex = useMemo(() => new Map(segments.map((s, i) => [s.id, i])), [segments]);
   const playingIdx = hasTimings && (player.playing || player.currentMs > 0) ? player.current : -1;
+  const grammar = useLessonGrammar(data);
 
   /** Steps: 0 listen, 1 dictation checked, 2 comprehension answered → completed. */
   function report() {
@@ -147,7 +150,8 @@ function ListeningLesson({ slug, data }: { slug: string; data: LessonDetailRespo
     );
   }
 
-  function selectToken(t: TokenDto) {
+  function selectToken(t: TokenDto, s: SegmentDto) {
+    if (!grammar.openAt(s, t)) grammar.close();
     setSelection({ wordId: t.wordId, senseId: t.senseId, surface: t.surface });
   }
 
@@ -235,6 +239,19 @@ function ListeningLesson({ slug, data }: { slug: string; data: LessonDetailRespo
                   Song ngữ
                 </button>
               )}
+              {showTranscript && grammar.available && (
+                <button
+                  type="button"
+                  className={
+                    grammar.on ? `${styles.toggle} ${styles.toggleGrammar}` : styles.toggle
+                  }
+                  aria-pressed={grammar.on}
+                  title={grammar.points.map((p) => p.title).join(', ')}
+                  onClick={grammar.toggle}
+                >
+                  Ngữ pháp
+                </button>
+              )}
               <button
                 type="button"
                 className={styles.toggle}
@@ -257,7 +274,8 @@ function ListeningLesson({ slug, data }: { slug: string; data: LessonDetailRespo
                   showVi={showVi}
                   focusIds={focusIds}
                   selectedWordId={selection?.wordId ?? null}
-                  onSelect={selectToken}
+                  grammarRanges={grammar.ranges.get(s.id)}
+                  onSelect={(t) => selectToken(t, s)}
                   onSeek={() => player.seekSegment(i)}
                   onClick={(e) => onRowClick(e, i)}
                 />
@@ -274,6 +292,14 @@ function ListeningLesson({ slug, data }: { slug: string; data: LessonDetailRespo
         </section>
 
         <div className={styles.side}>
+          {showTranscript && grammar.open && (
+            <GrammarCard
+              point={grammar.open.point}
+              quote={grammar.open.quote}
+              notes={grammar.open.mark.notes}
+              onClose={grammar.close}
+            />
+          )}
           {selectedWord && (
             <WordCard
               word={selectedWord}
@@ -363,6 +389,7 @@ interface TranscriptLineProps {
   showVi: boolean;
   focusIds: ReadonlySet<number>;
   selectedWordId: number | null;
+  grammarRanges: readonly (readonly [number, number])[] | undefined;
   onSelect: (t: TokenDto) => void;
   onSeek: () => void;
   onClick: (e: MouseEvent<HTMLLIElement>) => void;
@@ -375,6 +402,7 @@ function TranscriptLine({
   showVi,
   focusIds,
   selectedWordId,
+  grammarRanges,
   onSelect,
   onSeek,
   onClick,
@@ -412,6 +440,7 @@ function TranscriptLine({
             tokens={s.tokens}
             focusWordIds={focusIds}
             selectedWordId={selectedWordId}
+            grammarRanges={grammarRanges}
             onSelect={onSelect}
           />
         </span>

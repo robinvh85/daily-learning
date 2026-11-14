@@ -104,6 +104,12 @@
   background: var(--color-blue-tint);
 }
 
+.toolGrammar {
+  background: var(--color-violet-tint);
+  border-color: var(--color-violet);
+  color: var(--color-violet);
+}
+
 .listen {
   display: flex;
   align-items: center;

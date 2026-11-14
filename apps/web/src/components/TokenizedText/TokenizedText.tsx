@@ -13,6 +13,8 @@ export interface TokenizedTextProps {
   /** Word ids of the lesson's focus words. */
   focusWordIds?: ReadonlySet<number>;
   selectedWordId?: number | null;
+  /** Parts of the text that show a grammar point (`[start, end)`): their words are underlined. */
+  grammarRanges?: readonly (readonly [number, number])[];
   onSelect?: (token: TokenDto) => void;
 }
 
@@ -21,6 +23,7 @@ export function TokenizedText({
   tokens,
   focusWordIds,
   selectedWordId = null,
+  grammarRanges,
   onSelect,
 }: TokenizedTextProps) {
   const parts: ReactNode[] = [];
@@ -31,7 +34,13 @@ export function TokenizedText({
     if (t.start > pos) parts.push(text.slice(pos, t.start));
     const focus = focusWordIds?.has(t.wordId) ?? false;
     const selected = t.wordId === selectedWordId;
-    const className = [styles.word, focus && styles.focus, selected && styles.selected]
+    const grammar = grammarRanges?.some(([s, e]) => t.start < e && t.end > s) ?? false;
+    const className = [
+      styles.word,
+      focus && styles.focus,
+      grammar && styles.grammar,
+      selected && styles.selected,
+    ]
       .filter(Boolean)
       .join(' ');
     parts.push(

@@ -13,6 +13,7 @@ import {
   LESSON_PROGRESS_STATUSES,
   WORD_STATUSES,
   type CefrLevel,
+  type GrammarGroup,
   type LessonKind,
   type LessonLevel,
   type LessonProgressStatus,
@@ -180,6 +181,12 @@ export interface LessonDetailResponse {
    * `segments[].startMs/endMs`.
    */
   peaks: number[] | null;
+  /** Sentences marked with a grammar point (underlined when "Ngữ pháp trong bài" is on). */
+  grammar: LessonGrammarMarkDto[];
+  /** The grammar points used by `grammar`, keyed by slug. */
+  grammarPoints: Record<string, LessonGrammarPointDto>;
+  /** Grammar point of the plan day this lesson belongs to, or null. */
+  dayGrammar: string | null;
 }
 
 /** `POST /api/lessons/:slug/answers` */
@@ -380,7 +387,7 @@ export type TodayStepStatus = (typeof TODAY_STEP_STATUSES)[number];
 export type TodaySource = 'plan' | 'fallback' | 'finished';
 
 export interface TodayStepDto {
-  kind: 'reading' | 'listening' | 'reviews';
+  kind: 'reading' | 'listening' | 'grammar' | 'reviews';
   status: TodayStepStatus;
   /** 0..100 */
   progressPct: number;
@@ -392,6 +399,8 @@ export interface TodayStepDto {
   lesson: LessonSummary | null;
   /** Reviews step only. */
   reviews: ReviewCountsDto | null;
+  /** Grammar step only. Optional: it never holds the next plan day back. */
+  grammar: GrammarSummary | null;
 }
 
 /** `GET /api/today` */
@@ -402,8 +411,10 @@ export interface TodayResponse {
   /** Day N of the learning path (null when `finished`). */
   day: number | null;
   title: string;
-  /** Reading, listening (when the day has them) and reviews, in this order. */
+  /** Reading, listening, grammar (when the day has them) and reviews, in this order. */
   steps: TodayStepDto[];
+  /** Grammar points of earlier plan days that are not completed yet. */
+  grammarBacklog: number;
   /** Minutes left for the steps that are not done. */
   estimatedMinutes: number;
   /** First unfinished step, or null when everything is done. */
@@ -473,4 +484,118 @@ export interface DashboardResponse {
     /** Monday → Sunday. */
     days: WeekDayDto[];
   };
+}
+
+// ---------------------------------------------------------------------------
+// Grammar: /api/grammar (grammar plan sections 3 and 5)
+// ---------------------------------------------------------------------------
+
+export interface GrammarProgressDto {
+  status: LessonProgressStatus;
+  /** Current step: 0 Nhận ra, 1 Quy tắc, 2 Luyện tập. */
+  step: number;
+  /** Share of correct exercises in the last full attempt, 0..1. */
+  score: number | null;
+  completedAt: string | null;
+}
+
+export interface GrammarSummary {
+  id: number;
+  slug: string;
+  title: string;
+  titleEn: string;
+  level: LessonLevel;
+  group: GrammarGroup;
+  summary: string;
+  /** Content not reviewed yet (`status: draft`). */
+  draft: boolean;
+  exerciseCount: number;
+  /** Plan days that teach this point. */
+  days: number[];
+  progress: GrammarProgressDto | null;
+}
+
+/** `GET /api/grammar` (library order: level, first plan day, title). */
+export interface GrammarListResponse {
+  points: GrammarSummary[];
+}
+
+/** A lesson sentence that shows the point; `ranges` are the parts to underline. */
+export interface GrammarExampleDto {
+  source: 'day' | 'pinned' | 'other';
+  lessonSlug: string;
+  lessonKind: LessonKind;
+  lessonTitle: string;
+  segmentKey: string;
+  textEn: string;
+  textVi: string | null;
+  ranges: [number, number][];
+  notes: string[];
+}
+
+interface GrammarExerciseDtoBase {
+  id: number;
+  idx: number;
+}
+
+/** An exercise without its answer (checked by `POST /api/grammar/:slug/answers`). */
+export type GrammarExerciseDto =
+  | (GrammarExerciseDtoBase & { type: 'choice'; prompt: string; options: string[] })
+  | (GrammarExerciseDtoBase & { type: 'gap'; prompt: string })
+  | (GrammarExerciseDtoBase & { type: 'order'; words: string[] })
+  | (GrammarExerciseDtoBase & { type: 'find_error'; sentence: string });
+
+/** `GET /api/grammar/:slug` */
+export interface GrammarDetailResponse {
+  point: GrammarSummary;
+  discover: { question: string; answer: string; examples: GrammarExampleDto[] };
+  form: { label: string; pattern: string; example: string }[];
+  usage: string[];
+  signals: string[];
+  spelling: string[];
+  mistakes: { wrong: string; right: string; why: string }[];
+  exercises: GrammarExerciseDto[];
+}
+
+/**
+ * `POST /api/grammar/:slug/answers`. `value`: option index (choice), typed text (gap), the
+ * built sentence (order), or the part picked as wrong (find_error, with `correction`).
+ */
+export interface GrammarAnswerBody {
+  exerciseId: number;
+  value: number | string;
+  /** find_error only: what the picked part should be. */
+  correction?: string;
+}
+
+export interface GrammarAnswerResponse {
+  correct: boolean;
+  /** The right answer, as it should be shown ("watch → watched" for find_error). */
+  expected: string;
+  explain: string;
+}
+
+/** `POST /api/grammar/:slug/progress` */
+export type GrammarProgressBody = ProgressBody;
+
+export interface GrammarProgressResponse {
+  progress: GrammarProgressDto;
+}
+
+/** Grammar marks of a lesson sentence, sent with the lesson (`LessonDetailResponse.grammar`). */
+export interface LessonGrammarMarkDto {
+  segmentId: number;
+  point: string;
+  ranges: [number, number][];
+  notes: string[];
+}
+
+/** A grammar point used by a lesson, for the grammar card. */
+export interface LessonGrammarPointDto {
+  slug: string;
+  title: string;
+  titleEn: string;
+  summary: string;
+  /** First form pattern, as a one-line formula. */
+  pattern: string | null;
 }

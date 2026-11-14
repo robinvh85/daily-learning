@@ -51,6 +51,13 @@ export const CardsIcon = (p: IconProps) => (
   </Svg>
 );
 
+export const GrammarIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M8 4H7a2 2 0 0 0-2 2v4l-2 2 2 2v4a2 2 0 0 0 2 2h1" />
+    <path d="M16 4h1a2 2 0 0 1 2 2v4l2 2-2 2v4a2 2 0 0 1-2 2h-1" />
+  </Svg>
+);
+
 export const MicIcon = (p: IconProps) => (
   <Svg {...p}>
     <rect x="9" y="3" width="6" height="11" rx="3" />

@@ -189,6 +189,16 @@
   color: var(--color-orange);
 }
 
+.step[data-kind='grammar'] .stepTop {
+  color: var(--color-violet);
+}
+
+.backlog {
+  margin: 14px 0 0;
+  font-size: var(--fs-md);
+  color: var(--color-ink-soft);
+}
+
 .step[data-kind='reviews'] .stepTop {
   color: var(--color-green);
 }

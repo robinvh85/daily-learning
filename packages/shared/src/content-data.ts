@@ -45,6 +45,8 @@ export interface CatalogGrammarPoint {
   summary: string;
   status: WordStatus;
   exerciseCount: number;
+  /** First form pattern (`S + V-ed`), shown as a one-line formula in the grammar card. */
+  pattern: string | null;
   /** Plan days that teach this point (usually one). */
   days: number[];
   /** Slugs of the lessons that have a sentence marked with this point, in library order. */

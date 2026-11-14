@@ -38,7 +38,9 @@ import type { ReviewRating } from '@daily-learning/shared';
 import type { CatalogLesson, CatalogWord, LessonData } from '@daily-learning/shared/content-data';
 import { ApiRequestError } from '../api/errors';
 import type { ContentIndex, ContentStore } from './content';
+import { grammarSummary } from './grammarHandlers';
 import {
+  grammarStep,
   lessonStep,
   normalizeDictation,
   pickToday,
@@ -199,6 +201,39 @@ export async function getLesson(ctx: BackendContext, slug: string): Promise<Less
       afterText,
     })),
     peaks: data.peaks,
+    ...lessonGrammar(index, slug, data),
+  };
+}
+
+/** Grammar marks of a lesson, the points they use and the grammar point of its plan day. */
+function lessonGrammar(
+  index: ContentIndex,
+  slug: string,
+  data: LessonData,
+): Pick<LessonDetailResponse, 'grammar' | 'grammarPoints' | 'dayGrammar'> {
+  // Older content files have no grammar marks.
+  const marks = (data.grammar ?? []).filter((m) => index.grammarBySlug.has(m.point));
+  const grammarPoints: LessonDetailResponse['grammarPoints'] = {};
+  for (const m of marks) {
+    const g = index.grammarBySlug.get(m.point)!;
+    grammarPoints[g.slug] ??= {
+      slug: g.slug,
+      title: g.title,
+      titleEn: g.titleEn,
+      summary: g.summary,
+      pattern: g.pattern,
+    };
+  }
+  const day = index.planDayByLesson.get(slug)?.grammar ?? null;
+  return {
+    grammar: marks.map((m) => ({
+      segmentId: m.segmentId,
+      point: m.point,
+      ranges: m.ranges,
+      notes: m.notes,
+    })),
+    grammarPoints,
+    dayGrammar: day && index.grammarBySlug.has(day) ? day : null,
   };
 }
 
@@ -513,7 +548,20 @@ export async function today(ctx: BackendContext): Promise<TodayResponse> {
       if (l) steps.push(lessonStep(summary(l, ctx.store)));
     }
   }
+  const planDay =
+    pick.source === 'plan' ? index.catalog.plan.find((d) => d.day === pick.day) : undefined;
+  const dayGrammar = planDay?.grammar ? index.grammarBySlug.get(planDay.grammar) : undefined;
+  if (dayGrammar) steps.push(grammarStep(grammarSummary(dayGrammar, ctx.store)));
   steps.push(reviewStep(reviewCounts(ctx.store, now)));
+
+  // Grammar points of the plan days before today's day that are not completed (optional steps
+  // that were skipped, or days finished before grammar existed).
+  const currentDay = pick.source === 'finished' ? Number.MAX_SAFE_INTEGER : pick.day;
+  const backlog = new Set<string>();
+  for (const d of index.catalog.plan) {
+    if (d.day >= currentDay || !d.grammar || !index.grammarBySlug.has(d.grammar)) continue;
+    if (ctx.store.grammarProgress.get(d.grammar)?.status !== 'completed') backlog.add(d.grammar);
+  }
 
   const open = steps.filter((s) => s.status !== 'done');
   const title =
@@ -528,6 +576,7 @@ export async function today(ctx: BackendContext): Promise<TodayResponse> {
     day: pick.source === 'finished' ? null : pick.day,
     title,
     steps,
+    grammarBacklog: backlog.size,
     estimatedMinutes: open.reduce((n, s) => n + s.minutes, 0),
     continueUrl: open[0]?.url ?? null,
     allDone: open.length === 0,

@@ -79,6 +79,9 @@ const baseLesson: LessonDetailResponse = {
   ],
   dictation: [],
   peaks: null,
+  grammar: [],
+  grammarPoints: {},
+  dayGrammar: null,
 };
 
 let lesson: LessonDetailResponse;
@@ -314,6 +317,91 @@ describe('ReadingPage with narrator audio', () => {
     await screen.findByRole('button', { name: 'Nghe bài đọc' });
     expect(screen.queryByRole('button', { name: 'Câu sau' })).toBeNull();
     expect(screen.queryByRole('button', { name: 'Câu trước' })).toBeNull();
+  });
+});
+
+describe('ReadingPage grammar marks', () => {
+  const withGrammar = (dayGrammar: string | null): LessonDetailResponse => ({
+    ...baseLesson,
+    grammar: [
+      { segmentId: 11, point: 'present-simple', ranges: [[4, 9]], notes: ['She → wants.'] },
+      { segmentId: 11, point: 'infinitive', ranges: [[10, 16]], notes: [] },
+    ],
+    grammarPoints: {
+      'present-simple': {
+        slug: 'present-simple',
+        title: 'Hiện tại đơn',
+        titleEn: 'Present simple',
+        summary: 'Thói quen.',
+        pattern: 'he / she / it + V-s',
+      },
+      infinitive: {
+        slug: 'infinitive',
+        title: 'Động từ + to V',
+        titleEn: 'Verb + to-infinitive',
+        summary: 'want to do.',
+        pattern: null,
+      },
+    },
+    dayGrammar,
+  });
+
+  it("underlines the day's point, opens the grammar card and can be turned off", async () => {
+    lesson = withGrammar('present-simple');
+    const user = userEvent.setup();
+    renderPage();
+    const toggle = await screen.findByRole('button', { name: 'Ngữ pháp' });
+    expect(toggle).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByText(/Chữ tím là ví dụ của điểm ngữ pháp/)).toBeInTheDocument();
+    const sentenceEl = screen.getByTestId('sentence-p1s1');
+    const wants = within(sentenceEl).getByRole('button', { name: 'wants' });
+    // Only the day's point is underlined ("run" belongs to another point).
+    expect(wants.className).toMatch(/grammar/);
+    expect(within(sentenceEl).getByRole('button', { name: 'run' }).className).not.toMatch(
+      /grammar/,
+    );
+
+    await user.click(wants);
+    const card = screen.getByRole('region', { name: 'Hiện tại đơn' });
+    expect(within(card).getByText('“wants”')).toBeInTheDocument();
+    expect(within(card).getByText('She → wants.')).toBeInTheDocument();
+    expect(within(card).getByRole('link', { name: 'Học điểm này' })).toHaveAttribute(
+      'href',
+      '/grammar/present-simple',
+    );
+    // The word card still follows the click.
+    expect(
+      within(screen.getByRole('region', { name: 'Từ đang chọn' })).getByRole('heading', {
+        name: 'want',
+      }),
+    ).toBeInTheDocument();
+    await expectNoAxeViolations();
+
+    await user.click(screen.getByRole('button', { name: 'She' }));
+    expect(screen.queryByRole('region', { name: 'Hiện tại đơn' })).toBeNull();
+
+    await user.click(toggle);
+    expect(toggle).toHaveAttribute('aria-pressed', 'false');
+    expect(within(sentenceEl).getByRole('button', { name: 'wants' }).className).not.toMatch(
+      /grammar/,
+    );
+  });
+
+  it('shows every point, off by default, outside the plan, and no toggle without marks', async () => {
+    lesson = withGrammar(null);
+    const user = userEvent.setup();
+    const { unmount } = renderPage();
+    const toggle = await screen.findByRole('button', { name: 'Ngữ pháp' });
+    expect(toggle).toHaveAttribute('aria-pressed', 'false');
+    await user.click(toggle);
+    const sentenceEl = screen.getByTestId('sentence-p1s1');
+    expect(within(sentenceEl).getByRole('button', { name: 'run' }).className).toMatch(/grammar/);
+    unmount();
+
+    lesson = baseLesson;
+    renderPage();
+    await screen.findByRole('heading', { name: 'A New Coffee Shop' });
+    expect(screen.queryByRole('button', { name: 'Ngữ pháp' })).toBeNull();
   });
 });
 

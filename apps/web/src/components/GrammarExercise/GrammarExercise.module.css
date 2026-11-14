@@ -1,0 +1,256 @@
+.exercise {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  margin: 0;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.legend {
+  padding: 0 6px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.n {
+  color: var(--color-ink);
+}
+
+.prompt {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.blank {
+  display: inline-block;
+  min-width: 64px;
+  border-bottom: 2px solid var(--color-violet);
+  color: var(--color-violet);
+  text-align: center;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.option,
+.chip,
+.chipPicked {
+  min-height: var(--touch);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--fs-base);
+  cursor: pointer;
+}
+
+.option {
+  text-align: left;
+}
+
+.option:hover:not(:disabled),
+.chip:hover:not(:disabled) {
+  border-color: var(--color-blue-light);
+}
+
+.option:disabled,
+.chip:disabled,
+.chipPicked:disabled {
+  cursor: default;
+}
+
+.right,
+.right:disabled {
+  border-color: var(--color-green);
+  background: var(--color-green-tint);
+}
+
+.bad,
+.bad:disabled {
+  border-color: var(--color-red);
+  background: var(--color-red-tint);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.input {
+  min-height: 40px;
+  min-width: 140px;
+  max-width: 100%;
+  margin: 0 4px;
+  padding: 4px 10px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 17px;
+  color: var(--color-ink);
+  background: var(--color-surface);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-violet);
+  box-shadow: var(--focus-ring);
+}
+
+.check,
+.secondary {
+  min-height: var(--touch);
+  padding: 0 18px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.check {
+  border: none;
+  background: var(--color-blue);
+  color: #fff;
+}
+
+.check:hover:not(:disabled) {
+  background: var(--color-blue-hover);
+}
+
+.secondary {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.check:disabled,
+.secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.orderBox,
+.findBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answerLine {
+  min-height: 56px;
+  padding: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-blue-wash);
+}
+
+.placeholder {
+  padding: 0 8px;
+  color: var(--color-muted);
+  font-size: var(--fs-md);
+}
+
+.chipPicked {
+  border-color: var(--color-violet);
+  background: var(--color-violet-tint);
+}
+
+.bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Inline word buttons; exempt from the 44px rule (WCAG 2.5.8 inline target). */
+.word {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0 2px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  line-height: inherit;
+}
+
+.word:hover:not(:disabled) {
+  background: var(--color-blue-tint);
+}
+
+.word:disabled {
+  cursor: default;
+}
+
+.wordOn,
+.wordOn:disabled {
+  background: var(--color-red-tint);
+  border-bottom-color: var(--color-red);
+}
+
+.fixLabel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.ok,
+.wrong {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+}
+
+.ok {
+  background: var(--color-green-tint);
+}
+
+.wrong {
+  background: var(--color-red-tint);
+}
+
+.verdict {
+  margin: 0;
+  font-weight: 700;
+  font-size: var(--fs-md);
+}
+
+.ok .verdict {
+  color: var(--color-green);
+}
+
+.wrong .verdict {
+  color: var(--color-red);
+}
+
+.explain {
+  margin: 4px 0 0;
+  font-size: var(--fs-md);
+  color: var(--color-ink-soft);
+}

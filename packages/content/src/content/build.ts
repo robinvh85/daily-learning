@@ -292,6 +292,7 @@ export function buildContentData(bundle: ContentBundle): BuiltContent {
       summary: point.summary,
       status: point.status,
       exerciseCount: point.exercises.length,
+      pattern: point.form[0]?.pattern ?? null,
       days: days.map((d) => d.day).sort((a, b) => a - b),
       lessons: [...new Set(own.map((m) => m.lesson.slug))],
     });

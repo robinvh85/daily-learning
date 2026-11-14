@@ -136,6 +136,12 @@
   background: var(--color-blue-tint);
 }
 
+.toggleGrammar {
+  background: var(--color-violet-tint);
+  border-color: var(--color-violet);
+  color: var(--color-violet);
+}
+
 .hidden {
   background: var(--color-ground);
   border-radius: 12px;

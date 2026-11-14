@@ -36,6 +36,25 @@ export function cambridgeUrl(lemma: string): string {
   return `https://dictionary.cambridge.org/us/dictionary/english/${encodeURIComponent(slug)}`;
 }
 
+const GRAMMAR_GROUP_VI: Record<string, string> = {
+  tenses: 'Thì',
+  modals: 'Động từ khuyết thiếu',
+  comparison: 'So sánh',
+  nouns: 'Danh từ và lượng từ',
+  'verb-patterns': 'Mẫu động từ',
+  sentence: 'Câu và liên từ',
+  review: 'Ôn tập',
+};
+
+export function grammarGroupLabel(group: string): string {
+  return GRAMMAR_GROUP_VI[group] ?? group;
+}
+
+/** Route of a grammar point page. */
+export function grammarHref(slug: string): string {
+  return `/grammar/${slug}`;
+}
+
 /** Route of a lesson page. */
 export function lessonHref(l: { kind: 'reading' | 'listening'; slug: string }): string {
   return `${l.kind === 'reading' ? '/read' : '/listen'}/${l.slug}`;

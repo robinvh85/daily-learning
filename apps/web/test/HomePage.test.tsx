@@ -54,6 +54,7 @@ const today: TodayResponse = {
       url: '/read/a-new-coffee-shop',
       lesson: reading,
       reviews: null,
+      grammar: null,
     },
     {
       kind: 'listening',
@@ -63,6 +64,7 @@ const today: TodayResponse = {
       url: '/listen/at-the-train-station',
       lesson: listening,
       reviews: null,
+      grammar: null,
     },
     {
       kind: 'reviews',
@@ -72,9 +74,11 @@ const today: TodayResponse = {
       url: '/vocab',
       lesson: null,
       reviews: { due: 18, doneToday: 0 },
+      grammar: null,
     },
   ],
   estimatedMinutes: 15,
+  grammarBacklog: 0,
   continueUrl: '/read/a-new-coffee-shop',
   allDone: false,
 };
@@ -176,6 +180,52 @@ describe('HomePage', () => {
     expect(await screen.findByText(/Bạn đã hoàn thành bài hôm nay/)).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Tiếp tục học' })).toBeNull();
     expect(screen.getAllByText('Đã xong')).toHaveLength(3);
+  });
+
+  it("shows the day's grammar step and the grammar points left from earlier days", async () => {
+    const reviews = today.steps[2]!;
+    renderHome({
+      ...today,
+      steps: [
+        today.steps[0]!,
+        today.steps[1]!,
+        {
+          kind: 'grammar',
+          status: 'not_started',
+          progressPct: 0,
+          minutes: 6,
+          url: '/grammar/past-simple-regular',
+          lesson: null,
+          reviews: null,
+          grammar: {
+            id: 1,
+            slug: 'past-simple-regular',
+            title: 'Quá khứ đơn – động từ có quy tắc',
+            titleEn: 'Past simple (regular verbs)',
+            level: 'A2',
+            group: 'tenses',
+            summary: '-',
+            draft: false,
+            exerciseCount: 8,
+            days: [7],
+            progress: null,
+          },
+        },
+        reviews,
+      ],
+      grammarBacklog: 2,
+    });
+    const steps = await screen.findByRole('list', { name: 'Các bước hôm nay' });
+    const g = within(steps).getByRole('link', { name: /3 · Ngữ pháp/ });
+    expect(g).toHaveAttribute('href', '/grammar/past-simple-regular');
+    expect(g).toHaveTextContent('Quá khứ đơn – động từ có quy tắc');
+    expect(g).toHaveTextContent('8 bài tập · 6 phút');
+    expect(within(steps).getByRole('link', { name: /4 · Ôn từ/ })).toBeInTheDocument();
+    expect(screen.getByText(/Còn 2 điểm ngữ pháp của các ngày trước chưa học/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Xem thư viện ngữ pháp' })).toHaveAttribute(
+      'href',
+      '/grammar',
+    );
   });
 
   it('shows path, words and an accessible week chart', async () => {

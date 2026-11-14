@@ -4,6 +4,12 @@ import type {
   AnswerResponse,
   DashboardResponse,
   DueReviewsResponse,
+  GrammarAnswerBody,
+  GrammarAnswerResponse,
+  GrammarDetailResponse,
+  GrammarListResponse,
+  GrammarProgressBody,
+  GrammarProgressResponse,
   LessonDetailResponse,
   LessonListQuery,
   LessonListResponse,
@@ -35,6 +41,8 @@ export const queryKeys = {
   vocabStats: ['vocab', 'stats'] as const,
   dueReviews: ['reviews', 'due'] as const,
   reviewCard: (wordId: number | null) => ['reviews', 'card', wordId] as const,
+  grammarList: ['grammar', 'list'] as const,
+  grammar: (slug: string) => ['grammar', 'point', slug] as const,
   today: ['home', 'today'] as const,
   dashboard: ['home', 'dashboard'] as const,
 };
@@ -236,6 +244,49 @@ export function usePostponeReview() {
       api<PostponeResponse>(`/reviews/${wordId}/postpone`, { method: 'POST' }),
     onSuccess: (res) => dropFromQueue(qc, res),
     onSettled: () => invalidateVocab(qc),
+  });
+}
+
+/** Grammar library with the learner's progress. */
+export function useGrammarList() {
+  return useQuery({
+    queryKey: queryKeys.grammarList,
+    queryFn: ({ signal }) => api<GrammarListResponse>('/grammar', { signal }),
+  });
+}
+
+/** One grammar point (exercises without answers). */
+export function useGrammar(slug: string) {
+  return useQuery({
+    queryKey: queryKeys.grammar(slug),
+    queryFn: ({ signal }) =>
+      api<GrammarDetailResponse>(`/grammar/${encodeURIComponent(slug)}`, { signal }),
+    staleTime: 5 * 60 * 1000,
+  });
+}
+
+export function useSubmitGrammarAnswer(slug: string) {
+  return useMutation({
+    mutationFn: (body: GrammarAnswerBody) =>
+      api<GrammarAnswerResponse>(`/grammar/${encodeURIComponent(slug)}/answers`, {
+        method: 'POST',
+        body,
+      }),
+  });
+}
+
+export function useUpdateGrammarProgress(slug: string) {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (body: GrammarProgressBody) =>
+      api<GrammarProgressResponse>(`/grammar/${encodeURIComponent(slug)}/progress`, {
+        method: 'POST',
+        body,
+      }),
+    onSuccess: () => {
+      void qc.invalidateQueries({ queryKey: queryKeys.grammarList });
+      void qc.invalidateQueries({ queryKey: ['home'] });
+    },
   });
 }
 

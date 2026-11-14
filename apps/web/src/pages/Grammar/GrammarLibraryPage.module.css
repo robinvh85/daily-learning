@@ -1,0 +1,30 @@
+.intro {
+  margin: 8px 0 0;
+  max-width: 640px;
+  color: var(--color-ink-soft);
+}
+
+.level {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.h2 {
+  margin: 8px 0 0;
+  font-size: 18px;
+}
+
+.group {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-violet-tint);
+  color: var(--color-violet);
+}
+
+.titleEn {
+  font-size: var(--fs-md);
+  color: var(--color-muted);
+}

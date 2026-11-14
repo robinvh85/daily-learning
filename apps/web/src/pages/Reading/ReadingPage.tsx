@@ -16,12 +16,14 @@ import {
   useUpdateProgress,
 } from '../../api/hooks';
 import { FocusWordList } from '../../components/FocusWordList/FocusWordList';
+import { GrammarCard } from '../../components/GrammarCard/GrammarCard';
 import { NextIcon, PauseIcon, PlayIcon, PrevIcon } from '../../components/Icons';
 import { Quiz, type QuizAnswer } from '../../components/Quiz/Quiz';
 import { TokenizedText } from '../../components/TokenizedText/TokenizedText';
 import { WordCard } from '../../components/WordCard/WordCard';
 import { timedSegments, useAudioPlayer } from '../../hooks/useAudioPlayer';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { useLessonGrammar } from '../../hooks/useLessonGrammar';
 import { usePlayerShortcuts } from '../../hooks/usePlayerShortcuts';
 import { topicLabel } from '../../lib/labels';
 import { readStorage, writeStorage } from '../../lib/storage';
@@ -103,6 +105,7 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
       ? (timed[player.current]?.id ?? null)
       : null;
   usePlayerShortcuts(player, { enabled: Boolean(lesson.audioUrl), segments: timed.length > 0 });
+  const grammar = useLessonGrammar(data);
 
   const [fontSize, setFontSize] = useState(initialFontSize);
   const [showVi, setShowVi] = useState(false);
@@ -135,7 +138,8 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
     });
   }
 
-  function selectToken(t: TokenDto) {
+  function selectToken(t: TokenDto, s: SegmentDto) {
+    if (!grammar.openAt(s, t)) grammar.close();
     setSelection({ wordId: t.wordId, senseId: t.senseId, surface: t.surface });
   }
 
@@ -238,6 +242,17 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
             >
               Song ngữ
             </button>
+            {grammar.available && (
+              <button
+                type="button"
+                className={grammar.on ? `${styles.tool} ${styles.toolGrammar}` : styles.tool}
+                aria-pressed={grammar.on}
+                title={grammar.points.map((p) => p.title).join(', ')}
+                onClick={grammar.toggle}
+              >
+                Ngữ pháp
+              </button>
+            )}
             {lesson.audioUrl ? (
               <div
                 role="group"
@@ -308,6 +323,13 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
           </h1>
           <p className={styles.hint}>
             Bấm vào từ gạch chân để xem nghĩa. Bấm vào từ bất kỳ khác để tra nhanh.
+            {grammar.on && grammar.points.length > 0 && (
+              <>
+                {' '}
+                Chữ tím là ví dụ của điểm ngữ pháp{' '}
+                <strong>{grammar.points.map((p) => p.title).join(', ')}</strong>.
+              </>
+            )}
           </p>
           {lesson.audioUrl && (
             <p className={styles.keysHint}>
@@ -346,7 +368,8 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
                           tokens={s.tokens}
                           focusWordIds={focusIds}
                           selectedWordId={selection?.wordId ?? null}
-                          onSelect={selectToken}
+                          grammarRanges={grammar.ranges.get(s.id)}
+                          onSelect={(t) => selectToken(t, s)}
                         />
                       </span>
                     ))}
@@ -369,6 +392,14 @@ function ReadingLesson({ slug, data }: { slug: string; data: LessonDetailRespons
         </article>
 
         <aside className={styles.aside} aria-label="Từ vựng">
+          {grammar.open && (
+            <GrammarCard
+              point={grammar.open.point}
+              quote={grammar.open.quote}
+              notes={grammar.open.mark.notes}
+              onClose={grammar.close}
+            />
+          )}
           <WordCard
             word={selectedWord}
             senseId={selection?.senseId}

@@ -86,6 +86,9 @@ function makeLesson(withAudio: boolean): LessonDetailResponse {
       { id: 22, idx: 1, segmentId: 3, beforeText: 'Every', afterText: '.' },
     ],
     peaks: withAudio ? [0.2, 0.5, 1, 0.4, 0.6, 0.3, 0.8, 0.1, 0.9, 0.5] : null,
+    grammar: [],
+    grammarPoints: {},
+    dayGrammar: null,
   };
 }
 

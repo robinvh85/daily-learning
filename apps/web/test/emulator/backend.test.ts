@@ -1,6 +1,7 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { afterEach, describe, expect, it } from 'vitest';
 import { ApiRequestError } from '../../src/api/errors';
+import * as g from '../../src/backend/grammarHandlers';
 import * as h from '../../src/backend/handlers';
 import { newLearner, reopen, repoContent, type Learner } from './helpers';
 
@@ -17,6 +18,7 @@ afterEach(async () => {
 const READING = 'a-new-coffee-shop';
 const LISTENING = 'at-the-train-station';
 const T0 = '2026-10-24T02:00:00Z'; // 09:00 in Ho Chi Minh City
+const DAY1_GRAMMAR = 'present-simple-frequency';
 
 function wordOf(lemma: string) {
   const w = repoContent().catalog.words.find((x) => x.lemma === lemma);
@@ -112,6 +114,81 @@ describe('lessons', () => {
   });
 });
 
+describe('grammar', () => {
+  const SLUG = 'past-simple-regular';
+  const data = () => repoContent().grammar.find((x) => x.slug === SLUG)!;
+
+  it('lists the points and returns one without the answers', async () => {
+    const l = await learner();
+    const list = await g.listGrammar(l.ctx);
+    expect(list.points.map((p) => p.slug)).toContain(SLUG);
+    expect(list.points.find((p) => p.slug === SLUG)).toMatchObject({ days: [2], progress: null });
+    const detail = await g.getGrammar(l.ctx, SLUG);
+    expect(detail.discover.examples[0]?.source).toBe('day');
+    for (const e of detail.exercises) {
+      expect(e).not.toHaveProperty('answer');
+      expect(e).not.toHaveProperty('correctIdx');
+      expect(e).not.toHaveProperty('right');
+    }
+    await expectStatus(g.getGrammar(l.ctx, 'nope'), 404);
+  });
+
+  it('checks answers and logs them', async () => {
+    const l = await learner();
+    const choice = data().exercises.find((e) => e.type === 'choice')!;
+    if (choice.type !== 'choice') throw new Error('no choice exercise');
+    expect(
+      await g.submitGrammarAnswer(l.ctx, SLUG, { exerciseId: choice.id, value: choice.correctIdx }),
+    ).toMatchObject({ correct: true, explain: choice.explain });
+    await expectStatus(
+      g.submitGrammarAnswer(l.ctx, SLUG, { exerciseId: choice.id, value: 99 }),
+      400,
+    );
+    await expectStatus(g.submitGrammarAnswer(l.ctx, SLUG, { exerciseId: 1, value: 0 }), 404);
+    const logged = await getDocs(collection(l.db, 'users', l.uid, 'answers'));
+    expect(logged.docs.map((d) => d.data())).toEqual([
+      expect.objectContaining({ grammar: SLUG, exercise: choice.idx, correct: true }),
+    ]);
+  });
+
+  it('saves progress: never backwards, completed once, not counted as a lesson', async () => {
+    const l = await learner(T0);
+    await g.updateGrammarProgress(l.ctx, SLUG, { step: 2 });
+    expect((await g.updateGrammarProgress(l.ctx, SLUG, { step: 0 })).progress).toMatchObject({
+      status: 'in_progress',
+      step: 2,
+    });
+    const done = await g.updateGrammarProgress(l.ctx, SLUG, {
+      step: 2,
+      status: 'completed',
+      score: 0.5,
+    });
+    expect(done.progress).toMatchObject({ status: 'completed', score: 0.5 });
+    // A new full attempt updates the score; the point stays completed.
+    const again = await g.updateGrammarProgress(l.ctx, SLUG, {
+      step: 2,
+      status: 'completed',
+      score: 1,
+    });
+    expect(again.progress).toMatchObject({ status: 'completed', score: 1 });
+    expect(again.progress.completedAt).toBe(new Date(T0).toISOString());
+    expect(l.store.activity.get('2026-10-24')?.lessonsDone).toBeUndefined();
+    await expectStatus(g.updateGrammarProgress(l.ctx, SLUG, { step: 3 }), 400);
+
+    const reloaded = await reopen(l);
+    expect(reloaded.grammarProgress.get(SLUG)?.status).toBe('completed');
+    reloaded.dispose();
+  });
+
+  it('sends the grammar marks with the lesson', async () => {
+    const l = await learner();
+    const lesson = await h.getLesson(l.ctx, READING);
+    expect(lesson.dayGrammar).toBe(DAY1_GRAMMAR);
+    expect(lesson.grammar.some((m) => m.point === DAY1_GRAMMAR)).toBe(true);
+    expect(lesson.grammarPoints[DAY1_GRAMMAR]).toMatchObject({ pattern: expect.any(String) });
+  });
+});
+
 describe('vocabulary and reviews', () => {
   it('saves a word once, lists it and filters by lesson, source and status', async () => {
     const l = await learner(T0);
@@ -197,14 +274,32 @@ describe('home', () => {
     const l = await learner(T0);
     const t1 = await h.today(l.ctx);
     expect(t1).toMatchObject({ source: 'plan', day: 1, allDone: false });
-    expect(t1.steps.map((s) => s.kind)).toEqual(['reading', 'listening', 'reviews']);
+    expect(t1.steps.map((s) => s.kind)).toEqual(['reading', 'listening', 'grammar', 'reviews']);
     expect(t1.continueUrl).toBe(`/read/${READING}`);
+    expect(t1.grammarBacklog).toBe(0);
 
     await h.updateProgress(l.ctx, READING, { step: 2, status: 'completed' });
     await h.updateProgress(l.ctx, LISTENING, { step: 2, status: 'completed' });
+    // The grammar step is still open, but it does not hold the next day back.
+    expect(await h.today(l.ctx)).toMatchObject({
+      day: 1,
+      allDone: false,
+      continueUrl: `/grammar/${DAY1_GRAMMAR}`,
+    });
+    await g.updateGrammarProgress(l.ctx, DAY1_GRAMMAR, { step: 2, status: 'completed', score: 1 });
     expect(await h.today(l.ctx)).toMatchObject({ day: 1, allDone: true, continueUrl: null });
     l.setNow('2026-10-25T02:00:00Z');
     expect((await h.today(l.ctx)).day).toBe(2);
+  });
+
+  it('moves on without the grammar step and counts the skipped points', async () => {
+    const l = await learner(T0);
+    await h.updateProgress(l.ctx, READING, { step: 2, status: 'completed' });
+    await h.updateProgress(l.ctx, LISTENING, { step: 2, status: 'completed' });
+    l.setNow('2026-10-25T02:00:00Z');
+    const t = await h.today(l.ctx);
+    expect(t).toMatchObject({ day: 2, grammarBacklog: 1 });
+    expect(t.steps.find((s) => s.kind === 'grammar')?.grammar?.slug).toBe('past-simple-regular');
   });
 
   it('builds the dashboard: streak, path and the week from study time', async () => {

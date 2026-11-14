@@ -41,6 +41,7 @@ export function memoryContentSource(): ContentSource {
     catalog: async () => b.catalog,
     lesson: async (slug) => lessons.get(slug) ?? null,
     examples: async () => b.examples,
+    grammar: async (slug) => b.grammar.find((g) => g.slug === slug) ?? null,
   };
 }
 

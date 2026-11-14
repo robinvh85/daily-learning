@@ -12,6 +12,7 @@ import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 const STEP_LABEL: Record<TodayStepDto['kind'], string> = {
   reading: 'Đọc',
   listening: 'Nghe',
+  grammar: 'Ngữ pháp',
   reviews: 'Ôn từ',
 };
 const STEP_STATUS: Record<TodayStepDto['status'], string> = {
@@ -115,12 +116,19 @@ function TodayCard({ today }: { today: TodayResponse }) {
           </li>
         ))}
       </ol>
+      {today.grammarBacklog > 0 && (
+        <p className={styles.backlog}>
+          Còn {today.grammarBacklog} điểm ngữ pháp của các ngày trước chưa học.{' '}
+          <Link to="/grammar">Xem thư viện ngữ pháp</Link>
+        </p>
+      )}
     </section>
   );
 }
 
 function stepTitle(s: TodayStepDto): string {
   if (s.lesson) return s.lesson.title;
+  if (s.grammar) return s.grammar.title;
   const r = s.reviews ?? { due: 0, doneToday: 0 };
   if (r.due > 0) return `${r.due} từ đến hạn ôn`;
   return r.doneToday > 0 ? `Đã ôn ${r.doneToday} từ hôm nay` : 'Không có từ đến hạn';
@@ -133,6 +141,7 @@ function stepMeta(s: TodayStepDto): string {
     const audio = s.lesson?.durationMs ? formatTime(s.lesson.durationMs) : 'chưa có audio';
     return `${audio} · ${time}`;
   }
+  if (s.kind === 'grammar') return `${s.grammar?.exerciseCount ?? 0} bài tập · ${time}`;
   return s.minutes > 0 ? `Lặp lại ngắt quãng · ${time}` : 'Lặp lại ngắt quãng';
 }
 

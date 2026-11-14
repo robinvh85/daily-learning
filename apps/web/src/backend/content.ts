@@ -5,10 +5,13 @@
 import type { SenseDto } from '@daily-learning/shared/api';
 import {
   CONTENT_DATA_PREFIX,
+  type CatalogGrammarPoint,
   type CatalogLesson,
+  type CatalogPlanDay,
   type CatalogWord,
   type ContentCatalog,
   type ExamplesData,
+  type GrammarPointData,
   type LessonData,
 } from '@daily-learning/shared/content-data';
 
@@ -18,6 +21,8 @@ export interface ContentSource {
   /** Null when the lesson file does not exist. */
   lesson(slug: string): Promise<LessonData | null>;
   examples(): Promise<ExamplesData>;
+  /** Null when the grammar file does not exist. */
+  grammar(slug: string): Promise<GrammarPointData | null>;
 }
 
 async function getJson<T>(path: string): Promise<T | null> {
@@ -41,6 +46,7 @@ export const httpContentSource: ContentSource = {
   async examples() {
     return (await getJson<ExamplesData>('examples.json')) ?? { version: '', byWord: {} };
   },
+  grammar: (slug) => getJson<GrammarPointData>(`grammar/${encodeURIComponent(slug)}.json`),
 };
 
 /** The catalog with lookup tables. */
@@ -50,8 +56,17 @@ export class ContentIndex {
   readonly wordById = new Map<number, CatalogWord>();
   readonly wordByLemma = new Map<string, CatalogWord>();
   readonly senseById = new Map<number, { word: CatalogWord; sense: SenseDto }>();
+  readonly grammarBySlug = new Map<string, CatalogGrammarPoint>();
+  /** Plan day of each lesson slug (first day when a lesson is used twice). */
+  readonly planDayByLesson = new Map<string, CatalogPlanDay>();
 
   constructor(readonly catalog: ContentCatalog) {
+    for (const g of catalog.grammar ?? []) this.grammarBySlug.set(g.slug, g);
+    for (const d of catalog.plan) {
+      for (const slug of [d.reading, d.listening]) {
+        if (slug && !this.planDayByLesson.has(slug)) this.planDayByLesson.set(slug, d);
+      }
+    }
     for (const l of catalog.lessons) {
       this.lessonById.set(l.id, l);
       this.lessonBySlug.set(l.slug, l);
@@ -75,8 +90,19 @@ export class ContentStore {
   private index: Promise<ContentIndex> | null = null;
   private lessons = new Map<string, Promise<LessonData | null>>();
   private examplesData: Promise<ExamplesData> | null = null;
+  private grammarFiles = new Map<string, Promise<GrammarPointData | null>>();
 
   constructor(private readonly source: ContentSource) {}
+
+  grammar(slug: string): Promise<GrammarPointData | null> {
+    let p = this.grammarFiles.get(slug);
+    if (!p) {
+      p = this.source.grammar(slug);
+      p.catch(() => this.grammarFiles.delete(slug));
+      this.grammarFiles.set(slug, p);
+    }
+    return p;
+  }
 
   catalog(): Promise<ContentIndex> {
     this.index ??= this.source.catalog().then((c) => new ContentIndex(c));

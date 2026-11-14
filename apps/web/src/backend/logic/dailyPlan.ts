@@ -14,7 +14,12 @@
  * lessons by level/order (no stay rule there), and finally to "Đã học hết bài hiện có".
  */
 import { LESSON_LEVELS, readingMinutes, type LessonLevel } from '@daily-learning/shared';
-import type { LessonSummary, TodayStepDto, TodayStepStatus } from '@daily-learning/shared/api';
+import type {
+  GrammarSummary,
+  LessonSummary,
+  TodayStepDto,
+  TodayStepStatus,
+} from '@daily-learning/shared/api';
 import { localDate } from './srs';
 
 export interface PlanDay {
@@ -147,6 +152,44 @@ export function lessonStep(l: LessonSummary): TodayStepDto {
     url: lessonHref(l),
     lesson: l,
     reviews: null,
+    grammar: null,
+  };
+}
+
+/** Steps of the grammar page (Nhận ra, Quy tắc, Luyện tập). */
+const GRAMMAR_STEPS = 3;
+/** Rule reading + discover sentences. */
+const GRAMMAR_BASE_MINUTES = 2;
+/** Average time per grammar exercise. */
+const SECONDS_PER_EXERCISE = 25;
+
+/** Web route of a grammar point page. */
+export function grammarHref(slug: string): string {
+  return `/grammar/${slug}`;
+}
+
+/** The day's grammar point (optional step: it never holds the next plan day back). */
+export function grammarStep(g: GrammarSummary): TodayStepDto {
+  const p = g.progress;
+  let status: TodayStepStatus = 'not_started';
+  let progressPct = 0;
+  if (p?.status === 'completed') {
+    status = 'done';
+    progressPct = 100;
+  } else if (p?.status === 'in_progress') {
+    status = 'in_progress';
+    progressPct = Math.max(10, Math.round((p.step / GRAMMAR_STEPS) * 100));
+  }
+  return {
+    kind: 'grammar',
+    status,
+    progressPct,
+    minutes:
+      GRAMMAR_BASE_MINUTES + Math.max(1, Math.ceil((g.exerciseCount * SECONDS_PER_EXERCISE) / 60)),
+    url: grammarHref(g.slug),
+    lesson: null,
+    reviews: null,
+    grammar: g,
   };
 }
 
@@ -163,6 +206,7 @@ export function reviewStep(counts: { due: number; doneToday: number }): TodaySte
     url: '/vocab',
     lesson: null,
     reviews: counts,
+    grammar: null,
   };
 }
 

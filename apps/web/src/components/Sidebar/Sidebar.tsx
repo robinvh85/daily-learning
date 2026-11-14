@@ -1,5 +1,13 @@
 import { NavLink } from 'react-router-dom';
-import { BookIcon, CardsIcon, HeadphonesIcon, HomeIcon, MicIcon, PenIcon } from '../Icons';
+import {
+  BookIcon,
+  CardsIcon,
+  GrammarIcon,
+  HeadphonesIcon,
+  HomeIcon,
+  MicIcon,
+  PenIcon,
+} from '../Icons';
 import styles from './Sidebar.module.css';
 
 export interface SidebarProps {
@@ -33,6 +41,10 @@ export function Sidebar({ dueCount = 0, onLogout }: SidebarProps) {
         <NavLink to="/listen" className={navClass}>
           <HeadphonesIcon />
           Nghe
+        </NavLink>
+        <NavLink to="/grammar" className={navClass}>
+          <GrammarIcon />
+          Ngữ pháp
         </NavLink>
         <NavLink to="/vocab" className={navClass}>
           <CardsIcon />
