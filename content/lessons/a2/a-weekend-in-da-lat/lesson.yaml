@@ -166,3 +166,7 @@ grammar:
     segment: p3s2
     match: visited … tried
     note: 'Phụ âm + y → đổi thành -ied (try → tried).'
+  - point: countable-uncountable
+    segment: p3s2
+    match: some local coffee
+    note: 'coffee (cà phê nói chung) không đếm được → some.'

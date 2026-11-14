@@ -126,3 +126,32 @@ questions:
     feedback_ok: 'Đúng: “I talked to a customer on the phone for ten minutes without any problems!”'
     feedback_wrong: Chưa đúng. Đọc câu cuối của đoạn 4.
     evidence: p4s3
+grammar:
+  - point: review-days-1-14
+    segment: p1s1
+    match: started learning
+    note: 'Quá khứ đơn (ngày 2) và động từ + V-ing (ngày 5).'
+  - point: review-days-1-14
+    segment: p1s2
+    match: studied … couldn't speak
+    note: 'Quá khứ đơn (ngày 2) và could – khả năng trong quá khứ (ngày 9).'
+  - point: review-days-1-14
+    segment: p2s1
+    match: much time
+    note: 'much + danh từ không đếm được (ngày 3).'
+  - point: review-days-1-14
+    segment: p3s1
+    match: biggest
+    note: 'So sánh nhất (ngày 11).'
+  - point: review-days-1-14
+    segment: p3s2
+    match: often understand
+    note: 'Hiện tại đơn + trạng từ tần suất (ngày 1).'
+  - point: review-days-1-14
+    segment: p4s2
+    match: I'm not improving … when I look back
+    note: 'Hiện tại tiếp diễn (ngày 13) và từ nối thời gian when (ngày 14).'
+  - point: review-days-1-14
+    segment: p4s3
+    match: talked
+    note: 'Quá khứ đơn (ngày 2).'

@@ -131,3 +131,8 @@ questions:
     feedback_ok: 'Đúng: “You can try the gym for three days.”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn có cụm “free trial”.
     evidence: l11
+grammar:
+  - point: time-linkers
+    segment: l10
+    match: after work
+    note: 'after + danh từ: sau giờ làm.'

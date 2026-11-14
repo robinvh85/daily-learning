@@ -1,0 +1,88 @@
+slug: present-continuous-vs-simple
+title: Hiện tại tiếp diễn và hiện tại đơn
+title_en: Present continuous vs present simple
+level: A2
+group: tenses
+summary: >-
+  Hiện tại tiếp diễn (am / is / are + V-ing) nói về việc đang xảy ra lúc này hoặc trong giai đoạn
+  này. Hiện tại đơn nói về thói quen, sự thật và những gì luôn đúng.
+discover:
+  question: >-
+    So sánh các câu tô đậm. Câu nào nói về việc đang diễn ra lúc này hoặc trong thời gian gần đây,
+    câu nào nói về việc lặp lại hằng ngày hoặc điều luôn đúng?
+  answer: >-
+    "I'm learning to cook", "I'm slowly buying furniture", "the kitchen sink is leaking" là việc
+    đang diễn ra (lúc này / giai đoạn này) → am / is + V-ing. "Now I walk to work", "You just pay
+    the rent" là thói quen, việc thường xuyên → hiện tại đơn.
+  pinned:
+    - my-first-week-at-a-new-job#p4s1
+form:
+  - label: Tiếp diễn – khẳng định
+    pattern: I am · he / she / it is · you / we / they are + V-ing
+    example: She is cooking dinner right now.
+  - label: Tiếp diễn – phủ định / nghi vấn
+    pattern: S + am / is / are + not + V-ing · Am / Is / Are + S + V-ing?
+    example: The air conditioner isn't working. Is it making any noise?
+  - label: Hiện tại đơn (nhắc lại)
+    pattern: S + V / V-s · don't / doesn't + V · Do / Does + S + V?
+    example: I walk to work every day.
+usage:
+  - "Tiếp diễn: việc đang xảy ra ngay lúc nói (Look! It's raining.)."
+  - "Tiếp diễn: việc tạm thời, đang diễn ra trong giai đoạn này, chưa xong (I'm learning to cook these days.)."
+  - "Tiếp diễn: sự thay đổi đang dần dần diễn ra (I'm slowly getting used to my new job.)."
+  - 'Hiện tại đơn: thói quen, việc lặp lại, sự thật (I walk to work. Repairs are my job.).'
+  - 'Động từ chỉ trạng thái (like, love, want, need, know, understand, have = có) thường không dùng dạng -ing: "I like my new apartment", không nói "I am liking".'
+  - '"Now" không phải lúc nào cũng đi với -ing: "Now I walk to work" = bây giờ (khác trước) ngày nào tôi cũng đi bộ đi làm → thói quen mới, dùng hiện tại đơn.'
+signals:
+  - right now / at the moment (tiếp diễn)
+  - Look! / Listen! (tiếp diễn)
+  - these days / this week (tiếp diễn)
+  - every day / usually / on Mondays (hiện tại đơn)
+common_mistakes:
+  - wrong: I am usually walk to work.
+    right: I usually walk to work.
+    why: Thói quen → hiện tại đơn, không thêm am / is / are trước động từ thường.
+  - wrong: Look! It rains.
+    right: Look! It's raining.
+    why: Việc đang xảy ra ngay lúc nói → hiện tại tiếp diễn.
+  - wrong: I am liking my new apartment.
+    right: I like my new apartment.
+    why: like là động từ trạng thái, thường không dùng dạng -ing.
+exercises:
+  - type: choice
+    prompt: Please be quiet. My sister ___ right now.
+    options: [sleeps, is sleeping, sleep]
+    correct: 1
+    explain: '"right now" = ngay lúc này → hiện tại tiếp diễn: is sleeping.'
+  - type: choice
+    prompt: My brother ___ to work by bus every day.
+    options: [goes, is going, go]
+    correct: 0
+    explain: '"every day" = thói quen → hiện tại đơn; "my brother" = he → goes.'
+  - type: gap
+    prompt: Look! Water ___ (come) under the door.
+    answer: is coming
+    explain: '"Look!" → việc đang xảy ra trước mắt: is coming.'
+  - type: gap
+    prompt: We usually ___ (cook) dinner at home.
+    answer: cook
+    explain: '"usually" = thói quen → hiện tại đơn; chủ ngữ "we" → cook.'
+  - type: gap
+    prompt: These days, I ___ (look) for a new apartment.
+    answer: am looking
+    explain: '"These days" = trong giai đoạn này, việc chưa xong → am looking.'
+  - type: order
+    words: [is, she, now, cooking, dinner]
+    answer: She is cooking dinner now.
+    explain: 'Chủ ngữ + is + V-ing + tân ngữ.'
+  - type: order
+    words: [do, you, often, work, from, home]
+    answer: Do you often work from home?
+    explain: 'Thói quen (often) → câu hỏi hiện tại đơn: Do + chủ ngữ + trạng từ + động từ.'
+  - type: find_error
+    sentence: She is going to the gym every morning.
+    wrong: is going
+    right: goes
+    explain: '"every morning" = thói quen → hiện tại đơn: goes.'
+detect: \b(am|is|are|isn't|aren't)\s+(\w+\s+)?\w+ing\b|\w(’|')(m|re|s)\s+(\w+\s+)?\w+ing\b
+status: draft

@@ -1,0 +1,94 @@
+slug: will-predictions-decisions
+title: will – dự đoán và quyết định tức thì
+title_en: Will (predictions and quick decisions)
+level: A2
+group: modals
+summary: >-
+  Dùng will + động từ nguyên mẫu để dự đoán tương lai (trời sẽ nắng, bạn sẽ thích) và để nói một
+  quyết định, lời hứa hay lời đề nghị vừa nghĩ ra ngay lúc nói (I'll help you).
+discover:
+  question: >-
+    Trong các câu tô đậm, câu nào là dự báo (thời tiết ngày mai ra sao) và câu nào là người nói vừa
+    quyết định ngay lúc đó? Sau will là động từ dạng gì?
+  answer: >-
+    "Saturday will be sunny", "Sunday will be cloudy" là dự đoán. "I'll swim on Saturday morning",
+    "I'll bring you back some dried squid" là quyết định / lời hứa vừa nghĩ ra trong lúc nói chuyện.
+    Sau will luôn là động từ nguyên mẫu (be, swim, bring), không thêm -s, không có to.
+  pinned:
+    - at-the-train-station#l7
+    - calling-the-landlord#l6
+    - signing-up-for-an-english-class#l7
+form:
+  - label: Khẳng định
+    pattern: S + will ('ll) + V (nguyên mẫu)
+    example: It will be sunny tomorrow. I'll call you later.
+  - label: Phủ định
+    pattern: S + won't (will not) + V
+    example: It won't rain this weekend.
+  - label: Nghi vấn
+    pattern: Will + S + V?
+    example: Will you be home this afternoon?
+  - label: Trả lời ngắn
+    pattern: Yes, S + will. · No, S + won't.
+    example: Yes, I will. No, I won't.
+usage:
+  - Dự đoán, dự báo về tương lai, thường đi với I think, I'm sure, maybe, probably (I think it will rain later).
+  - Quyết định ngay lúc nói, chưa có kế hoạch từ trước (The phone is ringing. I'll answer it.).
+  - Lời đề nghị giúp đỡ và lời hứa (I'll carry your bag. I'll bring you back some dried squid!).
+  - 'Nếu đã có kế hoạch từ trước thì dùng be going to hoặc hiện tại tiếp diễn (ngày 8), không dùng will: "I''m going to visit my aunt on Sunday."'
+signals:
+  - tomorrow / next week
+  - I think / I'm sure
+  - maybe / probably
+  - this weekend
+common_mistakes:
+  - wrong: It will rains tomorrow.
+    right: It will rain tomorrow.
+    why: Sau will dùng động từ nguyên mẫu, không thêm -s kể cả với he / she / it.
+  - wrong: I will to call you tonight.
+    right: I will call you tonight.
+    why: Không có "to" sau will.
+  - wrong: It's hot in here. - OK, I open the window.
+    right: It's hot in here. - OK, I'll open the window.
+    why: Quyết định vừa nghĩ ra lúc nói → dùng will ('ll), không dùng hiện tại đơn.
+exercises:
+  - type: choice
+    prompt: Look at the forecast. I think it ___ rain tomorrow.
+    options: [will, is, does]
+    correct: 0
+    explain: 'Dự đoán về tương lai (tomorrow), có "I think" → will + rain.'
+  - type: choice
+    prompt: Someone is at the door. Stay there, I ___ open it.
+    options: [answered, will, am]
+    correct: 1
+    explain: 'Quyết định ngay lúc nói (vừa nghe có người đến) → will + động từ nguyên mẫu.'
+  - type: gap
+    prompt: Your bags look heavy. I ___ (help) you.
+    answer: will help
+    accept: ["'ll help"]
+    explain: 'Lời đề nghị giúp đỡ nghĩ ra lúc nói → will help.'
+  - type: gap
+    prompt: You don't need a raincoat. It ___ (not / rain) tomorrow.
+    answer: won't rain
+    accept: [will not rain]
+    explain: "Dự đoán ở dạng phủ định: won't (= will not) + động từ nguyên mẫu."
+  - type: order
+    words: [will, tomorrow, be, it, sunny]
+    answer: It will be sunny tomorrow.
+    explain: 'Chủ ngữ + will + be + tính từ + thời gian.'
+  - type: order
+    words: [you, will, home, be, tonight]
+    answer: Will you be home tonight?
+    explain: 'Câu hỏi: Will đứng đầu câu, trước chủ ngữ.'
+  - type: find_error
+    sentence: I'm sure she will likes the new restaurant.
+    wrong: likes
+    right: like
+    explain: 'Sau will dùng động từ nguyên mẫu: will like.'
+  - type: find_error
+    sentence: Maybe they will to come to the party.
+    wrong: will to come
+    right: will come
+    explain: 'Không có "to" sau will.'
+detect: \b(will|won't|won’t)\b|\w(’|')ll\b
+status: draft

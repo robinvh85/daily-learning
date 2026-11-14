@@ -219,7 +219,7 @@ describe('repository grammar content', () => {
     expect(g.days).toEqual([2]);
     expect(g.lessons).toContain('my-first-week-at-a-new-job');
     expect(built.catalog.plan.find((d) => d.day === 2)!.grammar).toBe('past-simple-regular');
-    expect(built.catalog.plan.find((d) => d.day === 3)!.grammar).toBeNull();
+    expect(built.catalog.plan.find((d) => d.day === 3)!.grammar).toBe('countable-uncountable');
     const files = dataFiles(built);
     expect(files.has('grammar/past-simple-regular.json')).toBe(true);
   });

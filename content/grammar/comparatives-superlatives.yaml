@@ -1,0 +1,98 @@
+slug: comparatives-superlatives
+title: So sánh hơn và so sánh nhất
+title_en: Comparatives and superlatives
+level: A2
+group: comparison
+summary: >-
+  So sánh hơn (older, more important) dùng khi so hai người, hai vật. So sánh nhất (the oldest, the
+  most important) dùng khi chọn ra một trong cả nhóm. Tính từ ngắn thêm -er / -est, tính từ dài
+  dùng more / the most.
+discover:
+  question: >-
+    Các từ tô đậm đều là tính từ đã đổi dạng. Từ nào so sánh hai người hoặc so với trước đây? Từ
+    nào chọn ra cái nhất trong cả nhóm?
+  answer: >-
+    younger, older là so sánh hơn (thêm -er): em trai nhỏ tuổi hơn mình, ông bà già đi so với
+    trước. "the most important day of the week" là so sánh nhất: important là tính từ dài nên dùng
+    the most.
+  pinned:
+    - my-first-week-at-a-new-job#p4s4
+    - a-new-coffee-shop#p4s1
+form:
+  - label: So sánh hơn – tính từ ngắn
+    pattern: adj + -er + than
+    example: My brother is younger than me.
+  - label: So sánh hơn – tính từ dài
+    pattern: more + adj + than
+    example: This bag is more expensive than that one.
+  - label: So sánh nhất – tính từ ngắn
+    pattern: the + adj + -est
+    example: Sunday is the quietest day of the week.
+  - label: So sánh nhất – tính từ dài
+    pattern: the most + adj
+    example: It's the most important day of the year.
+  - label: Bất quy tắc
+    pattern: good → better → the best · bad → worse → the worst · far → farther → the farthest
+    example: Homemade food is better than takeout.
+usage:
+  - Tính từ một âm tiết (old, young, big, cheap) thêm -er / -est.
+  - Tính từ hai âm tiết tận cùng -y (busy, happy, easy) đổi y → ier / iest - busier, the happiest.
+  - Tính từ dài, hai âm tiết trở lên (important, expensive, beautiful) dùng more / the most.
+  - Sau so sánh hơn thường có "than" + vật được so; so sánh nhất luôn có "the" và hay đi với "of / in" (of the week, in my family).
+  - get + so sánh hơn = dần dần thay đổi - My grandparents are getting older.
+spelling:
+  - 'Tận cùng -e: chỉ thêm -r / -st (nice → nicer → the nicest)'
+  - 'Một nguyên âm + một phụ âm: gấp đôi phụ âm (big → bigger, hot → the hottest)'
+  - 'Phụ âm + y: đổi y → ier / iest (busy → busier → the busiest)'
+signals:
+  - than
+  - the … of / in
+  - much (much better than)
+common_mistakes:
+  - wrong: My brother is more young than me.
+    right: My brother is younger than me.
+    why: young là tính từ ngắn → younger, không dùng more.
+  - wrong: This phone is more cheaper than that one.
+    right: This phone is cheaper than that one.
+    why: Không dùng cả more và -er cùng lúc.
+  - wrong: She is the most tall in my class.
+    right: She is the tallest in my class.
+    why: tall là tính từ ngắn → the tallest. Người Việt hay quên "the" hoặc dịch "nhất" thành "most" cho mọi tính từ.
+exercises:
+  - type: choice
+    prompt: My sister is two years ___ than me.
+    options: [old, older, the oldest]
+    correct: 1
+    explain: 'So sánh hai người, có "than" → so sánh hơn: older.'
+  - type: choice
+    prompt: For me, Sunday is ___ day of the week.
+    options: [more important, the most important, importanter]
+    correct: 1
+    explain: 'Chọn ra một ngày trong cả tuần → so sánh nhất. important là tính từ dài → the most important.'
+  - type: gap
+    prompt: The bus is ___ (cheap) than a taxi.
+    answer: cheaper
+    explain: 'cheap là tính từ ngắn, có "than" → cheaper.'
+  - type: gap
+    prompt: This is ___ (big) room in the hotel.
+    answer: the biggest
+    explain: 'So sánh nhất với tính từ ngắn: the + big + est. Nguyên âm + phụ âm (big) → gấp đôi g: biggest.'
+  - type: gap
+    prompt: Homemade food is much ___ (good) than takeout.
+    answer: better
+    explain: 'good là bất quy tắc: good → better → the best.'
+  - type: order
+    words: [older, am, my, two, than, sister, years, I]
+    answer: I am two years older than my sister.
+    explain: 'old → older, sau đó là than + người được so. "two years" đứng trước older để nói hơn bao nhiêu.'
+  - type: order
+    words: [the, is, important, it, day, most, of, the, week]
+    answer: It is the most important day of the week.
+    explain: 'So sánh nhất với tính từ dài: the most + important + danh từ + of + nhóm.'
+  - type: find_error
+    sentence: This bag is more expensiver than that one.
+    wrong: more expensiver
+    right: more expensive
+    explain: 'expensive là tính từ dài → more expensive. Không thêm -er khi đã có more.'
+detect: \b(\w+er than|more \w+|the (most|best|worst) \w+|the \w+est|better|worse|older|younger|bigger|smaller|shorter|longer)\b
+status: draft

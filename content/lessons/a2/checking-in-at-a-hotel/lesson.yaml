@@ -142,3 +142,15 @@ questions:
     feedback_ok: 'Đúng: “My flight is in the evening.”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi về việc gửi túi sau khi trả phòng.
     evidence: l12
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: can-could-requests
+    segment: l3
+    match: Can I see
+    note: 'Lễ tân xin xem hộ chiếu: Can I + V…, please?'
+  - point: can-could-requests
+    segment: l12
+    match: Can I leave
+    note: 'Xin phép để lại túi: Can I + V?'

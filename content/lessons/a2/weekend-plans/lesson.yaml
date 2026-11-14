@@ -130,3 +130,26 @@ questions:
     feedback_ok: 'Đúng: thứ Bảy nhiều hoạt động, Chủ nhật là “my quiet day”. Người viết thích sự cân bằng đó.'
     feedback_wrong: Chưa đúng. So sánh kế hoạch thứ Bảy (đoạn 2–3) và Chủ nhật (đoạn 4).
     evidence: p4s4
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: future-plans
+    segment: p2s1
+    match: I'm going to sleep in
+    note: 'Dự định của người viết cho sáng thứ Bảy → am going to + động từ nguyên mẫu.'
+  - point: future-plans
+    segment: p2s2
+    match: I'm having
+    note: 'Đã hẹn với Vy → hiện tại tiếp diễn mang nghĩa tương lai.'
+  - point: future-plans
+    segment: p3s1
+    match: is having
+    note: 'Bữa tiệc đã lên lịch (thứ Bảy, 7 giờ) → hiện tại tiếp diễn.'
+  - point: have-to-need-to
+    segment: p1s2
+    match: don't need to work
+    note: "don't need to = không cần (cuối tuần không phải đi làm)."
+  - point: have-to-need-to
+    segment: p3s4
+    match: need to buy

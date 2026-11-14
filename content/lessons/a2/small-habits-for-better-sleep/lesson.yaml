@@ -125,3 +125,23 @@ questions:
     feedback_ok: 'Đúng: “After two weeks, though, I started to fall asleep more quickly.”'
     feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 4.
     evidence: p4s2
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: verb-to-or-ing
+    segment: p2s3
+    match: decided to change
+    note: 'decide + to V.'
+  - point: verb-to-or-ing
+    segment: p3s1
+    match: stopped using
+    note: 'stop + V-ing = bỏ, không làm việc đó nữa.'
+  - point: verb-to-or-ing
+    segment: p3s5
+    match: try to go
+    note: 'try + to V = cố gắng làm.'
+  - point: verb-to-or-ing
+    segment: p4s2
+    match: started to fall
+    note: 'start + to V (cũng nói được: started falling).'

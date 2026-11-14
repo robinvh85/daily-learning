@@ -139,3 +139,20 @@ questions:
     feedback_ok: 'Đúng: “if you sign up this week, you get a ten percent discount.”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “Can I pay by credit card?”.
     evidence: l14
+grammar:
+  - point: will-predictions-decisions
+    segment: l7
+    match: I'll do it here
+    note: 'Quyết định ngay lúc nói (chọn làm bài ở đây) → will.'
+  - point: review-days-1-14
+    segment: l5
+    match: Can I do
+    note: 'can – xin phép (ngày 7).'
+  - point: review-days-1-14
+    segment: l9
+    match: How many students
+    note: 'many + danh từ đếm được số nhiều (ngày 3).'
+  - point: review-days-1-14
+    segment: l13
+    match: Can I pay
+    note: 'can – xin phép (ngày 7).'

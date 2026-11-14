@@ -135,3 +135,19 @@ questions:
     feedback_ok: 'Đúng: Ryan nhắc mang “sunscreen”, “a hat and lots of water”.'
     feedback_wrong: Chưa đúng. Mực khô là quà Minh định mua cho Ryan. Nghe lại hai lời nhắc cuối của Ryan.
     evidence: l11
+grammar:
+  - point: will-predictions-decisions
+    segment: l5
+    match: will be
+    note: 'Dự báo thời tiết → will + be.'
+  - point: will-predictions-decisions
+    segment: l7
+    match: will be
+  - point: will-predictions-decisions
+    segment: l10
+    match: I'll swim
+    note: 'Minh quyết định ngay sau khi nghe dự báo → will.'
+  - point: will-predictions-decisions
+    segment: l14
+    match: I will … I'll bring
+    note: '"I will." = câu trả lời ngắn, như một lời hứa. "I''ll bring ..." cũng là lời hứa.'

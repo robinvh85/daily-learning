@@ -146,3 +146,15 @@ questions:
     feedback_ok: 'Đúng: “Before our next meeting, next Monday at ten.”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “When do you need it?”.
     evidence: l13
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: can-could-requests
+    segment: l5
+    match: can you finish
+    note: 'Từ để hỏi + can + you + V: hỏi người nghe khi nào làm xong được.'
+  - point: can-could-requests
+    segment: l11
+    match: Could you write
+    note: 'Nhờ đồng nghiệp: Could you + V…? (lịch sự hơn Can you).'

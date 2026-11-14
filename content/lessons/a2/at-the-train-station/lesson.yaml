@@ -91,3 +91,7 @@ grammar:
   - point: present-simple-frequency
     segment: l6
     match: only takes
+  - point: will-predictions-decisions
+    segment: l7
+    match: I'll wait
+    note: 'Quyết định ngay lúc nghe giờ tàu → will.'

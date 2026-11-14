@@ -138,3 +138,29 @@ questions:
     feedback_ok: 'Đúng: “It usually takes three to five days.”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn khách hỏi về thẻ tín dụng. “30 days” là thời hạn trả hàng.
     evidence: l11
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: too-adjective
+    segment: l2
+    match: too small
+    note: 'Áo nhỏ quá nên không mặc được → đem trả.'
+  - point: too-adjective
+    segment: l8
+    match: too bad
+    note: '"That''s too bad" là câu cố định = "Tiếc quá".'
+  - point: verb-to-or-ing
+    segment: l5
+    match: like to exchange
+    note: 'would like + to V.'
+  - point: can-could-requests
+    segment: l1
+    match: How can I help
+  - point: can-could-requests
+    segment: l8
+    match: Can I get
+    note: 'Xin được hoàn tiền: Can I get a refund?'
+  - point: can-could-requests
+    segment: l12
+    match: Can I look

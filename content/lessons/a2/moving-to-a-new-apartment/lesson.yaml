@@ -135,3 +135,20 @@ questions:
     feedback_ok: 'Đúng: “Now I walk to work in ten minutes.” (walk = đi bộ = on foot)'
     feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 4. Người viết không cần đi xe buýt nữa.
     evidence: p4s1
+grammar:
+  - point: time-linkers
+    segment: p3s4
+    match: After that
+    note: 'After that = sau đó (sau khi chuyển đồ xong).'
+  - point: present-continuous-vs-simple
+    segment: p4s1
+    match: walk
+    note: '"Now" ở đây = bây giờ (khác trước): việc lặp lại mỗi ngày → hiện tại đơn.'
+  - point: present-continuous-vs-simple
+    segment: p4s2
+    match: have … I'm learning
+    note: '"have more free time" = sự thật lúc này (have = có, không dùng -ing); "I''m learning" = việc đang làm trong giai đoạn này.'
+  - point: present-continuous-vs-simple
+    segment: p4s3
+    match: I'm also slowly buying
+    note: 'Việc đang diễn ra dần dần, chưa xong → hiện tại tiếp diễn.'

@@ -16,14 +16,17 @@ days:
     title: Ăn uống
     reading: cooking-dinner-at-home
     listening: ordering-food-by-phone
+    grammar: countable-uncountable
   - day: 4
     title: Mua sắm
     reading: shopping-for-clothes-online
     listening: returning-a-shirt
+    grammar: too-adjective
   - day: 5
     title: Sức khỏe
     reading: small-habits-for-better-sleep
     listening: making-a-doctors-appointment
+    grammar: verb-to-or-ing
   - day: 6
     title: Du lịch
     reading: a-weekend-in-da-lat
@@ -33,35 +36,44 @@ days:
     title: Giao tiếp ở công ty
     reading: an-email-to-a-new-colleague
     listening: a-short-team-meeting
+    grammar: can-could-requests
   - day: 8
     title: Cuối tuần
     reading: weekend-plans
     listening: asking-for-directions
+    grammar: future-plans
   - day: 9
     title: Công nghệ
     reading: my-phone-and-me
     listening: fixing-the-wi-fi
+    grammar: can-ability
   - day: 10
     title: Tiền bạc
     reading: saving-money-each-month
     listening: at-the-bank
+    grammar: have-to-need-to
   - day: 11
     title: Gia đình
     reading: sunday-lunch-with-my-family
     listening: a-surprise-party-for-mom
+    grammar: comparatives-superlatives
   - day: 12
     title: Thời tiết
     reading: the-rainy-season
     listening: will-it-rain-this-weekend
+    grammar: will-predictions-decisions
   - day: 13
     title: Nhà ở
     reading: moving-to-a-new-apartment
     listening: calling-the-landlord
+    grammar: present-continuous-vs-simple
   - day: 14
     title: Thể thao và sở thích
     reading: learning-to-swim
     listening: joining-a-gym
+    grammar: time-linkers
   - day: 15
     title: Học tập
     reading: how-i-learn-english
     listening: signing-up-for-an-english-class
+    grammar: review-days-1-14

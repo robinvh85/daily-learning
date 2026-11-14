@@ -1,7 +1,9 @@
 # DailyLearning — Kế hoạch thêm phần Ngữ pháp
 
-> Ngày lập: 2026-11-14 · Trạng thái: **Đã chốt (2026-11-14)** — phương án C (anh chọn), các quyết
-> còn lại em kiểm trên nội dung thật rồi chốt (mục 9). Sẵn sàng làm Phase 1.
+> Ngày lập: 2026-11-14 · Trạng thái: **Đã code xong Phase 1–6 (2026-11-14)**, nội dung 15 ngày ở
+> `status: draft` chờ duyệt. Phương án C (anh chọn), các quyết định còn lại ở mục 9.
+> Chưa chạy được test emulator / E2E trên máy dev (thiếu Java): cần chạy `npm run test:emulator`
+> và `npm run test:e2e` trước khi deploy.
 > Liên quan: [`dailylearning-v1-plan.md`](dailylearning-v1-plan.md) (format bài học, từ điển, daily plan)
 
 ## 1. Mục tiêu

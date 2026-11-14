@@ -1,0 +1,94 @@
+slug: have-to-need-to
+title: have to / had to / need to – sự cần thiết
+title_en: have to / had to / need to (necessity)
+level: A2
+group: modals
+summary: >-
+  have to và need to + động từ nguyên mẫu nói việc cần làm, phải làm. Quá khứ là had to / needed to.
+  don't have to và don't need to nghĩa là "không cần", không phải "cấm".
+discover:
+  question: >-
+    Các câu tô đậm nói về việc phải làm hoặc cần làm. Sau have / had / need là gì? Câu nào nói về
+    quá khứ?
+  answer: >-
+    Sau have to / had to / need to là động từ nguyên mẫu (borrow, see). "I had to borrow money" nói
+    về năm ngoái nên dùng had to. "I need it" thì need đi với danh từ (it), không có "to".
+  pinned:
+    - weekend-plans#p1s2
+    - weekend-plans#p3s4
+    - my-first-week-at-a-new-job#p3s2
+form:
+  - label: Khẳng định
+    pattern: S + have to / has to / need to / needs to + V (nguyên mẫu)
+    example: She has to work on Saturday.
+  - label: Phủ định (không cần)
+    pattern: S + don't / doesn't + have to / need to + V
+    example: I don't need to work this weekend.
+  - label: Nghi vấn
+    pattern: Do / Does + S + have to / need to + V?
+    example: Do I have to pay a fee?
+  - label: Quá khứ
+    pattern: S + had to / needed to + V · didn't have to / didn't need to + V
+    example: I had to borrow money from my sister.
+  - label: need + danh từ
+    pattern: S + need / needs + danh từ
+    example: I need a bank account for my salary.
+usage:
+  - have to - việc bắt buộc do quy định hoặc hoàn cảnh (I have to show my passport at the bank).
+  - need to - việc cần thiết với mình (I need to buy a gift). Trong nhiều câu, have to và need to dùng thay nhau được.
+  - don't have to / don't need to - không cần làm, làm cũng được, không làm cũng được.
+  - Quá khứ - had to dùng cho mọi chủ ngữ (I had to, she had to).
+signals:
+  - every day / every month
+  - this weekend
+  - last year (với had to)
+common_mistakes:
+  - wrong: She have to work late.
+    right: She has to work late.
+    why: Chủ ngữ he / she / it → has to.
+  - wrong: I must to go to the bank.
+    right: I have to go to the bank.
+    why: 'Sau must không có "to". Người Việt hay lẫn must với have to; trong giao tiếp, người Mỹ hay dùng have to hơn.'
+  - wrong: Yesterday I have to stay at work late.
+    right: Yesterday I had to stay at work late.
+    why: Nói về quá khứ thì dùng had to, không dùng have to.
+exercises:
+  - type: choice
+    prompt: My brother ___ get up at six every day.
+    options: [have to, has to, having to]
+    correct: 1
+    explain: 'Chủ ngữ số ít (my brother) → has to.'
+  - type: choice
+    prompt: Last year, I ___ borrow money from my sister.
+    options: [have to, had to, has to]
+    correct: 1
+    explain: '"Last year" là quá khứ → had to.'
+  - type: gap
+    prompt: It's Saturday, so I ___ (not / have to) go to work.
+    answer: don't have to
+    accept: [do not have to]
+    explain: "Không cần làm: don't have to + động từ nguyên mẫu."
+  - type: gap
+    prompt: My sister ___ (not / need) to work on Sundays. She is always free then.
+    answer: doesn't need
+    accept: [does not need]
+    explain: "Chủ ngữ she, hiện tại → doesn't need to. Sau doesn't, need không thêm -s."
+  - type: gap
+    prompt: Lan ___ (have to) work late yesterday.
+    answer: had to
+    explain: 'Có "yesterday" → quá khứ: had to.'
+  - type: order
+    words: [I, to, do, pay, have, fee, a]
+    answer: Do I have to pay a fee?
+    explain: 'Câu hỏi: Do + chủ ngữ + have to + động từ nguyên mẫu?'
+  - type: order
+    words: [need, a, buy, gift, I, to]
+    answer: I need to buy a gift.
+    explain: 'need to + động từ nguyên mẫu (buy) + tân ngữ.'
+  - type: find_error
+    sentence: She have to pay the rent on Monday.
+    wrong: have to
+    right: has to
+    explain: 'Chủ ngữ she → has to.'
+detect: \b(have|has|had|need|needs|needed) to\b|\bneed (it|some|a|more)\b
+status: draft

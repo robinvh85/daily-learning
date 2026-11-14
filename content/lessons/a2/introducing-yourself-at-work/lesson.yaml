@@ -154,3 +154,11 @@ grammar:
     segment: l10
     match: do people usually have
     note: 'Câu hỏi: do + chủ ngữ + (trạng từ) + động từ nguyên mẫu.'
+  - point: can-could-requests
+    segment: l12
+    match: Could I join
+    note: 'Xin phép lịch sự: Could I + V?'
+  - point: countable-uncountable
+    segment: l9
+    match: any questions
+    note: 'any + danh từ số nhiều trong câu có if / câu hỏi.'

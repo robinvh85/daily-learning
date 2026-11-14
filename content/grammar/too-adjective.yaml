@@ -1,0 +1,88 @@
+slug: too-adjective
+title: too + tính từ (quá… nên không được)
+title_en: too + adjective, too much / too many
+level: A2
+group: comparison
+summary: >-
+  "too" đứng trước tính từ để nói một thứ vượt quá mức mình cần hoặc muốn, nên có vấn đề: too
+  small = nhỏ quá (không mặc vừa). "too much / too many" đứng trước danh từ: quá nhiều.
+discover:
+  question: >-
+    Trong "the sleeves were too long" và "it's too small", người nói hài lòng hay có vấn đề? Chữ
+    "too" đứng ở đâu so với tính từ?
+  answer: >-
+    Đều có vấn đề: tay áo dài quá nên phải đi sửa, áo nhỏ quá nên phải đem trả. "too" đứng ngay
+    trước tính từ (too long, too small). Với danh từ thì dùng too much / too many (too much salt).
+  pinned:
+    - cooking-dinner-at-home#p4s1
+form:
+  - label: Với tính từ
+    pattern: S + be + too + tính từ
+    example: This shirt is too small.
+  - label: Kèm cho ai
+    pattern: too + tính từ + for + người
+    example: The sleeves were too long for me.
+  - label: Kèm việc không làm được
+    pattern: too + tính từ + to V
+    example: The jacket is too expensive to buy.
+  - label: Với danh từ
+    pattern: too much + không đếm được · too many + số nhiều
+    example: too much salt · too many people
+usage:
+  - "too = nhiều hơn mức cần, mang nghĩa tiêu cực: It's too hot (nóng quá, khó chịu)."
+  - 'Khen thì dùng very hoặc so / really, không dùng too: The jacket is very nice.'
+  - '"That''s too bad." là câu cố định = "Tiếc quá", dùng khi nghe tin không vui.'
+  - '"too" cuối câu có nghĩa khác: cũng (I''m in marketing too).'
+signals:
+  - too + tính từ
+  - too much / too many
+  - for me
+common_mistakes:
+  - wrong: This dress is too beautiful, I'll buy it.
+    right: This dress is very beautiful, I'll buy it.
+    why: 'too mang nghĩa "quá mức, có vấn đề". Khen thì dùng very / really, không dịch "đẹp quá" thành too beautiful.'
+  - wrong: The shoes are too much small.
+    right: The shoes are too small.
+    why: Trước tính từ chỉ dùng too; too much / too many đi với danh từ.
+  - wrong: There are too much people in the store.
+    right: There are too many people in the store.
+    why: people là danh từ số nhiều (đếm được) → too many.
+exercises:
+  - type: choice
+    prompt: I can't wear these shoes. They're ___ small.
+    options: [too, very much, too much]
+    correct: 0
+    explain: 'Trước tính từ (small) dùng too; giày nhỏ quá nên không mang được.'
+  - type: choice
+    prompt: I love this jacket. It's ___ warm and comfortable.
+    options: [too, very, too much]
+    correct: 1
+    explain: 'Câu khen, không có vấn đề gì → very. too mang nghĩa tiêu cực.'
+  - type: choice
+    prompt: The soup is salty. You put in ___ salt.
+    options: [too many, too much, too]
+    correct: 1
+    explain: 'salt không đếm được → too much.'
+  - type: gap
+    prompt: There are ___ (quá nhiều) people at the mall on weekends.
+    answer: too many
+    explain: 'people là danh từ số nhiều → too many.'
+  - type: gap
+    prompt: This phone is ___ (quá đắt) for me.
+    answer: too expensive
+    explain: 'too + tính từ + for me: đắt quá đối với tôi.'
+  - type: order
+    words: [too, the, were, long, sleeves]
+    answer: The sleeves were too long.
+    explain: 'Chủ ngữ + be + too + tính từ.'
+  - type: order
+    words: [is, me, for, too, big, this, shirt]
+    answer: This shirt is too big for me.
+    explain: 'too + tính từ + for + người.'
+  - type: find_error
+    sentence: This bag is too much heavy to carry.
+    wrong: too much
+    right: too
+    explain: 'Trước tính từ (heavy) chỉ dùng too, không dùng too much.'
+detect: \btoo\s+\w+
+status: draft

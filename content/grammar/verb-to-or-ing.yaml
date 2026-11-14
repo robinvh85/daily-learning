@@ -1,0 +1,89 @@
+slug: verb-to-or-ing
+title: Động từ + to V hoặc V-ing
+title_en: Verb + to-infinitive or -ing
+level: A2
+group: verb-patterns
+summary: >-
+  Khi hai động từ đi liền nhau, động từ thứ hai có dạng to V hoặc V-ing, tùy động từ đứng trước:
+  decide to change, try to go, would like to make, nhưng stop using, enjoy shopping.
+discover:
+  question: >-
+    So sánh "I decided to change", "I try to go to bed" với "I stopped using my phone". Động
+    từ thứ hai sau decide, try khác động từ thứ hai sau stop ở điểm nào?
+  answer: >-
+    Sau decide, try, start, would like là to + động từ nguyên mẫu (to change, to go, to fall, to
+    make). Sau stop là V-ing (using). Không có quy tắc chung, phải nhớ động từ nào đi với dạng nào.
+  pinned:
+    - cooking-dinner-at-home#p1s3
+    - shopping-for-clothes-online#p1s1
+form:
+  - label: Động từ + to V
+    pattern: decide / want / need / try / plan / hope / learn / would like + to V
+    example: I decided to cook at home.
+  - label: Động từ + V-ing
+    pattern: enjoy / stop / finish / keep / mind + V-ing
+    example: She enjoys cooking. He stopped drinking coffee.
+  - label: Cả hai đều được
+    pattern: start / begin / like / love + to V hoặc V-ing
+    example: I started to sleep better. = I started sleeping better.
+  - label: Phủ định
+    pattern: S + don't / didn't + V1 + to V / V-ing
+    example: I don't want to wait. I didn't enjoy shopping.
+usage:
+  - '"would like to V" (thường viết tắt I''d like to) là cách nói lịch sự của "want to": I''d like to make an appointment.'
+  - 'Sau "stop", V-ing là việc mình bỏ không làm nữa: I stopped using my phone in bed = tôi bỏ dùng điện thoại trên giường.'
+  - '"try to V" = cố gắng làm việc gì: I try to go to bed at the same time.'
+signals:
+  - decide to / want to / need to / try to
+  - would like to (I'd like to)
+  - stop / enjoy / finish + V-ing
+  - start + to V / V-ing
+common_mistakes:
+  - wrong: I want go home.
+    right: I want to go home.
+    why: Sau want phải có to trước động từ. Tiếng Việt nói "muốn đi" nên hay quên to.
+  - wrong: I enjoy to cook.
+    right: I enjoy cooking.
+    why: enjoy luôn đi với V-ing.
+  - wrong: She decided to changed her job.
+    right: She decided to change her job.
+    why: Sau to luôn là động từ nguyên mẫu, kể cả khi câu ở quá khứ (chỉ động từ thứ nhất đổi thành decided).
+exercises:
+  - type: choice
+    prompt: I really enjoy ___ in the park after dinner.
+    options: [walk, to walk, walking]
+    correct: 2
+    explain: 'enjoy + V-ing → walking.'
+  - type: choice
+    prompt: Last year he decided ___ a new job.
+    options: [to find, finding, find]
+    correct: 0
+    explain: 'decide + to V → to find.'
+  - type: choice
+    prompt: I'd like ___ a table for two, please.
+    options: [book, to book, booking]
+    correct: 1
+    explain: "would like (I'd like) + to V → to book."
+  - type: gap
+    prompt: My doctor told me to stop ___ (drink) coffee at night.
+    answer: drinking
+    explain: 'stop + V-ing: bỏ việc uống cà phê.'
+  - type: gap
+    prompt: We need ___ (leave) early tomorrow.
+    answer: to leave
+    explain: 'need + to V → to leave.'
+  - type: gap
+    prompt: Have you finished ___ (write) the report?
+    answer: writing
+    explain: 'finish + V-ing → writing (bỏ e rồi thêm -ing).'
+  - type: order
+    words: [try, I, to, early, go, bed, to]
+    answer: I try to go to bed early.
+    explain: 'try + to V: cố gắng đi ngủ sớm.'
+  - type: find_error
+    sentence: I want learn English for my new job.
+    wrong: learn
+    right: to learn
+    explain: 'want + to V → want to learn.'
+detect: \b(decide|want|need|try|tri|plan|hope|learn|like|start|begin|stop|enjoy|finish|keep|mind)\w*\s+(to\s+\w+|\w+ing)\b
+status: draft

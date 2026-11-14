@@ -131,3 +131,15 @@ questions:
     feedback_ok: 'Đúng: “Next year, I’m going to save for a trip to Japan.”'
     feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 4.
     evidence: p4s2
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: have-to-need-to
+    segment: p1s3
+    match: had to borrow
+    note: 'Chuyện của năm ngoái → had to (quá khứ của have to).'
+  - point: future-plans
+    segment: p4s2
+    match: I'm going to save
+    note: 'Dự định cho năm sau → be going to.'

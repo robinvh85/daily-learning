@@ -133,3 +133,15 @@ questions:
     feedback_ok: 'Đúng: “It usually arrives by mail in five to seven days.”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “When will I get my debit card?”.
     evidence: l11
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: have-to-need-to
+    segment: l4
+    match: need it
+    note: 'need + danh từ / đại từ (it), không có "to".'
+  - point: have-to-need-to
+    segment: l5
+    match: need to see
+    note: 'need to + động từ nguyên mẫu: việc cần làm để mở tài khoản.'

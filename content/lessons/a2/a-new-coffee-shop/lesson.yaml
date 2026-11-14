@@ -131,3 +131,10 @@ grammar:
     segment: p1s4
     match: worked
     note: '"for five years" nhưng việc đã kết thúc (giờ cô ấy không làm ở khách sạn nữa) → quá khứ đơn.'
+  - point: comparatives-superlatives
+    segment: p4s1
+    match: the best
+    note: 'good → better → the best (bất quy tắc).'
+  - point: can-ability
+    segment: p4s2
+    match: can sit

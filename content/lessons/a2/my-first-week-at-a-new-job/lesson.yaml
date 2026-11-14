@@ -155,3 +155,18 @@ grammar:
   - point: present-simple-frequency
     segment: p4s3
     match: often eat
+  - point: have-to-need-to
+    segment: p3s2
+    match: had to learn
+  - point: comparatives-superlatives
+    segment: p4s4
+    match: more confident
+    note: 'confident là tính từ dài → more confident (tự tin hơn trước).'
+  - point: present-continuous-vs-simple
+    segment: p4s1
+    match: am slowly getting
+    note: 'Sự thay đổi đang dần dần diễn ra → am + V-ing.'
+  - point: time-linkers
+    segment: p2s2
+    match: Then
+    note: 'Then = sau đó: việc tiếp theo trong câu chuyện.'

@@ -132,3 +132,19 @@ questions:
     feedback_ok: 'Đúng: “My grandparents are getting older, and I want to spend more time with them.”'
     feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 4.
     evidence: p4s2
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: comparatives-superlatives
+    segment: p1s3
+    match: younger
+    note: 'young → younger: em trai nhỏ tuổi hơn người viết.'
+  - point: comparatives-superlatives
+    segment: p4s2
+    match: getting older
+    note: 'get + so sánh hơn = ngày càng (già hơn).'
+  - point: comparatives-superlatives
+    segment: p4s3
+    match: the most important
+    note: 'important là tính từ dài → the most important (+ of the week).'

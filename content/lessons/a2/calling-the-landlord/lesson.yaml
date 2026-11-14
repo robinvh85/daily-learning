@@ -137,3 +137,20 @@ questions:
     feedback_ok: 'Đúng: “Repairs are my job. You just pay the rent.”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “Do I need to pay for the repairs?”.
     evidence: l14
+grammar:
+  - point: will-predictions-decisions
+    segment: l6
+    match: I'll ask
+    note: 'Ông Lee quyết định ngay lúc nghe chuyện → will.'
+  - point: present-continuous-vs-simple
+    segment: l4
+    match: Is it making
+    note: 'Hỏi về lúc này (ngay bây giờ) → Is it + V-ing?'
+  - point: present-continuous-vs-simple
+    segment: l11
+    match: is leaking
+    note: 'Việc đang xảy ra lúc này → is + V-ing.'
+  - point: present-continuous-vs-simple
+    segment: l14
+    match: are … pay
+    note: 'Sự thật, việc thường xuyên (mỗi tháng trả tiền nhà) → hiện tại đơn.'

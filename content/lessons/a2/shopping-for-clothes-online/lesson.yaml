@@ -123,3 +123,15 @@ questions:
     feedback_ok: 'Đúng: “convenient” là tiện lợi: mua ở nhà, không phải chen chúc ở trung tâm thương mại.'
     feedback_wrong: Chưa đúng. Nghĩ lại vì sao người viết thích mua trên mạng hơn đi trung tâm thương mại (đoạn 1).
     evidence: p4s1
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: too-adjective
+    segment: p3s2
+    match: too long
+    note: 'Tay áo dài quá (so với tay mình) nên phải đi sửa.'
+  - point: verb-to-or-ing
+    segment: p1s1
+    match: enjoy shopping
+    note: 'enjoy + V-ing.'

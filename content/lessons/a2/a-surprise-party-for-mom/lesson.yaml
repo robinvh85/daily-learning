@@ -139,3 +139,18 @@ questions:
     feedback_ok: 'Đúng: “Her old one is broken.”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn Minh hỏi “Should I bring a present too?”.
     evidence: l11
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: future-plans
+    segment: l8
+    match: are coming
+    note: 'Hỏi về khách đã mời cho bữa tiệc → hiện tại tiếp diễn mang nghĩa tương lai.'
+  - point: future-plans
+    segment: l9
+    match: I'm going to invite
+  - point: can-ability
+    segment: l5
+    match: can cook
+    note: 'Nam nấu ăn được (khả năng), nhưng vẫn cần người giúp.'

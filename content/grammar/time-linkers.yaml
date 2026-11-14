@@ -1,0 +1,99 @@
+slug: time-linkers
+title: 'Từ nối thời gian khi kể chuyện: when, while, after, at first, then, now'
+title_en: 'Time linkers in stories: when, while, after, at first, then, now'
+level: A2
+group: sentence
+summary: >-
+  Khi kể lại một câu chuyện, các từ nối thời gian giúp người nghe biết việc nào xảy ra trước, việc
+  nào xảy ra cùng lúc và câu chuyện đi đến đâu.
+discover:
+  question: >-
+    Các từ tô đậm giúp sắp xếp câu chuyện theo thời gian. Từ nào có nghĩa "khi", "trong khi",
+    "lúc đầu", "sau", "sau đó" và "bây giờ"?
+  answer: >-
+    When (khi) I was a child · while (trong khi) they swam - hai việc cùng lúc · At first (lúc đầu)
+    I was afraid - sau đó thì khác · After two months (sau hai tháng) · Then (sau đó) - việc tiếp
+    theo · Now (bây giờ) - kết thúc câu chuyện ở hiện tại.
+  pinned:
+    - my-first-week-at-a-new-job#p2s2
+    - moving-to-a-new-apartment#p3s4
+form:
+  - label: when (khi)
+    pattern: When + S + V, S + V · S + V when + S + V
+    example: When I was a child, I lived near the sea.
+  - label: while (trong khi)
+    pattern: S + V while + S + V (hai việc cùng lúc)
+    example: I read a book while my friends swam.
+  - label: after (sau, sau khi)
+    pattern: After + thời gian / danh từ / S + V, S + V · After that, ...
+    example: After two months, I could swim.
+  - label: at first (lúc đầu)
+    pattern: At first, S + V ... but now / later ...
+    example: At first, I was afraid, but now I love it.
+  - label: then (sau đó)
+    pattern: S + V. Then S + V.
+    example: We had lunch. Then we went to the museum.
+  - label: now (bây giờ)
+    pattern: Now + S + V (hiện tại)
+    example: Now I go swimming every Saturday.
+usage:
+  - When / While / After đứng đầu câu thì đặt dấu phẩy sau vế đó (When I was a child, I ...). Đứng giữa câu thì không cần dấu phẩy.
+  - At first = lúc đầu (rồi sau đó tình hình thay đổi). First = đầu tiên, bước thứ nhất trong một chuỗi việc (First, open the box. Then ...).
+  - Kể chuyện quá khứ thì cả hai vế đều ở quá khứ (When I was ten, I learned to swim). Câu kết với Now quay về hiện tại.
+  - After + khoảng thời gian (after two months) hoặc khoảng thời gian + later (two months later), không dùng cả hai cùng lúc.
+signals:
+  - when / while
+  - after / after that
+  - at first / then
+  - now
+common_mistakes:
+  - wrong: When I was a child, I live in a small town.
+    right: When I was a child, I lived in a small town.
+    why: Câu chuyện ở quá khứ → cả hai vế đều dùng quá khứ.
+  - wrong: After two months later, I could swim.
+    right: After two months, I could swim.
+    why: '"Sau hai tháng" là "after two months" hoặc "two months later", không dùng cả after và later.'
+  - wrong: At first, open the box. Then turn on the phone.
+    right: First, open the box. Then turn on the phone.
+    why: Liệt kê các bước theo thứ tự → First. At first = lúc đầu (rồi sau đó thay đổi).
+exercises:
+  - type: choice
+    prompt: ___ I was ten, my family moved to a new city.
+    options: [When, While, Then]
+    correct: 0
+    explain: '"When" = khi (vào thời điểm đó). "While" dùng cho hai việc đang diễn ra cùng lúc.'
+  - type: choice
+    prompt: I cooked dinner ___ my brother cleaned the kitchen.
+    options: [while, at first, now]
+    correct: 0
+    explain: 'Hai việc diễn ra cùng lúc → while (trong khi).'
+  - type: choice
+    prompt: ___, I was nervous at the gym, but after a few weeks I felt fine.
+    options: [At first, Then, While]
+    correct: 0
+    explain: 'Lúc đầu thế này, sau đó thay đổi → At first.'
+  - type: gap
+    prompt: We had lunch at a small restaurant. ___ we walked to the park.
+    answer: Then
+    accept: [After that]
+    explain: 'Việc tiếp theo trong câu chuyện → Then (hoặc After that).'
+  - type: order
+    words: [walk, after, took, I, a, dinner]
+    answer: I took a walk after dinner.
+    explain: 'after + danh từ (dinner) đặt ở cuối câu, không cần dấu phẩy.'
+  - type: order
+    words: [book, while, a, read, she, I, slept]
+    answer: I read a book while she slept.
+    explain: 'S + V + while + S + V: hai việc cùng lúc.'
+  - type: find_error
+    sentence: When we arrived at the beach, it start to rain.
+    wrong: start
+    right: started
+    explain: 'Câu chuyện ở quá khứ (When we arrived) → vế sau cũng ở quá khứ: started.'
+  - type: find_error
+    sentence: After three weeks later, I could ride a bike.
+    wrong: After three weeks later
+    right: Three weeks later
+    explain: 'Dùng "After three weeks" hoặc "Three weeks later", không dùng cả hai.'
+detect: \b(when|while|after|at first|then|now)\b
+status: draft

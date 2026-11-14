@@ -131,3 +131,27 @@ questions:
     feedback_ok: 'Đúng: “leftovers” là đồ ăn còn thừa sau bữa ăn; người viết dùng chúng để nấu canh.'
     feedback_wrong: Chưa đúng. Người viết nấu xong bữa tối hôm qua, và hôm sau dùng phần còn lại để nấu canh.
     evidence: p4s4
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: countable-uncountable
+    segment: p2s2
+    match: some chicken … a few eggs
+    note: 'chicken (thịt gà) không đếm được → some; eggs đếm được, số nhiều → a few.'
+  - point: countable-uncountable
+    segment: p3s3
+    match: a little fish sauce
+    note: 'fish sauce là chất lỏng, không đếm được → a little.'
+  - point: countable-uncountable
+    segment: p4s1
+    match: too much salt
+    note: 'salt không đếm được → much (không dùng many).'
+  - point: too-adjective
+    segment: p4s1
+    match: too much
+    note: 'too much + danh từ không đếm được: nhiều muối quá nên món ăn bị mặn.'
+  - point: verb-to-or-ing
+    segment: p1s3
+    match: decided to cook
+    note: 'decide + to V.'

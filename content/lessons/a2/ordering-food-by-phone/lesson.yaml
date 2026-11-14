@@ -129,3 +129,30 @@ questions:
     feedback_ok: 'Đúng: “About 35 minutes.” (thirty-five)'
     feedback_wrong: Chưa đúng. Nghe lại câu trả lời cho “How long will it take?”, chú ý đừng nhầm với số nhà 45.
     evidence: l13
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: countable-uncountable
+    segment: l2
+    match: some food
+    note: 'Câu nhờ / gọi món dùng some; food không đếm được.'
+  - point: countable-uncountable
+    segment: l6
+    match: How much
+    note: 'Hỏi giá: How much is that? (money không đếm được).'
+  - point: verb-to-or-ing
+    segment: l2
+    match: I'd like to order
+  - point: can-could-requests
+    segment: l1
+    match: How can I help
+    note: 'Câu đề nghị giúp quen thuộc khi nghe điện thoại.'
+  - point: can-could-requests
+    segment: l4
+    match: Can I get
+    note: 'Gọi món: Can I get…? = cho tôi…'
+  - point: can-could-requests
+    segment: l8
+    match: Can I pay
+    note: 'Xin phép trả bằng thẻ: Can I + V?'

@@ -134,3 +134,18 @@ questions:
     feedback_ok: 'Đúng: “please come fifteen minutes early”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn B dặn Minh mang theo giấy tờ, chú ý “fifteen”, không phải “fifty”.
     evidence: l13
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: verb-to-or-ing
+    segment: l2
+    match: I'd like to make
+    note: 'I''d like to = I would like to: cách nói lịch sự của "I want to".'
+  - point: can-could-requests
+    segment: l1
+    match: How can I help
+  - point: can-could-requests
+    segment: l9
+    match: Can I get
+    note: 'Lễ tân lịch sự xin thông tin: Can I get your name…?'

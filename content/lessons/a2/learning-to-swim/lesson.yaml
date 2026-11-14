@@ -134,3 +134,24 @@ questions:
     feedback_ok: 'Đúng: “This summer, I want to swim in the sea with my friends.”'
     feedback_wrong: Chưa đúng. Đọc câu thứ hai của đoạn 4.
     evidence: p4s2
+grammar:
+  - point: time-linkers
+    segment: p1s1
+    match: When
+    note: 'When + quá khứ: "khi tôi còn nhỏ".'
+  - point: time-linkers
+    segment: p1s3
+    match: while
+    note: 'while = trong khi: hai việc diễn ra cùng lúc.'
+  - point: time-linkers
+    segment: p3s1
+    match: At first
+    note: 'At first = lúc đầu (sau đó thì khác).'
+  - point: time-linkers
+    segment: p3s4
+    match: After two months
+    note: 'After + khoảng thời gian, đặt dấu phẩy sau.'
+  - point: time-linkers
+    segment: p4s1
+    match: Now
+    note: 'Now = bây giờ: kết thúc câu chuyện, quay về hiện tại.'

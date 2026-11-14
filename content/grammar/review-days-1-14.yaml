@@ -1,0 +1,111 @@
+slug: review-days-1-14
+title: Ôn tập tổng hợp ngày 1–14
+title_en: Review (days 1-14)
+level: A2
+group: review
+summary: >-
+  Không có quy tắc mới. Hôm nay bạn nhìn lại các điểm ngữ pháp của 14 ngày đầu trong bài đọc và bài
+  nghe về việc học tiếng Anh, rồi làm bài luyện tập trộn nhiều điểm.
+discover:
+  question: >-
+    Mỗi phần tô đậm dùng một điểm ngữ pháp bạn đã học. Bạn nhận ra đó là điểm nào trước khi xem
+    ghi chú không?
+  answer: >-
+    Ví dụ: "studied", "talked" là quá khứ đơn; "started learning" là động từ + V-ing; "much time",
+    "How many" là đếm được / không đếm được; "My biggest problem" là so sánh nhất; "I'm not
+    improving" là hiện tại tiếp diễn; "when I look back" là từ nối thời gian; "Can I pay..." là lời
+    xin phép với can.
+form:
+  - label: Hiện tại đơn + tần suất (ngày 1)
+    pattern: S + (always / often...) + V / V-s
+    example: I often understand what people say.
+  - label: Quá khứ đơn (ngày 2, 6)
+    pattern: S + V-ed / V2 · didn't + V · Did + S + V?
+    example: Last week, I talked to a customer.
+  - label: Đếm được / không đếm được (ngày 3)
+    pattern: many / a few + danh từ số nhiều · much / a little + danh từ không đếm được
+    example: I don't have much time.
+  - label: too + tính từ (ngày 4)
+    pattern: too + adj (quá ... nên không được)
+    example: This shirt is too small.
+  - label: Động từ + to V / V-ing (ngày 5)
+    pattern: decide / want / try + to V · enjoy / stop / finish + V-ing
+    example: I started learning English again.
+  - label: can / could – nhờ, xin phép (ngày 7)
+    pattern: Can / Could + S + V?
+    example: Can I pay by credit card?
+  - label: Kế hoạch tương lai (ngày 8)
+    pattern: be going to + V · am / is / are + V-ing (đã sắp xếp)
+    example: I'm going to take the test tomorrow.
+  - label: can / can't – khả năng (ngày 9)
+    pattern: S + can / can't + V · quá khứ - could / couldn't
+    example: I couldn't speak well.
+  - label: have to / need to (ngày 10)
+    pattern: have to / need to + V · quá khứ - had to
+    example: I have to work late today.
+  - label: So sánh hơn / nhất (ngày 11)
+    pattern: adj-er than · more adj than · the adj-est · the most adj
+    example: My biggest problem is speaking.
+  - label: will (ngày 12)
+    pattern: will / 'll + V
+    example: I'll do it here.
+  - label: Hiện tại tiếp diễn và hiện tại đơn (ngày 13)
+    pattern: am / is / are + V-ing (lúc này) · V / V-s (thói quen)
+    example: I feel like I'm not improving.
+  - label: Từ nối thời gian (ngày 14)
+    pattern: when · while · after · at first · then · now
+    example: When I look back, I can see my progress.
+usage:
+  - 'Việc đã xong trong quá khứ (yesterday, last week, ago) → quá khứ đơn: I started six months ago.'
+  - 'Thói quen, việc lặp lại (every day, usually, often) → hiện tại đơn: I study every day.'
+  - "Việc đang diễn ra lúc này / giai đoạn này (now, at the moment, these days) → hiện tại tiếp diễn: I'm learning to cook."
+  - 'Kế hoạch đã có từ trước → be going to / hiện tại tiếp diễn; dự đoán hoặc quyết định ngay lúc nói → will.'
+  - 'Muốn chọn đúng thì: tìm từ tín hiệu thời gian trong câu trước (ago, every day, right now, tomorrow), rồi mới chọn dạng động từ.'
+common_mistakes:
+  - wrong: I start learning English six months ago.
+    right: I started learning English six months ago.
+    why: '"six months ago" → việc đã xảy ra trong quá khứ → started.'
+  - wrong: I don't have many time.
+    right: I don't have much time.
+    why: time là danh từ không đếm được → much.
+  - wrong: She can speaks English very well.
+    right: She can speak English very well.
+    why: Sau can / could / will, dùng động từ nguyên mẫu.
+exercises:
+  - type: choice
+    prompt: Last week, I ___ to a customer on the phone for ten minutes.
+    options: [talk, talked, am talking]
+    correct: 1
+    explain: '"Last week" → quá khứ đơn: talked (ngày 2).'
+  - type: choice
+    prompt: How ___ students are in each class?
+    options: [much, many, a little]
+    correct: 1
+    explain: '"students" là danh từ đếm được số nhiều → How many (ngày 3).'
+  - type: gap
+    prompt: My sister enjoys ___ (read) books in English.
+    answer: reading
+    explain: 'enjoy + V-ing (ngày 5).'
+  - type: gap
+    prompt: Look! The children ___ (play) in the park.
+    answer: are playing
+    explain: '"Look!" → việc đang xảy ra ngay lúc nói; "the children" số nhiều → are playing (ngày 13).'
+  - type: order
+    words: [you, could, open, the, window, please]
+    answer: Could you open the window, please?
+    explain: 'Nhờ lịch sự: Could + you + động từ nguyên mẫu (ngày 7).'
+  - type: order
+    words: [usually, I, the, take, bus, to, work]
+    answer: I usually take the bus to work.
+    explain: 'Trạng từ tần suất (usually) đứng trước động từ thường (ngày 1).'
+  - type: find_error
+    sentence: This bag is too much heavy for me.
+    wrong: too much heavy
+    right: too heavy
+    explain: 'too + tính từ: too heavy, không có "much" (ngày 4).'
+  - type: find_error
+    sentence: When I was young, I can swim very well.
+    wrong: can
+    right: could
+    explain: 'Khả năng trong quá khứ (When I was young) → could (ngày 9, 14).'
+status: draft

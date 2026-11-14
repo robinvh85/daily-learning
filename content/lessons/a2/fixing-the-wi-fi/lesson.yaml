@@ -127,3 +127,18 @@ questions:
     feedback_ok: 'Đúng: “Now they’re all green!”'
     feedback_wrong: Chưa đúng. Nghe lại đoạn sau khi Minh chờ hai phút.
     evidence: l10
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: can-ability
+    segment: l2
+    match: can't connect
+    note: "can't + động từ nguyên mẫu: máy không làm được việc đó. Chủ ngữ số ít nhưng connect không thêm -s."
+  - point: can-ability
+    segment: l5
+    match: Can you see
+    note: 'Hỏi người kia có nhìn thấy được không → Can + chủ ngữ + V?'
+  - point: can-ability
+    segment: l12
+    match: can see

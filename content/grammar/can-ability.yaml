@@ -1,0 +1,85 @@
+slug: can-ability
+title: can / can't – khả năng
+title_en: can / can't (ability)
+level: A2
+group: modals
+summary: >-
+  can + động từ nguyên mẫu nói ai đó làm được việc gì, hoặc việc gì có thể xảy ra. can't (cannot)
+  là không làm được. Dạng của can giống nhau với mọi chủ ngữ.
+discover:
+  question: >-
+    Trong cuộc gọi sửa Wi-Fi, các câu tô đậm nói về việc làm được hay không làm được. Động từ đi
+    sau can / can't có dạng gì? Với "my laptop" (số ít), can có thêm -s không?
+  answer: >-
+    Sau can / can't luôn là động từ nguyên mẫu (connect, see), và can không bao giờ thêm -s: My
+    laptop can't connect. Câu hỏi đưa can lên đầu: Can you see the router?
+  pinned:
+    - a-surprise-party-for-mom#l5
+    - a-new-coffee-shop#p4s2
+form:
+  - label: Khẳng định
+    pattern: S + can + V (nguyên mẫu)
+    example: I can see the website now.
+  - label: Phủ định
+    pattern: S + can't (cannot) + V
+    example: My laptop can't connect to the internet.
+  - label: Nghi vấn
+    pattern: Can + S + V? · Yes, S can. / No, S can't.
+    example: Can you see the router? – Yes, I can.
+usage:
+  - Khả năng, kỹ năng của người - I can cook. She can't swim.
+  - Việc làm được hay không trong một tình huống - My phone can't connect to the Wi-Fi. I can see the lights.
+  - Phát âm - ở câu khẳng định "can" đọc nhẹ /kən/; "can't" đọc rõ và mạnh /kænt/, nên nghe kỹ phần cuối để phân biệt.
+signals:
+  - now
+  - well (I can cook well)
+common_mistakes:
+  - wrong: She cans speak English.
+    right: She can speak English.
+    why: can giống nhau với mọi chủ ngữ, không thêm -s.
+  - wrong: I can to fix my bike.
+    right: I can fix my bike.
+    why: Sau can là động từ nguyên mẫu không có "to".
+  - wrong: My laptop can't connects to the Wi-Fi.
+    right: My laptop can't connect to the Wi-Fi.
+    why: Động từ sau can / can't không thêm -s, kể cả khi chủ ngữ là số ít.
+exercises:
+  - type: choice
+    prompt: My phone ___ connect to the Wi-Fi. Can you help me?
+    options: [can't, cans, don't can]
+    correct: 0
+    explain: 'Phủ định của can là can''t (cannot). Không có "cans" hay "don''t can".'
+  - type: choice
+    prompt: My grandmother can ___ very well.
+    options: [cooks, cook, to cook]
+    correct: 1
+    explain: 'Sau can là động từ nguyên mẫu không "to": can cook.'
+  - type: gap
+    prompt: I ___ (not / see) the router. Where is it?
+    answer: can't see
+    accept: [cannot see, can not see]
+    explain: "Phủ định: can't + động từ nguyên mẫu."
+  - type: gap
+    prompt: '___ you swim? – Yes, I can.'
+    answer: Can
+    explain: 'Câu hỏi về khả năng: Can + chủ ngữ + động từ nguyên mẫu? Câu trả lời ngắn "Yes, I can" cho biết cần dùng can.'
+  - type: order
+    words: [can, the, see, I, website]
+    answer: I can see the website.
+    explain: 'Chủ ngữ + can + động từ nguyên mẫu + tân ngữ.'
+  - type: order
+    words: [your, can, speak, Japanese, brother]
+    answer: Can your brother speak Japanese?
+    explain: 'Câu hỏi: Can đứng đầu, rồi đến chủ ngữ (your brother) và động từ nguyên mẫu.'
+  - type: find_error
+    sentence: Lan cans play the guitar.
+    wrong: cans
+    right: can
+    explain: 'can không thêm -s với he / she / it.'
+  - type: find_error
+    sentence: I can to fix the Wi-Fi myself.
+    wrong: can to fix
+    right: can fix
+    explain: 'Không dùng "to" sau can.'
+detect: \b(can|can't|can’t|cannot)\b
+status: draft

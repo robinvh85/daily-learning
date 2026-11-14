@@ -1,0 +1,99 @@
+slug: countable-uncountable
+title: Danh từ đếm được và không đếm được
+title_en: Countable and uncountable nouns (some, any, a few, a little, much, many)
+level: A2
+group: nouns
+summary: >-
+  Danh từ đếm được (egg, bowl) có số nhiều; danh từ không đếm được (rice, salt, coffee) thì không.
+  Từ chỉ số lượng đi kèm cũng khác nhau: a few / many cho danh từ đếm được, a little / much cho
+  danh từ không đếm được.
+discover:
+  question: >-
+    Vì sao nói "a few eggs" nhưng lại nói "a little fish sauce", "too much salt"? Danh từ sau
+    "a few" khác danh từ sau "a little" ở điểm nào?
+  answer: >-
+    "eggs" đếm được (one egg, two eggs) nên có số nhiều và đi với a few. "fish sauce", "salt",
+    "chicken" (thịt gà), "food" không đếm được, không thêm -s, nên đi với a little / much.
+    "some" dùng được cho cả hai loại.
+  pinned:
+    - a-weekend-in-da-lat#p3s2
+    - introducing-yourself-at-work#l9
+form:
+  - label: Đếm được
+    pattern: a / an + danh từ số ít · danh từ + -s
+    example: I bought an egg. I bought three eggs.
+  - label: Không đếm được
+    pattern: danh từ (không a / an, không -s)
+    example: I bought rice and salt.
+  - label: some / any
+    pattern: some (khẳng định, mời, nhờ) · any (phủ định, câu hỏi)
+    example: We have some milk. We don't have any eggs. Do you have any questions?
+  - label: Ít, một vài
+    pattern: a few + danh từ số nhiều · a little + danh từ không đếm được
+    example: a few eggs · a little sugar
+  - label: Nhiều
+    pattern: many + danh từ số nhiều · much + danh từ không đếm được
+    example: How many eggs? How much rice?
+usage:
+  - 'Đếm được: người, vật tách rời từng cái (egg, bowl, apple, question).'
+  - 'Không đếm được: chất lỏng, chất liệu, khối chung (water, rice, salt, coffee, food, money, information).'
+  - '"some" trong câu mời và nhờ, kể cả câu hỏi: Would you like some tea? I''d like to order some food.'
+  - '"much" thường dùng trong câu phủ định và câu hỏi (not much, How much…?); câu khẳng định hay dùng "a lot of".'
+  - '"How much is that?" hỏi giá tiền (money là danh từ không đếm được).'
+signals:
+  - some / any
+  - a few / a little
+  - many / much
+  - How many…? / How much…?
+  - a lot of
+spelling:
+  - 'Một số danh từ có thể đếm được hoặc không, tùy nghĩa: chicken (thịt gà, không đếm được) / a chicken (con gà); a coffee (một ly cà phê) / coffee (cà phê nói chung).'
+common_mistakes:
+  - wrong: I need some informations.
+    right: I need some information.
+    why: information không đếm được, không thêm -s (giống advice, furniture, homework).
+  - wrong: How much eggs do we have?
+    right: How many eggs do we have?
+    why: eggs đếm được, số nhiều → how many.
+  - wrong: I have a little friends here.
+    right: I have a few friends here.
+    why: friends đếm được, số nhiều → a few; a little chỉ dùng với danh từ không đếm được.
+exercises:
+  - type: choice
+    prompt: There are only ___ eggs in the fridge.
+    options: [a few, a little, much]
+    correct: 0
+    explain: 'eggs đếm được, số nhiều → a few.'
+  - type: choice
+    prompt: How ___ money do you need?
+    options: [many, much, few]
+    correct: 1
+    explain: 'money không đếm được → how much.'
+  - type: choice
+    prompt: We don't have ___ milk. Can you buy some?
+    options: [some, any, many]
+    correct: 1
+    explain: "Câu phủ định (don't have) → any. milk không đếm được nên không dùng many."
+  - type: gap
+    prompt: Add ___ (một ít) sugar to the coffee.
+    answer: a little
+    explain: 'sugar không đếm được → a little.'
+  - type: gap
+    prompt: How ___ (bao nhiêu) bowls of soup would you like?
+    answer: many
+    explain: 'bowls đếm được, số nhiều → how many.'
+  - type: order
+    words: [bought, rice, I, some, and, vegetables]
+    answer: I bought some rice and vegetables.
+    explain: 'some dùng được với cả danh từ không đếm được (rice) và số nhiều (vegetables).'
+  - type: order
+    words: [any, do, have, questions, you]
+    answer: Do you have any questions?
+    explain: 'Câu hỏi → any + danh từ số nhiều (questions).'
+  - type: find_error
+    sentence: Can you give me some advices about cooking?
+    wrong: advices
+    right: advice
+    explain: 'advice không đếm được, không thêm -s.'
+detect: \b(some|any|few|little|much|many)\b
+status: draft

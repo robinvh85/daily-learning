@@ -1,0 +1,94 @@
+slug: future-plans
+title: 'Kế hoạch tương lai: be going to và hiện tại tiếp diễn'
+title_en: Future plans (be going to and present continuous)
+level: A2
+group: tenses
+summary: >-
+  Khi nói về việc mình đã định làm, dùng be going to + động từ nguyên mẫu. Khi việc đó đã được sắp
+  xếp xong (có giờ, có hẹn, có người khác cùng tham gia), người Mỹ hay dùng hiện tại tiếp diễn.
+discover:
+  question: >-
+    Các câu tô đậm đều nói về cuối tuần sắp tới, nhưng không có "will". Người viết dùng cấu trúc
+    nào để nói về tương lai?
+  answer: >-
+    Có hai cách: am / is / are going to + động từ nguyên mẫu (I'm going to sleep in) cho việc mình
+    đã định làm, và am / is / are + V-ing (I'm having breakfast with Vy) cho việc đã hẹn, đã sắp xếp.
+  pinned:
+    - saving-money-each-month#p4s2
+    - a-surprise-party-for-mom#l9
+    - a-surprise-party-for-mom#l8
+form:
+  - label: be going to – khẳng định
+    pattern: S + am / is / are + going to + V (nguyên mẫu)
+    example: I'm going to clean my apartment on Saturday.
+  - label: be going to – phủ định
+    pattern: S + am not / isn't / aren't + going to + V
+    example: She isn't going to buy a new phone this year.
+  - label: be going to – nghi vấn
+    pattern: Am / Is / Are + S + going to + V?
+    example: Are you going to visit your parents?
+  - label: Hiện tại tiếp diễn cho kế hoạch đã hẹn
+    pattern: S + am / is / are + V-ing + thời gian tương lai
+    example: We're meeting Lan at seven tonight.
+usage:
+  - be going to - dự định, ý định đã có từ trước (I'm going to save for a trip).
+  - Hiện tại tiếp diễn - việc đã sắp xếp, thường có giờ, có địa điểm hoặc có người khác (a party, a meeting, a dinner).
+  - Hiện tại tiếp diễn chỉ mang nghĩa tương lai khi có từ chỉ thời gian tương lai (tonight, on Saturday, next week) hoặc ngữ cảnh rõ ràng.
+  - Nhiều câu dùng cách nào cũng được - "I'm going to have dinner with Mai" và "I'm having dinner with Mai" gần như cùng nghĩa.
+signals:
+  - tonight
+  - tomorrow
+  - this weekend
+  - on Saturday
+  - next week / next year
+common_mistakes:
+  - wrong: I going to visit my grandparents.
+    right: I'm going to visit my grandparents.
+    why: Không được bỏ "be" (am / is / are) trước "going to".
+  - wrong: She is going to buys a new bag.
+    right: She is going to buy a new bag.
+    why: Sau "going to" luôn là động từ nguyên mẫu, không thêm -s, -ed hay -ing.
+  - wrong: I meet my friend tomorrow evening.
+    right: I'm meeting my friend tomorrow evening.
+    why: Hẹn đã sắp xếp cho tương lai thì dùng hiện tại tiếp diễn (hoặc be going to), không dùng hiện tại đơn.
+exercises:
+  - type: choice
+    prompt: Next year, I ___ save money for a trip to Japan.
+    options: [going to, am going to, am going]
+    correct: 1
+    explain: 'Cần đủ "be" + going to + động từ nguyên mẫu: I am going to save.'
+  - type: choice
+    prompt: My cousin ___ a birthday party on Saturday night.
+    options: [has, is having, having]
+    correct: 1
+    explain: 'Bữa tiệc đã được sắp xếp (có ngày, có giờ) → hiện tại tiếp diễn: is having. "has" là hiện tại đơn, "having" thiếu "is".'
+  - type: gap
+    prompt: We ___ (go) to the beach this weekend.
+    answer: are going to go
+    accept: [are going, "'re going to go", "'re going"]
+    explain: 'Kế hoạch cuối tuần: are going to go, hoặc hiện tại tiếp diễn "are going" (người Mỹ hay nói "We are going to the beach").'
+  - type: gap
+    prompt: She ___ (not / buy) a new phone this year. Her old one still works.
+    answer: isn't going to buy
+    accept: [is not going to buy, "'s not going to buy"]
+    explain: "Phủ định: isn't going to + động từ nguyên mẫu. Đây là quyết định của cô ấy, không phải một cuộc hẹn."
+  - type: order
+    words: [going, are, visit, to, you, your, parents]
+    answer: Are you going to visit your parents?
+    explain: 'Câu hỏi: đưa "are" lên trước chủ ngữ: Are + you + going to + V?'
+  - type: order
+    words: [meeting, at, we're, seven, Lan]
+    answer: We're meeting Lan at seven.
+    explain: "Cuộc hẹn đã có giờ → hiện tại tiếp diễn: We're meeting + người + giờ."
+  - type: find_error
+    sentence: I am going to cleaning my apartment on Sunday.
+    wrong: cleaning
+    right: clean
+    explain: 'Sau "going to" dùng động từ nguyên mẫu: going to clean.'
+  - type: find_error
+    sentence: Tomorrow my brother going to fix my bike.
+    wrong: going
+    right: is going
+    explain: 'Thiếu "be": my brother is going to fix.'
+detect: \b(going to \w+|(am|is|are|'m|'s|'re|’m|’s|’re) \w+ing\b)
+status: draft

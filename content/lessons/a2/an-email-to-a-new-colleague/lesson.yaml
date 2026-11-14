@@ -146,3 +146,11 @@ questions:
     feedback_ok: 'Đúng: “I’m back on Thursday, so let’s have coffee and get to know each other.”'
     feedback_wrong: Chưa đúng. Đọc câu đầu của đoạn 4.
     evidence: p4s1
+
+# Sentences that show a grammar point (content/grammar/<point>.yaml). `match` = words to
+# underline; separate parts with "…".
+grammar:
+  - point: can-could-requests
+    segment: p3s3
+    match: can also show
+    note: 'can + V để nói ai đó có thể giúp bạn (đề nghị giúp đỡ).'

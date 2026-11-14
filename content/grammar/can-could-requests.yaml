@@ -1,0 +1,97 @@
+slug: can-could-requests
+title: Nhờ và xin phép lịch sự với can / could
+title_en: Polite requests and permission (Can you…? Could you…? Can I…?)
+level: A2
+group: modals
+summary: >-
+  Dùng "Can you…? / Could you…?" để nhờ người khác làm gì, và "Can I…? / Could I…?" để xin
+  phép hoặc xin thứ gì đó. "Could" nghe lịch sự, nhẹ nhàng hơn "can".
+discover:
+  question: >-
+    "Could you write the summary?" và "Could I join you today?" khác nhau ở chủ ngữ. Câu nào là
+    nhờ người khác làm, câu nào là xin phép cho mình? Động từ sau can / could có dạng gì?
+  answer: >-
+    "Could you…?" là nhờ người nghe làm (viết bản tóm tắt). "Could I / Can I…?" là xin phép hoặc
+    xin cho mình (ngồi ăn cùng, để lại túi, được hoàn tiền). Sau can / could luôn là động từ
+    nguyên mẫu, không to, không -s.
+  pinned:
+    - introducing-yourself-at-work#l12
+    - checking-in-at-a-hotel#l12
+    - returning-a-shirt#l8
+form:
+  - label: Nhờ người khác
+    pattern: Can / Could + you + V…?
+    example: Could you send me the file, please?
+  - label: Xin phép, xin thứ gì
+    pattern: Can / Could + I + V…?
+    example: Can I pay by card?
+  - label: Hỏi kèm từ để hỏi
+    pattern: When / Where / How + can + S + V…?
+    example: When can you finish it?
+  - label: Trả lời
+    pattern: Sure. / Of course. / No problem. · Sorry, I can't…
+    example: 'Could you help me? – Sure.'
+usage:
+  - 'Nhờ ai làm gì: Can you…? (thân mật) · Could you…? (lịch sự hơn, dùng với sếp, khách, người lạ).'
+  - 'Xin phép: Can I leave my bag here? · Could I join you?'
+  - 'Gọi món, mua hàng: Can I get / have…? = cho tôi…'
+  - 'Đề nghị giúp: How can I help you? · He can show you how to use the printer.'
+  - 'Thêm please (cuối câu hoặc sau chủ ngữ) cho lịch sự hơn.'
+signals:
+  - Can you…? / Could you…?
+  - Can I…? / Could I…?
+  - please
+  - Sure. / Of course. / No problem.
+common_mistakes:
+  - wrong: Can you to help me?
+    right: Can you help me?
+    why: Sau can / could là động từ nguyên mẫu, không có to.
+  - wrong: You can help me?
+    right: Can you help me?
+    why: Câu hỏi phải đảo can lên trước chủ ngữ; chỉ lên giọng như tiếng Việt thì không đúng ngữ pháp.
+  - wrong: Could I borrowed your pen?
+    right: Could I borrow your pen?
+    why: could ở đây không phải quá khứ; động từ sau nó vẫn ở dạng nguyên mẫu.
+exercises:
+  - type: choice
+    prompt: ___ I see your passport, please?
+    options: [Can, Do, Am]
+    correct: 0
+    explain: 'Xin phép xem hộ chiếu → Can I + V?'
+  - type: choice
+    prompt: Could you ___ me the report by Friday?
+    options: [send, to send, sending]
+    correct: 0
+    explain: 'Sau could là động từ nguyên mẫu → send.'
+  - type: choice
+    prompt: 'Can you help me with this box? – ___'
+    options:
+      - Sure.
+      - Yes, I help.
+      - No, you can't.
+    correct: 0
+    explain: 'Đồng ý giúp: Sure. / Of course. / No problem.'
+  - type: gap
+    prompt: Excuse me, ___ (could / you) tell me the way to the station?
+    answer: could you
+    accept: [can you]
+    explain: 'Nhờ người lạ chỉ đường: could + you + V (đảo could lên trước you).'
+  - type: gap
+    prompt: Could you ___ (close) the window, please?
+    answer: close
+    explain: 'Sau could là động từ nguyên mẫu, không to, không -s.'
+  - type: order
+    words: [you, could, me, help, please]
+    answer: Could you help me, please?
+    explain: 'Nhờ: Could + you + V…? Thêm please cho lịch sự.'
+  - type: order
+    words: [I, can, by, pay, card]
+    answer: Can I pay by card?
+    explain: 'Xin phép: Can + I + V?'
+  - type: find_error
+    sentence: Can you to call me back later?
+    wrong: to call
+    right: call
+    explain: 'Sau can không có to: Can you call me back later?'
+detect: \b(can|could)\s+(I|you|we|he|she)\b
+status: draft
